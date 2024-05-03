@@ -44,13 +44,13 @@ namespace iCargoUIAutomation.pages
                     else if (chargetyp.Equals("PP"))
                     {
                         confirmManualPayment();
-                       
-                        WaitForElementToBeVisible(lblPaymentSuccess_Xpath, TimeSpan.FromSeconds(15));
+
                         ScrollDown();
                         totalPaybleAmount = GetText(lblTotalAmount_Xpath).Split("$")[1];
                         ClickOnElementIfEnabled(btnDone_Xpath);
-                        Thread.Sleep(2000);
-                        
+                        WaitForElementToBeInvisible(btnDone_Xpath, TimeSpan.FromSeconds(15));
+
+
                     }
                     else if (chargetyp.Equals("CC"))
                     {
@@ -58,7 +58,7 @@ namespace iCargoUIAutomation.pages
                         Click(btnExitIcargo_Xpath);
                         Click(btnContinuePlsConfirm);
                     }
-                    SwitchToLastWindow();
+
 
                 }
 

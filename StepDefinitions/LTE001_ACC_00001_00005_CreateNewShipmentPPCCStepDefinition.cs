@@ -7,6 +7,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
+using TechTalk.SpecFlow;
 
 namespace iCargoUIAutomation.StepDefinitions
 {
@@ -17,7 +18,8 @@ namespace iCargoUIAutomation.StepDefinitions
         private PageObjectManager pageObjectManager;
         private homePage hp;
         private createShipmentPage csp;
-       
+
+
         ILog Log = LogManager.GetLogger(typeof(LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition));
 
 
@@ -27,6 +29,7 @@ namespace iCargoUIAutomation.StepDefinitions
             this.pageObjectManager = new PageObjectManager(driver);
             this.hp = pageObjectManager.GetHomePage();
             this.csp = pageObjectManager.GetCreateShipmentPage();
+
         }
 
 
@@ -43,8 +46,8 @@ namespace iCargoUIAutomation.StepDefinitions
         public void WhenUserEntersTheParticipantDetailsWithAgentCodeShipperCodeConsigneeCode(string agent, string shipper, string consignee)
         {
             Log.Info("Step: Entering the Participant details");
-            csp.EnterParticipantDetailsAsync(agent,shipper,consignee); 
-        }     
+            csp.EnterParticipantDetailsAsync(agent, shipper, consignee);
+        }
 
 
 
@@ -165,7 +168,7 @@ namespace iCargoUIAutomation.StepDefinitions
         {
             Log.Info("Step: Entering the Screening details");
             csp.enterScreeningDetails(rownum, screeningMethod, screeningResult);
-        }        
+        }
 
 
         [When(@"User clicks on the ContinueScreeningDetails button")]
@@ -192,7 +195,7 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User clicks on the save button & handle Payment Portal")]
         public void WhenUserClicksOnTheSaveButtonAndHandlePaymentPortal()
         {
-           csp.clickOnSaveButtonHandlePaymentPortal();
+            csp.clickOnSaveButtonHandlePaymentPortal();
         }
 
 
@@ -203,7 +206,7 @@ namespace iCargoUIAutomation.StepDefinitions
             csp.saveShipmentDetailsAndHandlePopups();
         }
 
-       
+
 
         [When(@"User handles the error popups with errorType as '([^']*)'")]
         public void WhenUserHandlesTheErrorPopupsWithErrorTypeAs(string errorType)

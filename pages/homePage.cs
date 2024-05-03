@@ -16,6 +16,7 @@ namespace iCargoUIAutomation.pages
         {
         }
 
+        private By btnHomeIcon_Xpath = By.XPath("//li[@role='tab']//span[normalize-space(text()='Home')]");
         private By lblBaseStation_Xpath = By.XPath("//*[@id='header_panel']//*[@id='ic-user-stationcode']");
         private By btnMore_Xpath = By.XPath("//*[@id='header_panel']//*[@class='ic-header-menu-icon' and @title='More..']");
         private By lnkSwitchRole_Xpath = By.XPath("//*[@class='ic-switch-role']/a");
@@ -28,6 +29,20 @@ namespace iCargoUIAutomation.pages
         private By txt_ScreenName_Css = By.CssSelector(".ic-screen-search");
         ILog Log = LogManager.GetLogger(typeof(homePage));
 
+        
+        public void ClickHomeIcon()
+        {
+            try
+            {
+                Click(btnHomeIcon_Xpath);
+            }
+            catch (Exception e)
+            {
+                Log.Error("Error in ClickHomeIcon method: " + e.Message);
+            }
+            
+        }
+        
         public void SwitchStation(string station)
         {
             try
@@ -48,19 +63,7 @@ namespace iCargoUIAutomation.pages
                         SwitchToDefaultContent();
                     
                 }
-
-
-                //string baseStation = GetText(lblBaseStation_Xpath);
-                //if (baseStation != station)
-                //{
-                //    Click(btnMore_Xpath);
-                //    Click(lnkSwitchRole_Xpath);
-                //    SwitchToFrame(frameSwitchRole_Id);
-                //    WaitForElementToBeVisible(drpdwnSelectStation_Id, TimeSpan.FromSeconds(10));
-                //    SelectDropdownByVisibleText(drpdwnSelectStation_Id, station);
-                //    Click(btnOKSwitchRole_Xpath);
-                //    SwitchToDefaultContent();
-                //}
+                
             }
             catch (Exception e)
             {              
@@ -76,7 +79,7 @@ namespace iCargoUIAutomation.pages
                 EnterText(txt_ScreenName_Css, screenName);
                 EnterKeys(txt_ScreenName_Css, Keys.Enter);
                 WaitForElementToBeVisible(By.CssSelector("li[tabindex='0']"), TimeSpan.FromSeconds(5));
-                //Thread.Sleep(2000);
+               
             }
             catch (Exception e)
             {

@@ -12,22 +12,21 @@ using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Threading.Tasks;
+using TechTalk.SpecFlow;
 
 namespace iCargoUIAutomation.pages
 {
     public class createShipmentPage : BasePage
     {
-     
+
         private PaymentPortalPage ppp;
-        private CaptureIrregularityPage cip;
-       
         public static string awb_num = "";
         public static string totalPaybleAmount = "";
         public static string totalAmountCharged = "";
         string IATACharge = "";
         string MarketCharge = "";
         public static string origin = "";
-        string destination = "";
+        public static string destination = "";
         string shippingDate = DateTime.Now.ToString("dd-MMM-yyyy");
         string scc = "";
         string serviceCargoClass = "";
@@ -42,13 +41,16 @@ namespace iCargoUIAutomation.pages
         public static string ConnectingflightNum = "";
         string flightSegment = "";
         string generatedAWB = "";
+        public static string cartULDNum = "";
         ILog Log = LogManager.GetLogger(typeof(createShipmentPage));
+
 
         public createShipmentPage(IWebDriver driver) : base(driver)
         {
-           
+
             ppp = new PaymentPortalPage(driver);
-           
+
+
         }
 
         // LTE001 Header Section   //
@@ -230,7 +232,8 @@ namespace iCargoUIAutomation.pages
 
         }
 
-      
+
+
         public void clickOnListButton()
         {
             try
@@ -286,7 +289,8 @@ namespace iCargoUIAutomation.pages
 
 
         }
-      
+
+
 
         public void clickOnContinueParticipantButton()
         {
@@ -334,12 +338,11 @@ namespace iCargoUIAutomation.pages
 
         }
 
-        public void EnterShipmentDetails(string neworigin, string destination, string productCode, string scc,
+        public void EnterShipmentDetails(string neworigin, string newdestination, string productCode, string scc,
                                          string commodity, string shipmentdesc, string serviceCargoClass, string newpiece, string newweight)
         {
             origin = neworigin;
-            this.destination = destination;
-            //this.shippingDate = shippingDate;
+            destination = newdestination;
             this.scc = scc;
             this.serviceCargoClass = serviceCargoClass;
             pieces = newpiece;
@@ -383,7 +386,7 @@ namespace iCargoUIAutomation.pages
             }
         }
 
-      
+
 
         public void clickOnContinueShipmentButton()
         {
@@ -420,6 +423,7 @@ namespace iCargoUIAutomation.pages
 
 
         }
+
 
 
         public void clickOnSelectFlightButton()
@@ -503,7 +507,7 @@ namespace iCargoUIAutomation.pages
         }
 
 
-        public void bookWithSpecificFlightType(string typeOfFlight)
+        public string bookWithSpecificFlightType(string typeOfFlight)
         {
             try
             {
@@ -542,8 +546,9 @@ namespace iCargoUIAutomation.pages
                 Log.Error("Error in booking flight: " + e.ToString());
             }
 
-        }      
+            return flightNum;
 
+        }
 
         public string getFlightType(int flightRowNum)
         {
@@ -562,7 +567,6 @@ namespace iCargoUIAutomation.pages
         public string getEMBAvailabilityStatus(int flightRowNum)
         {
             lblAvailabilityEMB = "//*[@id='flight_details']//tbody//tr[" + flightRowNum + "]//span[text()='EMB']";
-            // lblAvailabilityEMB = lblAvailabilityEMB.Replace("1", flightRowNum.ToString());
             string status = GetAttributeValue(By.XPath(lblAvailabilityEMB), "class");
             return status;
         }
@@ -618,7 +622,6 @@ namespace iCargoUIAutomation.pages
 
         }
 
-     
 
         public string clickOnCalculateChargeButton()
         {
@@ -633,6 +636,7 @@ namespace iCargoUIAutomation.pages
                     WaitUntilTextboxIsNotEmpty(txtIATACharge_Xpath);
 
                 }
+                clickingYesOnPopupWarnings("");
 
 
                 this.IATACharge = GetAttributeValue(txtIATACharge_Xpath, "value");
@@ -662,18 +666,11 @@ namespace iCargoUIAutomation.pages
                     Click(btnContinueEmbargo_Xpath);
                 }
             }
-            else if (errortype.Equals("Capture Irregularity"))
-            {
-                if (IsElementDisplayed(lblCaptureIrregularity_Xpath, 3))
-                {
-                    cip.captureIrregularity(pieces, weight);
-                    switchToLTEContentFrame();
-                }
-            }
+
             else
             {
                 SwitchToDefaultContent();
-                if (IsElementDisplayed(popupWarning_Css, 3))
+                if (IsElementDisplayed(popupWarning_Css, 5))
                 {
                     errorText = GetText(popupAlertMessage_Xpath);
                     Click(btnYesActiveCashDraw_Xpath);
@@ -693,9 +690,8 @@ namespace iCargoUIAutomation.pages
             {
                 ScrollDown();
                 Click(drpdwnModeOfPayment_Name);
-                //SelectDropdownByVisibleTextUntil(drpdwnModeOfPayment_Name, modeOfPayment);
+                SelectDropdownByVisibleTextUntil(drpdwnModeOfPayment_Name, modeOfPayment);
 
-                SelectDropdownByVisibleText(drpdwnModeOfPayment_Name, modeOfPayment);
             }
             catch (Exception e)
             {
@@ -715,7 +711,7 @@ namespace iCargoUIAutomation.pages
                     selectModeOfPayment(modeOfPayment);
                 }
 
-                //ScrollDown();
+
                 Click(btnContinueChargeDetails_Name);
 
             }
@@ -746,7 +742,6 @@ namespace iCargoUIAutomation.pages
 
 
         }
-
 
         public void clickOnContinueAcceptanceButton()
         {
@@ -782,7 +777,7 @@ namespace iCargoUIAutomation.pages
                 }
                 else
                 {
-                    //screeningRowElement.FindElement(txtScreeningPieces_Xpath).SendKeys(screeingPiece);
+
                     EnterText(txtScreeningAirport1_Xpath, origin);
                     SelectDropdownByVisibleText(drpdwnScreeningMethod1_Xpath, screeningMethod);
                     EnterText(txtScreeningPieces1_Xpath, pieces);
@@ -796,8 +791,6 @@ namespace iCargoUIAutomation.pages
 
 
         }
-
-
 
         public void clickOnContinueScreeningButton()
         {
@@ -832,7 +825,9 @@ namespace iCargoUIAutomation.pages
         public void clickSave()
         {
             Click(btnSaveShipment_Name);
-        }   
+        }
+
+
 
         public (string, string) saveShipmentDetailsAndHandlePopups()
         {
@@ -859,26 +854,31 @@ namespace iCargoUIAutomation.pages
             }
 
             return (awb_num, totalPaybleAmount);
-        }   
+        }
+
 
         public string clickOnSaveButtonHandlePaymentPortal()
         {
 
             int noOfWindowsBefore = GetNumberOfWindowsOpened();
             Click(btnSaveShipment_Name);
-            //clickingYesOnPopupWarnings("Embargo");
+
             WaitForNewWindowToOpen(TimeSpan.FromSeconds(5), noOfWindowsBefore + 1);
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
                 SwitchToLastWindow();
-                totalPaybleAmount = ppp.handlePaymentInPaymentPortal(this.chargeType);               
+                totalPaybleAmount = ppp.handlePaymentInPaymentPortal(this.chargeType);
+                WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore);
+                SwitchToLastWindow();
                 switchToLTEContentFrame();
             }
             return totalPaybleAmount;
 
         }
-      
+
+
+
 
         public string captureAWBNumber()
         {
@@ -918,8 +918,13 @@ namespace iCargoUIAutomation.pages
         public void closeLTE001Screen()
         {
             Click(btnCloseShipment_Name);
+            WaitForElementToBeInvisible(btnCloseShipment_Name, TimeSpan.FromSeconds(5));
 
         }
+
+
+
+
 
 
     }

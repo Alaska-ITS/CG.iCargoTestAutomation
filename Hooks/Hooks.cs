@@ -53,9 +53,7 @@ namespace iCargoUIAutomation.Hooks
         public void FirstBeforeScenario(ScenarioContext scenarioContext)
         {
             Console.WriteLine("Running before scenario...");
-
-
-            //IWebDriver driver = new EdgeDriver();
+            
             IWebDriver driver = new ChromeDriver();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
             driver.Manage().Window.Maximize();
