@@ -1,13 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\v-sdutta2\\ATaC_iCargo_Working Directory\\LTE001_ACC_00001\\",
+  "WorkspaceRootPath": "C:\\Users\\v-asaha\\iCargoAutomation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|c:\\users\\v-sdutta2\\atac_icargo_working directory\\lte001_acc_00001\\pages\\basepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|c:\\users\\v-asaha\\icargoautomation\\pages\\maintainbookingpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|solutionrelative:pages\\maintainbookingpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|c:\\users\\v-asaha\\icargoautomation\\pages\\pageobjectmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|solutionrelative:pages\\pageobjectmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|c:\\users\\v-asaha\\icargoautomation\\pages\\basepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|solutionrelative:pages\\basepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|c:\\users\\v-sdutta2\\atac_icargo_working directory\\lte001_acc_00001\\pages\\createshipmentpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|c:\\users\\v-asaha\\icargoautomation\\pages\\createshipmentpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|solutionrelative:pages\\createshipmentpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,26 +34,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "createShipmentPage.cs",
-              "DocumentMoniker": "C:\\Users\\v-sdutta2\\ATaC_iCargo_Working Directory\\LTE001_ACC_00001\\pages\\createShipmentPage.cs",
-              "RelativeDocumentMoniker": "pages\\createShipmentPage.cs",
-              "ToolTip": "C:\\Users\\v-sdutta2\\ATaC_iCargo_Working Directory\\LTE001_ACC_00001\\pages\\createShipmentPage.cs",
-              "RelativeToolTip": "pages\\createShipmentPage.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAFAAAA",
+              "DocumentIndex": 0,
+              "Title": "MaintainBookingPage.cs",
+              "DocumentMoniker": "C:\\Users\\v-asaha\\iCargoAutomation\\pages\\MaintainBookingPage.cs",
+              "RelativeDocumentMoniker": "pages\\MaintainBookingPage.cs",
+              "ToolTip": "C:\\Users\\v-asaha\\iCargoAutomation\\pages\\MaintainBookingPage.cs",
+              "RelativeToolTip": "pages\\MaintainBookingPage.cs",
+              "ViewState": "AQIAAGIBAAAAAAAAAAAIwFUBAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T12:13:10.97Z",
+              "WhenOpened": "2024-05-07T14:42:33.992Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "PageObjectManager.cs",
+              "DocumentMoniker": "C:\\Users\\v-asaha\\iCargoAutomation\\pages\\PageObjectManager.cs",
+              "RelativeDocumentMoniker": "pages\\PageObjectManager.cs",
+              "ToolTip": "C:\\Users\\v-asaha\\iCargoAutomation\\pages\\PageObjectManager.cs",
+              "RelativeToolTip": "pages\\PageObjectManager.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T14:35:25.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "createShipmentPage.cs",
+              "DocumentMoniker": "C:\\Users\\v-asaha\\iCargoAutomation\\pages\\createShipmentPage.cs",
+              "RelativeDocumentMoniker": "pages\\createShipmentPage.cs",
+              "ToolTip": "C:\\Users\\v-asaha\\iCargoAutomation\\pages\\createShipmentPage.cs",
+              "RelativeToolTip": "pages\\createShipmentPage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T12:13:10.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "basePage.cs",
-              "DocumentMoniker": "C:\\Users\\v-sdutta2\\ATaC_iCargo_Working Directory\\LTE001_ACC_00001\\pages\\basePage.cs",
+              "DocumentMoniker": "C:\\Users\\v-asaha\\iCargoAutomation\\pages\\basePage.cs",
               "RelativeDocumentMoniker": "pages\\basePage.cs",
-              "ToolTip": "C:\\Users\\v-sdutta2\\ATaC_iCargo_Working Directory\\LTE001_ACC_00001\\pages\\basePage.cs",
+              "ToolTip": "C:\\Users\\v-asaha\\iCargoAutomation\\pages\\basePage.cs",
               "RelativeToolTip": "pages\\basePage.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAhAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-03T12:13:09.435Z",
               "EditorCaption": ""
