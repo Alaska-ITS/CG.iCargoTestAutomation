@@ -14,10 +14,10 @@ namespace iCargoUIAutomation.StepDefinitions
         private MaintainBookingPage mbp;
         string origin = "";
         string destination = "";
-        string agentcode = "";
-        string shippingdate = "";
-        string productcode = "";
-        string unknownshipper = "";
+        string agentCode = "";
+        string shippingDate = "";
+        string productCode = "";
+        string unknownShipper = "";
         string consignee = "";
         string awb = "";
 
@@ -33,24 +33,14 @@ namespace iCargoUIAutomation.StepDefinitions
         {
             mbp.AWBBookingfromStock();
         }
-
-        //[Then(@"User enters shipment details with Origin ""([^""]*)"", Destination ""([^""]*)"",Agent Code ""([^""]*)"", Shipping Date ""([^""]*)"", Product Code ""([^""]*)""")]
-        //public void ThenUserEntersShipmentDetailsWithOriginDestinationAgentCodeShippingDateProductCode(string origin, string destination, string agentcode, string shippingdate, string productcode)
-        //{
-        //    this.origin = origin;
-        //    this.destination = destination;
-        //    this.agentcode = agentcode;
-        //    this.shippingdate = shippingdate;
-        //    this.productcode = productcode;
-        //    mbp.UnknownAgentShipmentDetails(origin, destination, agentcode, shippingdate, productcode);
-        //}
+        
         [Then(@"User enters unknown shipment details with Origin ""([^""]*)"", Destination ""([^""]*)"", Product Code ""([^""]*)""")]
-        public void ThenUserEntersShipmentDetailsWithOriginDestinationAgentCodeProductCode(string origin, string destination, string productcode)
+        public void ThenUserEntersShipmentDetailsWithOriginDestinationAgentCodeProductCode(string origin, string destination, string productCode)
         {
             this.origin = origin;
             this.destination = destination;                       
-            this.productcode = productcode;
-            mbp.UnknownAgentShipmentDetails(origin, destination,productcode);
+            this.productCode = productCode;
+            mbp.UnknownAgentShipmentDetails(origin, destination,productCode);
         }
 
         [Then(@"User enters the AWB number as ""([^""]*)""")]
@@ -64,7 +54,7 @@ namespace iCargoUIAutomation.StepDefinitions
         [Then(@"User enters Unknown Shipper ""([^""]*)"" and Consignee ""([^""]*)"" details")]
         public void ThenUserEntersUnknownShipperAndConsigneeDetails(string shipper, string consignee)
         {
-           this.unknownshipper = shipper;
+           this.unknownShipper = shipper;
             this.consignee = consignee;
             mbp.UnknownShipperConsigneeDetails(shipper, consignee);
         }
