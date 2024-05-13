@@ -2,7 +2,7 @@
 
 A short summary of the feature
 
-@tag1
+@Cap018
 Scenario: Create a booking for an unknown shipper on a pax flight
 Given User lauches the Url of iCargo Staging UI
 	    Then User enters into the  iCargo 'Sign in to icargoas' page successfully

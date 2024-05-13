@@ -6,7 +6,7 @@ public class PageObjectManager : BasePage
 
     private IWebDriver driver;
     private homePage hp;
-    private createShipmentPage csp;
+    private CreateShipmentPage csp;
     private MaintainBookingPage mbp;
 
     // Add other page classes as needed
@@ -21,9 +21,9 @@ public class PageObjectManager : BasePage
         return hp ?? (hp = new homePage(driver));
     }
 
-    public createShipmentPage GetCreateShipmentPage()
+    public CreateShipmentPage GetCreateShipmentPage()
     {
-        return csp ?? (csp = new createShipmentPage(driver));
+        return csp ?? (csp = new CreateShipmentPage(driver));
     }
 
     public MaintainBookingPage GetMaintainBookingPage()
