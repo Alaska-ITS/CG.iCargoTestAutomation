@@ -26,11 +26,7 @@ namespace iCargoUIAutomation.utilities
             FileAppender appender = new FileAppender();
             appender.AppendToFile = false;
             appender.File = logFilePath;
-            appender.Layout = patternLayout;
-            //appender.MaxSizeRollBackups = 10;
-            //roller.MaximumFileSize = "10MB";
-            //roller.RollingStyle = RollingFileAppender.RollingMode.Size;
-            //roller.StaticLogFileName = true;
+            appender.Layout = patternLayout;            
             appender.ActivateOptions();
             hierarchy.Root.AddAppender(appender);
 

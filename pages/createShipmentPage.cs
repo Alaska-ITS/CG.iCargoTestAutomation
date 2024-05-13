@@ -16,7 +16,7 @@ using TechTalk.SpecFlow;
 
 namespace iCargoUIAutomation.pages
 {
-    public class createShipmentPage : BasePage
+    public class CreateShipmentPage : BasePage
     {
 
         private PaymentPortalPage ppp;
@@ -42,10 +42,10 @@ namespace iCargoUIAutomation.pages
         string flightSegment = "";
         string generatedAWB = "";
         public static string cartULDNum = "";
-        ILog Log = LogManager.GetLogger(typeof(createShipmentPage));
+        ILog Log = LogManager.GetLogger(typeof(CreateShipmentPage));
 
 
-        public createShipmentPage(IWebDriver driver) : base(driver)
+        public CreateShipmentPage(IWebDriver driver) : base(driver)
         {
 
             ppp = new PaymentPortalPage(driver);
