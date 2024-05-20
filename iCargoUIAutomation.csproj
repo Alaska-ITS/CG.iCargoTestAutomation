@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\CAP018_BKG_00001_Create a booking.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\CAP018_BKG_00003_Create a booking for an unknown shipper on a pax flight.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\LTE001_ACC_00002_Create an AWB in LTE001 for an unknown shipper on a restricted pax flight - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\LTE001_ACC_00003_Create a DG AWB in LTE001 - Copy.feature.cs" />

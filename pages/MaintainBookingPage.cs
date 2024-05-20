@@ -534,6 +534,121 @@ namespace iCargoUIAutomation.pages
             {
                 test.Fail(e.ToString());
             }
-        }             
+        }
+
+        public void NewUnknownAgentShipmentDetails(string org, string dest, string agtcode, string prodcode)
+        {
+            test = _scenario.CreateNode<Scenario>("Unknown Agent Shipment Details");
+            try
+            {
+                if (IsElementEnabled(origin_ID))
+                {
+                    EnterTextWithCheck(origin_ID, org);
+                    test.Pass("Entered Origin: " + org);
+                }
+                test.Pass("Entered Origin: " + org);
+                EnterText(destination_XPATH, dest);
+                test.Pass("Entered Destination: " + dest);
+                ClickOnElementIfPresent(agentCode_ID);
+                EnterTextWithCheck(agentCode_ID, agtcode.ToString());
+                test.Pass("Entered Agent Code: " + agtcode);
+                EnterText(shippingDate_ID, shippingDate);
+                test.Pass("Entered Shipping Date: " + shippingDate);
+                EnterText(product_XPATH, prodcode);
+                test.Pass("Entered Product Code: " + prodcode);
+                Click(shipperConsigneeBtn_ID);
+                test.Pass("Clicked on Shipper Consignee Button");
+            }
+            catch (Exception e)
+            {
+                test.Fail("Error in Entering Unknown Agent Shipment Details: " + e.Message);
+            }
+        }
+
+        public void UnknownShipperConsigneeALLDetails(string unkshppr, string unkconsgn)
+        {
+            test = _scenario.CreateNode<Scenario>("Unknown Shipper Consignee ALL Details");
+            try
+            {
+                SwitchToSecondPopupWindow();
+                WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
+                EnterText(shipperCode_XPATH, unkshppr);
+                test.Pass("Entered Shipper Code: " + unkshppr);
+                string shipperName = "Test Shipper";
+                if (checkTextboxIsNotEmpty(unkShipperName_ID))
+                {
+                    ClickOnElementIfPresent(unkShipperName_ID);
+                }
+                else
+                {
+                    WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
+                    EnterTextWithCheck(unkShipperName_ID, shipperName);
+                    test.Pass("Entered Shipper Name: " + shipperName);
+                }
+                string shipperFirstAddress = "Test Address1";
+                EnterTextWithCheck(unkShipperFirstAddress_ID, shipperFirstAddress);
+                test.Pass("Entered Shipper First Address: " + shipperFirstAddress);
+                string shipperSecondAddress = "Test Address2";
+                EnterTextWithCheck(unkShipperSecondAddress, shipperSecondAddress);
+                test.Pass("Entered Shipper Second Address: " + shipperSecondAddress);
+                string shipperCity = "Test City";
+                EnterTextWithCheck(unkShipperCity_ID, shipperCity);
+                test.Pass("Entered Shipper City: " + shipperCity);
+                string shipperState = "Test State";
+                EnterTextWithCheck(unkShipperState_ID, shipperState);
+                test.Pass("Entered Shipper State: " + shipperState);
+                string shipperCountry = "US";
+                EnterTextWithCheck(unkShipperCountry_ID, shipperCountry);
+                test.Pass("Entered Shipper Country: " + shipperCountry);
+                string shipperZip = "67890";
+                EnterTextWithCheck(unkShipperZip_ID, shipperZip);
+                test.Pass("Entered Shipper Zip: " + shipperZip);
+                string shipperEmail = "TEST@GMAIL.COM.INVALID";
+                EnterTextWithCheck(unkShipperEmail_ID, shipperEmail);
+                test.Pass("Entered Shipper Email: " + shipperEmail);
+                EnterText(consigneeCode_XPATH, unkconsgn);
+                test.Pass("Entered Consignee Code: " + unkconsgn);
+                string consigneeName = "Test Consignee";
+                if (checkTextboxIsNotEmpty(unkConsigneeName_ID))
+                {
+                    ClickOnElementIfPresent(unkConsigneeName_ID);
+                }
+                else
+                {
+                    WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
+                    EnterTextWithCheck(unkConsigneeName_ID, consigneeName);
+                    test.Pass("Entered Consignee Name: " + consigneeName);
+                }
+                test.Pass("Entered Consignee Name: " + consigneeName);
+                string consigneeFirstAddress = "Test Address1";
+                EnterTextWithCheck(unkConsigneeFirstAddress_ID, consigneeFirstAddress);
+                test.Pass("Entered Consignee First Address: " + consigneeFirstAddress);
+                string consigneeSecondAddress = "Test Address2";
+                EnterTextWithCheck(unkConsigneeSecondAddress, consigneeSecondAddress);
+                test.Pass("Entered Consignee Second Address: " + consigneeSecondAddress);
+                string consigneeCity = "Test City";
+                EnterTextWithCheck(unkConsigneeCity_ID, consigneeCity);
+                test.Pass("Entered Consignee City: " + consigneeCity);
+                string consigneeState = "Test State";
+                EnterTextWithCheck(unkConsigneeState_ID, consigneeState);
+                test.Pass("Entered Consignee State: " + consigneeState);
+                string consigneeCountry = "US";
+                EnterTextWithCheck(unkConsigneeCountry_ID, consigneeCountry);
+                test.Pass("Entered Consignee Country: " + consigneeCountry);
+                string consigneeZip = "67890";
+                EnterTextWithCheck(unkConsigneeZip_ID, consigneeZip);
+                test.Pass("Entered Consignee Zip: " + consigneeZip);
+                string consigneeEmail = "TEST@GMAIL.COM.INVALID";
+                EnterTextWithCheck(unkConsigneeEmail_ID, consigneeEmail);
+                test.Pass("Entered Consignee Email: " + consigneeEmail);
+                Click(shipperConsigneeOkBtn_ID);
+                test.Pass("Clicked on Shipper Consignee OK Button");
+                SwitchToPopupWindow();
+            }
+            catch (Exception e)
+            {
+                test.Fail("Error in Entering Unknown Shipper Consignee ALL Details: " + e.Message);
+            }
+        }
     }
 }
