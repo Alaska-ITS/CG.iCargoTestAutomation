@@ -673,7 +673,17 @@ namespace iCargoUIAutomation.pages
                 if (IsElementDisplayed(popupWarning_Css, 5))
                 {
                     errorText = GetText(popupAlertMessage_Xpath);
-                    Click(btnYesActiveCashDraw_Xpath);
+                    if (errorText.Contains("Active Cash Draw"))
+                    {
+                        Click(btnYesActiveCashDraw_Xpath);
+                        WaitForElementToBeInvisible(btnYesActiveCashDraw_Xpath, TimeSpan.FromSeconds(7));
+                    }
+
+                    else
+                    {
+                        Click(btnYesActiveCashDraw_Xpath);
+                        WaitForElementToBeInvisible(btnYesActiveCashDraw_Xpath, TimeSpan.FromSeconds(5));
+                    }
                 }
 
                 switchToLTEContentFrame();
@@ -848,7 +858,18 @@ namespace iCargoUIAutomation.pages
                 }
                 catch (Exception)
                 {
+                    int noOfWindowsBefore = GetNumberOfWindowsOpened();
                     clickingYesOnPopupWarnings("");
+                    int noOfWindowsAfter = GetNumberOfWindowsOpened();
+                    if (noOfWindowsAfter > noOfWindowsBefore)
+                    {
+                        SwitchToLastWindow();
+                        totalPaybleAmount = ppp.handlePaymentInPaymentPortal(this.chargeType);
+                        WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore);
+                        SwitchToLastWindow();
+                        switchToLTEContentFrame();
+                    }
+
                 }
 
             }
@@ -863,7 +884,7 @@ namespace iCargoUIAutomation.pages
             int noOfWindowsBefore = GetNumberOfWindowsOpened();
             Click(btnSaveShipment_Name);
 
-            WaitForNewWindowToOpen(TimeSpan.FromSeconds(5), noOfWindowsBefore + 1);
+            WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore + 1);
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
