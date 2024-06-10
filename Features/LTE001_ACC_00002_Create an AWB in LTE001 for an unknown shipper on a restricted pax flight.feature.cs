@@ -20,22 +20,24 @@ namespace iCargoUIAutomation.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper")]
-    public partial class LTE001_ACC_00001_CreateAPPAWBInLTE001ForAKnownShipperFeature
+    [NUnit.Framework.DescriptionAttribute("LTE001_ACC_00002_Create an AWB in LTE001 for an unknown shipper on a restricted p" +
+        "ax flight")]
+    public partial class LTE001_ACC_00002_CreateAnAWBInLTE001ForAnUnknownShipperOnARestrictedPaxFlightFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper.feature"
+#line 1 "LTE001_ACC_00002_Create an AWB in LTE001 for an unknown shipper on a restricted pax flight.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper", "Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CG" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LTE001_ACC_00002_Create an AWB in LTE001 for an unknown shipper on a restricted p" +
+                    "ax flight", "Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CG" +
                     "ODG user", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -75,12 +77,12 @@ namespace iCargoUIAutomation.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a PP AWB in LTE001 for a known shipper")]
-        [NUnit.Framework.CategoryAttribute("LTE001")]
-        [NUnit.Framework.TestCaseAttribute("10763", "10763", "10763", "ANC", "SEA", "GENERAL", "None", "0316", "None", "None", "2", "59", "PP", "CREDIT", "CART", null)]
-        public virtual void CreateAPPAWBInLTE001ForAKnownShipper(
+        [NUnit.Framework.DescriptionAttribute("Create an AWB in LTE001 for an unknown shipper on a restricted pax flight")]
+        [NUnit.Framework.CategoryAttribute("tag1")]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "10763", "SEA", "JFK", "GENERAL", "None", "0316", "None", "None", "2", "59", "CC", "None", "CART", null)]
+        public virtual void CreateAnAWBInLTE001ForAnUnknownShipperOnARestrictedPaxFlight(
                     string agentCode, 
-                    string shipperCode, 
+                    string unknownShipperCode, 
                     string consigneeCode, 
                     string origin, 
                     string destination, 
@@ -97,7 +99,7 @@ namespace iCargoUIAutomation.Features
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LTE001"};
+                    "tag1"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -105,7 +107,7 @@ namespace iCargoUIAutomation.Features
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("AgentCode", agentCode);
-            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
             argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
             argumentsOfScenario.Add("Origin", origin);
             argumentsOfScenario.Add("Destination", destination);
@@ -119,7 +121,7 @@ namespace iCargoUIAutomation.Features
             argumentsOfScenario.Add("ChargeType", chargeType);
             argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
             argumentsOfScenario.Add("cartType", cartType);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a PP AWB in LTE001 for a known shipper", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an AWB in LTE001 for an unknown shipper on a restricted pax flight", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -168,8 +170,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
- testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
-                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\",Unknown ShipperCode \"{1}" +
+                            "\", ConsigneeCode \"{2}\"", agentCode, unknownShipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 17
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -213,25 +215,22 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueAcceptanceDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 30
- testRunner.And("User enters the Screening details for row 1 with screeingMethod as \'Transfer Mani" +
-                        "fest Verified\' and ScreeningResult as \'Pass\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 31
  testRunner.And("User clicks on the ContinueScreeningDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 32
+#line 31
  testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 32
+ testRunner.And("User saves the shipment details and capture AWB number", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 33
- testRunner.And("User clicks on the save button & handle Payment Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User validates the popped up error message as \"The Shipper does not have a Valid " +
+                        "Certificate Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 34
- testRunner.And("User saves all the details & handles all the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 35
  testRunner.And("User closes the LTE screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 36
+#line 35
  testRunner.Then("User logs out from the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
