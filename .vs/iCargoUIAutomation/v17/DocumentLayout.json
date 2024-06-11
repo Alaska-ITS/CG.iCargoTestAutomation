@@ -1,38 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\",
+  "WorkspaceRootPath": "C:\\Users\\v-asaha\\Automation 2024\\Sprint 12\\iCargoAutomation_BKG00005_BKG00007_11thJune\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|c:\\users\\v-asaha\\automationdeliverable\\icargoautomation_bkg00001_repeatpull\\features\\cap018_bkg_00003_create a booking for an unknown shipper on a pax flight.feature||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|solutionrelative:features\\cap018_bkg_00003_create a booking for an unknown shipper on a pax flight.feature||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|c:\\users\\v-asaha\\automationdeliverable\\icargoautomation_bkg00001_repeatpull\\stepdefinitions\\cap018_bkg_00003_createabookingforanunknownshipperonapaxflightstepdefinitions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|solutionrelative:stepdefinitions\\cap018_bkg_00003_createabookingforanunknownshipperonapaxflightstepdefinitions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|c:\\users\\v-asaha\\automationdeliverable\\icargoautomation_bkg00001_repeatpull\\pages\\maintainbookingpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|c:\\users\\v-asaha\\automation 2024\\sprint 12\\icargoautomation_bkg00005_bkg00007_11thjune\\pages\\maintainbookingpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|solutionrelative:pages\\maintainbookingpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|c:\\users\\v-asaha\\automationdeliverable\\icargoautomation_bkg00001_repeatpull\\features\\cap018_bkg_00001_create a booking.feature||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|solutionrelative:features\\cap018_bkg_00001_create a booking.feature||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|c:\\users\\v-asaha\\automationdeliverable\\icargoautomation_bkg00001_repeatpull\\stepdefinitions\\cap018_bkg_00001_create_a_booking_stepdefinitions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|solutionrelative:stepdefinitions\\cap018_bkg_00001_create_a_booking_stepdefinitions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|c:\\users\\v-asaha\\automationdeliverable\\icargoautomation_bkg00001_repeatpull\\pages\\pageobjectmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|solutionrelative:pages\\pageobjectmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|c:\\users\\v-asaha\\automationdeliverable\\icargoautomation_bkg00001_repeatpull\\pages\\basepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|solutionrelative:pages\\basepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|c:\\users\\v-asaha\\automationdeliverable\\icargoautomation_bkg00001_repeatpull\\features\\cap018_bkg_00004_create a booking given an awb from stock.feature||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|solutionrelative:features\\cap018_bkg_00004_create a booking given an awb from stock.feature||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|c:\\users\\v-asaha\\automation 2024\\sprint 12\\icargoautomation_bkg00005_bkg00007_11thjune\\stepdefinitions\\cap018_bkg_00005_createamultilegbookingwithflightsthatdonotmeetminimumconnectiontimestepdefinitions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6C703E4-2AA9-4841-8020-F1C37867F994}|iCargoUIAutomation.csproj|solutionrelative:stepdefinitions\\cap018_bkg_00005_createamultilegbookingwithflightsthatdonotmeetminimumconnectiontimestepdefinitions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,104 +26,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CAP018_BKG_00003_CreateABookingForAnUnknownShipperOnAPaxFlightStepDefinitions.cs",
-              "DocumentMoniker": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\StepDefinitions\\CAP018_BKG_00003_CreateABookingForAnUnknownShipperOnAPaxFlightStepDefinitions.cs",
-              "RelativeDocumentMoniker": "StepDefinitions\\CAP018_BKG_00003_CreateABookingForAnUnknownShipperOnAPaxFlightStepDefinitions.cs",
-              "ToolTip": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\StepDefinitions\\CAP018_BKG_00003_CreateABookingForAnUnknownShipperOnAPaxFlightStepDefinitions.cs",
-              "RelativeToolTip": "StepDefinitions\\CAP018_BKG_00003_CreateABookingForAnUnknownShipperOnAPaxFlightStepDefinitions.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T07:57:51.833Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CAP018_BKG_00003_Create a booking for an unknown shipper on a pax flight.feature",
-              "DocumentMoniker": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\Features\\CAP018_BKG_00003_Create a booking for an unknown shipper on a pax flight.feature",
-              "RelativeDocumentMoniker": "Features\\CAP018_BKG_00003_Create a booking for an unknown shipper on a pax flight.feature",
-              "ToolTip": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\Features\\CAP018_BKG_00003_Create a booking for an unknown shipper on a pax flight.feature",
-              "RelativeToolTip": "Features\\CAP018_BKG_00003_Create a booking for an unknown shipper on a pax flight.feature",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAqAAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASFSURBVEhLjVVpbBVVFP7m7X1btS1dnqR00TZCKIhtA9WiQIiJBn9hfxRNEzEk9AclscQN40LSmNQuRiL\u002BEJSECDH6g5hgiRKLNi2WlAIPlEZrq3R7tLWvy\u002BvbZ/zuvOlbsDX9Jt/MOefOPefOOefekbAanHMBStRKyUIqkOCHzRrAniF1eEUoirJygCqLDmXGfFRbK6FDFS2FZDopk9PkEGSlBz8FrsIdHkW3X6HtP1g\u002BwPvkwzk1HH2F0kYykzSQSxDOwuQU2UetFbWey2LgfqQGeIDqRw85YAo3Uns7ZlwVFF51\u002BHzuK3zvD2k2FXrtGcONNDPuGespNZA2YbIbbNiRXQ2DpMdMyAurPg3Va7YiNy0bI4tj4hUBidcmbDYPwysPYCiimcHsJqPP\u002BRjvIkCWqhPP5O7AycoWvLm\u002BAWvMmdiSUYbj5U04VdHOySnT88l6vOzIiakxJN44km7iKo5TKiAlMVlc3vA8MkwPYltmOdbaXKjKqkCJvQjz4QVWW9Q7DgPn74ROegnWROYTKapKq4bL8BolSaThxYIX8IizCDe9v2I\u002B4oMv6kPHRKeaKovejGO/teEv393Y3ASE51IUGD9DV0CtRSxUmVmHQ\u002BnvwiYdFerWzMdxYfuXCMthdE52Y3/vq6yFFVPBaZjp3Gmw415oClE5qk6/Dwr6gk/hQ2\u002BXUGIpskt2Oi9SZeLGzG2cH\u002BuAh05K\u002BRUl9kJMBDyIKBH4\u002BDXjlFdwLiAWvSkmJmpgIsUuVeGXA6jvex0HehtRd\u002BUwrntvaSOpEEV3Gh2aloJ4k2gBFLGceG\u002BJnjtYXIejGxrw1vpDyEtLaQwV\u002Bwv34ey2E2o37crdrlnjiFc5FkCSFnkX21/Fk1mVaNr4Bnay/wvt\u002BVhgWsRKdewtg2SAjfUYXvwbJY5iPOvahS8q27WZcYxqT62LFESxwZwHp\u002B55oQYiIRh1Rlye7EHrwKdqi\u002B4r2IuB\u002BUEU2wtwuOQA\u002BmfcuOT5GXcXx3F\u002B9CKuzdxUXakYjzahO6AGSTTskXQXtlgGKZmFatFZGFdGriUHv\u002By\u002BgIAcRG3PQRQxwMmKFtblNp74YQ/0bNsoMywaQMM4rvmL0TwXEEpiozXPjjHcMUp\u002BoQZY6KAcosN8mPg1d\u002BYGMe734M\u002BFYQyx/9dZ1yLTnMF3gsnO6VRpWnIukHoW7XX8wfujpGhZdWw6OKO25bdjF\u002BGevaPqvy8M4buJS\u002Bj/x62echq4rXl8S/gAX/vmNFtSigSy\u002BEEf8yQDPiE3qzZCFJf/jrgzHacJKcm5AI9upRFZU2ewW46fIalfsMgJ3/hGYJa6UGpaR0sGaaajRCqJFLcx8CyR29E2ewrNkaBmU5EaYAnu0CRqHT\u002Byt8RhI/aIkxS/zJRAhIjlIU\u002BgzduO66F4apaQmqJkmDn0nFNCjdUJRS6jpYUsV8cSmCDfY5jT/KPFC5uMlQMk45wrj0HOcMFPU/ORI\u002BQV9Ida0Rm8hV6xT5fH6gKczRVnyzsMkM3nVTZMN04vuNHhn1fH/werDSBynw693o\u002Ba0WVTsTyAfwENCYeqQkKfxQAAAABJRU5ErkJggg==",
-              "WhenOpened": "2024-05-20T07:57:09.836Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CAP018_BKG_00001_Create a booking.feature",
-              "DocumentMoniker": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\Features\\CAP018_BKG_00001_Create a booking.feature",
-              "RelativeDocumentMoniker": "Features\\CAP018_BKG_00001_Create a booking.feature",
-              "ToolTip": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\Features\\CAP018_BKG_00001_Create a booking.feature",
-              "RelativeToolTip": "Features\\CAP018_BKG_00001_Create a booking.feature",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAIAAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASFSURBVEhLjVVpbBVVFP7m7X1btS1dnqR00TZCKIhtA9WiQIiJBn9hfxRNEzEk9AclscQN40LSmNQuRiL\u002BEJSECDH6g5hgiRKLNi2WlAIPlEZrq3R7tLWvy\u002BvbZ/zuvOlbsDX9Jt/MOefOPefOOefekbAanHMBStRKyUIqkOCHzRrAniF1eEUoirJygCqLDmXGfFRbK6FDFS2FZDopk9PkEGSlBz8FrsIdHkW3X6HtP1g\u002BwPvkwzk1HH2F0kYykzSQSxDOwuQU2UetFbWey2LgfqQGeIDqRw85YAo3Uns7ZlwVFF51\u002BHzuK3zvD2k2FXrtGcONNDPuGespNZA2YbIbbNiRXQ2DpMdMyAurPg3Va7YiNy0bI4tj4hUBidcmbDYPwysPYCiimcHsJqPP\u002BRjvIkCWqhPP5O7AycoWvLm\u002BAWvMmdiSUYbj5U04VdHOySnT88l6vOzIiakxJN44km7iKo5TKiAlMVlc3vA8MkwPYltmOdbaXKjKqkCJvQjz4QVWW9Q7DgPn74ROegnWROYTKapKq4bL8BolSaThxYIX8IizCDe9v2I\u002B4oMv6kPHRKeaKovejGO/teEv393Y3ASE51IUGD9DV0CtRSxUmVmHQ\u002BnvwiYdFerWzMdxYfuXCMthdE52Y3/vq6yFFVPBaZjp3Gmw415oClE5qk6/Dwr6gk/hQ2\u002BXUGIpskt2Oi9SZeLGzG2cH\u002BuAh05K\u002BRUl9kJMBDyIKBH4\u002BDXjlFdwLiAWvSkmJmpgIsUuVeGXA6jvex0HehtRd\u002BUwrntvaSOpEEV3Gh2aloJ4k2gBFLGceG\u002BJnjtYXIejGxrw1vpDyEtLaQwV\u002Bwv34ey2E2o37crdrlnjiFc5FkCSFnkX21/Fk1mVaNr4Bnay/wvt\u002BVhgWsRKdewtg2SAjfUYXvwbJY5iPOvahS8q27WZcYxqT62LFESxwZwHp\u002B55oQYiIRh1Rlye7EHrwKdqi\u002B4r2IuB\u002BUEU2wtwuOQA\u002BmfcuOT5GXcXx3F\u002B9CKuzdxUXakYjzahO6AGSTTskXQXtlgGKZmFatFZGFdGriUHv\u002By\u002BgIAcRG3PQRQxwMmKFtblNp74YQ/0bNsoMywaQMM4rvmL0TwXEEpiozXPjjHcMUp\u002BoQZY6KAcosN8mPg1d\u002BYGMe734M\u002BFYQyx/9dZ1yLTnMF3gsnO6VRpWnIukHoW7XX8wfujpGhZdWw6OKO25bdjF\u002BGevaPqvy8M4buJS\u002Bj/x62echq4rXl8S/gAX/vmNFtSigSy\u002BEEf8yQDPiE3qzZCFJf/jrgzHacJKcm5AI9upRFZU2ewW46fIalfsMgJ3/hGYJa6UGpaR0sGaaajRCqJFLcx8CyR29E2ewrNkaBmU5EaYAnu0CRqHT\u002Byt8RhI/aIkxS/zJRAhIjlIU\u002BgzduO66F4apaQmqJkmDn0nFNCjdUJRS6jpYUsV8cSmCDfY5jT/KPFC5uMlQMk45wrj0HOcMFPU/ORI\u002BQV9Ida0Rm8hV6xT5fH6gKczRVnyzsMkM3nVTZMN04vuNHhn1fH/werDSBynw693o\u002Ba0WVTsTyAfwENCYeqQkKfxQAAAABJRU5ErkJggg==",
-              "WhenOpened": "2024-05-20T06:44:51.862Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CAP018_BKG_00001_Create_a_booking_StepDefinitions.cs",
-              "DocumentMoniker": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\StepDefinitions\\CAP018_BKG_00001_Create_a_booking_StepDefinitions.cs",
-              "RelativeDocumentMoniker": "StepDefinitions\\CAP018_BKG_00001_Create_a_booking_StepDefinitions.cs",
-              "ToolTip": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\StepDefinitions\\CAP018_BKG_00001_Create_a_booking_StepDefinitions.cs",
-              "RelativeToolTip": "StepDefinitions\\CAP018_BKG_00001_Create_a_booking_StepDefinitions.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAmwE0AAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T16:31:15.19Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CAP018_BKG_00004_Create a booking given an AWB from stock.feature",
-              "DocumentMoniker": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\Features\\CAP018_BKG_00004_Create a booking given an AWB from stock.feature",
-              "RelativeDocumentMoniker": "Features\\CAP018_BKG_00004_Create a booking given an AWB from stock.feature",
-              "ToolTip": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\Features\\CAP018_BKG_00004_Create a booking given an AWB from stock.feature",
-              "RelativeToolTip": "Features\\CAP018_BKG_00004_Create a booking given an AWB from stock.feature",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAxAAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASFSURBVEhLjVVpbBVVFP7m7X1btS1dnqR00TZCKIhtA9WiQIiJBn9hfxRNEzEk9AclscQN40LSmNQuRiL\u002BEJSECDH6g5hgiRKLNi2WlAIPlEZrq3R7tLWvy\u002BvbZ/zuvOlbsDX9Jt/MOefOPefOOefekbAanHMBStRKyUIqkOCHzRrAniF1eEUoirJygCqLDmXGfFRbK6FDFS2FZDopk9PkEGSlBz8FrsIdHkW3X6HtP1g\u002BwPvkwzk1HH2F0kYykzSQSxDOwuQU2UetFbWey2LgfqQGeIDqRw85YAo3Uns7ZlwVFF51\u002BHzuK3zvD2k2FXrtGcONNDPuGespNZA2YbIbbNiRXQ2DpMdMyAurPg3Va7YiNy0bI4tj4hUBidcmbDYPwysPYCiimcHsJqPP\u002BRjvIkCWqhPP5O7AycoWvLm\u002BAWvMmdiSUYbj5U04VdHOySnT88l6vOzIiakxJN44km7iKo5TKiAlMVlc3vA8MkwPYltmOdbaXKjKqkCJvQjz4QVWW9Q7DgPn74ROegnWROYTKapKq4bL8BolSaThxYIX8IizCDe9v2I\u002B4oMv6kPHRKeaKovejGO/teEv393Y3ASE51IUGD9DV0CtRSxUmVmHQ\u002BnvwiYdFerWzMdxYfuXCMthdE52Y3/vq6yFFVPBaZjp3Gmw415oClE5qk6/Dwr6gk/hQ2\u002BXUGIpskt2Oi9SZeLGzG2cH\u002BuAh05K\u002BRUl9kJMBDyIKBH4\u002BDXjlFdwLiAWvSkmJmpgIsUuVeGXA6jvex0HehtRd\u002BUwrntvaSOpEEV3Gh2aloJ4k2gBFLGceG\u002BJnjtYXIejGxrw1vpDyEtLaQwV\u002Bwv34ey2E2o37crdrlnjiFc5FkCSFnkX21/Fk1mVaNr4Bnay/wvt\u002BVhgWsRKdewtg2SAjfUYXvwbJY5iPOvahS8q27WZcYxqT62LFESxwZwHp\u002B55oQYiIRh1Rlye7EHrwKdqi\u002B4r2IuB\u002BUEU2wtwuOQA\u002BmfcuOT5GXcXx3F\u002B9CKuzdxUXakYjzahO6AGSTTskXQXtlgGKZmFatFZGFdGriUHv\u002By\u002BgIAcRG3PQRQxwMmKFtblNp74YQ/0bNsoMywaQMM4rvmL0TwXEEpiozXPjjHcMUp\u002BoQZY6KAcosN8mPg1d\u002BYGMe734M\u002BFYQyx/9dZ1yLTnMF3gsnO6VRpWnIukHoW7XX8wfujpGhZdWw6OKO25bdjF\u002BGevaPqvy8M4buJS\u002Bj/x62echq4rXl8S/gAX/vmNFtSigSy\u002BEEf8yQDPiE3qzZCFJf/jrgzHacJKcm5AI9upRFZU2ewW46fIalfsMgJ3/hGYJa6UGpaR0sGaaajRCqJFLcx8CyR29E2ewrNkaBmU5EaYAnu0CRqHT\u002Byt8RhI/aIkxS/zJRAhIjlIU\u002BgzduO66F4apaQmqJkmDn0nFNCjdUJRS6jpYUsV8cSmCDfY5jT/KPFC5uMlQMk45wrj0HOcMFPU/ORI\u002BQV9Ida0Rm8hV6xT5fH6gKczRVnyzsMkM3nVTZMN04vuNHhn1fH/werDSBynw693o\u002Ba0WVTsTyAfwENCYeqQkKfxQAAAABJRU5ErkJggg==",
-              "WhenOpened": "2024-05-10T07:32:07.194Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "MaintainBookingPage.cs",
-              "DocumentMoniker": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\pages\\MaintainBookingPage.cs",
+              "DocumentMoniker": "C:\\Users\\v-asaha\\Automation 2024\\Sprint 12\\iCargoAutomation_BKG00005_BKG00007_11thJune\\pages\\MaintainBookingPage.cs",
               "RelativeDocumentMoniker": "pages\\MaintainBookingPage.cs",
-              "ToolTip": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\pages\\MaintainBookingPage.cs",
+              "ToolTip": "C:\\Users\\v-asaha\\Automation 2024\\Sprint 12\\iCargoAutomation_BKG00005_BKG00007_11thJune\\pages\\MaintainBookingPage.cs",
               "RelativeToolTip": "pages\\MaintainBookingPage.cs",
-              "ViewState": "AQIAAHMCAAAAAAAAAAAmwIYCAAANAAAA",
+              "ViewState": "AQIAAP4CAAAAAAAAAAApwAkDAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T07:29:02.206Z",
+              "WhenOpened": "2024-06-11T09:22:45.955Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PageObjectManager.cs",
-              "DocumentMoniker": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\pages\\PageObjectManager.cs",
-              "RelativeDocumentMoniker": "pages\\PageObjectManager.cs",
-              "ToolTip": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\pages\\PageObjectManager.cs",
-              "RelativeToolTip": "pages\\PageObjectManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "CAP018_BKG_00005_CreateAMultiLegBookingWithFlightsThatDoNotMeetMinimumConnectionTimeStepDefinitions.cs",
+              "DocumentMoniker": "C:\\Users\\v-asaha\\Automation 2024\\Sprint 12\\iCargoAutomation_BKG00005_BKG00007_11thJune\\StepDefinitions\\CAP018_BKG_00005_CreateAMultiLegBookingWithFlightsThatDoNotMeetMinimumConnectionTimeStepDefinitions.cs",
+              "RelativeDocumentMoniker": "StepDefinitions\\CAP018_BKG_00005_CreateAMultiLegBookingWithFlightsThatDoNotMeetMinimumConnectionTimeStepDefinitions.cs",
+              "ToolTip": "C:\\Users\\v-asaha\\Automation 2024\\Sprint 12\\iCargoAutomation_BKG00005_BKG00007_11thJune\\StepDefinitions\\CAP018_BKG_00005_CreateAMultiLegBookingWithFlightsThatDoNotMeetMinimumConnectionTimeStepDefinitions.cs",
+              "RelativeToolTip": "StepDefinitions\\CAP018_BKG_00005_CreateAMultiLegBookingWithFlightsThatDoNotMeetMinimumConnectionTimeStepDefinitions.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAwBcAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T07:23:35.573Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "basePage.cs",
-              "DocumentMoniker": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\pages\\basePage.cs",
-              "RelativeDocumentMoniker": "pages\\basePage.cs",
-              "ToolTip": "C:\\Users\\v-asaha\\AutomationDeliverable\\iCargoAutomation_BKG00001_RepeatPull\\pages\\basePage.cs",
-              "RelativeToolTip": "pages\\basePage.cs",
-              "ViewState": "AQIAAE0BAAAAAAAAAAAAAAkAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T12:13:09.435Z"
+              "WhenOpened": "2024-06-11T09:21:21.326Z",
+              "EditorCaption": ""
             }
           ]
         }
