@@ -129,6 +129,8 @@ namespace iCargoUIAutomation.pages
         private By twoplusStopFilter_Xpath = By.XPath("//input[@name='stops.stop2plus']");
         private By filterApplyBtn_Xpath = By.XPath("//button[@id='flightsTable-datafilter-applybtn']");
         private By multilegFlights_Xpath = By.XPath("//div[@data-id='totalNoOfflights']/div/span/strong[1]");
+        private By selectFlightError_Xpath = By.XPath("//div[(@class='errorrow row')]/div[2]/p");
+        private By flightSearchBox_Xpath = By.XPath("//input[@placeholder='Enter the keywords to search']");
 
         //Select Flight
         private By cap_Xpath = By.XPath("//label[contains(@id,'capStatus')]");
@@ -648,6 +650,204 @@ namespace iCargoUIAutomation.pages
             catch (Exception e)
             {
                 test.Fail("Error in Entering Unknown Shipper Consignee ALL Details: " + e.Message);
+            }
+        }
+
+        public void selectMultilegflight(string rescolor, string mincontimewarning, string givenprodcode)
+        {
+            test = _scenario.CreateNode<Scenario>("Select Multileg Flight");
+            try
+            {
+                Click(selectFlightBtn_ID);
+                test.Pass("Clicked Select Flight Button");
+                WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
+                SwitchToFrame(bookingIrregularityFrame_ID);
+                WaitForElementToBeVisible(flightDetailsSection_XPATH, TimeSpan.FromSeconds(30));
+                Click(flightSearchBox_Xpath);
+                ClickOnElementIfPresent(multilegFlightsfilter);
+                test.Pass("Clicked Multileg Flights Filter");
+                Click(oneStopFilter_Xpath);
+                test.Pass("Clicked One Stop Filter");
+                Click(twoStopFilter_Xpath);
+                test.Pass("Clicked Two Stop Filter");
+                Click(twoplusStopFilter_Xpath);
+                test.Pass("Clicked Two Plus Stop Filter");
+                Click(filterApplyBtn_Xpath);
+                test.Pass("Clicked Filter Apply Button");
+                List<IWebElement> noofflights = GetElements(flightDetailsSection_XPATH);
+                List<IWebElement> reststatusbtn = GetElements(rest_Xpath);
+                List<IWebElement> multilegflights = GetElements(multilegFlights_Xpath);
+                string productcode = GetText(flightProductCode_Xpath);
+                for (int i = 0; i < noofflights.Count; i++)
+                {
+                    IWebElement reststatus = reststatusbtn[i];
+                    string resattribute = GetAttributeValueFromElement(reststatus, "class");
+                    string nooflegscount = GetTextFromElement(multilegflights[i]);
+                    int count = int.Parse(nooflegscount);
+                    if (count >= 2)
+                    {
+                        if (resattribute == "badge-red" && productcode == "GENERAL" && productcode == givenprodcode)
+                        {
+                            string resColors = resattribute.Split('-')[1];
+                            Console.WriteLine(resColors);
+                            test.Pass("Rest Status Color: " + resColors);
+                            Assert.AreEqual(rescolor, resColors);
+                            Click(resColor_Xpath);
+                            string resErrorMessage = GetText(resErrorMessage_Xpath);
+                            Assert.AreEqual(mincontimewarning, resErrorMessage);
+                            test.Pass("Rest Error Message: " + resErrorMessage);
+                            Console.WriteLine(resErrorMessage);
+                            Click(resColor_Xpath);
+                            Click(flightDetailsOkbtn_Xpath);
+                            WaitForElementToBeVisible(selectFlightError_Xpath, TimeSpan.FromSeconds(10));
+                            string popUpMessage = GetText(selectFlightError_Xpath);
+                            Console.WriteLine(popUpMessage);
+                            Assert.AreEqual("Please select at least one flight.", popUpMessage);
+                            break;
+                        }
+                        if (resattribute == "badge-red" && productcode == "PRIORITY" && productcode == givenprodcode)
+                        {
+                            string resColors = resattribute.Split('-')[1];
+                            Console.WriteLine(resColors);
+                            Assert.AreEqual(rescolor, resColors);
+                            test.Pass("Rest Status Color: " + resColors);
+                            Click(resColor_Xpath);
+                            string resErrorMessage = GetText(resErrorMessage_Xpath);
+                            Assert.AreEqual(mincontimewarning, resErrorMessage);
+                            test.Pass("Rest Error" + resErrorMessage);
+                            Console.WriteLine(resErrorMessage);
+                            Click(resColor_Xpath);
+                            Click(flightDetailsOkbtn_Xpath);
+                            WaitForElementToBeVisible(selectFlightError_Xpath, TimeSpan.FromSeconds(10));
+                            string popUpMessage = GetText(selectFlightError_Xpath);
+                            Console.WriteLine(popUpMessage);
+                            Assert.AreEqual("Please select at least one flight.", popUpMessage);
+                            break;
+                        }
+                        if (resattribute == "badge-red" && productcode == "GOLDSTREAK" && productcode == givenprodcode)
+                        {
+                            string resColors = resattribute.Split('-')[1];
+                            Console.WriteLine(resColors);
+                            Assert.AreEqual(rescolor, resColors);
+                            test.Pass("Rest Status Color: " + resColors);
+                            Click(resColor_Xpath);
+                            string resErrorMessage = GetText(resErrorMessage_Xpath);
+                            Assert.AreEqual(mincontimewarning, resErrorMessage);
+                            test.Pass("Rest Error Message: " + resErrorMessage);
+                            Console.WriteLine(resErrorMessage);
+                            Click(resColor_Xpath);
+                            Click(flightDetailsOkbtn_Xpath);
+                            WaitForElementToBeVisible(selectFlightError_Xpath, TimeSpan.FromSeconds(10));
+                            string popUpMessage = GetText(selectFlightError_Xpath);
+                            Console.WriteLine(popUpMessage);
+                            Assert.AreEqual("Please select at least one flight.", popUpMessage);
+                            break;
+                        }
+                        if (resattribute == "badge-red" && productcode == "PET CONNECT" && productcode == givenprodcode)
+                        {
+                            string resColors = resattribute.Split('-')[1];
+                            Console.WriteLine(resColors);
+                            Assert.AreEqual(rescolor, resColors);
+                            test.Pass("Rest Status Color: " + resColors);
+                            Click(resColor_Xpath);
+                            string resErrorMessage = GetText(resErrorMessage_Xpath);
+                            Assert.AreEqual(mincontimewarning, resErrorMessage);
+                            test.Pass("Rest Error Message: " + resErrorMessage);
+                            Console.WriteLine(resErrorMessage);
+                            Click(resColor_Xpath);
+                            Click(flightDetailsOkbtn_Xpath);
+                            WaitForElementToBeVisible(selectFlightError_Xpath, TimeSpan.FromSeconds(10));
+                            string popUpMessage = GetText(selectFlightError_Xpath);
+                            Console.WriteLine(popUpMessage);
+                            Assert.AreEqual("Please select at least one flight.", popUpMessage);
+                            break;
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                test.Fail("Error in Selecting Multileg Flight: " + e.Message);
+            }
+        }
+
+        public void AVIBookingChecksheetDetails()
+        {
+            test = _scenario.CreateNode<Scenario>("AVI Booking Checksheet Details");
+            try
+            {
+                int noOfWindowsBefore = GetNumberOfWindowsOpened();
+                clickOnSaveButtonToSaveNewFlightDetails();
+                test.Pass("Clicked Save Button");
+                ClickingYesOnPopupWarnings();                
+                SwitchToCAP018Frame();
+                SwitchToFrame(aviChecksheetFrame_XPath);
+                Console.WriteLine("Switched to Irregularity Frame");
+                List<IWebElement> AviChecksheetSections = GetElements(aviTotalChkSheetSections_Xpath);
+                int totalQuestions = 0;
+
+                foreach (var section in AviChecksheetSections)
+                {
+                    if (section.Text == "AVIHDL Statement")
+                    {
+
+                        string drpDwnQn = "//*[@id='tabs-1']//div[@id='configId']/h2[text()='aviSectionName']/parent::div/following-sibling::div//select";
+
+                        drpDwnQn = drpDwnQn.Replace("aviSectionName", "AVIHDL Statement");
+                        totalQuestions = GetElementCount(By.XPath(drpDwnQn));
+                        drpDwnQn = drpDwnQn + "[@name= 'questionwithAnswer[0].templateAnswer']";
+                        if (!IsDropdownSelectedByVisibleText((By.XPath(drpDwnQn)), "Yes"))
+                        {
+                            for (int j = 0; j < totalQuestions; j++)
+                            {
+                                SelectDropdownByVisibleText(By.XPath(drpDwnQn.Replace("0", j.ToString())), "Yes");
+                                test.Pass("Selected Yes for AVIHDL Statement Checksheet");
+                                EnterKeys(By.XPath(drpDwnQn), Keys.Tab);
+                            }
+                        }
+
+                    }
+                    else if (section.Text == "AVI Booking")
+                    {
+                        string drpDwnQn = "//*[@id='tabs-1']//div[@id='configId']/h2[text()='aviSectionName']/parent::div/following-sibling::div//select";
+
+                        drpDwnQn = drpDwnQn.Replace("aviSectionName", "AVI Booking");
+                        totalQuestions = GetElementCount(By.XPath(drpDwnQn));
+                        drpDwnQn = drpDwnQn + "[@name= 'questionwithAnswer[0].templateAnswer']";
+                        if (!IsDropdownSelectedByVisibleText((By.XPath(drpDwnQn)), "Yes"))
+                        {
+                            for (int j = 0; j < totalQuestions; j++)
+                            {
+                                SelectDropdownByVisibleText(By.XPath(drpDwnQn.Replace("0", j.ToString())), "Yes");
+                                test.Pass("Selected Yes for AVI Booking Checksheet");
+                                EnterKeys(By.XPath(drpDwnQn), Keys.Tab);
+                            }
+
+                        }
+
+                    }
+                }
+                Click(aviBookingChecksheetOkBtn_XPATH);
+                test.Pass("Clicked OK Button on AVI Booking Checksheet");
+                SwitchToCAP018Frame();
+                ClickSaveButton();
+            }
+            catch (Exception e)
+            {
+                test.Fail("Error in AVI Booking Checksheet Details: " + e.Message);
+            }
+        }
+        public void clickOnSaveButtonToSaveNewFlightDetails()
+        {
+            test = _scenario.CreateNode<Scenario>("Click Save Button to Save New Flight Details");
+            try
+            {
+                ClickOnElementIfPresent(saveBtn_ID);
+                test.Pass("Clicked Save Button");
+            }
+            catch (Exception e)
+            {
+                test.Fail("Error in Clicking Save Button to Save New Flight Details: " + e.Message);
             }
         }
     }
