@@ -849,6 +849,124 @@ namespace iCargoUIAutomation.pages
             {
                 test.Fail("Error in Clicking Save Button to Save New Flight Details: " + e.Message);
             }
+        }        
+
+        public void DeleteAddFlights()
+        {
+            test = _scenario.CreateNode<Scenario>("Delete and Add Flights");
+            try
+            {
+                SwitchToPopupWindow();
+                WaitForElementToBeVisible(alreadyExecutedPopup_XPATH, TimeSpan.FromSeconds(10));
+                string alreadyExecutedPopUp = GetText(alreadyExecutedPopup_XPATH);
+                test.Pass("Already Executed Popup: " + alreadyExecutedPopUp);
+                Console.WriteLine(alreadyExecutedPopUp);
+                SwitchToCAP018Frame();
+                firstFlightNum = GetAttributeValue(flightNumber_XPATH, "value");
+                ClickOnElementIfPresent(flightCheckBox_ID);
+                test.Pass("Clicked on Flight Check Box");
+                WaitForElementToBeVisible(deleteFlightDetails_ID, TimeSpan.FromSeconds(10));
+                Click(deleteFlightDetails_ID);
+                test.Pass("Clicked on Delete Flight Details");
+                WaitForElementToBeVisible(addFlight_ID, TimeSpan.FromSeconds(10));
+                Click(addFlight_ID);
+                test.Pass("Clicked on Add Flight Details");
+            }
+            catch (Exception e)
+            {
+                test.Fail("Error in Deleting and Adding Flights: " + e.Message);
+            }
         }
+        public void addNewFlightDetails()
+        {
+            test = _scenario.CreateNode<Scenario>("Add New Flight Details");
+            try
+            {
+                Click(selectFlightBtn_ID);
+                test.Pass("Clicked Select Flight Button");
+                WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
+                SwitchToFrame(bookingIrregularityFrame_ID);
+                WaitForElementToBeVisible(rebookFlightDetails_Xpath, TimeSpan.FromSeconds(20));
+                List<IWebElement> nosofflights = GetElements(rebookFlightDetails_Xpath);
+                List<IWebElement> flightnumbersbtn = GetElements(rebookSelectFlightbtn_Xpath);
+                List<IWebElement> ratestatusbtn = GetElements(rate_Xpath);
+                List<IWebElement> capstatusbtn = GetElements(cap_Xpath);
+                List<IWebElement> reststatusbtn = GetElements(rest_Xpath);
+                List<IWebElement> embstatusbtn = GetElements(emb_Xpath);
+                for (int i = 0; i < nosofflights.Count; i++)
+                {
+                    IWebElement item = nosofflights[i];
+                    string selectflightnum = GetTextFromElement(item);
+                    IWebElement capstatus = capstatusbtn[i];
+                    string capColor = GetAttributeValueFromElement(capstatus, "class");
+                    IWebElement reststatus = reststatusbtn[i];
+                    string rescolor = GetAttributeValueFromElement(reststatus, "class");
+                    IWebElement embstatus = embstatusbtn[i];
+                    string embcolor = GetAttributeValueFromElement(embstatus, "class");
+                    IWebElement ratestatus = ratestatusbtn[i];
+                    string ratecolor = GetAttributeValueFromElement(ratestatus, "class");
+
+                    if (capColor != "badge-red" && rescolor != "badge-red" && embcolor != "badge-red" && ratecolor != "badge-red" && presentDate == GetText(flightDate_Xpath) && firstFlightNum != selectflightnum)
+                    {
+                        IWebElement selectflightbtn = flightnumbersbtn[i];
+                        ClickOnElement(selectflightbtn);
+                        test.Pass("Selected Flight Number: " + selectflightnum);
+                        Click(flightDetailsOkbtn_Xpath);
+                        test.Pass("Clicked Flight Details OK Button");
+                        break;
+                    }
+                }
+
+                SwitchToCAP018Frame();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Error in Adding New Flight Details: " + e.Message);
+            }
+        }
+
+        public void CaptureIrregularity()
+        {
+            test = _scenario.CreateNode<Scenario>("Capture Irregularity");
+            try
+            {
+                WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
+                SwitchToFrame(bookingIrregularityFrame_ID);
+                EnterTextToDropdown(irregularityTextbox_ID, "Booking - Incomplete or inaccurate");
+                test.Pass("Selected Irregularity Code");
+                DoubleClick(irregularityScrollHori_XPATH);
+                Click(irregularityRemarks_XPATH);
+                EnterText(irregularityRemarks_XPATH, "test");
+                test.Pass("Entered Irrgularity Remarks");
+                int noOfWindowsBefore = GetNumberOfWindowsOpened();
+                Click(irregularitySaveBtn_ID);
+                WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore + 1);
+                int noOfWindowsAfter = GetNumberOfWindowsOpened();
+                if (noOfWindowsAfter > noOfWindowsBefore)
+                {
+                    SwitchToLastWindow();
+                    WaitForElementToBeInvisible(bookingIrregularityFrame_ID, TimeSpan.FromSeconds(15));
+                    WaitForElementToBeVisible(awbNumber_XPATH, TimeSpan.FromSeconds(10));
+                    string awbNumber = GetText(awbNumber_XPATH);
+                    test.Pass("AWB Number Captured: " + awbNumber);
+                    Console.WriteLine(awbNumber);
+                    if (IsElementEnabled(btnOkBookingSummaryPopup_XPATH))
+                    {
+                        WaitForElementToBeClickable(btnOkBookingSummaryPopup_XPATH, TimeSpan.FromSeconds(10));
+                        Click(btnOkBookingSummaryPopup_XPATH);
+                        test.Pass("Clicked OK Button on Booking Summary Popup");
+                    }
+                    SwitchToLastWindow();
+                    SwitchToCAP018Frame();
+                }
+                ClickOnElementIfPresent(btnCloseMb_XPATH);
+                test.Pass("Clicked Close Button on Maintain Booking Page");
+            }
+            catch (Exception e)
+            {
+                test.Fail("Error in Capturing Irregularity: " + e.Message);
+            }
+        }
+
     }
 }
