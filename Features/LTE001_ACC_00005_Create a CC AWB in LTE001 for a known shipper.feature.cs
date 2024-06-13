@@ -20,22 +20,22 @@ namespace iCargoUIAutomation.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper")]
-    public partial class LTE001_ACC_00001_CreateAPPAWBInLTE001ForAKnownShipperFeature
+    [NUnit.Framework.DescriptionAttribute("LTE001_ACC_00005_Create a CC AWB in LTE001 for a known shipper")]
+    public partial class LTE001_ACC_00005_CreateACCAWBInLTE001ForAKnownShipperFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper.feature"
+#line 1 "LTE001_ACC_00005_Create a CC AWB in LTE001 for a known shipper.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper", "Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CG" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LTE001_ACC_00005_Create a CC AWB in LTE001 for a known shipper", "Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CG" +
                     "ODG user", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -75,10 +75,10 @@ namespace iCargoUIAutomation.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a PP AWB in LTE001 for a known shipper")]
-        [NUnit.Framework.CategoryAttribute("LTE001")]
-        [NUnit.Framework.TestCaseAttribute("10763", "10763", "10763", "ANC", "SEA", "GENERAL", "None", "0316", "None", "None", "2", "59", "PP", "CREDIT", "CART", null)]
-        public virtual void CreateAPPAWBInLTE001ForAKnownShipper(
+        [NUnit.Framework.DescriptionAttribute("Create a CC AWB in LTE001 for a known shipper")]
+        [NUnit.Framework.CategoryAttribute("tag1")]
+        [NUnit.Framework.TestCaseAttribute("10763", "10763", "10763", "LAS", "SEA", "GENERAL", "None", "0316", "None", "None", "2", "59", "CC", "None", "CART", null)]
+        public virtual void CreateACCAWBInLTE001ForAKnownShipper(
                     string agentCode, 
                     string shipperCode, 
                     string consigneeCode, 
@@ -97,7 +97,7 @@ namespace iCargoUIAutomation.Features
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LTE001"};
+                    "tag1"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -119,7 +119,7 @@ namespace iCargoUIAutomation.Features
             argumentsOfScenario.Add("ChargeType", chargeType);
             argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
             argumentsOfScenario.Add("cartType", cartType);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a PP AWB in LTE001 for a known shipper", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a CC AWB in LTE001 for a known shipper", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

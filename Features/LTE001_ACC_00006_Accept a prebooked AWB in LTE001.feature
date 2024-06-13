@@ -1,9 +1,9 @@
-﻿Feature: LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper
+﻿Feature: LTE001_ACC_00006_Accept a prebooked AWB in LTE001
 
 Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CGODG user
 
 @LTE001
-Scenario Outline: Create a PP AWB in LTE001 for a known shipper
+Scenario Outline: Accept a prebooked AWB in LTE001
 	Given User lauches the Url of iCargo Staging UI
 	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
 	When User clicks on the oidc button
@@ -12,29 +12,32 @@ Scenario Outline: Create a PP AWB in LTE001 for a known shipper
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully
-	When user clicks on the List button
-	And User enters the Participant details with AgentCode "<AgentCode>", ShipperCode "<ShipperCode>", ConsigneeCode "<ConsigneeCode>"
+	When User enters an AWB "<prebookedAWB>" of a PreBooked Shipment
+	And User opens & verifies the Participant Details
 	And User clicks on the ContinueParticipant button
 	And User enters the Certificate details
 	And User clicks on the ContinueCertificate button
-	And User enters the Shipment details with Origin "<Origin>", Destination "<Destination>", ProductCode "<ProductCode>", SCCCode "<SCC>", Commodity "<Commodity>", ShipmentDescription"<ShipmentDescription>", ServiceCargoClass "<ServiceCargoClass>", Piece "<Piece>", Weight "<Weight>"
+	And User opens & verifies the Shipment Details
 	And User clicks on the ContinueShipment button
-	And User clicks on the Select Flight Button
-	And User selects an "Combination" flight		
+	And User opens & verifies the Flight Details
 	And User clicks on the ContinueFlightDetails button
+	And user opens the Charge Details
 	And User enters the Charge details with ChargeType "<ChargeType>" and ModeOfPayment "<ModeOfPayment>"
 	And User clicks on the CalculateCharges button
 	And User clicks on the ContinueChargeDetails button
-	And User enters the Acceptance details
+	And User enters the Acceptance details with PreBooked pieces
 	And User clicks on the ContinueAcceptanceDetails button
 	And User enters the Screening details for row 1 with screeingMethod as 'Transfer Manifest Verified' and ScreeningResult as 'Pass'
 	And User clicks on the ContinueScreeningDetails button
 	And User checks the AWB_Verified checkbox	
-	And User clicks on the save button & handle Payment Portal
-	And User saves all the details & handles all the popups
+	And User clicks on the save button
+	And User handles the error popups with errorType as ''	
+	And User closes the Payment Portal tab and retry
+	And User handles the error popups with errorType as ''
+	And User handles the error popups with errorType as ''
 	And User closes the LTE screen
 	Then User logs out from the application
 
 Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType |
-	| 10763     | 10763       | 10763         | ANC    | SEA         | GENERAL     | None | 0316      | None                | None              | 2     | 59     | PP         | CREDIT        | CART     |
+	| prebookedAWB | Origin | ChargeType | ModeOfPayment | cartType |
+	| 027-30077655 | ANC    | CC         | CREDIT        | CART     |

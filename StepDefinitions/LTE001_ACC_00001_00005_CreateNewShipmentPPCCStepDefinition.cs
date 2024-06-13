@@ -37,9 +37,9 @@ namespace iCargoUIAutomation.StepDefinitions
         public void UserClickOnListButton()
         {
             Log.Info("Step: Clicking on the List button");
-            csp.switchToLTEContentFrame();
-            csp.clickOnAwbTextBox();
-            csp.clickOnListButton();
+            csp.SwitchToLTEContentFrame();
+            csp.ClickOnAwbTextBox();
+            csp.ClickOnListButton();
         }
 
         [When(@"User enters the Participant details with AgentCode ""([^""]*)"", ShipperCode ""([^""]*)"", ConsigneeCode ""([^""]*)""")]
@@ -56,7 +56,7 @@ namespace iCargoUIAutomation.StepDefinitions
         {
 
             Log.Info("Step: Clicking on the ContinueParticipant button");
-            csp.clickOnContinueParticipantButton();
+            csp.ClickOnContinueParticipantButton();
         }
 
         [When(@"User enters the Certificate details")]
@@ -70,7 +70,7 @@ namespace iCargoUIAutomation.StepDefinitions
         public void UserClicksOnContinueCertificateButton()
         {
             Log.Info("Step: Clicking on the ContinueCertificate button");
-            csp.clickOnContinueCertificateButton();
+            csp.ClickOnContinueCertificateButton();
         }
 
 
@@ -87,7 +87,7 @@ namespace iCargoUIAutomation.StepDefinitions
         public void UserClicksOnContinueShipmentButton()
         {
             Log.Info("Step: Clicking on the ContinueShipment button");
-            csp.clickOnContinueShipmentButton();
+            csp.ClickOnContinueShipmentButton();
         }
 
         [When(@"User enters the Flight details with CarrierCode ""([^""]*)"", FlightNo ""([^""]*)""")]
@@ -101,19 +101,19 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User clicks on the Select Flight Button")]
         public void WhenUserClicksOnTheSelectFlightButton()
         {
-            csp.clickOnSelectFlightButton();
+            csp.ClickOnSelectFlightButton();
         }
 
         [When(@"User selects an available flight")]
         public void WhenUserSelectsAnAvailableFlight()
         {
-            csp.bookFlightWithAllAvailability();
+            csp.BookFlightWithAllAvailability();
         }
 
         [When(@"User selects an ""([^""]*)"" flight")]
         public void WhenUserSelectsAnFlight(string typeOfFlight)
         {
-            csp.bookWithSpecificFlightType(typeOfFlight);
+            csp.BookWithSpecificFlightType(typeOfFlight);
         }
 
 
@@ -121,14 +121,14 @@ namespace iCargoUIAutomation.StepDefinitions
         public void UserClicksOnContinueFlightDetailsButton()
         {
             Log.Info("Step: Clicking on the ContinueFlightDetails button");
-            csp.clickOnContinueFlightDetailsButton();
+            csp.ClickOnContinueFlightDetailsButton();
         }
 
         [When(@"User enters the Charge details with ChargeType ""([^""]*)"" and ModeOfPayment ""([^""]*)""")]
         public void UserEntersChargeDetails(string chargeType, string modeOfPayment)
         {
             Log.Info("Step: Entering the Charge details");
-            csp.enterChargeDetails(chargeType, modeOfPayment);
+            csp.EnterChargeDetails(chargeType, modeOfPayment);
         }
 
 
@@ -136,7 +136,8 @@ namespace iCargoUIAutomation.StepDefinitions
         public void WhenUserClicksOnCalculateChargesButton()
         {
             Log.Info("Step: Clicking on the CalculateCharges button");
-            csp.clickOnCalculateChargeButton();
+            csp.ClickOnCalculateChargeButton();
+            csp.ClickingYesOnPopupWarnings("");  
 
         }
 
@@ -144,7 +145,7 @@ namespace iCargoUIAutomation.StepDefinitions
         public void WhenUserClicksOnContinueChargeDetailsButton()
         {
             Log.Info("Step: Clicking on the ContinueChargeDetails button");
-            csp.clickOnContinueChargeButton();
+            csp.ClickOnContinueChargeButton();
 
         }
 
@@ -152,14 +153,14 @@ namespace iCargoUIAutomation.StepDefinitions
         public void WhenUserEntersTheAcceptanceDetails()
         {
             Log.Info("Step: Entering the Acceptance details");
-            csp.enterAcceptanceDetails();
+            csp.EnterAcceptanceDetails();
         }
 
         [When(@"User clicks on the ContinueAcceptanceDetails button")]
         public void UserClicksOnContinueAcceptanceDetailsButton()
         {
             Log.Info("Step: Clicking on the ContinueAcceptanceDetails button");
-            csp.clickOnContinueAcceptanceButton();
+            csp.ClickOnContinueAcceptanceButton();
         }
 
 
@@ -167,7 +168,7 @@ namespace iCargoUIAutomation.StepDefinitions
         public void WhenUserEntersTheScreeningDetailsForRowWithScreeingMethodAsAndScreeningResultAs(int rownum, string screeningMethod, string screeningResult)
         {
             Log.Info("Step: Entering the Screening details");
-            csp.enterScreeningDetails(rownum, screeningMethod, screeningResult);
+            csp.EnterScreeningDetails(rownum, screeningMethod, screeningResult);
         }
 
 
@@ -175,27 +176,40 @@ namespace iCargoUIAutomation.StepDefinitions
         public void UserClicksOnContinueScreeningDetailsButton()
         {
             Log.Info("Step: Clicking on the ContinueScreeningDetails button");
-            csp.clickOnContinueScreeningButton();
+            csp.ClickOnContinueScreeningButton();
         }
 
         [When(@"User checks the AWB_Verified checkbox")]
         public void UserChecksAWB_VerifiedCheckbox()
         {
             Log.Info("Step: Checking the AWB_Verified checkbox");
-            csp.clickOnAWBVerifiedCheckbox();
+            csp.ClickOnAWBVerifiedCheckbox();
         }
 
         [When(@"User clicks on the save button")]
         public void WhenUserClicksOnTheSaveButton()
         {
-            csp.clickSave();
+            csp.ClickSave();
         }
+
+        [When(@"User closes the Payment Portal tab and retry")]
+        public void WhenUserClosesThePaymentPortalTabAndRetry()
+        {
+            csp.ClosePaymentPortalWindow();
+        }
+
+        [When(@"User handles the Payment portal window with chargeType ""([^""]*)""")]
+        public void WhenUserHandlesThePaymentPortalWindowWithChargeType(string chargeType)
+        {
+           csp.PaymentWithPPCCinPortal(chargeType);
+        }
+
 
 
         [When(@"User clicks on the save button & handle Payment Portal")]
         public void WhenUserClicksOnTheSaveButtonAndHandlePaymentPortal()
         {
-            csp.clickOnSaveButtonHandlePaymentPortal();
+            csp.ClickOnSaveButtonHandlePaymentPortal();
         }
 
 
@@ -203,7 +217,7 @@ namespace iCargoUIAutomation.StepDefinitions
         public void UserSavesAllDetailsHandlesAllThePopups()
         {
             Log.Info("Step: Saving all the details & handling all the popups");
-            csp.saveShipmentDetailsAndHandlePopups();
+            csp.SaveShipmentDetailsAndHandlePopups();
         }
 
 
@@ -211,7 +225,7 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User handles the error popups with errorType as '([^']*)'")]
         public void WhenUserHandlesTheErrorPopupsWithErrorTypeAs(string errorType)
         {
-            csp.clickingYesOnPopupWarnings(errorType);
+            csp.ClickingYesOnPopupWarnings(errorType);
         }
 
 
@@ -219,7 +233,7 @@ namespace iCargoUIAutomation.StepDefinitions
         public void UserClosesLTEScreen()
         {
             Log.Info("Step: Closing the LTE screen");
-            csp.closeLTE001Screen();
+            csp.CloseLTE001Screen();
         }
 
 

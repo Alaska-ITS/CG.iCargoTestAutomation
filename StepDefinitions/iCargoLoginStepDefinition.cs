@@ -34,8 +34,7 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User goes back to the home screen")]
         public void WhenUserGoesBackToTheHomeScreen()
         {
-            RefreshPage();
-            Thread.Sleep(2000);
+            RefreshPage();            
             SwitchToDefaultContent();
         }
 
