@@ -20,22 +20,22 @@ namespace iCargoUIAutomation.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("LTE001_ACC_00016_Create an AWB for an Employee Shipment")]
-    public partial class LTE001_ACC_00016_CreateAnAWBForAnEmployeeShipmentFeature
+    [NUnit.Framework.DescriptionAttribute("LTE001_ACC_00017_Create a COMAT AWB")]
+    public partial class LTE001_ACC_00017_CreateACOMATAWBFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "LTE001_ACC_00016_Create an AWB for an Employee Shipment.feature"
+#line 1 "LTE001_ACC_00017_Create a COMAT AWB.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LTE001_ACC_00016_Create an AWB for an Employee Shipment", "Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CG" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LTE001_ACC_00017_Create a COMAT AWB", "Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CG" +
                     "ODG user", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -75,10 +75,10 @@ namespace iCargoUIAutomation.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create an AWB for an Employee Shipment")]
+        [NUnit.Framework.DescriptionAttribute("Create a COMAT AWB")]
         [NUnit.Framework.CategoryAttribute("tag1")]
-        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "10763", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "87", "PP", "CREDIT", "CART", null)]
-        public virtual void CreateAnAWBForAnEmployeeShipment(
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "10763", "COMATFF", "ANC", "LAX", "COMAT", "None", "NONSCR", "None", "COMAT", "2", "59", "PP", "NONE", "CART", null)]
+        public virtual void CreateACOMATAWB(
                     string agentCode, 
                     string shipperCode, 
                     string consigneeCode, 
@@ -119,7 +119,7 @@ namespace iCargoUIAutomation.Features
             argumentsOfScenario.Add("ChargeType", chargeType);
             argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
             argumentsOfScenario.Add("cartType", cartType);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an AWB for an Employee Shipment", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a COMAT AWB", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -192,7 +192,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the Select Flight Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 23
- testRunner.And("User selects an \"Combination\" flight", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects an available flight", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 24
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -220,27 +220,21 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueScreeningDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 32
- testRunner.And("User clicks on the save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 33
- testRunner.And("User captures the checksheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 34
  testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 35
+#line 33
  testRunner.And("User clicks on the save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 36
+#line 34
  testRunner.And("User handles the error popups with errorType as \'\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 37
- testRunner.And("User saves all the details & handles all the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+ testRunner.And("User validates the AWB is \"EXECUTED\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 38
+#line 36
  testRunner.And("User closes the LTE screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 39
+#line 37
  testRunner.Then("User logs out from the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
