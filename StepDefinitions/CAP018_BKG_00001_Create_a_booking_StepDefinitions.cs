@@ -42,7 +42,7 @@ namespace iCargoUIAutomation.StepDefinitions
             mbp.ClickNewListButton();
         }
 
-        [Then(@"User enters shipment details with Origin ""([^""]*)"", Destination ""([^""]*)"", Product Code ""([^""]*)""")]
+        [Then(@"User enters shipment details with Origin ""([^""]*)"", Destination ""([^""]*)"", Product Code ""([^""]*)"" and Agent code")]
         public void ThenUserEntersShipmentDetailsWithOriginDestinationShippingDateProductCode(string origin, string destination, string productCode)
         {
             this.origin = origin;
