@@ -24,9 +24,11 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\CAP018_BKG_00003_Create a booking for an unknown shipper on a pax flight.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\CAP018_BKG_00005_Create a multi leg booking with flights that do not meet minimum connection time.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\CAP018_BKG_00007_Create a booking for an AVI.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\CAP018_BKG_00008_Attach or Detach AWB from a saved booking.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\LTE001_ACC_00002_Create an AWB in LTE001 for an unknown shipper on a restricted pax flight - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\LTE001_ACC_00003_Create a DG AWB in LTE001 - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\LTE001_ACC_00005_Create a CC AWB in LTE001 for a known shipper - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\LTE001_ACC_00006_Accept a prebooked AWB in LTE001 - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\LTE001_ACC_00007_Create an AWB in LTE001 that has pieces that fail screening - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\LTE001_ACC_00008_Reopen an AWB and change piece count and weight and reexecute - Copy.feature.cs" />
@@ -51,6 +53,10 @@
 	</ItemGroup>
 
   <ItemGroup>
+    <SpecFlowFeatureFiles Update="Features\LTE001_ACC_00014_Create an AWB that has 1 pc over 300lbs on a OO E175.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Features\OPR344_EXP_00001_Manifest an AWB for an Unknown Shipper on a pax flight.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
@@ -94,6 +100,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Features\LTE001_ACC_00014_Create an AWB that has 1 pc over 300lbs on a OO E175.feature.cs">
+      <DependentUpon>LTE001_ACC_00014_Create an AWB that has 1 pc over 300lbs on a OO E175.feature</DependentUpon>
+    </Compile>
     <Compile Update="Features\OPR344_EXP_00001_Manifest an AWB for an Unknown Shipper on a pax flight.feature.cs">
       <DependentUpon>OPR344_EXP_00001_Manifest an AWB for an Unknown Shipper on a pax flight.feature</DependentUpon>
     </Compile>

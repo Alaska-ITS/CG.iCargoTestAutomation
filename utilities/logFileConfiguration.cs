@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace iCargoUIAutomation.utilities
 {
-    public class logFileConfiguration
+    public class LogFileConfiguration
     {
         public void ConfigureLog4Net()
         {

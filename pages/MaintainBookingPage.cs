@@ -968,5 +968,49 @@ namespace iCargoUIAutomation.pages
             }
         }
 
+        public void AttachOrDetachAWB()
+        {            
+            try
+            {
+                int noOfWindowsBefore = GetNumberOfWindowsOpened();
+                WaitForElementToBeInvisible(homePage_CSS, TimeSpan.FromSeconds(5));
+                ClickOnElementIfPresent(attachDetachBtn_ID);                
+                Log.Info("Clicked Attach/Detach Button");
+                WaitForNewWindowToOpen(TimeSpan.FromSeconds(20), noOfWindowsBefore + 1);
+                int noOfWindowsAfter = GetNumberOfWindowsOpened();
+                if (noOfWindowsAfter > noOfWindowsBefore)
+                {
+                    SwitchToSecondPopupWindow();
+                    Log.Info("Switched to Second Popup Window");
+                    WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
+                    WaitForElementToBeVisible(shipperConsigneePopup_CLASS, TimeSpan.FromSeconds(10));
+                    Click(attachDetachAwbField_ID);
+                    ClearText(attachDetachAwbField_ID);                                        
+                    Click(attachDetachPopupBtn_ID);                    
+                }
+                SwitchToPopupWindow();
+                Log.Info("Switched to Popup Window");
+                SwitchToCAP018Frame();
+            }
+            catch (Exception e)
+            {                
+                Log.Error("Error in Attaching/Detaching AWB: " + e.Message);
+            }
+        }
+
+        public void EnterNewAgentCode(string agentcode)
+        {            
+            try
+            {
+                WaitForElementToBeInvisible(shipperConsigneePopup_CLASS, TimeSpan.FromSeconds(5));
+                EnterTextWithCheck(agentCode_ID, agentcode);                
+                Log.Info("Entered New Agent Code: " + agentcode);
+            }
+            catch (Exception e)
+            {                
+                Log.Error("Error in Entering New Agent Code: " + e.Message);
+            }
+        }
+
     }
 }

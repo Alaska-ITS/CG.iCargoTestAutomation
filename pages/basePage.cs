@@ -19,11 +19,11 @@ namespace iCargoUIAutomation.pages
 
 
         public static readonly ILog log = LogManager.GetLogger(typeof(BasePage));
-        private readonly logFileConfiguration logConfig;
+        private readonly LogFileConfiguration logConfig;
         public BasePage(IWebDriver driver)
         {
             this.driver = driver;
-            this.logConfig = new logFileConfiguration();
+            this.logConfig = new LogFileConfiguration();
             this.logConfig.ConfigureLog4Net();
 
         }
@@ -371,7 +371,9 @@ namespace iCargoUIAutomation.pages
             WebDriverWait wait = new WebDriverWait(driver, time);
             wait.PollingInterval = TimeSpan.FromSeconds(1);
             wait.IgnoreExceptionTypes(typeof(ElementNotVisibleException), typeof(NoSuchElementException), typeof(TimeoutException));
-            wait.Until(driver => driver.FindElement(byLocator).Enabled);
+            //wait.Until(driver => driver.FindElement(byLocator).Enabled);
+            wait.Until(ExpectedConditions.ElementToBeClickable(byLocator));
+
             log.Info("The element " + byLocator + " is clickable");
 
         }
@@ -381,6 +383,15 @@ namespace iCargoUIAutomation.pages
         {
             WebDriverWait wait = new WebDriverWait(driver, time);
             wait.Until(driver => !driver.FindElement(byLocator).Enabled);
+        }
+
+        // wait until the invisibility of a text
+        
+        public void WaitForTextToBeInvisible(string text, TimeSpan timeout)
+        {
+            var wait = new WebDriverWait(driver, timeout);
+            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//*[contains(text(), '" + text + "')]")));
+            
         }
 
 
@@ -401,7 +412,7 @@ namespace iCargoUIAutomation.pages
             Click(byLocator);
         }
 
-        public bool IsElementDisplayed(By byLocator, int time = 10)
+        public bool IsElementDisplayed(By byLocator, int time = 5)
         {
             try
             {
