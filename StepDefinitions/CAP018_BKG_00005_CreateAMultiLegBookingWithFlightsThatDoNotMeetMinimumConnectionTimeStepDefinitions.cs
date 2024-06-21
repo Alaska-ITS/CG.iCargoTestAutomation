@@ -27,7 +27,7 @@ namespace iCargoUIAutomation.StepDefinitions
         public void ThenUserSearchesForTheMultilegFlightToVerifyRESBubbleAWarningMessageAs(string rescolr, string reswarning, string productcode)
         {
             this.productcode = productcode;
-           mbp.selectMultilegflight(rescolr, reswarning, productcode);
+           mbp.SelectMultilegflight(rescolr, reswarning, productcode);
         }                
 
     }
