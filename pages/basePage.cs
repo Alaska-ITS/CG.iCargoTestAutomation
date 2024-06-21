@@ -211,11 +211,15 @@ namespace iCargoUIAutomation.pages
 
         public void DoubleClick(By byLocator)
         {
-
             Actions action = new Actions(driver);
             action.DoubleClick(driver.FindElement(byLocator)).Perform();
             log.Info("Double clicked on the element " + byLocator);
+        }
 
+        public void ClickElementUsingActions(By byLocator)
+        {
+            Actions actions = new Actions(driver);
+            actions.MoveToElement(driver.FindElement(byLocator)).Click().Perform();
         }
 
         // WebElement Actions
