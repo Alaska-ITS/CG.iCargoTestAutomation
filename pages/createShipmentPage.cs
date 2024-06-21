@@ -1,9 +1,11 @@
-﻿using iCargoUIAutomation.Features;
+﻿using AventStack.ExtentReports;
+using iCargoUIAutomation.Features;
 using iCargoUIAutomation.utilities;
 using log4net;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.DevTools.V121.Debugger;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -291,7 +293,7 @@ namespace iCargoUIAutomation.pages
             {
                 Click(lblParticipantDetails_Id);
                 Click(btnOrangePencilParticipant_Css);
-                WaitForElementToBeInvisible(btnOrangePencilParticipant_Css, TimeSpan.FromSeconds(1));              
+                WaitForElementToBeInvisible(btnOrangePencilParticipant_Css, TimeSpan.FromSeconds(1));
                 agentCode = GetAttributeValue(txtAgentCode_Name, "value");
                 shipperCode = GetAttributeValue(txtShipperCode_Name, "value");
                 consigneeCode = GetAttributeValue(txtConsigneeCode_Name, "value");
@@ -943,14 +945,14 @@ namespace iCargoUIAutomation.pages
         {
             try
             {
-               
+
                 while (!checkTextboxIsNotEmpty(txtIATACharge_Xpath))
                 {
                     Click(btnCalculateCharges_Name);
                     WaitUntilTextboxIsNotEmpty(txtIATACharge_Xpath);
 
                 }
-                
+
             }
             catch (Exception e)
             {
@@ -997,7 +999,7 @@ namespace iCargoUIAutomation.pages
 
                     else
                     {
-                        Click(btnYesActiveCashDraw_Xpath);                        
+                        Click(btnYesActiveCashDraw_Xpath);
                         WaitForTextToBeInvisible(errorText, TimeSpan.FromMilliseconds(500));
                     }
                 }
@@ -1076,11 +1078,11 @@ namespace iCargoUIAutomation.pages
             {
                 Click(btnOrangePencilAcceptance_Css);
                 WaitForElementToBeInvisible(btnOrangePencilAcceptance_Css, TimeSpan.FromSeconds(5));
-                
+
             }
             catch (Exception)
             {
-                Log.Error("Error in clicking the acceptance details, retrying.. " );
+                Log.Error("Error in clicking the acceptance details, retrying.. ");
                 Click(btnOrangePencilAcceptance_Css);
                 WaitForElementToBeInvisible(btnOrangePencilAcceptance_Css, TimeSpan.FromSeconds(5));
             }
@@ -1159,7 +1161,7 @@ namespace iCargoUIAutomation.pages
             {
                 Click(btnOrangePencilScreening_Css);
                 WaitForElementToBeInvisible(btnOrangePencilScreening_Css, TimeSpan.FromSeconds(5));
-                
+
             }
             catch (Exception)
             {
@@ -1205,11 +1207,11 @@ namespace iCargoUIAutomation.pages
         public void ClickSave()
         {
             noOfWindowBefore = GetNumberOfWindowsOpened();
-            Click(btnSaveShipment_Name);            
+            Click(btnSaveShipment_Name);
 
         }
         public void ClosePaymentPortalWindow()
-        {            
+        {
             WaitForNewWindowToOpen(TimeSpan.FromSeconds(5), noOfWindowBefore + 1);
             SwitchToLastWindow();
             ppp.ClosePaymentPortal();
@@ -1225,52 +1227,63 @@ namespace iCargoUIAutomation.pages
             SwitchToLastWindow();
             SwitchToLTEContentFrame();
         }
-
-
+   
 
         public (string, string) SaveShipmentDetailsAndHandlePopups()
         {
+            log.Info("Saving Shipment Details and handling all popup function");
+            int retryCount = 0;
+            const int maxRetries = 3; // Maximum number of retries
 
             while (true)
             {
-                if ((CaptureBookingStatus() == "Confirmed") && (CaptureDataCaptureStatus() == "EXECUTED") && (CaptureAcceptanceStatus() == "Finalised") && (CaptureColorReadyForCarriageStatus().Contains("green")) && (CaptureColorCaptureCheckSheetStatus().Contains("green")) && (CaptureColorBlockStatus().Contains("green")))
-                {
-
-                    awb_num = captureAWBNumber();
-                    break;
-                }
-
                 try
                 {
-                    totalPaybleAmount = ClickOnSaveButtonHandlePaymentPortal();
-
-                }
-                catch (Exception)
-                {
-                    int noOfWindowsBefore = GetNumberOfWindowsOpened();
-                    ClickingYesOnPopupWarnings("");
-                    int noOfWindowsAfter = GetNumberOfWindowsOpened();
-                    if (noOfWindowsAfter > noOfWindowsBefore)
+                    if ((CaptureBookingStatus() == "Confirmed") && (CaptureDataCaptureStatus() == "EXECUTED") && (CaptureAcceptanceStatus() == "Finalised") && (CaptureColorReadyForCarriageStatus().Contains("green")) && (CaptureColorCaptureCheckSheetStatus().Contains("green")) && (CaptureColorBlockStatus().Contains("green")))
                     {
-                        SwitchToLastWindow();
-                        totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
-                        WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
-                        SwitchToLastWindow();
-                        SwitchToLTEContentFrame();
+                        awb_num = captureAWBNumber();
+                        break;
                     }
 
-                }
+                    try
+                    {
+                        totalPaybleAmount = ClickOnSaveButtonHandlePaymentPortal();
+                    }
+                    catch (Exception)
+                    {
+                        int noOfWindowsBefore = GetNumberOfWindowsOpened();
+                        ClickingYesOnPopupWarnings("");
+                        int noOfWindowsAfter = GetNumberOfWindowsOpened();
+                        if (noOfWindowsAfter > noOfWindowsBefore)
+                        {
+                            SwitchToLastWindow();
+                            totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
+                            WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
+                            SwitchToLastWindow();
+                            SwitchToLTEContentFrame();
+                        }
 
+                    }
+                }
+                catch (StaleElementReferenceException)
+                {
+                    if (retryCount >= maxRetries)
+                    {
+                        throw; // Rethrow the exception if max retries are exceeded
+                    }
+                    log.Info($"Encountered StaleElementReferenceException, retrying... Attempt {retryCount + 1}");
+                    retryCount++;                   
+                    continue; // Retry the loop
+                }
             }
 
             return (awb_num, totalPaybleAmount);
         }
 
 
-
         public string ClickOnSaveButtonHandlePaymentPortal()
         {
-
+            log.Info("ClickOnSaveButtonHandlePaymentPortal function");
             int noOfWindowsBefore = GetNumberOfWindowsOpened();
             Click(btnSaveShipment_Name);
             if (IsElementDisplayed(lblEmbargoDetails_Xpath, 1))
@@ -1283,8 +1296,7 @@ namespace iCargoUIAutomation.pages
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
                 SwitchToLastWindow();
-                totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
-                //WaitForNewWindowToOpen(TimeSpan.FromSeconds(5), noOfWindowsBefore);
+                totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);               
                 SwitchToLastWindow();
                 SwitchToLTEContentFrame();
             }
@@ -1332,7 +1344,7 @@ namespace iCargoUIAutomation.pages
                 SwitchToLTEContentFrame();
             }
             ClickingYesOnPopupWarnings("");
-           
+
         }
 
 
@@ -1382,7 +1394,7 @@ namespace iCargoUIAutomation.pages
                     if (noOfWindowsAfter > noOfWindowsBefore)
                     {
                         SwitchToLastWindow();
-                        totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);                        
+                        totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
                         SwitchToLastWindow();
                         SwitchToLTEContentFrame();
                     }
@@ -1527,10 +1539,7 @@ namespace iCargoUIAutomation.pages
             Click(btnSaveShipment_Name);
             ClickingYesOnPopupWarnings("");
             dgp.EnterDetailsForCAODGShipment(unid, propershipmntname, pi, noofpkg, netqtyperpkg, reportable);
-            SwitchToLTEContentFrame();
-            //Click(btnSaveShipment_Name);
-            //ClickingYesOnPopupWarnings("");
-            //CaptureCheckSheetForDG();
+            SwitchToLTEContentFrame();            
         }
 
         public void SaveCAODGshipment(string flightType)
@@ -1555,7 +1564,7 @@ namespace iCargoUIAutomation.pages
 
             }
             else
-            {               
+            {
                 Log.Info("Warning message is as expected: " + actualWarningMessage);
             }
         }
@@ -1597,7 +1606,7 @@ namespace iCargoUIAutomation.pages
 
         public void CloseLTE001Screen()
         {
-            while(!IsElementDisplayed(btnCloseShipment_Name))
+            while (!IsElementDisplayed(btnCloseShipment_Name))
             {
                 try
                 {
@@ -1609,9 +1618,9 @@ namespace iCargoUIAutomation.pages
                     ClickingYesOnPopupWarnings("");
                     Log.Error("Error in closing LTE001 screen, retrying..");
                 }
-                
+
             }
-            
+
 
         }
 
@@ -1655,18 +1664,18 @@ namespace iCargoUIAutomation.pages
         {
             if (pou.Equals(""))
             {
-                cartULDNum=emp.CreateULDOrCart(carttype, destination);
+                cartULDNum = emp.CreateULDOrCart(carttype, destination);
             }
             else
             {
-                cartULDNum=emp.CreateULDOrCart(carttype, pou);
-            }   
-            
+                cartULDNum = emp.CreateULDOrCart(carttype, pou);
+            }
+
             return cartULDNum;
         }
 
         public void FilterOutAWBULDInExportManifest(string awbSectionName)
-        {                      
+        {
             if (awbSectionName.Equals("PlannedShipment"))
             {
                 awb_num = awb_num.Split("-")[1];
@@ -1676,6 +1685,17 @@ namespace iCargoUIAutomation.pages
             {
                 emp.FilterOutLyingListAWBAndULD(cartULDNum);
             }
+
+        }
+
+        public void FilterSplitAndAssignAWBToULDExportManifest(string awbSectionName, string splitPieces)
+        {
+            if (awbSectionName.Equals("PlannedShipment"))
+            {
+                awb_num = awb_num.Split("-")[1];
+                emp.FilterOutPlannedAWBSplitAndAssign(awb_num, cartULDNum, splitPieces);
+            }
+
 
         }
 

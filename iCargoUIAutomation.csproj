@@ -34,6 +34,8 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\LTE001_ACC_00008_Reopen an AWB and change piece count and weight and reexecute - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\LTE001_ACC_00017_Create a COMAT AWB - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\LTE001_CreateAcceptScreening - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\OPR344_EXP_00002_Manifest an AWB from the lying list - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\OPR344_EXP_00003_Manifest an AWB onto its booked flight - Copy.feature.cs" />
   </ItemGroup>
 
 	<ItemGroup>
@@ -93,6 +95,14 @@
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\OPR344_EXP_00005_Offload manifested cargo to another flight.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\OPR344_EXP_00004_Split an AWB in OPR344 and manifest split pieces to a flight.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
   </ItemGroup>
 
   <ItemGroup>
@@ -114,6 +124,12 @@
     </Compile>
     <Compile Update="Features\LTE001_ACC_00010_Reopen an AWB and change the final destination and reexecute.feature.cs">
       <DependentUpon>LTE001_ACC_00010_Reopen an AWB and change the final destination and reexecute.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\OPR344_EXP_00005_Offload manifested cargo to another flight.feature.cs">
+      <DependentUpon>OPR344_EXP_00005_Offload manifested cargo to another flight.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\OPR344_EXP_00004_Split an AWB in OPR344 and manifest split pieces to a flight.feature.cs">
+      <DependentUpon>OPR344_EXP_00004_Split an AWB in OPR344 and manifest split pieces to a flight.feature</DependentUpon>
     </Compile>
   </ItemGroup>
 
