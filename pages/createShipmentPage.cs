@@ -22,6 +22,7 @@ namespace iCargoUIAutomation.pages
         private DangerousGoodsPage dgp;
         private PaymentPortalPage ppp;
         private CaptureIrregularityPage cip;
+        private ExportManifestPage emp;
         public static string awb_num = "";
         public static string totalPaybleAmount = "";
         public static string totalAmountCharged = "";
@@ -55,6 +56,7 @@ namespace iCargoUIAutomation.pages
             ppp = new PaymentPortalPage(driver);
             dgp = new DangerousGoodsPage(driver);
             cip = new CaptureIrregularityPage(driver);
+            emp = new ExportManifestPage(driver);
 
         }
 
@@ -1613,6 +1615,69 @@ namespace iCargoUIAutomation.pages
 
         }
 
+        // Export Manifest Calling Functions //
+
+        public void EnterFlightDateExportManifest()
+        {
+            try
+            {
+                emp.EnterFlightDate(shippingDate);
+            }
+            catch (Exception e)
+            {
+                Log.Error("Error in entering flight date in export manifest: " + e.ToString());
+            }
+
+        }
+
+        public void EnterFlightinExportManifest(string fltnum)
+        {
+            try
+            {
+                if (fltnum.Equals(""))
+                {
+                    emp.EnterFlightNumber(flightNum);
+                }
+                else
+                {
+                    emp.EnterFlightNumber(fltnum);
+                }
+
+            }
+            catch (Exception e)
+            {
+                Log.Error("Error in entering flight details in export manifest: " + e.ToString());
+            }
+
+        }
+
+        public string CreateNewULDCartExportManifest(string carttype, string pou)
+        {
+            if (pou.Equals(""))
+            {
+                cartULDNum=emp.CreateULDOrCart(carttype, destination);
+            }
+            else
+            {
+                cartULDNum=emp.CreateULDOrCart(carttype, pou);
+            }   
+            
+            return cartULDNum;
+        }
+
+        public void FilterOutAWBULDInExportManifest(string awbSectionName)
+        {                      
+            if (awbSectionName.Equals("PlannedShipment"))
+            {
+                awb_num = awb_num.Split("-")[1];
+                emp.FilterOutPlannedAWBAndULD(awb_num, cartULDNum);
+            }
+            else if (awbSectionName.Equals("LyingList"))
+            {
+                emp.FilterOutLyingListAWBAndULD(cartULDNum);
+            }
+
+        }
 
 
     }

@@ -8,6 +8,7 @@ public class PageObjectManager : BasePage
     private homePage hp;
     private CreateShipmentPage csp;
     private MaintainBookingPage mbp;
+    private ExportManifestPage emp;
 
     // Add other page classes as needed
 
@@ -31,6 +32,10 @@ public class PageObjectManager : BasePage
         return mbp ?? (mbp = new MaintainBookingPage(driver));
     }
 
+    public ExportManifestPage GetExportManifestPage()
+    {
+        return emp ?? (emp = new ExportManifestPage(driver));
+    }
 
 
     // Add other getter methods for other page classes as needed
