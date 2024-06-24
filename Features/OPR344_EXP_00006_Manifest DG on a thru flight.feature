@@ -1,8 +1,8 @@
-﻿Feature: LTE001_ACC_00003_Create a DG AWB in LTE001
+﻿Feature: OPR344_EXP_00006_Manifest DG on a thru flight
 
-Create a New DG Shipment, Acceptance & screening of that as a CGODG user
+Manifest a Shipment as a CGO or CGODG user
 
-@tag1
+@OPR344
 Scenario Outline: Create a DG AWB in LTE001
 	Given User lauches the Url of iCargo Staging UI
 	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
@@ -36,3 +36,28 @@ Examples:
 	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination |  ProductCode | SCC | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight |  ChargeType | ModeOfPayment | cartType | UNID | ProperShipmentName | PackingInstruction | NetQtyPerPkg | ReportableQnty |
 	| 10763     | 10763       | 10763         | SEA    | ANC         |  PRIORITY    | DGR | NONSCR    | UN8000              | None              | 1     | 30     |  PP         | CREDIT        | CART     | 8000 | Consumer commodity | Y963               | 0.5          | No             |
 
+
+
+Scenario Outline: Manifest DG on a thru flight
+	Given User lauches the Url of iCargo Staging UI
+	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
+	When User clicks on the oidc button
+	Then A new window is opened
+	And User enters into the  iCargo 'Home' page successfully
+	When User switches station if BaseStation other than "<Origin>"
+	When User enters the screen name as 'OPR344'
+	Then User enters into the  iCargo 'Export Manifest' page successfully
+	When User enters the Booked FlightNumber with ""
+	And User enters Booked ShipmentDate
+	And User clicks on the List button to fetch the Booked Shipment
+	And User creates new ULD/Cart in Assigned Shipment with cartType "<cartType>" and pou "<Destination>"
+	And User filterouts the Booked AWB from '<AWBSectionName>' and Created ULD_Cart
+	And User clicks on the Manifest button
+	And User closes the PrintPDF window
+	And User validates the AWB is "Manifested" in the Export Manifest screen	
+	Then User closes the Export Manifest screen
+	Then User logs out from the application
+
+Examples:
+	| Origin | Destination | Piece | Weight | AWBSectionName  | cartType | 
+	| SEA    | ANC         | 1     | 30     | PlannedShipment | CART     |
