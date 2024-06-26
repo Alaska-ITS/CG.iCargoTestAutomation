@@ -69,7 +69,8 @@ namespace iCargoUIAutomation.StepDefinitions
         [Then(@"User clicks on Save button")]
         public void ThenUserClicksOnSaveButton()
         {
-            mbp.ClickSaveButton();           
+            mbp.ClickSaveButton();
+            mbp.CaptureAwbNumber();
         }
         
         [Then(@"User selects flight for ""([^""]*)""")]

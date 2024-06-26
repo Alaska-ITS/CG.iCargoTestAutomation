@@ -75,12 +75,12 @@ namespace iCargoUIAutomation.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create a booking given an AWB from stock and system will create a new awb")]
-        [NUnit.Framework.CategoryAttribute("Cap018")]
-        [NUnit.Framework.TestCaseAttribute("74426030", "ANC", "FAI", "GENERAL", "0316", "2", "20", "82165", "82165", "82165", null)]
-        public virtual void CreateABookingGivenAnAWBFromStockAndSystemWillCreateANewAwb(string aWB, string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipper, string consignee, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("CAP018")]
+        [NUnit.Framework.TestCaseAttribute("74428362", "ANC", "FAI", "GENERAL", "0316", "2", "20", "82165", "82165", null)]
+        public virtual void CreateABookingGivenAnAWBFromStockAndSystemWillCreateANewAwb(string aWB, string origin, string destination, string productCode, string commodity, string piece, string weight, string shipper, string consignee, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Cap018"};
+                    "CAP018"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -94,7 +94,6 @@ namespace iCargoUIAutomation.Features
             argumentsOfScenario.Add("Commodity", commodity);
             argumentsOfScenario.Add("Piece", piece);
             argumentsOfScenario.Add("Weight", weight);
-            argumentsOfScenario.Add("AgentCode", agentCode);
             argumentsOfScenario.Add("Shipper", shipper);
             argumentsOfScenario.Add("Consignee", consignee);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a booking given an AWB from stock and system will create a new awb", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
