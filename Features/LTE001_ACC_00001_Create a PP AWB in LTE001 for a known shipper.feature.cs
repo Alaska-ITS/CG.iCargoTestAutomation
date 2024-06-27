@@ -78,6 +78,8 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("Create a PP AWB in LTE001 for a known shipper")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.TestCaseAttribute("10763", "10763", "10763", "ANC", "SEA", "GENERAL", "None", "0316", "None", "None", "2", "59", "PP", "CREDIT", "CART", null)]
+        [NUnit.Framework.TestCaseAttribute("10763", "10763", "10763", "ANC", "SEA", "GOLDSTREAK", "None", "6108", "None", "None", "47", "196", "PP", "CREDIT", "CART", null)]
+        [NUnit.Framework.TestCaseAttribute("10763", "10763", "10763", "ANC", "SEA", "PRIORITY", "None", "0091", "None", "None", "7", "277", "PP", "CREDIT", "CART", null)]
         public virtual void CreateAPPAWBInLTE001ForAKnownShipper(
                     string agentCode, 
                     string shipperCode, 
@@ -220,10 +222,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueScreeningDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 32
- testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User fills up the checksheet for ProductCode \"{0}\" if applicable", productCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 33
- testRunner.And("User clicks on the save button & handle Payment Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 34
  testRunner.And("User saves all the details & handles all the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

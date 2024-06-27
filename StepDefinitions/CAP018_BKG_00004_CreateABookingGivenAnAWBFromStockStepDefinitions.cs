@@ -44,10 +44,10 @@ namespace iCargoUIAutomation.StepDefinitions
         }
 
         [Then(@"User enters the AWB number as ""([^""]*)""")]
-        public void ThenUserEntersTheAWBNumberAs(string awb)
+        public void ThenUserEntersTheAWBNumberAs(string awb)     
         {
             this.awb = awb;
-            mbp.EnterAWBNumber(awb);
+            mbp.EnterAWBNumberFromStock(awb);
         }
 
 

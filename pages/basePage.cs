@@ -211,9 +211,11 @@ namespace iCargoUIAutomation.pages
 
         public void DoubleClick(By byLocator)
         {
+
             Actions action = new Actions(driver);
             action.DoubleClick(driver.FindElement(byLocator)).Perform();
             log.Info("Double clicked on the element " + byLocator);
+
         }
 
         public void ClickElementUsingActions(By byLocator)
@@ -464,6 +466,12 @@ namespace iCargoUIAutomation.pages
                 return false;
             }
 
+        }
+        //check for a value in a textbox
+        public bool CheckForValueInTextbox(By byLocator, string text)
+        {
+            string textCaptured = driver.FindElement(byLocator).GetAttribute("value");
+            return textCaptured == text;
         }
 
         // wait until the text box is not empty

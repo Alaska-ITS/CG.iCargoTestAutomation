@@ -26,13 +26,7 @@ namespace iCargoUIAutomation.StepDefinitions
             pageObjectManager = new PageObjectManager(driver);
             hp = pageObjectManager.GetHomePage();
             mbp = pageObjectManager.GetMaintainBookingPage();
-        }
-        [Then(@"User enters the AWB number as ""([^""]*)""")]
-        public void ThenUserEntersTheAWBNumberAs(string awb)
-        {
-            this.awb = awb;
-            mbp.EnterAWBNumber(awb); 
-        }
+        }        
 
 
 
@@ -45,7 +39,7 @@ namespace iCargoUIAutomation.StepDefinitions
         [Then(@"User selects new carrier details")]
         public void ThenUserSelectsNewCarrierDetails()
         {
-            mbp.addNewFlightDetails();
+            mbp.AddNewFlightDetails();
         }
 
 
