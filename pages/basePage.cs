@@ -171,6 +171,7 @@ namespace iCargoUIAutomation.pages
         public void SwitchToLastWindow()
         {
             driver.SwitchTo().Window(driver.WindowHandles[^1]);
+            Hooks.Hooks.UpdateTest(Status.Pass, "Switched to the last window");
             log.Info("Switched to the last window");
         }
 
@@ -211,11 +212,9 @@ namespace iCargoUIAutomation.pages
 
         public void DoubleClick(By byLocator)
         {
-
             Actions action = new Actions(driver);
             action.DoubleClick(driver.FindElement(byLocator)).Perform();
             log.Info("Double clicked on the element " + byLocator);
-
         }
 
         public void ClickElementUsingActions(By byLocator)
@@ -299,13 +298,13 @@ namespace iCargoUIAutomation.pages
         public void EnterTextToDropdown(By byLocator, string text)
         {
             driver.FindElement(byLocator).SendKeys(text + Keys.Enter + Keys.Tab);
-
         }
 
         public string GetText(By byLocator)
         {
 
-            string textExtracted = driver.FindElement(byLocator).Text;
+            string textExtracted = driver.FindElement(byLocator).Text.Trim();
+            Hooks.Hooks.UpdateTest(Status.Pass, "Extracted the text " + textExtracted);
             log.Info("Extracted the text " + textExtracted);
             return textExtracted;
 
@@ -359,7 +358,7 @@ namespace iCargoUIAutomation.pages
         {
             WebDriverWait wait = new WebDriverWait(driver, time);
             wait.PollingInterval = TimeSpan.FromSeconds(1);
-            wait.IgnoreExceptionTypes(typeof(ElementNotVisibleException), typeof(NoSuchElementException), typeof(TimeoutException));
+            wait.IgnoreExceptionTypes(typeof(ElementNotVisibleException), typeof(NoSuchElementException), typeof(TimeoutException), typeof(StaleElementReferenceException));
             wait.Until(driver => driver.FindElement(byLocator).Displayed);
             log.Info("The element " + byLocator + " is visible");
 
@@ -399,8 +398,6 @@ namespace iCargoUIAutomation.pages
             wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//*[contains(text(), '" + text + "')]")));
             
         }
-
-
 
         public void ClickOnElementIfPresent(By byLocator)
         {
@@ -467,6 +464,7 @@ namespace iCargoUIAutomation.pages
             }
 
         }
+
         //check for a value in a textbox
         public bool CheckForValueInTextbox(By byLocator, string text)
         {
@@ -521,12 +519,14 @@ namespace iCargoUIAutomation.pages
         public void SwitchToFrame(By byLocator)
         {
             driver.SwitchTo().Frame(driver.FindElement(byLocator));
+            Hooks.Hooks.UpdateTest(Status.Pass, "Switched to frame");
             log.Info("Switched to frame");
         }
 
         public void SwitchToDefaultContent()
         {
             driver.SwitchTo().DefaultContent();
+            Hooks.Hooks.UpdateTest(Status.Pass, "Switched to default content");
             log.Info("Switched to default content");
         }
 
@@ -618,8 +618,6 @@ namespace iCargoUIAutomation.pages
         }
 
 
-
-
         /* Random Number Generate */
         public int RandomNumber(int digits)
         {
@@ -634,15 +632,10 @@ namespace iCargoUIAutomation.pages
             return random.Next(rangeStart, rangeEnd + 1);
         }
 
-
-
-
-
-
-
-
-
-
+        public void LogOutApplication()
+        {
+            driver.Quit();
+        }
 
     }
 }
