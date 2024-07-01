@@ -1,6 +1,7 @@
 ﻿using iCargoUIAutomation.Features;
 using iCargoUIAutomation.utilities;
 using log4net;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.DevTools.V121.Debugger;
@@ -46,6 +47,8 @@ namespace iCargoUIAutomation.pages
         private By txtULDNumber_Name = By.Name("uld.uldNumber");
         private By drpdwnPOU_Xpath = By.XPath("//*[contains(@class,'assignshipments')]//*[text()='POU']//following-sibling::div");
         private By drpdwnPOUCOMBO_Xpath = By.XPath("//*[@class='Select-input' and @role='combobox']");
+        private By txtAWBNumberAssignShipment_Id = By.Id("Awb_DocumentNumber_idx");
+        private By txtPiecesAssignShipment_Name = By.Name("awb.pieces");
         private By btnSave_Xpath = By.XPath("//button[text()='Save ']");
         private By btnClose_Xpath = By.XPath("//*[contains(@class,'assignshipments')]//button[text()='Close']");
         private By txtAssignShipmentFilter_Xpath = By.XPath("//*[contains(@class,'assignshipments')]//*[@class='table-header__search']/input");
@@ -91,6 +94,7 @@ namespace iCargoUIAutomation.pages
         private By btnLyingListAWB_Xpath = By.XPath("//button[text()='AWB(s)']");
         private By btnLyingListFilter_Id = By.Id("lyingListTable-datafilter");
         private By txtLyingListFilterOrigin_Name = By.Name("filter.origin");
+        private By txtLyingListFilterAWB_Name = By.Name("filter.documentNumber");
         private By drpdwnReadyForcarriage_Xpath = By.XPath("//label[text()='Ready For Carriage']/parent::div//*[@class='Select-control']");
         private By btnApplyFilter_Id = By.Id("lyingListTable-datafilter-applybtn");
         private By chkBoxLyingListAWB_Xpath = By.XPath("//*[contains(@class,'lying-list')]//input[@id='select-0']");
@@ -103,7 +107,10 @@ namespace iCargoUIAutomation.pages
         private By btnContinueWarningPopup_Xpath = By.XPath("//button[@name='btContinue']");
         private By lblWarningMessageModal_CSS = By.CssSelector(".modal-content .icdialog_message");
         private By btnOkWarningMessageModal_Xpath = By.XPath("//*[@class='modal-footer']/button[text()='Ok']");
+        private By btnCancelWarningMessageModal_Xpath = By.XPath("//*[@class='modal-footer']/button[text()='Cancel']");
         private By lblErrorPopOver_CSS = By.CssSelector(".errorpopover p");
+        private By lblScreeningWarning_Css= By.CssSelector("#showEmbargo tbody td:nth-child(3)");
+        private By btnCloseScreeningWarning_Id= By.Id("CMP_Reco_Defaults_UX_ShowEmbargo_btnClose");
 
 
         //Export Manifest Footer Section
@@ -192,6 +199,72 @@ namespace iCargoUIAutomation.pages
             return cartUldNum;
         }
 
+        public string CreateNewULDCartByTypingAWB(string cartType, string POU, string awb, string pieces)
+        {
+            ClickOnADDULDButton();
+            int cartUldNumInt = GetCartOrULDNumber(cartType);
+
+            while (true)
+            {
+                if (cartType.ToLower() == "cart")
+                {
+                    cartUldNum = "BC" + cartUldNumInt;
+                }
+                else
+                {
+                    cartUldNum = "AAA" + cartUldNumInt + "AS";
+                }
+
+
+                EnterTextWithCheck(txtULDNumber_Name, cartUldNum);
+                EnterKeys(txtULDNumber_Name, Keys.Tab);
+                Thread.Sleep(2000);
+
+                if (GetAttributeValue(drpdwnPOUCOMBO_Xpath, "aria-disabled") == "false")
+                {
+                    break;
+                }
+                else
+                {
+                    cartUldNumInt++;
+                }
+            }
+            SelectPOU(POU);
+            TypeAWBNumberAndPiecesInsideCart(awb, pieces);
+            WaitForElementToBeVisible(btnSave_Xpath, TimeSpan.FromSeconds(5));
+            ClickOnElementIfEnabled(btnSave_Xpath);            
+            HandleWarningMessage();
+            if (IsElementDisplayed(btnOkWarningMessageModal_Xpath))
+            {
+                Click(btnOkWarningMessageModal_Xpath);
+                WaitForElementToBeInvisible(btnOkWarningMessageModal_Xpath, TimeSpan.FromSeconds(3));
+            }           
+
+            return cartUldNum;
+        }
+
+        public void TypeAWBNumberAndPiecesInsideCart(string awb, string pieces)
+        {
+            EnterText(txtAWBNumberAssignShipment_Id, awb);
+            EnterKeys(txtAWBNumberAssignShipment_Id, Keys.Tab);
+            ClickOnElementIfEnabled(txtPiecesAssignShipment_Name);
+            EnterText(txtPiecesAssignShipment_Name, pieces);
+            EnterKeys(txtPiecesAssignShipment_Name, Keys.Tab);
+        }
+
+        public void AssignAWBToPreBuiltCartByAWBTyping(string awb, string pieces)
+        {
+            TypeAWBNumberAndPiecesInsideCart(awb, pieces);
+            WaitForElementToBeVisible(btnSave_Xpath, TimeSpan.FromSeconds(5));
+            ClickOnElementIfEnabled(btnSave_Xpath);
+            HandleWarningMessage();
+            if (IsElementDisplayed(btnOkWarningMessageModal_Xpath))
+            {
+                Click(btnOkWarningMessageModal_Xpath);
+                WaitForElementToBeInvisible(btnOkWarningMessageModal_Xpath, TimeSpan.FromSeconds(3));
+            }
+        }
+
         public void ClickOnADDULDButton()
         {
             Click(btnAddULD_Xpath);
@@ -232,6 +305,13 @@ namespace iCargoUIAutomation.pages
         {
             WaitForElementToBeVisible(btnClose_Xpath, TimeSpan.FromSeconds(5));
             ClickOnElementIfEnabled(btnClose_Xpath);
+        }
+
+        public void ClickOnEditULDButton()
+        {
+            WaitForElementToBeVisible(By.XPath("//button[contains(@id,'uld_edituld-" + cartUldNum + "')]"), TimeSpan.FromSeconds(5));
+            Click(By.XPath("//button[contains(@id,'uld_edituld-"+cartUldNum+"')]"));
+            WaitForElementToBeVisible(txtAWBNumberAssignShipment_Id, TimeSpan.FromSeconds(5));
         }
 
         public void SelectAWBFromPlannedShipmentList(string AWB_Number)
@@ -344,16 +424,32 @@ namespace iCargoUIAutomation.pages
         }
 
 
-        public void FilterOutLyingListAWBAndULD(string Cart_Uld_Num, string readyForCarriageOption = "Yes")
+        public void FilterOutLyingListAWBAndULD(string Cart_Uld_Num, string preBookedAWB="", string readyForCarriageOption = "Yes")
         {
             ClickOnLyingList();
-            ClickOnLyingListFilter();
-            SelectReadyForCarriage(readyForCarriageOption);
-            ClickOnApplyFilter();
-            ClickOnCheckBoxLyingListAWB();
-            PlaceShipmentOnCartToManifest();
-            HandleWarningMessage();
+            ClickOnLyingListFilter();            
+            if (preBookedAWB != "")
+            {
+                EnterText(txtLyingListFilterAWB_Name, preBookedAWB);
+                EnterKeys(txtLyingListFilterAWB_Name, Keys.Tab);
+                ClickOnApplyFilter();                 
+                Click(By.XPath("//*[text()='" + preBookedAWB + "']/ancestor::div[@aria-colindex=4]/preceding-sibling::div[@aria-colindex=2]/input"));
+                PlaceShipmentOnCartToManifest();
+               
+            }
+            else
+            {
+                SelectReadyForCarriage(readyForCarriageOption);
+                ClickOnApplyFilter();
+                ClickOnCheckBoxLyingListAWB();
+                PlaceShipmentOnCartToManifest();
+                HandleWarningMessage();
+            }         
+           
+           
+            
         }
+       
 
         public void ClickOnLyingList()
         {
@@ -416,13 +512,33 @@ namespace iCargoUIAutomation.pages
             string warningModalMessage = GetText(lblWarningMessageModal_CSS);
             if (warningModalMessage.Contains(messageToValidate))
             {
-
+                //Assert.Pass("Warning message is displayed as expected: " + warningModalMessage);
                 while (IsElementDisplayed(btnOkWarningMessageModal_Xpath))
                 {
                     Click(btnOkWarningMessageModal_Xpath);
                 }
 
                 WaitForElementToBeInvisible(btnOkWarningMessageModal_Xpath, TimeSpan.FromSeconds(3));
+            }
+            else
+            {
+                Assert.Fail("Warning message is not displayed as expected");
+            }
+
+        }
+
+        public void ValidateWarningMessageAndCancelModal(string messageToValidate)
+        {
+            WaitForElementToBeVisible(lblWarningMessageModal_CSS, TimeSpan.FromSeconds(5));
+            string warningModalMessage = GetText(lblWarningMessageModal_CSS);
+            if (warningModalMessage.Contains(messageToValidate))
+            {               
+                while (IsElementDisplayed(btnCancelWarningMessageModal_Xpath))
+                {
+                    Click(btnCancelWarningMessageModal_Xpath);
+                }
+                
+                Assert.Pass("Warning message is displayed as expected: " + warningModalMessage);
             }
             else
             {
@@ -449,6 +565,29 @@ namespace iCargoUIAutomation.pages
                     SwitchToDefaultContent();
                     SwitchToManifestFrame();
                 }
+            }
+        }
+
+        public void ValidateErrorMessageOnPopup(string expectedErrorMessage)
+        {
+
+            if (IsElementDisplayed(WarningPopup_Xpath))
+            {
+                SwitchToFrame(framePopupContainerFrame_Id);
+                string actualErrorMessage = GetText(lblScreeningWarning_Css);
+                if (actualErrorMessage.Contains(expectedErrorMessage))
+                {
+                    Log.Info("Error message is as expected: " + actualErrorMessage);
+                }
+                else
+                {
+                    Log.Error("Error message is not as expected. Expected: " + expectedErrorMessage + " Actual: " + actualErrorMessage);
+                    Assert.Fail("Error message is not as expected. Expected: " + expectedErrorMessage + " Actual: " + actualErrorMessage);
+                }
+                ClickElementUsingActions(btnCloseScreeningWarning_Id);
+                WaitForElementToBeInvisible(btnCloseScreeningWarning_Id, TimeSpan.FromSeconds(2));
+                SwitchToDefaultContent();
+                SwitchToManifestFrame();
             }
         }
 
