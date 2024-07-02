@@ -74,6 +74,10 @@ namespace iCargoUIAutomation.StepDefinitions
 
             Log.Info("Step: Clicking on the oidc button");
             driver.FindElement(By.XPath("//a[@id='social-oidc']")).Click();
+            if (IsElementDisplayed(By.XPath("//body[@class='login']")))
+            {
+                hp.LoginICargo();
+            }
         }
 
         [Then(@"A new window is opened")]

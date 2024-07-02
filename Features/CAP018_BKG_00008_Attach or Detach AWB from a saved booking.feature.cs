@@ -76,11 +76,13 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("iCargo Login and Create New Shipment")]
         [NUnit.Framework.CategoryAttribute("CAP018")]
+        [NUnit.Framework.CategoryAttribute("CAP018_BKG_00008")]
         [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "0316", "2", "20", null)]
         public virtual void ICargoLoginAndCreateNewShipment(string origin, string destination, string productCode, string commodity, string piece, string weight, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "CAP018"};
+                    "CAP018",
+                    "CAP018_BKG_00008"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

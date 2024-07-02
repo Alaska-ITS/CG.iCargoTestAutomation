@@ -1,12 +1,13 @@
 ﻿Feature: CAP018_BKG_00001_iCargo Login and Create New Shipment
 
-@CAP018
+@CAP018  @CAP018_BKG_00001
 Scenario Outline: iCargo Login and Create New Shipment
 	Given User lauches the Url of iCargo Staging UI
 	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
 	When User clicks on the oidc button
 	Then A new window is opened
 	And User enters into the  iCargo 'Home' page successfully
+	When User switches station if BaseStation other than "<Origin>"
 	When User enters screen name as 'CAP018'
 	Then User enters into the  iCargo 'Maintain Booking' page successfully
 	And User clicks on New/List button

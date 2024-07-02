@@ -1,6 +1,6 @@
 ﻿Feature: CAP018_BKG_00005_Create a multi leg booking with flights that do not meet minimum connection time
 
-@CAP018
+@CAP018   @CAP018_BKG_00005
 Scenario Outline: Create a multi leg booking with flights that do not meet minimum connection time and system should display a warning message
 	Given User lauches the Url of iCargo Staging UI
 	Then User enters into the  iCargo 'Sign in to icargoas' page successfully

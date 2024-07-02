@@ -2,7 +2,7 @@
 
 A short summary of the feature
 
-@CAP018
+@CAP018  @CAP018_BKG_00003
 Scenario Outline: Create a booking for an unknown shipper on a pax flight
 	Given User lauches the Url of iCargo Staging UI
 	Then User enters into the  iCargo 'Sign in to icargoas' page successfully

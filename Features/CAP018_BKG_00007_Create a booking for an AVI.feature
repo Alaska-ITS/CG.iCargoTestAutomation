@@ -1,6 +1,6 @@
 ﻿Feature: CAP018_BKG_00007_Create a booking for an AVI
 
-@CAP018
+@CAP018   @CAP018_BKG_00007
 Scenario Outline: iCargo Login and Create New AVI Shipment
 	Given User lauches the Url of iCargo Staging UI
 	Then User enters into the  iCargo 'Sign in to icargoas' page successfully

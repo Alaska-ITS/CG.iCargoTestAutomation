@@ -1,6 +1,6 @@
 ﻿Feature: CAP018_BKG_00008_Attach or Detach AWB from a saved booking
 
-@CAP018
+@CAP018 @CAP018_BKG_00008
 Scenario Outline: iCargo Login and Create New Shipment
 	Given User lauches the Url of iCargo Staging UI
 	Then User enters into the  iCargo 'Sign in to icargoas' page successfully

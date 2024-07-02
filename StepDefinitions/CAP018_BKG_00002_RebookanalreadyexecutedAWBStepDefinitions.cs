@@ -12,6 +12,7 @@ namespace iCargoUIAutomation.StepDefinitions
         private PageObjectManager pageObjectManager;
         private homePage hp;
         private MaintainBookingPage mbp;
+        private CreateShipmentPage csp;
         string awb = "";
         string flightOrigin = "";
         string flightDestination = "";
@@ -26,7 +27,7 @@ namespace iCargoUIAutomation.StepDefinitions
             pageObjectManager = new PageObjectManager(driver);
             hp = pageObjectManager.GetHomePage();
             mbp = pageObjectManager.GetMaintainBookingPage();
-        }        
+        }
 
 
 
@@ -34,7 +35,7 @@ namespace iCargoUIAutomation.StepDefinitions
         public void ThenUserDeletesTheFlightDetailsAndAddsNewFlightDetails()
         {
             mbp.DeleteAddFlights();
-        }        
+        }
 
         [Then(@"User selects new carrier details")]
         public void ThenUserSelectsNewCarrierDetails()
@@ -57,6 +58,10 @@ namespace iCargoUIAutomation.StepDefinitions
             mbp.CaptureIrregularity();
         }
 
-
+        [Then(@"User enters already executed AWB number")]
+        public void ThenUserEntersAlreadyExecutedAWBNumber()
+        {
+            csp.EnterAWBNumberForMaintainBooking();
+        }
     }
 }

@@ -77,11 +77,13 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("Create a booking for a single piece over 300lbs on an OO E175 and system generate" +
             "s an AWB with a warning.")]
         [NUnit.Framework.CategoryAttribute("CAP018")]
+        [NUnit.Framework.CategoryAttribute("CAP018_BKG_00006")]
         [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "0316", "2", "310", null)]
         public virtual void CreateABookingForASinglePieceOver300LbsOnAnOOE175AndSystemGeneratesAnAWBWithAWarning_(string origin, string destination, string productCode, string commodity, string piece, string weight, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "CAP018"};
+                    "CAP018",
+                    "CAP018_BKG_00006"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

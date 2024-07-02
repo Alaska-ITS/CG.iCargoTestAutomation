@@ -1,6 +1,6 @@
 ﻿Feature: CAP018_BKG_00004_Create a booking given an AWB from stock
 
-@CAP018
+@CAP018 @CAP018_BKG_00004
 Scenario Outline: Create a booking given an AWB from stock and system will create a new awb
 	Given User lauches the Url of iCargo Staging UI
 	Then User enters into the  iCargo 'Sign in to icargoas' page successfully

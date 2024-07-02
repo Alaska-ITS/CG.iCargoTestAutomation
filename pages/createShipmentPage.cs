@@ -213,7 +213,25 @@ namespace iCargoUIAutomation.pages
         private By btnOKCaptureChkSheet_Xpath = By.XPath("//*[@class='btmbtnpane btm-fixed']/button[@id='btnSave']");
         private By btnOKSuccessCheckSheet_Xpath = By.XPath("//*[@class='alert-messages-list']//parent::div//following-sibling::div//button");
 
+        //Maintain Booking Page
+        private By awbTextbox_ID = By.Id("awbNum_b");
 
+        public void EnterAWBNumberForMaintainBooking()
+        {
+            Hooks.Hooks.createNode();
+            try
+            {
+                awb_num = awb_num.Split('-')[1];
+                EnterText(awbTextbox_ID, awb_num);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered AWB Number: " + awb_num);
+                Log.Info("Entered AWB Number: " + awb_num);
+            }
+            catch (Exception e)
+            {
+                Hooks.Hooks.UpdateTest(Status.Fail, "Error in Entering AWB Number: " + e.Message);
+                Log.Error("Error in Entering AWB Number: " + e.Message);
+            }
+        }
 
         public void SwitchToLTEContentFrame()
         {
