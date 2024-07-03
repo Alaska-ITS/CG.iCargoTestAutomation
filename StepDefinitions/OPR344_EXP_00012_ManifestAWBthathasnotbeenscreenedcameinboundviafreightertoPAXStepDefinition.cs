@@ -10,7 +10,7 @@ using OpenQA.Selenium.Edge;
 namespace iCargoUIAutomation.StepDefinitions
 {
     [Binding]
-    public class OPR344_EXP_00004_SplitAWBOPR344manifestsplitpiecestoflightStepDefinition : BasePage
+    public class OPR344_EXP_00012_ManifestAWBthathasnotbeenscreenedcameinboundviafreightertoPAXStepDefinition : BasePage
     {
         private IWebDriver driver;
         private PageObjectManager pageObjectManager;       
@@ -18,10 +18,10 @@ namespace iCargoUIAutomation.StepDefinitions
         private ExportManifestPage emp;
      
 
-        ILog Log = LogManager.GetLogger(typeof(OPR344_EXP_00004_SplitAWBOPR344manifestsplitpiecestoflightStepDefinition));
+        ILog Log = LogManager.GetLogger(typeof(OPR344_EXP_00012_ManifestAWBthathasnotbeenscreenedcameinboundviafreightertoPAXStepDefinition));
 
 
-        public OPR344_EXP_00004_SplitAWBOPR344manifestsplitpiecestoflightStepDefinition(IWebDriver driver) : base(driver)
+        public OPR344_EXP_00012_ManifestAWBthathasnotbeenscreenedcameinboundviafreightertoPAXStepDefinition(IWebDriver driver) : base(driver)
         {
             this.driver = driver;
             this.pageObjectManager = new PageObjectManager(driver);
@@ -31,16 +31,12 @@ namespace iCargoUIAutomation.StepDefinitions
 
         }
 
-        [When(@"User filterouts the Booked AWB from '([^']*)' Split And Assign with Pieces ""([^""]*)""")]
-        public void WhenUserFilteroutsTheBookedAWBFromSplitAndAssign(string awbSectionName, string splitPieces)
+        [When(@"User validates the error message '([^']*)'")]
+        public void WhenUserValidatesTheErrorMessage(string expectedMessage)
         {
             Hooks.Hooks.createNode();
-            csp.FilterSplitAndAssignAWBToULDExportManifest(awbSectionName, splitPieces);
+            emp.ValidateErrorMessageOnPopup(expectedMessage);
         }
-
-        
-
-
 
     }
 }
