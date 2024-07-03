@@ -25,7 +25,7 @@ namespace iCargoUIAutomation.StepDefinitions
             this.pageObjectManager = new PageObjectManager(driver);
            
             this.csp = pageObjectManager.GetCreateShipmentPage();
-        }     
+        } 
 
 
 
