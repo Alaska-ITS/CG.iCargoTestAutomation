@@ -12,6 +12,7 @@ namespace iCargoUIAutomation.pages
 {
     public class homePage : BasePage
     {
+        public static string? role;
         public homePage(IWebDriver driver) : base(driver)
         {
         }
@@ -27,6 +28,12 @@ namespace iCargoUIAutomation.pages
         private By lnkLogOut_Xpath = By.XPath("//*[@class='ic-header-items-sub-menu']//*[@class='ic-log-off']/a");
         private By btnYesLogoutConfirmation_Xpath = By.XPath("//button[text()=' Yes ']");
         private By txt_ScreenName_Css = By.CssSelector(".ic-screen-search");
+
+        //Login Page Details
+        private By userName_Id = By.Id("username");
+        private By password_Id = By.Id("password");
+        private By loginButton_Id = By.XPath("//input[@title='Sign In']");
+
         ILog Log = LogManager.GetLogger(typeof(homePage));
 
         
@@ -104,6 +111,36 @@ namespace iCargoUIAutomation.pages
             }
             
            
+        }
+
+        public void LoginICargo()
+        {
+            try
+            {
+                //role = Environment.GetEnvironmentVariable("RoleGroup", EnvironmentVariableTarget.Process);
+                role = "CCC";
+                if (role == "CCC")
+                {
+                    EnterText(userName_Id, "iCargoTest3@aagqa.net");
+                    EnterText(password_Id, "*TV%My14ytgT96$");
+                }
+                else if (role == "CGODG")
+                {
+                    EnterText(userName_Id, "iCargoTest2@aagqa.net");
+                    EnterText(password_Id, "@45Qhnfx6P1A$L#");
+                }
+                else
+                {
+                    Log.Error("Role not found");
+                }
+                Click(loginButton_Id);
+                WaitForElementToBeInvisible(userName_Id, TimeSpan.FromSeconds(5));
+            }
+            catch (Exception e)
+            {
+                Log.Error("Error in loginiCargo method: " + e.Message);
+            }
+
         }
 
     }

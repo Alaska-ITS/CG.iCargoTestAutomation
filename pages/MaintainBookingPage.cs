@@ -345,9 +345,10 @@ namespace iCargoUIAutomation.pages
                     SwitchToCAP018Frame();
                     Log.Info("Switched to CAP018 Frame");
                 }
-                ClickOnElementIfPresent(btnCloseMb_XPATH);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Close Maintain Booking Button");
-                Log.Info("Clicked Close Maintain Booking Button");
+                WaitForElementToBeInvisible(btnOkBookingSummaryPopup_XPATH, TimeSpan.FromSeconds(5));
+                ClickOnElementIfPresent(clearAWBBtn_ID);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Clear Maintain Booking Button");
+                Log.Info("Clicked Clear Maintain Booking Button");
             }
             catch (Exception e)
             {
@@ -640,6 +641,7 @@ namespace iCargoUIAutomation.pages
                 }
                 else
                 {
+                    Click(unkShipperName_ID);
                     WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
                     EnterTextWithCheck(unkShipperName_ID, shipperName);
                     Hooks.Hooks.UpdateTest(Status.Pass, "Entered Shipper Name: " + shipperName);
@@ -684,6 +686,7 @@ namespace iCargoUIAutomation.pages
                 }
                 else
                 {
+                    Click(unkConsigneeName_ID);
                     WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
                     EnterTextWithCheck(unkConsigneeName_ID, consigneeName);
                     Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Name: " + consigneeName);
