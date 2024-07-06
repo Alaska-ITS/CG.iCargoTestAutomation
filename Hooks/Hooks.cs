@@ -23,6 +23,7 @@ namespace iCargoUIAutomation.Hooks
         public static ExtentTest? scenario;
         public static ExtentTest? step;
         public static string? testResultPath;
+        private static IWebDriver driver;
 
         public Hooks(IObjectContainer container)
         {
@@ -42,6 +43,7 @@ namespace iCargoUIAutomation.Hooks
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Standard;
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
+            
 
         }
 
@@ -70,12 +72,10 @@ namespace iCargoUIAutomation.Hooks
         {
             Console.WriteLine("Running before scenario...");
 
-
-            IWebDriver driver = new EdgeDriver();
+            driver = new EdgeDriver();
             //IWebDriver driver = new ChromeDriver();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
             driver.Manage().Window.Maximize();
-
             _container.RegisterInstanceAs<IWebDriver>(driver);
             scenario = feature.CreateNode(scenarioContext.ScenarioInfo.Title);
 
@@ -103,7 +103,7 @@ namespace iCargoUIAutomation.Hooks
         [AfterScenario]
         public void AfterScenario()
         {
-            var driver = _container.Resolve<IWebDriver>();
+            //var driver = _container.Resolve<IWebDriver>();
             var status = TestContext.CurrentContext.Result.Outcome.Status;
             var stackTrace = TestContext.CurrentContext.Result.StackTrace;
             DateTime time = DateTime.Now;
@@ -124,7 +124,7 @@ namespace iCargoUIAutomation.Hooks
             string stepType = scenarioContext.StepContext.StepInfo.StepDefinitionType.ToString();
             string stepName = scenarioContext.StepContext.StepInfo.Text;
 
-            var driver = _container.Resolve<IWebDriver>();
+            //var driver = _container.Resolve<IWebDriver>();
 
         }
 
@@ -133,7 +133,7 @@ namespace iCargoUIAutomation.Hooks
             ITakesScreenshot ts = (ITakesScreenshot)driver;
             Screenshot screenshot = ts.GetScreenshot();
             string screenshotLocation = Path.Combine(testResultPath, fileName);
-            screenshot.SaveAsFile(screenshotLocation);            
+            screenshot.SaveAsFile(screenshotLocation);
             return MediaEntityBuilder.CreateScreenCaptureFromPath(screenshotLocation).Build();
         }
     }
