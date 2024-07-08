@@ -16,4 +16,4 @@ Examples:
 	| Origin | Destination | ProductCode | Commodity | Piece | Weight | Execute |
 	| ANC    | SEA         | PRIORITY    | 2199      | 8     | 360    | No     |
 	| SEA    | LAX         | GENERAL     | NONSCR    | 13    | 775    | Yes     |
-	| SAN    | JFK         | GOLDSTREAK  | NONSCR    | 2     | 55     | No      |
+	| SAN    | JFK         | GOLDSTREAK  | NONSCR    | 2     | 55     | Yes      |
