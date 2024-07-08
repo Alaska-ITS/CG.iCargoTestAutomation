@@ -4,6 +4,7 @@ using log4net;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,10 @@ namespace iCargoUIAutomation.pages
     public class homePage : BasePage
     {
         public static string? role;
+        public static string? ccc_UserName;
+        public static string? ccc_Password;
+        public static string? cgodg_UserName;
+        public static string? cgodg_Password;
         public homePage(IWebDriver driver) : base(driver)
         {
         }
@@ -117,17 +122,21 @@ namespace iCargoUIAutomation.pages
         {
             try
             {
-                //role = Environment.GetEnvironmentVariable("RoleGroup", EnvironmentVariableTarget.Process);
+                ccc_UserName = ConfigurationManager.AppSettings["CCC_UserName"];
+                ccc_Password = ConfigurationManager.AppSettings["CCC_Password"];
+                cgodg_UserName = ConfigurationManager.AppSettings["CGODG_UserName"];
+                cgodg_Password = ConfigurationManager.AppSettings["CGODG_Password"];
+                //role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);
                 role = "CCC";
                 if (role == "CCC")
                 {
-                    EnterText(userName_Id, "iCargoTest3@aagqa.net");
-                    EnterText(password_Id, "*TV%My14ytgT96$");
+                    EnterText(userName_Id, ccc_UserName);
+                    EnterText(password_Id, ccc_Password);
                 }
                 else if (role == "CGODG")
                 {
-                    EnterText(userName_Id, "iCargoTest2@aagqa.net");
-                    EnterText(password_Id, "@45Qhnfx6P1A$L#");
+                    EnterText(userName_Id, cgodg_UserName);
+                    EnterText(password_Id, cgodg_Password);
                 }
                 else
                 {

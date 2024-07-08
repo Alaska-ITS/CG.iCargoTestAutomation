@@ -41,9 +41,9 @@ namespace iCargoUIAutomation.Hooks
         public static void BeforeTestRun()
         {
             Console.WriteLine("Running before test run...");
-
-            string dir = AppDomain.CurrentDomain.BaseDirectory;
-            testResultPath = dir.Replace("bin\\Debug\\net6.0", "Reports\\TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss"));
+            string reportPath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports";
+            //string dir = AppDomain.CurrentDomain.BaseDirectory;
+            testResultPath = reportPath + @"\Reports\TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + @"\index.html";
             var htmlReporter = new ExtentHtmlReporter(testResultPath);
             htmlReporter.Config.ReportName = "Automation Status Report";
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Standard;
@@ -65,39 +65,39 @@ namespace iCargoUIAutomation.Hooks
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
             //browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);
             browser = "chrome";
-
-            if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
-            {
-                driver = new ChromeDriver();
-            }
-            else if (browser.Equals("edge", StringComparison.OrdinalIgnoreCase))
-            {
-                driver = new EdgeDriver();
-            }
-            else if (browser.Equals("firefox", StringComparison.OrdinalIgnoreCase))
-            {
-                driver = new FirefoxDriver();
-            }
-            else if (browser.Equals("safari", StringComparison.OrdinalIgnoreCase))
-            {
-                driver = new SafariDriver();
-            }
-            else
-            {
-                throw new NotSupportedException($"Browser '{browser}' is not supported");
-            }
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
-            driver.Manage().Window.Maximize();
-            homePage hp = new homePage(driver);
-            BasePage bp = new BasePage(driver);
-            bp.DeleteAllCookies();
-            bp.Open(appUrl);
-            driver.FindElement(By.XPath("//a[@id='social-oidc']")).Click();
-            if (bp.IsElementDisplayed(By.XPath("//body[@class='login']")))
-            {
-                hp.LoginICargo();
-            }
-            bp.SwitchToNewWindow();
+            
+                if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
+                {
+                    driver = new ChromeDriver();
+                }
+                else if (browser.Equals("edge", StringComparison.OrdinalIgnoreCase))
+                {
+                    driver = new EdgeDriver();
+                }
+                else if (browser.Equals("firefox", StringComparison.OrdinalIgnoreCase))
+                {
+                    driver = new FirefoxDriver();
+                }
+                else if (browser.Equals("safari", StringComparison.OrdinalIgnoreCase))
+                {
+                    driver = new SafariDriver();
+                }
+                else
+                {
+                    throw new NotSupportedException($"Browser '{browser}' is not supported");
+                }
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+                driver.Manage().Window.Maximize();
+                homePage hp = new homePage(driver);
+                BasePage bp = new BasePage(driver);
+                bp.DeleteAllCookies();
+                bp.Open(appUrl);                
+                driver.FindElement(By.XPath("//a[@id='social-oidc']")).Click();                
+                if (bp.IsElementDisplayed(By.XPath("//body[@class='login']")))
+                {
+                    hp.LoginICargo();                    
+                }
+                bp.SwitchToNewWindow();                       
         }
 
         [AfterFeature]
@@ -153,14 +153,16 @@ namespace iCargoUIAutomation.Hooks
             string fileName = "Screenshot_" + time.ToString("h_mm_ss") + ".png";
             if (status == TestStatus.Failed)
             {
-                scenario.Fail("Test Failed", captureScreenshot(driver, fileName));
+                scenario.Fail("Test Failed", captureScreenshot(fileName));
                 scenario.Log(Status.Fail, "Test failed with log" + stackTrace);
             }
             if (MaintainBookingPage.awbNumber != "" || CreateShipmentPage.awb_num != "")
             {
-                string fromEmail = "madelyn.charlesworth@alaskaair.com";
+                //string fromEmail = "madelyn.charlesworth@alaskaair.com";
+                string fromEmail = "avijit.saha@alaskaair.com";
                 // Recipient's email address
-                string toEmail = "madelyn.charlesworth@alaskaair.com";
+                //string toEmail = "madelyn.charlesworth@alaskaair.com";
+                string toEmail = "avijit.saha@alaskaair.com";
                 // Create and configure the SMTP client
                 SmtpClient smtpClient = new SmtpClient("outbound.alaskaair.com", 25);
                 MailMessage mail = new MailMessage(fromEmail, toEmail);
@@ -182,7 +184,7 @@ namespace iCargoUIAutomation.Hooks
 
         }
 
-        public static MediaEntityModelProvider captureScreenshot(IWebDriver driver, string fileName)
+        public static MediaEntityModelProvider captureScreenshot(string fileName)
         {
             ITakesScreenshot ts = (ITakesScreenshot)driver;
             Screenshot screenshot = ts.GetScreenshot();
