@@ -26,6 +26,7 @@ namespace iCargoUIAutomation.Hooks
         public static ExtentTest? scenario;
         public static ExtentTest? step;
         public static string? testResultPath;
+        public static string? reportPath;
         private static IWebDriver? driver;
         public static string? featureName;
         public static string? browser;
@@ -41,9 +42,8 @@ namespace iCargoUIAutomation.Hooks
         public static void BeforeTestRun()
         {
             Console.WriteLine("Running before test run...");
-            string reportPath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports";
-            //string dir = AppDomain.CurrentDomain.BaseDirectory;
-            testResultPath = reportPath + @"\Reports\TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + @"\index.html";
+            reportPath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports\Reports\TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");            
+            testResultPath = reportPath + @"\index.html";
             var htmlReporter = new ExtentHtmlReporter(testResultPath);
             htmlReporter.Config.ReportName = "Automation Status Report";
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Standard;
@@ -63,8 +63,8 @@ namespace iCargoUIAutomation.Hooks
         {
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
-            //browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);
-            browser = "chrome";
+            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);
+            //browser = "firefox";
             
                 if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
                 {
@@ -158,11 +158,8 @@ namespace iCargoUIAutomation.Hooks
             }
             if (MaintainBookingPage.awbNumber != "" || CreateShipmentPage.awb_num != "")
             {
-                //string fromEmail = "madelyn.charlesworth@alaskaair.com";
-                string fromEmail = "avijit.saha@alaskaair.com";
-                // Recipient's email address
-                //string toEmail = "madelyn.charlesworth@alaskaair.com";
-                string toEmail = "avijit.saha@alaskaair.com";
+                string fromEmail = "madelyn.charlesworth@alaskaair.com";                                
+                string toEmail = "madelyn.charlesworth@alaskaair.com";                
                 // Create and configure the SMTP client
                 SmtpClient smtpClient = new SmtpClient("outbound.alaskaair.com", 25);
                 MailMessage mail = new MailMessage(fromEmail, toEmail);
@@ -188,7 +185,8 @@ namespace iCargoUIAutomation.Hooks
         {
             ITakesScreenshot ts = (ITakesScreenshot)driver;
             Screenshot screenshot = ts.GetScreenshot();
-            string screenshotLocation = Path.Combine(testResultPath, fileName);
+            string screenshotPath = reportPath;
+            string screenshotLocation = Path.Combine(screenshotPath, fileName);
             screenshot.SaveAsFile(screenshotLocation);
             return MediaEntityBuilder.CreateScreenCaptureFromPath(screenshotLocation).Build();
         }

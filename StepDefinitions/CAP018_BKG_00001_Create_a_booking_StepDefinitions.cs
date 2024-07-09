@@ -122,10 +122,10 @@ namespace iCargoUIAutomation.StepDefinitions
         }
 
         [Given(@"User wants to execute the example ""([^""]*)""")]
-        [Obsolete]
+        
         public void GivenUserWantsToExecuteTheExample(string execute)
         {
-            if (execute == "No")
+            if (execute.ToLower() == "no")
             {
                 ScenarioContext.Current["Execute"] = "false";
             }

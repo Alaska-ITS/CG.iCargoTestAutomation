@@ -126,14 +126,14 @@ namespace iCargoUIAutomation.pages
                 ccc_Password = ConfigurationManager.AppSettings["CCC_Password"];
                 cgodg_UserName = ConfigurationManager.AppSettings["CGODG_UserName"];
                 cgodg_Password = ConfigurationManager.AppSettings["CGODG_Password"];
-                //role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);
-                role = "CCC";
-                if (role == "CCC")
+                role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);
+                //role = "CGODG";
+                if (role.ToUpper() == "CCC")
                 {
                     EnterText(userName_Id, ccc_UserName);
                     EnterText(password_Id, ccc_Password);
                 }
-                else if (role == "CGODG")
+                else if (role.ToUpper() == "CGODG")
                 {
                     EnterText(userName_Id, cgodg_UserName);
                     EnterText(password_Id, cgodg_Password);
