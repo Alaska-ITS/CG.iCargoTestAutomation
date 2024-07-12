@@ -34,7 +34,14 @@ namespace iCargoUIAutomation.StepDefinitions
         {
             this.unkShipper = unkShipper;
             this.unkConsignee = unkConsignee;
-            mbp.UnknownShipperConsigneeALLDetails(unkShipper, unkConsignee);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                mbp.UnknownShipperConsigneeALLDetails(unkShipper, unkConsignee);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
 
         [Then(@"User enters shipment details with Origin ""([^""]*)"", Destination ""([^""]*)"",Agent Code ""([^""]*)"", Product Code ""([^""]*)""")]
@@ -44,8 +51,15 @@ namespace iCargoUIAutomation.StepDefinitions
             this.destination = destination;
             this.agentCode = agentcode;
             this.productCode = productCode;
-            mbp.NewUnknownAgentShipmentDetails(origin, destination, agentcode, productCode);
-            
-        }       
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                mbp.NewUnknownAgentShipmentDetails(origin, destination, agentcode, productCode);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+
+        }
     }
 }

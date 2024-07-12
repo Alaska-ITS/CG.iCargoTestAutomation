@@ -2,11 +2,8 @@
 
 @CAP018
 Scenario Outline: iCargo Login and Create New AVI Shipment
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
+	Given User wants to execute the example "<Execute>"
+	When User switches station if BaseStation other than "<Origin>"
 	When User enters screen name as 'CAP018'
 	Then User enters into the  iCargo 'Maintain Booking' page successfully
 	And User clicks on New/List button
@@ -15,8 +12,7 @@ Scenario Outline: iCargo Login and Create New AVI Shipment
 	And User enters commodity details with Commodity "<Commodity>", Pieces "<Piece>", Weight "<Weight>"
 	And User selects flight for "<ProductCode>"
 	And User clicks on Save button and fills the checksheet details to generate awb
-	Then User logs out from the application
 Examples:
-	| Origin | Destination | ProductCode | Commodity | Piece | Weight |
-	| ANC    | FAI         | PET CONNECT | 9730      | 2     | 50     |
+	| Origin | Destination | ProductCode | Commodity | Piece | Weight | Execute |
+	| ANC    | FAI         | PET CONNECT | 9730      | 2     | 50     | Yes     |
 	

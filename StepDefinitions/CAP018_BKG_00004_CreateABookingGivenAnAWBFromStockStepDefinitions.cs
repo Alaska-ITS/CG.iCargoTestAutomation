@@ -31,7 +31,15 @@ namespace iCargoUIAutomation.StepDefinitions
         [Then(@"a banner appears for the awb does not exist")]
         public void ThenABannerAppearsForTheAwbDoesNotExist()
         {
-            mbp.AWBBookingfromStock();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                mbp.AWBBookingfromStock();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
         
         [Then(@"User enters unknown shipment details with Origin ""([^""]*)"", Destination ""([^""]*)"", Product Code ""([^""]*)""")]
@@ -40,14 +48,24 @@ namespace iCargoUIAutomation.StepDefinitions
             this.origin = origin;
             this.destination = destination;                       
             this.productCode = productCode;
+            if (ScenarioContext.Current["Execute"] == "true")
             mbp.UnknownAgentShipmentDetails(origin, destination,productCode);
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
 
         [Then(@"User enters the AWB number as ""([^""]*)""")]
         public void ThenUserEntersTheAWBNumberAs(string awb)     
         {
             this.awb = awb;
+            if (ScenarioContext.Current["Execute"] == "true")
             mbp.EnterAWBNumberFromStock(awb);
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
 
 
@@ -56,7 +74,12 @@ namespace iCargoUIAutomation.StepDefinitions
         {
            this.unknownShipper = shipper;
             this.consignee = consignee;
+            if (ScenarioContext.Current["Execute"] == "true")
             mbp.UnknownShipperConsigneeDetails(shipper, consignee);
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
 
     }

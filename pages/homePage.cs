@@ -4,6 +4,7 @@ using log4net;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace iCargoUIAutomation.pages
 {
     public class homePage : BasePage
     {
+        public static string? role;        
         public homePage(IWebDriver driver) : base(driver)
         {
         }
@@ -27,6 +29,12 @@ namespace iCargoUIAutomation.pages
         private By lnkLogOut_Xpath = By.XPath("//*[@class='ic-header-items-sub-menu']//*[@class='ic-log-off']/a");
         private By btnYesLogoutConfirmation_Xpath = By.XPath("//button[text()=' Yes ']");
         private By txt_ScreenName_Css = By.CssSelector(".ic-screen-search");
+
+        //Login Page Details
+        private By userName_Id = By.Id("username");
+        private By password_Id = By.Id("password");
+        private By loginButton_Id = By.XPath("//input[@title='Sign In']");
+
         ILog Log = LogManager.GetLogger(typeof(homePage));
 
         
@@ -104,6 +112,37 @@ namespace iCargoUIAutomation.pages
             }
             
            
+        }
+
+        public void LoginICargo()
+        {
+            try
+            {
+                var secrets = KeyVault.GetSecret();
+                WaitForElementToBeVisible(userName_Id, TimeSpan.FromSeconds(10));
+                role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);
+                if (role.ToUpper() == "CCC")
+                {
+                    EnterText(userName_Id, secrets["CCC_Username"]);
+                    EnterText(password_Id, secrets["CCC_Password"]);
+                }
+                else if (role.ToUpper() == "CGODG")
+                {
+                    EnterText(userName_Id, secrets["CGODG_Username"]);
+                    EnterText(password_Id, secrets["CGODG_Password"]);
+                }
+                else
+                {
+                    Log.Error("Role not found");
+                }
+                Click(loginButton_Id);
+                WaitForElementToBeInvisible(userName_Id, TimeSpan.FromSeconds(5));
+            }
+            catch (Exception e)
+            {
+                Log.Error("Error in loginiCargo method: " + e.Message);
+            }
+
         }
 
     }

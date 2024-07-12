@@ -170,8 +170,7 @@ namespace iCargoUIAutomation.pages
 
         public void SwitchToLastWindow()
         {
-            driver.SwitchTo().Window(driver.WindowHandles[^1]);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Switched to the last window");
+            driver.SwitchTo().Window(driver.WindowHandles[^1]);            
             log.Info("Switched to the last window");
         }
 
@@ -303,8 +302,7 @@ namespace iCargoUIAutomation.pages
         public string GetText(By byLocator)
         {
 
-            string textExtracted = driver.FindElement(byLocator).Text.Trim();
-            Hooks.Hooks.UpdateTest(Status.Pass, "Extracted the text " + textExtracted);
+            string textExtracted = driver.FindElement(byLocator).Text.Trim();            
             log.Info("Extracted the text " + textExtracted);
             return textExtracted;
 
@@ -514,19 +512,25 @@ namespace iCargoUIAutomation.pages
             js.ExecuteScript("window.scrollBy(2000,0)");
         }
 
+        //Click Element using JavaScriptExecutor
+        public void ClickElementUsingJavaScript(By byLocator)
+        {
+            IWebElement element = driver.FindElement(byLocator);
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].click();", element);
+        }
+
 
         /* Frame Actions */
         public void SwitchToFrame(By byLocator)
         {
-            driver.SwitchTo().Frame(driver.FindElement(byLocator));
-            Hooks.Hooks.UpdateTest(Status.Pass, "Switched to frame");
+            driver.SwitchTo().Frame(driver.FindElement(byLocator));            
             log.Info("Switched to frame");
         }
 
         public void SwitchToDefaultContent()
         {
-            driver.SwitchTo().DefaultContent();
-            Hooks.Hooks.UpdateTest(Status.Pass, "Switched to default content");
+            driver.SwitchTo().DefaultContent();            
             log.Info("Switched to default content");
         }
 

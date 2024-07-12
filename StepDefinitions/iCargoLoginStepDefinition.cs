@@ -86,16 +86,29 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User switches station if BaseStation other than ""([^""]*)""")]
         public void SwitchStationForDifferentBase(string origin)
         {
-
-            Log.Info("Step: Switching station if BaseStation other than Origin ");
-            hp.SwitchStation(origin);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Log.Info("Step: Switching station if BaseStation other than Origin ");
+                hp.SwitchStation(origin);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
 
         [When(@"User enters the screen name as '([^']*)'")]
         public void EnteriCargoScreenName(string screenName)
         {
-            Log.Info("Step: Entering the screen name");
-            hp.enterScreenName(screenName);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Log.Info("Step: Entering the screen name");
+                hp.enterScreenName(screenName);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }            
         }
 
 
