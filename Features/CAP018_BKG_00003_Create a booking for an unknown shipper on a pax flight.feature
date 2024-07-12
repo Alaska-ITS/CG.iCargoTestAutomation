@@ -17,5 +17,5 @@ Scenario Outline: Create a booking for an unknown shipper on a pax flight
 Examples:
 	| Origin | Destination | ProductCode | Commodity | Piece | Weight | AgentCode | Shipper | Consignee | Execute |
 	| SEA    | LAX         | GENERAL     | NONSCR    | 13    | 775    | ASQXGUEST | C1001   | C1001     | No     |
-	| ANC    | HNL         | PRIORITY    | 2199      | 8     | 360    | ASQXGUEST | C1001   | C1001     | Yes      |
+	| ANC    | SEA         | PRIORITY    | 2199      | 8     | 360    | ASQXGUEST | C1001   | C1001     | Yes      |
 	| SAN    | JFK         | GOLDSTREAK  | NONSCR    | 2     | 55     | ASQXGUEST | C1001   | C1001     | Yes     |
