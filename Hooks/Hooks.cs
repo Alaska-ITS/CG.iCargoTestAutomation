@@ -13,6 +13,7 @@ using TechTalk.SpecFlow;
 using OpenQA.Selenium.Safari;
 using OpenQA.Selenium.Firefox;
 using System.Net.Mail;
+using System.Configuration;
 
 
 namespace iCargoUIAutomation.Hooks
@@ -155,20 +156,24 @@ namespace iCargoUIAutomation.Hooks
             {
                 scenario.Fail("Test Failed", captureScreenshot(fileName));
                 scenario.Log(Status.Fail, "Test failed with log" + stackTrace);
-            }
-            if (MaintainBookingPage.awbNumber != "" || CreateShipmentPage.awb_num != "")
+            }            
+            if (MaintainBookingPage.awbNumber != "" || CreateShipmentPage.awb_num != "" && ScenarioContext.Current["Execute"] == "true")
             {
-                string fromEmail = "madelyn.charlesworth@alaskaair.com";                                
-                string toEmail = "madelyn.charlesworth@alaskaair.com";                
-                // Create and configure the SMTP client
-                SmtpClient smtpClient = new SmtpClient("outbound.alaskaair.com", 25);
-                MailMessage mail = new MailMessage(fromEmail, toEmail);
-                mail.Subject = "AWB Number";
+                string filePath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports\AWB_Numbers\AWB_Details.xlsx";
                 if (featureName.Contains("CAP018"))
-                    mail.Body = "The AWB Number is " + MaintainBookingPage.awbNumber;
+                {
+                    ExcelFileConfig excelFileConfig = new ExcelFileConfig();
+                    excelFileConfig.AppendDataToExcel(filePath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "CAP018", MaintainBookingPage.awbNumber);
+                }
                 else
-                    mail.Body = "The AWB Number is " + CreateShipmentPage.awb_num;
-                smtpClient.Send(mail);
+                {
+                    ExcelFileConfig excelConfig = new ExcelFileConfig();
+                    excelConfig.AppendDataToExcel(filePath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", CreateShipmentPage.awb_num);
+                }
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
             }
         }
 

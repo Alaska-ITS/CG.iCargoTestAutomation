@@ -13,11 +13,7 @@ namespace iCargoUIAutomation.pages
 {
     public class homePage : BasePage
     {
-        public static string? role;
-        public static string? ccc_UserName;
-        public static string? ccc_Password;
-        public static string? cgodg_UserName;
-        public static string? cgodg_Password;
+        public static string? role;        
         public homePage(IWebDriver driver) : base(driver)
         {
         }
@@ -122,21 +118,19 @@ namespace iCargoUIAutomation.pages
         {
             try
             {
-                ccc_UserName = ConfigurationManager.AppSettings["CCC_UserName"];
-                ccc_Password = ConfigurationManager.AppSettings["CCC_Password"];
-                cgodg_UserName = ConfigurationManager.AppSettings["CGODG_UserName"];
-                cgodg_Password = ConfigurationManager.AppSettings["CGODG_Password"];
+                var secrets = KeyVault.GetSecret();
+                WaitForElementToBeVisible(userName_Id, TimeSpan.FromSeconds(10));
                 role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);
-                //role = "CGODG";
+                //role = "CCC";
                 if (role.ToUpper() == "CCC")
                 {
-                    EnterText(userName_Id, ccc_UserName);
-                    EnterText(password_Id, ccc_Password);
+                    EnterText(userName_Id, secrets["CCC_Username"]);
+                    EnterText(password_Id, secrets["CCC_Password"]);
                 }
                 else if (role.ToUpper() == "CGODG")
                 {
-                    EnterText(userName_Id, cgodg_UserName);
-                    EnterText(password_Id, cgodg_Password);
+                    EnterText(userName_Id, secrets["CGODG_Username"]);
+                    EnterText(password_Id, secrets["CGODG_Password"]);
                 }
                 else
                 {

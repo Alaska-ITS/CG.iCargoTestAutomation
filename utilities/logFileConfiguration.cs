@@ -24,7 +24,7 @@ namespace iCargoUIAutomation.utilities
             string logFilePath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports\Logs\Log"+DateTime.Now.ToString("yyyyMMdd_HHmmss")+@"logfile.log";
             Console.WriteLine("Log file path: " + logFilePath);
             FileAppender appender = new FileAppender();
-            appender.AppendToFile = false;
+            appender.AppendToFile = true;
             appender.File = logFilePath;
             appender.Layout = patternLayout;            
             appender.ActivateOptions();

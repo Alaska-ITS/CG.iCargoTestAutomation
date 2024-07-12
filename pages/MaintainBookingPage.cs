@@ -29,7 +29,7 @@ namespace iCargoUIAutomation.pages
         {
         }
 
-        private By CAP018Frame_XPATH = By.XPath("//iframe[@name='iCargoCotentFrameCAP018']");
+        private By CAP018Frame_XPATH = By.XPath("//iframe[@name='iCargoContentFrameCAP018']");
         private By newList_XPATH = By.XPath("//button[@id='btDisplay']");
         private By homePage_CSS = By.CssSelector(".ic-home-tab");
         // Shipment Details
@@ -71,6 +71,8 @@ namespace iCargoUIAutomation.pages
         private By popupAlertWarningBooking_CSS = By.CssSelector(".alert-messages-ui");
         private By popupAlertMessageBooking_XPATH = By.XPath("//*[@class='alert-messages-list']//span");
         private By btnYesAlertMessageBooking_XPATH = By.XPath("//*[@class='ui-dialog-buttonpane ui-widget-content ui-helper-clearfix']//*[text()=' Yes ']");
+        private By embargoAlert_XPATH = By.XPath("//table[@id='showEmbargo-header']");
+        private By embargoContinue_XPATH = By.XPath("//input[@id='CMP_Reco_Defaults_ShowEmbargo_continue']");
 
         // Booking Summary
         private By bookingSummaryPopup_CSS = By.CssSelector(".iCargoPopUpContent");
@@ -311,9 +313,19 @@ namespace iCargoUIAutomation.pages
             {
                 errorText = GetText(popupAlertMessageBooking_XPATH);
                 WaitForElementToBeVisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(10));
-                Click(btnYesAlertMessageBooking_XPATH);
-            }
+                Click(btnYesAlertMessageBooking_XPATH);                
+            }            
             return errorText;
+        }
+
+        public void ClickingYesOnEmbargoWarnings()
+        {            
+            SwitchToSecondPopupWindow();
+            if (IsElementDisplayed(embargoAlert_XPATH))
+            {                
+                WaitForElementToBeVisible(embargoContinue_XPATH, TimeSpan.FromSeconds(10));
+                Click(embargoContinue_XPATH);
+            }            
         }
 
         public void ClickSaveButton()
@@ -325,8 +337,9 @@ namespace iCargoUIAutomation.pages
                 WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(5));
                 ClickOnElementIfPresent(saveBtn_XPATH);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Save Button");
-                Log.Info("Clicked Save Button");
+                Log.Info("Clicked Save Button");                
                 ClickingYesOnPopupWarnings();
+                ClickingYesOnEmbargoWarnings();
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Yes on Popup Warnings");
                 Log.Info("Clicked Yes on Popup Warnings");
                 WaitForNewWindowToOpen(TimeSpan.FromSeconds(20), noOfWindowsBefore + 1);
