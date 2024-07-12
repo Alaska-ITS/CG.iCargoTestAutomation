@@ -33,20 +33,43 @@ namespace iCargoUIAutomation.StepDefinitions
         [Then(@"User deletes the flight details and adds new flight details")]
         public void ThenUserDeletesTheFlightDetailsAndAddsNewFlightDetails()
         {
-            mbp.DeleteAddFlights();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                mbp.DeleteAddFlights();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }        
 
         [Then(@"User selects new carrier details")]
         public void ThenUserSelectsNewCarrierDetails()
         {
-            mbp.AddNewFlightDetails();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                mbp.AddNewFlightDetails();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
 
 
         [Then(@"User clicks on Save button to save new flight details")]
         public void ThenUserClicksOnSaveButtonToSaveNewFlightDetails()
         {
-            mbp.clickOnSaveButtonToSaveNewFlightDetails();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                mbp.clickOnSaveButtonToSaveNewFlightDetails();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }            
         }
 
 
@@ -54,7 +77,14 @@ namespace iCargoUIAutomation.StepDefinitions
         [Then(@"User captures the irregularity details")]
         public void ThenUserCapturesTheIrregularityDetails()
         {
-            mbp.CaptureIrregularity();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                mbp.CaptureIrregularity();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }            
         }
 
 

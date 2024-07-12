@@ -1,14 +1,15 @@
 ﻿Feature: LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper
-
+ 
 Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CGODG user
-
+ 
 @LTE001
 Scenario Outline: Create a PP AWB in LTE001 for a known shipper
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
+	#Given User lauches the Url of iCargo Staging UI
+	#Then User enters into the  iCargo 'Sign in to icargoas' page successfully
+	#When User clicks on the oidc button
+	#Then A new window is opened
+	#And User enters into the  iCargo 'Home' page successfully
+	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully
@@ -34,9 +35,9 @@ Scenario Outline: Create a PP AWB in LTE001 for a known shipper
 	And User saves all the details & handles all the popups
 	And User closes the LTE screen
 	Then User logs out from the application
-
+ 
 Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType |
-	| 10763     | 10763       | 10763         | ANC    | SEA         | GENERAL     | None | 0316      | None                | None              | 2     | 59     | PP         | CREDIT        | CART     |	
-	#| 10763     | 10763       | 10763         | ANC    | SEA         | GOLDSTREAK  | None | 6108      | None                | None              | 47    | 196    | PP         | CREDIT        | CART     |
-	#| 10763     | 10763       | 10763         | ANC    | SEA         | PRIORITY    | None | 0091      | None                | None              | 7     | 277    | PP         | CREDIT        | CART     |
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
+	| 10763     | 10763       | 10763         | SEA    | LAX         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | PP         | CREDIT        | CART     | Yes     |
+	| 10763     | 10763       | 10763         | ANC    | HNL         | PRIORITY    | None | 2199      | None                | None              | 8     | 360    | PP         | CREDIT        | CART     | No      |
+	| 10763     | 10763       | 10763         | SAN    | JFK         | GOLDSTREAK  | None | NONSCR    | None                | None              | 2     | 55     | PP         | CREDIT        | CART     | No      |

@@ -6,7 +6,7 @@ using TechTalk.SpecFlow;
 namespace iCargoUIAutomation.StepDefinitions
 {
     [Binding]
-    public class CAP018_BKG_00005_CreateAMultiLegBookingWithFlightsThatDoNotMeetMinimumConnectionTimeStepDefinitions :BasePage
+    public class CAP018_BKG_00005_CreateAMultiLegBookingWithFlightsThatDoNotMeetMinimumConnectionTimeStepDefinitions : BasePage
     {
         private IWebDriver driver;
         private PageObjectManager pageObjectManager;
@@ -27,8 +27,15 @@ namespace iCargoUIAutomation.StepDefinitions
         public void ThenUserSearchesForTheMultilegFlightToVerifyRESBubbleAWarningMessageAs(string rescolr, string reswarning, string productcode)
         {
             this.productcode = productcode;
-           mbp.SelectMultilegflight(rescolr, reswarning, productcode);
-        }                
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                mbp.SelectMultilegflight(rescolr, reswarning, productcode);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+        }
 
     }
 }
