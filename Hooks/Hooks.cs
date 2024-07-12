@@ -31,8 +31,7 @@ namespace iCargoUIAutomation.Hooks
         private static IWebDriver? driver;
         public static string? featureName;
         public static string? browser;
-        public static string? appUrl = "https://asstg-icargo.ibsplc.aero/icargo/login.do";
-        private static IWebDriver driver;
+        public static string? appUrl = "https://asstg-icargo.ibsplc.aero/icargo/login.do";      
 
         public Hooks(IObjectContainer container)
         {
