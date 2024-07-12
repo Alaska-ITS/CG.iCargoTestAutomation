@@ -32,6 +32,7 @@ namespace iCargoUIAutomation.Hooks
         public static string? featureName;
         public static string? browser;
         public static string? appUrl = "https://asstg-icargo.ibsplc.aero/icargo/login.do";
+        private static IWebDriver driver;
 
         public Hooks(IObjectContainer container)
         {
@@ -50,6 +51,7 @@ namespace iCargoUIAutomation.Hooks
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Standard;
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
+            
 
         }
 
@@ -118,10 +120,14 @@ namespace iCargoUIAutomation.Hooks
         [BeforeScenario(Order = 1)]
         public void FirstBeforeScenario(ScenarioContext scenarioContext)
         {
-
             _container.RegisterInstanceAs(driver);
+            Console.WriteLine("Running before scenario...");
+            driver = new EdgeDriver();
+            //IWebDriver driver = new ChromeDriver();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+            driver.Manage().Window.Maximize();
+            _container.RegisterInstanceAs<IWebDriver>(driver);
             scenario = feature.CreateNode(scenarioContext.ScenarioInfo.Title);
-
         }
 
         public static void createNode()
@@ -138,14 +144,13 @@ namespace iCargoUIAutomation.Hooks
         {
             step.Log(status, stepMessaage);
         }
-
-        [BeforeStep]
-        public void BeforeStep()
-        { }
+        
 
         [AfterScenario]
+
         public void AfterScenario(FeatureContext featureContext)
-        {            
+        {   
+
             var status = TestContext.CurrentContext.Result.Outcome.Status;
             var stackTrace = TestContext.CurrentContext.Result.StackTrace;
             DateTime time = DateTime.Now;
@@ -181,8 +186,6 @@ namespace iCargoUIAutomation.Hooks
         {            
             string stepType = scenarioContext.StepContext.StepInfo.StepDefinitionType.ToString();
             string stepName = scenarioContext.StepContext.StepInfo.Text;
-            
-
         }
 
         public static MediaEntityModelProvider captureScreenshot(string fileName)

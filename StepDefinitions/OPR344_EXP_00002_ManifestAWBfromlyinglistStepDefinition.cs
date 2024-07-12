@@ -88,5 +88,12 @@ namespace iCargoUIAutomation.StepDefinitions
             emp.ValidateWarningMessageAndCloseModal(messageToValidate);
         }
 
+        [When(@"User validates the warning message ""([^""]*)"" and Cancel the warning message")]
+        public void WhenUserValidatesTheWarningMessageAndCancelTheWarningMessage(string messageToValidate)
+        {
+            Hooks.Hooks.createNode();
+            emp.ValidateWarningMessageAndCancelModal(messageToValidate);
+        }
+
     }
 }
