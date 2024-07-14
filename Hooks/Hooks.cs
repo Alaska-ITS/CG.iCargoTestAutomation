@@ -45,6 +45,23 @@ namespace iCargoUIAutomation.Hooks
             Console.WriteLine("Running before test run...");
             reportPath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports\Reports\TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");            
             testResultPath = reportPath + @"\index.html";
+             if (!Directory.Exists(reportPath))
+            {
+                try
+                {
+                    Directory.CreateDirectory(reportPath);
+                }
+                catch (Exception)
+                {
+                    // Fallback to the project directory's resource folder if unable to create the specified path
+                    string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                    reportPath = Path.Combine(projectDirectory, "Resource", "Report", "TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss"));
+                    Directory.CreateDirectory(reportPath);
+                    testResultPath = reportPath + @"\index.html";
+                }
+            }
+
+            
             var htmlReporter = new ExtentHtmlReporter(testResultPath);
             htmlReporter.Config.ReportName = "Automation Status Report";
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Standard;
