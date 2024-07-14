@@ -180,6 +180,24 @@ namespace iCargoUIAutomation.Hooks
             if (MaintainBookingPage.awbNumber != "" || CreateShipmentPage.awb_num != "" && ScenarioContext.Current["Execute"] == "true")
             {
                 string filePath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports\AWB_Numbers\AWB_Details.xlsx";
+
+                string directoryPath = Path.GetDirectoryName(filePath);
+                if (!Directory.Exists(directoryPath))
+                {
+                    try
+                    {
+                        Directory.CreateDirectory(directoryPath);
+                    }
+                    catch (Exception)
+                    {
+                        // Fallback to the project directory's resource folder if unable to create the specified path
+                        string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                        directoryPath = Path.Combine(projectDirectory, "Resource", "AWB_Details");
+                        Directory.CreateDirectory(directoryPath);
+                        filePath = Path.Combine(directoryPath, "AWB_Details.xlsx");
+                    }
+                }
+                
                 if (featureName.Contains("CAP018"))
                 {
                     ExcelFileConfig excelFileConfig = new ExcelFileConfig();
