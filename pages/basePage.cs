@@ -111,7 +111,7 @@ namespace iCargoUIAutomation.pages
             string originalWindow = driver.CurrentWindowHandle;
 
             // Wait for the new window or tab to open
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             wait.Until(d => d.WindowHandles.Count > 1);
 
             // Loop through until we find a new window handle
