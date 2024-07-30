@@ -1,6 +1,8 @@
 ﻿using iCargoUIAutomation.Features;
 using iCargoUIAutomation.utilities;
 using log4net;
+using Microsoft.Extensions.Configuration;
+using MongoDB.Libmongocrypt;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -13,9 +15,11 @@ namespace iCargoUIAutomation.pages
 {
     public class homePage : BasePage
     {
-        public static string? role;        
+        public static string? role;
+        private readonly KeyVault keyVault;        
         public homePage(IWebDriver driver) : base(driver)
         {
+            keyVault = new KeyVault();            
         }
 
         private By btnHomeIcon_Xpath = By.XPath("//li[@role='tab']//span[normalize-space(text()='Home')]");
@@ -85,6 +89,7 @@ namespace iCargoUIAutomation.pages
             try
             {
                 EnterText(txt_ScreenName_Css, screenName);
+                WaitForElementToBeClickable(txt_ScreenName_Css, TimeSpan.FromSeconds(5));
                 EnterKeys(txt_ScreenName_Css, Keys.Enter);
                 WaitForElementToBeVisible(By.CssSelector("li[tabindex='0']"), TimeSpan.FromSeconds(5));
                
@@ -118,18 +123,28 @@ namespace iCargoUIAutomation.pages
         {
             try
             {
-                var secrets = KeyVault.GetSecret();
+                var secrets = keyVault.GetSecrets();
+                //var configuration = new ConfigurationService();
+                //string CCC_Username = configuration.GetDecryptedValue("CCCSecretUsername", "CCCUsername");
+                //string CCC_Password = configuration.GetDecryptedValue("CCCSecretPassword", "CCCPassword");
+                //string CGODG_Username = configuration.GetDecryptedValue("CGODGSecretUsername", "CGODGUsername");
+                //string CGODG_Password = configuration.GetDecryptedValue("CGODGSecretPassword", "CGODGPassword");                
                 WaitForElementToBeVisible(userName_Id, TimeSpan.FromSeconds(10));
                 role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);
+                //role = "ccc";
                 if (role.ToUpper() == "CCC")
                 {
                     EnterText(userName_Id, secrets["CCC_Username"]);
                     EnterText(password_Id, secrets["CCC_Password"]);
+                    //EnterText(userName_Id, CCC_Username);
+                    //EnterText(password_Id, CCC_Password);
                 }
                 else if (role.ToUpper() == "CGODG")
                 {
                     EnterText(userName_Id, secrets["CGODG_Username"]);
                     EnterText(password_Id, secrets["CGODG_Password"]);
+                    //EnterText(userName_Id, CGODG_Username);
+                    //EnterText(password_Id, CGODG_Password);
                 }
                 else
                 {

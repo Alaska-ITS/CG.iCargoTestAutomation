@@ -41,6 +41,7 @@
 	<ItemGroup>
 		<PackageReference Include="Azure.Identity" Version="1.12.0" />
 		<PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.5.0" />
+		<PackageReference Include="CG.Commons" Version="1.1.0" />
 		<PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
 		<PackageReference Include="EPPlus" Version="7.2.1" />
 		<PackageReference Include="ExtentReports" Version="4.1.0" />
@@ -134,6 +135,12 @@
     <Compile Update="Features\OPR344_EXP_00004_Split an AWB in OPR344 and manifest split pieces to a flight.feature.cs">
       <DependentUpon>OPR344_EXP_00004_Split an AWB in OPR344 and manifest split pieces to a flight.feature</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 	<Target Name="CopyCustomContent" AfterTargets="AfterBuild">

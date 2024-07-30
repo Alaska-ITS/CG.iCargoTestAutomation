@@ -10,13 +10,13 @@ Scenario Outline: Create a booking for a single piece over 300lbs on an OO E175 
 	When User enters screen name as 'CAP018'
 	Then User enters into the  iCargo 'Maintain Booking' page successfully
 	And User clicks on New/List button
-	And User enters shipment details with Origin "<Origin>", Destination "<Destination>", Product Code "<ProductCode>" and Agent code
-	And User enters Shipper and Consignee details
+	And User enters shipment details with Origin "<Origin>", Destination "<Destination>", Product Code "<ProductCode>" and Agent code "<Agent Code>"
+	And User enters Shipper "<Shipper Code>" and Consignee "<Consignee Code>" details
 	And User enters commodity details with Commodity "<Commodity>", Pieces "<Piece>", Weight "<Weight>"
 	And User selects flight for "<ProductCode>"
 	And User clicks on Save button
 	And An an Embargo pops up with a warning message to generate new AWB
 	Then User logs out from the application
 Examples:
-	| Origin | Destination | ProductCode | Commodity | Piece | Weight |
-	| SEA    | ANC         | GENERAL     | 0316      | 2     | 310    |
+	| Origin | Destination | ProductCode | Commodity | Piece | Weight | Agent Code | Shipper Code | Consignee Code |
+	| SEA    | ANC         | GENERAL     | 0316      | 2     | 310    | 10763      | 10763        | 10763          |

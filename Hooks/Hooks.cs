@@ -83,7 +83,7 @@ namespace iCargoUIAutomation.Hooks
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
             browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
-            
+            //browser = "firefox";
                 if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
                 {
                     driver = new ChromeDriver();
@@ -135,13 +135,7 @@ namespace iCargoUIAutomation.Hooks
 
         [BeforeScenario(Order = 1)]
         public void FirstBeforeScenario(ScenarioContext scenarioContext)
-        {
-            _container.RegisterInstanceAs(driver);
-            Console.WriteLine("Running before scenario...");
-            driver = new EdgeDriver();
-            //IWebDriver driver = new ChromeDriver();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
-            driver.Manage().Window.Maximize();
+        {            
             _container.RegisterInstanceAs<IWebDriver>(driver);
             scenario = feature.CreateNode(scenarioContext.ScenarioInfo.Title);
         }
@@ -209,10 +203,7 @@ namespace iCargoUIAutomation.Hooks
                     excelConfig.AppendDataToExcel(filePath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", CreateShipmentPage.awb_num);
                 }
             }
-            else
-            {
-                ScenarioContext.Current.Pending();
-            }
+            
         }
 
         [AfterStep]
