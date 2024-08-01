@@ -31,7 +31,7 @@ namespace iCargoUIAutomation.Hooks
         private static IWebDriver? driver;
         public static string? featureName;
         public static string? browser;
-        public static string? appUrl = "https://asstg-icargo.ibsplc.aero/icargo/login.do";      
+        public static string? appUrl = "https://asstg-icargo.ibsplc.aero/icargo/login.do";
 
         public Hooks(IObjectContainer container)
         {
@@ -43,9 +43,9 @@ namespace iCargoUIAutomation.Hooks
         public static void BeforeTestRun()
         {
             Console.WriteLine("Running before test run...");
-            reportPath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports\Reports\TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");            
+            reportPath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports\Reports\TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");
             testResultPath = reportPath + @"\index.html";
-             if (!Directory.Exists(reportPath))
+            if (!Directory.Exists(reportPath))
             {
                 try
                 {
@@ -54,20 +54,20 @@ namespace iCargoUIAutomation.Hooks
                 catch (Exception)
                 {
                     // Fallback to the project directory's resource folder if unable to create the specified path
-                    string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                    string projectDirectory = Path.GetFullPath(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "..\\..\\..\\"));
                     reportPath = Path.Combine(projectDirectory, "Resource", "Report", "TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss"));
                     Directory.CreateDirectory(reportPath);
                     testResultPath = reportPath + @"\index.html";
                 }
             }
 
-            
+
             var htmlReporter = new ExtentHtmlReporter(testResultPath);
             htmlReporter.Config.ReportName = "Automation Status Report";
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Standard;
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
-            
+
 
         }
 
@@ -82,40 +82,39 @@ namespace iCargoUIAutomation.Hooks
         {
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
-            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
-            //browser = "firefox";
-                if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
-                {
-                    driver = new ChromeDriver();
-                }
-                else if (browser.Equals("edge", StringComparison.OrdinalIgnoreCase))
-                {
-                    driver = new EdgeDriver();
-                }
-                else if (browser.Equals("firefox", StringComparison.OrdinalIgnoreCase))
-                {
-                    driver = new FirefoxDriver();
-                }
-                else if (browser.Equals("safari", StringComparison.OrdinalIgnoreCase))
-                {
-                    driver = new SafariDriver();
-                }
-                else
-                {
-                    throw new NotSupportedException($"Browser '{browser}' is not supported");
-                }
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
-                driver.Manage().Window.Maximize();
-                homePage hp = new homePage(driver);
-                BasePage bp = new BasePage(driver);
-                bp.DeleteAllCookies();
-                bp.Open(appUrl);                
-                driver.FindElement(By.XPath("//a[@id='social-oidc']")).Click();                
-                if (bp.IsElementDisplayed(By.XPath("//body[@class='login']")))
-                {
-                    hp.LoginICargo();                    
-                }
-                bp.SwitchToNewWindow();                       
+            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);                                    
+            if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
+            {
+                driver = new ChromeDriver();
+            }
+            else if (browser.Equals("edge", StringComparison.OrdinalIgnoreCase))
+            {
+                driver = new EdgeDriver();
+            }
+            else if (browser.Equals("firefox", StringComparison.OrdinalIgnoreCase))
+            {
+                driver = new FirefoxDriver();
+            }
+            else if (browser.Equals("safari", StringComparison.OrdinalIgnoreCase))
+            {
+                driver = new SafariDriver();
+            }
+            else
+            {
+                throw new NotSupportedException($"Browser '{browser}' is not supported");
+            }
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+            driver.Manage().Window.Maximize();
+            homePage hp = new homePage(driver);
+            BasePage bp = new BasePage(driver);
+            bp.DeleteAllCookies();
+            bp.Open(appUrl);
+            driver.FindElement(By.XPath("//a[@id='social-oidc']")).Click();
+            if (bp.IsElementDisplayed(By.XPath("//body[@class='login']")))
+            {
+                hp.LoginICargo();
+            }
+            bp.SwitchToNewWindow();
         }
 
         [AfterFeature]
@@ -135,7 +134,7 @@ namespace iCargoUIAutomation.Hooks
 
         [BeforeScenario(Order = 1)]
         public void FirstBeforeScenario(ScenarioContext scenarioContext)
-        {            
+        {
             _container.RegisterInstanceAs<IWebDriver>(driver);
             scenario = feature.CreateNode(scenarioContext.ScenarioInfo.Title);
         }
@@ -154,12 +153,12 @@ namespace iCargoUIAutomation.Hooks
         {
             step.Log(status, stepMessaage);
         }
-        
+
 
         [AfterScenario]
 
         public void AfterScenario(FeatureContext featureContext)
-        {   
+        {
 
             var status = TestContext.CurrentContext.Result.Outcome.Status;
             var stackTrace = TestContext.CurrentContext.Result.StackTrace;
@@ -170,7 +169,7 @@ namespace iCargoUIAutomation.Hooks
             {
                 scenario.Fail("Test Failed", captureScreenshot(fileName));
                 scenario.Log(Status.Fail, "Test failed with log" + stackTrace);
-            }            
+            }
             if (MaintainBookingPage.awbNumber != "" || CreateShipmentPage.awb_num != "" && ScenarioContext.Current["Execute"] == "true")
             {
                 string filePath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports\AWB_Numbers\AWB_Details.xlsx";
@@ -185,13 +184,13 @@ namespace iCargoUIAutomation.Hooks
                     catch (Exception)
                     {
                         // Fallback to the project directory's resource folder if unable to create the specified path
-                        string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                        string projectDirectory = Path.GetFullPath(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "..\\..\\..\\"));
                         directoryPath = Path.Combine(projectDirectory, "Resource", "AWB_Details");
                         Directory.CreateDirectory(directoryPath);
                         filePath = Path.Combine(directoryPath, "AWB_Details.xlsx");
                     }
                 }
-                
+
                 if (featureName.Contains("CAP018"))
                 {
                     ExcelFileConfig excelFileConfig = new ExcelFileConfig();
@@ -203,12 +202,12 @@ namespace iCargoUIAutomation.Hooks
                     excelConfig.AppendDataToExcel(filePath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", CreateShipmentPage.awb_num);
                 }
             }
-            
+
         }
 
         [AfterStep]
         public void AfterStep(ScenarioContext scenarioContext)
-        {            
+        {
             string stepType = scenarioContext.StepContext.StepInfo.StepDefinitionType.ToString();
             string stepName = scenarioContext.StepContext.StepInfo.Text;
         }

@@ -1,6 +1,6 @@
 ﻿Feature: CAP018_BKG_00006_Create a booking for a single piece over 300lbs on an OO E175
 
-@CAP018
+
 Scenario Outline: Create a booking for a single piece over 300lbs on an OO E175 and system generates an AWB with a warning.
 	Given User lauches the Url of iCargo Staging UI
 	Then User enters into the  iCargo 'Sign in to icargoas' page successfully

@@ -1,6 +1,6 @@
 ﻿Feature: CAP018_BKG_00007_Create a booking for an AVI
 
-@CAP018
+@CAP018 @CAP018_BKG_00007
 Scenario Outline: iCargo Login and Create New AVI Shipment
 	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"

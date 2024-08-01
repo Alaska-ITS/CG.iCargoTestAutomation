@@ -1,6 +1,6 @@
 ﻿Feature: CAP018_BKG_00005_Create a multi leg booking with flights that do not meet minimum connection time
 
-@CAP018
+@CAP018 @CAP018_BKG_00005
 Scenario Outline: Create a multi leg booking with flights that do not meet minimum connection time and system should display a warning message
 	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"

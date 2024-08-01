@@ -21,7 +21,7 @@ namespace iCargoUIAutomation.utilities
             patternLayout.ActivateOptions();
 
             string projectDirectory = System.IO.Path.GetFullPath(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "..\\..\\..\\"));
-            string logFilePath = System.IO.Path.Combine(projectDirectory, "Logs", "logfile.log");
+            string logFilePath = System.IO.Path.Combine(projectDirectory,"Resource", "Logs", "logfile.log");
             Console.WriteLine("Log file path: " + logFilePath);
             FileAppender appender = new FileAppender();
             appender.AppendToFile = false;
