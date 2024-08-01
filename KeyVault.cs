@@ -41,8 +41,8 @@ namespace iCargoUIAutomation
 
         public Dictionary<string, string> GetSecrets()
         {
-            //var client = new SecretClient(new Uri(_keyVaultUri), new ClientSecretCredential(_tenantId, _clientId, _clientSecret));
-            var client = new SecretClient(new Uri(_keyVaultUri), new DefaultAzureCredential());
+            var client = new SecretClient(new Uri(_keyVaultUri), new ClientSecretCredential(_tenantId, _clientId, _clientSecret));
+            //var client = new SecretClient(new Uri(_keyVaultUri), new DefaultAzureCredential());
             //var client = new SecretClient(new Uri(_keyVaultUri), new ManagedIdentityCredential());
 
             // Get Secrets using CG.Common.DependencyInjection without using DefaultAzureCredential , ClientSecretCredential, ManagedIdentityCredential and EnvironmentCredential
