@@ -1,5 +1,5 @@
 name: main
- 
+
 on:
   push:
     tags:
@@ -9,36 +9,61 @@ on:
   pull_request:
     branches:
       - Cap018_KeyVault
- 
+
 jobs:
   build:
     runs-on: windows-2019
- 
+
     env:
       BROWSER: chrome
       ROLE_GROUP: CCC
- 
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
- 
+
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '6.0'
           dotnet-install-dir: /path/to/install/dir
           dotnet-install-arguments: '--channel LTS --install-dir /path/to/install/dir --no-path'
- 
+
       - name: Restore dependencies
         run: dotnet restore
- 
+
       - name: Build
         run: dotnet build --configuration Release
- 
+
       - name: Set environment variables for script
         run: |
           echo "Browser=${BROWSER}" >> $GITHUB_ENV
           echo "RoleGroup=${ROLE_GROUP}" >> $GITHUB_ENV
- 
+
       - name: Run tests by tag
         run: dotnet test --filter TestCategory=CAP018_BKG_00001
+
+      - name: Capture file path output
+        id: capture-output
+        run: |
+          # Run the application and capture the output
+          output=$(dotnet run --project path-to-your-csproj)
+          echo "Output: ${output}"
+
+          # Extract the file path from the output
+          filePath=$(echo "${output}" | findstr "File path:" | sed 's/File path: //')
+          echo "Extracted filePath: ${filePath}"
+          
+          # Export the filePath variable for use in subsequent steps
+          echo "filePath=${filePath}" >> $GITHUB_ENV
+
+      - name: Commit and push changes
+        if: always() # Run this step even if previous steps fail
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add "${{ env.filePath }}"
+          git commit -m "Update AWB_Details.xlsx with new data"
+          git push origin ${GITHUB_REF#refs/heads/}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
