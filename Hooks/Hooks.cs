@@ -188,6 +188,7 @@ namespace iCargoUIAutomation.Hooks
                         directoryPath = Path.Combine(projectDirectory, "Resource", "AWB_Details");
                         Directory.CreateDirectory(directoryPath);
                         filePath = Path.Combine(directoryPath, "AWB_Details.xlsx");
+                        Console.WriteLine($"File path: {filePath}");
                     }
                 }
 
