@@ -5,10 +5,10 @@ on:
     tags:
       - HelloTestingDoesnoTMatter
     branches:
-      - main
+      - Cap018_KeyVault
   pull_request:
     branches:
-      - main
+      - Cap018_KeyVault
  
 jobs:
   build:
