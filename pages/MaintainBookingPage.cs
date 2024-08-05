@@ -39,7 +39,7 @@ namespace iCargoUIAutomation.pages
         {
         }
 
-        private By CAP018Frame_XPATH = By.XPath("//iframe[@name='iCargContentFrameCAP018']");
+        private By CAP018Frame_XPATH = By.XPath("//iframe[@name='iCargoContentFrameCAP018']");
         private By newList_XPATH = By.XPath("//button[@id='btDisplay']");
         private By homePage_CSS = By.CssSelector(".ic-home-tab");
         // Shipment Details

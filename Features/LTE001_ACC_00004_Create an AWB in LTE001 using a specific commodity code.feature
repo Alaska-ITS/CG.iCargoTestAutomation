@@ -2,7 +2,7 @@
 
 Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CGODG user
 
-@tag1
+@LTE001 @LTE001_ACC_00004
 Scenario Outline: Create an AWB in LTE001 using a specific commodity code
 	Given User lauches the Url of iCargo Staging UI
 	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
