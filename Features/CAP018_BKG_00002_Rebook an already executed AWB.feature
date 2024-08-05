@@ -1,6 +1,5 @@
 ﻿Feature: CAP018_BKG_00002_Rebook an already executed AWB
 
-@CAP018
 Scenario Outline: iCargo Login and Rebook an already executed AWB
 	Given User lauches the Url of iCargo Staging UI
 	Then User enters into the  iCargo 'Sign in to icargoas' page successfully

@@ -78,7 +78,7 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.CategoryAttribute("CAP018")]
         [NUnit.Framework.CategoryAttribute("CAP018_BKG_00003")]
         [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "No", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "No", null)]
         [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", null)]
         public virtual void CreateABookingForAnUnknownShipperOnAPaxFlight(string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipper, string consignee, string execute, string[] exampleTags)
         {

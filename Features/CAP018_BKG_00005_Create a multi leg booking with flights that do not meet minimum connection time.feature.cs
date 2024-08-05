@@ -79,12 +79,14 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("Create a multi leg booking with flights that do not meet minimum connection time " +
             "and system should display a warning message")]
         [NUnit.Framework.CategoryAttribute("CAP018")]
-        [NUnit.Framework.TestCaseAttribute("SEA", "BET", "PRIORITY", "2199", "4", "120", "No", null)]
-        [NUnit.Framework.TestCaseAttribute("PDX", "BWI", "PRIORITY", "0300", "10", "950", "Yes", null)]
-        public virtual void CreateAMultiLegBookingWithFlightsThatDoNotMeetMinimumConnectionTimeAndSystemShouldDisplayAWarningMessage(string origin, string destination, string productCode, string commodity, string piece, string weight, string execute, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("CAP018_BKG_00005")]
+        [NUnit.Framework.TestCaseAttribute("SEA", "BET", "PRIORITY", "2199", "4", "120", "No", "10763", "10763", "10763", null)]
+        [NUnit.Framework.TestCaseAttribute("PDX", "BWI", "PRIORITY", "0300", "10", "950", "Yes", "10763", "10763", "10763", null)]
+        public virtual void CreateAMultiLegBookingWithFlightsThatDoNotMeetMinimumConnectionTimeAndSystemShouldDisplayAWarningMessage(string origin, string destination, string productCode, string commodity, string piece, string weight, string execute, string agentCode, string shipperCode, string consigneeCode, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "CAP018"};
+                    "CAP018",
+                    "CAP018_BKG_00005"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -98,6 +100,9 @@ namespace iCargoUIAutomation.Features
             argumentsOfScenario.Add("Piece", piece);
             argumentsOfScenario.Add("Weight", weight);
             argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Agent Code", agentCode);
+            argumentsOfScenario.Add("Shipper Code", shipperCode);
+            argumentsOfScenario.Add("Consignee Code", consigneeCode);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a multi leg booking with flights that do not meet minimum connection time " +
                     "and system should display a warning message", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 4
@@ -137,10 +142,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 10
  testRunner.And(string.Format("User enters shipment details with Origin \"{0}\", Destination \"{1}\", Product Code \"" +
-                            "{2}\" and Agent code", origin, destination, productCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                            "{2}\" and Agent code \"{3}\"", origin, destination, productCode, agentCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
- testRunner.And("User enters Shipper and Consignee details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters Shipper \"{0}\" and Consignee \"{1}\" details", shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 12
  testRunner.And(string.Format("User enters commodity details with Commodity \"{0}\", Pieces \"{1}\", Weight \"{2}\"", commodity, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

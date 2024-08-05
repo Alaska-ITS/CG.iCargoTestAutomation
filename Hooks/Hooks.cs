@@ -32,7 +32,9 @@ namespace iCargoUIAutomation.Hooks
         public static string? featureName;
         public static string? browser;
         public static string? appUrl = "https://asstg-icargo.ibsplc.aero/icargo/login.do";
-        private static IWebDriver driver;
+        private const string containerName = "resources";
+        private const string reportContainerName = "reports";
+        private static AzureStorage? azureStorage;
 
         public Hooks(IObjectContainer container)
         {
@@ -43,16 +45,17 @@ namespace iCargoUIAutomation.Hooks
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            Console.WriteLine("Running before test run...");
-            reportPath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports\Reports\TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");            
+
+            // Set the report path (temporary local path, will be uploaded to Azure)
+            string reportName = "TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");
+            reportPath = Path.Combine(Path.GetTempPath(), reportName);
             testResultPath = reportPath + @"\index.html";
+
             var htmlReporter = new ExtentHtmlReporter(testResultPath);
             htmlReporter.Config.ReportName = "Automation Status Report";
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Standard;
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
-            
-
         }
 
         [AfterTestRun]
@@ -67,39 +70,38 @@ namespace iCargoUIAutomation.Hooks
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
             browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
-            
-                if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
-                {
-                    driver = new ChromeDriver();
-                }
-                else if (browser.Equals("edge", StringComparison.OrdinalIgnoreCase))
-                {
-                    driver = new EdgeDriver();
-                }
-                else if (browser.Equals("firefox", StringComparison.OrdinalIgnoreCase))
-                {
-                    driver = new FirefoxDriver();
-                }
-                else if (browser.Equals("safari", StringComparison.OrdinalIgnoreCase))
-                {
-                    driver = new SafariDriver();
-                }
-                else
-                {
-                    throw new NotSupportedException($"Browser '{browser}' is not supported");
-                }
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
-                driver.Manage().Window.Maximize();
-                homePage hp = new homePage(driver);
-                BasePage bp = new BasePage(driver);
-                bp.DeleteAllCookies();
-                bp.Open(appUrl);                
-                driver.FindElement(By.XPath("//a[@id='social-oidc']")).Click();                
-                if (bp.IsElementDisplayed(By.XPath("//body[@class='login']")))
-                {
-                    hp.LoginICargo();                    
-                }
-                bp.SwitchToNewWindow();                       
+            if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
+            {
+                driver = new ChromeDriver();
+            }
+            else if (browser.Equals("edge", StringComparison.OrdinalIgnoreCase))
+            {
+                driver = new EdgeDriver();
+            }
+            else if (browser.Equals("firefox", StringComparison.OrdinalIgnoreCase))
+            {
+                driver = new FirefoxDriver();
+            }
+            else if (browser.Equals("safari", StringComparison.OrdinalIgnoreCase))
+            {
+                driver = new SafariDriver();
+            }
+            else
+            {
+                throw new NotSupportedException($"Browser '{browser}' is not supported");
+            }
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+            driver.Manage().Window.Maximize();
+            homePage hp = new homePage(driver);
+            BasePage bp = new BasePage(driver);
+            bp.DeleteAllCookies();
+            bp.Open(appUrl);
+            driver.FindElement(By.XPath("//a[@id='social-oidc']")).Click();
+            if (bp.IsElementDisplayed(By.XPath("//body[@class='login']")))
+            {
+                hp.LoginICargo();
+            }
+            bp.SwitchToNewWindow();
         }
 
         [AfterFeature]
@@ -108,6 +110,12 @@ namespace iCargoUIAutomation.Hooks
             homePage hp = new homePage(driver);
             hp.logoutiCargo();
             extent.Flush();
+            azureStorage = new AzureStorage(reportContainerName);
+            azureStorage.UploadFolderToAzure(reportPath);
+            if (File.Exists(reportPath))
+            {
+                File.Delete(reportPath);
+            }
             driver.Quit();
         }
 
@@ -120,12 +128,6 @@ namespace iCargoUIAutomation.Hooks
         [BeforeScenario(Order = 1)]
         public void FirstBeforeScenario(ScenarioContext scenarioContext)
         {
-            _container.RegisterInstanceAs(driver);
-            Console.WriteLine("Running before scenario...");
-            driver = new EdgeDriver();
-            //IWebDriver driver = new ChromeDriver();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
-            driver.Manage().Window.Maximize();
             _container.RegisterInstanceAs<IWebDriver>(driver);
             scenario = feature.CreateNode(scenarioContext.ScenarioInfo.Title);
         }
@@ -144,12 +146,12 @@ namespace iCargoUIAutomation.Hooks
         {
             step.Log(status, stepMessaage);
         }
-        
+
 
         [AfterScenario]
 
         public void AfterScenario(FeatureContext featureContext)
-        {   
+        {
 
             var status = TestContext.CurrentContext.Result.Outcome.Status;
             var stackTrace = TestContext.CurrentContext.Result.StackTrace;
@@ -160,30 +162,43 @@ namespace iCargoUIAutomation.Hooks
             {
                 scenario.Fail("Test Failed", captureScreenshot(fileName));
                 scenario.Log(Status.Fail, "Test failed with log" + stackTrace);
-            }            
+            }
             if (MaintainBookingPage.awbNumber != "" || CreateShipmentPage.awb_num != "" && ScenarioContext.Current["Execute"] == "true")
             {
-                string filePath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports\AWB_Numbers\AWB_Details.xlsx";
+
+
+                azureStorage = new AzureStorage(containerName);
+                string excelFileName = "AWBDetails.csv";
+                string tempLocalPath = Path.Combine(Path.GetTempPath(), excelFileName);
+
+                // Download the existing file if it exists
+                tempLocalPath = azureStorage.DownloadFileFromBlob(excelFileName, tempLocalPath);
+
                 if (featureName.Contains("CAP018"))
                 {
                     ExcelFileConfig excelFileConfig = new ExcelFileConfig();
-                    excelFileConfig.AppendDataToExcel(filePath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "CAP018", MaintainBookingPage.awbNumber);
+                    // Append data to the downloaded or newly created Excel file
+                    excelFileConfig.AppendDataToExcel(tempLocalPath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "CAP018", featureName, MaintainBookingPage.awbNumber, MaintainBookingPage.globalOrigin, MaintainBookingPage.globalDestination, MaintainBookingPage.globalProductCode, MaintainBookingPage.globalAgentCode, MaintainBookingPage.globalShipperCode, MaintainBookingPage.globalConsigneeCode, MaintainBookingPage.globalCommodityCode, MaintainBookingPage.globalPieces, MaintainBookingPage.globalWeight);
+                    
                 }
-                else
-                {
-                    ExcelFileConfig excelConfig = new ExcelFileConfig();
-                    excelConfig.AppendDataToExcel(filePath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", CreateShipmentPage.awb_num);
-                }
+
+                //else
+                //{
+                //    ExcelFileConfig excelConfig = new ExcelFileConfig();
+                //    excelConfig.AppendDataToExcel(filePath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", CreateShipmentPage.awb_num);
+                //}
+
+                // Upload the updated file back to Azure Blob Storage
+                azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
+
+                File.Delete(tempLocalPath);
             }
-            else
-            {
-                ScenarioContext.Current.Pending();
-            }
+
         }
 
         [AfterStep]
         public void AfterStep(ScenarioContext scenarioContext)
-        {            
+        {
             string stepType = scenarioContext.StepContext.StepInfo.StepDefinitionType.ToString();
             string stepName = scenarioContext.StepContext.StepInfo.Text;
         }
@@ -196,6 +211,7 @@ namespace iCargoUIAutomation.Hooks
             string screenshotLocation = Path.Combine(screenshotPath, fileName);
             screenshot.SaveAsFile(screenshotLocation);
             return MediaEntityBuilder.CreateScreenCaptureFromPath(screenshotLocation).Build();
+
         }
     }
 }
