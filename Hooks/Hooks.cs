@@ -69,8 +69,7 @@ namespace iCargoUIAutomation.Hooks
         {
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
-            //browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);
-            browser = "firefox";
+            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
             if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
             {
                 driver = new ChromeDriver();
@@ -180,11 +179,7 @@ namespace iCargoUIAutomation.Hooks
                     ExcelFileConfig excelFileConfig = new ExcelFileConfig();
                     // Append data to the downloaded or newly created Excel file
                     excelFileConfig.AppendDataToExcel(tempLocalPath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "CAP018", featureName, MaintainBookingPage.awbNumber, MaintainBookingPage.globalOrigin, MaintainBookingPage.globalDestination, MaintainBookingPage.globalProductCode, MaintainBookingPage.globalAgentCode, MaintainBookingPage.globalShipperCode, MaintainBookingPage.globalConsigneeCode, MaintainBookingPage.globalCommodityCode, MaintainBookingPage.globalPieces, MaintainBookingPage.globalWeight);
-
-                    // Upload the updated file back to Azure Blob Storage
-                    azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
-
-                    File.Delete(tempLocalPath);
+                    
                 }
 
                 //else
@@ -192,6 +187,11 @@ namespace iCargoUIAutomation.Hooks
                 //    ExcelFileConfig excelConfig = new ExcelFileConfig();
                 //    excelConfig.AppendDataToExcel(filePath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", CreateShipmentPage.awb_num);
                 //}
+
+                // Upload the updated file back to Azure Blob Storage
+                azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
+
+                File.Delete(tempLocalPath);
             }
 
         }
