@@ -25,12 +25,21 @@ namespace iCargoUIAutomation.pages
         string presentDate = DateTime.Now.ToString("dd-MMM");
         public static string firstFlightNum = "";
         public static string awbNumber = "";
+        public static string globalOrigin = "";
+        public static string globalDestination = "";
+        public static string globalProductCode = "";
+        public static string globalAgentCode = "";
+        public static string globalShipperCode = "";
+        public static string globalConsigneeCode = "";
+        public static string globalCommodityCode = "";
+        public static string globalPieces = "";
+        public static string globalWeight = "";
         ILog Log = LogManager.GetLogger(typeof(MaintainBookingPage));       
         public MaintainBookingPage(IWebDriver driver) : base(driver)
         {
         }
 
-        private By CAP018Frame_XPATH = By.XPath("//iframe[@name='iCargoContentFrameCAP018']");
+        private By CAP018Frame_XPATH = By.XPath("//iframe[@name='iCargContentFrameCAP018']");
         private By newList_XPATH = By.XPath("//button[@id='btDisplay']");
         private By homePage_CSS = By.CssSelector(".ic-home-tab");
         // Shipment Details
@@ -203,6 +212,10 @@ namespace iCargoUIAutomation.pages
 
         public void EnterShipmentDetails(string origin, string destination, string productCode, string agentCode)
         {
+            globalOrigin = origin;
+            globalDestination = destination;
+            globalProductCode = productCode;
+            globalAgentCode = agentCode;
             Hooks.Hooks.createNode();
             WaitForElementToBeInvisible(homePage_CSS, TimeSpan.FromSeconds(10));
             try
@@ -242,6 +255,8 @@ namespace iCargoUIAutomation.pages
 
         public void EnterShipperConsigneeDetails(string shipperCode, string consigneeCode)
         {
+            globalShipperCode = shipperCode;
+            globalConsigneeCode = consigneeCode;
             Hooks.Hooks.createNode();
             try
             {
@@ -274,6 +289,9 @@ namespace iCargoUIAutomation.pages
 
         public void EnterCommodityDetails(string commodityCode, string pieces, string weight)
         {
+            globalCommodityCode = commodityCode;
+            globalPieces = pieces;
+            globalWeight = weight;
             Hooks.Hooks.createNode();
             try
             {
@@ -426,6 +444,9 @@ namespace iCargoUIAutomation.pages
 
         public void UnknownAgentShipmentDetails(string org, string dest, string prodCode)
         {
+            globalOrigin = org;
+            globalDestination = dest;
+            globalProductCode = prodCode;
             Hooks.Hooks.createNode();
             try
             {
@@ -455,6 +476,8 @@ namespace iCargoUIAutomation.pages
 
         public void UnknownShipperConsigneeDetails(string shipper, string consg)
         {
+            globalShipperCode = shipper;
+            globalConsigneeCode = consg;
             Hooks.Hooks.createNode();
             try
             {
@@ -650,6 +673,10 @@ namespace iCargoUIAutomation.pages
 
         public void NewUnknownAgentShipmentDetails(string org, string dest, string agtcode, string prodcode)
         {
+            globalOrigin = org;
+            globalDestination = dest;
+            globalAgentCode = agtcode;
+            globalProductCode = prodcode;
             Hooks.Hooks.createNode();
             try
             {
@@ -690,6 +717,8 @@ namespace iCargoUIAutomation.pages
 
         public void UnknownShipperConsigneeALLDetails(string unkshppr, string unkconsgn)
         {
+            globalShipperCode = unkshppr;
+            globalConsigneeCode = unkconsgn;
             Hooks.Hooks.createNode();
             try
             {
@@ -1149,7 +1178,7 @@ namespace iCargoUIAutomation.pages
                     SwitchToLastWindow();
                     WaitForElementToBeInvisible(bookingIrregularityFrame_ID, TimeSpan.FromSeconds(15));
                     WaitForElementToBeVisible(awbNumber_XPATH, TimeSpan.FromSeconds(10));
-                    string awbNumber = GetText(awbNumber_XPATH);
+                    awbNumber = GetText(awbNumber_XPATH);
                     Hooks.Hooks.UpdateTest(Status.Pass, "AWB Number: " + awbNumber);
                     Log.Info("AWB Number: " + awbNumber);
                     if (IsElementEnabled(btnOkBookingSummaryPopup_XPATH))

@@ -16,6 +16,7 @@ namespace iCargoUIAutomation
         private readonly string _cccPasswordSecretName;
         private readonly string _cgodgUsernameSecretName;
         private readonly string _cgodgPasswordSecretName;
+        private readonly string _connectionStringSecretName;
 
         public KeyVault()
         {
@@ -28,6 +29,7 @@ namespace iCargoUIAutomation
             _cccPasswordSecretName = configuration["CCCSecretPassword"];
             _cgodgUsernameSecretName = configuration["CGODGSecretUsername"];
             _cgodgPasswordSecretName = configuration["CGODGSecretPassword"];
+            _connectionStringSecretName = configuration["AzureStorageConnectionString"];  
         }
 
         private IConfiguration LoadConfiguration()
@@ -56,6 +58,9 @@ namespace iCargoUIAutomation
 
             KeyVaultSecret cgodgPassword = client.GetSecret(_cgodgPasswordSecretName);
             secrets.Add("CGODG_Password", cgodgPassword.Value);
+
+            KeyVaultSecret connectionString = client.GetSecret(_connectionStringSecretName);
+            secrets.Add("AzureStorageConnectionString", connectionString.Value);
 
             return secrets;
         }

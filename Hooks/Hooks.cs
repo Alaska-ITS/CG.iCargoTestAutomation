@@ -32,6 +32,9 @@ namespace iCargoUIAutomation.Hooks
         public static string? featureName;
         public static string? browser;
         public static string? appUrl = "https://asstg-icargo.ibsplc.aero/icargo/login.do";
+        private const string containerName = "resources";
+        private const string reportContainerName = "reports";
+        private static AzureStorage? azureStorage;
 
         public Hooks(IObjectContainer container)
         {
@@ -42,33 +45,17 @@ namespace iCargoUIAutomation.Hooks
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            Console.WriteLine("Running before test run...");
-            reportPath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports\Reports\TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");
-            testResultPath = reportPath + @"\index.html";
-            if (!Directory.Exists(reportPath))
-            {
-                try
-                {
-                    Directory.CreateDirectory(reportPath);
-                }
-                catch (Exception)
-                {
-                    // Fallback to the project directory's resource folder if unable to create the specified path
-                    string projectDirectory = Path.GetFullPath(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "..\\..\\..\\"));
-                    reportPath = Path.Combine(projectDirectory, "Resource", "Report", "TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss"));
-                    Directory.CreateDirectory(reportPath);
-                    testResultPath = reportPath + @"\index.html";
-                }
-            }
 
+            // Set the report path (temporary local path, will be uploaded to Azure)
+            string reportName = "TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");
+            reportPath = Path.Combine(Path.GetTempPath(), reportName);
+            testResultPath = reportPath + @"\index.html";
 
             var htmlReporter = new ExtentHtmlReporter(testResultPath);
             htmlReporter.Config.ReportName = "Automation Status Report";
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Standard;
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
-
-
         }
 
         [AfterTestRun]
@@ -82,7 +69,8 @@ namespace iCargoUIAutomation.Hooks
         {
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
-            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);                                    
+            //browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);
+            browser = "firefox";
             if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
             {
                 driver = new ChromeDriver();
@@ -123,6 +111,12 @@ namespace iCargoUIAutomation.Hooks
             homePage hp = new homePage(driver);
             hp.logoutiCargo();
             extent.Flush();
+            azureStorage = new AzureStorage(reportContainerName);
+            azureStorage.UploadFolderToAzure(reportPath);
+            if (File.Exists(reportPath))
+            {
+                File.Delete(reportPath);
+            }
             driver.Quit();
         }
 
@@ -172,36 +166,32 @@ namespace iCargoUIAutomation.Hooks
             }
             if (MaintainBookingPage.awbNumber != "" || CreateShipmentPage.awb_num != "" && ScenarioContext.Current["Execute"] == "true")
             {
-                string filePath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports\AWB_Numbers\AWB_Details.xlsx";
 
-                string directoryPath = Path.GetDirectoryName(filePath);
-                if (!Directory.Exists(directoryPath))
-                {
-                    try
-                    {
-                        Directory.CreateDirectory(directoryPath);
-                    }
-                    catch (Exception)
-                    {
-                        // Fallback to the project directory's resource folder if unable to create the specified path
-                        string projectDirectory = Path.GetFullPath(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "..\\..\\..\\"));
-                        directoryPath = Path.Combine(projectDirectory, "Resource", "AWB_Details");
-                        Directory.CreateDirectory(directoryPath);
-                        filePath = Path.Combine(directoryPath, "AWB_Details.xlsx");
-                        Console.WriteLine($"File path: {filePath}");
-                    }
-                }
+
+                azureStorage = new AzureStorage(containerName);
+                string excelFileName = "AWBDetails.csv";
+                string tempLocalPath = Path.Combine(Path.GetTempPath(), excelFileName);
+
+                // Download the existing file if it exists
+                tempLocalPath = azureStorage.DownloadFileFromBlob(excelFileName, tempLocalPath);
 
                 if (featureName.Contains("CAP018"))
                 {
                     ExcelFileConfig excelFileConfig = new ExcelFileConfig();
-                    excelFileConfig.AppendDataToExcel(filePath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "CAP018", MaintainBookingPage.awbNumber);
+                    // Append data to the downloaded or newly created Excel file
+                    excelFileConfig.AppendDataToExcel(tempLocalPath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "CAP018", featureName, MaintainBookingPage.awbNumber, MaintainBookingPage.globalOrigin, MaintainBookingPage.globalDestination, MaintainBookingPage.globalProductCode, MaintainBookingPage.globalAgentCode, MaintainBookingPage.globalShipperCode, MaintainBookingPage.globalConsigneeCode, MaintainBookingPage.globalCommodityCode, MaintainBookingPage.globalPieces, MaintainBookingPage.globalWeight);
+
+                    // Upload the updated file back to Azure Blob Storage
+                    azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
+
+                    File.Delete(tempLocalPath);
                 }
-                else
-                {
-                    ExcelFileConfig excelConfig = new ExcelFileConfig();
-                    excelConfig.AppendDataToExcel(filePath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", CreateShipmentPage.awb_num);
-                }
+
+                //else
+                //{
+                //    ExcelFileConfig excelConfig = new ExcelFileConfig();
+                //    excelConfig.AppendDataToExcel(filePath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", CreateShipmentPage.awb_num);
+                //}
             }
 
         }
@@ -221,6 +211,7 @@ namespace iCargoUIAutomation.Hooks
             string screenshotLocation = Path.Combine(screenshotPath, fileName);
             screenshot.SaveAsFile(screenshotLocation);
             return MediaEntityBuilder.CreateScreenCaptureFromPath(screenshotLocation).Build();
+
         }
     }
 }
