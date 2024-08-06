@@ -46,8 +46,10 @@ namespace iCargoUIAutomation.Hooks
         public static void BeforeTestRun()
         {
 
-            // Set the report path (temporary local path, will be uploaded to Azure)
-            string reportName = "TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");
+            // Set the report path (temporary local path, will be uploaded to Azure)           
+            TimeZoneInfo pstZone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+            DateTime pstTime = TimeZoneInfo.ConvertTime(DateTime.Now, pstZone);
+            string reportName = "TestResults_" + pstTime.ToString("yyyyMMdd_HHmmss");
             reportPath = Path.Combine(Path.GetTempPath(), reportName);
             testResultPath = reportPath + @"\index.html";
 
