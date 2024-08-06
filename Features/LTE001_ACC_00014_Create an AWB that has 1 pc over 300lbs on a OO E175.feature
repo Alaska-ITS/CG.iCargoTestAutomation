@@ -2,7 +2,7 @@
 
 Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CGODG user
 
-@tag1
+@LTE001 @LTE001_ACC_00014
 Scenario Outline: Create an AWB that has 1 pc over 300lbs on a OO E175
 	Given User lauches the Url of iCargo Staging UI
 	Then User enters into the  iCargo 'Sign in to icargoas' page successfully

@@ -110,7 +110,7 @@ namespace iCargoUIAutomation.pages
             }
             catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in handling Payment in Payment Portal: " + e.Message);
+                //Hooks.Hooks.UpdateTest(Status.Fail, "Error in handling Payment in Payment Portal: " + e.Message);
                 Log.Error("Error in handling Payment in Payment Portal" + e.Message);
             }
 

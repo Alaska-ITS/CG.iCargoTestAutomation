@@ -72,6 +72,15 @@ namespace iCargoUIAutomation.utilities
             MaintainBookingPage.globalPieces = "";
             MaintainBookingPage.globalWeight = "";
             CreateShipmentPage.awb_num = "";
+            CreateShipmentPage.origin = "";
+            CreateShipmentPage.destination = "";
+            CreateShipmentPage.agentCode = "";
+            CreateShipmentPage.shipperCode = "";
+            CreateShipmentPage.consigneeCode = "";
+            CreateShipmentPage.productCode = "";
+            CreateShipmentPage.commodityCode = "";
+            CreateShipmentPage.pieces = "";
+            CreateShipmentPage.weight = "";
         }
     }
 }

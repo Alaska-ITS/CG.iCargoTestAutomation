@@ -33,7 +33,7 @@ namespace iCargoUIAutomation.pages
         string MarketCharge = "";
         public static string origin = "";
         public static string destination = "";
-        string shippingDate = DateTime.Now.ToString("dd-MMM-yyyy");
+        string shippingDate = DateTime.Now.ToString("dd-MMM-yyyy");        
         string scc = "";
         string serviceCargoClass = "";
         public static string pieces = "";
@@ -114,6 +114,8 @@ namespace iCargoUIAutomation.pages
         private By btnContinueCertificates_Name = By.Name("btnCertificateDetailsCont");
 
         //   Shipment Commodity Details   //
+        public static string commodityCode = "";
+        public static string productCode = "";
         private By btnOrangePencilShipment_Css = By.CssSelector("#view_shipmentDtls a");
         private By lblShipmentDetails_Id = By.Id("shipmentaccordion");
         private By txtOrigin_Name = By.Name("origin");
@@ -538,7 +540,7 @@ namespace iCargoUIAutomation.pages
             return pieces;
         }
 
-        public void EnterShipmentDetails(string neworigin, string newdestination, string productCode, string scc,
+        public void EnterShipmentDetails(string neworigin, string newdestination, string product, string scc,
                                          string commodity, string shipmentdesc, string serviceCargoClass, string newpiece, string newweight)
         {
             origin = neworigin;
@@ -547,6 +549,8 @@ namespace iCargoUIAutomation.pages
             this.serviceCargoClass = serviceCargoClass;
             pieces = newpiece;
             weight = newweight;
+            productCode = product;
+            commodityCode = commodity;
 
             try
             {
@@ -1386,6 +1390,10 @@ namespace iCargoUIAutomation.pages
                     if ((CaptureBookingStatus() == "Confirmed") && (CaptureDataCaptureStatus() == "EXECUTED") && (CaptureAcceptanceStatus() == "Finalised") && (CaptureColorReadyForCarriageStatus().Contains("green")) && (CaptureColorCaptureCheckSheetStatus().Contains("green")) && (CaptureColorBlockStatus().Contains("green")))
                     {
                         awb_num = captureAWBNumber();
+                        Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
+                        ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+                        WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
+                        ClickElementUsingActions(btnClear_Id);
                         break;
                     }
 

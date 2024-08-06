@@ -173,13 +173,21 @@ namespace iCargoUIAutomation.Hooks
 
                 // Download the existing file if it exists
                 tempLocalPath = azureStorage.DownloadFileFromBlob(excelFileName, tempLocalPath);
+                ExcelFileConfig excelFileConfig = new ExcelFileConfig();
 
                 if (featureName.Contains("CAP018"))
                 {
-                    ExcelFileConfig excelFileConfig = new ExcelFileConfig();
+                    
                     // Append data to the downloaded or newly created Excel file
                     excelFileConfig.AppendDataToExcel(tempLocalPath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "CAP018", featureName, MaintainBookingPage.awbNumber, MaintainBookingPage.globalOrigin, MaintainBookingPage.globalDestination, MaintainBookingPage.globalProductCode, MaintainBookingPage.globalAgentCode, MaintainBookingPage.globalShipperCode, MaintainBookingPage.globalConsigneeCode, MaintainBookingPage.globalCommodityCode, MaintainBookingPage.globalPieces, MaintainBookingPage.globalWeight);
                     
+                }
+                else 
+                {
+                    
+                    // Append data to the downloaded or newly created Excel file
+                    excelFileConfig.AppendDataToExcel(tempLocalPath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", featureName, CreateShipmentPage.awb_num, CreateShipmentPage.origin, CreateShipmentPage.destination, CreateShipmentPage.agentCode, CreateShipmentPage.shipperCode, CreateShipmentPage.consigneeCode, CreateShipmentPage.productCode, CreateShipmentPage.commodityCode, CreateShipmentPage.pieces, CreateShipmentPage.weight);
+
                 }
 
                 //else

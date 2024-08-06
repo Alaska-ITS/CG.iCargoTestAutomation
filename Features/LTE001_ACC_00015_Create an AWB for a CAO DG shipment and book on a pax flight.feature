@@ -2,7 +2,7 @@
 
 Create a New DG Shipment, Acceptance & screening of that as a CGODG user
 
-@tag1
+@LTE001 @LTE001_ACC_00015
 Scenario Outline: Create an AWB for a CAO DG shipment and book on a pax flight
 	Given User lauches the Url of iCargo Staging UI
 	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
