@@ -1062,11 +1062,10 @@ namespace iCargoUIAutomation.pages
             {
 
                 while (!checkTextboxIsNotEmpty(txtIATACharge_Xpath))
-                {
-                    Click(btnCalculateCharges_Name);
+                {                   
+                    ClickOnElementIfPresent(btnCalculateCharges_Name);
                     Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Calculate Charge button");
                     WaitUntilTextboxIsNotEmpty(txtIATACharge_Xpath);
-
                 }
 
             }
