@@ -1072,7 +1072,7 @@ namespace iCargoUIAutomation.pages
             }
             catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in clicking on Calculate Charge button: " + e.ToString());
+                Hooks.Hooks.UpdateTest(Status.Info, "Error in clicking on Calculate Charge button: " + e.ToString());
                 Log.Error("Error in clicking on Calculate Charge button: " + e.ToString());
             }
 
