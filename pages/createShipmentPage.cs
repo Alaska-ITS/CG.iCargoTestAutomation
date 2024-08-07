@@ -1050,7 +1050,7 @@ namespace iCargoUIAutomation.pages
 
                 while (!checkTextboxIsNotEmpty(txtIATACharge_Xpath))
                 {                   
-                    ClickOnElementIfPresent(btnCalculateCharges_Name);
+                    ClickElementUsingJavaScript(btnCalculateCharges_Name);
                     Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Calculate Charge button");
                     WaitUntilTextboxIsNotEmpty(txtIATACharge_Xpath);
                 }
@@ -1161,9 +1161,9 @@ namespace iCargoUIAutomation.pages
             }
             totalAmountCharged = GetText(txtTotalCharge_Xpath).Split(':')[1].Trim();
             totalAmountCharged = totalAmountCharged.Split("USD")[0];
-            Click(btnContinueChargeDetails_Name);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for charge details");
+            ClickElementUsingJavaScript(btnContinueChargeDetails_Name);
             WaitForElementToBeInvisible(btnContinueChargeDetails_Name, TimeSpan.FromSeconds(5));
+            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for charge details");            
             return totalAmountCharged;
 
         }
