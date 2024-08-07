@@ -85,6 +85,7 @@ namespace iCargoUIAutomation.pages
                     if (IsElementDisplayed(txtPleaseCloseTabRetry_Xpath, 3))
                     {
                         CloseCurrentWindow();
+                        Hooks.Hooks.UpdateTest(Status.Pass, "Closed Payment Portal Tab & Retrying");
                     }
                     else if (chargetyp.Equals("PP"))
                     {
@@ -123,6 +124,7 @@ namespace iCargoUIAutomation.pages
         {
             Hooks.Hooks.UpdateTest(Status.Info, "Confirming Manual Payment");
             Log.Info("Confirming Manual Payment");
+            WaitForElementToBeVisible(optionManualPaymentMethod_Xpath, TimeSpan.FromSeconds(10));
             Click(optionManualPaymentMethod_Xpath);
             Hooks.Hooks.UpdateTest(Status.Pass, "Selected Manual Payment Option");
             Click(btnNext_Xpath);
