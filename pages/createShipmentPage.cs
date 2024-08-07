@@ -337,8 +337,7 @@ namespace iCargoUIAutomation.pages
         }
 
         public void EnterParticipantDetailsAsync(string agent, string shipper, string consignee)
-        {
-            Hooks.Hooks.createNode();
+        {          
             agentCode = agent;
             shipperCode = shipper;
             consigneeCode = consignee;
@@ -446,9 +445,9 @@ namespace iCargoUIAutomation.pages
         {
             
             try
-            {         
-                DoubleClick(btnContinueParticipants_Id);
+            {      
                 Thread.Sleep(2000);
+                DoubleClick(btnContinueParticipants_Id);
                 WaitForElementToBeInvisible(btnContinueParticipants_Id, TimeSpan.FromSeconds(5));
                 WaitForElementToBeVisible(txtNameOnId_Name, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for participants");
