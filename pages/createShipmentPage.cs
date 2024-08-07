@@ -344,18 +344,36 @@ namespace iCargoUIAutomation.pages
             try
             {
                 Click(txtAgentCode_Name);
-                EnterText(txtAgentCode_Name, agentCode);
+                EnterTextWithCheck(txtAgentCode_Name, agentCode);
+                if (!checkTextboxIsNotEmpty(txtAgentName_Name))
+                {
+                    EnterTextWithCheck(txtAgentCode_Name, agentCode);
+                    Hooks.Hooks.UpdateTest(Status.Pass, "Entered Agent Code: " + agentCode);
+                    Log.Info("Entered Agent Code: " + agentCode);
+                }
                 Click(txtAgentName_Name);              
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Agent Code: " + agentCode);             
 
                 Click(txtShipperCode_Name);
-                EnterText(txtShipperCode_Name, shipperCode);
+                EnterTextWithCheck(txtShipperCode_Name, shipperCode);
+                if (!checkTextboxIsNotEmpty(txtShipperName_Name))
+                {
+                    EnterTextWithCheck(txtShipperCode_Name, shipperCode);
+                    Hooks.Hooks.UpdateTest(Status.Pass, "Entered Shipper Code: " + shipperCode);
+                    Log.Info("Entered Shipper Code: " + shipperCode);
+                }
                 Click(txtShipperName_Name);
                 Click(txtShipperContact_Name);               
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Shipper Code: " + shipperCode);
             
                 Click(txtConsigneeCode_Name);
-                EnterText(txtConsigneeCode_Name, consigneeCode);
+                EnterTextWithCheck(txtConsigneeCode_Name, consigneeCode);
+                if (!checkTextboxIsNotEmpty(txtConsigneeCode_Name))
+                {
+                    EnterTextWithCheck(txtConsigneeCode_Name, consigneeCode);
+                    Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Code: " + consigneeCode);
+                    Log.Info("Entered Consignee Code: " + consigneeCode);
+                }
                 Click(txtConsigneeName_Id);
                 Click(txtConsigneeContact_Id);               
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Code: " + consigneeCode);
