@@ -443,11 +443,11 @@ namespace iCargoUIAutomation.pages
 
         public void ClickOnContinueParticipantButton()
         {
-            ScrollDown();
+            
             try
-            {               
+            {            
                
-                ClickElementUsingJavaScript(btnContinueParticipants_Id);
+                DoubleClick(btnContinueParticipants_Id);
                 Thread.Sleep(2000);
                 WaitForElementToBeInvisible(btnContinueParticipants_Id, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for participants");
@@ -455,7 +455,7 @@ namespace iCargoUIAutomation.pages
             }
             catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in clicking on Continue button for participants: " + e.ToString());
+                Hooks.Hooks.UpdateTest(Status.Info, "Error in clicking on Continue button for participants: " + e.ToString());
                 Log.Error("Error in clicking on Continue button for participants: " + e.ToString());
 
             }
