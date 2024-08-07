@@ -99,11 +99,9 @@ namespace iCargoUIAutomation.pages
         private By txtShipperEmail_Name = By.Name("shipperEmail");
         private By btnShipperOk_Name = By.Name("btnShipperOK");
 
-
         private By txtConsigneeCode_Name = By.Name("consigneeCode");
-        private By btnContinueParticipants_Name = By.Name("btnParticipantCont");
+        private By btnContinueParticipants_Id = By.Id("CMP_Operations_Shipment_Lite_CreateShipment_btnParticpantContinue");
         private By btnContinueCommodity_Name = By.Name("btnCommodityCont");
-
 
         //   Certificates   //
 
@@ -345,35 +343,20 @@ namespace iCargoUIAutomation.pages
             try
             {
                 Click(txtAgentCode_Name);
-                EnterTextWithCheck(txtAgentCode_Name, agentCode);
-                if (!checkTextboxIsNotEmpty(txtAgentName_Name))
-                {
-                    EnterTextWithCheck(txtAgentCode_Name, agentCode);
-                    Hooks.Hooks.UpdateTest(Status.Pass, "Entered Agent Code: " + agentCode);
-                    Log.Info("Entered Agent Code: " + agentCode);
-                }
+                EnterText(txtAgentCode_Name, agentCode);
+                EnterKeys(txtAgentCode_Name, Keys.Tab);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Agent Code: " + agentCode);             
 
                 Click(txtShipperCode_Name);
-                EnterTextWithCheck(txtShipperCode_Name, shipperCode);
-                if (!checkTextboxIsNotEmpty(txtShipperName_Name))
-                {
-                    EnterTextWithCheck(txtShipperCode_Name, shipperCode);
-                    Hooks.Hooks.UpdateTest(Status.Pass, "Entered Shipper Code: " + shipperCode);
-                    Log.Info("Entered Shipper Code: " + shipperCode);
-                }
-
-
+                EnterText(txtShipperCode_Name, shipperCode);
+                EnterKeys(txtShipperCode_Name, Keys.Tab);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Shipper Code: " + shipperCode);
+            
                 Click(txtConsigneeCode_Name);
-                EnterTextWithCheck(txtConsigneeCode_Name, consigneeCode);
-                if (!checkTextboxIsNotEmpty(txtConsigneeCode_Name))
-                {
-                    EnterTextWithCheck(txtConsigneeCode_Name, consigneeCode);
-                    Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Code: " + consigneeCode);
-                    Log.Info("Entered Consignee Code: " + consigneeCode);
-                }
-
-
+                EnterText(txtConsigneeCode_Name, consigneeCode);
                 EnterKeys(txtConsigneeCode_Name, Keys.Tab);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Code: " + consigneeCode);
+ 
             }
             catch (Exception e)
             {
@@ -460,7 +443,8 @@ namespace iCargoUIAutomation.pages
             ScrollDown();
             try
             {
-                Click(btnContinueParticipants_Name);
+                Click(btnContinueParticipants_Id);
+                WaitForElementToBeInvisible(btnContinueParticipants_Id, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for participants");
                 Log.Info("Clicked on Continue button for participants");
             }
@@ -500,6 +484,7 @@ namespace iCargoUIAutomation.pages
             {
                 ScrollDown();
                 Click(btnContinueCertificates_Name);
+                WaitForElementToBeInvisible(btnContinueCertificates_Name, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for certificates");
                 Log.Info("Clicked on Continue button for certificates");
             }
@@ -644,6 +629,7 @@ namespace iCargoUIAutomation.pages
             {
                 ScrollDown();
                 Click(btnContinueShipmentCommodity_Name);
+                WaitForElementToBeInvisible(btnContinueShipmentCommodity_Name, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for shipment details");
             }
             catch (Exception e)
