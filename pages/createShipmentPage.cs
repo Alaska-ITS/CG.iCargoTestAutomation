@@ -1465,7 +1465,9 @@ namespace iCargoUIAutomation.pages
             {
                 SwitchToLastWindow();
                 RefreshPage();
+                Hooks.Hooks.UpdateTest(Status.Pass, "Payment Portal Refreshed");
                 totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Back from Payment Portal");
                 SwitchToLastWindow();
                 SwitchToLTEContentFrame();
             }
