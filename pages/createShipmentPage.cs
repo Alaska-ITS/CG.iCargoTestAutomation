@@ -345,16 +345,19 @@ namespace iCargoUIAutomation.pages
                 Click(txtAgentCode_Name);
                 EnterText(txtAgentCode_Name, agentCode);
                 EnterKeys(txtAgentCode_Name, Keys.Tab);
+                Thread.Sleep(2000);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Agent Code: " + agentCode);             
 
                 Click(txtShipperCode_Name);
                 EnterText(txtShipperCode_Name, shipperCode);
                 EnterKeys(txtShipperCode_Name, Keys.Tab);
+                Thread.Sleep(2000);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Shipper Code: " + shipperCode);
             
                 Click(txtConsigneeCode_Name);
                 EnterText(txtConsigneeCode_Name, consigneeCode);
                 EnterKeys(txtConsigneeCode_Name, Keys.Tab);
+                Thread.Sleep(2000);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Code: " + consigneeCode);
  
             }
@@ -445,6 +448,7 @@ namespace iCargoUIAutomation.pages
             {               
                
                 ClickElementUsingJavaScript(btnContinueParticipants_Id);
+                Thread.Sleep(2000);
                 WaitForElementToBeInvisible(btnContinueParticipants_Id, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for participants");
                 Log.Info("Clicked on Continue button for participants");
@@ -485,6 +489,7 @@ namespace iCargoUIAutomation.pages
             {
                 ScrollDown();
                 Click(btnContinueCertificates_Name);
+                Thread.Sleep(2000);
                 WaitForElementToBeInvisible(btnContinueCertificates_Name, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for certificates");
                 Log.Info("Clicked on Continue button for certificates");
