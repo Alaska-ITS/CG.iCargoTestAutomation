@@ -100,6 +100,8 @@ namespace iCargoUIAutomation.pages
         private By btnShipperOk_Name = By.Name("btnShipperOK");
 
         private By txtConsigneeCode_Name = By.Name("consigneeCode");
+        private By txtConsigneeName_Id = By.Id("CMP_Operations_Shipment_Lite_CreateShipment_ConsigneeName");
+        private By txtConsigneeContact_Id = By.Id("CMP_Operations_Shipment_Lite_CreateShipment_ConsigneeContactNumber");
         private By btnContinueParticipants_Id = By.Id("CMP_Operations_Shipment_Lite_CreateShipment_btnParticpantContinue");
         private By btnContinueCommodity_Name = By.Name("btnCommodityCont");
 
@@ -344,20 +346,19 @@ namespace iCargoUIAutomation.pages
             {
                 Click(txtAgentCode_Name);
                 EnterText(txtAgentCode_Name, agentCode);
-                EnterKeys(txtAgentCode_Name, Keys.Tab);
-                Thread.Sleep(2000);
+                Click(txtAgentName_Name);              
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Agent Code: " + agentCode);             
 
                 Click(txtShipperCode_Name);
                 EnterText(txtShipperCode_Name, shipperCode);
-                EnterKeys(txtShipperCode_Name, Keys.Tab);
-                Thread.Sleep(2000);
+                Click(txtShipperName_Name);
+                Click(txtShipperContact_Name);               
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Shipper Code: " + shipperCode);
             
                 Click(txtConsigneeCode_Name);
                 EnterText(txtConsigneeCode_Name, consigneeCode);
-                EnterKeys(txtConsigneeCode_Name, Keys.Tab);
-                Thread.Sleep(2000);
+                Click(txtConsigneeName_Id);
+                Click(txtConsigneeContact_Id);               
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Code: " + consigneeCode);
  
             }
@@ -445,11 +446,11 @@ namespace iCargoUIAutomation.pages
         {
             
             try
-            {            
-               
+            {         
                 DoubleClick(btnContinueParticipants_Id);
                 Thread.Sleep(2000);
                 WaitForElementToBeInvisible(btnContinueParticipants_Id, TimeSpan.FromSeconds(5));
+                WaitForElementToBeVisible(txtNameOnId_Name, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for participants");
                 Log.Info("Clicked on Continue button for participants");
             }
@@ -1417,7 +1418,7 @@ namespace iCargoUIAutomation.pages
                     {
                         throw; // Rethrow the exception if max retries are exceeded
                     }
-                    Hooks.Hooks.UpdateTest(Status.Fail, "Encountered StaleElementReferenceException, retrying... Attempt"+ (retryCount + 1));
+                    Hooks.Hooks.UpdateTest(Status.Info, "Encountered StaleElementReferenceException, retrying... Attempt"+ (retryCount + 1));
                     log.Info($"Encountered StaleElementReferenceException, retrying... Attempt {retryCount + 1}");
                     retryCount++;
                     continue; // Retry the loop
