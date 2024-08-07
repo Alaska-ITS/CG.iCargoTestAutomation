@@ -1126,7 +1126,7 @@ namespace iCargoUIAutomation.pages
                     else
                     {
                         Click(btnYesActiveCashDraw_Xpath);
-                        Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Yes for Active Cash Draw");
+                        Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Yes for "+errorText);
                         WaitForTextToBeInvisible(errorText, TimeSpan.FromMilliseconds(500));
                     }
                 }
@@ -1417,7 +1417,7 @@ namespace iCargoUIAutomation.pages
                     {
                         int noOfWindowsBefore = GetNumberOfWindowsOpened();
                         ClickingYesOnPopupWarnings("");
-                        WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore + 1);
+                        //WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore + 1);
                         int noOfWindowsAfter = GetNumberOfWindowsOpened();
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
