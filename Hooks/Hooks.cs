@@ -99,6 +99,7 @@ namespace iCargoUIAutomation.Hooks
             bp.DeleteAllCookies();
             bp.Open(appUrl);
             driver.FindElement(By.XPath("//a[@id='social-oidc']")).Click();
+            bp.RefreshPage();
             if (bp.IsElementDisplayed(By.XPath("//body[@class='login']")))
             {
                 hp.LoginICargo();
