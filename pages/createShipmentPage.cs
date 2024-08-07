@@ -1406,6 +1406,7 @@ namespace iCargoUIAutomation.pages
                         ClickElementUsingActions(btnOrangePencilEditBooking_Css);
                         WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
                         ClickElementUsingActions(btnClear_Id);
+                        Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
                         break;
                     }
 
