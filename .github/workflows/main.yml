@@ -41,4 +41,4 @@ jobs:
           echo "RoleGroup=${ROLE_GROUP}" >> $GITHUB_ENV
  
       - name: Run tests by tag
-        run: dotnet test --filter TestCategory=LTE001_ACC_00001
+        run: dotnet test --filter TestCategory=CAP018_BKG_00003
