@@ -74,13 +74,13 @@ namespace iCargoUIAutomation.pages
                         SelectDropdownByVisibleText(drpdwnSelectStation_Id, station);
                         Click(btnOKSwitchRole_Xpath);
                         SwitchToDefaultContent();
-                        Hooks.Hooks.UpdateTest(Status.Pass, "Switched to station: " + station);                    
+                                         
                 }
                 
             }
             catch (Exception e)
             {              
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in SwitchStation method: " + e.Message);
+               
                 Log.Error("Error in SwitchStation method: " + e.Message);
             }
             
