@@ -78,7 +78,8 @@ namespace iCargoUIAutomation.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an AWB with less than a 2 hr connection time between flights")]
-        [NUnit.Framework.CategoryAttribute("tag1")]
+        [NUnit.Framework.CategoryAttribute("LTE001")]
+        [NUnit.Framework.CategoryAttribute("LTE001_ACC_00013")]
         [NUnit.Framework.TestCaseAttribute("10763", "10763", "10763", "ANC", "LAS", "GENERAL", "None", "0316", "None", "None", "2", "59", "PP", "CREDIT", "CART", null)]
         public virtual void CreateAnAWBWithLessThanA2HrConnectionTimeBetweenFlights(
                     string agentCode, 
@@ -99,7 +100,8 @@ namespace iCargoUIAutomation.Features
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "tag1"};
+                    "LTE001",
+                    "LTE001_ACC_00013"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

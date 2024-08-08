@@ -76,7 +76,8 @@ namespace iCargoUIAutomation.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an AWB in LTE001 using a specific commodity code")]
-        [NUnit.Framework.CategoryAttribute("tag1")]
+        [NUnit.Framework.CategoryAttribute("LTE001")]
+        [NUnit.Framework.CategoryAttribute("LTE001_ACC_00004")]
         [NUnit.Framework.TestCaseAttribute("10763", "10763", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "2", "59", "PP", "CREDIT", "CART", null)]
         public virtual void CreateAnAWBInLTE001UsingASpecificCommodityCode(
                     string agentCode, 
@@ -97,7 +98,8 @@ namespace iCargoUIAutomation.Features
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "tag1"};
+                    "LTE001",
+                    "LTE001_ACC_00004"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

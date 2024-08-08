@@ -75,7 +75,8 @@ namespace iCargoUIAutomation.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an AWB for a CAO DG shipment and book on a pax flight")]
-        [NUnit.Framework.CategoryAttribute("tag1")]
+        [NUnit.Framework.CategoryAttribute("LTE001")]
+        [NUnit.Framework.CategoryAttribute("LTE001_ACC_00015")]
         [NUnit.Framework.TestCaseAttribute("10763", "10763", "10763", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "1", "30", "CC", "None", "CART", "3480", "Lithium ion batteries", "965", "0.5", "No", null)]
         public virtual void CreateAnAWBForACAODGShipmentAndBookOnAPaxFlight(
                     string agentCode, 
@@ -101,7 +102,8 @@ namespace iCargoUIAutomation.Features
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "tag1"};
+                    "LTE001",
+                    "LTE001_ACC_00015"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
