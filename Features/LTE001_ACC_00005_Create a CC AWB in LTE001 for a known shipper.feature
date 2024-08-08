@@ -25,8 +25,7 @@ Scenario Outline: Create a CC AWB in LTE001 for a known shipper
 	And User clicks on the ContinueAcceptanceDetails button
 	And User enters the Screening details for row 1 with screeingMethod as 'Transfer Manifest Verified' and ScreeningResult as 'Pass'
 	And User clicks on the ContinueScreeningDetails button
-	And User checks the AWB_Verified checkbox
-	And User clicks on the save button & handle Payment Portal
+	And User checks the AWB_Verified checkbox	
 	And User saves all the details & handles all the popups
 	
 
