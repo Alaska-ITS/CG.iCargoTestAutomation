@@ -461,10 +461,14 @@ namespace iCargoUIAutomation.pages
 
         public void ClickOnContinueParticipantButton()
         {
-            
+            if (!IsElementDisplayed(btnContinueParticipants_Id))
+            {
+                ScrollDown();
+            }
+
             try
             {      
-                Thread.Sleep(2000);
+                
                 DoubleClick(btnContinueParticipants_Id);
                 WaitForElementToBeInvisible(btnContinueParticipants_Id, TimeSpan.FromSeconds(5));
                 WaitForElementToBeVisible(txtNameOnId_Name, TimeSpan.FromSeconds(5));
@@ -1566,6 +1570,11 @@ namespace iCargoUIAutomation.pages
                     if ((CaptureBookingStatus() == "Confirmed") && (CaptureDataCaptureStatus() == "EXECUTED") && (CaptureAcceptanceStatus() == "Finalised") && (CaptureColorReadyForCarriageStatus().Contains("green")) && (CaptureColorCaptureCheckSheetStatus().Contains("green")) && (CaptureColorBlockStatus().Contains("green")))
                     {
                         awb_num = captureAWBNumber();
+                        Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
+                        ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+                        WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
+                        ClickElementUsingActions(btnClear_Id);
+                        Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
                         break;
                     }
 
@@ -1582,7 +1591,9 @@ namespace iCargoUIAutomation.pages
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
                             SwitchToLastWindow();
+                            RefreshPage();
                             totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
+                            WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
                             SwitchToLastWindow();
                             SwitchToLTEContentFrame();
                         }

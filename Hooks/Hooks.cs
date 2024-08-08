@@ -71,7 +71,8 @@ namespace iCargoUIAutomation.Hooks
         {
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
-            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
+            //browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
+            browser = "firefox";
             if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
             {
                 driver = new ChromeDriver();
@@ -191,13 +192,7 @@ namespace iCargoUIAutomation.Hooks
                     // Append data to the downloaded or newly created Excel file
                     excelFileConfig.AppendDataToExcel(tempLocalPath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", featureName, CreateShipmentPage.awb_num, CreateShipmentPage.origin, CreateShipmentPage.destination, CreateShipmentPage.agentCode, CreateShipmentPage.shipperCode, CreateShipmentPage.consigneeCode, CreateShipmentPage.productCode, CreateShipmentPage.commodityCode, CreateShipmentPage.pieces, CreateShipmentPage.weight);
 
-                }
-
-                //else
-                //{
-                //    ExcelFileConfig excelConfig = new ExcelFileConfig();
-                //    excelConfig.AppendDataToExcel(filePath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", CreateShipmentPage.awb_num);
-                //}
+                }                
 
                 // Upload the updated file back to Azure Blob Storage
                 azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
