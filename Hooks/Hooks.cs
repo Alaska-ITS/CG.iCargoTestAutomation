@@ -71,8 +71,7 @@ namespace iCargoUIAutomation.Hooks
         {
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
-            //browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
-            browser = "firefox";
+            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);                        
             if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
             {
                 driver = new ChromeDriver();
@@ -121,13 +120,7 @@ namespace iCargoUIAutomation.Hooks
                 File.Delete(reportPath);
             }
             driver.Quit();
-        }
-
-        [BeforeScenario("@tag1")]
-        public void BeforeScenarioWithTag()
-        {
-
-        }
+        }        
 
         [BeforeScenario(Order = 1)]
         public void FirstBeforeScenario(ScenarioContext scenarioContext)
