@@ -76,7 +76,8 @@ namespace iCargoUIAutomation.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create a COMAT AWB")]
-        [NUnit.Framework.CategoryAttribute("tag1")]
+        [NUnit.Framework.CategoryAttribute("LTE001")]
+        [NUnit.Framework.CategoryAttribute("LTE001_ACC_00017")]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "10763", "COMATFF", "ANC", "LAX", "COMAT", "None", "NONSCR", "None", "COMAT", "2", "59", "PP", "NONE", "CART", null)]
         public virtual void CreateACOMATAWB(
                     string agentCode, 
@@ -97,7 +98,8 @@ namespace iCargoUIAutomation.Features
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "tag1"};
+                    "LTE001",
+                    "LTE001_ACC_00017"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

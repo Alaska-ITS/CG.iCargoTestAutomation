@@ -77,11 +77,13 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Accept a prebooked AWB in LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
+        [NUnit.Framework.CategoryAttribute("LTE001_ACC_00006")]
         [NUnit.Framework.TestCaseAttribute("027-30077655", "ANC", "CC", "CREDIT", "CART", null)]
         public virtual void AcceptAPrebookedAWBInLTE001(string prebookedAWB, string origin, string chargeType, string modeOfPayment, string cartType, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LTE001"};
+                    "LTE001",
+                    "LTE001_ACC_00006"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

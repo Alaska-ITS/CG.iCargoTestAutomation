@@ -76,7 +76,8 @@ namespace iCargoUIAutomation.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an AWB that has 1 pc over 300lbs on a OO E175")]
-        [NUnit.Framework.CategoryAttribute("tag1")]
+        [NUnit.Framework.CategoryAttribute("LTE001")]
+        [NUnit.Framework.CategoryAttribute("LTE001_ACC_00014")]
         [NUnit.Framework.TestCaseAttribute("10763", "10763", "10763", "LAS", "SEA", "GENERAL", "None", "0316", "None", "None", "1", "500", "CC", "None", "CART", null)]
         public virtual void CreateAnAWBThatHas1PcOver300LbsOnAOOE175(
                     string agentCode, 
@@ -97,7 +98,8 @@ namespace iCargoUIAutomation.Features
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "tag1"};
+                    "LTE001",
+                    "LTE001_ACC_00014"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
