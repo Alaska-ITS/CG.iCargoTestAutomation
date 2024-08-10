@@ -152,6 +152,7 @@ namespace iCargoUIAutomation.pages
         private By emb_Xpath = By.XPath("//label[contains(@id,'embargoStatus')]");
         private By rate_Xpath = By.XPath("//label[contains(@id,'rateStatus')]");
         private By flightDetailsOkbtn_Xpath = By.XPath("//button[@accesskey='K']");
+        private By flightDetailsClosebtn_Xpath = By.XPath("//button[@accesskey='O']");
         private By flightDetailsSection_XPATH = By.CssSelector(".table_grid .ReactVirtualized__Table__row");
         private By flightProductCode_Xpath = By.XPath("//div[@class='d-flex justify-content-between']/strong[1]");
         private By flightDate_Xpath = By.XPath("//div[@data-id='departureArrivalDate']");
@@ -957,11 +958,27 @@ namespace iCargoUIAutomation.pages
                         }
                     }
                 }
+                ClickFlightDetailsCloseBtn();
+                SwitchToPopupWindow();
+                SwitchToCAP018Frame();
+                ClickOnElementIfPresent(clearAWBBtn_ID);
             }
             catch (Exception e)
             {
                 Hooks.Hooks.UpdateTest(Status.Fail, "Error in Selecting Multileg Flight: " + e.Message);
                 Log.Error("Error in Selecting Multileg Flight: " + e.Message);
+            }
+        }
+
+        public void ClickFlightDetailsCloseBtn()
+        {
+            if (IsElementDisplayed(flightDetailsClosebtn_Xpath))
+            {
+                ClickElementUsingJavaScript(flightDetailsClosebtn_Xpath);
+            }
+            else
+            {
+                Click(flightDetailsClosebtn_Xpath);
             }
         }
 
