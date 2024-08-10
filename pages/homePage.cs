@@ -73,13 +73,15 @@ namespace iCargoUIAutomation.pages
                         WaitForElementToBeVisible(drpdwnSelectStation_Id, TimeSpan.FromSeconds(10));
                         SelectDropdownByVisibleText(drpdwnSelectStation_Id, station);
                         Click(btnOKSwitchRole_Xpath);
+
                         SwitchToDefaultContent();  
                         Log.Info("Switched to station: " + station);
+
                 }
                 
             }
-            catch (Exception e)
-            {                              
+            catch (Exception e)                            
+            {                             
                 Log.Error("Error in SwitchStation method: " + e.Message);
             }
             
