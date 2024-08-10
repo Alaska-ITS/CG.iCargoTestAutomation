@@ -1079,7 +1079,8 @@ namespace iCargoUIAutomation.pages
                 {                   
                     ClickElementUsingJavaScript(btnCalculateCharges_Name);
                     Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Calculate Charge button");
-                    WaitUntilTextboxIsNotEmpty(txtIATACharge_Xpath);
+                    Thread.Sleep(1000);
+                    //WaitUntilTextboxIsNotEmpty(txtIATACharge_Xpath);
                 }
 
             }
@@ -1148,10 +1149,8 @@ namespace iCargoUIAutomation.pages
             try
             {
                 ScrollDown();
-                Click(drpdwnModeOfPayment_Name);
-                Thread.Sleep(1000);
-                SelectDropdownByVisibleText(drpdwnModeOfPayment_Name, modeOfPayment);
-                //SelectDropdownByVisibleTextUntil(drpdwnModeOfPayment_Name, modeOfPayment);
+                Click(drpdwnModeOfPayment_Name);                
+                SelectDropdownByVisibleText(drpdwnModeOfPayment_Name, modeOfPayment);               
                 Hooks.Hooks.UpdateTest(Status.Pass, "Selected Mode of Payment: " + modeOfPayment);
 
             }
