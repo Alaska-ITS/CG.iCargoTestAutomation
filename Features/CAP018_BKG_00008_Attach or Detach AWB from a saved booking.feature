@@ -19,23 +19,4 @@ Scenario Outline: iCargo Login and Create New Shipment
 	And User clicks on Save button
 Examples:
 	| Origin | Destination | ProductCode | Commodity | Piece | Weight | Execute | Agent Code | Shipper Code | Consignee Code | New Agent Code |
-	| ANC    | SEA         | PRIORITY    | 0316      | 2     | 20     | Yes     | 10763      | 10763        | 10763          | ASQXGUEST      |
-																		
-
-#@CAP018 @CAP018_BKG_00008
-#Scenario Outline: Scenario to Attach and Detach AWB from a saved booking to generate new AWB number
-#	Given User wants to execute the example "<Execute>"
-#	When User switches station if BaseStation other than "<Origin>"
-#	When User enters screen name as 'CAP018'
-#	Then User enters into the  iCargo 'Maintain Booking' page successfully
-#	And User enters the AWB number
-#	And User clicks on New/List button
-#	And User clicks on Attach/Detach button
-#	And User enters new Agent Code "<AgentCode>"
-#	And User clicks on Save button
-#
-#Examples:
-#	| AgentCode |
-#	| ASQXGUEST |
-	  
-	
+	| ANC    | SEA         | PRIORITY    | 0316      | 2     | 20     | Yes     | 10763      | 10763        | 10763          | ASQXGUEST      |																
