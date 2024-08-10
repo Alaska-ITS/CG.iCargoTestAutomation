@@ -34,6 +34,7 @@ namespace iCargoUIAutomation.pages
         public static string globalCommodityCode = "";
         public static string globalPieces = "";
         public static string globalWeight = "";
+        public static string globalAWBNumber = "";
         ILog Log = LogManager.GetLogger(typeof(MaintainBookingPage));       
         public MaintainBookingPage(IWebDriver driver) : base(driver)
         {
@@ -243,6 +244,7 @@ namespace iCargoUIAutomation.pages
                 EnterText(product_XPATH, productCode);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Product Code: " + productCode);
                 Log.Info("Entered Product Code: " + productCode);
+                WaitForElementToBeClickable(shipperConsigneeBtn_ID, TimeSpan.FromSeconds(5));
                 Click(shipperConsigneeBtn_ID);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee Button");
                 Log.Info("Clicked on Shipper Consignee Button");
@@ -398,6 +400,7 @@ namespace iCargoUIAutomation.pages
                     WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(15));
                     WaitForElementToBeVisible(awbNumber_XPATH, TimeSpan.FromSeconds(15));
                     awbNumber = GetText(awbNumber_XPATH);
+                    globalAWBNumber = awbNumber;
                     Hooks.Hooks.UpdateTest(Status.Pass, "AWB Number: " + awbNumber);
                     Log.Info("AWB Number: " + awbNumber);
                     if (IsElementEnabled(btnOkBookingSummaryPopup_XPATH))
@@ -1307,7 +1310,7 @@ namespace iCargoUIAutomation.pages
         public string CaptureAwbNumber()
         {
             string awb_num = "";
-            awb_num = awbNumber;
+            awb_num = globalAWBNumber;
             return awb_num;
         }
 
