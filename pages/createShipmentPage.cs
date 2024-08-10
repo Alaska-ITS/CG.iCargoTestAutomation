@@ -467,10 +467,10 @@ namespace iCargoUIAutomation.pages
             }
 
             try
-            {      
+            {   
                 
-                DoubleClick(btnContinueParticipants_Id);
-                //WaitForElementToBeInvisible(btnContinueParticipants_Id, TimeSpan.FromSeconds(5));
+                Click(btnContinueParticipants_Id);
+                WaitForElementToBeInvisible(btnContinueParticipants_Id, TimeSpan.FromSeconds(5));
                 //WaitForElementToBeVisible(txtNameOnId_Name, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for participants");
                 Log.Info("Clicked on Continue button for participants");
