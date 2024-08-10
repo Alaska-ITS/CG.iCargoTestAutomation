@@ -783,7 +783,7 @@ namespace iCargoUIAutomation.pages
                                 ConnectingflightNum = GetText(By.XPath("//*[@id='flight_details']//tbody//tr[" + (i + 1) + "]//td[1]")).Trim().Split("AS")[1].Trim();
                                 btnBookFlight = btnBookFlight.Replace("1", i.ToString());
                                 ScrollDown();
-                                Click(By.XPath(btnBookFlight));
+                                EnterKeys(By.XPath(btnBookFlight), Keys.Enter);                               
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Flight " + flightNum + " & connecting flightNum " + ConnectingflightNum + " is booked successfully");
                                 Log.Info("Flight " + flightNum + " & connecting flightNum " + ConnectingflightNum + " is booked successfully");
 
@@ -799,7 +799,7 @@ namespace iCargoUIAutomation.pages
 
                                 btnBookFlight = btnBookFlight.Replace("1", i.ToString());
                                 ScrollDown();
-                                Click(By.XPath(btnBookFlight));
+                                EnterKeys(By.XPath(btnBookFlight), Keys.Enter);                               
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Flight " + flightNum + " is booked successfully");
                                 Log.Info("Flight " + flightNum + " is booked successfully");
                                 break;
@@ -846,7 +846,7 @@ namespace iCargoUIAutomation.pages
 
                                 btnBookFlight = btnBookFlight.Replace("1", i.ToString());
                                 ScrollDown();
-                                Click(By.XPath(btnBookFlight));
+                                EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                 Hooks.Hooks.UpdateTest(Status.Pass, typeOfFlight + " Flight: " + flightNum + " is booked successfully");
                                 Log.Info(typeOfFlight + " Flight: " + flightNum + " is booked successfully");
                                 break;
@@ -894,7 +894,7 @@ namespace iCargoUIAutomation.pages
                                     ConnectingflightNum = GetText(By.XPath("//*[@id='flight_details']//tbody//tr[" + (i + 1) + "]//td[1]")).Trim().Split("AS")[1].Trim();
                                     btnBookFlight = btnBookFlight.Replace("1", i.ToString());
                                     ScrollDown();
-                                    Click(By.XPath(btnBookFlight));
+                                    EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                     Hooks.Hooks.UpdateTest(Status.Pass, firstflttyp + " Flight " + flightNum + " & connecting " + secondflttype + " Flight " + ConnectingflightNum + " is booked successfully");
                                     Log.Info(firstflttyp + " Flight " + flightNum + " & connecting " + secondflttype + " Flight " + ConnectingflightNum + " is booked successfully");
 
@@ -940,7 +940,7 @@ namespace iCargoUIAutomation.pages
                                 ConnectingflightNum = GetText(By.XPath("//*[@id='flight_details']//tbody//tr[" + (i + 1) + "]//td[1]")).Trim().Split("AS")[1].Trim();
                                 btnBookFlight = btnBookFlight.Replace("1", i.ToString());
                                 ScrollDown();
-                                Click(By.XPath(btnBookFlight));
+                                EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Flight " + flightNum + " & connecting flightNum " + ConnectingflightNum + "having minimum connection time restriction, is booked successfully");
                                 Log.Info("Flight " + flightNum + " & connecting flightNum " + ConnectingflightNum + "having minimum connection time restriction, is booked successfully");
 
@@ -1010,7 +1010,8 @@ namespace iCargoUIAutomation.pages
             try
             {
                 ScrollDown();
-                Click(btnContinueFlightDetails_Name);
+                EnterKeys(btnContinueFlightDetails_Name, Keys.Enter);
+                WaitForElementToBeInvisible(btnContinueFlightDetails_Name, TimeSpan.FromSeconds(5));               
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for flight details");
             }
             catch (Exception e)
