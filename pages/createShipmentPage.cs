@@ -462,15 +462,10 @@ namespace iCargoUIAutomation.pages
 
         public void ClickOnContinueParticipantButton()
         {
-           
-
             try
             {
-                EnterKeys(txtConsigneeContact_Id, Keys.Tab);
-                EnterKeys(btnConsigneeMore_Id, Keys.Tab);
                 EnterKeys(btnContinueParticipants_Id, Keys.Enter);
                 WaitForElementToBeInvisible(btnContinueParticipants_Id, TimeSpan.FromSeconds(5));
-                //WaitForElementToBeVisible(txtNameOnId_Name, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for participants");
                 Log.Info("Clicked on Continue button for participants");
             }
@@ -655,7 +650,7 @@ namespace iCargoUIAutomation.pages
             try
             {
                 ScrollDown();
-                Click(btnContinueShipmentCommodity_Name);
+                EnterKeys(btnContinueShipmentCommodity_Name, Keys.Enter);
                 WaitForElementToBeInvisible(btnContinueShipmentCommodity_Name, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for shipment details");
             }
