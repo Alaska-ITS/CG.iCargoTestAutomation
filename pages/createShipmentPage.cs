@@ -102,6 +102,7 @@ namespace iCargoUIAutomation.pages
         private By txtConsigneeCode_Name = By.Name("consigneeCode");
         private By txtConsigneeName_Id = By.Id("CMP_Operations_Shipment_Lite_CreateShipment_ConsigneeName");
         private By txtConsigneeContact_Id = By.Id("CMP_Operations_Shipment_Lite_CreateShipment_ConsigneeContactNumber");
+        private By btnConsigneeMore_Id = By.Id("CMP_Operations_Shipment_Lite_CreateShipment_btnConsigneeMore");
         private By btnContinueParticipants_Id = By.Id("CMP_Operations_Shipment_Lite_CreateShipment_btnParticpantContinue");
         private By btnContinueCommodity_Name = By.Name("btnCommodityCont");
 
@@ -461,14 +462,13 @@ namespace iCargoUIAutomation.pages
 
         public void ClickOnContinueParticipantButton()
         {
-            if (!IsElementDisplayed(btnContinueParticipants_Id))
-            {
-                ScrollDown();
-            }
+           
 
             try
             {
-                ClickOnElementIfPresent(btnContinueParticipants_Id);
+                EnterKeys(txtConsigneeContact_Id, Keys.Tab);
+                EnterKeys(btnConsigneeMore_Id, Keys.Tab);
+                EnterKeys(btnContinueParticipants_Id, Keys.Enter);
                 WaitForElementToBeInvisible(btnContinueParticipants_Id, TimeSpan.FromSeconds(5));
                 //WaitForElementToBeVisible(txtNameOnId_Name, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for participants");
