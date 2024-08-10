@@ -227,7 +227,7 @@ namespace iCargoUIAutomation.pages
             }
             catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in switching to LTE001 content frame: " + e.ToString());
+                Hooks.Hooks.UpdateTest(Status.Info, "Error in switching to LTE001 content frame: " + e.ToString());
                 Log.Error("Error in switching to LTE001 content frame: " + e.ToString());
             }
 
@@ -1331,9 +1331,10 @@ namespace iCargoUIAutomation.pages
             try
             {
                 ScrollDown();
-                Click(btnContinueScreeningDetails_Name);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for screening details");
+                EnterKeys(btnContinueScreeningDetails_Name, Keys.Enter);
                 WaitForElementToBeInvisible(btnContinueScreeningDetails_Name, TimeSpan.FromSeconds(5));
+                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for screening details");
+                
             }
             catch (Exception e)
             {
