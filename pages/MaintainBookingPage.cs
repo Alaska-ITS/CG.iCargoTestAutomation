@@ -301,7 +301,7 @@ namespace iCargoUIAutomation.pages
             {
                 SwitchToCAP018Frame();
                 WaitForElementToBeVisible(commodityCode_XPATH, TimeSpan.FromSeconds(10));
-                ClickOnElementIfPresent(commodityCode_XPATH);                
+                EnterKeys(commodityCode_XPATH, Keys.Enter);
                 EnterText(commodityCode_XPATH, commodityCode);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Commodity Code: " + commodityCode);
                 Log.Info("Entered Commodity Code: " + commodityCode);
