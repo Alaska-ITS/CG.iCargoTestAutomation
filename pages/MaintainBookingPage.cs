@@ -531,7 +531,7 @@ namespace iCargoUIAutomation.pages
             Hooks.Hooks.createNode();
             try
             {
-                Click(selectFlightBtn_ID);
+                EnterKeys(selectFlightBtn_ID, Keys.Enter);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Select Flight Button");
                 Log.Info("Clicked Select Flight Button");
                 WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
