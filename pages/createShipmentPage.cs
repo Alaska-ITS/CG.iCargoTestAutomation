@@ -293,10 +293,11 @@ namespace iCargoUIAutomation.pages
         {
             try
             {
-                Click(btnList_Id);
+                EnterKeys(btnList_Id, Keys.Enter);
+                WaitForElementToBeInvisible(btnList_Id, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on List button");
                 Log.Info("Clicked on List button");
-                WaitForElementToBeVisible(lblShipmentDetails_Css, TimeSpan.FromSeconds(10));
+                //WaitForElementToBeVisible(lblShipmentDetails_Css, TimeSpan.FromSeconds(10));
                 
             }
             catch (Exception e)
