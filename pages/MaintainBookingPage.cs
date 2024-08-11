@@ -245,7 +245,8 @@ namespace iCargoUIAutomation.pages
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Product Code: " + productCode);
                 Log.Info("Entered Product Code: " + productCode);
                 WaitForElementToBeClickable(shipperConsigneeBtn_ID, TimeSpan.FromSeconds(5));
-                Click(shipperConsigneeBtn_ID);
+                //Click(shipperConsigneeBtn_ID);
+                EnterKeys(shipperConsigneeBtn_ID, Keys.Enter);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee Button");
                 Log.Info("Clicked on Shipper Consignee Button");
             }
