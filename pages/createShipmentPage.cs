@@ -1411,7 +1411,7 @@ namespace iCargoUIAutomation.pages
 
                     try
                     {
-                        totalPaybleAmount = ClickOnSaveButtonHandlePaymentPortal();
+                        totalPaybleAmount = ClickOnSaveButtonHandlePaymentPortal();                        
                     }
                     catch (Exception)
                     {
@@ -1526,7 +1526,7 @@ namespace iCargoUIAutomation.pages
         }
 
 
-        public string SaveShipmentCaptureAWB()
+        public string SaveShipmentCaptureAWB(string expectedWarningMessage)
         {
             Click(btnSaveShipment_Name);
             Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Save button");
@@ -1536,7 +1536,27 @@ namespace iCargoUIAutomation.pages
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
             }
 
+            WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(5));
+            string actualWarningMessage = GetText(lblWarningMessage_Css);
+            if (!actualWarningMessage.Contains(expectedWarningMessage))
+            {
+                Hooks.Hooks.UpdateTest(Status.Fail, "Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+                Log.Error("Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+                
+
+            }
+            else
+            {
+                Hooks.Hooks.UpdateTest(Status.Pass, "Warning message is as expected: " + actualWarningMessage);
+                Log.Info("Warning message is as expected: " + actualWarningMessage);
+            }
+
             awb_num = captureAWBNumber();
+            Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
+            ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+            WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
+            ClickElementUsingActions(btnClear_Id);
+            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
             return awb_num;
         }
 
@@ -1695,6 +1715,44 @@ namespace iCargoUIAutomation.pages
                     }
 
                 }
+
+               else if (section.Text == "ICE HANDLING INFORMATION")
+                {
+                    string drpDwnQn = "//*[@id='tabs-1']//div[@id='configId']/h2[text()='dgSectionName']/parent::div/following-sibling::div//select";
+                    drpDwnQn = drpDwnQn.Replace("dgSectionName", "ICE HANDLING INFORMATION");
+                    totalQuestions = GetElementCount(By.XPath(drpDwnQn));
+                    drpDwnQn = drpDwnQn + "[@name= 'questionwithAnswer[0].templateAnswer']";
+                    if (!IsDropdownSelectedByVisibleText((By.XPath(drpDwnQn)), "Yes"))
+                    {
+                        for (int j = 0; j < totalQuestions; j++)
+                        {
+                            SelectDropdownByVisibleText(By.XPath(drpDwnQn.Replace("0", j.ToString())), "Yes");
+                            EnterKeys(By.XPath(drpDwnQn), Keys.Tab);
+                            Hooks.Hooks.UpdateTest(Status.Pass, "Selected Yes for ICE HANDLING INFORMATION");
+                        }
+                    }
+
+                }
+
+                else if (section.Text == "UN1845 FULLY REGULATED")
+                {
+                    string drpDwnQn = "//*[@id='tabs-1']//div[@id='configId']/h2[text()='dgSectionName']/parent::div/following-sibling::div//select";
+                    drpDwnQn = drpDwnQn.Replace("dgSectionName", "UN1845 FULLY REGULATED");
+                    totalQuestions = GetElementCount(By.XPath(drpDwnQn));
+                    drpDwnQn = drpDwnQn + "[@name= 'questionwithAnswer[0].templateAnswer']";
+                    if (!IsDropdownSelectedByVisibleText((By.XPath(drpDwnQn)), "Yes"))
+                    {
+                        for (int j = 0; j < totalQuestions; j++)
+                        {
+                            SelectDropdownByVisibleText(By.XPath(drpDwnQn.Replace("0", j.ToString())), "Yes");
+                            EnterKeys(By.XPath(drpDwnQn), Keys.Tab);
+                            Hooks.Hooks.UpdateTest(Status.Pass, "Selected Yes for UN1845 FULLY REGULATED");
+                        }
+                    }
+
+                }
+
+
                 else if (section.Text == "CAO HANDLING INFORMATION")
                 {
                     string drpDwnQn = "//*[@id='tabs-1']//div[@id='configId']/h2[text()='dgSectionName']/parent::div/following-sibling::div//select";
@@ -1836,7 +1894,7 @@ namespace iCargoUIAutomation.pages
             return awb_num;
         }
 
-        public void ValidateCommodityChargeAmount()
+        public void ValidateCommodityChargeAmount(string totalPaybleAmount)
         {
 
             if (totalAmountCharged != totalPaybleAmount)

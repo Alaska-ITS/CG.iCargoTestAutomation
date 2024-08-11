@@ -18,6 +18,7 @@ namespace iCargoUIAutomation.StepDefinitions
         private PageObjectManager pageObjectManager;
         private homePage hp;
         private CreateShipmentPage csp;
+        private static string totalPaybleAmount;
 
 
         ILog Log = LogManager.GetLogger(typeof(LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition));
@@ -429,13 +430,22 @@ namespace iCargoUIAutomation.StepDefinitions
             {
                 Hooks.Hooks.createNode();
                 Log.Info("Step: Saving all the details & handling all the popups");
-                csp.SaveShipmentDetailsAndHandlePopups();
+                (string awb,totalPaybleAmount)=csp.SaveShipmentDetailsAndHandlePopups();
             }
             else
             {
                 ScenarioContext.Current.Pending();
             }
         }
+
+        [When(@"User validates the commodity charge amount")]
+        public void WhenUserValidatesTheCommodityChargeAmount()
+        {
+            Hooks.Hooks.createNode();
+            Log.Info("Step: Validating the commodity charge amount");
+            csp.ValidateCommodityChargeAmount(totalPaybleAmount);
+        }
+
 
 
 
