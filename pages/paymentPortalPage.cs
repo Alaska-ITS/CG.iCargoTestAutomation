@@ -47,6 +47,7 @@ namespace iCargoUIAutomation.pages
                 {
                     ConfirmManualPayment();
                     ScrollDown();
+                    WaitForElementToBeVisible(lblTotalAmount_Xpath, TimeSpan.FromSeconds(5));
                     totalPaybleAmount = GetText(lblTotalAmount_Xpath).Split("$")[1];
                     Hooks.Hooks.UpdateTest(Status.Pass, "Total Payable Amount is: " + totalPaybleAmount);
                     ClickOnElementIfEnabled(btnDone_Xpath);
@@ -91,6 +92,7 @@ namespace iCargoUIAutomation.pages
                     {
                         ConfirmManualPayment();
                         ScrollDown();
+                        WaitForElementToBeVisible(lblTotalAmount_Xpath, TimeSpan.FromSeconds(5));
                         totalPaybleAmount = GetText(lblTotalAmount_Xpath).Split("$")[1];
                         Hooks.Hooks.UpdateTest(Status.Pass, "Total Payable Amount is: " + totalPaybleAmount);
                         ClickOnElementIfEnabled(btnDone_Xpath);

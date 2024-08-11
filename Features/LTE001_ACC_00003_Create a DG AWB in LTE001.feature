@@ -26,9 +26,11 @@ Scenario Outline: Create a DG AWB in LTE001
 	And User enters the Screening details for row 1 with screeingMethod as 'ALT Dangerous Goods' and ScreeningResult as 'Pass'
 	And User clicks on the ContinueScreeningDetails button
 	And User Save Shipment with DG Details & Capture Checksheet with ChargeType "<ChargeType>",UNID "<UNID>", ProperShipmentName "<ProperShipmentName>", PackingInstruction "<PackingInstruction>",NoOfPkg "<Piece>", NetQtyPerPkg "<NetQtyPerPkg>", ReportableQnty "<ReportableQnty>"
-	Then User logs out from the application
+	
 
 Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | UNID | ProperShipmentName | PackingInstruction | NetQtyPerPkg | ReportableQnty | Execute |
-	| 11377     | 11377       | 11377         | SEA    | ANC         | PRIORITY    | DGR | NONSCR    | UN8000              | None              | 1     | 30     | PP         | CREDIT        | CART     | 8000 | Consumer commodity | Y963               | 0.5          | No             | Yes     |
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | UNID | ProperShipmentName               | PackingInstruction | NetQtyPerPkg | ReportableQnty | Execute |
+	| 11377     | 11377       | 11377         | SEA    | ANC         | PRIORITY    | DGR | NONSCR    | UN8000              | None              | 1     | 30     | PP         | CREDIT        | CART     | 8000 | Consumer commodity               | Y963               | 0.5          | No             | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | ANC         | PRIORITY    | DGR | NONSCR    | UN1845              | None              | 2     | 65     | PP         | CREDIT        | CART     | 1845 | Dry ice                          | 954                | 0.5          | No             | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | ANC         | PRIORITY    | DGR | NONSCR    | UN3110              | None              | 3     | 99     | PP         | CREDIT        | CART     | 3110 | Organic peroxide type F, solid * | 570                | 0.5          | No             | Yes     |
 

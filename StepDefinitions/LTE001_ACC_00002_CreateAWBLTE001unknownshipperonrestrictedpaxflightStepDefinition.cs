@@ -37,11 +37,11 @@ namespace iCargoUIAutomation.StepDefinitions
             csp.EnterParticipantDetailsWithUnknownShipper(agent, unknownshipper, consignee);
         }
 
-        [When(@"User saves the shipment details and capture AWB number")]
-        public void WhenUserSavesTheShipmentDetailsAndCaptureAWBNumber()
+        [When(@"User saves the shipment details validate error message as ""([^""]*)"" and capture AWB number")]       
+        public void WhenUserSavesTheShipmentDetailsValidateErrorMessageAsAndCaptureAWBNumber(string expectedWarnMsg)
         {
             Hooks.Hooks.createNode();
-            csp.SaveShipmentCaptureAWB();
+            csp.SaveShipmentCaptureAWB(expectedWarnMsg);
         }
 
         [When(@"User validates the popped up error message as ""([^""]*)""")]
