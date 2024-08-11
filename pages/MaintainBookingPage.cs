@@ -300,8 +300,7 @@ namespace iCargoUIAutomation.pages
             try
             {
                 SwitchToCAP018Frame();
-                WaitForElementToBeVisible(commodityCode_XPATH, TimeSpan.FromSeconds(10));
-                EnterKeys(commodityCode_XPATH, Keys.Enter);
+                WaitForElementToBeVisible(commodityCode_XPATH, TimeSpan.FromSeconds(10));                
                 EnterText(commodityCode_XPATH, commodityCode);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Commodity Code: " + commodityCode);
                 Log.Info("Entered Commodity Code: " + commodityCode);
@@ -1263,6 +1262,10 @@ namespace iCargoUIAutomation.pages
             {
                 WaitForElementToBeInvisible(shipperConsigneePopup_CLASS, TimeSpan.FromSeconds(5));
                 EnterTextWithCheck(agentCode_ID, agentcode);
+                if(GetText(agentCode_ID)=="")
+                {
+                    EnterTextWithCheck(agentCode_ID, agentcode);
+                }
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered New Agent Code: " + agentcode);
                 Log.Info("Entered New Agent Code: " + agentcode);
             }
