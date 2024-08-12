@@ -16,4 +16,4 @@ Scenario Outline: Create a booking given an AWB from stock and system will creat
 	And User clicks on Save button
 Examples:
 	| AWB      | Origin | Destination | ProductCode | Commodity | Piece | Weight | Agent Code | Shipper | Consignee | Execute |
-	| 74428362 | ANC    | FAI         | GENERAL     | 0316      | 2     | 20     | 10763      | 82165   | 82165     | Yes     |
+	| 74428760 | ANC    | FAI         | GENERAL     | 0316      | 2     | 20     | 10763      | 82165   | 82165     | Yes     |
