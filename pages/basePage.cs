@@ -340,7 +340,7 @@ namespace iCargoUIAutomation.pages
             driver.FindElement(byLocator).SendKeys(key);
             log.Info("Entered the key in the element " + byLocator);
 
-        }
+        }        
 
         public string GetAttributeValue(By byLocator, string attribute)
         {

@@ -272,7 +272,7 @@ namespace iCargoUIAutomation.pages
                 Log.Info("Entered Shipper Code: " + shipperCode);
                 if (IsElementEnabled(unkShipperName_ID))
                 {
-                    ClickOnElementIfPresent(unkShipperName_ID);
+                    //ClickOnElementIfPresent(unkShipperName_ID);
                     EnterKeys(unkShipperName_ID, Keys.Tab);
                 }
                 EnterText(consigneeCode_XPATH, consigneeCode.ToString());
@@ -280,7 +280,7 @@ namespace iCargoUIAutomation.pages
                 Log.Info("Entered Consignee Code: " + consigneeCode);
                 if(IsElementEnabled(unkConsigneeName_ID))
                 {
-                    ClickOnElementIfPresent(unkConsigneeName_ID);
+                    //ClickOnElementIfPresent(unkConsigneeName_ID);
                     EnterKeys(unkConsigneeName_ID, Keys.Tab);
                 }                
                 ClickOnElementIfPresent(shipperConsigneeOkBtn_ID);
