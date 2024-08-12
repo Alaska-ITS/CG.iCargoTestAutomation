@@ -1075,7 +1075,8 @@ namespace iCargoUIAutomation.pages
         {
             try
             {
-                EnterKeys(saveBtn_XPATH, Keys.Enter);
+                WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(5));
+                ClickOnElementIfPresent(saveBtn_XPATH);
                 Log.Info("Clicked Save Button to Save New Flight Details");
             }
             catch (Exception e)
