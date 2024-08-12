@@ -347,7 +347,7 @@ namespace iCargoUIAutomation.pages
                 if (IsElementDisplayed(popupAlertWarningBooking_CSS))
                 {
                     WaitForElementToBeVisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(10));
-                    Click(btnYesAlertMessageBooking_XPATH);
+                    EnterKeys(btnYesAlertMessageBooking_XPATH, Keys.Enter);
                     return true; // Return true if successfully clicked 'Yes'
                 }
                 return false; // Return false if popup not displayed
@@ -367,7 +367,7 @@ namespace iCargoUIAutomation.pages
                 SwitchToSecondPopupWindow();
                 if (IsElementDisplayed(embargoAlert_XPATH))
                 {                    
-                    Click(embargoContinue_XPATH);
+                    EnterKeys(embargoContinue_XPATH,Keys.Enter);
                     return true; // Return true if successfully clicked 'Continue' on embargo popup
                 }             
                 SwitchToLastWindow();
