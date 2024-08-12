@@ -271,16 +271,14 @@ namespace iCargoUIAutomation.pages
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Shipper Code: " + shipperCode);
                 Log.Info("Entered Shipper Code: " + shipperCode);
                 if (IsElementEnabled(unkShipperName_ID))
-                {
-                    //ClickOnElementIfPresent(unkShipperName_ID);
+                {                    
                     EnterKeys(unkShipperName_ID, Keys.Tab);
                 }
                 EnterText(consigneeCode_XPATH, consigneeCode.ToString());
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Code: " + consigneeCode);
                 Log.Info("Entered Consignee Code: " + consigneeCode);
                 if(IsElementEnabled(unkConsigneeName_ID))
-                {
-                    //ClickOnElementIfPresent(unkConsigneeName_ID);
+                {                    
                     EnterKeys(unkConsigneeName_ID, Keys.Tab);
                 }                
                 ClickOnElementIfPresent(shipperConsigneeOkBtn_ID);
