@@ -17,4 +17,4 @@ Examples:
 	| Origin | Destination | ProductCode | Commodity | Piece | Weight | Execute | Agent Code | Shipper Code | Consignee Code |
 	| ANC    | HNL         | PRIORITY    | 2199      | 8     | 360    | No     | 10763      | 10763        | 10763          |
 	| SEA    | LAX         | GENERAL     | NONSCR    | 13    | 775    | Yes     | 10763      | 10763        | 10763          |
-	| SAN    | JFK         | GOLDSTREAK  | NONSCR    | 2     | 55     | Yes     | 10763      | 10763        | 10763          |
+	| SAN    | JFK         | GOLDSTREAK  | NONSCR    | 2     | 56     | No     | 10763      | 10763        | 10763          |
