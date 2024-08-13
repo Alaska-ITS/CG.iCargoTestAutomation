@@ -12,6 +12,7 @@ Scenario Outline: iCargo Login and Create New Shipment
 	And User enters commodity details with Commodity "<Commodity>", Pieces "<Piece>", Weight "<Weight>"
 	And User selects flight for "<ProductCode>"
 	And User clicks on Save button
+
 Examples:
 	| Origin | Destination | ProductCode | Commodity | Piece | Weight | Execute | Agent Code | Shipper Code | Consignee Code |
 	| ANC    | HNL         | PRIORITY    | 2199      | 8     | 360    | Yes     | 10763      | 10763        | 10763          |
