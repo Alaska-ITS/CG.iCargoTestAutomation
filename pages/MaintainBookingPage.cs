@@ -586,6 +586,7 @@ namespace iCargoUIAutomation.pages
                                 IWebElement generalProdBtn = generalProd[i];
                                 if (IsElementDisplayed(generalProdBtn_Xpath))
                                 {
+                                    WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
                                     ClickOnElement(generalProdBtn);
                                     Hooks.Hooks.UpdateTest(Status.Pass, "Selected General Product");
                                     Log.Info("Selected General Product");
