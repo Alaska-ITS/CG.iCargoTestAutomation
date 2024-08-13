@@ -80,7 +80,7 @@ namespace iCargoUIAutomation.Features
             "and system should display a warning message")]
         [NUnit.Framework.CategoryAttribute("CAP018")]
         [NUnit.Framework.CategoryAttribute("CAP018_BKG_00005")]
-        [NUnit.Framework.TestCaseAttribute("SEA", "BET", "PRIORITY", "2199", "4", "120", "No", "10763", "10763", "10763", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "BET", "PRIORITY", "2199", "4", "120", "Yes", "10763", "10763", "10763", null)]
         [NUnit.Framework.TestCaseAttribute("PDX", "BWI", "PRIORITY", "0300", "10", "950", "Yes", "10763", "10763", "10763", null)]
         public virtual void CreateAMultiLegBookingWithFlightsThatDoNotMeetMinimumConnectionTimeAndSystemShouldDisplayAWarningMessage(string origin, string destination, string productCode, string commodity, string piece, string weight, string execute, string agentCode, string shipperCode, string consigneeCode, string[] exampleTags)
         {
