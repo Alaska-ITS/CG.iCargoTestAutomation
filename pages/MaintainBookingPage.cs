@@ -504,6 +504,7 @@ namespace iCargoUIAutomation.pages
                     Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Code: " + consg);
                     Log.Info("Entered Consignee Code: " + consg);
                 }
+                WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(5));
                 ClickOnElementIfPresent(shipperConsigneeOkBtn_ID);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee OK Button");
                 Log.Info("Clicked on Shipper Consignee OK Button");
@@ -604,6 +605,7 @@ namespace iCargoUIAutomation.pages
                                 IWebElement priorityProdBtn = priorityProd[i];
                                 if (IsElementDisplayed(priorityProdBtn_Xpath))
                                 {
+                                    WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
                                     ClickOnElement(priorityProdBtn);
                                     Hooks.Hooks.UpdateTest(Status.Pass, "Selected Priority Product");
                                     Log.Info("Selected Priority Product");
@@ -638,6 +640,7 @@ namespace iCargoUIAutomation.pages
                                 IWebElement goldstreakProdBtn = goldstreakProd[i];
                                 if (IsElementDisplayed(goldstreakProdBtn_Xpath))
                                 {
+                                    WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
                                     ClickOnElement(goldstreakProdBtn);
                                     Hooks.Hooks.UpdateTest(Status.Pass, "Selected Goldstreak Product");
                                     Log.Info("Selected Goldstreak Product");
