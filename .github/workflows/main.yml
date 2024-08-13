@@ -5,10 +5,10 @@ on:
     tags:
       - HelloTestingDoesnoTMatter
     branches:
-      - Cap018_Changes
+      - develop
   pull_request:
     branches:
-      - Cap018_Changes
+      - develop
  
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
  
     env:
       BROWSER: chrome
-      ROLE_GROUP: CCC
+      ROLE_GROUP: CGODG
  
     steps:
       - name: Checkout code
@@ -41,4 +41,5 @@ jobs:
           echo "RoleGroup=${ROLE_GROUP}" >> $GITHUB_ENV
  
       - name: Run tests by tag
-        run: dotnet test --filter TestCategory=CAP018_BKG_00007
+
+        run: dotnet test --filter TestCategory=LTE001_ACC_00001

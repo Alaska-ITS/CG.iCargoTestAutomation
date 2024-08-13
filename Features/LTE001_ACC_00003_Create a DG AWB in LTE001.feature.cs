@@ -78,6 +78,8 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00003")]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "30", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "65", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "99", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "Yes", null)]
         public virtual void CreateADGAWBInLTE001(
                     string agentCode, 
                     string shipperCode, 
@@ -224,9 +226,6 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And(string.Format("User Save Shipment with DG Details & Capture Checksheet with ChargeType \"{0}\",UNI" +
                             "D \"{1}\", ProperShipmentName \"{2}\", PackingInstruction \"{3}\",NoOfPkg \"{4}\", NetQt" +
                             "yPerPkg \"{5}\", ReportableQnty \"{6}\"", chargeType, uNID, properShipmentName, packingInstruction, piece, netQtyPerPkg, reportableQnty), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 29
- testRunner.Then("User logs out from the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

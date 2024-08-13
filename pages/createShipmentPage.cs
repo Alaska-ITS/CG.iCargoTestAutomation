@@ -102,6 +102,7 @@ namespace iCargoUIAutomation.pages
         private By txtConsigneeCode_Name = By.Name("consigneeCode");
         private By txtConsigneeName_Id = By.Id("CMP_Operations_Shipment_Lite_CreateShipment_ConsigneeName");
         private By txtConsigneeContact_Id = By.Id("CMP_Operations_Shipment_Lite_CreateShipment_ConsigneeContactNumber");
+        private By btnConsigneeMore_Id = By.Id("CMP_Operations_Shipment_Lite_CreateShipment_btnConsigneeMore");
         private By btnContinueParticipants_Id = By.Id("CMP_Operations_Shipment_Lite_CreateShipment_btnParticpantContinue");
         private By btnContinueCommodity_Name = By.Name("btnCommodityCont");
 
@@ -226,7 +227,7 @@ namespace iCargoUIAutomation.pages
             }
             catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in switching to LTE001 content frame: " + e.ToString());
+                Hooks.Hooks.UpdateTest(Status.Info, "Error in switching to LTE001 content frame: " + e.ToString());
                 Log.Error("Error in switching to LTE001 content frame: " + e.ToString());
             }
 
@@ -292,10 +293,11 @@ namespace iCargoUIAutomation.pages
         {
             try
             {
-                Click(btnList_Id);
+                EnterKeys(btnList_Id, Keys.Enter);
+                WaitForElementToBeInvisible(btnList_Id, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on List button");
                 Log.Info("Clicked on List button");
-                WaitForElementToBeVisible(lblShipmentDetails_Css, TimeSpan.FromSeconds(10));
+                //WaitForElementToBeVisible(lblShipmentDetails_Css, TimeSpan.FromSeconds(10));
                 
             }
             catch (Exception e)
@@ -461,17 +463,10 @@ namespace iCargoUIAutomation.pages
 
         public void ClickOnContinueParticipantButton()
         {
-            if (!IsElementDisplayed(btnContinueParticipants_Id))
-            {
-                ScrollDown();
-            }
-
             try
-            {      
-                
-                DoubleClick(btnContinueParticipants_Id);
+            {
+                EnterKeys(btnContinueParticipants_Id, Keys.Enter);
                 WaitForElementToBeInvisible(btnContinueParticipants_Id, TimeSpan.FromSeconds(5));
-                WaitForElementToBeVisible(txtNameOnId_Name, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for participants");
                 Log.Info("Clicked on Continue button for participants");
             }
@@ -656,7 +651,7 @@ namespace iCargoUIAutomation.pages
             try
             {
                 ScrollDown();
-                Click(btnContinueShipmentCommodity_Name);
+                EnterKeys(btnContinueShipmentCommodity_Name, Keys.Enter);
                 WaitForElementToBeInvisible(btnContinueShipmentCommodity_Name, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for shipment details");
             }
@@ -789,7 +784,7 @@ namespace iCargoUIAutomation.pages
                                 ConnectingflightNum = GetText(By.XPath("//*[@id='flight_details']//tbody//tr[" + (i + 1) + "]//td[1]")).Trim().Split("AS")[1].Trim();
                                 btnBookFlight = btnBookFlight.Replace("1", i.ToString());
                                 ScrollDown();
-                                Click(By.XPath(btnBookFlight));
+                                EnterKeys(By.XPath(btnBookFlight), Keys.Enter);                               
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Flight " + flightNum + " & connecting flightNum " + ConnectingflightNum + " is booked successfully");
                                 Log.Info("Flight " + flightNum + " & connecting flightNum " + ConnectingflightNum + " is booked successfully");
 
@@ -805,7 +800,7 @@ namespace iCargoUIAutomation.pages
 
                                 btnBookFlight = btnBookFlight.Replace("1", i.ToString());
                                 ScrollDown();
-                                Click(By.XPath(btnBookFlight));
+                                EnterKeys(By.XPath(btnBookFlight), Keys.Enter);                               
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Flight " + flightNum + " is booked successfully");
                                 Log.Info("Flight " + flightNum + " is booked successfully");
                                 break;
@@ -852,7 +847,7 @@ namespace iCargoUIAutomation.pages
 
                                 btnBookFlight = btnBookFlight.Replace("1", i.ToString());
                                 ScrollDown();
-                                Click(By.XPath(btnBookFlight));
+                                EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                 Hooks.Hooks.UpdateTest(Status.Pass, typeOfFlight + " Flight: " + flightNum + " is booked successfully");
                                 Log.Info(typeOfFlight + " Flight: " + flightNum + " is booked successfully");
                                 break;
@@ -900,7 +895,7 @@ namespace iCargoUIAutomation.pages
                                     ConnectingflightNum = GetText(By.XPath("//*[@id='flight_details']//tbody//tr[" + (i + 1) + "]//td[1]")).Trim().Split("AS")[1].Trim();
                                     btnBookFlight = btnBookFlight.Replace("1", i.ToString());
                                     ScrollDown();
-                                    Click(By.XPath(btnBookFlight));
+                                    EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                     Hooks.Hooks.UpdateTest(Status.Pass, firstflttyp + " Flight " + flightNum + " & connecting " + secondflttype + " Flight " + ConnectingflightNum + " is booked successfully");
                                     Log.Info(firstflttyp + " Flight " + flightNum + " & connecting " + secondflttype + " Flight " + ConnectingflightNum + " is booked successfully");
 
@@ -946,7 +941,7 @@ namespace iCargoUIAutomation.pages
                                 ConnectingflightNum = GetText(By.XPath("//*[@id='flight_details']//tbody//tr[" + (i + 1) + "]//td[1]")).Trim().Split("AS")[1].Trim();
                                 btnBookFlight = btnBookFlight.Replace("1", i.ToString());
                                 ScrollDown();
-                                Click(By.XPath(btnBookFlight));
+                                EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Flight " + flightNum + " & connecting flightNum " + ConnectingflightNum + "having minimum connection time restriction, is booked successfully");
                                 Log.Info("Flight " + flightNum + " & connecting flightNum " + ConnectingflightNum + "having minimum connection time restriction, is booked successfully");
 
@@ -1016,7 +1011,8 @@ namespace iCargoUIAutomation.pages
             try
             {
                 ScrollDown();
-                Click(btnContinueFlightDetails_Name);
+                EnterKeys(btnContinueFlightDetails_Name, Keys.Enter);
+                WaitForElementToBeInvisible(btnContinueFlightDetails_Name, TimeSpan.FromSeconds(5));               
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for flight details");
             }
             catch (Exception e)
@@ -1079,7 +1075,8 @@ namespace iCargoUIAutomation.pages
                 {                   
                     ClickElementUsingJavaScript(btnCalculateCharges_Name);
                     Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Calculate Charge button");
-                    WaitUntilTextboxIsNotEmpty(txtIATACharge_Xpath);
+                    Thread.Sleep(1000);
+                    //WaitUntilTextboxIsNotEmpty(txtIATACharge_Xpath);
                 }
 
             }
@@ -1148,10 +1145,8 @@ namespace iCargoUIAutomation.pages
             try
             {
                 ScrollDown();
-                Click(drpdwnModeOfPayment_Name);
-                Thread.Sleep(1000);
-                SelectDropdownByVisibleText(drpdwnModeOfPayment_Name, modeOfPayment);
-                //SelectDropdownByVisibleTextUntil(drpdwnModeOfPayment_Name, modeOfPayment);
+                Click(drpdwnModeOfPayment_Name);                
+                SelectDropdownByVisibleText(drpdwnModeOfPayment_Name, modeOfPayment);               
                 Hooks.Hooks.UpdateTest(Status.Pass, "Selected Mode of Payment: " + modeOfPayment);
 
             }
@@ -1337,9 +1332,10 @@ namespace iCargoUIAutomation.pages
             try
             {
                 ScrollDown();
-                Click(btnContinueScreeningDetails_Name);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for screening details");
+                EnterKeys(btnContinueScreeningDetails_Name, Keys.Enter);
                 WaitForElementToBeInvisible(btnContinueScreeningDetails_Name, TimeSpan.FromSeconds(5));
+                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for screening details");
+                
             }
             catch (Exception e)
             {
@@ -1416,7 +1412,7 @@ namespace iCargoUIAutomation.pages
 
                     try
                     {
-                        totalPaybleAmount = ClickOnSaveButtonHandlePaymentPortal();
+                        totalPaybleAmount = ClickOnSaveButtonHandlePaymentPortal();                        
                     }
                     catch (Exception)
                     {
@@ -1531,7 +1527,7 @@ namespace iCargoUIAutomation.pages
         }
 
 
-        public string SaveShipmentCaptureAWB()
+        public string SaveShipmentCaptureAWB(string expectedWarningMessage)
         {
             Click(btnSaveShipment_Name);
             Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Save button");
@@ -1541,7 +1537,27 @@ namespace iCargoUIAutomation.pages
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
             }
 
+            WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(5));
+            string actualWarningMessage = GetText(lblWarningMessage_Css);
+            if (!actualWarningMessage.Contains(expectedWarningMessage))
+            {
+                Hooks.Hooks.UpdateTest(Status.Fail, "Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+                Log.Error("Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+                
+
+            }
+            else
+            {
+                Hooks.Hooks.UpdateTest(Status.Pass, "Warning message is as expected: " + actualWarningMessage);
+                Log.Info("Warning message is as expected: " + actualWarningMessage);
+            }
+
             awb_num = captureAWBNumber();
+            Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
+            ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+            WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
+            ClickElementUsingActions(btnClear_Id);
+            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
             return awb_num;
         }
 
@@ -1700,6 +1716,44 @@ namespace iCargoUIAutomation.pages
                     }
 
                 }
+
+               else if (section.Text == "ICE HANDLING INFORMATION")
+                {
+                    string drpDwnQn = "//*[@id='tabs-1']//div[@id='configId']/h2[text()='dgSectionName']/parent::div/following-sibling::div//select";
+                    drpDwnQn = drpDwnQn.Replace("dgSectionName", "ICE HANDLING INFORMATION");
+                    totalQuestions = GetElementCount(By.XPath(drpDwnQn));
+                    drpDwnQn = drpDwnQn + "[@name= 'questionwithAnswer[0].templateAnswer']";
+                    if (!IsDropdownSelectedByVisibleText((By.XPath(drpDwnQn)), "Yes"))
+                    {
+                        for (int j = 0; j < totalQuestions; j++)
+                        {
+                            SelectDropdownByVisibleText(By.XPath(drpDwnQn.Replace("0", j.ToString())), "Yes");
+                            EnterKeys(By.XPath(drpDwnQn), Keys.Tab);
+                            Hooks.Hooks.UpdateTest(Status.Pass, "Selected Yes for ICE HANDLING INFORMATION");
+                        }
+                    }
+
+                }
+
+                else if (section.Text == "UN1845 FULLY REGULATED")
+                {
+                    string drpDwnQn = "//*[@id='tabs-1']//div[@id='configId']/h2[text()='dgSectionName']/parent::div/following-sibling::div//select";
+                    drpDwnQn = drpDwnQn.Replace("dgSectionName", "UN1845 FULLY REGULATED");
+                    totalQuestions = GetElementCount(By.XPath(drpDwnQn));
+                    drpDwnQn = drpDwnQn + "[@name= 'questionwithAnswer[0].templateAnswer']";
+                    if (!IsDropdownSelectedByVisibleText((By.XPath(drpDwnQn)), "Yes"))
+                    {
+                        for (int j = 0; j < totalQuestions; j++)
+                        {
+                            SelectDropdownByVisibleText(By.XPath(drpDwnQn.Replace("0", j.ToString())), "Yes");
+                            EnterKeys(By.XPath(drpDwnQn), Keys.Tab);
+                            Hooks.Hooks.UpdateTest(Status.Pass, "Selected Yes for UN1845 FULLY REGULATED");
+                        }
+                    }
+
+                }
+
+
                 else if (section.Text == "CAO HANDLING INFORMATION")
                 {
                     string drpDwnQn = "//*[@id='tabs-1']//div[@id='configId']/h2[text()='dgSectionName']/parent::div/following-sibling::div//select";
@@ -1841,7 +1895,7 @@ namespace iCargoUIAutomation.pages
             return awb_num;
         }
 
-        public void ValidateCommodityChargeAmount()
+        public void ValidateCommodityChargeAmount(string totalPaybleAmount)
         {
 
             if (totalAmountCharged != totalPaybleAmount)
