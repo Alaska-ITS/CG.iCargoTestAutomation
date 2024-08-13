@@ -42,4 +42,4 @@ jobs:
  
       - name: Run tests by tag
 
-        run: dotnet test --filter TestCategory=LTE001_ACC_00003
+        run: dotnet test --filter TestCategory=LTE001_ACC_00001
