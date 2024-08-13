@@ -42,4 +42,4 @@ jobs:
  
       - name: Run tests by tag
 
-        run: dotnet test --filter TestCategory=CAP018_BKG_00001
+        run: dotnet test --filter TestCategory=CAP018_BKG_00007
