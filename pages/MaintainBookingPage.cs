@@ -387,7 +387,7 @@ namespace iCargoUIAutomation.pages
             try
             {
                 int noOfWindowsBefore = GetNumberOfWindowsOpened();
-                WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(5));                
+                WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(10));                
                 EnterKeys(saveBtn_XPATH, Keys.Enter);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Save Button");
                 Log.Info("Clicked Save Button");                                
