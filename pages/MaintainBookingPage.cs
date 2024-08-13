@@ -282,7 +282,7 @@ namespace iCargoUIAutomation.pages
                     EnterKeys(unkConsigneeName_ID, Keys.Tab);
                 }                                
                 WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(5));
-                ClickOnElementIfPresent(shipperConsigneeOkBtn_ID);                
+                EnterKeys(shipperConsigneeOkBtn_ID, Keys.Enter);                
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee OK Button");
                 Log.Info("Clicked on Shipper Consignee OK Button");
                 SwitchToPopupWindow();
