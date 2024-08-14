@@ -333,6 +333,12 @@ namespace iCargoUIAutomation.pages
                 // After handling embargo warnings, handle LAT popup warnings
                 ClickingYesOnLATPopupWarnings();
             }
+            //Check if LAT popup warnings appear first
+            else if (ClickingYesOnLATPopupWarnings())
+            {
+                // After handling LAT popup warnings, handle embargo warnings
+                ClickingYesonEmbargoWarnings();
+            }
             else
             {
                 // If no embargo warnings, handle LAT popup warnings directly
@@ -391,7 +397,7 @@ namespace iCargoUIAutomation.pages
                 EnterKeys(saveBtn_XPATH, Keys.Enter);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Save Button");
                 Log.Info("Clicked Save Button");                                
-                ClickingYesOnPopupWarnings();
+                ClickingYesOnPopupWarnings();                
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Yes on Popup Warnings");
                 Log.Info("Clicked Yes on Popup Warnings");
                 WaitForNewWindowToOpen(TimeSpan.FromSeconds(20), noOfWindowsBefore + 1);

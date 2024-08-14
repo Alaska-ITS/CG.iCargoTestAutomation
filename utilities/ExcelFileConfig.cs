@@ -8,6 +8,7 @@ namespace iCargoUIAutomation.utilities
 {
     public class ExcelFileConfig
     {
+        // Method to append data to an Excel file
         public void AppendDataToExcel(string filePath, string date, string time, string screenName, string scenarioName, string awbNumber, string origin, string destination, string productCode, string agentCode, string shipperCode, string consigneeCode, string commodityCode, string pieces, string weight)
         {
             // Set the license context for EPPlus 5.x or later
@@ -61,6 +62,8 @@ namespace iCargoUIAutomation.utilities
 
                 package.Save();
             }
+
+            // Clear the values after saving
             MaintainBookingPage.awbNumber = "";
             MaintainBookingPage.globalOrigin = "";
             MaintainBookingPage.globalDestination = "";
@@ -81,6 +84,31 @@ namespace iCargoUIAutomation.utilities
             CreateShipmentPage.commodityCode = "";
             CreateShipmentPage.pieces = "";
             CreateShipmentPage.weight = "";
+        }
+
+        // Method to check if the sheet is filled beyond the specified row limit
+        public bool IsSheetFilled(string filePath, int maxRows)
+        {
+            // Set the license context for EPPlus 5.x or later
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            FileInfo fileInfo = new FileInfo(filePath);
+
+            using (ExcelPackage package = new ExcelPackage(fileInfo))
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.FirstOrDefault();
+
+                if (worksheet == null)
+                {
+                    // If the worksheet doesn't exist, it's not filled
+                    return false;
+                }
+
+                int rowCount = worksheet.Dimension?.Rows ?? 0;
+
+                // Return true if the row count exceeds the maxRows limit
+                return rowCount >= maxRows;
+            }
         }
     }
 }
