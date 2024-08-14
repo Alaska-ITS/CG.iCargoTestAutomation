@@ -77,7 +77,7 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("Create a booking given an AWB from stock and system will create a new awb")]
         [NUnit.Framework.CategoryAttribute("CAP018")]
         [NUnit.Framework.CategoryAttribute("CAP018_BKG_00004")]
-        [NUnit.Framework.TestCaseAttribute("74428561", "ANC", "FAI", "GENERAL", "0316", "2", "20", "10763", "82165", "82165", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("74428760", "ANC", "FAI", "GENERAL", "0316", "2", "20", "10763", "82165", "82165", "Yes", null)]
         public virtual void CreateABookingGivenAnAWBFromStockAndSystemWillCreateANewAwb(string aWB, string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipper, string consignee, string execute, string[] exampleTags)
         {
             string[] @__tags = new string[] {

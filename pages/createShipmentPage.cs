@@ -253,17 +253,11 @@ namespace iCargoUIAutomation.pages
         public void alreadyExecutedAWB()
         {
             try
-            {
-                Click(btnOrangePencilEditBooking_Css);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Orange Pencil for Edit Booking");
-                WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
-                Click(btnClear_Id);
-                WaitForElementToBeVisible(btnList_Id, TimeSpan.FromSeconds(10));
+            {               
                 awb_num = awb_num.Split('-')[1];
                 EnterAWBTextBox(awb_num);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered AWB number: " + awb_num);
-                ClickOnListButton();
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on List button");
+                ClickOnListButton();               
             }
             catch (Exception e)
             {
@@ -1476,7 +1470,7 @@ namespace iCargoUIAutomation.pages
 
         }
 
-        public string SaveDetailsWithChargeType(string chargeType)
+        public string SaveDetailsWithChargeType(string chargeType, string expectedWarningMessage)
         {
 
             this.chargeType = chargeType;
@@ -1498,8 +1492,26 @@ namespace iCargoUIAutomation.pages
                 SwitchToLastWindow();
                 SwitchToLTEContentFrame();
             }
+            WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(5));
+            string actualWarningMessage = GetText(lblWarningMessage_Css);
+            if (!actualWarningMessage.Contains(expectedWarningMessage))
+            {
+                Hooks.Hooks.UpdateTest(Status.Fail, "Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+                Log.Error("Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+
+
+            }
+            else
+            {
+                Hooks.Hooks.UpdateTest(Status.Pass, "Warning message is as expected: " + actualWarningMessage);
+                Log.Info("Warning message is as expected: " + actualWarningMessage);
+            }
             awb_num = captureAWBNumber();
             Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
+            ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+            WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
+            ClickElementUsingActions(btnClear_Id);
+            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");            
             return awb_num;
 
         }
@@ -1888,10 +1900,15 @@ namespace iCargoUIAutomation.pages
             {
                 Hooks.Hooks.UpdateTest(Status.Pass, "AWB status is as expected: " + actualStatus);
                 Log.Info("AWB status is as expected: " + actualStatus);
-                awb_num = captureAWBNumber();
-                Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
                 Log.Info("AWB number is: " + awb_num);
             }
+            awb_num = captureAWBNumber();
+            Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
+            Log.Info("AWB number is: " + awb_num);
+            ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+            WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
+            ClickElementUsingActions(btnClear_Id);
+            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
             return awb_num;
         }
 
