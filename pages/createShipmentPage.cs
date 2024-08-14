@@ -238,7 +238,7 @@ namespace iCargoUIAutomation.pages
             try
             {
                 Thread.Sleep(1000);
-                Click(txtAwbNo_Id);
+                EnterKeys(txtAwbNo_Id, Keys.Enter);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on AWB text box");
                 Log.Info("Clicked on AWB text box");
             }
