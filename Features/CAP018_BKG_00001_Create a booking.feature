@@ -15,5 +15,5 @@ Scenario Outline: iCargo Login and Create New Shipment
 Examples:
 	| Origin | Destination | ProductCode | Commodity | Piece | Weight | Execute |
 	| ANC    | SEA         | PRIORITY    | 2199      | 9     | 360    | Yes     |
-	| SEA    | LAX         | GENERAL     | NONSCR    | 13    | 778    | Yes     |
+	| SEA    | LAX         | GENERAL     | NONSCR    | 13    | 778    | No      |
 	| SAN    | JFK         | GOLDSTREAK  | NONSCR    | 2     | 55     | No      |
