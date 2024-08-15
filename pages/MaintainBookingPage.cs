@@ -245,8 +245,7 @@ namespace iCargoUIAutomation.pages
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Product Code: " + productCode);
                 Log.Info("Entered Product Code: " + productCode);
                 WaitForElementToBeClickable(shipperConsigneeBtn_ID, TimeSpan.FromSeconds(5));
-                //Click(shipperConsigneeBtn_ID);
-                EnterKeys(shipperConsigneeBtn_ID, Keys.Enter);
+                Click(shipperConsigneeBtn_ID);                
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee Button");
                 Log.Info("Clicked on Shipper Consignee Button");
             }
@@ -271,7 +270,8 @@ namespace iCargoUIAutomation.pages
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Shipper Code: " + shipperCode);
                 Log.Info("Entered Shipper Code: " + shipperCode);
                 if (IsElementEnabled(unkShipperName_ID))
-                {                    
+                {
+                    ClickOnElementIfPresent(unkShipperName_ID);
                     EnterKeys(unkShipperName_ID, Keys.Tab);
                 }
                 EnterText(consigneeCode_XPATH, consigneeCode.ToString());
@@ -282,7 +282,7 @@ namespace iCargoUIAutomation.pages
                     EnterKeys(unkConsigneeName_ID, Keys.Tab);
                 }                                
                 WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(5));
-                EnterKeys(shipperConsigneeOkBtn_ID, Keys.Enter);                
+                ClickOnElementIfPresent(shipperConsigneeOkBtn_ID);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee OK Button");
                 Log.Info("Clicked on Shipper Consignee OK Button");
                 SwitchToPopupWindow();
@@ -303,7 +303,8 @@ namespace iCargoUIAutomation.pages
             try
             {
                 SwitchToCAP018Frame();
-                WaitForElementToBeVisible(commodityCode_XPATH, TimeSpan.FromSeconds(10));                
+                WaitForElementToBeVisible(commodityCode_XPATH, TimeSpan.FromSeconds(10));
+                ClickOnElementIfPresent(commodityCode_XPATH);
                 EnterText(commodityCode_XPATH, commodityCode);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Commodity Code: " + commodityCode);
                 Log.Info("Entered Commodity Code: " + commodityCode);
@@ -354,7 +355,7 @@ namespace iCargoUIAutomation.pages
                 if (IsElementDisplayed(popupAlertWarningBooking_CSS))
                 {
                     WaitForElementToBeVisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(10));
-                    EnterKeys(btnYesAlertMessageBooking_XPATH, Keys.Enter);
+                    ClickOnElementIfPresent(btnYesAlertMessageBooking_XPATH);
                     return true; // Return true if successfully clicked 'Yes'
                 }
                 return false; // Return false if popup not displayed
@@ -373,8 +374,8 @@ namespace iCargoUIAutomation.pages
                 WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(10));
                 SwitchToSecondPopupWindow();
                 if (IsElementDisplayed(embargoAlert_XPATH))
-                {                    
-                    EnterKeys(embargoContinue_XPATH,Keys.Enter);
+                {
+                    Click(embargoContinue_XPATH);
                     return true; // Return true if successfully clicked 'Continue' on embargo popup
                 }             
                 SwitchToLastWindow();
@@ -393,8 +394,8 @@ namespace iCargoUIAutomation.pages
             try
             {
                 int noOfWindowsBefore = GetNumberOfWindowsOpened();
-                WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(10));                
-                EnterKeys(saveBtn_XPATH, Keys.Enter);
+                WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(10));
+                ClickOnElementIfPresent(saveBtn_XPATH);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Save Button");
                 Log.Info("Clicked Save Button");                                
                 ClickingYesOnPopupWarnings();                
@@ -541,7 +542,7 @@ namespace iCargoUIAutomation.pages
             Hooks.Hooks.createNode();
             try
             {
-                EnterKeys(selectFlightBtn_ID, Keys.Enter);
+                Click(selectFlightBtn_ID);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Select Flight Button");
                 Log.Info("Clicked Select Flight Button");
                 WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
@@ -593,8 +594,7 @@ namespace iCargoUIAutomation.pages
                             {
                                 IWebElement generalProdBtn = generalProd[i];
                                 if (IsElementDisplayed(generalProdBtn_Xpath))
-                                {
-                                    WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
+                                {                                    
                                     ClickOnElement(generalProdBtn);
                                     Hooks.Hooks.UpdateTest(Status.Pass, "Selected General Product");
                                     Log.Info("Selected General Product");
@@ -611,8 +611,7 @@ namespace iCargoUIAutomation.pages
                             {
                                 IWebElement priorityProdBtn = priorityProd[i];
                                 if (IsElementDisplayed(priorityProdBtn_Xpath))
-                                {
-                                    WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
+                                {                                    
                                     ClickOnElement(priorityProdBtn);
                                     Hooks.Hooks.UpdateTest(Status.Pass, "Selected Priority Product");
                                     Log.Info("Selected Priority Product");
@@ -646,8 +645,7 @@ namespace iCargoUIAutomation.pages
                             {
                                 IWebElement goldstreakProdBtn = goldstreakProd[i];
                                 if (IsElementDisplayed(goldstreakProdBtn_Xpath))
-                                {
-                                    WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
+                                {                                    
                                     ClickOnElement(goldstreakProdBtn);
                                     Hooks.Hooks.UpdateTest(Status.Pass, "Selected Goldstreak Product");
                                     Log.Info("Selected Goldstreak Product");
