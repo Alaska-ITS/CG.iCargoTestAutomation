@@ -16,7 +16,7 @@ jobs:
  
     env:
       BROWSER: chrome
-      ROLE_GROUP: CCC
+      ROLE_GROUP: CNS
  
     steps:
       - name: Checkout code
