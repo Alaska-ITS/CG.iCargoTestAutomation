@@ -19,3 +19,4 @@ Examples:
 	| ANC    | HNL         | PRIORITY    | 2199      | 10     | 360    | No     | 10763      | 10763        | 10763          |
 	| SEA    | LAX         | GENERAL     | NONSCR    | 13    | 775    | Yes     | 10763      | 10763        | 10763          |
 	| SAN    | JFK         | GOLDSTREAK  | NONSCR    | 2     | 56     | Yes     | 10763      | 10763        | 10763          |
+	| SEA    | MCO         | PRIORITY    | NONSCR    | 4     | 180    | Yes     | 10763      | 10763        | 10763          |
