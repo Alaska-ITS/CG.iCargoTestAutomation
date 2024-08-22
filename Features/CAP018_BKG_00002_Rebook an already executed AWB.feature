@@ -1,5 +1,6 @@
 ﻿Feature: CAP018_BKG_00002_Rebook an already executed AWB
 
+@CAP018_BKG_00002 @CAP018
 Scenario Outline: iCargo Login and Rebook an already executed AWB
 	Given User wants to execute the example "<Execute>"
 	When User enters screen name as 'CAP018'
