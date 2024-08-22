@@ -14,6 +14,7 @@ Scenario Outline: iCargo Login and Create New Shipment
 	And User clicks on Save button
 
 Examples:
+
 	| Origin | Destination | ProductCode | Commodity | Piece | Weight | Execute | Agent Code | Shipper Code | Consignee Code |
 	| ANC    | HNL         | PRIORITY    | 2199      | 10     | 360    | No     | 10763      | 10763        | 10763          |
 	| SEA    | LAX         | GENERAL     | NONSCR    | 13    | 775    | Yes     | 10763      | 10763        | 10763          |
