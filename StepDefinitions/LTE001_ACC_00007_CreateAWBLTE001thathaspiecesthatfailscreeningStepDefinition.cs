@@ -34,19 +34,15 @@ namespace iCargoUIAutomation.StepDefinitions
             Log.Info("Step: Adding another screening line");
             csp.AddAnotherScreeningLine();
         }
+       
 
-        [When(@"User saves all the details with ChargeType ""([^""]*)""")]
-        public void WhenUserSavesAllTheDetailsWithChargeType(string chargeType)
+        [When(@"User saves all the details with ChargeType ""([^""]*)"" and validates the popped up error message as ""([^""]*)""")]
+        public void WhenUserSavesAllTheDetailsWithChargeTypeAndValidatesThePoppedUpErrorMessageAs(string chargeType, string expectedWarning)
         {
             Hooks.Hooks.createNode();
             Log.Info("Step: Saving all the details with ChargeType");
-            csp.SaveDetailsWithChargeType(chargeType);
+            csp.SaveDetailsWithChargeType(chargeType, expectedWarning);
         }
-      
-
-      
-
-
 
 
     }

@@ -76,7 +76,8 @@ namespace iCargoUIAutomation.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an AWB for an Employee Shipment")]
-        [NUnit.Framework.CategoryAttribute("tag1")]
+        [NUnit.Framework.CategoryAttribute("LTE001")]
+        [NUnit.Framework.CategoryAttribute("LTE001_ACC_00016")]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "10763", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "87", "PP", "CREDIT", "CART", null)]
         public virtual void CreateAnAWBForAnEmployeeShipment(
                     string agentCode, 
@@ -97,7 +98,8 @@ namespace iCargoUIAutomation.Features
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "tag1"};
+                    "LTE001",
+                    "LTE001_ACC_00016"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

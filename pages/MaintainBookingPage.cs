@@ -2,6 +2,7 @@
 using AventStack.ExtentReports.Gherkin.Model;
 using FluentAssertions.Execution;
 using iCargoUIAutomation.Hooks;
+using iCargoUIAutomation.utilities;
 using log4net;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -24,7 +25,17 @@ namespace iCargoUIAutomation.pages
         string presentDate = DateTime.Now.ToString("dd-MMM");
         public static string firstFlightNum = "";
         public static string awbNumber = "";
-        ILog Log = LogManager.GetLogger(typeof(MaintainBookingPage));        
+        public static string globalOrigin = "";
+        public static string globalDestination = "";
+        public static string globalProductCode = "";
+        public static string globalAgentCode = "";
+        public static string globalShipperCode = "";
+        public static string globalConsigneeCode = "";
+        public static string globalCommodityCode = "";
+        public static string globalPieces = "";
+        public static string globalWeight = "";
+        public static string globalAWBNumber = "";
+        ILog Log = LogManager.GetLogger(typeof(MaintainBookingPage));       
         public MaintainBookingPage(IWebDriver driver) : base(driver)
         {
         }
@@ -71,7 +82,7 @@ namespace iCargoUIAutomation.pages
         private By popupAlertWarningBooking_CSS = By.CssSelector(".alert-messages-ui");
         private By popupAlertMessageBooking_XPATH = By.XPath("//*[@class='alert-messages-list']//span");
         private By btnYesAlertMessageBooking_XPATH = By.XPath("//*[@class='ui-dialog-buttonpane ui-widget-content ui-helper-clearfix']//*[text()=' Yes ']");
-        private By embargoAlert_XPATH = By.XPath("//table[@id='showEmbargo-header']");
+        private By embargoAlert_XPATH = By.XPath("//table[@id='showEmbargo']");
         private By embargoContinue_XPATH = By.XPath("//input[@id='CMP_Reco_Defaults_ShowEmbargo_continue']");
 
         // Booking Summary
@@ -142,6 +153,7 @@ namespace iCargoUIAutomation.pages
         private By emb_Xpath = By.XPath("//label[contains(@id,'embargoStatus')]");
         private By rate_Xpath = By.XPath("//label[contains(@id,'rateStatus')]");
         private By flightDetailsOkbtn_Xpath = By.XPath("//button[@accesskey='K']");
+        private By flightDetailsClosebtn_Xpath = By.XPath("//button[@accesskey='O']");
         private By flightDetailsSection_XPATH = By.CssSelector(".table_grid .ReactVirtualized__Table__row");
         private By flightProductCode_Xpath = By.XPath("//div[@class='d-flex justify-content-between']/strong[1]");
         private By flightDate_Xpath = By.XPath("//div[@data-id='departureArrivalDate']");
@@ -200,8 +212,12 @@ namespace iCargoUIAutomation.pages
             }
         }
 
-        public void EnterShipmentDetails(string origin, string destination, string productCode)
+        public void EnterShipmentDetails(string origin, string destination, string productCode, string agentCode)
         {
+            globalOrigin = origin;
+            globalDestination = destination;
+            globalProductCode = productCode;
+            globalAgentCode = agentCode;
             Hooks.Hooks.createNode();
             WaitForElementToBeInvisible(homePage_CSS, TimeSpan.FromSeconds(10));
             try
@@ -216,20 +232,20 @@ namespace iCargoUIAutomation.pages
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Destination: " + destination);
                 Log.Info("Entered Destination: " + destination);
                 ClickOnElementIfPresent(agentCode_ID);
-               if(CheckForValueInTextbox(agentCode_ID,"A1001") == true)
+                if (CheckForValueInTextbox(agentCode_ID, "A1001") == true)
                 {
-                    int agentCode = 10763;
                     EnterTextWithCheck(agentCode_ID, agentCode.ToString());
                     Hooks.Hooks.UpdateTest(Status.Pass, "Entered Agent Code: " + agentCode);
                     Log.Info("Entered Agent Code: " + agentCode);
-                }                                
+                }
                 EnterText(shippingDate_ID, shippingDate);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Shipping Date: " + shippingDate);
                 Log.Info("Entered Shipping Date: " + shippingDate);
                 EnterText(product_XPATH, productCode);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Product Code: " + productCode);
                 Log.Info("Entered Product Code: " + productCode);
-                Click(shipperConsigneeBtn_ID);
+                WaitForElementToBeClickable(shipperConsigneeBtn_ID, TimeSpan.FromSeconds(5));
+                Click(shipperConsigneeBtn_ID);                
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee Button");
                 Log.Info("Clicked on Shipper Consignee Button");
             }
@@ -240,15 +256,15 @@ namespace iCargoUIAutomation.pages
             }
         }
 
-        public void EnterShipperConsigneeDetails()
+        public void EnterShipperConsigneeDetails(string shipperCode, string consigneeCode)
         {
+            globalShipperCode = shipperCode;
+            globalConsigneeCode = consigneeCode;
             Hooks.Hooks.createNode();
             try
             {
                 GetNumberOfWindowsOpened();
                 SwitchToSecondPopupWindow();
-                int shipperCode = 10763;
-                int consigneeCode = 10763;
                 WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
                 EnterText(shipperCode_XPATH, shipperCode.ToString());
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Shipper Code: " + shipperCode);
@@ -261,7 +277,11 @@ namespace iCargoUIAutomation.pages
                 EnterText(consigneeCode_XPATH, consigneeCode.ToString());
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Code: " + consigneeCode);
                 Log.Info("Entered Consignee Code: " + consigneeCode);
-                Click(unkConsigneeName_ID);
+                if(IsElementEnabled(unkConsigneeName_ID))
+                {                    
+                    EnterKeys(unkConsigneeName_ID, Keys.Tab);
+                }                                
+                WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(5));
                 ClickOnElementIfPresent(shipperConsigneeOkBtn_ID);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee OK Button");
                 Log.Info("Clicked on Shipper Consignee OK Button");
@@ -276,13 +296,15 @@ namespace iCargoUIAutomation.pages
 
         public void EnterCommodityDetails(string commodityCode, string pieces, string weight)
         {
+            globalCommodityCode = commodityCode;
+            globalPieces = pieces;
+            globalWeight = weight;
             Hooks.Hooks.createNode();
             try
             {
                 SwitchToCAP018Frame();
                 WaitForElementToBeVisible(commodityCode_XPATH, TimeSpan.FromSeconds(10));
                 ClickOnElementIfPresent(commodityCode_XPATH);
-                Click(commodityCode_XPATH);                
                 EnterText(commodityCode_XPATH, commodityCode);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Commodity Code: " + commodityCode);
                 Log.Info("Entered Commodity Code: " + commodityCode);
@@ -292,7 +314,7 @@ namespace iCargoUIAutomation.pages
                 EnterText(weight_XPATH, weight);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Weight: " + weight);
                 Log.Info("Entered Weight: " + weight);
-                if(checkTextboxIsNotEmpty(shipmentDescription_XPATH) ==false)
+                if (checkTextboxIsNotEmpty(shipmentDescription_XPATH) == false)
                 {
                     EnterText(shipmentDescription_XPATH, "Test Description");
                 }
@@ -304,19 +326,67 @@ namespace iCargoUIAutomation.pages
             }
         }
 
-        public string ClickingYesOnPopupWarnings()
+        public void ClickingYesOnPopupWarnings()
         {
-            string errorText = "";
-            SwitchToDefaultContent();
-
-            if (IsElementDisplayed(popupAlertWarningBooking_CSS))
+            // Check if embargo warnings appear first
+            if (ClickingYesonEmbargoWarnings())
             {
-                errorText = GetText(popupAlertMessageBooking_XPATH);
-                WaitForElementToBeVisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(10));
-                Click(btnYesAlertMessageBooking_XPATH);                
-            }            
-            return errorText;
+                // After handling embargo warnings, handle LAT popup warnings
+                ClickingYesOnLATPopupWarnings();
+            }
+            //Check if LAT popup warnings appear first
+            else if (ClickingYesOnLATPopupWarnings())
+            {
+                // After handling LAT popup warnings, handle embargo warnings
+                ClickingYesonEmbargoWarnings();
+            }
+            else
+            {
+                // If no embargo warnings, handle LAT popup warnings directly
+                ClickingYesOnLATPopupWarnings();
+            }
         }        
+
+        public bool ClickingYesOnLATPopupWarnings()
+        {
+            try
+            {
+                SwitchToDefaultContent();
+                if (IsElementDisplayed(popupAlertWarningBooking_CSS))
+                {
+                    WaitForElementToBeVisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(10));
+                    ClickOnElementIfPresent(btnYesAlertMessageBooking_XPATH);
+                    return true; // Return true if successfully clicked 'Yes'
+                }
+                return false; // Return false if popup not displayed
+            }
+            catch (Exception e)
+            {
+                Log.Error("Error in Clicking Yes on LAT Popup Warnings: " + e.Message);
+                return false; // Return false on exception
+            }
+        }
+
+        public bool ClickingYesonEmbargoWarnings()
+        {
+            try
+            {                
+                WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(10));
+                SwitchToSecondPopupWindow();
+                if (IsElementDisplayed(embargoAlert_XPATH))
+                {
+                    Click(embargoContinue_XPATH);
+                    return true; // Return true if successfully clicked 'Continue' on embargo popup
+                }             
+                SwitchToLastWindow();
+            }
+            catch (Exception e)
+            {
+                Log.Error("Error in Clicking Yes on Embargo Warnings: " + e.Message);
+            }
+            return false; // Return false if embargo alert was not handled or encountered an error
+        }
+
 
         public void ClickSaveButton()
         {
@@ -324,10 +394,10 @@ namespace iCargoUIAutomation.pages
             try
             {
                 int noOfWindowsBefore = GetNumberOfWindowsOpened();
-                WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(5));
+                WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(10));
                 ClickOnElementIfPresent(saveBtn_XPATH);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Save Button");
-                Log.Info("Clicked Save Button");                
+                Log.Info("Clicked Save Button");                                
                 ClickingYesOnPopupWarnings();                
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Yes on Popup Warnings");
                 Log.Info("Clicked Yes on Popup Warnings");
@@ -339,8 +409,9 @@ namespace iCargoUIAutomation.pages
                     WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(15));
                     WaitForElementToBeVisible(awbNumber_XPATH, TimeSpan.FromSeconds(15));
                     awbNumber = GetText(awbNumber_XPATH);
+                    globalAWBNumber = awbNumber;
                     Hooks.Hooks.UpdateTest(Status.Pass, "AWB Number: " + awbNumber);
-                    Log.Info("AWB Number: " + awbNumber);                   
+                    Log.Info("AWB Number: " + awbNumber);
                     if (IsElementEnabled(btnOkBookingSummaryPopup_XPATH))
                     {
                         WaitForElementToBeClickable(btnOkBookingSummaryPopup_XPATH, TimeSpan.FromSeconds(10));
@@ -386,6 +457,9 @@ namespace iCargoUIAutomation.pages
 
         public void UnknownAgentShipmentDetails(string org, string dest, string prodCode)
         {
+            globalOrigin = org;
+            globalDestination = dest;
+            globalProductCode = prodCode;
             Hooks.Hooks.createNode();
             try
             {
@@ -401,7 +475,7 @@ namespace iCargoUIAutomation.pages
                 Log.Info("Entered Shipping Date: " + shippingDate);
                 EnterText(product_XPATH, prodCode);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Product Code: " + prodCode);
-                Log.Info("Entered Product Code: " + prodCode);                
+                Log.Info("Entered Product Code: " + prodCode);
                 Click(shipperConsigneeBtn_ID);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee Button");
                 Log.Info("Clicked on Shipper Consignee Button");
@@ -415,6 +489,8 @@ namespace iCargoUIAutomation.pages
 
         public void UnknownShipperConsigneeDetails(string shipper, string consg)
         {
+            globalShipperCode = shipper;
+            globalConsigneeCode = consg;
             Hooks.Hooks.createNode();
             try
             {
@@ -436,6 +512,7 @@ namespace iCargoUIAutomation.pages
                     Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Code: " + consg);
                     Log.Info("Entered Consignee Code: " + consg);
                 }
+                WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(5));
                 ClickOnElementIfPresent(shipperConsigneeOkBtn_ID);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee OK Button");
                 Log.Info("Clicked on Shipper Consignee OK Button");
@@ -448,9 +525,16 @@ namespace iCargoUIAutomation.pages
             }
         }
 
-        public void clickFlightDetailsOkBtn()
+        public void ClickFlightDetailsOkBtn()
         {
-            ClickElementUsingJavaScript(flightDetailsOkbtn_Xpath);
+            if (IsElementDisplayed(flightDetailsOkbtn_Xpath))
+            {
+                ClickElementUsingJavaScript(flightDetailsOkbtn_Xpath);
+            }
+            else
+            {
+                Click(flightDetailsOkbtn_Xpath);
+            }
         }
 
         public void SelectFlight(string givenProductCode)
@@ -510,12 +594,12 @@ namespace iCargoUIAutomation.pages
                             {
                                 IWebElement generalProdBtn = generalProd[i];
                                 if (IsElementDisplayed(generalProdBtn_Xpath))
-                                {
+                                {                                    
                                     ClickOnElement(generalProdBtn);
                                     Hooks.Hooks.UpdateTest(Status.Pass, "Selected General Product");
                                     Log.Info("Selected General Product");
                                 }
-                                clickFlightDetailsOkBtn();
+                                ClickFlightDetailsOkBtn();
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Flight Details OK Button");
                                 Log.Info("Clicked Flight Details OK Button");
                                 break;
@@ -527,12 +611,12 @@ namespace iCargoUIAutomation.pages
                             {
                                 IWebElement priorityProdBtn = priorityProd[i];
                                 if (IsElementDisplayed(priorityProdBtn_Xpath))
-                                {
+                                {                                    
                                     ClickOnElement(priorityProdBtn);
                                     Hooks.Hooks.UpdateTest(Status.Pass, "Selected Priority Product");
                                     Log.Info("Selected Priority Product");
                                 }
-                                clickFlightDetailsOkBtn();
+                                ClickFlightDetailsOkBtn();
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Flight Details OK Button");
                                 Log.Info("Clicked Flight Details OK Button");
                                 break;
@@ -549,7 +633,7 @@ namespace iCargoUIAutomation.pages
                                     Hooks.Hooks.UpdateTest(Status.Pass, "Selected Employee Shipment Product");
                                     Log.Info("Selected Employee Shipment Product");
                                 }
-                                clickFlightDetailsOkBtn();
+                                ClickFlightDetailsOkBtn();
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Flight Details OK Button");
                                 Log.Info("Clicked Flight Details OK Button");
                                 break;
@@ -561,12 +645,12 @@ namespace iCargoUIAutomation.pages
                             {
                                 IWebElement goldstreakProdBtn = goldstreakProd[i];
                                 if (IsElementDisplayed(goldstreakProdBtn_Xpath))
-                                {
+                                {                                    
                                     ClickOnElement(goldstreakProdBtn);
                                     Hooks.Hooks.UpdateTest(Status.Pass, "Selected Goldstreak Product");
                                     Log.Info("Selected Goldstreak Product");
                                 }
-                                clickFlightDetailsOkBtn();
+                                ClickFlightDetailsOkBtn();
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Flight Details OK Button");
                                 Log.Info("Clicked Flight Details OK Button");
                                 break;
@@ -583,7 +667,7 @@ namespace iCargoUIAutomation.pages
                                     Hooks.Hooks.UpdateTest(Status.Pass, "Selected Pet Connect Product");
                                     Log.Info("Selected Pet Connect Product");
                                 }
-                                clickFlightDetailsOkBtn();
+                                ClickFlightDetailsOkBtn();
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Flight Details OK Button");
                                 Log.Info("Clicked Flight Details OK Button");
                                 break;
@@ -603,6 +687,10 @@ namespace iCargoUIAutomation.pages
 
         public void NewUnknownAgentShipmentDetails(string org, string dest, string agtcode, string prodcode)
         {
+            globalOrigin = org;
+            globalDestination = dest;
+            globalAgentCode = agtcode;
+            globalProductCode = prodcode;
             Hooks.Hooks.createNode();
             try
             {
@@ -643,6 +731,8 @@ namespace iCargoUIAutomation.pages
 
         public void UnknownShipperConsigneeALLDetails(string unkshppr, string unkconsgn)
         {
+            globalShipperCode = unkshppr;
+            globalConsigneeCode = unkconsgn;
             Hooks.Hooks.createNode();
             try
             {
@@ -807,7 +897,7 @@ namespace iCargoUIAutomation.pages
                             Assert.AreEqual(mincontimewarning, resErrorMessage);
                             Hooks.Hooks.UpdateTest(Status.Pass, "Rest Error Message: " + resErrorMessage);
                             Click(resColor_Xpath);
-                            clickFlightDetailsOkBtn();
+                            ClickFlightDetailsOkBtn();
                             WaitForElementToBeVisible(selectFlightError_Xpath, TimeSpan.FromSeconds(10));
                             string popUpMessage = GetText(selectFlightError_Xpath);
                             Log.Info("Popup Error Message: " + popUpMessage);
@@ -827,7 +917,7 @@ namespace iCargoUIAutomation.pages
                             Assert.AreEqual(mincontimewarning, resErrorMessage);
                             Hooks.Hooks.UpdateTest(Status.Pass, "Rest Error Message: " + resErrorMessage);
                             Click(resColor_Xpath);
-                            clickFlightDetailsOkBtn();
+                            ClickFlightDetailsOkBtn();
                             Log.Info("Clicked Flight Details OK Button");
                             WaitForElementToBeVisible(selectFlightError_Xpath, TimeSpan.FromSeconds(10));
                             string popUpMessage = GetText(selectFlightError_Xpath);
@@ -849,7 +939,7 @@ namespace iCargoUIAutomation.pages
                             Assert.AreEqual(mincontimewarning, resErrorMessage);
                             Hooks.Hooks.UpdateTest(Status.Pass, "Rest Error Message: " + resErrorMessage);
                             Click(resColor_Xpath);
-                            clickFlightDetailsOkBtn();
+                            ClickFlightDetailsOkBtn();
                             Log.Info("Clicked Flight Details OK Button");
                             WaitForElementToBeVisible(selectFlightError_Xpath, TimeSpan.FromSeconds(10));
                             string popUpMessage = GetText(selectFlightError_Xpath);
@@ -870,7 +960,7 @@ namespace iCargoUIAutomation.pages
                             Assert.AreEqual(mincontimewarning, resErrorMessage);
                             Hooks.Hooks.UpdateTest(Status.Pass, "Rest Error Message: " + resErrorMessage);
                             Click(resColor_Xpath);
-                            clickFlightDetailsOkBtn();
+                            ClickFlightDetailsOkBtn();
                             Log.Info("Clicked Flight Details OK Button");
                             WaitForElementToBeVisible(selectFlightError_Xpath, TimeSpan.FromSeconds(10));
                             string popUpMessage = GetText(selectFlightError_Xpath);
@@ -881,11 +971,39 @@ namespace iCargoUIAutomation.pages
                         }
                     }
                 }
+                ClickFlightDetailsCloseBtn();
+                SwitchToPopupWindow();
+                SwitchToCAP018Frame();
+                ClickOnElementIfPresent(clearAWBBtn_ID);
             }
             catch (Exception e)
             {
                 Hooks.Hooks.UpdateTest(Status.Fail, "Error in Selecting Multileg Flight: " + e.Message);
                 Log.Error("Error in Selecting Multileg Flight: " + e.Message);
+            }
+        }
+
+        public void ClickFlightDetailsCloseBtn()
+        {
+            if (IsElementDisplayed(flightDetailsClosebtn_Xpath))
+            {
+                ClickElementUsingJavaScript(flightDetailsClosebtn_Xpath);
+            }
+            else
+            {
+                Click(flightDetailsClosebtn_Xpath);
+            }
+        }
+
+        public void ClickOkAVIChecksheetBtn()
+        {
+            if (IsElementDisplayed(aviBookingChecksheetOkBtn_XPATH))
+            {
+                ClickElementUsingJavaScript(aviBookingChecksheetOkBtn_XPATH);
+            }
+            else
+            {
+                Click(aviBookingChecksheetOkBtn_XPATH);
             }
         }
 
@@ -898,6 +1016,7 @@ namespace iCargoUIAutomation.pages
                 clickOnSaveButtonToSaveNewFlightDetails();
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Save Button to Save New Flight Details");
                 Log.Info("Clicked Save Button to Save New Flight Details");
+                ClickingYesOnPopupWarnings();
                 ClickingYesOnPopupWarnings();
                 SwitchToCAP018Frame();
                 SwitchToFrame(aviChecksheetFrame_XPath);
@@ -948,7 +1067,7 @@ namespace iCargoUIAutomation.pages
 
                     }
                 }
-                Click(aviBookingChecksheetOkBtn_XPATH);
+                ClickOkAVIChecksheetBtn();
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked AVI Booking Checksheet OK Button");
                 Log.Info("Clicked AVI Booking Checksheet OK Button");
                 SwitchToPopupWindow();
@@ -965,6 +1084,7 @@ namespace iCargoUIAutomation.pages
         {
             try
             {
+                WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(5));
                 ClickOnElementIfPresent(saveBtn_XPATH);
                 Log.Info("Clicked Save Button to Save New Flight Details");
             }
@@ -1047,7 +1167,7 @@ namespace iCargoUIAutomation.pages
                         ClickOnElement(selectflightbtn);
                         Hooks.Hooks.UpdateTest(Status.Pass, "Selected Flight Number: " + selectflightnum);
                         Log.Info("Selected Flight Number: " + selectflightnum);
-                        clickFlightDetailsOkBtn();
+                        ClickFlightDetailsOkBtn();
                         Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Flight Details OK Button");
                         Log.Info("Clicked Flight Details OK Button");
                         break;
@@ -1089,7 +1209,7 @@ namespace iCargoUIAutomation.pages
                     SwitchToLastWindow();
                     WaitForElementToBeInvisible(bookingIrregularityFrame_ID, TimeSpan.FromSeconds(15));
                     WaitForElementToBeVisible(awbNumber_XPATH, TimeSpan.FromSeconds(10));
-                    string awbNumber = GetText(awbNumber_XPATH);
+                    awbNumber = GetText(awbNumber_XPATH);
                     Hooks.Hooks.UpdateTest(Status.Pass, "AWB Number: " + awbNumber);
                     Log.Info("AWB Number: " + awbNumber);
                     if (IsElementEnabled(btnOkBookingSummaryPopup_XPATH))
@@ -1154,6 +1274,10 @@ namespace iCargoUIAutomation.pages
             {
                 WaitForElementToBeInvisible(shipperConsigneePopup_CLASS, TimeSpan.FromSeconds(5));
                 EnterTextWithCheck(agentCode_ID, agentcode);
+                if(GetText(agentCode_ID)=="")
+                {
+                    EnterTextWithCheck(agentCode_ID, agentcode);
+                }
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered New Agent Code: " + agentcode);
                 Log.Info("Entered New Agent Code: " + agentcode);
             }
@@ -1201,7 +1325,7 @@ namespace iCargoUIAutomation.pages
         public string CaptureAwbNumber()
         {
             string awb_num = "";
-            awb_num = awbNumber;
+            awb_num = globalAWBNumber;
             return awb_num;
         }
 

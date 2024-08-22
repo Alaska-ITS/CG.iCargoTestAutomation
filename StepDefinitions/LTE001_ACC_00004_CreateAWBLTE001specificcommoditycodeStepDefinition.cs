@@ -27,14 +27,7 @@ namespace iCargoUIAutomation.StepDefinitions
             this.csp = pageObjectManager.GetCreateShipmentPage();
         }
 
-        [When(@"User validates the commodity charge amount")]
-        public void WhenUserValidatesTheCommodityChargeAmount()
-        {
-            Hooks.Hooks.createNode();
-            Log.Info("Step: Validating the commodity charge amount");
-            csp.ValidateCommodityChargeAmount();
-        }
-
+       
 
 
     }

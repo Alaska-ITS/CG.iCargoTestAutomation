@@ -20,6 +20,9 @@ namespace iCargoUIAutomation.StepDefinitions
         string weight = "";
         string flightno = "";
         string flightDate = "";
+        string agentCode = "";
+        string shipperCode = "";
+        string consigneeCode = "";
 
         public CAP018_BKG_00001_Create_a_booking_StepDefinitions(IWebDriver driver) : base(driver)
         {
@@ -55,32 +58,35 @@ namespace iCargoUIAutomation.StepDefinitions
             {
                 ScenarioContext.Current.Pending();
             }           
-        }
+        }        
 
-        [Then(@"User enters shipment details with Origin ""([^""]*)"", Destination ""([^""]*)"", Product Code ""([^""]*)"" and Agent code")]
-        public void ThenUserEntersShipmentDetailsWithOriginDestinationShippingDateProductCode(string origin, string destination, string productCode)
+        [Then(@"User enters shipment details with Origin ""([^""]*)"", Destination ""([^""]*)"", Product Code ""([^""]*)"" and Agent code ""([^""]*)""")]
+        public void ThenUserEntersShipmentDetailsWithOriginDestinationProductCodeAndAgentCode(string origin, string destination, string productCode,string agentCode)
         {
             this.origin = origin;
-            this.destination = destination;            
+            this.destination = destination;
             this.productCode = productCode;
+            this.agentCode = agentCode;
             if (ScenarioContext.Current["Execute"] == "true")
-            mbp.EnterShipmentDetails(origin, destination,productCode);
+                mbp.EnterShipmentDetails(origin, destination, productCode, agentCode);
             else
             {
                 ScenarioContext.Current.Pending();
             }
         }
 
-        [Then(@"User enters Shipper and Consignee details")]
-        public void ThenUserEntersShipperAndConsigneeDetails()
+        [Then(@"User enters Shipper ""([^""]*)"" and Consignee ""([^""]*)"" details")]
+        public void ThenUserEntersShipperAndConsigneeDetails(string shipperCode, string consigneeCode)
         {
+            this.shipperCode = shipperCode;
+            this.consigneeCode = consigneeCode;
             if (ScenarioContext.Current["Execute"] == "true")
-            mbp.EnterShipperConsigneeDetails();
+                mbp.EnterShipperConsigneeDetails(shipperCode,consigneeCode);
             else
             {
                 ScenarioContext.Current.Pending();
             }
-        }
+        }        
 
         [Then(@"User enters commodity details with Commodity ""([^""]*)"", Pieces ""([^""]*)"", Weight ""([^""]*)""")]
         public void ThenUserEntersCommodityDetailsWithCommodityPiecesWeight(string commodity, string piece, string weight)

@@ -1,7 +1,7 @@
 ﻿Feature: LTE001_ACC_00010_Reopen an AWB and change the final destination and reexecute
 Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CGODG user
 
-@tag1
+@LTE001 @LTE001_ACC_00010
 Scenario Outline: Reopen an AWB and change the final destination and reexecute
 	Given User lauches the Url of iCargo Staging UI
 	Then User enters into the  iCargo 'Sign in to icargoas' page successfully

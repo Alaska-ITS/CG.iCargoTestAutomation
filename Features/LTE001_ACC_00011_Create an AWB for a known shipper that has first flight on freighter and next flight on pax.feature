@@ -2,7 +2,7 @@
 
 Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CGODG user
 
-@tag1
+@LTE001 @LTE001_ACC_00011
 Scenario Outline: Create an AWB for a known shipper that has first flight on freighter and next flight on pax
 	Given User lauches the Url of iCargo Staging UI
 	Then User enters into the  iCargo 'Sign in to icargoas' page successfully

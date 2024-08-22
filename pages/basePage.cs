@@ -30,7 +30,8 @@ namespace iCargoUIAutomation.pages
 
 
         // Browser Actions
-
+       
+       
         // delete all cookiies & caches & verify if all cookies are deleted
         public void DeleteAllCookies()
         {
@@ -124,7 +125,7 @@ namespace iCargoUIAutomation.pages
                 }
             }
             log.Info("Switched to the new window");
-        }
+        }        
 
 
         public void CloseBrowser()
@@ -339,7 +340,7 @@ namespace iCargoUIAutomation.pages
             driver.FindElement(byLocator).SendKeys(key);
             log.Info("Entered the key in the element " + byLocator);
 
-        }
+        }        
 
         public string GetAttributeValue(By byLocator, string attribute)
         {
@@ -395,7 +396,7 @@ namespace iCargoUIAutomation.pages
             var wait = new WebDriverWait(driver, timeout);
             wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//*[contains(text(), '" + text + "')]")));
             
-        }
+        }        
 
         public void ClickOnElementIfPresent(By byLocator)
         {
@@ -424,7 +425,8 @@ namespace iCargoUIAutomation.pages
             {
                 return false;
             }
-        }
+        }        
+
 
         public void WaitForNewWindowToOpen(TimeSpan time, int windowCount)
         {

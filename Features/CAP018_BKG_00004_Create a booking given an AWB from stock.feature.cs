@@ -77,8 +77,8 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("Create a booking given an AWB from stock and system will create a new awb")]
         [NUnit.Framework.CategoryAttribute("CAP018")]
         [NUnit.Framework.CategoryAttribute("CAP018_BKG_00004")]
-        [NUnit.Framework.TestCaseAttribute("74428362", "ANC", "FAI", "GENERAL", "0316", "2", "20", "82165", "82165", "Yes", null)]
-        public virtual void CreateABookingGivenAnAWBFromStockAndSystemWillCreateANewAwb(string aWB, string origin, string destination, string productCode, string commodity, string piece, string weight, string shipper, string consignee, string execute, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("74428760", "ANC", "FAI", "GENERAL", "0316", "2", "20", "10763", "82165", "82165", "Yes", null)]
+        public virtual void CreateABookingGivenAnAWBFromStockAndSystemWillCreateANewAwb(string aWB, string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipper, string consignee, string execute, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "CAP018",
@@ -96,6 +96,7 @@ namespace iCargoUIAutomation.Features
             argumentsOfScenario.Add("Commodity", commodity);
             argumentsOfScenario.Add("Piece", piece);
             argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("Agent Code", agentCode);
             argumentsOfScenario.Add("Shipper", shipper);
             argumentsOfScenario.Add("Consignee", consignee);
             argumentsOfScenario.Add("Execute", execute);
@@ -143,7 +144,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 12
  testRunner.And(string.Format("User enters shipment details with Origin \"{0}\", Destination \"{1}\", Product Code \"" +
-                            "{2}\" and Agent code", origin, destination, productCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                            "{2}\" and Agent code \"{3}\"", origin, destination, productCode, agentCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
  testRunner.And(string.Format("User enters Unknown Shipper \"{0}\" and Consignee \"{1}\" details", shipper, consignee), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

@@ -31,7 +31,10 @@ namespace iCargoUIAutomation.Hooks
         private static IWebDriver? driver;
         public static string? featureName;
         public static string? browser;
-        public static string? appUrl = "https://asstg-icargo.ibsplc.aero/icargo/login.do";      
+        public static string? appUrl = "https://asstg-icargo.ibsplc.aero/icargo/login.do";
+        private const string containerName = "resources";
+        private const string reportContainerName = "reports";
+        private static AzureStorage? azureStorage;
 
         public Hooks(IObjectContainer container)
         {
@@ -42,33 +45,19 @@ namespace iCargoUIAutomation.Hooks
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            Console.WriteLine("Running before test run...");
-            reportPath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports\Reports\TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");            
-            testResultPath = reportPath + @"\index.html";
-             if (!Directory.Exists(reportPath))
-            {
-                try
-                {
-                    Directory.CreateDirectory(reportPath);
-                }
-                catch (Exception)
-                {
-                    // Fallback to the project directory's resource folder if unable to create the specified path
-                    string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                    reportPath = Path.Combine(projectDirectory, "Resource", "Report", "TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss"));
-                    Directory.CreateDirectory(reportPath);
-                    testResultPath = reportPath + @"\index.html";
-                }
-            }
 
-            
+            // Set the report path (temporary local path, will be uploaded to Azure)           
+            TimeZoneInfo pstZone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+            DateTime pstTime = TimeZoneInfo.ConvertTime(DateTime.Now, pstZone);
+            string reportName = "TestResults_" + pstTime.ToString("yyyyMMdd_HHmmss");
+            reportPath = Path.Combine(Path.GetTempPath(), reportName);
+            testResultPath = reportPath + @"\index.html";
+
             var htmlReporter = new ExtentHtmlReporter(testResultPath);
             htmlReporter.Config.ReportName = "Automation Status Report";
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Standard;
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
-            
-
         }
 
         [AfterTestRun]
@@ -82,40 +71,42 @@ namespace iCargoUIAutomation.Hooks
         {
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
-            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
-            
-                if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
-                {
-                    driver = new ChromeDriver();
-                }
-                else if (browser.Equals("edge", StringComparison.OrdinalIgnoreCase))
-                {
-                    driver = new EdgeDriver();
-                }
-                else if (browser.Equals("firefox", StringComparison.OrdinalIgnoreCase))
-                {
-                    driver = new FirefoxDriver();
-                }
-                else if (browser.Equals("safari", StringComparison.OrdinalIgnoreCase))
-                {
-                    driver = new SafariDriver();
-                }
-                else
-                {
-                    throw new NotSupportedException($"Browser '{browser}' is not supported");
-                }
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
-                driver.Manage().Window.Maximize();
-                homePage hp = new homePage(driver);
-                BasePage bp = new BasePage(driver);
-                bp.DeleteAllCookies();
-                bp.Open(appUrl);                
-                driver.FindElement(By.XPath("//a[@id='social-oidc']")).Click();                
-                if (bp.IsElementDisplayed(By.XPath("//body[@class='login']")))
-                {
-                    hp.LoginICargo();                    
-                }
-                bp.SwitchToNewWindow();                       
+
+            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);
+            //browser="chrome"; //hardcoded browser value to "chrome
+            if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
+            {
+                driver = new ChromeDriver();
+            }
+            else if (browser.Equals("edge", StringComparison.OrdinalIgnoreCase))
+            {
+                driver = new EdgeDriver();
+            }
+            else if (browser.Equals("firefox", StringComparison.OrdinalIgnoreCase))
+            {
+                driver = new FirefoxDriver();
+            }
+            else if (browser.Equals("safari", StringComparison.OrdinalIgnoreCase))
+            {
+                driver = new SafariDriver();
+            }
+            else
+            {
+                throw new NotSupportedException($"Browser '{browser}' is not supported");
+            }
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+            driver.Manage().Window.Maximize();
+            homePage hp = new homePage(driver);
+            BasePage bp = new BasePage(driver);
+            bp.DeleteAllCookies();
+            bp.Open(appUrl);
+            driver.FindElement(By.XPath("//a[@id='social-oidc']")).Click();
+            bp.RefreshPage();
+            if (bp.IsElementDisplayed(By.XPath("//body[@class='login']")))
+            {
+                hp.LoginICargo();
+            }
+            bp.SwitchToNewWindow();
         }
 
         [AfterFeature]
@@ -124,24 +115,18 @@ namespace iCargoUIAutomation.Hooks
             homePage hp = new homePage(driver);
             hp.logoutiCargo();
             extent.Flush();
+            azureStorage = new AzureStorage(reportContainerName);
+            azureStorage.UploadFolderToAzure(reportPath);
+            if (File.Exists(reportPath))
+            {
+                File.Delete(reportPath);
+            }
             driver.Quit();
-        }
-
-        [BeforeScenario("@tag1")]
-        public void BeforeScenarioWithTag()
-        {
-
-        }
+        }        
 
         [BeforeScenario(Order = 1)]
         public void FirstBeforeScenario(ScenarioContext scenarioContext)
         {
-            _container.RegisterInstanceAs(driver);
-            Console.WriteLine("Running before scenario...");
-            driver = new EdgeDriver();
-            //IWebDriver driver = new ChromeDriver();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
-            driver.Manage().Window.Maximize();
             _container.RegisterInstanceAs<IWebDriver>(driver);
             scenario = feature.CreateNode(scenarioContext.ScenarioInfo.Title);
         }
@@ -160,12 +145,12 @@ namespace iCargoUIAutomation.Hooks
         {
             step.Log(status, stepMessaage);
         }
-        
+
 
         [AfterScenario]
 
         public void AfterScenario(FeatureContext featureContext)
-        {   
+        {
 
             var status = TestContext.CurrentContext.Result.Outcome.Status;
             var stackTrace = TestContext.CurrentContext.Result.StackTrace;
@@ -176,48 +161,53 @@ namespace iCargoUIAutomation.Hooks
             {
                 scenario.Fail("Test Failed", captureScreenshot(fileName));
                 scenario.Log(Status.Fail, "Test failed with log" + stackTrace);
-            }            
+            }
             if (MaintainBookingPage.awbNumber != "" || CreateShipmentPage.awb_num != "" && ScenarioContext.Current["Execute"] == "true")
             {
-                string filePath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports\AWB_Numbers\AWB_Details.xlsx";
 
-                string directoryPath = Path.GetDirectoryName(filePath);
-                if (!Directory.Exists(directoryPath))
+
+                azureStorage = new AzureStorage(containerName);
+                string excelFileName = "AWBDetails.csv";
+                string tempLocalPath = Path.Combine(Path.GetTempPath(), excelFileName);
+
+                // Download the existing file if it exists
+                tempLocalPath = azureStorage.DownloadFileFromBlob(excelFileName, tempLocalPath);
+                ExcelFileConfig excelFileConfig = new ExcelFileConfig();
+
+                if (excelFileConfig.IsSheetFilled(tempLocalPath, 1000)) // Set your desired max rows per sheet
                 {
-                    try
-                    {
-                        Directory.CreateDirectory(directoryPath);
-                    }
-                    catch (Exception)
-                    {
-                        // Fallback to the project directory's resource folder if unable to create the specified path
-                        string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                        directoryPath = Path.Combine(projectDirectory, "Resource", "AWB_Details");
-                        Directory.CreateDirectory(directoryPath);
-                        filePath = Path.Combine(directoryPath, "AWB_Details.xlsx");
-                    }
+                    // If filled, generate a new unique file name
+                    string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+                    excelFileName = $"AWBDetails_{timestamp}.xlsx";
+                    tempLocalPath = Path.Combine(Path.GetTempPath(), excelFileName);
                 }
-                
+
                 if (featureName.Contains("CAP018"))
                 {
-                    ExcelFileConfig excelFileConfig = new ExcelFileConfig();
-                    excelFileConfig.AppendDataToExcel(filePath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "CAP018", MaintainBookingPage.awbNumber);
+                    
+                    // Append data to the downloaded or newly created Excel file
+                    excelFileConfig.AppendDataToExcel(tempLocalPath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "CAP018", featureName, MaintainBookingPage.awbNumber, MaintainBookingPage.globalOrigin, MaintainBookingPage.globalDestination, MaintainBookingPage.globalProductCode, MaintainBookingPage.globalAgentCode, MaintainBookingPage.globalShipperCode, MaintainBookingPage.globalConsigneeCode, MaintainBookingPage.globalCommodityCode, MaintainBookingPage.globalPieces, MaintainBookingPage.globalWeight);
+                    
                 }
-                else
+                else 
                 {
-                    ExcelFileConfig excelConfig = new ExcelFileConfig();
-                    excelConfig.AppendDataToExcel(filePath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", CreateShipmentPage.awb_num);
-                }
+                    
+                    // Append data to the downloaded or newly created Excel file
+                    excelFileConfig.AppendDataToExcel(tempLocalPath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", featureName, CreateShipmentPage.awb_num, CreateShipmentPage.origin, CreateShipmentPage.destination, CreateShipmentPage.agentCode, CreateShipmentPage.shipperCode, CreateShipmentPage.consigneeCode, CreateShipmentPage.productCode, CreateShipmentPage.commodityCode, CreateShipmentPage.pieces, CreateShipmentPage.weight);
+
+                }                
+
+                // Upload the updated file back to Azure Blob Storage
+                azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
+
+                File.Delete(tempLocalPath);
             }
-            else
-            {
-                ScenarioContext.Current.Pending();
-            }
+
         }
 
         [AfterStep]
         public void AfterStep(ScenarioContext scenarioContext)
-        {            
+        {
             string stepType = scenarioContext.StepContext.StepInfo.StepDefinitionType.ToString();
             string stepName = scenarioContext.StepContext.StepInfo.Text;
         }
@@ -230,6 +220,7 @@ namespace iCargoUIAutomation.Hooks
             string screenshotLocation = Path.Combine(screenshotPath, fileName);
             screenshot.SaveAsFile(screenshotLocation);
             return MediaEntityBuilder.CreateScreenCaptureFromPath(screenshotLocation).Build();
+
         }
     }
 }

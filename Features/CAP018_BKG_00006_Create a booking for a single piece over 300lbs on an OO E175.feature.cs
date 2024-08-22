@@ -76,17 +76,10 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create a booking for a single piece over 300lbs on an OO E175 and system generate" +
             "s an AWB with a warning.")]
-        [NUnit.Framework.CategoryAttribute("CAP018")]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "0316", "2", "310", null)]
-        public virtual void CreateABookingForASinglePieceOver300LbsOnAnOOE175AndSystemGeneratesAnAWBWithAWarning_(string origin, string destination, string productCode, string commodity, string piece, string weight, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "0316", "2", "310", "10763", "10763", "10763", null)]
+        public virtual void CreateABookingForASinglePieceOver300LbsOnAnOOE175AndSystemGeneratesAnAWBWithAWarning_(string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipperCode, string consigneeCode, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "CAP018"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Origin", origin);
             argumentsOfScenario.Add("Destination", destination);
@@ -94,6 +87,9 @@ namespace iCargoUIAutomation.Features
             argumentsOfScenario.Add("Commodity", commodity);
             argumentsOfScenario.Add("Piece", piece);
             argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("Agent Code", agentCode);
+            argumentsOfScenario.Add("Shipper Code", shipperCode);
+            argumentsOfScenario.Add("Consignee Code", consigneeCode);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a booking for a single piece over 300lbs on an OO E175 and system generate" +
                     "s an AWB with a warning.", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 4
@@ -142,10 +138,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 13
  testRunner.And(string.Format("User enters shipment details with Origin \"{0}\", Destination \"{1}\", Product Code \"" +
-                            "{2}\" and Agent code", origin, destination, productCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                            "{2}\" and Agent code \"{3}\"", origin, destination, productCode, agentCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
- testRunner.And("User enters Shipper and Consignee details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters Shipper \"{0}\" and Consignee \"{1}\" details", shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
  testRunner.And(string.Format("User enters commodity details with Commodity \"{0}\", Pieces \"{1}\", Weight \"{2}\"", commodity, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

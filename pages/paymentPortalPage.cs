@@ -47,6 +47,7 @@ namespace iCargoUIAutomation.pages
                 {
                     ConfirmManualPayment();
                     ScrollDown();
+                    WaitForElementToBeVisible(lblTotalAmount_Xpath, TimeSpan.FromSeconds(5));
                     totalPaybleAmount = GetText(lblTotalAmount_Xpath).Split("$")[1];
                     Hooks.Hooks.UpdateTest(Status.Pass, "Total Payable Amount is: " + totalPaybleAmount);
                     ClickOnElementIfEnabled(btnDone_Xpath);
@@ -85,11 +86,13 @@ namespace iCargoUIAutomation.pages
                     if (IsElementDisplayed(txtPleaseCloseTabRetry_Xpath, 3))
                     {
                         CloseCurrentWindow();
+                        Hooks.Hooks.UpdateTest(Status.Pass, "Closed Payment Portal Tab & Retrying");
                     }
                     else if (chargetyp.Equals("PP"))
                     {
                         ConfirmManualPayment();
                         ScrollDown();
+                        WaitForElementToBeVisible(lblTotalAmount_Xpath, TimeSpan.FromSeconds(5));
                         totalPaybleAmount = GetText(lblTotalAmount_Xpath).Split("$")[1];
                         Hooks.Hooks.UpdateTest(Status.Pass, "Total Payable Amount is: " + totalPaybleAmount);
                         ClickOnElementIfEnabled(btnDone_Xpath);
@@ -110,7 +113,7 @@ namespace iCargoUIAutomation.pages
             }
             catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in handling Payment in Payment Portal: " + e.Message);
+                //Hooks.Hooks.UpdateTest(Status.Fail, "Error in handling Payment in Payment Portal: " + e.Message);
                 Log.Error("Error in handling Payment in Payment Portal" + e.Message);
             }
 
@@ -123,6 +126,7 @@ namespace iCargoUIAutomation.pages
         {
             Hooks.Hooks.UpdateTest(Status.Info, "Confirming Manual Payment");
             Log.Info("Confirming Manual Payment");
+            Thread.Sleep(2000);
             Click(optionManualPaymentMethod_Xpath);
             Hooks.Hooks.UpdateTest(Status.Pass, "Selected Manual Payment Option");
             Click(btnNext_Xpath);

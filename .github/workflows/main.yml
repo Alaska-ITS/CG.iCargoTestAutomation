@@ -5,10 +5,10 @@ on:
     tags:
       - HelloTestingDoesnoTMatter
     branches:
-      - main
+      - Cap018_Changes
   pull_request:
     branches:
-      - main
+      - Cap018_Changes
  
 jobs:
   build:
@@ -41,4 +41,5 @@ jobs:
           echo "RoleGroup=${ROLE_GROUP}" >> $GITHUB_ENV
  
       - name: Run tests by tag
-        run: dotnet test --filter TestCategory=CAP018_BKG_00001
+
+        run: dotnet test --filter TestCategory=LTE001_ACC_00007
