@@ -34,4 +34,4 @@ Examples:
 	| 11377     | 11377       | 11377         | SEA    | GEG         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | PP         | CREDIT        | CART     | Yes     |
 	| 11377     | 11377       | 11377         | SEA    | KTN         | PRIORITY    | None | 2199      | None                | None              | 8     | 360    | PP         | CREDIT        | CART     | Yes     |
 	| 11377     | 11377       | 11377         | SEA    | PHX         | GOLDSTREAK  | None | NONSCR    | None                | None              | 2     | 55     | PP         | CREDIT        | CART     | Yes     |
- | 11377     | 11377              | 11377         | SEA    | LAS         | GENERAL     | None | 4903      | None                | None              | 13    | 775    | PP         | CREDIT        | CART     | Yes     |
+        | 11377     | 11377       | 11377         | SEA    | LAS         | GENERAL     | None | 4903      | None                | None              | 13    | 775    | PP         | CREDIT        | CART     | Yes     |
