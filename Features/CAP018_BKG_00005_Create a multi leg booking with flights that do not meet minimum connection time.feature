@@ -13,5 +13,5 @@ Scenario Outline: Create a multi leg booking with flights that do not meet minim
 	And User searches for the multileg flight to verify RES bubble 'red' a warning message as 'Minimum Handling / Connection Time Fails' and product code as "<ProductCode>"
 Examples:
 	| Origin | Destination | ProductCode | Commodity | Piece | Weight | Execute | Agent Code | Shipper Code | Consignee Code |
-	| SEA    | BET         | PRIORITY    | 2199      | 4     | 120    | Yes      | 10763      | 10763        | 10763          |
+	| SEA    | JNU         | PRIORITY    | 2199      | 4     | 120    | Yes      | 10763      | 10763        | 10763          |
 	| PDX    | BWI         | PRIORITY    | 0300      | 10    | 950    | Yes     | 10763      | 10763        | 10763          |
