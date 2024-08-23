@@ -485,6 +485,14 @@ namespace iCargoUIAutomation.pages
             }
         }
 
+        public void WaitForTextToBeCleared(By byLocator, TimeSpan timeout)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, timeout);
+            wait.Until(ExpectedConditions.TextToBePresentInElementValue(byLocator, string.Empty));
+            log.Info("The text in the element " + byLocator + " has been cleared");
+        }
+
+
         public bool IsElementEnabled(By byLocator)
         {
             try

@@ -4,11 +4,7 @@ Create a New Shipment, Acceptance of that new shipment & screening as a CGO or C
 
 @LTE001 @LTE001_ACC_00016
 Scenario Outline: Create an AWB for an Employee Shipment
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
+	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully
@@ -33,11 +29,10 @@ Scenario Outline: Create an AWB for an Employee Shipment
 	And User captures the checksheet
 	And User checks the AWB_Verified checkbox
 	And User clicks on the save button
-	And User handles the error popups with errorType as ''	
+	And User handles the error popups with errorType as ''
 	And User saves all the details & handles all the popups
-	And User closes the LTE screen
-	Then User logs out from the application
+	
 
 Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode       | SCC | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType |
-	| ASQXGUEST | 10763       | 10763         | SEA    | ANC         | Employee Shipment | SAL | NONSCR    | None                | None              | 3     | 87     | PP         | CREDIT        | CART     |
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode       | SCC | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
+	| ASQXGUEST | 11377       | 10763         | SEA    | ANC         | Employee Shipment | SAL | NONSCR    | None                | None              | 3     | 87     | PP         | CREDIT        | CART     | Yes     |
