@@ -4,11 +4,7 @@ Create a New Shipment, Acceptance of that new shipment & screening as a CGO or C
 
 @LTE001 @LTE001_ACC_00017
 Scenario Outline: Create a COMAT AWB
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
+	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully
@@ -33,9 +29,10 @@ Scenario Outline: Create a COMAT AWB
 	And User clicks on the save button
 	And User handles the error popups with errorType as ''
 	And User validates the AWB is "EXECUTED"
-	And User closes the LTE screen
-	Then User logs out from the application
+	
 
 Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType |
-	| ASQXGUEST | COMATFF     | COMATFF       | ANC    | SEA         | COMAT       | COM  | NONSCR    | None                | COMAT             | 1     | 16     | PP         | NONE          | CART     |
+
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
+	| ASQXGUEST | 11377       | COMATFF       | SEA    | LAX         | COMAT       | None | NONSCR    | None                | COMAT             | 2     | 59     | PP         | NONE          | CART     | Yes     |
+	| ASQXGUEST | 11377       | COMATFF       | SAN    | JFK         | COMAT       | None | NONSCR    | None                | COMAT             | 2     | 59     | PP         | NONE          | CART     | Yes     |

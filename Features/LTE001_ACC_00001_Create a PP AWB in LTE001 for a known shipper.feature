@@ -3,7 +3,7 @@
 Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CGODG user
  
 @LTE001 @LTE001_ACC_00001
-Scenario Outline: Create a PP AWB in LTE001 for a known shipper	
+Scenario Outline: Create a PP AWB in LTE001 for a known shipper
 	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
@@ -24,14 +24,14 @@ Scenario Outline: Create a PP AWB in LTE001 for a known shipper
 	And User enters the Acceptance details
 	And User clicks on the ContinueAcceptanceDetails button
 	And User enters the Screening details for row 1 with screeingMethod as 'Transfer Manifest Verified' and ScreeningResult as 'Pass'
-	And User clicks on the ContinueScreeningDetails button	
+	And User clicks on the ContinueScreeningDetails button
 	And User checks the AWB_Verified checkbox
 	And User saves all the details & handles all the popups
 	
  
 Examples:
 	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
-	| 11377     | 11377       | 11377         | SEA    | GEG         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | PP         | CREDIT        | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | KTN         | PRIORITY    | None | 2199      | None                | None              | 8     | 360    | PP         | CREDIT        | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | PHX         | GOLDSTREAK  | None | NONSCR    | None                | None              | 2     | 55     | PP         | CREDIT        | CART     | Yes     |
-        | 11377     | 11377       | 11377         | SEA    | LAS         | GENERAL     | None | 4903      | None                | None              | 13    | 775    | PP         | CREDIT        | CART     | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | LAX         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | PP         | CREDIT        | CART     | Yes     |
+	| 11377     | 11377       | 11377         | ANC    | HNL         | PRIORITY    | None | 2199      | None                | None              | 8     | 360    | PP         | CREDIT        | CART     | Yes     |
+	| 11377     | 11377       | 11377         | SAN    | JFK         | GOLDSTREAK  | None | NONSCR    | None                | None              | 2     | 55     | PP         | CREDIT        | CART     | Yes     |
+	| 11377     | 11377       | 11377         | YVR    | SEA         | PRIORITY    | None | NONSCR    | None                | None              | 5     | 225    | PP         | CREDIT        | CART     | Yes     |

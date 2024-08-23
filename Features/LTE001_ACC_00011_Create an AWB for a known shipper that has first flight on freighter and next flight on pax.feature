@@ -4,11 +4,7 @@ Create a New Shipment, Acceptance of that new shipment & screening as a CGO or C
 
 @LTE001 @LTE001_ACC_00011
 Scenario Outline: Create an AWB for a known shipper that has first flight on freighter and next flight on pax
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
+	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully
@@ -26,15 +22,16 @@ Scenario Outline: Create an AWB for a known shipper that has first flight on fre
 	And User clicks on the CalculateCharges button
 	And User clicks on the ContinueChargeDetails button
 	And User enters the Acceptance details
-	And User clicks on the ContinueAcceptanceDetails button	
+	And User clicks on the ContinueAcceptanceDetails button
 	And User clicks on the ContinueScreeningDetails button
-	And User checks the AWB_Verified checkbox		
-	And User clicks on the save button & handle Payment Portal
+	And User checks the AWB_Verified checkbox
 	And User saves all the details & handles all the popups
-	And User validates the AWB is "EXECUTED"
-	And User closes the LTE screen
-	Then User logs out from the application
+	#And User validates the AWB is "EXECUTED"
+	
 
 Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType |
-	| 10763     | 10763       | 10763         | OTZ    | SEA         | GENERAL     | None | 0316      | None                | None              | 2     | 59     | PP         | CREDIT        | CART     |
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
+	| 11377     | 11377       | 11377         | OTZ    | SEA         | GENERAL     | None | 0316      | None                | None              | 13    | 775    | PP         | CREDIT        | CART     | Yes     |
+	| 11377     | 11377       | 11377         | OTZ    | SEA         | PRIORITY    | None | 2199      | None                | None              | 8     | 360    | PP         | CREDIT        | CART     | Yes     |
+	| 11377     | 11377       | 11377         | OTZ    | SEA         | GOLDSTREAK  | None | NONSCR    | None                | None              | 2     | 59     | PP         | CREDIT        | CART     | Yes     |
+

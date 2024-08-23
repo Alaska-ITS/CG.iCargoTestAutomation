@@ -24,11 +24,11 @@ Scenario Outline: Reopen an AWB and change piece count and weight and reexecute
 	And User clicks on the ContinueAcceptanceDetails button
 	And User enters the Screening details for row 1 with screeingMethod as 'Transfer Manifest Verified' and ScreeningResult as 'Pass'
 	And User clicks on the ContinueScreeningDetails button
-	And User checks the AWB_Verified checkbox	
+	And User checks the AWB_Verified checkbox
 	And User saves all the details & handles all the popups
 	When User enters the Executed AWB number
 	And User Reopens the AWB
-	And User verifies and Update the field 'piece&weight' with updated value as '1' in the Shipment Details
+	And User verifies and Update the field 'piece&weight' with updated value as "<UpdatedValue>" in the Shipment Details
 	And User clicks on the ContinueShipment button
 	And User verifies and Update the Flight Details with 'piece&weight'
 	And User clicks on the ContinueFlightDetails button
@@ -48,8 +48,8 @@ Scenario Outline: Reopen an AWB and change piece count and weight and reexecute
 	And User validates the AWB is "EXECUTED"
 
 Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
-	| 11377     | 11377       | 11377         | SEA    | LAX         | GENERAL     | None | NONSCR    | None                | None              | 2     | 59     | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | JFK         | PRIORITY    | None | 2199      | None                | None              | 12    | 324    | CC         | None          | CART     | Yes     |
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | UpdatedValue | Execute |
+	| 11377     | 11377       | 11377         | SEA    | LAX         | GENERAL     | None | NONSCR    | None                | None              | 2     | 59     | CC         | None          | CART     | 1            | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | JFK         | PRIORITY    | None | 2199      | None                | None              | 12    | 324    | CC         | None          | CART     | 1            | Yes     |
 
 	

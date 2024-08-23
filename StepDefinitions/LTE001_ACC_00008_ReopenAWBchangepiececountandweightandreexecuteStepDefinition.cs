@@ -50,7 +50,9 @@ namespace iCargoUIAutomation.StepDefinitions
             csp.reOpenAWB();
         }
 
-        [When(@"User verifies and Update the field '([^']*)' with updated value as '([^']*)' in the Shipment Details")]
+       
+
+        [When(@"User verifies and Update the field '([^']*)' with updated value as ""([^""]*)"" in the Shipment Details")]       
         public void WhenUserVerifiesAndUpdateTheFieldWithUpdatedValueAsInTheShipmentDetails(string fieldToBeUpdated, string value)
         {
             Hooks.Hooks.createNode();

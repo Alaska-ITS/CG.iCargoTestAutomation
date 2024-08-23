@@ -202,6 +202,21 @@ namespace iCargoUIAutomation.StepDefinitions
             }
         }
 
+        [When(@"User selects an ""([^""]*)"" flight having Embargo error")]
+        public void WhenUserSelectsAnFlightHavingEmbargoError(string typeOfFlight)
+        {
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                csp.BookSpecificFlightWithEmbargo(typeOfFlight);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+        }
+
+
 
         [When(@"User clicks on the ContinueFlightDetails button")]
         public void UserClicksOnContinueFlightDetailsButton()

@@ -1086,7 +1086,9 @@ namespace iCargoUIAutomation.pages
             {
                 WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(5));
                 ClickOnElementIfPresent(saveBtn_XPATH);
+                ClickingYesOnPopupWarnings();
                 Log.Info("Clicked Save Button to Save New Flight Details");
+                SwitchToLastWindow();
             }
             catch (Exception e)
             {
@@ -1187,9 +1189,10 @@ namespace iCargoUIAutomation.pages
         {
             Hooks.Hooks.createNode();
             try
-            {
-                WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(10));
+            {                
+                SwitchToCAP018Frame();
                 SwitchToFrame(bookingIrregularityFrame_ID);
+                WaitForElementToBeVisible(irregularityTextbox_ID, TimeSpan.FromSeconds(10));
                 EnterTextToDropdown(irregularityTextbox_ID, "Booking - Incomplete or inaccurate");
                 Hooks.Hooks.UpdateTest(Status.Pass, "Selected Irregularity Type");
                 Log.Info("Selected Irregularity Type");

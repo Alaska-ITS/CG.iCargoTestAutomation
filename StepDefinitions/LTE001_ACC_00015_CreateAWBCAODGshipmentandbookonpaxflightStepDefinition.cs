@@ -25,8 +25,14 @@ namespace iCargoUIAutomation.StepDefinitions
             this.pageObjectManager = new PageObjectManager(driver);
            
             this.csp = pageObjectManager.GetCreateShipmentPage();
-        } 
+        }
 
+        [When(@"User validates the error message ""([^""]*)"" in the Embargo Details popup")]
+        public void WhenUserValidatesTheErrorMessageInTheEmbargoDetailsPopup(string expectedErrorMessage)
+        {
+            Hooks.Hooks.createNode();
+            csp.ValidateEmbargoPopupErrorMessage(expectedErrorMessage);
+        }
 
 
         [When(@"User enters details for CAO DG shipment with ChargeType ""([^""]*)"",UNID ""([^""]*)"", ProperShipmentName ""([^""]*)"", PackingInstruction ""([^""]*)"",NoOfPkg ""([^""]*)"", NetQtyPerPkg ""([^""]*)"", ReportableQnty ""([^""]*)""")]
