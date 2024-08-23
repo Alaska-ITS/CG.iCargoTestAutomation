@@ -72,8 +72,7 @@ namespace iCargoUIAutomation.Hooks
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
 
-            //browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);
-            browser="chrome"; //hardcoded browser value to "chrome
+            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
             if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
             {
                 driver = new ChromeDriver();
@@ -173,6 +172,14 @@ namespace iCargoUIAutomation.Hooks
                 // Download the existing file if it exists
                 tempLocalPath = azureStorage.DownloadFileFromBlob(excelFileName, tempLocalPath);
                 ExcelFileConfig excelFileConfig = new ExcelFileConfig();
+
+                if (excelFileConfig.IsSheetFilled(tempLocalPath, 1000)) // Set your desired max rows per sheet
+                {
+                    // If filled, generate a new unique file name
+                    string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+                    excelFileName = $"AWBDetails_{timestamp}.xlsx";
+                    tempLocalPath = Path.Combine(Path.GetTempPath(), excelFileName);
+                }
 
                 if (featureName.Contains("CAP018"))
                 {

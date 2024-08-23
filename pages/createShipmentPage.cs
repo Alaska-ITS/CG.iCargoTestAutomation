@@ -1196,6 +1196,7 @@ namespace iCargoUIAutomation.pages
             try
             {
                 ScrollDown();
+
                 Click(drpdwnModeOfPayment_Name);                
                 SelectDropdownByVisibleText(drpdwnModeOfPayment_Name, modeOfPayment);               
                 Hooks.Hooks.UpdateTest(Status.Pass, "Selected Mode of Payment: " + modeOfPayment);
