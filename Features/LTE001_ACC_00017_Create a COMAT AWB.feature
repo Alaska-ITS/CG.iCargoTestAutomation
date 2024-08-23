@@ -32,6 +32,7 @@ Scenario Outline: Create a COMAT AWB
 	
 
 Examples:
+
 	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
 	| ASQXGUEST | 11377       | COMATFF       | SEA    | LAX         | COMAT       | None | NONSCR    | None                | COMAT             | 2     | 59     | PP         | NONE          | CART     | Yes     |
 	| ASQXGUEST | 11377       | COMATFF       | SAN    | JFK         | COMAT       | None | NONSCR    | None                | COMAT             | 2     | 59     | PP         | NONE          | CART     | Yes     |
