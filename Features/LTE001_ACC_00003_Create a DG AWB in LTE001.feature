@@ -34,3 +34,4 @@ Examples:
 	| 11377     | 11377       | 11377         | BOS    | SEA         | PRIORITY    | DGR | NONSCR    | UN1845              | None              | 2     | 65     | PP         | CREDIT        | CART     | 1845 | Dry ice                          | 954                | 0.5          | No             | Yes     |
 	| 11377     | 11377       | 11377         | BOS    | SEA         | PRIORITY    | DGR | NONSCR    | UN3110              | None              | 3     | 99     | PP         | CREDIT        | CART     | 3110 | Organic peroxide type F, solid * | 570                | 0.5          | No             | Yes     |
 
+
