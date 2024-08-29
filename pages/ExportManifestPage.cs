@@ -105,7 +105,9 @@ namespace iCargoUIAutomation.pages
         private By lblWarningPopup_Xpath = By.XPath("//*[@aria-describedby='popupContainer']//span");
         private By framePopupContainerFrame_Id = By.Id("popupContainerFrame");
         private By lblEmbargoDescription_Xpath = By.XPath("//table[@id='showEmbargo']//td[text()='Description']");
+        private By txtEmbargoDescription_Xpath = By.XPath("//table[@id='showEmbargo']//tbody//td[3]");
         private By btnContinueWarningPopup_Xpath = By.XPath("//button[@name='btContinue']");
+        private By btnCloseWarningPopup_Xpath = By.XPath("//button[@name='btClose']");
         private By lblWarningMessageModal_CSS = By.CssSelector(".modal-content .icdialog_message");
         private By btnOkWarningMessageModal_Xpath = By.XPath("//*[@class='modal-footer']/button[text()='Ok']");
         private By btnCancelWarningMessageModal_Xpath = By.XPath("//*[@class='modal-footer']/button[text()='Cancel']");
@@ -341,7 +343,7 @@ namespace iCargoUIAutomation.pages
             {
                 if (AWB.Text.Contains(AWB_Number))
                 {                    
-                    Click(By.XPath("//*[text()='"+ AWB_Number + "']/ancestor::div[@aria-colindex=4]/preceding-sibling::div[@aria-colindex=2]/input"));
+                    ClickElementUsingActions(By.XPath("//*[text()='"+ AWB_Number + "']/ancestor::div[@aria-colindex=4]/preceding-sibling::div[@aria-colindex=2]/input"));
                     Hooks.Hooks.UpdateTest(Status.Info, "Selected AWB: " + AWB_Number);
                     break;
                 }
@@ -380,7 +382,7 @@ namespace iCargoUIAutomation.pages
                     EnterKeys(txtPlannedShipmentFilter_Xpath, Keys.Tab);
                     WaitForElementToBeVisible(By.XPath("//*[text()='" + AWB_Number + "']"), TimeSpan.FromSeconds(5));
                     SelectAWBFromPlannedShipmentList(AWB_Number);
-                    Click(By.XPath("//*[@aria-describedby='uldNumber']/*[@data-uldnumber='" + Cart_Uld_Num + "']"));
+                    ClickElementUsingActions(By.XPath("//*[@aria-describedby='uldNumber']/*[@data-uldnumber='" + Cart_Uld_Num + "']"));
 
                     HandleWarningMessage();
                     break;
@@ -619,6 +621,38 @@ namespace iCargoUIAutomation.pages
             }
         }
 
+        public void ValidateErrorCheckEmbargoPopup(string expectedWarningMessage)
+        {
+            if (IsElementDisplayed(WarningPopup_Xpath))
+            {
+                string popupTitle = GetText(lblWarningPopup_Xpath);
+
+                if (popupTitle == "Check Embargo")
+                {
+                    SwitchToFrame(framePopupContainerFrame_Id);
+                    string actualWarningMessage = GetText(txtEmbargoDescription_Xpath);
+
+                    if (actualWarningMessage.Contains(expectedWarningMessage))
+                    {
+                        Hooks.Hooks.UpdateTest(Status.Info, "Warning message is as expected: " + actualWarningMessage);
+                        Log.Info("Warning message is as expected: " + actualWarningMessage);
+                    }
+                    else
+                    {
+                        Hooks.Hooks.UpdateTest(Status.Fail, "Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+                        Log.Error("Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+                        Assert.Fail("Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+                    }
+
+                    ClickElementUsingActions(btnCloseWarningPopup_Xpath);
+                    WaitForElementToBeInvisible(btnCloseWarningPopup_Xpath, TimeSpan.FromSeconds(3));
+                    SwitchToDefaultContent();
+                    SwitchToManifestFrame();
+                }
+            }
+
+        }
+
         public void ValidateErrorMessageOnPopup(string expectedErrorMessage)
         {
 
@@ -802,6 +836,7 @@ namespace iCargoUIAutomation.pages
                 Hooks.Hooks.UpdateTest(Status.Info, "Warning message is as expected: " + actualWarningMessage);
                 Log.Info("Warning message is as expected: " + actualWarningMessage);
             }
+            
         }
 
         public void CloseOPR344Screen()
@@ -809,6 +844,7 @@ namespace iCargoUIAutomation.pages
             
             WaitForElementToBeVisible(btnCloseManifest_Xpath, TimeSpan.FromSeconds(5));            
             ClickOnElementIfEnabled(btnCloseManifest_Xpath);
+            WaitForElementToBeInvisible(btnCloseManifest_Xpath, TimeSpan.FromSeconds(5));
             Hooks.Hooks.UpdateTest(Status.Info, "Close OPR344 Screen");
             SwitchToDefaultContent();
 

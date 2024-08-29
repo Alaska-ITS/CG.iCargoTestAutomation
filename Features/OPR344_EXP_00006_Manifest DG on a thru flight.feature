@@ -2,13 +2,9 @@
 
 Manifest a Shipment as a CGO or CGODG user
 
-@OPR344
-Scenario Outline: Create a DG AWB in LTE001
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
+@OPR344 @OPR344_EXP_00006
+Scenario Outline: Manifest DG on a thru flight
+	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully
@@ -29,22 +25,7 @@ Scenario Outline: Create a DG AWB in LTE001
 	And User clicks on the ContinueAcceptanceDetails button	
 	And User enters the Screening details for row 1 with screeingMethod as 'ALT Dangerous Goods' and ScreeningResult as 'Pass'
 	And User clicks on the ContinueScreeningDetails button	
-	And User Save Shipment with DG Details & Capture Checksheet with ChargeType "<ChargeType>",UNID "<UNID>", ProperShipmentName "<ProperShipmentName>", PackingInstruction "<PackingInstruction>",NoOfPkg "<Piece>", NetQtyPerPkg "<NetQtyPerPkg>", ReportableQnty "<ReportableQnty>"	
-	Then User logs out from the application
-
-Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination |  ProductCode | SCC | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight |  ChargeType | ModeOfPayment | cartType | UNID | ProperShipmentName | PackingInstruction | NetQtyPerPkg | ReportableQnty |
-	| 10763     | 10763       | 10763         | SEA    | ANC         |  PRIORITY    | DGR | NONSCR    | UN8000              | None              | 1     | 30     |  PP         | CREDIT        | CART     | 8000 | Consumer commodity | Y963               | 0.5          | No             |
-
-
-
-Scenario Outline: Manifest DG on a thru flight
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
-	When User switches station if BaseStation other than "<Origin>"
+	And User Save Shipment with DG Details & Capture Checksheet with ChargeType "<ChargeType>",UNID "<UNID>", ProperShipmentName "<ProperShipmentName>", PackingInstruction "<PackingInstruction>",NoOfPkg "<Piece>", NetQtyPerPkg "<NetQtyPerPkg>", ReportableQnty "<ReportableQnty>"
 	When User enters the screen name as 'OPR344'
 	Then User enters into the  iCargo 'Export Manifest' page successfully
 	When User enters the Booked FlightNumber with ""
@@ -56,8 +37,13 @@ Scenario Outline: Manifest DG on a thru flight
 	And User closes the PrintPDF window
 	And User validates the AWB is "Manifested" in the Export Manifest screen	
 	Then User closes the Export Manifest screen
-	Then User logs out from the application
-
+	
 Examples:
-	| Origin | Destination | Piece | Weight | AWBSectionName  | cartType | 
-	| SEA    | ANC         | 1     | 30     | PlannedShipment | CART     |
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | UNID | ProperShipmentName               | PackingInstruction | NetQtyPerPkg | ReportableQnty | AWBSectionName  | Execute |
+	| 11377     | 11377       | 11377         | BOS    | SEA         | PRIORITY    | DGR | NONSCR    | UN8000              | None              | 1     | 30     | PP         | CREDIT        | CART     | 8000 | Consumer commodity               | Y963               | 0.5          | No             | PlannedShipment | Yes     |
+	| 11377     | 11377       | 11377         | BOS    | SEA         | PRIORITY    | DGR | NONSCR    | UN1845              | None              | 2     | 65     | PP         | CREDIT        | CART     | 1845 | Dry ice                          | 954                | 0.5          | No             | PlannedShipment | Yes     |
+	| 11377     | 11377       | 11377         | BOS    | SEA         | PRIORITY    | DGR | NONSCR    | UN3110              | None              | 3     | 99     | PP         | CREDIT        | CART     | 3110 | Organic peroxide type F, solid * | 570                | 0.5          | No             | PlannedShipment | Yes     |
+
+
+
+

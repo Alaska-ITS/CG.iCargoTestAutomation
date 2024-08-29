@@ -9,6 +9,7 @@ public class PageObjectManager : BasePage
     private CreateShipmentPage csp;
     private MaintainBookingPage mbp;
     private ExportManifestPage emp;
+    private FogsQAPage fogsQAPage;
 
     // Add other page classes as needed
 
@@ -37,6 +38,9 @@ public class PageObjectManager : BasePage
         return emp ?? (emp = new ExportManifestPage(driver));
     }
 
-
+    public FogsQAPage GetFogsQAPage()
+    {
+        return fogsQAPage ?? (fogsQAPage = new FogsQAPage(driver));
+    }
     // Add other getter methods for other page classes as needed
 }

@@ -34,8 +34,16 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User clicks on the Edit ULD button for the pre-build ULD/Cart")]
         public void WhenUserClicksOnTheEditULDButtonForThePre_BuildULDCart()
         {
-            Hooks.Hooks.createNode();
-            emp.ClickOnEditULDButton();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.ClickOnEditULDButton();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
         
 
@@ -43,8 +51,16 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User types in the AWB number and pieces ""([^""]*)"" inside the pre-built ULD/Cart")]
         public void WhenUserTypesInTheAWBNumberAndPiecesInsideThePre_BuiltULDCart(string piecesToAssign)
         {
-            Hooks.Hooks.createNode();
-            csp.AssignAWBToPreBuiltCartByAWBTypingExportManifest(piecesToAssign);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                csp.AssignAWBToPreBuiltCartByAWBTypingExportManifest(piecesToAssign);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+           
         }
 
 

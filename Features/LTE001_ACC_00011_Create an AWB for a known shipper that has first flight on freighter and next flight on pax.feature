@@ -26,7 +26,7 @@ Scenario Outline: Create an AWB for a known shipper that has first flight on fre
 	And User clicks on the ContinueScreeningDetails button
 	And User checks the AWB_Verified checkbox
 	And User saves all the details & handles all the popups
-	#And User validates the AWB is "EXECUTED"
+	
 	
 
 Examples:

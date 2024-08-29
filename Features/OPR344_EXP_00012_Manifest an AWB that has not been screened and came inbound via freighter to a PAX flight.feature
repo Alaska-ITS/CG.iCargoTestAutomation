@@ -2,13 +2,9 @@
 
 Manifest a Shipment as a CGO or CGODG user
 
-@OPR344
-Scenario Outline: Create and accept an AWB for a known shipper booked on freighter flights without screening details
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
+@OPR344 @OPR344_EXP_00012
+Scenario Outline: Manifest an AWB that has not been screened and came inbound via freighter to a PAX flight
+	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully
@@ -29,22 +25,7 @@ Scenario Outline: Create and accept an AWB for a known shipper booked on freight
 	And User clicks on the ContinueAcceptanceDetails button
 	And User clicks on the ContinueScreeningDetails button
 	And User checks the AWB_Verified checkbox
-	And User saves all the details with ChargeType "<ChargeType>"
-	And User closes the LTE screen
-	Then User logs out from the application
-
-Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType |
-	| 10763     | 10763       | 10763         | ANC    | OME         | GENERAL     | None | 0316      | None                | None              | 2     | 59     | CC         | None          | CART     |
-
-
-Scenario Outline: Manifest an AWB that has not been screened and came inbound via freighter to a PAX flight
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
-	When User switches station if BaseStation other than "<Origin>"
+	And User saves all the details & handles all the popups
 	When User enters the screen name as 'OPR344'
 	Then User enters into the  iCargo 'Export Manifest' page successfully
 	When User enters the Booked FlightNumber with "<FlightNumber>"
@@ -52,10 +33,11 @@ Scenario Outline: Manifest an AWB that has not been screened and came inbound vi
 	And User clicks on the List button to fetch the Booked Shipment
 	And User creates new ULD/Cart in Assigned Shipment with cartType "<cartType>" and pou "<Destination>"
 	And User filterouts the Booked AWB from '<AWBSectionName>' and Created ULD_Cart
-	And User validates the error message 'SCREENING MUST BE COMPLETED FOR MOVEMENT ON PAX AIRCRAFT'	
+	And User validates the error message 'SCREENING MUST BE COMPLETED FOR MOVEMENT ON PAX AIRCRAFT'
 	Then User closes the Export Manifest screen
-	Then User logs out from the application
 
 Examples:
-	| Origin | Destination | FlightNumber | Piece | Weight | AWBSectionName | cartType |
-	| ANC    | OME         | 155           | 2     | 59     | LyingList      | CART     |
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | FlightNumber | AWBSectionName | cartType | Execute |
+	| 11377     | 11377       | 11377         | ANC    | OME         | GENERAL     | None | NONSCR    | None                | None              | 2     | 59     | CC         | None          | 155          | LyingList      | CART     | Yes     |
+
+

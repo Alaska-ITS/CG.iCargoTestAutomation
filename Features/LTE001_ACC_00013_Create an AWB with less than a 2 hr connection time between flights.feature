@@ -27,11 +27,6 @@ Scenario Outline: Create an AWB with less than a 2 hr connection time between fl
 	And User clicks on the ContinueScreeningDetails button
 	And User checks the AWB_Verified checkbox
 	And User saves the shipment details validate error message as "Minimum connection time not satisfied" and capture AWB number
-	#And User clicks on the save button
-	#And User handles the error popups with errorType as 'Embargo'
-	#And User validates the popped up error message as "Minimum connection time not satisfied"
-	#And User closes the LTE screen
-	#Then User logs out from the application
 
 Examples:
 	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |

@@ -91,6 +91,7 @@ namespace iCargoUIAutomation.pages
         {
             try
             {
+                SwitchToDefaultContent();
                 EnterText(txt_ScreenName_Css, screenName);
                 WaitForElementToBeClickable(txt_ScreenName_Css, TimeSpan.FromSeconds(5));
                 EnterKeys(txt_ScreenName_Css, Keys.Enter);
@@ -129,7 +130,8 @@ namespace iCargoUIAutomation.pages
                 var secrets = keyVault.GetSecrets();                                
                 WaitForElementToBeVisible(userName_Id, TimeSpan.FromSeconds(10));
 
-                role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);                                 
+                role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);    
+                
                 if (role.ToUpper() == "CCC")
                 {
                     EnterText(userName_Id, secrets["CCC_Username"]);

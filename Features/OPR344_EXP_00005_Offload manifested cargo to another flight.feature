@@ -1,13 +1,9 @@
 ﻿Feature: OPR344_EXP_00005_Offload manifested cargo to another flight
 Manifest a Shipment as a CGO or CGODG user
 
-@OPR344
-Scenario Outline: Create a CC AWB in LTE001 for a known shipper
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
+@OPR344 @OPR344_EXP_00005
+Scenario Outline: Offload manifested cargo to another flight
+	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully
@@ -29,23 +25,7 @@ Scenario Outline: Create a CC AWB in LTE001 for a known shipper
 	And User enters the Screening details for row 1 with screeingMethod as 'Transfer Manifest Verified' and ScreeningResult as 'Pass'
 	And User clicks on the ContinueScreeningDetails button
 	And User checks the AWB_Verified checkbox
-	And User clicks on the save button & handle Payment Portal
 	And User saves all the details & handles all the popups
-	And User closes the LTE screen
-	Then User logs out from the application
-
-Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType |
-	| 10763     | 10763       | 10763         | SEA    | JFK         | GENERAL     | None | 0316      | None                | None              | 2     | 59     | CC         | None          | CART     |
-
-
-Scenario Outline: Offload manifested cargo to another flight
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
-	When User switches station if BaseStation other than "<Origin>"
 	When User enters the screen name as 'OPR344'
 	Then User enters into the  iCargo 'Export Manifest' page successfully
 	When User enters the Booked FlightNumber with ""
@@ -66,9 +46,10 @@ Scenario Outline: Offload manifested cargo to another flight
 	And User clicks on the List button to fetch the Booked Shipment
 	And User clicks on the Manifest button
 	And User closes the PrintPDF window
-	Then User closes the Export Manifest screen
-	Then User logs out from the application
+	Then User closes the Export Manifest screen	
 
 Examples:
-	| Origin | Destination | cartType | AWBSectionName  | NewFlightNumber |
-	| SEA    | JFK         | CART     | PlannedShipment | 26              |
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | AWBSectionName  | NewFlightNumber | cartType |
+	| 11377     | 11377       | 11377         | SEA    | JFK         | GENERAL     | None | 0316      | None                | None              | 2     | 59     | CC         | None          | PlannedShipment | 26              | CART     |
+
+

@@ -2,13 +2,9 @@
 
 Manifest a Shipment as a CGO or CGODG user
 
-@OPR344
-Scenario Outline: Booking Unknown Shipper on a pax flight
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
+@OPR344 @OPR344_EXP_00001
+Scenario Outline: Manifest an AWB for an Unknown Shipper on a pax flight
+	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully
@@ -29,23 +25,7 @@ Scenario Outline: Booking Unknown Shipper on a pax flight
 	And User clicks on the ContinueAcceptanceDetails button
 	And User clicks on the ContinueScreeningDetails button
 	And User checks the AWB_Verified checkbox
-	And User saves the shipment details and capture AWB number
-	And User closes the LTE screen
-	Then User logs out from the application
-	
-
-Examples:
-	| AgentCode | UnknownShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType |
-	| ASQXGUEST | C1001              | 10763         | SEA    | ANC         | GENERAL     | None | 0316      | None                | None              | 2     | 59     | CC         | None          | CART     |
-
-
-Scenario Outline: Manifest an AWB for Unknown shipper
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
-	When User switches station if BaseStation other than "<Origin>"
+	And User saves the shipment details validate error message as "The Shipper does not have a Valid Certificate Type" and capture AWB number
 	When User enters the screen name as 'OPR344'
 	Then User enters into the  iCargo 'Export Manifest' page successfully
 	When User enters the Booked FlightNumber with ""
@@ -55,8 +35,13 @@ Scenario Outline: Manifest an AWB for Unknown shipper
 	And User filterouts the Booked AWB from '<AWBSectionName>' and Created ULD_Cart
 	And User validates the error popover message as "AWB is not accepted"
 	Then User closes the Export Manifest screen
-	Then User logs out from the application
+	
 
 Examples:
-	| Origin | Destination | Piece | Weight | AWBSectionName  | cartType |
-	| SEA    | ANC         | 2     | 59     | PlannedShipment | CART     |
+	| AgentCode | UnknownShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | AWBSectionName  | Execute |
+	| ASQXGUEST | C1001              | 10763         | SEA    | JFK         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | CC         | None          | CART     | PlannedShipment | Yes     |
+	| ASQXGUEST | C1001              | 10763         | SEA    | JFK         | PRIORITY    | None | 2199      | None                | None              | 8     | 360    | CC         | None          | CART     | PlannedShipment | Yes     |
+	
+
+
+
