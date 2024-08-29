@@ -30,8 +30,15 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User selects flights having Minimum Handling / Connection Time Fails restriction")]
         public void WhenUserSelectsFlightsHavingMinimumHandlingConnectionTimeFailsRestriction()
         {
-            Hooks.Hooks.createNode();
-            csp.SelectFlightWithRestriction();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                csp.SelectFlightWithRestriction();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
 
 

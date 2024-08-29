@@ -34,8 +34,16 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User filterouts the Booked AWB from '([^']*)' Split And Assign with Pieces ""([^""]*)""")]
         public void WhenUserFilteroutsTheBookedAWBFromSplitAndAssign(string awbSectionName, string splitPieces)
         {
-            Hooks.Hooks.createNode();
-            csp.FilterSplitAndAssignAWBToULDExportManifest(awbSectionName, splitPieces);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                csp.FilterSplitAndAssignAWBToULDExportManifest(awbSectionName, splitPieces);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
 
         

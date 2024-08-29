@@ -30,19 +30,51 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"USer adds another screening line")]
         public void WhenUSerAddsAnotherScreeningLine()
         {
-            Hooks.Hooks.createNode();
-            Log.Info("Step: Adding another screening line");
-            csp.AddAnotherScreeningLine();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                Log.Info("Step: Adding another screening line");
+                csp.AddAnotherScreeningLine();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
        
 
         [When(@"User saves all the details with ChargeType ""([^""]*)"" and validates the popped up error message as ""([^""]*)""")]
         public void WhenUserSavesAllTheDetailsWithChargeTypeAndValidatesThePoppedUpErrorMessageAs(string chargeType, string expectedWarning)
         {
-            Hooks.Hooks.createNode();
-            Log.Info("Step: Saving all the details with ChargeType");
-            csp.SaveDetailsWithChargeType(chargeType, expectedWarning);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                Log.Info("Step: Saving all the details with ChargeType");
+                csp.SaveDetailsWithChargeType(chargeType, expectedWarning);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
+
+        [When(@"User saves all the details with ChargeType ""([^""]*)""")]
+        public void WhenUserSavesAllTheDetailsWithChargeType(string chargeType)
+        {
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                Log.Info("Step: Saving all the details with ChargeType");
+                csp.SaveWithChargeType(chargeType);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+        }
+
+
+
 
 
     }

@@ -77,9 +77,11 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("iCargo Login and Create New Shipment")]
         [NUnit.Framework.CategoryAttribute("CAP018")]
         [NUnit.Framework.CategoryAttribute("CAP018_BKG_00001")]
-        [NUnit.Framework.TestCaseAttribute("ANC", "HNL", "PRIORITY", "2199", "10", "360", "No", "10763", "10763", "10763", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "Yes", "10763", "10763", "10763", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "56", "No", "10763", "10763", "10763", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "HNL", "PRIORITY", "2199", "10", "360", "Yes", "10763", "10763", "10763", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "BOI", "GENERAL", "NONSCR", "13", "775", "Yes", "10763", "10763", "10763", null)]
+        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "56", "Yes", "10763", "10763", "10763", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "MCO", "PRIORITY", "NONSCR", "4", "180", "Yes", "10763", "10763", "10763", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "DFW", "GENERAL", "NONSCR", "31", "4340", "Yes", "10763", "10763", "10763", null)]
         public virtual void ICargoLoginAndCreateNewShipment(string origin, string destination, string productCode, string commodity, string piece, string weight, string execute, string agentCode, string shipperCode, string consigneeCode, string[] exampleTags)
         {
             string[] @__tags = new string[] {

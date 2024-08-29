@@ -32,54 +32,96 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User enters an AWB ""([^""]*)"" of a PreBooked Shipment")]
         public void WhenUserEntersAnAWBOfAPreBookedShipment(string preBookedAWB)
         {
-            Hooks.Hooks.createNode();
-            Log.Info("Step: Entering the AWB of a PreBooked Shipment");
-            preBookedAWB = preBookedAWB.Split("-")[1];
-            csp.SwitchToLTEContentFrame();
-            csp.ClickOnAwbTextBox();
-            csp.EnterAWBTextBox(preBookedAWB);
-            csp.ClickOnListButton();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                Log.Info("Step: Entering the AWB of a PreBooked Shipment");
+                preBookedAWB = preBookedAWB.Split("-")[1];
+                csp.SwitchToLTEContentFrame();
+                csp.ClickOnAwbTextBox();
+                csp.EnterAWBTextBox(preBookedAWB);
+                csp.ClickOnListButton();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
 
         [When(@"User opens & verifies the Participant Details")]
         public void WhenUserOpensVerifiesTheParticipantDetails()
         {
-            Hooks.Hooks.createNode();
-            Log.Info("Step: Opening and Verifying the Participant Details");
-            csp.OpenAndVerifyParticipants();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                Log.Info("Step: Opening and Verifying the Participant Details");
+                csp.OpenAndVerifyParticipants();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
 
         [When(@"User opens & verifies the Shipment Details")]
         public void WhenUserOpensVerifiesTheShipmentDetails()
         {
-            Hooks.Hooks.createNode();
-            Log.Info("Step: Opening and Verifying the Shipment Details");
-            csp.OpenAndVerifyShipments();            
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                Log.Info("Step: Opening and Verifying the Shipment Details");
+                csp.OpenAndVerifyShipments();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
 
         [When(@"User opens & verifies the Flight Details")]
         public void WhenUserOpensVerifiesTheFlightDetails()
         {
-            Hooks.Hooks.createNode();
-            Log.Info("Step: Opening and Verifying the Flight Details");
-            csp.OpenAndVerifyFlightDetails();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                Log.Info("Step: Opening and Verifying the Flight Details");
+                csp.OpenAndVerifyFlightDetails();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
            
         }
 
         [When(@"user opens the Charge Details")]
         public void WhenUserOpensTheChargeDetails()
         {
-            Hooks.Hooks.createNode();
-            Log.Info("Step: Opening the Charge Details");
-            csp.OpenAndVerifyChargeDetails();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                Log.Info("Step: Opening the Charge Details");
+                csp.OpenAndVerifyChargeDetails();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
 
         [When(@"User enters the Acceptance details with PreBooked pieces")]
         public void WhenUserEntersTheAcceptanceDetailsWithPreBookedPieces()
         {
-            Hooks.Hooks.createNode();
-            Log.Info("Step: Entering the Acceptance details with PreBooked pieces");
-            csp.EnterAcceptanceDetails();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                Log.Info("Step: Entering the Acceptance details with PreBooked pieces");
+                csp.EnterAcceptanceDetails();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
 
     }

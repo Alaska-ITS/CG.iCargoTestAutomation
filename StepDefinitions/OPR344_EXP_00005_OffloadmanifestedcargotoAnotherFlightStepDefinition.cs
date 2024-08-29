@@ -34,37 +34,77 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User expands the cart/uld to check the awb")]
         public void WhenUserExpandsTheCartUldToCheckTheAwb()
         {
-            Hooks.Hooks.createNode();
-            emp.ClickOnCartULDExpandButton();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.ClickOnCartULDExpandButton();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
 
         [When(@"User cliks on the offload button to open the offload popup")]
         public void WhenUserCliksOnTheOffloadButtonToOpenTheOffloadPopup()
         {
-            Hooks.Hooks.createNode();
-            emp.ClickOnOffloadAWBButton();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.ClickOnOffloadAWBButton();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+           
         }
 
         [When(@"User enters the details to move to another NewFlightNumber ""([^""]*)"" and POU ""([^""]*)""")]
         public void WhenUserEntersTheDetailsToMoveToAnotherNewFlightNumber(string newFlightNum, string POUoffload)
         {
-            Hooks.Hooks.createNode();
-            emp.FillOffloadFormAndMoveToAnotherFlight(newFlightNum, POUoffload);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.FillOffloadFormAndMoveToAnotherFlight(newFlightNum, POUoffload);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
 
         [When(@"User clicks on the orange pencil to edit the manifest")]
         public void WhenUserClicksOnTheOrangePencilToEditTheManifest()
         {
-            Hooks.Hooks.createNode();
-            emp.ClickOrangePencilToEditManifest();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.ClickOrangePencilToEditManifest();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
 
         [When(@"User enters the new flight number ""([^""]*)"" to move the offloaded shipment")]
         public void WhenUserEntersTheNewFlightNumberToMoveTheOffloadedShipment(string newFlightNum)
         {
-            Hooks.Hooks.createNode();
-            emp.ClickOnFlightTextBox();
-            csp.EnterFlightinExportManifest(newFlightNum);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.ClickOnFlightTextBox();
+                csp.EnterFlightinExportManifest(newFlightNum);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+           
         }
 
 

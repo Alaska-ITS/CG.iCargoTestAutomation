@@ -34,33 +34,65 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User enters the Booked FlightNumber with ""([^""]*)""")]
         public void WhenUserEntersTheBookedFlightNumberWith(string fltnumber)
         {
-            Hooks.Hooks.createNode();
-            emp.SwitchToManifestFrame();
-            emp.ClickOnFlightTextBox();
-            csp.EnterFlightinExportManifest(fltnumber);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.SwitchToManifestFrame();
+                emp.ClickOnFlightTextBox();
+                csp.EnterFlightinExportManifest(fltnumber);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+
         }
 
 
         [When(@"User enters Booked ShipmentDate")]
         public void WhenUserEntersBookedShipmentDate()
         {
-            Hooks.Hooks.createNode();
-            csp.EnterFlightDateExportManifest();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                csp.EnterFlightDateExportManifest();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+           
         }
 
         [When(@"User clicks on the List button to fetch the Booked Shipment")]
         public void WhenUserClicksOnTheListButtonToFetchTheBookedShipment()
         {
-            Hooks.Hooks.createNode();
-            emp.ClickOnListButton();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.ClickOnListButton();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
        
 
         [When(@"User creates new ULD/Cart in Assigned Shipment with cartType ""([^""]*)"" and pou ""([^""]*)""")]
         public void WhenUserCreatesNewULDCartInAssignedShipmentWithCartTypeAndPou(string cartType, string pou)
         {
-            Hooks.Hooks.createNode();
-            csp.CreateNewULDCartExportManifest(cartType, pou);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                csp.CreateNewULDCartExportManifest(cartType, pou);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
 
 
@@ -68,51 +100,109 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User filterouts the Booked AWB from '([^']*)' and Created ULD_Cart")]
         public void WhenUserFilteroutsTheBookedAWBFromAndCreatedULD_Cart(string awbSectionName)
         {
-            Hooks.Hooks.createNode();
-            csp.FilterOutAWBULDInExportManifest(awbSectionName);
-        }   
-        
-
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                csp.FilterOutAWBULDInExportManifest(awbSectionName);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+           
+        }          
 
 
 
         [When(@"User clicks on the Manifest button")]
         public void WhenUserClicksOnTheManifestButton()
         {
-           emp.clickOnManifestButton();
+           if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.clickOnManifestButton();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+           
         }
 
         [When(@"User generates the Manifest PDF from the PrintPDF window")]
         public void WhenUserGeneratesTheManifestPDFFromThePrintPDFWindow()
         {
-            emp.PrintManifestWindow();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.PrintManifestWindow();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
 
         [When(@"User closes the PrintPDF window")]
         public void WhenUserClosesThePrintPDFWindow()
         {
-            emp.ClosePrintPDFWindow();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.ClosePrintPDFWindow();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
 
         [When(@"User validates the AWB is ""([^""]*)"" in the Export Manifest screen")]
         public void WhenUserValidatesTheAWBIsInTheExportManifestScreen(string awbStatus)
         {
-            emp.ValidateAWBStatusInExportManifest(awbStatus);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.ValidateAWBStatusInExportManifest(awbStatus);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+           
         }
 
 
         [Then(@"User closes the Export Manifest screen")]
         public void ThenUserClosesTheOPRScreen()
         {
-           emp.CloseOPR344Screen();
+           if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.CloseOPR344Screen();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
 
         [When(@"User validates the error popover message as ""([^""]*)""")]
         public void WhenUserValidatesTheErrorPopoverMessageAs(string expectedWarnMsg)
         {
-            Log.Info("Step: Validating the popped up error message");           
-            emp.ValidateOPR344WarningMessage(expectedWarnMsg);
-
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.ValidateOPR344WarningMessage(expectedWarnMsg);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
     }
 }
