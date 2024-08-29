@@ -10,9 +10,6 @@ trigger:
     include:
     - refs/heads/Test_Execution
 name: $(date:yyyyMMdd)$(rev:.r)
-variables:
-  BROWSER: $(BROWSER)
-  ROLE_GROUP: $(ROLE_GROUP)
 resources:
   repositories:
   - repository: self
@@ -146,7 +143,7 @@ jobs:
 
         !**\obj\**
       searchFolder: $(System.ArtifactsDirectory)
-      testFiltercriteria: TestCategory=CAP018_BKG_00007
+      testFiltercriteria: TestCategory=CAP018_BKG_00001
       testRunTitle: iCargo.QA_$(Date:yyyyMMdd)
       rerunFailedTests: true
       rerunFailedThreshold: 91
