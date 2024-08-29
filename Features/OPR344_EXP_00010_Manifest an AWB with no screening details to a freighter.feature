@@ -2,13 +2,9 @@
 
 Manifest a Shipment as a CGO or CGODG user
 
-@OPR344
-Scenario Outline: Create and accept an AWB for a known shipper booked on freighter flights without screening details
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
+@OPR344 @OPR344_EXP_00010
+Scenario Outline: Manifest an AWB with no screening details to a freighter
+	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully
@@ -29,22 +25,7 @@ Scenario Outline: Create and accept an AWB for a known shipper booked on freight
 	And User clicks on the ContinueAcceptanceDetails button
 	And User clicks on the ContinueScreeningDetails button
 	And User checks the AWB_Verified checkbox
-	And User saves all the details with ChargeType "<ChargeType>"	
-	And User closes the LTE screen
-	Then User logs out from the application
-
-Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType |
-	| 10763     | 10763       | 10763         | SEA    | ANC         | GENERAL     | None | 0316      | None                | None              | 2     | 59     | CC         | None          | CART     |
-
-
-Scenario Outline: Manifest an AWB with no screening details to a freighter
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
-	When User switches station if BaseStation other than "<Origin>"
+	And User saves all the details & handles all the popups		
 	When User enters the screen name as 'OPR344'
 	Then User enters into the  iCargo 'Export Manifest' page successfully
 	When User enters the Booked FlightNumber with ""
@@ -55,9 +36,9 @@ Scenario Outline: Manifest an AWB with no screening details to a freighter
 	And User clicks on the Manifest button
 	And User closes the PrintPDF window
 	And User validates the AWB is "Manifested" in the Export Manifest screen	
-	Then User closes the Export Manifest screen
-	Then User logs out from the application
+	Then User closes the Export Manifest screen	
 
 Examples:
-	| Origin | Destination | Piece | Weight | AWBSectionName  | cartType | 
-	| SEA    | ANC         | 2     | 59     | PlannedShipment | CART     | 
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | AWBSectionName  | cartType | Execute |
+	| 11377     | 11377       | 11377         | SEA    | ANC         | GENERAL     | None | NONSCR      | None                | None              | 2     | 59     | CC         | None          | PlannedShipment | CART     | Yes     |
+

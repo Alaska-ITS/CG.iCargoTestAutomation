@@ -2,13 +2,9 @@
 
 Manifest a Shipment as a CGO or CGODG user
 
-@OPR344
-Scenario Outline: Create a CC AWB in LTE001 for a known shipper
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
+@OPR344 @OPR344_EXP_00014
+Scenario Outline: Assign an AWB to a pre built cart by typing in the AWB number
+	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully
@@ -20,7 +16,7 @@ Scenario Outline: Create a CC AWB in LTE001 for a known shipper
 	And User enters the Shipment details with Origin "<Origin>", Destination "<Destination>", ProductCode "<ProductCode>", SCCCode "<SCC>", Commodity "<Commodity>", ShipmentDescription"<ShipmentDescription>", ServiceCargoClass "<ServiceCargoClass>", Piece "<Piece>", Weight "<Weight>"
 	And User clicks on the ContinueShipment button
 	And User clicks on the Select Flight Button
-	And User selects an "Combination" flight	
+	And User selects an "Combination" flight
 	And User clicks on the ContinueFlightDetails button
 	And User enters the Charge details with ChargeType "<ChargeType>" and ModeOfPayment "<ModeOfPayment>"
 	And User clicks on the CalculateCharges button
@@ -30,23 +26,7 @@ Scenario Outline: Create a CC AWB in LTE001 for a known shipper
 	And User enters the Screening details for row 1 with screeingMethod as 'Transfer Manifest Verified' and ScreeningResult as 'Pass'
 	And User clicks on the ContinueScreeningDetails button
 	And User checks the AWB_Verified checkbox
-	And User clicks on the save button & handle Payment Portal
 	And User saves all the details & handles all the popups
-	And User closes the LTE screen
-	Then User logs out from the application
-
-Examples:
-	| AgentCode | ShipperCode | ConsigneeCode| Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType |
-	| 10763     | 10763       | 10763        | SEA    | JFK         | GENERAL     | None | 0316      | None                | None              | 2     | 59     | CC         | None          | CART     |
-
-
-Scenario Outline: Type in the AWB number and assign to a pre-built cart
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
-	When User switches station if BaseStation other than "<Origin>"
 	When User enters the screen name as 'OPR344'
 	Then User enters into the  iCargo 'Export Manifest' page successfully
 	When User enters the Booked FlightNumber with ""
@@ -57,10 +37,11 @@ Scenario Outline: Type in the AWB number and assign to a pre-built cart
 	And User types in the AWB number and pieces "<Piece>" inside the pre-built ULD/Cart
 	And User clicks on the Manifest button
 	And User closes the PrintPDF window
-	And User validates the AWB is "Manifested" in the Export Manifest screen	
+	And User validates the AWB is "Manifested" in the Export Manifest screen
 	Then User closes the Export Manifest screen
-	Then User logs out from the application
 
 Examples:
-	| Origin | Destination | Piece | Weight | AWBSectionName  | cartType | FlightNumber |
-	| SEA    | JFK         | 2     | 59     | PlannedShipment | CART     | 675          |
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | AWBSectionName  | cartType | Execute |
+	| 11377     | 11377       | 11377         | SEA    | JFK         | GENERAL     | None | NONSCR    | None                | None              | 2     | 59     | CC         | None          | PlannedShipment | CART     | Yes     |
+
+

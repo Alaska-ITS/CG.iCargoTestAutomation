@@ -30,24 +30,45 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User validates the error message ""([^""]*)"" in the Embargo Details popup")]
         public void WhenUserValidatesTheErrorMessageInTheEmbargoDetailsPopup(string expectedErrorMessage)
         {
-            Hooks.Hooks.createNode();
-            csp.ValidateEmbargoPopupErrorMessage(expectedErrorMessage);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                csp.ValidateEmbargoPopupErrorMessage(expectedErrorMessage);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
 
 
         [When(@"User enters details for CAO DG shipment with ChargeType ""([^""]*)"",UNID ""([^""]*)"", ProperShipmentName ""([^""]*)"", PackingInstruction ""([^""]*)"",NoOfPkg ""([^""]*)"", NetQtyPerPkg ""([^""]*)"", ReportableQnty ""([^""]*)""")]
         public void UserEnterDetailsForCAODGShipment(string chargetype, string unid, string propershipmntname, string pi, string noOFPkg, string netqtyperpkg, string reportable)
         {
-            Hooks.Hooks.createNode();
-            csp.EnterCAODGDetails(chargetype, unid, propershipmntname, pi, noOFPkg, netqtyperpkg, reportable);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                csp.EnterCAODGDetails(chargetype, unid, propershipmntname, pi, noOFPkg, netqtyperpkg, reportable);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
         
 
         [When(@"User saves the CAO DG shipment")]
         public void WhenUserSavesTheCAODGShipment()
         {
-            Hooks.Hooks.createNode();
-            csp.SaveCAODGshipment();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                csp.SaveCAODGshipment();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
 
 

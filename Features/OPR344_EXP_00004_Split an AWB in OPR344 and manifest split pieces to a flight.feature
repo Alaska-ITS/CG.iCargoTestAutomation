@@ -2,13 +2,9 @@
 
 Manifest a Shipment as a CGO or CGODG user
 
-@OPR344
-Scenario Outline: Create a CC AWB in LTE001 for a known shipper
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
+@OPR344 @OPR344_EXP_00004
+Scenario Outline: Split an AWB in OPR344 and manifest split pieces to a flight
+	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully
@@ -30,23 +26,7 @@ Scenario Outline: Create a CC AWB in LTE001 for a known shipper
 	And User enters the Screening details for row 1 with screeingMethod as 'Transfer Manifest Verified' and ScreeningResult as 'Pass'
 	And User clicks on the ContinueScreeningDetails button
 	And User checks the AWB_Verified checkbox
-	And User clicks on the save button & handle Payment Portal
 	And User saves all the details & handles all the popups
-	And User closes the LTE screen
-	Then User logs out from the application
-
-Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType |
-	| 10763     | 10763       | 10763         | SEA    | JFK         | GENERAL     | None | 0316      | None                | None              | 2     | 59     | CC         | None          | CART     |
-
-
-Scenario Outline: Split an AWB in OPR344 and manifest split pieces to a flight
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
-	When User switches station if BaseStation other than "<Origin>"
 	When User enters the screen name as 'OPR344'
 	Then User enters into the  iCargo 'Export Manifest' page successfully
 	When User enters the Booked FlightNumber with ""
@@ -58,8 +38,9 @@ Scenario Outline: Split an AWB in OPR344 and manifest split pieces to a flight
 	And User closes the PrintPDF window
 	And User validates the AWB is "Manifested" in the Export Manifest screen
 	Then User closes the Export Manifest screen
-	Then User logs out from the application
 
 Examples:
-	| Origin | Destination | Piece | Weight | AWBSectionName  | cartType | FlightNumber | SplitPieces |
-	| SEA    | JFK         | 2     | 59     | PlannedShipment | CART     | 675          | 1           |
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | AWBSectionName  | SplitPieces | cartType | Execute |
+	| 11377     | 11377       | 11377         | SAN    | JFK         | GENERAL     | None | 0316      | None                | None              | 2     | 234    | CC         | None          | PlannedShipment | 1           | CART     | Yes     |
+	| 11377     | 11377       | 11377         | ANC    | HNL         | PRIORITY    | None | 2199      | None                | None              | 10    | 189    | CC         | None          | PlannedShipment | 1           | CART     | Yes     |
+

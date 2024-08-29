@@ -729,8 +729,7 @@ namespace iCargoUIAutomation.pages
                 }
                 else if (fieldToUpdate.Equals("destination"))
                 {
-                    //Click(btnTrashIcon_Css);
-                    //ClickElementUsingActions(btnTrashIcon_Css);
+                    
                     DoubleClick(btnTrashIcon_Css);
                     Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Trash Icon to delete flight details");
                     WaitForTextToBeCleared(txtFlightNo_Name, TimeSpan.FromSeconds(10));
@@ -1127,7 +1126,7 @@ namespace iCargoUIAutomation.pages
                     ClickElementUsingJavaScript(btnCalculateCharges_Name);
                     Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Calculate Charge button");
                     Thread.Sleep(1000);
-                    //WaitUntilTextboxIsNotEmpty(txtIATACharge_Xpath);
+                    
                 }
 
             }
@@ -1458,6 +1457,7 @@ namespace iCargoUIAutomation.pages
                         WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
                         ClickElementUsingActions(btnClear_Id);
                         Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
+                        SwitchToDefaultContent();
                         break;
                     }
 
@@ -1474,7 +1474,7 @@ namespace iCargoUIAutomation.pages
                             Click(btnContinueEmbargo_Xpath);
                             Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
                         }
-                        //WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore + 1);
+                       
                         int noOfWindowsAfter = GetNumberOfWindowsOpened();
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
@@ -1532,6 +1532,51 @@ namespace iCargoUIAutomation.pages
 
         }
 
+        public string SaveWithChargeType(string chargeType)
+        {
+            int retryCount = 0;
+            const int maxRetries = 3; // Maximum number of retries
+            this.chargeType = chargeType;
+            try
+            {
+
+                int noOfWindowsBefore = GetNumberOfWindowsOpened();
+                Click(btnSaveShipment_Name);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Save button");
+                if (IsElementDisplayed(lblEmbargoDetails_Xpath, 1))
+                {
+                    Click(btnContinueEmbargo_Xpath);
+                    Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
+                }
+                WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore + 1);
+                int noOfWindowsAfter = GetNumberOfWindowsOpened();
+                if (noOfWindowsAfter > noOfWindowsBefore)
+                {
+                    SwitchToLastWindow();
+                    RefreshPage();
+                    ppp.HandlePaymentInPaymentPortal(chargeType);
+                    SwitchToLastWindow();
+                    SwitchToLTEContentFrame();
+                }                
+
+            }
+            catch (StaleElementReferenceException)
+            {
+                if (retryCount >= maxRetries)
+                {
+                    throw; // Rethrow the exception if max retries are exceeded
+                }
+                log.Info($"Encountered StaleElementReferenceException, retrying... Attempt {retryCount + 1}");
+                retryCount++;
+                SaveWithChargeType(chargeType); // Retry the function
+            }
+
+            awb_num = captureAWBNumber();
+            Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);                      
+            return awb_num;
+
+        }
+
         public string SaveDetailsWithChargeType(string chargeType, string expectedWarningMessage)
         {
 
@@ -1561,7 +1606,6 @@ namespace iCargoUIAutomation.pages
                 Hooks.Hooks.UpdateTest(Status.Fail, "Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
                 Log.Error("Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
 
-
             }
             else
             {
@@ -1573,7 +1617,7 @@ namespace iCargoUIAutomation.pages
             ClickElementUsingActions(btnOrangePencilEditBooking_Css);
             WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
             ClickElementUsingActions(btnClear_Id);
-            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");            
+            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
             return awb_num;
 
         }
@@ -1632,6 +1676,7 @@ namespace iCargoUIAutomation.pages
             WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
             ClickElementUsingActions(btnClear_Id);
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
+            SwitchToDefaultContent();
             return awb_num;
         }
 
@@ -1709,6 +1754,7 @@ namespace iCargoUIAutomation.pages
 
         public string captureAWBNumber()
         {            
+            WaitForElementToBeVisible(lblAWBNo_Css, TimeSpan.FromSeconds(5));
             return GetText(lblAWBNo_Css);
         }
 

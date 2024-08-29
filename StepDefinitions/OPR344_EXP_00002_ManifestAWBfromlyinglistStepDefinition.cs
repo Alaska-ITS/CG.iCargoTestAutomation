@@ -34,65 +34,138 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User clicks on the lying list")]
         public void WhenUserClicksOnTheLyingList()
         {
-            Hooks.Hooks.createNode();
-            emp.ClickOnLyingList();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.ClickOnLyingList();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
 
         [When(@"User clicks on the filter button")]
         public void WhenUserClicksOnTheFilterButton()
         {
-            Hooks.Hooks.createNode();
-            emp.ClickOnLyingListFilter();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.ClickOnLyingListFilter();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
 
         [When(@"User selects ""([^""]*)"" from the Ready For Carriage dropdown")]
         public void WhenUserSelectsFromTheReadyForCarriageDropdown(string option)
         {
-            Hooks.Hooks.createNode();
-            emp.SelectReadyForCarriage(option);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.SelectReadyForCarriage(option);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+           
         }
 
         [When(@"User clicks on the Apply button")]
         public void WhenUserClicksOnTheApplyButton()
         {
-            Hooks.Hooks.createNode();
-            emp.ClickOnApplyFilter();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.ClickOnApplyFilter();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+           
         }
 
         [When(@"User selects the checkbox of the first shipment from Lying list")]
         public void WhenUserSelectsTheCheckboxOfTheFirstShipment()
         {
-            Hooks.Hooks.createNode();
-            emp.ClickOnCheckBoxLyingListAWB();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.ClickOnCheckBoxLyingListAWB();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+           
+            
         }
 
         [When(@"User place the shipment on the cart to manifest")]
         public void WhenUserPlaceTheShipmentOnTheCartToManifest()
         {
-            Hooks.Hooks.createNode();
-            emp.PlaceShipmentOnCartToManifest();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.PlaceShipmentOnCartToManifest();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+           
         }
 
         [When(@"User handles any pop up error message")]
         public void WhenUserHandlesAnyPopUpErrorMessage()
         {
-            Hooks.Hooks.createNode();
-            emp.HandleWarningMessage();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.HandleWarningMessage();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+           
         }
 
 
         [When(@"User validates the warning message ""([^""]*)""")]
         public void WhenUserValidatesTheWarningMessage(string messageToValidate)
         {
-            Hooks.Hooks.createNode();
-            emp.ValidateWarningMessageAndCloseModal(messageToValidate);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.ValidateWarningMessageAndCloseModal(messageToValidate);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+         
         }
 
         [When(@"User validates the warning message ""([^""]*)"" and Cancel the warning message")]
         public void WhenUserValidatesTheWarningMessageAndCancelTheWarningMessage(string messageToValidate)
         {
-            Hooks.Hooks.createNode();
-            emp.ValidateWarningMessageAndCancelModal(messageToValidate);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.ValidateWarningMessageAndCancelModal(messageToValidate);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+          
         }
 
     }

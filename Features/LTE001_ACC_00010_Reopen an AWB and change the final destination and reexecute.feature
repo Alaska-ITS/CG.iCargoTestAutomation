@@ -13,8 +13,7 @@ Scenario Outline: Reopen an AWB and change the final destination and reexecute
 	And User enters the Certificate details
 	And User clicks on the ContinueCertificate button
 	And User enters the Shipment details with Origin "<Origin>", Destination "<Destination>", ProductCode "<ProductCode>", SCCCode "<SCC>", Commodity "<Commodity>", ShipmentDescription"<ShipmentDescription>", ServiceCargoClass "<ServiceCargoClass>", Piece "<Piece>", Weight "<Weight>"
-	And User clicks on the ContinueShipment button
-	#And User enters the Flight details with CarrierCode "<CarrierCode>", FlightNo "<FlightNo>"
+	And User clicks on the ContinueShipment button	
 	And User clicks on the Select Flight Button
 	And User selects an available flight
 	And User clicks on the ContinueFlightDetails button
@@ -25,8 +24,7 @@ Scenario Outline: Reopen an AWB and change the final destination and reexecute
 	And User clicks on the ContinueAcceptanceDetails button
 	And User enters the Screening details for row 1 with screeingMethod as 'Transfer Manifest Verified' and ScreeningResult as 'Pass'
 	And User clicks on the ContinueScreeningDetails button
-	And User checks the AWB_Verified checkbox
-	#And User clicks on the save button & handle Payment Portal
+	And User checks the AWB_Verified checkbox	
 	And User saves all the details & handles all the popups
 	When User enters the Executed AWB number
 	And User Reopens the AWB
@@ -45,8 +43,7 @@ Scenario Outline: Reopen an AWB and change the final destination and reexecute
 	And User clicks on the ContinueScreeningDetails button
 	And User checks the AWB_Verified checkbox
 	And User saves the details with capturing irregularity for flight destination change with ChargeType "<ChargeType>"
-	And User validates the AWB is "EXECUTED"
-	
+	And User validates the AWB is "EXECUTED"	
 
 
 Examples:
