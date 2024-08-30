@@ -1,13 +1,9 @@
 ﻿Feature: OPR344_EXP_00017_Manifest a CAO DG from lying list to a pax flight
 Create a New DG Shipment, Acceptance & screening of that as a CGODG user
 
-@OPR344
-Scenario Outline: Create an AWB for a CAO DG shipment and book on a Freighter flight
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
+@OPR344 @OPR344_EXP_00017
+Scenario Outline: Manifest a CAO DG from lying list to a pax flight
+	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully
@@ -33,21 +29,6 @@ Scenario Outline: Create an AWB for a CAO DG shipment and book on a Freighter fl
 	And User captures the checksheet
 	And User checks the AWB_Verified checkbox
 	And User saves all the details & handles all the popups
-	And User closes the LTE screen
-	Then User logs out from the application
-
-Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC     | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | UNID | ProperShipmentName    | PackingInstruction | NetQtyPerPkg | ReportableQnty |
-	| 10763     | 10763       | 10763         | ANC    | OME         | PRIORITY    | DGR,CAO | NONSCR    | UN3480              | None              | 1     | 30     | CC         | None          | CART     | 3480 | Lithium ion batteries | 965                | 0.5          | No             |
-
-
-Scenario Outline: Manifest a CAO DG from lying list to a pax flight
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
-	When User switches station if BaseStation other than "<Origin>"
 	When User enters the screen name as 'OPR344'
 	Then User enters into the  iCargo 'Export Manifest' page successfully
 	When User enters the Booked FlightNumber with "<FlightNumber>"
@@ -57,7 +38,7 @@ Scenario Outline: Manifest a CAO DG from lying list to a pax flight
 	And User filterouts the Booked AWB from '<AWBSectionName>' and Created ULD_Cart
 	And User validates the warning message "The CAO validations failed" and Cancel the warning message
 		
-
 Examples:
-	| Origin | Destination | FlightNumber | Piece | Weight | AWBSectionName | cartType |
-	| ANC    | OME         | 155          | 1     | 30     | LyingList      | CART     |
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC     | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | UNID | ProperShipmentName    | PackingInstruction | NetQtyPerPkg | ReportableQnty | AWBSectionName | FlightNumber | cartType |
+	| 11377     | 11377       | 11377         | ANC    | OME         | PRIORITY    | DGR,CAO | NONSCR    | UN3480              | None              | 1     | 30     | CC         | None          | 3480 | Lithium ion batteries | 965                | 0.5          | No             | LyingList      | 155          | CART     |
+

@@ -73,6 +73,7 @@ namespace iCargoUIAutomation.Hooks
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
 
             browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);                       
+
             if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
             {
                 driver = new ChromeDriver();

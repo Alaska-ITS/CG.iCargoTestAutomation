@@ -32,10 +32,16 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User Save Shipment with DG Details & Capture Checksheet with ChargeType ""([^""]*)"",UNID ""([^""]*)"", ProperShipmentName ""([^""]*)"", PackingInstruction ""([^""]*)"",NoOfPkg ""([^""]*)"", NetQtyPerPkg ""([^""]*)"", ReportableQnty ""([^""]*)""")]
         public void SaveShipmentWithDGAndCheckSheet(string chargetype,string unid, string propershipmntname, string pi, string noOFPkg, string netqtyperpkg, string reportable)
         {
-            Hooks.Hooks.createNode();
-            Log.Info("Step: Save Shipment Capture Checksheet & DG Details");
-           (string capturedAWB,string totalpayment)=csp.SaveWithDGAndCheckSheet(chargetype,unid, propershipmntname, pi, noOFPkg, netqtyperpkg, reportable);
-
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                Log.Info("Step: Save Shipment Capture Checksheet & DG Details");
+                (string capturedAWB, string totalpayment) = csp.SaveWithDGAndCheckSheet(chargetype, unid, propershipmntname, pi, noOFPkg, netqtyperpkg, reportable);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
 
 

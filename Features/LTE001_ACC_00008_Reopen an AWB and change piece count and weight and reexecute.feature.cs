@@ -78,8 +78,8 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("Reopen an AWB and change piece count and weight and reexecute")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00008")]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "324", "CC", "None", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "1", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "324", "CC", "None", "CART", "1", "Yes", null)]
         public virtual void ReopenAnAWBAndChangePieceCountAndWeightAndReexecute(
                     string agentCode, 
                     string shipperCode, 
@@ -96,6 +96,7 @@ namespace iCargoUIAutomation.Features
                     string chargeType, 
                     string modeOfPayment, 
                     string cartType, 
+                    string updatedValue, 
                     string execute, 
                     string[] exampleTags)
         {
@@ -123,6 +124,7 @@ namespace iCargoUIAutomation.Features
             argumentsOfScenario.Add("ChargeType", chargeType);
             argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
             argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
             argumentsOfScenario.Add("Execute", execute);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reopen an AWB and change piece count and weight and reexecute", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
@@ -225,8 +227,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User Reopens the AWB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 31
- testRunner.And("User verifies and Update the field \'piece&weight\' with updated value as \'1\' in th" +
-                        "e Shipment Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User verifies and Update the field \'piece&weight\' with updated value as \"{0}\" in " +
+                            "the Shipment Details", updatedValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 32
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

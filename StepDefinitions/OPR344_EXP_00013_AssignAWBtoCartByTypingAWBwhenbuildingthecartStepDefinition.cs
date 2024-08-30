@@ -34,8 +34,16 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User creates new ULD/Cart in Assigned Shipment with with cartType ""([^""]*)"" and pou ""([^""]*)"" and the AWB Number typed in with piece ""([^""]*)""")]
         public void WhenUserCreatesNewULDCartInAssignedShipmentWithWithCartTypeAndPouAndTheAWBNumberTypedIn(string cartType, string pou, string pieces)
         {
-            Hooks.Hooks.createNode();
-            csp.CreateNewULDCartTypingAWBExportManifest(cartType, pou, pieces);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                csp.CreateNewULDCartTypingAWBExportManifest(cartType, pou, pieces);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
 
         

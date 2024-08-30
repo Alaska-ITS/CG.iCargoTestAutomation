@@ -27,12 +27,12 @@ Scenario Outline: Create an AWB in LTE001 that has pieces that fail screening
 	And USer adds another screening line
 	And User enters the Screening details for row 2 with screeingMethod as 'Transfer Manifest Verified' and ScreeningResult as 'Fail'
 	And User clicks on the ContinueScreeningDetails button
-	And User checks the AWB_Verified checkbox	
-	And User saves all the details with ChargeType "<ChargeType>" and validates the popped up error message as "Blocked for screening"	
+	And User checks the AWB_Verified checkbox
+	And User saves all the details with ChargeType "<ChargeType>" and validates the popped up error message as "Blocked for screening"
 	
 
 Examples:
 	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
-	| 11377     | 11377       | 11377         | SEA    | LAX         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | JFK         | PRIORITY    | None | 2199      | None                | None              | 8     | 360    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SAN    | JFK         | GOLDSTREAK  | None | 0316      | None                | None              | 2     | 55     | CC         | None          | CART     | Yes     |
+	| 11377     | 11377       | 11377         | LAS    | SEA         | GENERAL     | None | 0316      | None                | None              | 13    | 775    | CC         | None          | CART     | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | HNL         | PRIORITY    | None | 2199      | None                | None              | 8     | 360    | CC         | None          | CART     | Yes     |
+	| 11377     | 11377       | 11377         | SAN    | MCO         | GOLDSTREAK  | None | NONSCR    | None                | None              | 2     | 55     | CC         | None          | CART     | Yes     |

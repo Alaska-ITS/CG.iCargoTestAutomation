@@ -78,9 +78,10 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("Create a PP AWB in LTE001 for a known shipper")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "ANC", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "PP", "CREDIT", "CART", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "360", "PP", "CREDIT", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "PP", "CREDIT", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "ANC", "HNL", "PRIORITY", "None", "2199", "None", "None", "8", "360", "PP", "CREDIT", "CART", "Yes", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SAN", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "55", "PP", "CREDIT", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "YVR", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "5", "225", "PP", "CREDIT", "CART", "Yes", null)]
         public virtual void CreateAPPAWBInLTE001ForAKnownShipper(
                     string agentCode, 
                     string shipperCode, 

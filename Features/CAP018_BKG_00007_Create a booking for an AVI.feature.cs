@@ -78,6 +78,8 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.CategoryAttribute("CAP018")]
         [NUnit.Framework.CategoryAttribute("CAP018_BKG_00007")]
         [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "Yes", "10763", "10763", "10763", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "Yes", "ASQXGUEST", "C1001", "C1001", null)]
+        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "Yes", "49990", "49990", "C1001", null)]
         public virtual void ICargoLoginAndCreateNewAVIShipment(string origin, string destination, string productCode, string commodity, string piece, string weight, string execute, string agentCode, string shipperCode, string consigneeCode, string[] exampleTags)
         {
             string[] @__tags = new string[] {

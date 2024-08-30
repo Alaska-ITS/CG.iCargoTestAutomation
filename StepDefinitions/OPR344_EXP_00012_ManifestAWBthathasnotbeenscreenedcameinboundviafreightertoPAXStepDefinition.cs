@@ -34,8 +34,16 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User validates the error message '([^']*)'")]
         public void WhenUserValidatesTheErrorMessage(string expectedMessage)
         {
-            Hooks.Hooks.createNode();
-            emp.ValidateErrorMessageOnPopup(expectedMessage);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.ValidateErrorMessageOnPopup(expectedMessage);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+           
         }
 
     }

@@ -4,11 +4,7 @@ Create a New DG Shipment, Acceptance & screening of that as a CGODG user
 
 @LTE001 @LTE001_ACC_00015
 Scenario Outline: Create an AWB for a CAO DG shipment and book on a pax flight
-	Given User lauches the Url of iCargo Staging UI
-	Then User enters into the  iCargo 'Sign in to icargoas' page successfully
-	When User clicks on the oidc button
-	Then A new window is opened
-	And User enters into the  iCargo 'Home' page successfully
+	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully
@@ -19,8 +15,8 @@ Scenario Outline: Create an AWB for a CAO DG shipment and book on a pax flight
 	And User clicks on the ContinueCertificate button
 	And User enters the Shipment details with Origin "<Origin>", Destination "<Destination>", ProductCode "<ProductCode>", SCCCode "<SCC>", Commodity "<Commodity>", ShipmentDescription"<ShipmentDescription>", ServiceCargoClass "<ServiceCargoClass>", Piece "<Piece>", Weight "<Weight>"
 	And User clicks on the ContinueShipment button
-	And User clicks on the Select Flight Button
-	And User selects an "Combination" flight
+	And User clicks on the Select Flight Button	
+	And User selects an "Combination" flight having Embargo error
 	And User clicks on the ContinueFlightDetails button
 	And User enters the Charge details with ChargeType "<ChargeType>" and ModeOfPayment "<ModeOfPayment>"
 	And User clicks on the CalculateCharges button
@@ -29,14 +25,13 @@ Scenario Outline: Create an AWB for a CAO DG shipment and book on a pax flight
 	And User clicks on the ContinueAcceptanceDetails button
 	And User enters the Screening details for row 1 with screeingMethod as 'ALT Dangerous Goods' and ScreeningResult as 'Pass'
 	And User clicks on the ContinueScreeningDetails button
-	And User enters details for CAO DG shipment with ChargeType "<ChargeType>",UNID "<UNID>", ProperShipmentName "<ProperShipmentName>", PackingInstruction "<PackingInstruction>",NoOfPkg "<Piece>", NetQtyPerPkg "<NetQtyPerPkg>", ReportableQnty "<ReportableQnty>"
-	And User checks the AWB_Verified checkbox
-	And User saves the CAO DG shipment
-	And User validates the popped up error message as "shipment can be booked only in Cargo / truck flight(s)"
-	And User closes the LTE screen
-	Then User logs out from the application
+	And User clicks on the save button	
+	And User validates the error message "SPECIFIED SHIPMENT TYPE NOT SUITED FOR SELECTED AIRCRAFT TYPE" in the Embargo Details popup
+	
 
 Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC     | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | UNID | ProperShipmentName    | PackingInstruction | NetQtyPerPkg | ReportableQnty |
-	| 10763     | 10763       | 10763         | SEA    | ANC         | PRIORITY    | DGR,CAO | NONSCR    | UN3480              | None              | 1     | 30     | CC         | None          | CART     | 3480 | Lithium ion batteries | 965                | 0.5          | No             |
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC     | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | UNID | ProperShipmentName         | PackingInstruction | NetQtyPerPkg | ReportableQnty | Execute |
+	| 11377     | 11377       | 11377         | SEA    | ANC         | PRIORITY    | DGR,CAO | NONSCR    | UN3480              | None              | 25    | 376    | CC         | None          | CART     | 3480 | Lithium ion batteries      | 965                | 0.5          | No             | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | ANC         | PRIORITY    | DGR,CAO | NONSCR    | UN3480              | None              | 76    | 456    | CC         | None          | CART     | 3090 | Lithium metal batteries    | 968                | 0.5          | No             | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | ANC         | PRIORITY    | DGR,CAO | NONSCR    | UN3480              | None              | 56    | 230    | CC         | None          | CART     | 1075 | Petroleum gases, liquefied | 200                | 0.5          | No             | Yes     |
 
