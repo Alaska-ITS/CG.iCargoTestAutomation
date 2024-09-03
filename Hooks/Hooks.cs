@@ -46,18 +46,15 @@ namespace iCargoUIAutomation.Hooks
         public static void BeforeTestRun()
         {
 
-            // Set the report path (temporary local path, will be uploaded to Azure)           
-            TimeZoneInfo pstZone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
-            DateTime pstTime = TimeZoneInfo.ConvertTime(DateTime.Now, pstZone);
-            string reportName = "TestResults_" + pstTime.ToString("yyyyMMdd_HHmmss");
-            reportPath = Path.Combine(Path.GetTempPath(), reportName);
+            Console.WriteLine("Running before test run...");
+            reportPath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports\Reports\TestResults_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");
             testResultPath = reportPath + @"\index.html";
-
             var htmlReporter = new ExtentHtmlReporter(testResultPath);
             htmlReporter.Config.ReportName = "Automation Status Report";
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Standard;
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
+
         }
 
         [AfterTestRun]
@@ -72,7 +69,7 @@ namespace iCargoUIAutomation.Hooks
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
 
-            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);                       
+            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);                                   
 
             if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
             {
@@ -166,41 +163,43 @@ namespace iCargoUIAutomation.Hooks
             {
 
 
-                azureStorage = new AzureStorage(containerName);
-                string excelFileName = "AWBDetails.csv";
-                string tempLocalPath = Path.Combine(Path.GetTempPath(), excelFileName);
+                string filePath = @"\\seavvfile1\projectmgmt_pmo\iCargoAutomationReports\AWB_Numbers\AWB_Details.xlsx";
 
-                // Download the existing file if it exists
-                tempLocalPath = azureStorage.DownloadFileFromBlob(excelFileName, tempLocalPath);
-                ExcelFileConfig excelFileConfig = new ExcelFileConfig();
-
-                if (excelFileConfig.IsSheetFilled(tempLocalPath, 1000)) // Set your desired max rows per sheet
+                string directoryPath = Path.GetDirectoryName(filePath);
+                if (!Directory.Exists(directoryPath))
                 {
-                    // If filled, generate a new unique file name
-                    string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
-                    excelFileName = $"AWBDetails_{timestamp}.xlsx";
-                    tempLocalPath = Path.Combine(Path.GetTempPath(), excelFileName);
+                    try
+                    {
+                        Directory.CreateDirectory(directoryPath);
+                    }
+                    catch (Exception)
+                    {
+                        // Fallback to the project directory's resource folder if unable to create the specified path
+                        string projectDirectory = Path.GetFullPath(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "..\\..\\..\\"));
+                        directoryPath = Path.Combine(projectDirectory, "Resource", "AWB_Details");
+                        Directory.CreateDirectory(directoryPath);
+                        filePath = Path.Combine(directoryPath, "AWB_Details.xlsx");
+                        Console.WriteLine($"File path: {filePath}");
+                    }
                 }
+
 
                 if (featureName.Contains("CAP018"))
                 {
-                    
+
                     // Append data to the downloaded or newly created Excel file
-                    excelFileConfig.AppendDataToExcel(tempLocalPath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "CAP018", featureName, MaintainBookingPage.awbNumber, MaintainBookingPage.globalOrigin, MaintainBookingPage.globalDestination, MaintainBookingPage.globalProductCode, MaintainBookingPage.globalAgentCode, MaintainBookingPage.globalShipperCode, MaintainBookingPage.globalConsigneeCode, MaintainBookingPage.globalCommodityCode, MaintainBookingPage.globalPieces, MaintainBookingPage.globalWeight);
+                    ExcelFileConfig excelFileConfig = new ExcelFileConfig();
+                    excelFileConfig.AppendDataToExcel(filePath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "CAP018", featureName, MaintainBookingPage.awbNumber, MaintainBookingPage.globalOrigin, MaintainBookingPage.globalDestination, MaintainBookingPage.globalProductCode, MaintainBookingPage.globalAgentCode, MaintainBookingPage.globalShipperCode, MaintainBookingPage.globalConsigneeCode, MaintainBookingPage.globalCommodityCode, MaintainBookingPage.globalPieces, MaintainBookingPage.globalWeight);
                     
                 }
                 else 
                 {
-                    
+
                     // Append data to the downloaded or newly created Excel file
-                    excelFileConfig.AppendDataToExcel(tempLocalPath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", featureName, CreateShipmentPage.awb_num, CreateShipmentPage.origin, CreateShipmentPage.destination, CreateShipmentPage.agentCode, CreateShipmentPage.shipperCode, CreateShipmentPage.consigneeCode, CreateShipmentPage.productCode, CreateShipmentPage.commodityCode, CreateShipmentPage.pieces, CreateShipmentPage.weight);
+                    ExcelFileConfig excelFileConfig = new ExcelFileConfig();
+                    excelFileConfig.AppendDataToExcel(filePath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", featureName, CreateShipmentPage.awb_num, CreateShipmentPage.origin, CreateShipmentPage.destination, CreateShipmentPage.agentCode, CreateShipmentPage.shipperCode, CreateShipmentPage.consigneeCode, CreateShipmentPage.productCode, CreateShipmentPage.commodityCode, CreateShipmentPage.pieces, CreateShipmentPage.weight);
 
-                }                
-
-                // Upload the updated file back to Azure Blob Storage
-                azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
-
-                File.Delete(tempLocalPath);
+                }                               
             }
 
         }
