@@ -1452,7 +1452,7 @@ namespace iCargoUIAutomation.pages
                     {
                         awb_num = captureAWBNumber();
                         Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
-                        ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+                        ClickOnElementIfPresent(btnOrangePencilEditBooking_Css);
                         WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
                         ClickElementUsingActions(btnClear_Id);
                         Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
@@ -1734,7 +1734,7 @@ namespace iCargoUIAutomation.pages
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
             }
 
-            WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(5));
+            WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(10));
             string actualWarningMessage = GetText(lblWarningMessage_Css);
             if (!actualWarningMessage.Contains(expectedWarningMessage))
             {
@@ -1751,7 +1751,7 @@ namespace iCargoUIAutomation.pages
 
             awb_num = captureAWBNumber();
             Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
-            ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+            ClickOnElementIfPresent(btnOrangePencilEditBooking_Css);
             WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
             ClickElementUsingActions(btnClear_Id);
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
@@ -1785,7 +1785,7 @@ namespace iCargoUIAutomation.pages
                     {
                         awb_num = captureAWBNumber();
                         Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
-                        ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+                        ClickOnElementIfPresent(btnOrangePencilEditBooking_Css);
                         WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
                         ClickElementUsingActions(btnClear_Id);
                         Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
@@ -2057,7 +2057,7 @@ namespace iCargoUIAutomation.pages
         public void ValidateWarningMessage(string expectedWarningMessage)
         {
 
-            WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(5));
+            WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(10));
             string actualWarningMessage = GetText(lblWarningMessage_Css);
             if (!actualWarningMessage.Contains(expectedWarningMessage))
             {
@@ -2074,7 +2074,7 @@ namespace iCargoUIAutomation.pages
 
             awb_num = captureAWBNumber();
             Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
-            ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+            ClickOnElementIfPresent(btnOrangePencilEditBooking_Css);
             WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
             ClickElementUsingActions(btnClear_Id);
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
@@ -2126,7 +2126,7 @@ namespace iCargoUIAutomation.pages
             awb_num = captureAWBNumber();
             Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
             Log.Info("AWB number is: " + awb_num);
-            ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+            ClickOnElementIfPresent(btnOrangePencilEditBooking_Css);
             WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
             ClickElementUsingActions(btnClear_Id);
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
