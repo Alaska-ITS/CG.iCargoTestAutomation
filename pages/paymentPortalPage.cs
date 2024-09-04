@@ -33,6 +33,7 @@ namespace iCargoUIAutomation.pages
         {
             Log.Info("Closing Payment Portal");
             CloseCurrentWindow();
+            //WaitForElementToBeInvisible(txtPleaseCloseTabRetry_Xpath, TimeSpan.FromSeconds(5));
             Hooks.Hooks.UpdateTest(Status.Pass, "Closed Payment Portal");
         }
 
