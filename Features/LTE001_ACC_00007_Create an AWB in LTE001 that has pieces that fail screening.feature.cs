@@ -78,9 +78,9 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("Create an AWB in LTE001 that has pieces that fail screening")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00007")]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "LAS", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "775", "CC", "None", "CART", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "HNL", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SAN", "MCO", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "55", "CC", "None", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SAN", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "55", "CC", "None", "CART", "Yes", null)]
         public virtual void CreateAnAWBInLTE001ThatHasPiecesThatFailScreening(
                     string agentCode, 
                     string shipperCode, 
@@ -224,8 +224,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 31
- testRunner.And(string.Format("User saves all the details with ChargeType \"{0}\" and validates the popped up erro" +
-                            "r message as \"Blocked for screening\"", chargeType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User saves shipment and validate the popped up message as \"Blocked for screening\"" +
+                        " for a Confirmed AWB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

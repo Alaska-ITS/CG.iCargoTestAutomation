@@ -80,7 +80,7 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("Create an AWB with less than a 2 hr connection time between flights")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00013")]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "ANC", "LAS", "GENERAL", "None", "0316", "None", "None", "2", "59", "PP", "CREDIT", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "ANC", "LAS", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "Yes", null)]
         public virtual void CreateAnAWBWithLessThanA2HrConnectionTimeBetweenFlights(
                     string agentCode, 
                     string shipperCode, 
