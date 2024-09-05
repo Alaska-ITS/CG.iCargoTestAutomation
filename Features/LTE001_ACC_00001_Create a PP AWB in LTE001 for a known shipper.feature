@@ -32,6 +32,7 @@ Scenario Outline: Create a PP AWB in LTE001 for a known shipper
 Examples:
 	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
 	| 11377     | 11377       | 11377         | SEA    | LAX         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | PP         | CREDIT        | CART     | Yes     |
-	| 11377     | 11377       | 11377         | ANC    | HNL         | PRIORITY    | None | 2199      | None                | None              | 8     | 360    | PP         | CREDIT        | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SAN    | JFK         | GOLDSTREAK  | None | NONSCR    | None                | None              | 2     | 55     | PP         | CREDIT        | CART     | Yes     |
-	| 11377     | 11377       | 11377         | YVR    | SEA         | PRIORITY    | None | NONSCR    | None                | None              | 5     | 225    | PP         | CREDIT        | CART     | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | HNL         | PRIORITY    | None | 2199      | None                | None              | 8     | 360    | PP         | CREDIT        | CART     | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | JFK         | GOLDSTREAK  | None | NONSCR    | None                | None              | 2     | 55     | PP         | CREDIT        | CART     | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | MCO         | PRIORITY    | None | NONSCR    | None                | None              | 20    | 205    | PP         | CREDIT        | CART     | Yes     |
+        | 11377     | 11377       | 11377         | SEA    | PDX         | PRIORITY    | None | NONSCR    | None                | None              | 5     | 225    | PP         | CREDIT        | CART     | Yes     |
