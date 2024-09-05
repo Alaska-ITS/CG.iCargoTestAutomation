@@ -32,5 +32,5 @@ Scenario Outline: Create a CC AWB in LTE001 for a known shipper
 Examples:
 	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
 	| 11377     | 11377       | 11377         | SEA    | ORD         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | ANC    | PDX         | PRIORITY    | None | 2199      | None                | None              | 8     | 360    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | BOS    | SEA         | PRIORITY    | None | NONSCR    | None                | None              | 3     | 145    | CC         | None          | CART     | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | ANC         | PRIORITY    | None | 2199      | None                | None              | 18    | 360    | CC         | None          | CART     | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | PHX         | PRIORITY    | None | NONSCR    | None                | None              | 30    | 600    | CC         | None          | CART     | Yes     |
