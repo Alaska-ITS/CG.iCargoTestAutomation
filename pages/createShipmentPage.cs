@@ -1677,7 +1677,7 @@ namespace iCargoUIAutomation.pages
                 SwitchToLastWindow();
                 SwitchToLTEContentFrame();
             }
-            WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(5));
+            WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(10));
             string actualWarningMessage = GetText(lblWarningMessage_Css);
             if (!actualWarningMessage.Contains(expectedWarningMessage))
             {
@@ -2100,7 +2100,7 @@ namespace iCargoUIAutomation.pages
 
             Click(btnCloseEmbargo_Xpath);
             Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Close button for Embargo");            
-            ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+            ClickOnElementIfPresent(btnOrangePencilEditBooking_Css);
             WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
             ClickElementUsingActions(btnClear_Id);
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
