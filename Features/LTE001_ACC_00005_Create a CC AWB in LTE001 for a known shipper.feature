@@ -35,13 +35,3 @@ Examples:
 	| 11377     | 11377       | 11377         | SEA    | ANC         | PRIORITY    | None | 2199      | None                | None              | 18    | 360    | CC         | None          | CART     | Yes     |
 	| 11377     | 11377       | 11377         | SEA    | PHX         | PRIORITY    | None | NONSCR    | None                | None              | 30    | 600    | CC         | None          | CART     | Yes     |
 	| 11377     | 11377       | 11377         | SEA    | SFO         | PRIORITY    | None | NONSCR    | None                | None              | 30    | 600    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | AUS         | PRIORITY    | None | NONSCR    | None                | None              | 30    | 600    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | PSC         | PRIORITY    | None | NONSCR    | None                | None              | 30    | 600    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | SAN         | PRIORITY    | None | NONSCR    | None                | None              | 30    | 600    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | OGG         | PRIORITY    | None | NONSCR    | None                | None              | 30    | 600    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | LAX         | PRIORITY    | None | NONSCR    | None                | None              | 30    | 600    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | BOI         | PRIORITY    | None | NONSCR    | None                | None              | 30    | 600    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | SMF         | PRIORITY    | None | NONSCR    | None                | None              | 30    | 600    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | STL         | PRIORITY    | None | NONSCR    | None                | None              | 30    | 600    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | ONT         | PRIORITY    | None | NONSCR    | None                | None              | 30    | 600    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | LAS         | PRIORITY    | None | NONSCR    | None                | None              | 30    | 600    | CC         | None          | CART     | Yes     | 
