@@ -998,12 +998,12 @@ namespace iCargoUIAutomation.pages
         public void ClickOkAVIChecksheetBtn()
         {
             if (IsElementDisplayed(aviBookingChecksheetOkBtn_XPATH))
-            {
-                ClickElementUsingJavaScript(aviBookingChecksheetOkBtn_XPATH);
+            {                
+                Click(aviBookingChecksheetOkBtn_XPATH);
             }
             else
             {
-                Click(aviBookingChecksheetOkBtn_XPATH);
+                ClickElementUsingJavaScript(aviBookingChecksheetOkBtn_XPATH);
             }
         }
 
