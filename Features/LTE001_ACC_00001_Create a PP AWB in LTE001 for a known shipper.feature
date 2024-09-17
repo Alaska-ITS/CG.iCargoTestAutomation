@@ -34,4 +34,5 @@ Examples:
 	| 11377     | 11377       | 11377         | SEA    | LAX         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | PP         | CREDIT        | CART     | Yes     |
 	| 11377     | 11377       | 11377         | SEA    | HNL         | PRIORITY    | None | 2199      | None                | None              | 8     | 360    | PP         | CREDIT        | CART     | Yes     |
 	| 11377     | 11377       | 11377         | SEA    | JFK         | GOLDSTREAK  | None | NONSCR    | None                | None              | 2     | 55     | PP         | CREDIT        | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | GEG         | PRIORITY    | None | NONSCR    | None                | None              | 5     | 225    | PP         | CREDIT        | CART     | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | MCO         | PRIORITY    | None | NONSCR    | None                | None              | 20    | 205    | PP         | CREDIT        | CART     | Yes     |
+        | 11377     | 11377       | 11377         | SEA    | PDX         | PRIORITY    | None | NONSCR    | None                | None              | 5     | 225    | PP         | CREDIT        | CART     | Yes     |

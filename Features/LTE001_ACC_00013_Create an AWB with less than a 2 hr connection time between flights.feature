@@ -30,5 +30,5 @@ Scenario Outline: Create an AWB with less than a 2 hr connection time between fl
 
 Examples:
 	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
-	| 11377     | 11377       | 11377         | ANC    | LAS         | GENERAL     | None | 0316      | None                | None              | 2     | 59     | PP         | CREDIT        | CART     | Yes     |
+	| 11377     | 11377       | 11377         | ANC    | LAS         | GENERAL     | None | NONSCR      | None                | None              | 2     | 59     | PP         | CREDIT        | CART     | Yes     |
 	

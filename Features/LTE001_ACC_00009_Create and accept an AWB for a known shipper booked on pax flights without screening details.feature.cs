@@ -217,8 +217,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 28
- testRunner.And(string.Format("User saves all the details with ChargeType \"{0}\" and validates the popped up erro" +
-                            "r message as \"Blocked for screening\"", chargeType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User saves shipment and validate the popped up message as \"Blocked for screening\"" +
+                        " for a Confirmed AWB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

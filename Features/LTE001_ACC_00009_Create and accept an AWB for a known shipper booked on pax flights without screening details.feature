@@ -25,7 +25,7 @@ Scenario Outline: Create and accept an AWB for a known shipper booked on pax fli
 	And User clicks on the ContinueAcceptanceDetails button
 	And User clicks on the ContinueScreeningDetails button
 	And User checks the AWB_Verified checkbox
-	And User saves all the details with ChargeType "<ChargeType>" and validates the popped up error message as "Blocked for screening"
+	And User saves shipment and validate the popped up message as "Blocked for screening" for a Confirmed AWB
 
 Examples:
 	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |

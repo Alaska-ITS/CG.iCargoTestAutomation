@@ -192,8 +192,7 @@ namespace iCargoUIAutomation.pages
         private By btnDeleteAwb_Name = By.Name("btnDeleteAWB");
         private By btnCloseShipment_Name = By.Name("btnClose");
         private By btnCloseLTEWindow_Css = By.CssSelector("a.remove");
-
-
+        private By btnError_CSS = By.CssSelector("#error-tab");
 
         //   Warning Popups //
         private By frameCalculateCharges_Css = By.CssSelector("#jsonDataHolder1711185182553");
@@ -1453,7 +1452,7 @@ namespace iCargoUIAutomation.pages
                     {
                         awb_num = captureAWBNumber();
                         Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
-                        ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+                        ClickOnElementIfPresent(btnOrangePencilEditBooking_Css);
                         WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
                         ClickElementUsingActions(btnClear_Id);
                         Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
@@ -1502,6 +1501,85 @@ namespace iCargoUIAutomation.pages
             }
 
             return (awb_num, totalPaybleAmount);
+        }
+
+        public string SaveShipmentValidateWarningConfirmedAWB(string expectedWarningMessage)
+        {
+            log.Info("Saving shipment and validate the popped up messages for a Confirmed AWB function");
+            int retryCount = 0;
+            const int maxRetries = 3; // Maximum number of retries
+
+            while (true)
+            {
+                try
+                {
+                    if (CaptureBookingStatus() == "Confirmed")
+                    {
+
+                        WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(10));
+                        string actualWarningMessage = GetText(lblWarningMessage_Css);
+                        if (!actualWarningMessage.Contains(expectedWarningMessage))
+                        {
+                            Hooks.Hooks.UpdateTest(Status.Fail, "Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+                            Log.Error("Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+
+                        }
+                        else
+                        {
+                            Hooks.Hooks.UpdateTest(Status.Pass, "Warning message is as expected: " + actualWarningMessage);
+                            Log.Info("Warning message is as expected: " + actualWarningMessage);
+                        }
+                        awb_num = captureAWBNumber();
+                        Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);                                             
+                        ClickOnElementIfPresent(btnOrangePencilEditBooking_Css);
+                        WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
+                        ClickElementUsingActions(btnClear_Id);
+                        Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
+                        SwitchToDefaultContent();
+                        break;
+                    }
+
+                    try
+                    {
+                        totalPaybleAmount = ClickOnSaveButtonHandlePaymentPortal();
+                    }
+                    catch (Exception)
+                    {
+                        int noOfWindowsBefore = GetNumberOfWindowsOpened();
+                        ClickingYesOnPopupWarnings("");
+                        if (IsElementDisplayed(lblEmbargoDetails_Xpath, 1))
+                        {
+                            Click(btnContinueEmbargo_Xpath);
+                            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
+                        }
+
+                        int noOfWindowsAfter = GetNumberOfWindowsOpened();
+                        if (noOfWindowsAfter > noOfWindowsBefore)
+                        {
+                            SwitchToLastWindow();
+                            RefreshPage();
+                            totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
+                            WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
+                            SwitchToLastWindow();
+                            SwitchToLTEContentFrame();
+                        }
+
+                    }
+                }
+                catch (StaleElementReferenceException)
+                {
+                    if (retryCount >= maxRetries)
+                    {
+                        throw; // Rethrow the exception if max retries are exceeded
+                    }
+                    Hooks.Hooks.UpdateTest(Status.Info, "Encountered StaleElementReferenceException, retrying... Attempt" + (retryCount + 1));
+                    log.Info($"Encountered StaleElementReferenceException, retrying... Attempt {retryCount + 1}");
+                    retryCount++;
+                    continue; // Retry the loop
+                }
+            }
+
+            return awb_num;
         }
 
 
@@ -1599,7 +1677,7 @@ namespace iCargoUIAutomation.pages
                 SwitchToLastWindow();
                 SwitchToLTEContentFrame();
             }
-            WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(5));
+            WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(10));
             string actualWarningMessage = GetText(lblWarningMessage_Css);
             if (!actualWarningMessage.Contains(expectedWarningMessage))
             {
@@ -1612,9 +1690,10 @@ namespace iCargoUIAutomation.pages
                 Hooks.Hooks.UpdateTest(Status.Pass, "Warning message is as expected: " + actualWarningMessage);
                 Log.Info("Warning message is as expected: " + actualWarningMessage);
             }
+           
             awb_num = captureAWBNumber();
             Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
-            ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+            ClickOnElementIfPresent(btnOrangePencilEditBooking_Css);
             WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
             ClickElementUsingActions(btnClear_Id);
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
@@ -1655,7 +1734,7 @@ namespace iCargoUIAutomation.pages
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
             }
 
-            WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(5));
+            WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(10));
             string actualWarningMessage = GetText(lblWarningMessage_Css);
             if (!actualWarningMessage.Contains(expectedWarningMessage))
             {
@@ -1672,7 +1751,7 @@ namespace iCargoUIAutomation.pages
 
             awb_num = captureAWBNumber();
             Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
-            ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+            ClickOnElementIfPresent(btnOrangePencilEditBooking_Css);
             WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
             ClickElementUsingActions(btnClear_Id);
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
@@ -1706,7 +1785,7 @@ namespace iCargoUIAutomation.pages
                     {
                         awb_num = captureAWBNumber();
                         Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
-                        ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+                        ClickOnElementIfPresent(btnOrangePencilEditBooking_Css);
                         WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
                         ClickElementUsingActions(btnClear_Id);
                         Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
@@ -1978,7 +2057,7 @@ namespace iCargoUIAutomation.pages
         public void ValidateWarningMessage(string expectedWarningMessage)
         {
 
-            WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(5));
+            WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(10));
             string actualWarningMessage = GetText(lblWarningMessage_Css);
             if (!actualWarningMessage.Contains(expectedWarningMessage))
             {
@@ -1995,7 +2074,7 @@ namespace iCargoUIAutomation.pages
 
             awb_num = captureAWBNumber();
             Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
-            ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+            ClickOnElementIfPresent(btnOrangePencilEditBooking_Css);
             WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
             ClickElementUsingActions(btnClear_Id);
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
@@ -2021,7 +2100,7 @@ namespace iCargoUIAutomation.pages
 
             Click(btnCloseEmbargo_Xpath);
             Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Close button for Embargo");            
-            ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+            ClickOnElementIfPresent(btnOrangePencilEditBooking_Css);
             WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
             ClickElementUsingActions(btnClear_Id);
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
@@ -2047,7 +2126,7 @@ namespace iCargoUIAutomation.pages
             awb_num = captureAWBNumber();
             Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
             Log.Info("AWB number is: " + awb_num);
-            ClickElementUsingActions(btnOrangePencilEditBooking_Css);
+            ClickOnElementIfPresent(btnOrangePencilEditBooking_Css);
             WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
             ClickElementUsingActions(btnClear_Id);
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");

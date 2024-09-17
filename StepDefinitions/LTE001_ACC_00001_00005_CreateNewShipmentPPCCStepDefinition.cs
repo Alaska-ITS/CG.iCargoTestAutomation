@@ -453,6 +453,22 @@ namespace iCargoUIAutomation.StepDefinitions
             }
         }
 
+        [When(@"User saves shipment and validate the popped up message as ""([^""]*)"" for a Confirmed AWB")]
+        public void WhenUserSavesShipmentAndValidateThePoppedUpMessageAsForAConfiremdAWB(string expectedMessage)
+        {
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                Log.Info("Step: Saving shipment and validate the popped up messages for a Confirmed AWB");
+                string awb = csp.SaveShipmentValidateWarningConfirmedAWB(expectedMessage);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+        }
+
+
         [When(@"User validates the commodity charge amount")]
         public void WhenUserValidatesTheCommodityChargeAmount()
         {
