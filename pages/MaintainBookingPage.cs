@@ -1051,8 +1051,8 @@ namespace iCargoUIAutomation.pages
                 Log.Info("Clicked Save Button to Save New Flight Details");
                 ClickingYesOnPopupWarnings();
                 ClickingYesOnPopupWarnings();
-                SwitchToCAP018Frame();
-                WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(5));
+                WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(10));
+                SwitchToCAP018Frame();                
                 SwitchToFrame(aviChecksheetFrame_XPath);
                 Log.Info("Switched to AVI Checksheet Frame");
                 List<IWebElement> AviChecksheetSections = GetElements(aviTotalChkSheetSections_Xpath);
