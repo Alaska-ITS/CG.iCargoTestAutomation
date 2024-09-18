@@ -43,5 +43,5 @@ Scenario Outline: Manifest an AWB from the lying list
 
 Examples:
 	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | FlightNumber | cartType | AWBSectionName | Execute |
-	| 11377     | 11377       | 11377         | SEA    | ANC         | GENERAL     | None | NONSCR    | None                | None              | 13    | 230    | CC         | None          | 93           | CART     | LyingList      | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | ANC         | GENERAL     | None | NONSCR    | None                | None              | 13    | 230    | CC         | None          | 175           | CART     | LyingList      | Yes     |
 	| 11377     | 11377       | 11377         | SEA    | JFK         | PRIORITY    | None | 2199      | None                | None              | 56    | 123    | CC         | None          | 16           | CART     | LyingList      | Yes     |
