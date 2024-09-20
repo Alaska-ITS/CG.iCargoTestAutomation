@@ -685,14 +685,22 @@ namespace iCargoUIAutomation.pages
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Expand Button for ULD/Cart Number: " + cartUldNum);
         }
 
+        public void ClickOnOffloadULDButton()
+        {
+            Click(By.XPath("//button[contains(@id,'uld_offload-" + cartUldNum + "')]"));
+            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Offload AWB Button for ULD/Cart Number: " + cartUldNum);
+            WaitForElementToBeVisible(modalOffloadAWB_Css, TimeSpan.FromSeconds(5));
+        }
+
         public void ClickOnOffloadAWBButton()
         {
             Click(By.XPath("//button[contains(@id,'awb_offload-" + cartUldNum + "')]"));  
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Offload AWB Button for ULD/Cart Number: " + cartUldNum);
-            WaitForElementToBeVisible(modalOffloadAWB_Css, TimeSpan.FromSeconds(2));
+            WaitForElementToBeVisible(modalOffloadAWB_Css, TimeSpan.FromSeconds(5));
         }
 
-        public void FillOffloadFormAndMoveToAnotherFlight(string newFlight, string POUoffload)
+
+        public void FillOffloadFormAndMoveToAnotherFlight(string newFlight, string POUoffload, string offloadFormType)
         {
             Click(drpdwnOffloadReason_Xpath);
             SelectDropdownByVisibleTextUsingActions(drpdwnOffloadReason_Xpath, "Bulk Out");
@@ -703,10 +711,13 @@ namespace iCargoUIAutomation.pages
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Move to Another Flight Checkbox");
             WaitForElementToBeVisible(txtUldNumOffloadModal_Css, TimeSpan.FromSeconds(2));
             ScrollDown();
-            Click(chkBoxBarrowOffloadModal_Css);
-            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Barrow Checkbox");
-            EnterText(txtUldNumOffloadModal_Css, cartUldNum);
-            Hooks.Hooks.UpdateTest(Status.Info, "Entered ULD/Cart Number: " + cartUldNum);
+            if (offloadFormType != "ULD")
+            {
+                Click(chkBoxBarrowOffloadModal_Css);
+                Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Barrow Checkbox");
+                EnterText(txtUldNumOffloadModal_Css, cartUldNum);
+                Hooks.Hooks.UpdateTest(Status.Info, "Entered ULD/Cart Number: " + cartUldNum);
+            }
             EnterText(txtPOUOffloadModal_CSS, POUoffload);
             Hooks.Hooks.UpdateTest(Status.Info, "Entered POU: " + POUoffload);
             EnterText(txtFltNumOffloadModal_CSS, newFlight);

@@ -20,22 +20,22 @@ namespace iCargoUIAutomation.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("OPR344_EXP_00019_Manifest a CAO DG on a freighter")]
-    public partial class OPR344_EXP_00019_ManifestACAODGOnAFreighterFeature
+    [NUnit.Framework.DescriptionAttribute("OPR344_EXP_00015_Bump a cart to another flight")]
+    public partial class OPR344_EXP_00015_BumpACartToAnotherFlightFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "OPR344_EXP_00019_Manifest a CAO DG on a freighter.feature"
+#line 1 "OPR344_EXP_00015_Bump a cart to another flight.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "OPR344_EXP_00019_Manifest a CAO DG on a freighter", "Create a New DG Shipment, Acceptance & screening of that as a CGODG user", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "OPR344_EXP_00015_Bump a cart to another flight", "Manifest a Shipment as a CGO or CGODG user", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,11 +74,11 @@ namespace iCargoUIAutomation.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Manifest a CAO DG on a freighter")]
+        [NUnit.Framework.DescriptionAttribute("Bump a cart to another flight")]
         [NUnit.Framework.CategoryAttribute("OPR344")]
-        [NUnit.Framework.CategoryAttribute("OPR344_EXP_00019")]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "ANC", "OME", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "1", "30", "CC", "None", "3480", "Lithium ion batteries", "965", "0.5", "No", "PlannedShipment", "CART", "ANC", "CAO", "Yes", null)]
-        public virtual void ManifestACAODGOnAFreighter(
+        [NUnit.Framework.CategoryAttribute("OPR344_EXP_00015")]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "0316", "None", "None", "2", "59", "CC", "None", "PlannedShipment", "26", "CART", null)]
+        public virtual void BumpACartToAnotherFlight(
                     string agentCode, 
                     string shipperCode, 
                     string consigneeCode, 
@@ -93,21 +93,14 @@ namespace iCargoUIAutomation.Features
                     string weight, 
                     string chargeType, 
                     string modeOfPayment, 
-                    string uNID, 
-                    string properShipmentName, 
-                    string packingInstruction, 
-                    string netQtyPerPkg, 
-                    string reportableQnty, 
                     string aWBSectionName, 
+                    string newFlightNumber, 
                     string cartType, 
-                    string station, 
-                    string handlingCode, 
-                    string execute, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "OPR344",
-                    "OPR344_EXP_00019"};
+                    "OPR344_EXP_00015"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -128,17 +121,10 @@ namespace iCargoUIAutomation.Features
             argumentsOfScenario.Add("Weight", weight);
             argumentsOfScenario.Add("ChargeType", chargeType);
             argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
-            argumentsOfScenario.Add("UNID", uNID);
-            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
-            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
-            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
-            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
             argumentsOfScenario.Add("AWBSectionName", aWBSectionName);
+            argumentsOfScenario.Add("NewFlightNumber", newFlightNumber);
             argumentsOfScenario.Add("cartType", cartType);
-            argumentsOfScenario.Add("Station", station);
-            argumentsOfScenario.Add("HandlingCode", handlingCode);
-            argumentsOfScenario.Add("Execute", execute);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Manifest a CAO DG on a freighter", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Bump a cart to another flight", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -160,7 +146,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 6
- testRunner.Given(string.Format("User wants to execute the example \"{0}\"", execute), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("User wants to execute the example \"<Execute>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 7
  testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -199,7 +185,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the Select Flight Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 18
- testRunner.And("User selects an \"Cargo-Only\" flight", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects an \"Combination\" flight", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 19
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -220,79 +206,78 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueAcceptanceDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 25
- testRunner.And("User enters the Screening details for row 1 with screeingMethod as \'ALT Dangerous" +
-                        " Goods\' and ScreeningResult as \'Pass\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters the Screening details for row 1 with screeingMethod as \'Transfer Mani" +
+                        "fest Verified\' and ScreeningResult as \'Pass\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 26
  testRunner.And("User clicks on the ContinueScreeningDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 27
- testRunner.And(string.Format("User enters details for CAO DG shipment with ChargeType \"{0}\",UNID \"{1}\", ProperS" +
-                            "hipmentName \"{2}\", PackingInstruction \"{3}\",NoOfPkg \"{4}\", NetQtyPerPkg \"{5}\", R" +
-                            "eportableQnty \"{6}\"", chargeType, uNID, properShipmentName, packingInstruction, piece, netQtyPerPkg, reportableQnty), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 28
- testRunner.And("User saves the CAO DG shipment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 29
- testRunner.And("User captures the checksheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 30
  testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 31
+#line 28
  testRunner.And("User saves all the details & handles all the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 32
+#line 29
  testRunner.When("User enters the screen name as \'OPR344\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 33
+#line 30
  testRunner.Then("User enters into the  iCargo \'Export Manifest\' page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 34
+#line 31
  testRunner.When("User enters the Booked FlightNumber with \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 35
+#line 32
  testRunner.And("User enters Booked ShipmentDate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 36
+#line 33
  testRunner.And("User clicks on the List button to fetch the Booked Shipment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 37
+#line 34
  testRunner.And(string.Format("User creates new ULD/Cart in Assigned Shipment with cartType \"{0}\" and pou \"{1}\"", cartType, destination), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 38
+#line 35
  testRunner.And(string.Format("User filterouts the Booked AWB from \'{0}\' and Created ULD_Cart", aWBSectionName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 39
+#line 36
  testRunner.And("User clicks on the Manifest button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 40
+#line 37
  testRunner.And("User closes the PrintPDF window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 38
+ testRunner.And("User cliks on the offload ULD button to open the offload popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 39
+ testRunner.And(string.Format("User enters the details to move to another NewFlightNumber \"{0}\" and POU \"{1}\" in" +
+                            " the \'ULD\' offload popup", newFlightNumber, destination), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 40
+ testRunner.And("User validates the warning message \"The shipment is not booked to the flight\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 41
- testRunner.And("User validates the AWB is \"Manifested\" in the Export Manifest screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User validates the AWB is \"Offloaded\" in the Export Manifest screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 42
- testRunner.Then("User closes the Export Manifest screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks on the orange pencil to edit the manifest", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 43
- testRunner.Given("User lauches the Url of Fogs QA Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.When(string.Format("User enters the new flight number \"{0}\" to move the offloaded shipment", newFlightNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 44
- testRunner.Then("User enters into the  Fogs QA Portal \'Cargo Manifest\' page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User enters Booked ShipmentDate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 45
- testRunner.When(string.Format("User enters the station \'{0}\' and flightNumber in Fogs QA Portal", station), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User clicks on the List button to fetch the Booked Shipment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 46
- testRunner.And("User clicks on the View button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks on the Manifest button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 47
- testRunner.And("User should see the manifest details appeared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User closes the PrintPDF window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 48
- testRunner.Then(string.Format("User validates the handling code \'{0}\' under Manifest details", handlingCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User closes the Export Manifest screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

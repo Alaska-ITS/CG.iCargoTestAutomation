@@ -20,22 +20,22 @@ namespace iCargoUIAutomation.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("OPR344_EXP_00020_Manifest an AWB that does not have any available pieces_weight")]
-    public partial class OPR344_EXP_00020_ManifestAnAWBThatDoesNotHaveAnyAvailablePieces_WeightFeature
+    [NUnit.Framework.DescriptionAttribute("OPR344_EXP_00021_Manifest an AWB that does not have any available pieces_weight")]
+    public partial class OPR344_EXP_00021_ManifestAnAWBThatDoesNotHaveAnyAvailablePieces_WeightFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "OPR344_EXP_00020_Manifest an AWB that does not have any available pieces_weight.feature"
+#line 1 "OPR344_EXP_00021_Manifest an AWB that does not have any available pieces_weight.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "OPR344_EXP_00020_Manifest an AWB that does not have any available pieces_weight", "Manifest a Shipment as a CGO or CGODG user", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "OPR344_EXP_00021_Manifest an AWB that does not have any available pieces_weight", "Manifest a Shipment as a CGO or CGODG user", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,7 +76,7 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Manifest an AWB that does not have any available pieces_weight")]
         [NUnit.Framework.CategoryAttribute("OPR344")]
-        [NUnit.Framework.CategoryAttribute("OPR344_EXP_00020")]
+        [NUnit.Framework.CategoryAttribute("OPR344_EXP_00021")]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "PlannedShipment", "CART", "Yes", null)]
         public virtual void ManifestAnAWBThatDoesNotHaveAnyAvailablePieces_Weight(
                     string agentCode, 
@@ -100,7 +100,7 @@ namespace iCargoUIAutomation.Features
         {
             string[] @__tags = new string[] {
                     "OPR344",
-                    "OPR344_EXP_00020"};
+                    "OPR344_EXP_00021"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
