@@ -689,14 +689,14 @@ namespace iCargoUIAutomation.pages
         {
             Click(By.XPath("//button[contains(@id,'uld_offload-" + cartUldNum + "')]"));
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Offload AWB Button for ULD/Cart Number: " + cartUldNum);
-            WaitForElementToBeVisible(modalOffloadAWB_Css, TimeSpan.FromSeconds(2));
+            WaitForElementToBeVisible(modalOffloadAWB_Css, TimeSpan.FromSeconds(5));
         }
 
         public void ClickOnOffloadAWBButton()
         {
             Click(By.XPath("//button[contains(@id,'awb_offload-" + cartUldNum + "')]"));  
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Offload AWB Button for ULD/Cart Number: " + cartUldNum);
-            WaitForElementToBeVisible(modalOffloadAWB_Css, TimeSpan.FromSeconds(2));
+            WaitForElementToBeVisible(modalOffloadAWB_Css, TimeSpan.FromSeconds(5));
         }
 
 
