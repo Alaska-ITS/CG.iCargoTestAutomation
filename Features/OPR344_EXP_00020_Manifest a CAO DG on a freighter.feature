@@ -1,7 +1,7 @@
-﻿Feature: OPR344_EXP_00019_Manifest a CAO DG on a freighter
+﻿Feature: OPR344_EXP_00020_Manifest a CAO DG on a freighter
 Create a New DG Shipment, Acceptance & screening of that as a CGODG user
 
-@OPR344 @OPR344_EXP_00019
+@OPR344 @OPR344_EXP_00020
 Scenario Outline: Manifest a CAO DG on a freighter
 	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"

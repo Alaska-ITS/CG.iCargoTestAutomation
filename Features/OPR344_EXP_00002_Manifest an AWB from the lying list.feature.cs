@@ -77,8 +77,8 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("Manifest an AWB from the lying list")]
         [NUnit.Framework.CategoryAttribute("OPR344")]
         [NUnit.Framework.CategoryAttribute("OPR344_EXP_00002")]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "230", "CC", "None", "93", "CART", "LyingList", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "56", "123", "CC", "None", "16", "CART", "LyingList", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "230", "CC", "None", "175", "CART", "LyingList", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "26", "123", "CC", "None", "16", "CART", "LyingList", "Yes", null)]
         public virtual void ManifestAnAWBFromTheLyingList(
                     string agentCode, 
                     string shipperCode, 
