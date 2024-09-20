@@ -10,7 +10,7 @@ using OpenQA.Selenium.Edge;
 namespace iCargoUIAutomation.StepDefinitions
 {
     [Binding]
-    public class OPR344_EXP_00019_ManifestCAODGonFreighterStepDefinition : BasePage
+    public class OPR344_EXP_00020_ManifestCAODGonFreighterStepDefinition : BasePage
     {
         private IWebDriver driver;
         private PageObjectManager pageObjectManager;
@@ -18,10 +18,10 @@ namespace iCargoUIAutomation.StepDefinitions
         private FogsQAPage fogsQAPage;
 
 
-        ILog Log = LogManager.GetLogger(typeof(OPR344_EXP_00019_ManifestCAODGonFreighterStepDefinition));
+        ILog Log = LogManager.GetLogger(typeof(OPR344_EXP_00020_ManifestCAODGonFreighterStepDefinition));
 
 
-        public OPR344_EXP_00019_ManifestCAODGonFreighterStepDefinition(IWebDriver driver) : base(driver)
+        public OPR344_EXP_00020_ManifestCAODGonFreighterStepDefinition(IWebDriver driver) : base(driver)
         {
             this.driver = driver;
             this.pageObjectManager = new PageObjectManager(driver);

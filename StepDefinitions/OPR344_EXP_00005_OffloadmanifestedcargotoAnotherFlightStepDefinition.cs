@@ -61,20 +61,37 @@ namespace iCargoUIAutomation.StepDefinitions
            
         }
 
-        [When(@"User enters the details to move to another NewFlightNumber ""([^""]*)"" and POU ""([^""]*)""")]
-        public void WhenUserEntersTheDetailsToMoveToAnotherNewFlightNumber(string newFlightNum, string POUoffload)
+        [When(@"User cliks on the offload ULD button to open the offload popup")]
+        public void WhenUserCliksOnTheOffloadULDButtonToOpenTheOffloadPopup()
         {
             if (ScenarioContext.Current["Execute"] == "true")
             {
                 Hooks.Hooks.createNode();
-                emp.FillOffloadFormAndMoveToAnotherFlight(newFlightNum, POUoffload);
+                emp.ClickOnOffloadULDButton();
             }
             else
             {
                 ScenarioContext.Current.Pending();
             }
-            
         }
+
+
+        
+
+        [When(@"User enters the details to move to another NewFlightNumber ""([^""]*)"" and POU ""([^""]*)"" in the '([^']*)' offload popup")]
+        public void WhenUserEntersTheDetailsToMoveToAnotherNewFlightNumberAndPOUInTheOffloadPopup(string newFlightNum, string POUoffload, string offLoadFormType)
+        {
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                emp.FillOffloadFormAndMoveToAnotherFlight(newFlightNum, POUoffload, offLoadFormType);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+        }
+
 
         [When(@"User clicks on the orange pencil to edit the manifest")]
         public void WhenUserClicksOnTheOrangePencilToEditTheManifest()

@@ -37,7 +37,7 @@ Scenario Outline: Offload manifested cargo to another flight
 	And User closes the PrintPDF window
 	And User expands the cart/uld to check the awb
 	And User cliks on the offload button to open the offload popup
-	And User enters the details to move to another NewFlightNumber "<NewFlightNumber>" and POU "<Destination>"
+	And User enters the details to move to another NewFlightNumber "<NewFlightNumber>" and POU "<Destination>" in the 'AWB' offload popup
 	And User validates the warning message "The shipment is not booked to the flight"
 	And User validates the AWB is "Offloaded" in the Export Manifest screen
 	And User clicks on the orange pencil to edit the manifest

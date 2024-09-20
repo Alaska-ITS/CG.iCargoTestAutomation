@@ -130,8 +130,8 @@ namespace iCargoUIAutomation.pages
                 var secrets = keyVault.GetSecrets();                                
                 WaitForElementToBeVisible(userName_Id, TimeSpan.FromSeconds(10));
 
-                role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);  
-               // role="CGODG"; //Comment this line if you want to run the tests in different roles
+               role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);  
+               //role="CGODG"; //Comment this line if you want to run the tests in different roles
                 
                 if (role.ToUpper() == "CCC")
                 {

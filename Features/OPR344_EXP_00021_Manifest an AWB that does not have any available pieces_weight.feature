@@ -1,8 +1,8 @@
-﻿Feature: OPR344_EXP_00020_Manifest an AWB that does not have any available pieces_weight
+﻿Feature: OPR344_EXP_00021_Manifest an AWB that does not have any available pieces_weight
 
 Manifest a Shipment as a CGO or CGODG user
 
-@OPR344 @OPR344_EXP_00020
+@OPR344 @OPR344_EXP_00021
 Scenario Outline: Manifest an AWB that does not have any available pieces_weight
 	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
