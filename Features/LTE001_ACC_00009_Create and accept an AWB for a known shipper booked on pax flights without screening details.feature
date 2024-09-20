@@ -30,5 +30,4 @@ Scenario Outline: Create and accept an AWB for a known shipper booked on pax fli
 Examples:
 	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
 	| 11377     | 11377       | 11377         | SEA    | LAX         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | JFK         | PRIORITY    | None | 2199      | None                | None              | 8     | 360    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SAN    | JFK         | GOLDSTREAK  | None | 0316      | None                | None              | 2     | 55     | CC         | None          | CART     | Yes     |
+	

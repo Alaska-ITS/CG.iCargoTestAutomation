@@ -79,8 +79,9 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00005")]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "ORD", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "ANC", "PDX", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "BOS", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "3", "145", "CC", "None", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "18", "360", "CC", "None", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "PHX", "PRIORITY", "None", "NONSCR", "None", "None", "30", "600", "CC", "None", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "SFO", "PRIORITY", "None", "NONSCR", "None", "None", "30", "600", "CC", "None", "CART", "Yes", null)]
         public virtual void CreateACCAWBInLTE001ForAKnownShipper(
                     string agentCode, 
                     string shipperCode, 

@@ -256,6 +256,36 @@ namespace iCargoUIAutomation.pages
             }
         }
 
+        public void UnknownShipperAllDetails()
+        {            
+            if(GetAttributeValue(unkShipperName_ID, "value") =="") 
+            {
+                EnterTextWithCheck(unkShipperName_ID, "Test Shipper");
+                EnterTextWithCheck(unkShipperFirstAddress_ID, "Test Address1");
+                EnterTextWithCheck(unkShipperSecondAddress, "Test Address2");
+                EnterTextWithCheck(unkShipperCity_ID, "Test City");
+                EnterTextWithCheck(unkShipperState_ID, "Test State");
+                EnterTextWithCheck(unkShipperCountry_ID, "US");
+                EnterTextWithCheck(unkShipperZip_ID, "67890");
+                EnterTextWithCheck(unkShipperEmail_ID, "TEST@GMAIL.COM.INVALID");
+            }
+        }
+
+        public void UnknownConsigneeAllDetails()
+        {            
+            if (GetAttributeValue(unkConsigneeName_ID, "value") == "") 
+            {
+                EnterTextWithCheck(unkConsigneeName_ID, "Test Consignee");
+                EnterTextWithCheck(unkConsigneeFirstAddress_ID, "Test Address1");
+                EnterTextWithCheck(unkConsigneeSecondAddress, "Test Address2");
+                EnterTextWithCheck(unkConsigneeCity_ID, "Test City");
+                EnterTextWithCheck(unkConsigneeState_ID, "Test State");
+                EnterTextWithCheck(unkConsigneeCountry_ID, "US");
+                EnterTextWithCheck(unkConsigneeZip_ID, "67890");
+                EnterTextWithCheck(unkConsigneeEmail_ID, "TEST@GMAIL.COM.INVALID");
+            }
+        }
+
         public void EnterShipperConsigneeDetails(string shipperCode, string consigneeCode)
         {
             globalShipperCode = shipperCode;
@@ -274,19 +304,22 @@ namespace iCargoUIAutomation.pages
                     ClickOnElementIfPresent(unkShipperName_ID);
                     EnterKeys(unkShipperName_ID, Keys.Tab);
                 }
+                UnknownShipperAllDetails();
                 EnterText(consigneeCode_XPATH, consigneeCode.ToString());
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Code: " + consigneeCode);
                 Log.Info("Entered Consignee Code: " + consigneeCode);
                 if(IsElementEnabled(unkConsigneeName_ID))
                 {                    
                     EnterKeys(unkConsigneeName_ID, Keys.Tab);
-                }                                
+                } 
+                UnknownConsigneeAllDetails();
                 WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(5));
                 ClickOnElementIfPresent(shipperConsigneeOkBtn_ID);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee OK Button");
                 Log.Info("Clicked on Shipper Consignee OK Button");
                 SwitchToPopupWindow();
             }
+            
             catch (Exception e)
             {
                 Hooks.Hooks.UpdateTest(Status.Fail, "Error in Entering Shipper Consignee Details: " + e.Message);
@@ -998,12 +1031,12 @@ namespace iCargoUIAutomation.pages
         public void ClickOkAVIChecksheetBtn()
         {
             if (IsElementDisplayed(aviBookingChecksheetOkBtn_XPATH))
-            {
-                ClickElementUsingJavaScript(aviBookingChecksheetOkBtn_XPATH);
+            {                
+                Click(aviBookingChecksheetOkBtn_XPATH);
             }
             else
             {
-                Click(aviBookingChecksheetOkBtn_XPATH);
+                ClickElementUsingJavaScript(aviBookingChecksheetOkBtn_XPATH);
             }
         }
 
@@ -1018,7 +1051,8 @@ namespace iCargoUIAutomation.pages
                 Log.Info("Clicked Save Button to Save New Flight Details");
                 ClickingYesOnPopupWarnings();
                 ClickingYesOnPopupWarnings();
-                SwitchToCAP018Frame();
+                WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(10));
+                SwitchToCAP018Frame();                
                 SwitchToFrame(aviChecksheetFrame_XPath);
                 Log.Info("Switched to AVI Checksheet Frame");
                 List<IWebElement> AviChecksheetSections = GetElements(aviTotalChkSheetSections_Xpath);

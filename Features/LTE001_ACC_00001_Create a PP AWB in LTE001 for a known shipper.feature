@@ -35,3 +35,4 @@ Examples:
 	| 11377     | 11377       | 11377         | SEA    | CDV         | PRIORITY    | None | 2199      | None                | None              | 8     | 360    | PP         | CREDIT        | CART     | Yes     |
 	| 11377     | 11377       | 11377         | SEA    | WRG         | GOLDSTREAK  | None | NONSCR    | None                | None              | 2     | 55     | PP         | CREDIT        | CART     | Yes     |
 	| 11377     | 11377       | 11377         | SEA    | GEG         | PRIORITY    | None | NONSCR    | None                | None              | 5     | 225    | PP         | CREDIT        | CART     | Yes     |
+
