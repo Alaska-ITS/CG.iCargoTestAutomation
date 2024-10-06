@@ -1615,7 +1615,7 @@ namespace iCargoUIAutomation.pages
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
                 SwitchToLastWindow();
-                RefreshPage();
+                //RefreshPage();
                 Hooks.Hooks.UpdateTest(Status.Pass, "Payment Portal Refreshed");
                 totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Back from Payment Portal");
