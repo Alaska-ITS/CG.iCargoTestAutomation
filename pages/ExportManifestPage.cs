@@ -78,6 +78,7 @@ namespace iCargoUIAutomation.pages
         private By chkBoxSelectAWBNum_Xpath = By.XPath("//*[contains(@class,'planned-shipment')]//input[@id='select-0']");
         private By chkBoxSelectAWBNumSplitted_Xpath = By.XPath("//*[contains(@class,'planned-shipment')]//input[@id='select-1']");
         private By btnSplitAssignThreeDots_Xpath = By.XPath("(//*[contains(@class,'planned-shipment')]//button[contains(@class,'dropdown-toggle')])[2]");
+        private By btnSplitAssignLyingListThreeDots_Xpath = By.XPath("//*[contains(@class,'lying-list-table')]//button[contains(@class,'dropdown-toggle')]");
         private By drpdwnMenuSplitAssign_Xpath = By.XPath("//*[contains(@class,'planned-shipment')]//div[@role='rowgroup']//div[@role='menu']");
         private By btnSplitAssign_Xpath = By.XPath("//*[contains(@class,'planned-shipment')]//button[text()=' Split & Assign']");
         private By btnCaptureIrregularity_Xpath = By.XPath("//*[contains(@class,'planned-shipment')]//button[text()=' Capture Irregularity']");
