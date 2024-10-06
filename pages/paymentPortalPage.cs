@@ -129,11 +129,12 @@ namespace iCargoUIAutomation.pages
             {
                 Log.Info("Confirming Manual Payment");
                 Hooks.Hooks.UpdateTest(Status.Info, "Confirming Manual Payment");
-                Click(optionManualPaymentMethod_Xpath);                
+                ClickOnElementIfPresent(optionManualPaymentMethod_Xpath);                
                 Hooks.Hooks.UpdateTest(Status.Pass, "Selected Manual Payment Option");
                 ClickOnElementIfEnabled(btnNext_Xpath);               
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Next Button");
                 ClickOnElementIfPresent(btnConfirmManualPayment_Xpath);
+                WaitForElementToBeInvisible(btnConfirmManualPayment_Xpath, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Confirm manual payment Button");
             }
             catch (Exception e)
