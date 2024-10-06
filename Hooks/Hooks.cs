@@ -72,7 +72,8 @@ namespace iCargoUIAutomation.Hooks
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
 
-            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);                
+            //browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process); 
+            browser="chrome"; // Default browser is "chrome
            
             if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
             {
@@ -193,7 +194,7 @@ namespace iCargoUIAutomation.Hooks
                 {
                     
                     // Append data to the downloaded or newly created Excel file
-                    excelFileConfig.AppendDataToExcel(tempLocalPath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", featureName, CreateShipmentPage.awb_num, CreateShipmentPage.origin, CreateShipmentPage.destination, CreateShipmentPage.agentCode, CreateShipmentPage.shipperCode, CreateShipmentPage.consigneeCode, CreateShipmentPage.productCode, CreateShipmentPage.commodityCode, CreateShipmentPage.pieces, CreateShipmentPage.weight);
+                    excelFileConfig.AppendDataToExcel(tempLocalPath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", featureName, CreateShipmentPage.awb_num, CreateShipmentPage.origin, CreateShipmentPage.destination, CreateShipmentPage.productCode, CreateShipmentPage.agentCode, CreateShipmentPage.shipperCode, CreateShipmentPage.consigneeCode, CreateShipmentPage.commodityCode, CreateShipmentPage.pieces, CreateShipmentPage.weight);
 
                 }                
 

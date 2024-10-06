@@ -114,7 +114,7 @@ namespace iCargoUIAutomation.pages
             }
             catch (Exception e)
             {
-                
+                Hooks.Hooks.UpdateTest(Status.Fail, "Error in handling Payment in Payment Portal: " + e.Message);
                 Log.Error("Error in handling Payment in Payment Portal" + e.Message);
             }
 
@@ -125,14 +125,23 @@ namespace iCargoUIAutomation.pages
 
         public void ConfirmManualPayment()
         {
-            Hooks.Hooks.UpdateTest(Status.Info, "Confirming Manual Payment");
-            Log.Info("Confirming Manual Payment");           
-            Click(optionManualPaymentMethod_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Selected Manual Payment Option");
-            Click(btnNext_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Next Button");
-            Click(btnConfirmManualPayment_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Confirm manual payment Button");
+            try
+            {
+                Log.Info("Confirming Manual Payment");
+                Hooks.Hooks.UpdateTest(Status.Info, "Confirming Manual Payment");
+                Click(optionManualPaymentMethod_Xpath);                
+                Hooks.Hooks.UpdateTest(Status.Pass, "Selected Manual Payment Option");
+                ClickOnElementIfEnabled(btnNext_Xpath);               
+                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Next Button");
+                ClickOnElementIfPresent(btnConfirmManualPayment_Xpath);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Confirm manual payment Button");
+            }
+            catch (Exception e)
+            {
+                Hooks.Hooks.UpdateTest(Status.Fail, "Error in Confirming Manual Payment: " + e.Message);
+                Log.Error("Error in Confirming Manual Payment" + e.Message);
+            }
+           
 
         }
 
