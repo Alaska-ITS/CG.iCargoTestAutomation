@@ -127,9 +127,9 @@ namespace iCargoUIAutomation.pages
         {
             try
             {
-                Log.Info("Confirming Manual Payment");
+                //Log.Info("Confirming Manual Payment");
                 Hooks.Hooks.UpdateTest(Status.Info, "Confirming Manual Payment");
-                ClickOnElementIfPresent(optionManualPaymentMethod_Xpath);                
+                Click(optionManualPaymentMethod_Xpath);                
                 Hooks.Hooks.UpdateTest(Status.Pass, "Selected Manual Payment Option");
                 ClickOnElementIfEnabled(btnNext_Xpath);               
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Next Button");
