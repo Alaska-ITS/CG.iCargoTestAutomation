@@ -32,4 +32,5 @@ Scenario Outline: Create a PP AWB in LTE001 for a known shipper
 Examples:
 	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
 	| 11377     | 11377       | 11377         | SEA    | YAK         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | PP         | CREDIT        | CART     | Yes     |
+
 	

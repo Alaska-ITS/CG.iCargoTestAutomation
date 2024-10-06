@@ -124,7 +124,7 @@ namespace iCargoUIAutomation.pages
 
 
         public void ConfirmManualPayment()
-        {           
+        {        
             Log.Info("Confirming Manual Payment");
             Hooks.Hooks.UpdateTest(Status.Info, "Confirming Manual Payment");
             ClickOnElementIfPresent(optionManualPaymentMethod_Xpath);                
@@ -132,8 +132,8 @@ namespace iCargoUIAutomation.pages
             ClickOnElementIfEnabled(btnNext_Xpath);               
             Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Next Button");
             ClickOnElementIfPresent(btnConfirmManualPayment_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Confirm manual payment Button");    
-           
+            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Confirm manual payment Button");   
+                      
         }
 
 

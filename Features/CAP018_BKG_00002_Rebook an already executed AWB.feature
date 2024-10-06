@@ -15,5 +15,5 @@ Scenario Outline: iCargo Login and Rebook an already executed AWB
 
 Examples:
 	| AWB      | Execute |
-	| 33502420 | Yes     |
+	| 33504984 | Yes     |
 	
