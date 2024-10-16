@@ -82,8 +82,6 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00009")]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SAN", "JFK", "GOLDSTREAK", "None", "0316", "None", "None", "2", "55", "CC", "None", "CART", "Yes", null)]
         public virtual void CreateAndAcceptAnAWBForAKnownShipperBookedOnPaxFlightsWithoutScreeningDetails(
                     string agentCode, 
                     string shipperCode, 

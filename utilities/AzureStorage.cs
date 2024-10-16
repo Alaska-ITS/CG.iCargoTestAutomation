@@ -8,7 +8,7 @@ namespace iCargoUIAutomation.utilities
     {
         private readonly string _connectionString;
         private readonly string _containerName;
-        private readonly KeyVault keyVault;
+        private readonly KeyVault keyVault;        
 
         public AzureStorage(string containerName)
         {
@@ -74,6 +74,9 @@ namespace iCargoUIAutomation.utilities
                 Console.WriteLine($"Uploading file to blob: {fileName}");
                 blobClient.Upload(localFilePath, overwrite: true);
                 Console.WriteLine("Upload successful.");
+
+                //print the path of the blob file uploaded
+                Console.WriteLine($"Blob file path: {blobClient.Uri}");
             }
             catch (Exception ex)
             {
@@ -111,6 +114,8 @@ namespace iCargoUIAutomation.utilities
                     Console.WriteLine($"Uploading file to blob: {blobName}");
                     blobClient.Upload(file, overwrite: true);
                     Console.WriteLine("File upload successful.");
+
+                    Hooks.Hooks.uploadedBlobPaths.Add(blobClient.Uri.ToString());
                 }
             }
             catch (Exception ex)
