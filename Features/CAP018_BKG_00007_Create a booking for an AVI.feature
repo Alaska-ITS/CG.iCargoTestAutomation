@@ -14,6 +14,6 @@ Scenario Outline: iCargo Login and Create New AVI Shipment
 	And User clicks on Save button and fills the checksheet details to generate awb
 Examples:
 	| Origin | Destination | ProductCode | Commodity | Piece | Weight | Execute | Agent Code | Shipper Code | Consignee Code |
-	| ANC    | FAI         | PET CONNECT | 9730      | 2     | 50     | Yes     | 10763      | 10763        | 10763          |
+	| ANC    | FAI         | PET CONNECT | 9730      | 2     | 50     | No      | 10763      | 10763        | 10763          |
 	| SEA    | HNL         | PET CONNECT | 9730      | 1     | 100    | Yes     | ASQXGUEST  | C1001        | C1001          |
-	| BOI    | LAX         | PET CONNECT | 9730      | 1     | 35     | Yes     | 49990      | 49990        | C1001          |
+	| BOI    | LAX         | PET CONNECT | 9730      | 1     | 35     | No      | 49990      | 49990        | C1001          |
