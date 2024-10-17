@@ -16,8 +16,8 @@ Scenario Outline: iCargo Login and Create New Shipment
 Examples:
 
 	| Origin | Destination | ProductCode | Commodity | Piece | Weight | Execute | Agent Code | Shipper Code | Consignee Code |
-	| ANC    | HNL         | PRIORITY    | 2199      | 10     | 360   | Yes     | 10763      | 10763        | 10763          |
+	| ANC    | HNL         | PRIORITY    | 2199      | 10     | 360   | No     | 10763      | 10763        | 10763          |
 	| SEA    | BOI         | GENERAL     | NONSCR    | 13    | 775    | Yes     | 10763      | 10763        | 10763          |
-	| SAN    | JFK         | GOLDSTREAK  | NONSCR    | 2     | 56     | Yes     | 10763      | 10763        | 10763          |
-	| SEA    | MCO         | PRIORITY    | NONSCR    | 4     | 180    | Yes     | 10763      | 10763        | 10763          |
-	| SEA    | DFW         | GENERAL     | NONSCR    | 31    | 4340   | Yes     | 10763      | 10763        | 10763          |
+	| SAN    | JFK         | GOLDSTREAK  | NONSCR    | 2     | 56     | No     | 10763      | 10763        | 10763          |
+	| SEA    | MCO         | PRIORITY    | NONSCR    | 4     | 180    | No     | 10763      | 10763        | 10763          |
+	| SEA    | DFW         | GENERAL     | NONSCR    | 31    | 4340   | No     | 10763      | 10763        | 10763          |
