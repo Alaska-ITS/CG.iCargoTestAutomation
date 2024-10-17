@@ -77,9 +77,9 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("Create an AWB for a CAO DG shipment and book on a pax flight")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00015")]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "25", "376", "CC", "None", "CART", "3480", "Lithium ion batteries", "965", "0.5", "No", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "456", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "56", "230", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "35", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "456", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "No", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "56", "230", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "No", null)]
         public virtual void CreateAnAWBForACAODGShipmentAndBookOnAPaxFlight(
                     string agentCode, 
                     string shipperCode, 
