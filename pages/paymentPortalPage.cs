@@ -84,7 +84,7 @@ namespace iCargoUIAutomation.pages
             {
                 if (chargetyp.Equals("PP") || chargetyp.Equals("CC"))
                 {
-                    if (IsElementDisplayed(txtPleaseCloseTabRetry_Xpath, 3))
+                    if (IsElementDisplayed(txtPleaseCloseTabRetry_Xpath, 20))
                     {
                         CloseCurrentWindow();
                         Hooks.Hooks.UpdateTest(Status.Pass, "Closed Payment Portal Tab & Retrying");
