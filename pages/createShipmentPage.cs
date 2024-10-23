@@ -1495,6 +1495,7 @@ namespace iCargoUIAutomation.pages
                         {
                             SwitchToLastWindow();
                             RefreshPage();
+                            Thread.Sleep(2000);
                             totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
                             WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
                             SwitchToLastWindow();
@@ -1614,8 +1615,7 @@ namespace iCargoUIAutomation.pages
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
-                SwitchToLastWindow();
-                Thread.Sleep(2000);
+                SwitchToLastWindow();               
                 RefreshPage();
                 Hooks.Hooks.UpdateTest(Status.Pass, "Payment Portal Refreshed");
                 totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
