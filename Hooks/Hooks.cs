@@ -35,6 +35,8 @@ namespace iCargoUIAutomation.Hooks
         private const string containerName = "resources";
         private const string reportContainerName = "reports";
         private static AzureStorage? azureStorage;
+        public static List<string> uploadedBlobPaths = new List<string>();
+
 
         public Hooks(IObjectContainer container)
         {
@@ -72,8 +74,7 @@ namespace iCargoUIAutomation.Hooks
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
 
-            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process); 
-            //browser="chrome"; // Default browser is "chrome
+            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);             
            
             if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
             {
@@ -118,6 +119,10 @@ namespace iCargoUIAutomation.Hooks
             extent.Flush();
             azureStorage = new AzureStorage(reportContainerName);
             azureStorage.UploadFolderToAzure(reportPath);
+            foreach (string blobPath in uploadedBlobPaths)
+            {                
+               TestContext.WriteLine($"Blob file path: {blobPath}");
+            }
             if (File.Exists(reportPath))
             {
                 File.Delete(reportPath);
