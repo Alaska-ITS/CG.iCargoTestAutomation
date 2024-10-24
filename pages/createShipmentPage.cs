@@ -1497,9 +1497,7 @@ namespace iCargoUIAutomation.pages
                         int noOfWindowsAfter = GetNumberOfWindowsOpened();
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
-                            SwitchToLastWindow();
-                            RefreshPage();
-                            Thread.Sleep(2000);
+                            SwitchToLastWindow();                          
                             totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
                             WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
                             SwitchToLastWindow();
@@ -1578,8 +1576,7 @@ namespace iCargoUIAutomation.pages
                         int noOfWindowsAfter = GetNumberOfWindowsOpened();
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
-                            SwitchToLastWindow();
-                            RefreshPage();
+                            SwitchToLastWindow();                         
                             totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
                             WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
                             SwitchToLastWindow();
@@ -1649,8 +1646,7 @@ namespace iCargoUIAutomation.pages
                 int noOfWindowsAfter = GetNumberOfWindowsOpened();
                 if (noOfWindowsAfter > noOfWindowsBefore)
                 {
-                    SwitchToLastWindow();
-                    RefreshPage();
+                    SwitchToLastWindow();                   
                     ppp.HandlePaymentInPaymentPortal(chargeType);
                     SwitchToLastWindow();
                     SwitchToLTEContentFrame();
@@ -1690,8 +1686,7 @@ namespace iCargoUIAutomation.pages
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
-                SwitchToLastWindow();
-                RefreshPage();
+                SwitchToLastWindow();               
                 ppp.HandlePaymentInPaymentPortal(chargeType);
                 SwitchToLastWindow();
                 SwitchToLTEContentFrame();
@@ -1733,8 +1728,7 @@ namespace iCargoUIAutomation.pages
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
-                SwitchToLastWindow();
-                RefreshPage();
+                SwitchToLastWindow();               
                 ppp.HandlePaymentInPaymentPortal(chargeType);
                 SwitchToLastWindow();
                 SwitchToLTEContentFrame();
@@ -1826,8 +1820,7 @@ namespace iCargoUIAutomation.pages
                         int noOfWindowsAfter = GetNumberOfWindowsOpened();
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
-                            SwitchToLastWindow();
-                            RefreshPage();
+                            SwitchToLastWindow();                           
                             totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
                             WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
                             SwitchToLastWindow();
