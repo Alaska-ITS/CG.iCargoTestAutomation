@@ -32,8 +32,7 @@ namespace iCargoUIAutomation.pages
         public void ClosePaymentPortal()
         {
             Log.Info("Closing Payment Portal");
-            CloseCurrentWindow();
-            //WaitForElementToBeInvisible(txtPleaseCloseTabRetry_Xpath, TimeSpan.FromSeconds(5));
+            CloseCurrentWindow();           
             Hooks.Hooks.UpdateTest(Status.Pass, "Closed Payment Portal");
         }
 
@@ -84,12 +83,19 @@ namespace iCargoUIAutomation.pages
             {
                 if (chargetyp.Equals("PP") || chargetyp.Equals("CC"))
                 {
-                    if (IsElementDisplayed(txtPleaseCloseTabRetry_Xpath, 3))
+                    if (IsElementDisplayed(txtPleaseCloseTabRetry_Xpath, 5))
                     {
                         CloseCurrentWindow();
                         Hooks.Hooks.UpdateTest(Status.Pass, "Closed Payment Portal Tab & Retrying");
                     }
-                    else if (chargetyp.Equals("PP"))
+                    else
+                    {
+                        RefreshPage();
+                        CloseCurrentWindow();
+                        Hooks.Hooks.UpdateTest(Status.Pass, "Refreshed & Closed Payment Portal Tab & Retrying");
+                    }
+                    
+                    if (chargetyp.Equals("PP"))
                     {
                         ConfirmManualPayment();
                         ScrollDown();
@@ -100,7 +106,7 @@ namespace iCargoUIAutomation.pages
                         Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Done Button");
                         WaitForElementToBeInvisible(btnDone_Xpath, TimeSpan.FromSeconds(7));
                     }
-                    else if (chargetyp.Equals("CC"))
+                    else 
                     {
                         ConfirmManualPayment();
                         Click(btnExitIcargo_Xpath);
