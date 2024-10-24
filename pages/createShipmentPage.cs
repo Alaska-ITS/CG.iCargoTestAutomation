@@ -34,7 +34,7 @@ namespace iCargoUIAutomation.pages
         string MarketCharge = "";
         public static string origin = "";
         public static string destination = "";
-        string shippingDate = DateTime.Now.ToString("dd-MMM-yyyy");
+        public static string shippingDate = DateTime.Now.ToString("dd-MMM-yyyy");
         string scc = "";
         string serviceCargoClass = "";
         public static string pieces = "";
@@ -527,7 +527,7 @@ namespace iCargoUIAutomation.pages
                 Hooks.Hooks.UpdateTest(Status.Pass, "Origin: " + origin);
                 destination = GetAttributeValue(txtDestination_Name, "value");
                 Hooks.Hooks.UpdateTest(Status.Pass, "Destination: " + destination);
-                this.shippingDate = GetAttributeValue(txtShipmentDate_Name, "value");
+                shippingDate = GetAttributeValue(txtShipmentDate_Name, "value");
                 Hooks.Hooks.UpdateTest(Status.Pass, "Shipping Date: " + shippingDate);
                 pieces = GetAttributeValue(txtPieces_Name, "value");
                 Hooks.Hooks.UpdateTest(Status.Pass, "Pieces: " + pieces);
@@ -806,7 +806,7 @@ namespace iCargoUIAutomation.pages
                                 EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Flight " + flightNum + " & connecting flightNum " + ConnectingflightNum + " is booked successfully");
                                 Log.Info("Flight " + flightNum + " & connecting flightNum " + ConnectingflightNum + " is booked successfully");
-
+                                shippingDate = GetAttributeValue(txtFlightDate_Name, "value");
                                 break;
                             }
                             i = i + 1;
@@ -822,6 +822,7 @@ namespace iCargoUIAutomation.pages
                                 EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Flight " + flightNum + " is booked successfully");
                                 Log.Info("Flight " + flightNum + " is booked successfully");
+                                shippingDate = GetAttributeValue(txtFlightDate_Name, "value");
                                 break;
                             }
                         }
@@ -869,6 +870,7 @@ namespace iCargoUIAutomation.pages
                                 EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                 Hooks.Hooks.UpdateTest(Status.Pass, typeOfFlight + " Flight: " + flightNum + " is booked successfully");
                                 Log.Info(typeOfFlight + " Flight: " + flightNum + " is booked successfully");
+                                shippingDate = GetAttributeValue(txtFlightDate_Name, "value");
                                 break;
                             }
 
@@ -915,6 +917,7 @@ namespace iCargoUIAutomation.pages
                                 EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                 Hooks.Hooks.UpdateTest(Status.Pass, typeOfFlight + " Flight: " + flightNum + " is booked successfully");
                                 Log.Info(typeOfFlight + " Flight: " + flightNum + " is booked successfully");
+                                shippingDate = GetAttributeValue(txtFlightDate_Name, "value");
                                 break;
                             }
 
@@ -963,7 +966,7 @@ namespace iCargoUIAutomation.pages
                                     EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                     Hooks.Hooks.UpdateTest(Status.Pass, firstflttyp + " Flight " + flightNum + " & connecting " + secondflttype + " Flight " + ConnectingflightNum + " is booked successfully");
                                     Log.Info(firstflttyp + " Flight " + flightNum + " & connecting " + secondflttype + " Flight " + ConnectingflightNum + " is booked successfully");
-
+                                    shippingDate = GetAttributeValue(txtFlightDate_Name, "value");
                                     break;
                                 }
 
@@ -1009,7 +1012,7 @@ namespace iCargoUIAutomation.pages
                                 EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Flight " + flightNum + " & connecting flightNum " + ConnectingflightNum + "having minimum connection time restriction, is booked successfully");
                                 Log.Info("Flight " + flightNum + " & connecting flightNum " + ConnectingflightNum + "having minimum connection time restriction, is booked successfully");
-
+                                shippingDate = GetAttributeValue(txtFlightDate_Name, "value");
                                 break;
                             }
                             i += 1;
@@ -1471,6 +1474,7 @@ namespace iCargoUIAutomation.pages
                         ClickOnElementIfPresent(btnOrangePencilEditBooking_Css);
                         WaitForElementToBeVisible(btnClear_Id, TimeSpan.FromSeconds(5));
                         ClickElementUsingActions(btnClear_Id);
+                        WaitForElementToBeInvisible(lblShipmentDetails_Css, TimeSpan.FromSeconds(5));
                         Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
                         SwitchToDefaultContent();
                         break;
@@ -1610,12 +1614,12 @@ namespace iCargoUIAutomation.pages
                 Click(btnContinueEmbargo_Xpath);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
             }
-
             WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore + 1);
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
-                SwitchToLastWindow();               
+                SwitchToLastWindow();
+                Thread.Sleep(5000);
                 RefreshPage();
                 Hooks.Hooks.UpdateTest(Status.Pass, "Payment Portal Refreshed");
                 totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
