@@ -37,6 +37,6 @@ Scenario Outline: Create an AWB in LTE001 that has pieces that fail screening
 
 Examples:
 	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
-	| 11377     | 11377       | 11377         | ANC    | HNL         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | JFK         | PRIORITY    | None | 2199      | None                | None              | 8     | 360    | CC         | None          | CART     | Yes     |
+	| 11377     | 11377       | 11377         | ANC    | HNL         | PRIORITY    | None | 2199      | None                | None              | 13    | 775    | CC         | None          | CART     | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | JFK         | GENERAL     | None | NONSCR    | None                | None              | 8     | 360    | CC         | None          | CART     | Yes     |
 	| 11377     | 11377       | 11377         | SAN    | JFK         | GOLDSTREAK  | None | NONSCR    | None                | None              | 2     | 55     | CC         | None          | CART     | Yes     |
