@@ -163,6 +163,7 @@ namespace iCargoUIAutomation.pages
         private By txtMarketCharge_Xpath = By.XPath("//input[@name='marketCharge']");
         private By txtTotalCharge_Xpath = By.XPath("(//span[starts-with(normalize-space(text()), 'Total Charge(Inc. Tax):')])[2]");
         private By drpdwnModeOfPayment_Name = By.Name("modeOfPay");
+        private By txtPaymentRemarks_Css = By.CssSelector("#remarks");
         private By btnContinueChargeDetails_Name = By.Name("btnChargeDtlsCont");
         private By popupActiveCashDraw_Xpath = By.XPath("//*[text()='No Active Cash draw exists, Do you want to open a new Cash draw?']");
         private By btnYesActiveCashDraw_Xpath = By.XPath("//*[@class='ui-dialog-buttonset']/button[text()=' Yes ']");
@@ -1142,8 +1143,7 @@ namespace iCargoUIAutomation.pages
                 while (!checkTextboxIsNotEmpty(txtIATACharge_Xpath))
                 {
                     ClickElementUsingJavaScript(btnCalculateCharges_Name);
-                    Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Calculate Charge button");
-                    Thread.Sleep(1000);
+                    Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Calculate Charge button");               
 
                 }
 
@@ -1640,6 +1640,7 @@ namespace iCargoUIAutomation.pages
                 if (IsElementDisplayed(lblEmbargoDetails_Xpath, 1))
                 {
                     Click(btnContinueEmbargo_Xpath);
+                    WaitForElementToBeInvisible(btnContinueEmbargo_Xpath, TimeSpan.FromSeconds(10));
                     Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
                 }
                 WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore + 1);
@@ -1713,7 +1714,6 @@ namespace iCargoUIAutomation.pages
             WaitForElementToBeInvisible(lblShipmentDetails_Css, TimeSpan.FromSeconds(10));
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
             return awb_num;
-
         }
 
         public void SaveDetailsWithCapturingIrregularity(string chargetyp)
