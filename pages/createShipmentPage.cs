@@ -1143,6 +1143,7 @@ namespace iCargoUIAutomation.pages
                 while (!checkTextboxIsNotEmpty(txtIATACharge_Xpath))
                 {
                     ClickElementUsingJavaScript(btnCalculateCharges_Name);
+                    Thread.Sleep(1000);
                     Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Calculate Charge button");               
 
                 }
