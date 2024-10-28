@@ -1165,7 +1165,7 @@ namespace iCargoUIAutomation.pages
                 {
                     ClickElementUsingJavaScript(btnCalculateCharges_Name);
                     Thread.Sleep(1000);
-                    Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Calculate Charge button");                 
+                    Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Calculate Charge button");           
 
                 }
 
@@ -1519,8 +1519,9 @@ namespace iCargoUIAutomation.pages
                         int noOfWindowsAfter = GetNumberOfWindowsOpened();
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
-                            SwitchToLastWindow();
-                            RefreshPage();
+
+                            SwitchToLastWindow();                           
+                            
                             (totalPaybleAmount,accountInfoCIDNum) = ppp.HandlePaymentInPaymentPortal(this.chargeType);
                             WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
                             SwitchToLastWindow();
@@ -1599,9 +1600,10 @@ namespace iCargoUIAutomation.pages
                         int noOfWindowsAfter = GetNumberOfWindowsOpened();
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
-                            SwitchToLastWindow();
-                            RefreshPage();
+
+                            SwitchToLastWindow();                          
                             (totalPaybleAmount, accountInfoCIDNum) = ppp.HandlePaymentInPaymentPortal(this.chargeType);
+
                             WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
                             SwitchToLastWindow();
                             SwitchToLTEContentFrame();
@@ -1672,9 +1674,7 @@ namespace iCargoUIAutomation.pages
                 int noOfWindowsAfter = GetNumberOfWindowsOpened();
                 if (noOfWindowsAfter > noOfWindowsBefore)
                 {
-                    SwitchToLastWindow();
-                    //WaitForElementToBeInvisible(btnSaveShipment_Name, TimeSpan.FromSeconds(5));
-                    RefreshPage();
+                    SwitchToLastWindow();                   
                     ppp.HandlePaymentInPaymentPortal(chargeType);
                     SwitchToLastWindow();
                     SwitchToLTEContentFrame();
@@ -1714,8 +1714,7 @@ namespace iCargoUIAutomation.pages
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
-                SwitchToLastWindow();
-                RefreshPage();
+                SwitchToLastWindow();               
                 ppp.HandlePaymentInPaymentPortal(chargeType);
                 SwitchToLastWindow();
                 SwitchToLTEContentFrame();
@@ -1742,7 +1741,6 @@ namespace iCargoUIAutomation.pages
             WaitForElementToBeInvisible(lblShipmentDetails_Css, TimeSpan.FromSeconds(10));
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
             return awb_num;
-
         }
 
         public void SaveDetailsWithCapturingIrregularity(string chargetyp)
@@ -1757,8 +1755,7 @@ namespace iCargoUIAutomation.pages
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
-                SwitchToLastWindow();
-                RefreshPage();
+                SwitchToLastWindow();               
                 ppp.HandlePaymentInPaymentPortal(chargeType);
                 SwitchToLastWindow();
                 SwitchToLTEContentFrame();
@@ -1850,8 +1847,7 @@ namespace iCargoUIAutomation.pages
                         int noOfWindowsAfter = GetNumberOfWindowsOpened();
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
-                            SwitchToLastWindow();
-                            RefreshPage();
+                            SwitchToLastWindow();                           
                             (totalPaybleAmount, accountInfoCIDNum) = ppp.HandlePaymentInPaymentPortal(this.chargeType);
                             WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
                             SwitchToLastWindow();

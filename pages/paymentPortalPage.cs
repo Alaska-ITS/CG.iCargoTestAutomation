@@ -85,6 +85,7 @@ namespace iCargoUIAutomation.pages
             try
             {
 
+
                 if (!IsElementDisplayed(txtPleaseCloseTabRetry_Xpath, 5) || !IsElementDisplayed(lblAccountInfo_Xpath, 5))
                 {
                     RefreshPage();                   
