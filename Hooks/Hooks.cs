@@ -79,7 +79,7 @@ namespace iCargoUIAutomation.Hooks
 
             if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
             {
-                driver = new ChromeDriver(options);
+                driver = new ChromeDriver();
             }
             else if (browser.Equals("edge", StringComparison.OrdinalIgnoreCase))
             {
