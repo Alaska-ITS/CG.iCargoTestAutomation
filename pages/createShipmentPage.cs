@@ -1524,9 +1524,8 @@ namespace iCargoUIAutomation.pages
                         int noOfWindowsAfter = GetNumberOfWindowsOpened();
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
-                            SwitchToLastWindow();
-                            RefreshPage();
-                            (totalPaybleAmount,accountInfoCIDNum) = ppp.HandlePaymentInPaymentPortal(this.chargeType);
+                            SwitchToLastWindow();                          
+                            totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
                             WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
                             SwitchToLastWindow();
                             SwitchToLTEContentFrame();
@@ -1604,9 +1603,8 @@ namespace iCargoUIAutomation.pages
                         int noOfWindowsAfter = GetNumberOfWindowsOpened();
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
-                            SwitchToLastWindow();
-                            RefreshPage();
-                            (totalPaybleAmount, accountInfoCIDNum) = ppp.HandlePaymentInPaymentPortal(this.chargeType);
+                            SwitchToLastWindow();                         
+                            totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
                             WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
                             SwitchToLastWindow();
                             SwitchToLTEContentFrame();
@@ -1641,7 +1639,6 @@ namespace iCargoUIAutomation.pages
                 Click(btnContinueEmbargo_Xpath);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
             }
-
             WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore + 1);
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
@@ -1677,9 +1674,7 @@ namespace iCargoUIAutomation.pages
                 int noOfWindowsAfter = GetNumberOfWindowsOpened();
                 if (noOfWindowsAfter > noOfWindowsBefore)
                 {
-                    SwitchToLastWindow();
-                    //WaitForElementToBeInvisible(btnSaveShipment_Name, TimeSpan.FromSeconds(5));
-                    RefreshPage();
+                    SwitchToLastWindow();                   
                     ppp.HandlePaymentInPaymentPortal(chargeType);
                     SwitchToLastWindow();
                     SwitchToLTEContentFrame();
@@ -1719,8 +1714,7 @@ namespace iCargoUIAutomation.pages
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
-                SwitchToLastWindow();
-                RefreshPage();
+                SwitchToLastWindow();               
                 ppp.HandlePaymentInPaymentPortal(chargeType);
                 SwitchToLastWindow();
                 SwitchToLTEContentFrame();
@@ -1747,7 +1741,6 @@ namespace iCargoUIAutomation.pages
             WaitForElementToBeInvisible(lblShipmentDetails_Css, TimeSpan.FromSeconds(10));
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
             return awb_num;
-
         }
 
         public void SaveDetailsWithCapturingIrregularity(string chargetyp)
@@ -1762,8 +1755,7 @@ namespace iCargoUIAutomation.pages
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
-                SwitchToLastWindow();
-                RefreshPage();
+                SwitchToLastWindow();               
                 ppp.HandlePaymentInPaymentPortal(chargeType);
                 SwitchToLastWindow();
                 SwitchToLTEContentFrame();

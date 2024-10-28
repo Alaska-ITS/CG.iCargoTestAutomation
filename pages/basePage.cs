@@ -93,11 +93,8 @@ namespace iCargoUIAutomation.pages
 
         public void RefreshPage()
         {
-
             driver.Navigate().Refresh();
             log.Info("Refreshed the page");
-
-
         }
 
         public string CurrentWindowHandle()
