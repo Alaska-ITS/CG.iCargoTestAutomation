@@ -85,6 +85,7 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "GEG", "PRIORITY", "None", "NONSCR", "None", "None", "5", "225", "PP", "CREDIT", "CART", "No", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "SNA", "GENERAL", "None", "NONSCR", "None", "None", "14", "225", "PP", "CREDIT", "CART", "Yes", null)]
 
+
         public virtual void CreateAPPAWBInLTE001ForAKnownShipper(
                     string agentCode, 
                     string shipperCode, 
