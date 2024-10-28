@@ -102,7 +102,23 @@ namespace iCargoUIAutomation.StepDefinitions
                 ScenarioContext.Current.Pending();
             }
         }
-      
+
+        [When(@"User opens & deletes the flight details")]
+        public void WhenUserOpensDeletesTheFlightDetails()
+        {
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                Log.Info("Step: Opening and deleting the Flight Details");
+                csp.OpenAndDeleteFlight();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+        }
+
+
 
         [When(@"User verifies and Update the Acceptance Details")]
         public void WhenUserVerifiesAndUpdateTheAcceptanceDetails()

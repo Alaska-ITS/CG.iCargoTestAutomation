@@ -78,8 +78,8 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("Create a COMAT AWB")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00017")]
-        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "11377", "COMATFF", "SEA", "LAX", "COMAT", "None", "NONSCR", "None", "COMAT", "2", "59", "PP", "NONE", "CART", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "11377", "COMATFF", "SAN", "JFK", "COMAT", "None", "NONSCR", "None", "COMAT", "2", "59", "PP", "NONE", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "59", "PP", "NONE", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "59", "PP", "NONE", "CART", "Yes", null)]
         public virtual void CreateACOMATAWB(
                     string agentCode, 
                     string shipperCode, 

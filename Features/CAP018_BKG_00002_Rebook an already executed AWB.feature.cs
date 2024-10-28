@@ -77,7 +77,7 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("iCargo Login and Rebook an already executed AWB")]
         [NUnit.Framework.CategoryAttribute("CAP018_BKG_00002")]
         [NUnit.Framework.CategoryAttribute("CAP018")]
-        [NUnit.Framework.TestCaseAttribute("33502420", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("33504984", "Yes", null)]
         public virtual void ICargoLoginAndRebookAnAlreadyExecutedAWB(string aWB, string execute, string[] exampleTags)
         {
             string[] @__tags = new string[] {

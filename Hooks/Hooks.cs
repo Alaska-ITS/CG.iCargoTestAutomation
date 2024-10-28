@@ -35,6 +35,8 @@ namespace iCargoUIAutomation.Hooks
         private const string containerName = "resources";
         private const string reportContainerName = "reports";
         private static AzureStorage? azureStorage;
+        public static List<string> uploadedBlobPaths = new List<string>();
+
 
         public Hooks(IObjectContainer container)
         {
@@ -72,10 +74,9 @@ namespace iCargoUIAutomation.Hooks
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
 
-            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);
-            ChromeOptions options = new ChromeOptions();
-            options.AddArgument("--incognito");
-           
+           browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process); 
+
+
             if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
             {
                 driver = new ChromeDriver(options);
@@ -119,6 +120,10 @@ namespace iCargoUIAutomation.Hooks
             extent.Flush();
             azureStorage = new AzureStorage(reportContainerName);
             azureStorage.UploadFolderToAzure(reportPath);
+            foreach (string blobPath in uploadedBlobPaths)
+            {                
+               TestContext.WriteLine($"Blob file path: {blobPath}");
+            }
             if (File.Exists(reportPath))
             {
                 File.Delete(reportPath);
@@ -195,7 +200,8 @@ namespace iCargoUIAutomation.Hooks
                 {
                     
                     // Append data to the downloaded or newly created Excel file
-                    excelFileConfig.AppendDataToExcel(tempLocalPath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", featureName, CreateShipmentPage.awb_num, CreateShipmentPage.origin, CreateShipmentPage.destination, CreateShipmentPage.productCode,CreateShipmentPage.agentCode, CreateShipmentPage.shipperCode, CreateShipmentPage.consigneeCode, CreateShipmentPage.commodityCode, CreateShipmentPage.pieces, CreateShipmentPage.weight);
+
+                    excelFileConfig.AppendDataToExcel(tempLocalPath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", featureName, CreateShipmentPage.awb_num, CreateShipmentPage.origin, CreateShipmentPage.destination, CreateShipmentPage.productCode, CreateShipmentPage.agentCode, CreateShipmentPage.shipperCode, CreateShipmentPage.consigneeCode, CreateShipmentPage.commodityCode, CreateShipmentPage.pieces, CreateShipmentPage.weight);
 
                 }                
 

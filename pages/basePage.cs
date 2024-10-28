@@ -30,8 +30,8 @@ namespace iCargoUIAutomation.pages
 
 
         // Browser Actions
-       
-       
+
+
         // delete all cookiies & caches & verify if all cookies are deleted
         public void DeleteAllCookies()
         {
@@ -93,11 +93,8 @@ namespace iCargoUIAutomation.pages
 
         public void RefreshPage()
         {
-
             driver.Navigate().Refresh();
             log.Info("Refreshed the page");
-
-
         }
 
         public string CurrentWindowHandle()
@@ -125,7 +122,7 @@ namespace iCargoUIAutomation.pages
                 }
             }
             log.Info("Switched to the new window");
-        }        
+        }
 
 
         public void CloseBrowser()
@@ -171,7 +168,7 @@ namespace iCargoUIAutomation.pages
 
         public void SwitchToLastWindow()
         {
-            driver.SwitchTo().Window(driver.WindowHandles[^1]);            
+            driver.SwitchTo().Window(driver.WindowHandles[^1]);
             log.Info("Switched to the last window");
         }
 
@@ -283,16 +280,8 @@ namespace iCargoUIAutomation.pages
 
         public void ClearText(By byLocator)
         {
-            try
-            {
-                driver.FindElement(byLocator).Clear();
-                log.Info("Cleared the text in the element " + byLocator);
-            }
-            catch (Exception e)
-            {
-                log.Error("Failed to clear the text in the element " + byLocator);
-                log.Error(e.ToString());
-            }
+            driver.FindElement(byLocator).Clear();
+            log.Info("Cleared the text in the element " + byLocator);
         }
 
         public void EnterTextToDropdown(By byLocator, string text)
@@ -303,7 +292,7 @@ namespace iCargoUIAutomation.pages
         public string GetText(By byLocator)
         {
 
-            string textExtracted = driver.FindElement(byLocator).Text.Trim();            
+            string textExtracted = driver.FindElement(byLocator).Text.Trim();
             log.Info("Extracted the text " + textExtracted);
             return textExtracted;
 
@@ -340,7 +329,7 @@ namespace iCargoUIAutomation.pages
             driver.FindElement(byLocator).SendKeys(key);
             log.Info("Entered the key in the element " + byLocator);
 
-        }        
+        }
 
         public string GetAttributeValue(By byLocator, string attribute)
         {
@@ -389,14 +378,21 @@ namespace iCargoUIAutomation.pages
             wait.Until(driver => !driver.FindElement(byLocator).Enabled);
         }
 
+        // wait for the element to be enabled
+        public void WaitForElementToBeEnabled(By byLocator, TimeSpan time)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, time);
+            wait.Until(driver => driver.FindElement(byLocator).Enabled);
+        }
+
         // wait until the invisibility of a text
-        
+
         public void WaitForTextToBeInvisible(string text, TimeSpan timeout)
         {
             var wait = new WebDriverWait(driver, timeout);
             wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//*[contains(text(), '" + text + "')]")));
-            
-        }        
+
+        }
 
         public void ClickOnElementIfPresent(By byLocator)
         {
@@ -425,7 +421,7 @@ namespace iCargoUIAutomation.pages
             {
                 return false;
             }
-        }        
+        }
 
 
         public void WaitForNewWindowToOpen(TimeSpan time, int windowCount)
@@ -534,13 +530,13 @@ namespace iCargoUIAutomation.pages
         /* Frame Actions */
         public void SwitchToFrame(By byLocator)
         {
-            driver.SwitchTo().Frame(driver.FindElement(byLocator));            
+            driver.SwitchTo().Frame(driver.FindElement(byLocator));
             log.Info("Switched to frame");
         }
 
         public void SwitchToDefaultContent()
         {
-            driver.SwitchTo().DefaultContent();            
+            driver.SwitchTo().DefaultContent();
             log.Info("Switched to default content");
         }
 

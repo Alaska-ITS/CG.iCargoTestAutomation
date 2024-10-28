@@ -33,5 +33,6 @@ Examples:
 	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
 	| 11377     | 11377       | 11377         | SEA    | ORD         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | CC         | None          | CART     | Yes     |
 	| 11377     | 11377       | 11377         | SEA    | ANC         | PRIORITY    | None | 2199      | None                | None              | 18    | 360    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | PHX         | PRIORITY    | None | NONSCR    | None                | None              | 30    | 600    | CC         | None          | CART     | Yes     |
-	| 11377     | 11377       | 11377         | SEA    | SFO         | PRIORITY    | None | NONSCR    | None                | None              | 30    | 600    | CC         | None          | CART     | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | PHX         | PRIORITY    | None | NONSCR    | None                | None              | 4     | 150    | CC         | None          | CART     | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | SFO         | GENERAL     | None | NONSCR    | None                | None              | 30    | 1200   | CC         | None          | CART     | Yes     |
+	| 11377     | 11377       | 11377         | SEA    | JFK         | PRIORITY    | None | NONSCR    | None                | None              | 2     | 14     | CC         | None          | CART     | Yes     |
