@@ -66,12 +66,7 @@ namespace iCargoUIAutomation.pages
             this.dgp = pageObjectManager.GetDangerousGoodsPage();
             this.cip = pageObjectManager.GetCaptureIrregularityPage();
             this.emp = pageObjectManager.GetExportManifestPage();
-            this.fogsQAPage = pageObjectManager.GetFogsQAPage();
-            //ppp = new PaymentPortalPage(driver);
-            //dgp = new DangerousGoodsPage(driver);
-            //cip = new CaptureIrregularityPage(driver);
-            //emp = new ExportManifestPage(driver);
-            //fogsQAPage = new FogsQAPage(driver);
+            this.fogsQAPage = pageObjectManager.GetFogsQAPage();            
 
         }
 
