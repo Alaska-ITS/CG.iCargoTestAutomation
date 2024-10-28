@@ -25,6 +25,7 @@ namespace iCargoUIAutomation.pages
         private By btnConfirmManualPayment_Xpath = By.XPath("//*[text()=' Continue ']");
         private By lblPaymentSuccess_Xpath = By.XPath("//*[@class='messageBox']//*[text()='Payment successfully completed. ']");
         private By lblTotalAmount_Xpath = By.XPath("(//*[@class='aiBoxTwo'])[2]//label[13]");
+        private By lblCIDAccountInfo_Xpath = By.XPath("//*[@class='aiBox']//label[5]");
         private By btnDone_Xpath = By.XPath("//*[text()='Done']");
         private By btnExitIcargo_Xpath = By.XPath("//*[text()='Exit to iCargo']");
         private By btnContinuePlsConfirm = By.XPath("//*[text()=' Continue ']");
@@ -75,11 +76,12 @@ namespace iCargoUIAutomation.pages
         }
 
 
-        public string HandlePaymentInPaymentPortal(string chargetyp)
+        public (string,string) HandlePaymentInPaymentPortal(string chargetyp)
         {
             Log.Info("Handling Payment in Payment Portal");
             Hooks.Hooks.UpdateTest(Status.Info, "Handling Payment in Payment Portal");
             string totalPaybleAmount = "";
+            string accountInfoCID = "";
             try
             {
 
@@ -102,6 +104,7 @@ namespace iCargoUIAutomation.pages
                     WaitForElementToBeVisible(lblTotalAmount_Xpath, TimeSpan.FromSeconds(5));
                     totalPaybleAmount = GetText(lblTotalAmount_Xpath).Split("$")[1];
                     Hooks.Hooks.UpdateTest(Status.Pass, "Total Payable Amount is: " + totalPaybleAmount);
+                    accountInfoCID = GetText(lblCIDAccountInfo_Xpath);
                     ClickOnElementIfEnabled(btnDone_Xpath);
                     Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Done Button");
                     WaitForElementToBeInvisible(btnDone_Xpath, TimeSpan.FromSeconds(7));
@@ -122,7 +125,7 @@ namespace iCargoUIAutomation.pages
                 Log.Error("Error in handling Payment in Payment Portal" + e.Message);
             }
 
-            return totalPaybleAmount;
+            return (totalPaybleAmount,accountInfoCID);
         }
 
 

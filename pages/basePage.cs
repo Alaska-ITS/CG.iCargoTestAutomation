@@ -381,6 +381,13 @@ namespace iCargoUIAutomation.pages
             wait.Until(driver => !driver.FindElement(byLocator).Enabled);
         }
 
+        // wait for the element to be enabled
+        public void WaitForElementToBeEnabled(By byLocator, TimeSpan time)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, time);
+            wait.Until(driver => driver.FindElement(byLocator).Enabled);
+        }
+
         // wait until the invisibility of a text
 
         public void WaitForTextToBeInvisible(string text, TimeSpan timeout)

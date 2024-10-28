@@ -9,6 +9,9 @@ public class PageObjectManager : BasePage
     private CreateShipmentPage csp;
     private MaintainBookingPage mbp;
     private ExportManifestPage emp;
+    private PaymentPortalPage ppp;
+    private DangerousGoodsPage dgp;
+    private CaptureIrregularityPage cip;
     private FogsQAPage fogsQAPage;
 
     // Add other page classes as needed
@@ -36,6 +39,21 @@ public class PageObjectManager : BasePage
     public ExportManifestPage GetExportManifestPage()
     {
         return emp ?? (emp = new ExportManifestPage(driver));
+    }
+
+    public PaymentPortalPage GetPaymentPortalPage()
+    {
+        return ppp ?? (ppp = new PaymentPortalPage(driver));
+    }
+
+    public DangerousGoodsPage GetDangerousGoodsPage()
+    {
+        return dgp ?? (dgp = new DangerousGoodsPage(driver));
+    }
+
+    public CaptureIrregularityPage GetCaptureIrregularityPage()
+    {
+        return cip ?? (cip = new CaptureIrregularityPage(driver));
     }
 
     public FogsQAPage GetFogsQAPage()
