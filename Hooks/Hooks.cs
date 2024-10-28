@@ -130,7 +130,7 @@ namespace iCargoUIAutomation.Hooks
             hp.logoutiCargo();
             extent.Flush();
             azureStorage = new AzureStorage(reportContainerName);
-            //azureStorage.UploadFolderToAzure(reportPath);
+            azureStorage.UploadFolderToAzure(reportPath);
             foreach (string blobPath in uploadedBlobPaths)
             {                
                TestContext.WriteLine($"Blob file path: {blobPath}");
@@ -216,7 +216,7 @@ namespace iCargoUIAutomation.Hooks
                 }                
 
                 // Upload the updated file back to Azure Blob Storage
-                //azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
+                azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
 
                 File.Delete(tempLocalPath);
             }
