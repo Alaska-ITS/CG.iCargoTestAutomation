@@ -75,22 +75,34 @@ namespace iCargoUIAutomation.Hooks
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
 
             browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);             
+          
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("--incognito");
+
+            EdgeOptions edgeOptions = new EdgeOptions();
+            edgeOptions.AddArgument("InPrivate");
+
+            FirefoxOptions firefoxOptions = new FirefoxOptions();
+            firefoxOptions.AddArgument("-private");
+
+            SafariOptions safariOptions = new SafariOptions();
+            safariOptions.AddAdditionalOption("InPrivate", true);
            
             if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
             {
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(options);
             }
             else if (browser.Equals("edge", StringComparison.OrdinalIgnoreCase))
             {
-                driver = new EdgeDriver();
+                driver = new EdgeDriver(edgeOptions);
             }
             else if (browser.Equals("firefox", StringComparison.OrdinalIgnoreCase))
             {
-                driver = new FirefoxDriver();
+                driver = new FirefoxDriver(firefoxOptions);
             }
             else if (browser.Equals("safari", StringComparison.OrdinalIgnoreCase))
             {
-                driver = new SafariDriver();
+                driver = new SafariDriver(safariOptions);
             }
             else
             {
@@ -118,7 +130,7 @@ namespace iCargoUIAutomation.Hooks
             hp.logoutiCargo();
             extent.Flush();
             azureStorage = new AzureStorage(reportContainerName);
-            azureStorage.UploadFolderToAzure(reportPath);
+            //azureStorage.UploadFolderToAzure(reportPath);
             foreach (string blobPath in uploadedBlobPaths)
             {                
                TestContext.WriteLine($"Blob file path: {blobPath}");
@@ -204,7 +216,7 @@ namespace iCargoUIAutomation.Hooks
                 }                
 
                 // Upload the updated file back to Azure Blob Storage
-                azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
+                //azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
 
                 File.Delete(tempLocalPath);
             }
