@@ -74,10 +74,19 @@ namespace iCargoUIAutomation.Hooks
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
 
-            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);      
-            //browser= "chrome"; 
+            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);             
+          
             ChromeOptions options = new ChromeOptions();
-            options.AddArguments("--incognito");           
+            options.AddArgument("--incognito");
+
+            EdgeOptions edgeOptions = new EdgeOptions();
+            edgeOptions.AddArgument("InPrivate");
+
+            FirefoxOptions firefoxOptions = new FirefoxOptions();
+            firefoxOptions.AddArgument("-private");
+
+            SafariOptions safariOptions = new SafariOptions();
+            safariOptions.AddAdditionalOption("InPrivate", true);
 
             if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
             {
@@ -85,15 +94,15 @@ namespace iCargoUIAutomation.Hooks
             }
             else if (browser.Equals("edge", StringComparison.OrdinalIgnoreCase))
             {
-                driver = new EdgeDriver();
+                driver = new EdgeDriver(edgeOptions);
             }
             else if (browser.Equals("firefox", StringComparison.OrdinalIgnoreCase))
             {
-                driver = new FirefoxDriver();
+                driver = new FirefoxDriver(firefoxOptions);
             }
             else if (browser.Equals("safari", StringComparison.OrdinalIgnoreCase))
             {
-                driver = new SafariDriver();
+                driver = new SafariDriver(safariOptions);
             }
             else
             {
@@ -202,6 +211,7 @@ namespace iCargoUIAutomation.Hooks
                 {
                     
                     // Append data to the downloaded or newly created Excel file
+
                     excelFileConfig.AppendDataToExcel(tempLocalPath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", featureName, CreateShipmentPage.awb_num, CreateShipmentPage.origin, CreateShipmentPage.destination, CreateShipmentPage.productCode, CreateShipmentPage.agentCode, CreateShipmentPage.shipperCode, CreateShipmentPage.consigneeCode, CreateShipmentPage.commodityCode, CreateShipmentPage.pieces, CreateShipmentPage.weight);
 
                 }                

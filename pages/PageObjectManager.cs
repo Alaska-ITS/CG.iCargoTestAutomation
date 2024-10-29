@@ -13,6 +13,7 @@ public class PageObjectManager : BasePage
     private DangerousGoodsPage dgp;
     private CaptureIrregularityPage cip;
     private FogsQAPage fogsQAPage;
+    private ScreeningPage sp;
 
     // Add other page classes as needed
 
@@ -59,6 +60,11 @@ public class PageObjectManager : BasePage
     public FogsQAPage GetFogsQAPage()
     {
         return fogsQAPage ?? (fogsQAPage = new FogsQAPage(driver));
+    }
+
+    public ScreeningPage GetScreeningPage()
+    {
+        return sp ?? (sp = new ScreeningPage(driver));
     }
     // Add other getter methods for other page classes as needed
 }
