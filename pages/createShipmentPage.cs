@@ -248,7 +248,7 @@ namespace iCargoUIAutomation.pages
         public void ClickOnAwbTextBox()
         {
             try
-            {                
+            {
                 EnterKeys(txtAwbNo_Id, Keys.Enter);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on AWB text box");
                 Log.Info("Clicked on AWB text box");
@@ -753,7 +753,7 @@ namespace iCargoUIAutomation.pages
         public void OpenAndDeleteFlight()
         {
             try
-            {                
+            {
                 //Click(lblFlightDetails_ID);
                 Click(btnOrangePencilFlight_Css);
                 WaitForElementToBeInvisible(btnOrangePencilFlight_Css, TimeSpan.FromSeconds(5));
@@ -874,8 +874,19 @@ namespace iCargoUIAutomation.pages
                                 flightNum = GetText(By.XPath("//*[@id='flight_details']//tbody//tr[" + i + "]//td[1]")).Trim().Split("AS")[1].Trim();
 
                                 btnBookFlight = btnBookFlight.Replace("1", i.ToString());
-                                ScrollDown();
-                                EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
+                                if (IsElementPresent(By.XPath(btnBookFlight)))
+                                {
+                                    ScrollDown();
+                                    EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
+                                }
+                                else
+                                {                                    
+                                    btnBookFlight = btnBookFlight.Replace(i.ToString(),(i-1).ToString());
+                                    ScrollDown();
+                                    EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
+                                }
+
+                                
                                 Hooks.Hooks.UpdateTest(Status.Pass, typeOfFlight + " Flight: " + flightNum + " is booked successfully");
                                 Log.Info(typeOfFlight + " Flight: " + flightNum + " is booked successfully");
                                 shippingDate = GetAttributeValue(txtFlightDate_Name, "value");
@@ -1143,16 +1154,16 @@ namespace iCargoUIAutomation.pages
 
         public void CheckThirdPartyCheckbox()
         {
-           Click(chkBoxThirdParty_Id);
-           WaitForElementToBeEnabled(txtRatedCustomerNumber_Name, TimeSpan.FromSeconds(5));
-           Hooks.Hooks.UpdateTest(Status.Pass, "Checked Third Party Checkbox");
+            Click(chkBoxThirdParty_Id);
+            WaitForElementToBeEnabled(txtRatedCustomerNumber_Name, TimeSpan.FromSeconds(5));
+            Hooks.Hooks.UpdateTest(Status.Pass, "Checked Third Party Checkbox");
         }
 
         public void EnterRatedCustomerNumber(string ratedCustomerNumber)
         {
-           EnterText(txtRatedCustomerNumber_Name, ratedCustomerNumber);
-           EnterKeys(txtRatedCustomerNumber_Name, Keys.Tab);
-           Hooks.Hooks.UpdateTest(Status.Pass, "Entered Rated Customer Number: " + ratedCustomerNumber);
+            EnterText(txtRatedCustomerNumber_Name, ratedCustomerNumber);
+            EnterKeys(txtRatedCustomerNumber_Name, Keys.Tab);
+            Hooks.Hooks.UpdateTest(Status.Pass, "Entered Rated Customer Number: " + ratedCustomerNumber);
         }
 
 
@@ -1165,7 +1176,7 @@ namespace iCargoUIAutomation.pages
                 {
                     ClickElementUsingJavaScript(btnCalculateCharges_Name);
                     Thread.Sleep(1000);
-                    Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Calculate Charge button");           
+                    Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Calculate Charge button");
 
                 }
 
@@ -1519,10 +1530,8 @@ namespace iCargoUIAutomation.pages
                         int noOfWindowsAfter = GetNumberOfWindowsOpened();
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
-
-                            SwitchToLastWindow();                           
-                            
-                            (totalPaybleAmount,accountInfoCIDNum) = ppp.HandlePaymentInPaymentPortal(this.chargeType);
+                            SwitchToLastWindow();
+                            (totalPaybleAmount, accountInfoCIDNum) = ppp.HandlePaymentInPaymentPortal(this.chargeType);
                             WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
                             SwitchToLastWindow();
                             SwitchToLTEContentFrame();
@@ -1600,10 +1609,8 @@ namespace iCargoUIAutomation.pages
                         int noOfWindowsAfter = GetNumberOfWindowsOpened();
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
-
-                            SwitchToLastWindow();                          
+                            SwitchToLastWindow();
                             (totalPaybleAmount, accountInfoCIDNum) = ppp.HandlePaymentInPaymentPortal(this.chargeType);
-
                             WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
                             SwitchToLastWindow();
                             SwitchToLTEContentFrame();
@@ -1638,7 +1645,6 @@ namespace iCargoUIAutomation.pages
                 Click(btnContinueEmbargo_Xpath);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
             }
-
             WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore + 1);
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
@@ -1674,7 +1680,7 @@ namespace iCargoUIAutomation.pages
                 int noOfWindowsAfter = GetNumberOfWindowsOpened();
                 if (noOfWindowsAfter > noOfWindowsBefore)
                 {
-                    SwitchToLastWindow();                   
+                    SwitchToLastWindow();
                     ppp.HandlePaymentInPaymentPortal(chargeType);
                     SwitchToLastWindow();
                     SwitchToLTEContentFrame();
@@ -1714,7 +1720,7 @@ namespace iCargoUIAutomation.pages
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
-                SwitchToLastWindow();               
+                SwitchToLastWindow();
                 ppp.HandlePaymentInPaymentPortal(chargeType);
                 SwitchToLastWindow();
                 SwitchToLTEContentFrame();
@@ -1755,7 +1761,7 @@ namespace iCargoUIAutomation.pages
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
-                SwitchToLastWindow();               
+                SwitchToLastWindow();
                 ppp.HandlePaymentInPaymentPortal(chargeType);
                 SwitchToLastWindow();
                 SwitchToLTEContentFrame();
@@ -1847,7 +1853,8 @@ namespace iCargoUIAutomation.pages
                         int noOfWindowsAfter = GetNumberOfWindowsOpened();
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
-                            SwitchToLastWindow();                           
+                            SwitchToLastWindow();
+                            RefreshPage();
                             (totalPaybleAmount, accountInfoCIDNum) = ppp.HandlePaymentInPaymentPortal(this.chargeType);
                             WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
                             SwitchToLastWindow();

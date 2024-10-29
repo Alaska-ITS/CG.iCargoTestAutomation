@@ -74,7 +74,6 @@ namespace iCargoUIAutomation.Hooks
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
 
-
             browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);             
           
             ChromeOptions options = new ChromeOptions();
@@ -88,8 +87,6 @@ namespace iCargoUIAutomation.Hooks
 
             SafariOptions safariOptions = new SafariOptions();
             safariOptions.AddAdditionalOption("InPrivate", true);
-           
-
 
             if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
             {
