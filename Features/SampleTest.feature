@@ -30,7 +30,6 @@ Scenario Outline: Create an AWB in LTE001 that has pieces that fail screening
 	And User checks the AWB_Verified checkbox
 	And User saves shipment and validate the popped up message as "Blocked for screening" for a Confirmed AWB
 
-
 Examples:
 	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
 	| 11377     | 11377       | 11377         | SAN    | JFK         | GOLDSTREAK  | None | NONSCR    | None                | None              | 2     | 55     | CC         | None          | CART     | Yes     |
