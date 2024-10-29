@@ -79,6 +79,7 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00001")]
 
+
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "YAK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "PP", "CREDIT", "CART", "No", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "CDV", "PRIORITY", "None", "2199", "None", "None", "8", "360", "PP", "CREDIT", "CART", "No", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "WRG", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "55", "PP", "CREDIT", "CART", "No", null)]

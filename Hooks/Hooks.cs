@@ -74,24 +74,38 @@ namespace iCargoUIAutomation.Hooks
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
 
-           browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process); 
+
+            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);             
+          
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("--incognito");
+
+            EdgeOptions edgeOptions = new EdgeOptions();
+            edgeOptions.AddArgument("InPrivate");
+
+            FirefoxOptions firefoxOptions = new FirefoxOptions();
+            firefoxOptions.AddArgument("-private");
+
+            SafariOptions safariOptions = new SafariOptions();
+            safariOptions.AddAdditionalOption("InPrivate", true);
+           
 
 
             if (browser.Equals("chrome", StringComparison.OrdinalIgnoreCase))
             {
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(options);
             }
             else if (browser.Equals("edge", StringComparison.OrdinalIgnoreCase))
             {
-                driver = new EdgeDriver();
+                driver = new EdgeDriver(edgeOptions);
             }
             else if (browser.Equals("firefox", StringComparison.OrdinalIgnoreCase))
             {
-                driver = new FirefoxDriver();
+                driver = new FirefoxDriver(firefoxOptions);
             }
             else if (browser.Equals("safari", StringComparison.OrdinalIgnoreCase))
             {
-                driver = new SafariDriver();
+                driver = new SafariDriver(safariOptions);
             }
             else
             {
