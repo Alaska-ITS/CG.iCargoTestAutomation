@@ -22,6 +22,8 @@ namespace iCargoUIAutomation.pages
     public class CreateShipmentPage : BasePage
     {
 
+        private IWebDriver driver;
+        private PageObjectManager pageObjectManager;
         private DangerousGoodsPage dgp;
         private PaymentPortalPage ppp;
         private CaptureIrregularityPage cip;
@@ -29,6 +31,7 @@ namespace iCargoUIAutomation.pages
         private FogsQAPage fogsQAPage;
         public static string awb_num = "";
         public static string totalPaybleAmount = "";
+        public static string accountInfoCIDNum = "";
         public static string totalAmountCharged = "";
         string IATACharge = "";
         string MarketCharge = "";
@@ -57,11 +60,13 @@ namespace iCargoUIAutomation.pages
         public CreateShipmentPage(IWebDriver driver) : base(driver)
         {
 
-            ppp = new PaymentPortalPage(driver);
-            dgp = new DangerousGoodsPage(driver);
-            cip = new CaptureIrregularityPage(driver);
-            emp = new ExportManifestPage(driver);
-            fogsQAPage = new FogsQAPage(driver);
+            this.driver = driver;
+            this.pageObjectManager = new PageObjectManager(driver);
+            this.ppp = pageObjectManager.GetPaymentPortalPage();
+            this.dgp = pageObjectManager.GetDangerousGoodsPage();
+            this.cip = pageObjectManager.GetCaptureIrregularityPage();
+            this.emp = pageObjectManager.GetExportManifestPage();
+            this.fogsQAPage = pageObjectManager.GetFogsQAPage();            
 
         }
 
@@ -158,6 +163,8 @@ namespace iCargoUIAutomation.pages
         private By lblChargeDetails_Id = By.Id("charge");
         private By btnOrangePencilCharge_Css = By.CssSelector("#view_chargeDetails a");
         private By btnPaymentType_Xpath = By.XPath("//div[@id='pptype']");
+        private By chkBoxThirdParty_Id = By.Id("thirdPartyId");
+        private By txtRatedCustomerNumber_Name = By.Name("ratedCustomer");
         private By btnCalculateCharges_Name = By.Name("btnCalculateCharges");
         private By txtIATACharge_Xpath = By.XPath("//input[@name='iataCharge']");
         private By txtMarketCharge_Xpath = By.XPath("//input[@name='marketCharge']");
@@ -1134,6 +1141,20 @@ namespace iCargoUIAutomation.pages
 
         }
 
+        public void CheckThirdPartyCheckbox()
+        {
+           Click(chkBoxThirdParty_Id);
+           WaitForElementToBeEnabled(txtRatedCustomerNumber_Name, TimeSpan.FromSeconds(5));
+           Hooks.Hooks.UpdateTest(Status.Pass, "Checked Third Party Checkbox");
+        }
+
+        public void EnterRatedCustomerNumber(string ratedCustomerNumber)
+        {
+           EnterText(txtRatedCustomerNumber_Name, ratedCustomerNumber);
+           EnterKeys(txtRatedCustomerNumber_Name, Keys.Tab);
+           Hooks.Hooks.UpdateTest(Status.Pass, "Entered Rated Customer Number: " + ratedCustomerNumber);
+        }
+
 
         public void ClickOnCalculateChargeButton()
         {
@@ -1144,7 +1165,7 @@ namespace iCargoUIAutomation.pages
                 {
                     ClickElementUsingJavaScript(btnCalculateCharges_Name);
                     Thread.Sleep(1000);
-                    Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Calculate Charge button");               
+                    Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Calculate Charge button");           
 
                 }
 
@@ -1498,8 +1519,10 @@ namespace iCargoUIAutomation.pages
                         int noOfWindowsAfter = GetNumberOfWindowsOpened();
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
-                            SwitchToLastWindow();                          
-                            totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
+
+                            SwitchToLastWindow();                           
+                            
+                            (totalPaybleAmount,accountInfoCIDNum) = ppp.HandlePaymentInPaymentPortal(this.chargeType);
                             WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
                             SwitchToLastWindow();
                             SwitchToLTEContentFrame();
@@ -1577,8 +1600,10 @@ namespace iCargoUIAutomation.pages
                         int noOfWindowsAfter = GetNumberOfWindowsOpened();
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
-                            SwitchToLastWindow();                         
-                            totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
+
+                            SwitchToLastWindow();                          
+                            (totalPaybleAmount, accountInfoCIDNum) = ppp.HandlePaymentInPaymentPortal(this.chargeType);
+
                             WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
                             SwitchToLastWindow();
                             SwitchToLTEContentFrame();
@@ -1613,12 +1638,13 @@ namespace iCargoUIAutomation.pages
                 Click(btnContinueEmbargo_Xpath);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
             }
+
             WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore + 1);
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
-                SwitchToLastWindow();               
-                totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
+                SwitchToLastWindow();
+                (totalPaybleAmount, accountInfoCIDNum) = ppp.HandlePaymentInPaymentPortal(this.chargeType);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Back from Payment Portal");
                 SwitchToLastWindow();
                 SwitchToLTEContentFrame();
@@ -1822,7 +1848,7 @@ namespace iCargoUIAutomation.pages
                         if (noOfWindowsAfter > noOfWindowsBefore)
                         {
                             SwitchToLastWindow();                           
-                            totalPaybleAmount = ppp.HandlePaymentInPaymentPortal(this.chargeType);
+                            (totalPaybleAmount, accountInfoCIDNum) = ppp.HandlePaymentInPaymentPortal(this.chargeType);
                             WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
                             SwitchToLastWindow();
                             SwitchToLTEContentFrame();
@@ -2168,6 +2194,23 @@ namespace iCargoUIAutomation.pages
                 Log.Info("Total amount charged is equal to total payable amount. Total Amount Charged: " + totalAmountCharged + " Total Payable Amount: " + totalPaybleAmount);
             }
 
+
+        }
+
+        public void ValidateRatedCustomerInPaymentPortal(string expectedCIDNum)
+        {
+            if (accountInfoCIDNum != expectedCIDNum)
+            {
+                Hooks.Hooks.UpdateTest(Status.Fail, "CID number in Payment Portal is not as expected. Expected: " + expectedCIDNum + " Actual: " + accountInfoCIDNum);
+                Log.Error("CID number in Payment Portal is not as expected. Expected: " + expectedCIDNum + " Actual: " + accountInfoCIDNum);
+                Assert.Fail("CID number in Payment Portal is not as expected. Expected: " + expectedCIDNum + " Actual: " + accountInfoCIDNum);
+
+            }
+            else
+            {
+                Hooks.Hooks.UpdateTest(Status.Pass, "CID number in Payment Portal is as expected: " + accountInfoCIDNum);
+                Log.Info("CID number in Payment Portal is as expected: " + accountInfoCIDNum);
+            }
 
         }
 

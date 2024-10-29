@@ -1,15 +1,15 @@
-﻿Feature: LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper
- 
+﻿Feature: LTE001_ACC_00024_Create an AWB for an unknown shipper with routing wholly within SOA
+
 Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CGODG user
- 
-@LTE001 @LTE001_ACC_00001
-Scenario Outline: Create a PP AWB in LTE001 for a known shipper
+
+@LTE001 @LTE001_ACC_00024
+Scenario Outline: Create an AWB for an unknown shipper with routing wholly within SOA
 	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully
 	When user clicks on the List button
-	And User enters the Participant details with AgentCode "<AgentCode>", ShipperCode "<ShipperCode>", ConsigneeCode "<ConsigneeCode>"
+	And User enters the Participant details with AgentCode "<AgentCode>",Unknown ShipperCode "<UnknownShipperCode>", ConsigneeCode "<ConsigneeCode>"
 	And User clicks on the ContinueParticipant button
 	And User enters the Certificate details
 	And User clicks on the ContinueCertificate button
@@ -25,13 +25,16 @@ Scenario Outline: Create a PP AWB in LTE001 for a known shipper
 	And User clicks on the ContinueAcceptanceDetails button
 	And User enters the Screening details for row 1 with screeingMethod as 'Transfer Manifest Verified' and ScreeningResult as 'Pass'
 	And User clicks on the ContinueScreeningDetails button
+	And User clicks on the save button
+	And User captures the checksheet
 	And User checks the AWB_Verified checkbox
+	And User clicks on the save button
 	And User saves all the details & handles all the popups
 	
- 
+	
+	
 Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
-	| 11377     | 11377       | 11377         | GEG    | ANC         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | PP         | CREDIT        | CART     | Yes     |
-	| 11377     | 11377       | 11377         | GEG    | SEA         | PRIORITY    | None | NONSCR    | None                | None              | 5     | 250    | PP         | CREDIT        | CART     | Yes     |
-	| 11377     | 11377       | 11377         | GEG    | LAS         | GOLDSTREAK  | None | NONSCR    | None                | None              | 1     | 40     | PP         | CREDIT        | CART     | Yes     |
-	| 11377     | 11377       | 11377         | GEG    | FAI         | PRIORITY    | None | NONSCR    | None                | None              | 7     | 200    | PP         | CREDIT        | CART     | Yes     |
+	| AgentCode | UnknownShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
+	| ASQXGUEST | C1001              | 10763         | KTN    | ANC         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | CC         | None          | CART     | Yes     |
+	| ASQXGUEST | C1001              | 10763         | KTN    | ANC         | PRIORITY    | None | 2199      | None                | None              | 8     | 360    | CC         | None          | CART     | No      |
+	| ASQXGUEST | C1001              | 10763         | KTN    | ANC         | GOLDSTREAK  | None | NONSCR    | None                | None              | 2     | 59     | CC         | None          | CART     | No      |

@@ -20,22 +20,22 @@ namespace iCargoUIAutomation.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper")]
-    public partial class LTE001_ACC_00001_CreateAPPAWBInLTE001ForAKnownShipperFeature
+    [NUnit.Framework.DescriptionAttribute("LTE001_ACC_00028_Change the rated customer field when accepting an AWB")]
+    public partial class LTE001_ACC_00028_ChangeTheRatedCustomerFieldWhenAcceptingAnAWBFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper.feature"
+#line 1 "LTE001_ACC_00028_Change the rated customer field when accepting an AWB.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper", "Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CG" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LTE001_ACC_00028_Change the rated customer field when accepting an AWB", "Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CG" +
                     "ODG user", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -75,19 +75,12 @@ namespace iCargoUIAutomation.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a PP AWB in LTE001 for a known shipper")]
+        [NUnit.Framework.DescriptionAttribute("Change the rated customer field when accepting an AWB")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
-        [NUnit.Framework.CategoryAttribute("LTE001_ACC_00001")]
-
-
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "YAK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "PP", "CREDIT", "CART", "No", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "CDV", "PRIORITY", "None", "2199", "None", "None", "8", "360", "PP", "CREDIT", "CART", "No", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "WRG", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "55", "PP", "CREDIT", "CART", "No", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "GEG", "PRIORITY", "None", "NONSCR", "None", "None", "5", "225", "PP", "CREDIT", "CART", "No", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "SNA", "GENERAL", "None", "NONSCR", "None", "None", "14", "225", "PP", "CREDIT", "CART", "Yes", null)]
-
-
-        public virtual void CreateAPPAWBInLTE001ForAKnownShipper(
+        [NUnit.Framework.CategoryAttribute("LTE001_ACC_00028")]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "PP", "10763", "CREDIT", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11029", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "250", "PP", "10763", "CREDIT", "CART", "Yes", null)]
+        public virtual void ChangeTheRatedCustomerFieldWhenAcceptingAnAWB(
                     string agentCode, 
                     string shipperCode, 
                     string consigneeCode, 
@@ -101,6 +94,7 @@ namespace iCargoUIAutomation.Features
                     string piece, 
                     string weight, 
                     string chargeType, 
+                    string ratedCustomer, 
                     string modeOfPayment, 
                     string cartType, 
                     string execute, 
@@ -108,7 +102,7 @@ namespace iCargoUIAutomation.Features
         {
             string[] @__tags = new string[] {
                     "LTE001",
-                    "LTE001_ACC_00001"};
+                    "LTE001_ACC_00028"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -128,10 +122,11 @@ namespace iCargoUIAutomation.Features
             argumentsOfScenario.Add("Piece", piece);
             argumentsOfScenario.Add("Weight", weight);
             argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
             argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
             argumentsOfScenario.Add("cartType", cartType);
             argumentsOfScenario.Add("Execute", execute);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a PP AWB in LTE001 for a known shipper", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change the rated customer field when accepting an AWB", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -201,29 +196,36 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 22
- testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User checks the ThirdParty checkbox and enters the RatedCustomer \"{0}\"", ratedCustomer), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 23
- testRunner.And("User clicks on the ContinueChargeDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 24
- testRunner.And("User enters the Acceptance details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks on the ContinueChargeDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 25
- testRunner.And("User clicks on the ContinueAcceptanceDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters the Acceptance details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 26
+ testRunner.And("User clicks on the ContinueAcceptanceDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 27
  testRunner.And("User enters the Screening details for row 1 with screeingMethod as \'Transfer Mani" +
                         "fest Verified\' and ScreeningResult as \'Pass\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 27
+#line 28
  testRunner.And("User clicks on the ContinueScreeningDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 28
+#line 29
  testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 29
+#line 30
  testRunner.And("User saves all the details & handles all the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 31
+ testRunner.And(string.Format("User validates the CID under Account Info in paymentportal with the RatedCustomer" +
+                            " \"{0}\"", ratedCustomer), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

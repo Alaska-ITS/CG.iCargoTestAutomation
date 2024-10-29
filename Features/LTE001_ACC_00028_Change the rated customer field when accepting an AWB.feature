@@ -1,9 +1,9 @@
-﻿Feature: LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper
+﻿Feature: LTE001_ACC_00028_Change the rated customer field when accepting an AWB
  
 Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CGODG user
  
-@LTE001 @LTE001_ACC_00001
-Scenario Outline: Create a PP AWB in LTE001 for a known shipper
+@LTE001 @LTE001_ACC_00028
+Scenario Outline: Change the rated customer field when accepting an AWB
 	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
@@ -19,6 +19,7 @@ Scenario Outline: Create a PP AWB in LTE001 for a known shipper
 	And User selects an "Combination" flight
 	And User clicks on the ContinueFlightDetails button
 	And User enters the Charge details with ChargeType "<ChargeType>" and ModeOfPayment "<ModeOfPayment>"
+	And User checks the ThirdParty checkbox and enters the RatedCustomer "<RatedCustomer>"
 	And User clicks on the CalculateCharges button
 	And User clicks on the ContinueChargeDetails button
 	And User enters the Acceptance details
@@ -27,11 +28,11 @@ Scenario Outline: Create a PP AWB in LTE001 for a known shipper
 	And User clicks on the ContinueScreeningDetails button
 	And User checks the AWB_Verified checkbox
 	And User saves all the details & handles all the popups
+	And User validates the CID under Account Info in paymentportal with the RatedCustomer "<RatedCustomer>"
 	
  
 Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | cartType | Execute |
-	| 11377     | 11377       | 11377         | GEG    | ANC         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | PP         | CREDIT        | CART     | Yes     |
-	| 11377     | 11377       | 11377         | GEG    | SEA         | PRIORITY    | None | NONSCR    | None                | None              | 5     | 250    | PP         | CREDIT        | CART     | Yes     |
-	| 11377     | 11377       | 11377         | GEG    | LAS         | GOLDSTREAK  | None | NONSCR    | None                | None              | 1     | 40     | PP         | CREDIT        | CART     | Yes     |
-	| 11377     | 11377       | 11377         | GEG    | FAI         | PRIORITY    | None | NONSCR    | None                | None              | 7     | 200    | PP         | CREDIT        | CART     | Yes     |
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | RatedCustomer | ModeOfPayment | cartType | Execute |
+	| 11377     | 11377       | 11377         | SEA    | DEN         | GENERAL     | None | NONSCR    | None                | None              | 13    | 775    | PP         | 10763         | CREDIT        | CART     | Yes     |
+	| 11029     | 11029       | 10757         | SEA    | ANC         | PRIORITY    | None | 2300      | None                | None              | 5     | 250    | PP         | 10763         | CREDIT        | CART     | Yes     |
+	
