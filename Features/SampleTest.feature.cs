@@ -20,22 +20,22 @@ namespace iCargoUIAutomation.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("LTE001_ACC_00007_Create an AWB in LTE001 that has pieces that fail screening")]
-    public partial class LTE001_ACC_00007_CreateAnAWBInLTE001ThatHasPiecesThatFailScreeningFeature
+    [NUnit.Framework.DescriptionAttribute("LTE001_ACC_00007_SampleTest")]
+    public partial class LTE001_ACC_00007_SampleTestFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "LTE001_ACC_00007_Create an AWB in LTE001 that has pieces that fail screening.feature"
+#line 1 "SampleTest.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LTE001_ACC_00007_Create an AWB in LTE001 that has pieces that fail screening", "Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CG" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LTE001_ACC_00007_SampleTest", "Create a New Shipment, Acceptance of that new shipment & screening as a CGO or CG" +
                     "ODG user", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -78,8 +78,6 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("Create an AWB in LTE001 that has pieces that fail screening")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00007")]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "ANC", "HNL", "PRIORITY", "None", "2199", "None", "None", "13", "775", "CC", "None", "CART", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "8", "360", "CC", "None", "CART", "Yes", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SAN", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "55", "CC", "None", "CART", "Yes", null)]
         public virtual void CreateAnAWBInLTE001ThatHasPiecesThatFailScreening(
                     string agentCode, 
