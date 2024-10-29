@@ -78,8 +78,8 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("Create an AWB in LTE001 that has pieces that fail screening")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00007")]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "ANC", "HNL", "PRIORITY", "None", "2199", "None", "None", "13", "775", "CC", "None", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "8", "360", "CC", "None", "CART", "Yes", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SAN", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "55", "CC", "None", "CART", "Yes", null)]
         public virtual void CreateAnAWBInLTE001ThatHasPiecesThatFailScreening(
                     string agentCode, 

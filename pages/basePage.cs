@@ -423,6 +423,22 @@ namespace iCargoUIAutomation.pages
             }
         }
 
+        // function to check if an element exists
+        public bool IsElementPresent(By byLocator)
+        {
+            try
+            {
+                driver.FindElement(byLocator);
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
+
+
+
 
         public void WaitForNewWindowToOpen(TimeSpan time, int windowCount)
         {
