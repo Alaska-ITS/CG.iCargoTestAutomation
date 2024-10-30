@@ -35,7 +35,7 @@ namespace iCargoUIAutomation.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "OPR339_SCRN_00003_Screen partial pieces of an AWB", "A short summary of the feature", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "OPR339_SCRN_00003_Screen partial pieces of an AWB", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,6 +76,8 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create a PP AWB in LTE001 for a known shipper and screen the half slated pieces u" +
             "sing OPR339 screen")]
+        [NUnit.Framework.CategoryAttribute("OPR339_SCRN_00003")]
+        [NUnit.Framework.CategoryAttribute("OPR339")]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "10", "775", "PP", "CREDIT", "CART", "Yes", "4", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "ANC", "HNL", "PRIORITY", "None", "2199", "None", "None", "8", "360", "PP", "CREDIT", "CART", "No", "2", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SAN", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "55", "PP", "CREDIT", "CART", "No", "3", null)]
@@ -100,7 +102,14 @@ namespace iCargoUIAutomation.Features
                     string slatedPieces, 
                     string[] exampleTags)
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] @__tags = new string[] {
+                    "OPR339_SCRN_00003",
+                    "OPR339"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("AgentCode", agentCode);
             argumentsOfScenario.Add("ShipperCode", shipperCode);
