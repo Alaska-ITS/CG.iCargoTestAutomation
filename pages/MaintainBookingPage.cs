@@ -1406,8 +1406,7 @@ namespace iCargoUIAutomation.pages
         {
             ClickSelectTemplate();
             SwitchToCAP018Frame();
-            WaitForElementToBeVisible(selectSavedTemplate_XPATH, TimeSpan.FromSeconds(10));
-            WaitForElementToBeClickable(selectSavedTemplate_XPATH, TimeSpan.FromSeconds(10));
+            WaitForElementToBeInvisible(saveTemplateBtn_XPATH, TimeSpan.FromSeconds(5));            
             DoubleClick(selectSavedTemplate_XPATH);           
             ShipperConsigneeBtn();
             SwitchToSecondPopupWindow();
