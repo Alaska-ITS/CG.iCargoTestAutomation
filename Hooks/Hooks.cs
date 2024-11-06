@@ -74,7 +74,7 @@ namespace iCargoUIAutomation.Hooks
             feature = extent.CreateTest(featureContext.FeatureInfo.Title);
             feature.Log(Status.Info, featureContext.FeatureInfo.Description);
 
-            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);                        
+            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
           
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--incognito");
@@ -217,7 +217,7 @@ namespace iCargoUIAutomation.Hooks
                 }                
 
                 // Upload the updated file back to Azure Blob Storage
-                azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
+               azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
 
                 File.Delete(tempLocalPath);
             }
