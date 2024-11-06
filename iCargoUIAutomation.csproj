@@ -146,6 +146,7 @@
 
   <ItemGroup>
     <Folder Include="Screenshots\" />
+    <Folder Include="TestData\CSV\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -177,5 +178,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+	
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+	<Exec Command="powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File UpdateSpecFlowTests.ps1 -jsonFile ExamplesTestData.json -csvFolder TestData\CSV -featureFolder Features" />
+  </Target>
 
 </Project>

@@ -580,4 +580,7 @@ MigrationBackup/
 
 FodyWeavers.xsd
 
+# Dont commit TestData/ folder
+TestData/
+
  

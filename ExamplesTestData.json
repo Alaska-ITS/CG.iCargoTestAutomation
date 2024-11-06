@@ -1,0 +1,108 @@
+{
+  "CAP018_BKG_00001": [
+    {
+      "Origin": "ANC",
+      "Destination": "HNL",
+      "ProductCode": "PRIORITY",
+      "Commodity": "2199",
+      "Piece": 10,
+      "Weight": 360,
+      "Execute": "No",
+      "Agent Code": 10763,
+      "Shipper Code": 10763,
+      "Consignee Code": 10763
+    },
+    {
+      "Origin": "SEA",
+      "Destination": "BOI",
+      "ProductCode": "GENERAL",
+      "Commodity": "NONSCR",
+      "Piece": 13,
+      "Weight": 775,
+      "Execute": "Yes",
+      "Agent Code": 10763,
+      "Shipper Code": 10763,
+      "Consignee Code": 10763
+    },
+    {
+      "Origin": "SAN",
+      "Destination": "JFK",
+      "ProductCode": "GOLDSTREAK",
+      "Commodity": "NONSCR",
+      "Piece": 2,
+      "Weight": 56,
+      "Execute": "No",
+      "Agent Code": 10763,
+      "Shipper Code": 10763,
+      "Consignee Code": 10763
+    },
+    {
+      "Origin": "SEA",
+      "Destination": "MCO",
+      "ProductCode": "PRIORITY",
+      "Commodity": "NONSCR",
+      "Piece": 4,
+      "Weight": 180,
+      "Execute": "No",
+      "Agent Code": 10763,
+      "Shipper Code": 10763,
+      "Consignee Code": 10763
+    },
+    {
+      "Origin": "SEA",
+      "Destination": "DFW",
+      "ProductCode": "GENERAL",
+      "Commodity": "NONSCR",
+      "Piece": 31,
+      "Weight": 4340,
+      "Execute": "No",
+      "Agent Code": 10763,
+      "Shipper Code": 10763,
+      "Consignee Code": 10763
+    }
+  ],
+  "CAP018_BKG_00002": [
+    {
+      "AWB": "33504984",
+      "Execute": "Yes"
+    }
+  ],
+  "CAP018_BKG_00007": [
+    {
+      "Origin": "ANC",
+      "Destination": "FAI",
+      "ProductCode": "PET CONNECT",
+      "Commodity": "9730",
+      "Piece": 2,
+      "Weight": 50,
+      "Execute": "No",
+      "Agent Code": 10763,
+      "Shipper Code": 10763,
+      "Consignee Code": 10763
+    },
+    {
+      "Origin": "SEA",
+      "Destination": "HNL",
+      "ProductCode": "PET CONNECT",
+      "Commodity": "9730",
+      "Piece": 1,
+      "Weight": 100,
+      "Execute": "Yes",
+      "Agent Code": "ASQXGUEST",
+      "Shipper Code": "C1001",
+      "Consignee Code": "C1001"
+    },
+    {
+      "Origin": "BOI",
+      "Destination": "LAX",
+      "ProductCode": "PET CONNECT",
+      "Commodity": "9730",
+      "Piece": 1,
+      "Weight": 35,
+      "Execute": "No",
+      "Agent Code": 49990,
+      "Shipper Code": 49990,
+      "Consignee Code": "C1001"
+    }
+  ]
+}
