@@ -1382,7 +1382,7 @@ namespace iCargoUIAutomation.pages
         {
             WaitForElementToBeInvisible(homePage_CSS, TimeSpan.FromSeconds(5));
             ClickOnElementIfPresent(saveTemplateBtn_XPATH);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Select/Save Template Button");
+            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Select/Save Template Button");            
             Log.Info("Clicked Select/Save Template Button");
             SwitchToCAP018Frame();
             Log.Info("Switched to CAP018 frame"); 
@@ -1391,7 +1391,10 @@ namespace iCargoUIAutomation.pages
             Hooks.Hooks.UpdateTest(Status.Pass, "Save Button is clicked to save the template");
             Log.Info("Save Button is clicked to save the template");
             Click(templateCloseBtn_XPATH);
+            Hooks.Hooks.UpdateTest(Status.Pass, "Close Button is clicked to close the template");
+            Log.Info("Close Button is clicked to close the template");
             Click(btnCloseMb_XPATH);
+            Log.Info("Clicked Close Button on MB Popup");
         }
 
         public void ClickSelectTemplate()
@@ -1408,11 +1411,15 @@ namespace iCargoUIAutomation.pages
             SwitchToCAP018Frame();
             WaitForElementToBeClickable(selectSavedTemplate_XPATH, TimeSpan.FromSeconds(10));            
             DoubleClick(selectSavedTemplate_XPATH);
+            Hooks.Hooks.UpdateTest(Status.Pass, "Selected Saved Template");
+            Log.Info("Selected Saved Template");
             DoubleClick(selectSavedTemplate_XPATH);
             ShipperConsigneeBtn();
             SwitchToSecondPopupWindow();
             WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(5));
             ClickOnElementIfPresent(shipperConsigneeOkBtn_ID);
+            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee OK Button");
+            Log.Info("Clicked on Shipper Consignee OK Button");
             SwitchToPopupWindow();
             SwitchToCAP018Frame();
         }
