@@ -1,6 +1,6 @@
-﻿Feature: CAP018_BKG_00001_iCargo Login and Create New Shipment
+Feature: CAP018_BKG_00001_iCargo Login and Create New Shipment
 
-@CAP018 @CAP018_BKG_00001
+@CAP018 @CAP018_BKG_00001 @DataSource:TestData\CSV\CAP018_BKG_00001.csv
 Scenario Outline: iCargo Login and Create New Shipment
 	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
@@ -13,11 +13,3 @@ Scenario Outline: iCargo Login and Create New Shipment
 	And User selects flight for "<ProductCode>"
 	And User clicks on Save button
 
-Examples:
-
-	| Origin | Destination | ProductCode | Commodity | Piece | Weight | Execute | Agent Code | Shipper Code | Consignee Code |
-	| ANC    | HNL         | PRIORITY    | 2199      | 10     | 360   | No     | 10763      | 10763        | 10763          |
-	| SEA    | BOI         | GENERAL     | NONSCR    | 13    | 775    | Yes     | 10763      | 10763        | 10763          |
-	| SAN    | JFK         | GOLDSTREAK  | NONSCR    | 2     | 56     | No     | 10763      | 10763        | 10763          |
-	| SEA    | MCO         | PRIORITY    | NONSCR    | 4     | 180    | No     | 10763      | 10763        | 10763          |
-	| SEA    | DFW         | GENERAL     | NONSCR    | 31    | 4340   | No     | 10763      | 10763        | 10763          |
