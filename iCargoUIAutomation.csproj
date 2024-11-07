@@ -21,10 +21,6 @@
 
   <ItemGroup>
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\CAP018_BKG_00001_Create a booking.feature.cs" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Features\CAP018_BKG_00003_Create a booking for an unknown shipper on a pax flight.feature.cs" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Features\CAP018_BKG_00005_Create a multi leg booking with flights that do not meet minimum connection time.feature.cs" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Features\CAP018_BKG_00007_Create a booking for an AVI.feature.cs" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Features\CAP018_BKG_00008_Attach or Detach AWB from a saved booking.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\LTE001_ACC_00002_Create an AWB in LTE001 for an unknown shipper on a restricted pax flight - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\LTE001_ACC_00003_Create a DG AWB in LTE001 - Copy.feature.cs" />
@@ -180,6 +176,7 @@
   </ItemGroup>
 	
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+	<!--<Exec Command="powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive Install-Module -Name ImportExcel -Scope CurrentUser" />-->
 	<Exec Command="powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File UpdateSpecFlowTests.ps1 -jsonFile ExamplesTestData.json -csvFolder TestData\CSV -featureFolder Features" />
   </Target>
 

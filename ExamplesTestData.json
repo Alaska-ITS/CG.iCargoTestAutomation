@@ -67,6 +67,110 @@
       "Execute": "Yes"
     }
   ],
+  "CAP018_BKG_00003": [
+    {
+      "Origin": "SEA",
+      "Destination": "LAX",
+      "ProductCode": "GENERAL",
+      "Commodity": "NONSCR",
+      "Piece": 13,
+      "Weight": 775,
+      "AgentCode": "ASQXGUEST",
+      "Shipper": "C1001",
+      "Consignee": "C1001",
+      "Execute": "Yes"
+    },
+    {
+      "Origin": "ANC",
+      "Destination": "SEA",
+      "ProductCode": "PRIORITY",
+      "Commodity": "2199",
+      "Piece": 8,
+      "Weight": 360,
+      "AgentCode": "ASQXGUEST",
+      "Shipper": "C1001",
+      "Consignee": "C1001",
+      "Execute": "Yes"
+    },
+    {
+      "Origin": "SAN",
+      "Destination": "JFK",
+      "ProductCode": "GOLDSTREAK",
+      "Commodity": "NONSCR",
+      "Piece": 2,
+      "Weight": 55,
+      "AgentCode": "ASQXGUEST",
+      "Shipper": "C1001",
+      "Consignee": "C1001",
+      "Execute": "Yes"
+    },
+    {
+      "Origin": "FAI",
+      "Destination": "ANC",
+      "ProductCode": "PRIORITY",
+      "Commodity": "NONSCR",
+      "Piece": 3,
+      "Weight": 90,
+      "AgentCode": "ASQXGUEST",
+      "Shipper": "C1001",
+      "Consignee": "C1001",
+      "Execute": "Yes"
+    }
+  ],
+  "CAP018_BKG_00004": [
+    {
+      "AWB": "74428760",
+      "Origin": "ANC",
+      "Destination": "FAI",
+      "ProductCode": "GENERAL",
+      "Commodity": "0316",
+      "Piece": 2,
+      "Weight": 20,
+      "Agent Code": 10763,
+      "Shipper": 82165,
+      "Consignee": 82165,
+      "Execute": "Yes"
+    }
+  ],
+  "CAP018_BKG_00005": [
+    {
+      "Origin": "SEA",
+      "Destination": "JNU",
+      "ProductCode": "PRIORITY",
+      "Commodity": "2199",
+      "Piece": 4,
+      "Weight": 120,
+      "Execute": "Yes",
+      "Agent Code": 10763,
+      "Shipper Code": 10763,
+      "Consignee Code": 10763
+    },
+    {
+      "Origin": "PDX",
+      "Destination": "BWI",
+      "ProductCode": "PRIORITY",
+      "Commodity": "0300",
+      "Piece": 10,
+      "Weight": 950,
+      "Execute": "Yes",
+      "Agent Code": 10763,
+      "Shipper Code": 10763,
+      "Consignee Code": 10763
+    }
+  ],
+  "CAP018_BKG_00006": [
+    {
+      "Origin": "SEA",
+      "Destination": "ANC",
+      "ProductCode": "GENERAL",
+      "Commodity": "0316",
+      "Piece": 2,
+      "Weight": 310,
+      "Agent Code": 10763,
+      "Shipper Code": 10763,
+      "Consignee Code": 10763
+    }
+  ],
   "CAP018_BKG_00007": [
     {
       "Origin": "ANC",
@@ -103,6 +207,83 @@
       "Agent Code": 49990,
       "Shipper Code": 49990,
       "Consignee Code": "C1001"
+    }
+  ],
+  "CAP018_BKG_00008": [
+    {
+      "Origin": "ANC",
+      "Destination": "SEA",
+      "ProductCode": "PRIORITY",
+      "Commodity": "0316",
+      "Piece": 2,
+      "Weight": 20,
+      "Execute": "Yes",
+      "Agent Code": 10763,
+      "Shipper Code": 10763,
+      "Consignee Code": 10763,
+      "New Agent Code": "ASQXGUEST"
+    }
+  ],
+  "CAP018_BKG_00009": [
+    {
+      "Origin": "ANC",
+      "Destination": "HNL",
+      "ProductCode": "PRIORITY",
+      "Commodity": "2199",
+      "Piece": 10,
+      "Weight": 360,
+      "Execute": "No",
+      "Agent Code": 10763,
+      "Shipper Code": 10763,
+      "Consignee Code": 10763
+    },
+    {
+      "Origin": "SEA",
+      "Destination": "BOI",
+      "ProductCode": "GENERAL",
+      "Commodity": "NONSCR",
+      "Piece": 13,
+      "Weight": 775,
+      "Execute": "Yes",
+      "Agent Code": 10763,
+      "Shipper Code": 10763,
+      "Consignee Code": 10763
+    },
+    {
+      "Origin": "SAN",
+      "Destination": "JFK",
+      "ProductCode": "GOLDSTREAK",
+      "Commodity": "NONSCR",
+      "Piece": 2,
+      "Weight": 56,
+      "Execute": "Yes",
+      "Agent Code": 10763,
+      "Shipper Code": 10763,
+      "Consignee Code": 10763
+    },
+    {
+      "Origin": "SEA",
+      "Destination": "MCO",
+      "ProductCode": "PRIORITY",
+      "Commodity": "NONSCR",
+      "Piece": 4,
+      "Weight": 180,
+      "Execute": "No",
+      "Agent Code": 10763,
+      "Shipper Code": 10763,
+      "Consignee Code": 10763
+    },
+    {
+      "Origin": "SEA",
+      "Destination": "DFW",
+      "ProductCode": "GENERAL",
+      "Commodity": "NONSCR",
+      "Piece": 31,
+      "Weight": 4340,
+      "Execute": "No",
+      "Agent Code": 10763,
+      "Shipper Code": 10763,
+      "Consignee Code": 10763
     }
   ]
 }
