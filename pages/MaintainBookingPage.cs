@@ -183,11 +183,12 @@ namespace iCargoUIAutomation.pages
         private By unkConsigneeZip_ID = By.Id("CMP_Capacity_Booking_MaintainReservation_ShipperConsignee_ConsigneePostalCode");
         private By unkConsigneeEmail_ID = By.Id("CMP_Capacity_Booking_MaintainReservation_ShipperConsignee_ConsigneeEmail");
 
-        //Select/Save Template
+        //Select Save Template
         private By saveTemplateBtn_XPATH = By.XPath("//button[@name='btSaveTemplate']");
         private By finalSaveTemplateBtn_XPATH = By.XPath("//button[@onclick='saveTemplate()']");
         private By templateCloseBtn_XPATH = By.XPath("//div[@id='divMain']//button[@onclick='closeSearchPanel()']");
         private By templateName_XPATH = By.XPath("//form[@name='MaintainBookingTemplateForm']//input[@name='templateNameAuto']");
+        private By selectSavedTemplate_XPATH = By.XPath("//table[@class='icargotablemysearch']//tr[5]//td[2]//a");
 
         public void SwitchToCAP018Frame()
         {
@@ -251,16 +252,21 @@ namespace iCargoUIAutomation.pages
                 EnterText(product_XPATH, productCode);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Product Code: " + productCode);
                 Log.Info("Entered Product Code: " + productCode);
-                WaitForElementToBeClickable(shipperConsigneeBtn_ID, TimeSpan.FromSeconds(5));
-                Click(shipperConsigneeBtn_ID);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee Button");
-                Log.Info("Clicked on Shipper Consignee Button");
+                ShipperConsigneeBtn();
             }
             catch (Exception e)
             {
                 Hooks.Hooks.UpdateTest(Status.Fail, "Error in Entering Shipment Details: " + e.Message);
                 Log.Error("Error in Entering Shipment Details: " + e.Message);
             }
+        }
+
+        public void ShipperConsigneeBtn()
+        {
+            WaitForElementToBeClickable(shipperConsigneeBtn_ID, TimeSpan.FromSeconds(5));
+            Click(shipperConsigneeBtn_ID);
+            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee Button");
+            Log.Info("Clicked on Shipper Consignee Button");
         }
 
         public void UnknownShipperAllDetails()
@@ -516,9 +522,7 @@ namespace iCargoUIAutomation.pages
                 EnterText(product_XPATH, prodCode);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Product Code: " + prodCode);
                 Log.Info("Entered Product Code: " + prodCode);
-                Click(shipperConsigneeBtn_ID);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee Button");
-                Log.Info("Clicked on Shipper Consignee Button");
+                ShipperConsigneeBtn();
             }
             catch (Exception e)
             {
@@ -759,8 +763,7 @@ namespace iCargoUIAutomation.pages
                 EnterText(product_XPATH, prodcode);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Product Code: " + prodcode);
                 Log.Info("Entered Product Code: " + prodcode);
-                Click(shipperConsigneeBtn_ID);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee Button");
+                ShipperConsigneeBtn();
             }
             catch (Exception e)
             {
@@ -1379,7 +1382,7 @@ namespace iCargoUIAutomation.pages
         {
             WaitForElementToBeInvisible(homePage_CSS, TimeSpan.FromSeconds(5));
             ClickOnElementIfPresent(saveTemplateBtn_XPATH);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Select/Save Template Button");
+            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Select/Save Template Button");            
             Log.Info("Clicked Select/Save Template Button");
             SwitchToCAP018Frame();
             Log.Info("Switched to CAP018 frame"); 
@@ -1388,7 +1391,37 @@ namespace iCargoUIAutomation.pages
             Hooks.Hooks.UpdateTest(Status.Pass, "Save Button is clicked to save the template");
             Log.Info("Save Button is clicked to save the template");
             Click(templateCloseBtn_XPATH);
+            Hooks.Hooks.UpdateTest(Status.Pass, "Close Button is clicked to close the template");
+            Log.Info("Close Button is clicked to close the template");
             Click(btnCloseMb_XPATH);
+            Log.Info("Clicked Close Button on MB Popup");
+        }
+
+        public void ClickSelectTemplate()
+        {
+            WaitForElementToBeInvisible(homePage_CSS, TimeSpan.FromSeconds(5));
+            ClickOnElementIfPresent(saveTemplateBtn_XPATH);
+            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked Select/Save Template Button");
+            Log.Info("Clicked Select/Save Template Button");
+        }
+
+        public void SelectTemplate()
+        {
+            ClickSelectTemplate();
+            SwitchToCAP018Frame();
+            WaitForElementToBeClickable(selectSavedTemplate_XPATH, TimeSpan.FromSeconds(10));            
+            DoubleClick(selectSavedTemplate_XPATH);
+            Hooks.Hooks.UpdateTest(Status.Pass, "Selected Saved Template");
+            Log.Info("Selected Saved Template");
+            DoubleClick(selectSavedTemplate_XPATH);
+            ShipperConsigneeBtn();
+            SwitchToSecondPopupWindow();
+            WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(5));
+            ClickOnElementIfPresent(shipperConsigneeOkBtn_ID);
+            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Shipper Consignee OK Button");
+            Log.Info("Clicked on Shipper Consignee OK Button");
+            SwitchToPopupWindow();
+            SwitchToCAP018Frame();
         }
     }
 }
