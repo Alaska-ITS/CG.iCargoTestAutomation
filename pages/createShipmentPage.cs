@@ -37,7 +37,9 @@ namespace iCargoUIAutomation.pages
         string MarketCharge = "";
         public static string origin = "";
         public static string destination = "";
-        public static string shippingDate = DateTime.Now.ToString("dd-MMM-yyyy");
+        //public static string shippingDate = DateTime.Now.ToString("dd-MMM-yyyy");
+        public static string shippingDatePST=TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")).ToString("dd-MMM-yyyy");
+        public static string shippingDatePSTDDMMM = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")).ToString("dd-MMM");
         string scc = "";
         string serviceCargoClass = "";
         public static string pieces = "";
@@ -158,6 +160,7 @@ namespace iCargoUIAutomation.pages
         private string lblAvailabilityEMB = "";
         private string lblAvailabilityLOAD = "";
         private string lblAvailabilityRES = "";
+        private string lblFlightDate = "";
 
         //    Charge Details    //
         private By lblChargeDetails_Id = By.Id("charge");
@@ -535,8 +538,8 @@ namespace iCargoUIAutomation.pages
                 Hooks.Hooks.UpdateTest(Status.Pass, "Origin: " + origin);
                 destination = GetAttributeValue(txtDestination_Name, "value");
                 Hooks.Hooks.UpdateTest(Status.Pass, "Destination: " + destination);
-                shippingDate = GetAttributeValue(txtShipmentDate_Name, "value");
-                Hooks.Hooks.UpdateTest(Status.Pass, "Shipping Date: " + shippingDate);
+                shippingDatePST = GetAttributeValue(txtShipmentDate_Name, "value");
+                Hooks.Hooks.UpdateTest(Status.Pass, "Shipping Date: " + shippingDatePST);
                 pieces = GetAttributeValue(txtPieces_Name, "value");
                 Hooks.Hooks.UpdateTest(Status.Pass, "Pieces: " + pieces);
                 weight = GetAttributeValue(txtWeight_Name, "value");
@@ -568,8 +571,8 @@ namespace iCargoUIAutomation.pages
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Origin: " + origin);
                 EnterText(txtDestination_Name, destination);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Destination: " + destination);
-                EnterText(txtShipmentDate_Name, shippingDate);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Shipping Date: " + shippingDate);
+                EnterText(txtShipmentDate_Name, shippingDatePST);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Shipping Date: " + shippingDatePST);
 
                 if (productCode == "Employee Shipment")
                 {
@@ -696,8 +699,8 @@ namespace iCargoUIAutomation.pages
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Carrier Code: " + carrierCode);
                 EnterText(txtFlightNo_Name, flightNum);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Flight Number: " + flightNum);
-                EnterText(txtFlightDate_Name, shippingDate);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Flight Date: " + shippingDate);
+                EnterText(txtFlightDate_Name, shippingDatePST);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Flight Date: " + shippingDatePST);
                 EnterText(txtSegment_Name, flightSegment);
                 Hooks.Hooks.UpdateTest(Status.Pass, "Entered Flight Segment: " + flightSegment);
                 EnterText(txtBookedPiece_Name, pieces);
@@ -814,7 +817,7 @@ namespace iCargoUIAutomation.pages
                                 EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Flight " + flightNum + " & connecting flightNum " + ConnectingflightNum + " is booked successfully");
                                 Log.Info("Flight " + flightNum + " & connecting flightNum " + ConnectingflightNum + " is booked successfully");
-                                shippingDate = GetAttributeValue(txtFlightDate_Name, "value");
+                                shippingDatePST = GetAttributeValue(txtFlightDate_Name, "value");
                                 break;
                             }
                             i = i + 1;
@@ -830,7 +833,7 @@ namespace iCargoUIAutomation.pages
                                 EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Flight " + flightNum + " is booked successfully");
                                 Log.Info("Flight " + flightNum + " is booked successfully");
-                                shippingDate = GetAttributeValue(txtFlightDate_Name, "value");
+                                shippingDatePST = GetAttributeValue(txtFlightDate_Name, "value");
                                 break;
                             }
                         }
@@ -843,8 +846,8 @@ namespace iCargoUIAutomation.pages
                 }
                 else
                 {
-                    Hooks.Hooks.UpdateTest(Status.Fail, "No flight is available for booking from " + origin + " to " + destination + " on " + shippingDate);
-                    Log.Info("No flight is available for booking from " + origin + " to " + destination + " on " + shippingDate);
+                    Hooks.Hooks.UpdateTest(Status.Fail, "No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
+                    Log.Info("No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
                 }
 
 
@@ -869,7 +872,7 @@ namespace iCargoUIAutomation.pages
                     {
                         if (!GetAttributeValue(By.XPath("//*[@id='flight_details']//tbody//tr[" + (i + 1) + "]"), "class").Contains("row-border-merge"))
                         {
-                            if (!GetCAPAvailabilityStatus(i).Contains("error") && !GetEMBAvailabilityStatus(i).Contains("error") && !GetLOADAvailabilityStatus(i).Contains("error") && !GetRESAvailabilityStatus(i).Contains("error") && GetFlightType(i).Contains(typeOfFlight))
+                            if (!GetCAPAvailabilityStatus(i).Contains("error") && !GetEMBAvailabilityStatus(i).Contains("error") && !GetLOADAvailabilityStatus(i).Contains("error") && !GetRESAvailabilityStatus(i).Contains("error") && GetFlightType(i).Contains(typeOfFlight) && GetFlightDate(i).Contains(shippingDatePSTDDMMM))
                             {
                                 flightNum = GetText(By.XPath("//*[@id='flight_details']//tbody//tr[" + i + "]//td[1]")).Trim().Split("AS")[1].Trim();
 
@@ -889,7 +892,7 @@ namespace iCargoUIAutomation.pages
                                 
                                 Hooks.Hooks.UpdateTest(Status.Pass, typeOfFlight + " Flight: " + flightNum + " is booked successfully");
                                 Log.Info(typeOfFlight + " Flight: " + flightNum + " is booked successfully");
-                                shippingDate = GetAttributeValue(txtFlightDate_Name, "value");
+                                shippingDatePST = GetAttributeValue(txtFlightDate_Name, "value");
                                 break;
                             }
 
@@ -900,9 +903,9 @@ namespace iCargoUIAutomation.pages
                 }
                 else
                 {
-                    Hooks.Hooks.UpdateTest(Status.Fail, "No flight is available for booking from " + origin + " to " + destination + " on " + shippingDate);
-                    Log.Info("No flight is available for booking from " + origin + " to " + destination + " on " + shippingDate);
-                }
+                    Hooks.Hooks.UpdateTest(Status.Fail, "No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
+                    Log.Info("No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
+                }           
 
 
             }
@@ -936,7 +939,7 @@ namespace iCargoUIAutomation.pages
                                 EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                 Hooks.Hooks.UpdateTest(Status.Pass, typeOfFlight + " Flight: " + flightNum + " is booked successfully");
                                 Log.Info(typeOfFlight + " Flight: " + flightNum + " is booked successfully");
-                                shippingDate = GetAttributeValue(txtFlightDate_Name, "value");
+                                shippingDatePST = GetAttributeValue(txtFlightDate_Name, "value");
                                 break;
                             }
 
@@ -947,8 +950,8 @@ namespace iCargoUIAutomation.pages
                 }
                 else
                 {
-                    Hooks.Hooks.UpdateTest(Status.Fail, "No flight is available for booking from " + origin + " to " + destination + " on " + shippingDate);
-                    Log.Info("No flight is available for booking from " + origin + " to " + destination + " on " + shippingDate);
+                    Hooks.Hooks.UpdateTest(Status.Fail, "No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
+                    Log.Info("No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
                 }
 
 
@@ -985,7 +988,7 @@ namespace iCargoUIAutomation.pages
                                     EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                     Hooks.Hooks.UpdateTest(Status.Pass, firstflttyp + " Flight " + flightNum + " & connecting " + secondflttype + " Flight " + ConnectingflightNum + " is booked successfully");
                                     Log.Info(firstflttyp + " Flight " + flightNum + " & connecting " + secondflttype + " Flight " + ConnectingflightNum + " is booked successfully");
-                                    shippingDate = GetAttributeValue(txtFlightDate_Name, "value");
+                                    shippingDatePST = GetAttributeValue(txtFlightDate_Name, "value");
                                     break;
                                 }
 
@@ -998,8 +1001,8 @@ namespace iCargoUIAutomation.pages
                 }
                 else
                 {
-                    Hooks.Hooks.UpdateTest(Status.Fail, "No flight is available for booking from " + origin + " to " + destination + " on " + shippingDate);
-                    Log.Info("No flight is available for booking from " + origin + " to " + destination + " on " + shippingDate);
+                    Hooks.Hooks.UpdateTest(Status.Fail, "No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
+                    Log.Info("No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
                 }
             }
             catch (Exception e)
@@ -1031,7 +1034,7 @@ namespace iCargoUIAutomation.pages
                                 EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                                 Hooks.Hooks.UpdateTest(Status.Pass, "Flight " + flightNum + " & connecting flightNum " + ConnectingflightNum + "having minimum connection time restriction, is booked successfully");
                                 Log.Info("Flight " + flightNum + " & connecting flightNum " + ConnectingflightNum + "having minimum connection time restriction, is booked successfully");
-                                shippingDate = GetAttributeValue(txtFlightDate_Name, "value");
+                                shippingDatePST = GetAttributeValue(txtFlightDate_Name, "value");
                                 break;
                             }
                             i += 1;
@@ -1043,8 +1046,8 @@ namespace iCargoUIAutomation.pages
                 }
                 else
                 {
-                    Hooks.Hooks.UpdateTest(Status.Fail, "No flight is available for booking from " + origin + " to " + destination + " on " + shippingDate);
-                    Log.Info("No flight is available for booking from " + origin + " to " + destination + " on " + shippingDate);
+                    Hooks.Hooks.UpdateTest(Status.Fail, "No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
+                    Log.Info("No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
                 }
 
 
@@ -1091,6 +1094,13 @@ namespace iCargoUIAutomation.pages
             lblAvailabilityRES = "//*[@id='flight_details']//tbody//tr[" + flightRowNum + "]//span[text()='RES']";
             string status = GetAttributeValue(By.XPath(lblAvailabilityRES), "class");
             return status;
+        }
+
+        public string GetFlightDate(int flightRowNum)
+        {
+            lblFlightDate = "//*[@id='flight_details']//tbody//tr[" + flightRowNum + "]/td[2]/div[2]";
+            string flightDate = GetText(By.XPath(lblFlightDate)).Trim();
+            return flightDate;
         }
 
         public void ClickOnContinueFlightDetailsButton()
@@ -2249,7 +2259,7 @@ namespace iCargoUIAutomation.pages
         {
             try
             {
-                emp.EnterFlightDate(shippingDate);
+                emp.EnterFlightDate(shippingDatePST);
             }
             catch (Exception e)
             {

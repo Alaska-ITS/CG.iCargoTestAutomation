@@ -78,10 +78,9 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("Create a PP AWB in LTE001 for a known shipper")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00001")]
-
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "GEG", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "PP", "CREDIT", "CART", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("11029", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "250", "PP", "CREDIT", "CART", "Yes", null)]
-
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "GEG", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "5", "250", "PP", "CREDIT", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "GEG", "LAS", "GOLDSTREAK", "None", "NONSCR", "None", "None", "1", "40", "PP", "CREDIT", "CART", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "GEG", "FAI", "PRIORITY", "None", "NONSCR", "None", "None", "7", "200", "PP", "CREDIT", "CART", "Yes", null)]
         public virtual void CreateAPPAWBInLTE001ForAKnownShipper(
                     string agentCode, 
                     string shipperCode, 
