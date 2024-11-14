@@ -46,11 +46,22 @@ namespace iCargoUIAutomation.pages
 
         // ULD Details
         private By lblULDdetails_Css = By.CssSelector("#uldDetails");
+        private By chkBoxBulk_Css = By.CssSelector("input[name='uldManifestDetailsTable-select']");
 
         //Export Manifest Footer Section        
         private By btnCloseImportManifest_Id = By.Id("CMP_OPERATIONS_FLTHANDLING_IMPORTMANIFEST_CLOSE");
         private By btnBreakDownImportManifest_Id = By.Id("CMP_OPERATIONS_FLTHANDLING_IMPORTMANIFEST_BREAKDOWN");
         private By btnSaveImportManifest_Id = By.Id("CMP_OPERATIONS_FLTHANDLING_IMPORTMANIFEST_SAVE");        
+
+        // Breakdown details in OPR004 Breakdown Screen
+        private By lblBreakdownDetails_Css = By.CssSelector(".paddR5 h4");
+        private By txtBdnLocation_Css = By.CssSelector("input[name='loccode']");
+        private By txtRcvdPcs_Css = By.CssSelector("input[name='rcvdPcs']");
+        private By txtRcvdWgt_Css = By.CssSelector("input[name='rcvdWgt']");
+        private By btnSaveBreakDownDetails_Css = By.CssSelector("#CMP_Operations_Flthandling_Cto_Breakdown_Save");
+        private By lblSaveSuccessfulMessage_Css = By.CssSelector(".alert-messages-detail span"); //Saved successfully. Do you want to list the saved details?    
+        private By btnYesSaveSuccessfulMessage_Css = By.XPath("//div[@class='ui-dialog-buttonset']/button[normalize-space(text())='Yes']");
+        private By btnCloseDialog_Css = By.CssSelector(".dialog-close");
 
 
         public void SwitchToImportManifestFrame()
@@ -91,7 +102,70 @@ namespace iCargoUIAutomation.pages
             WaitForElementToBeVisible(btnListImpManifest_Id, TimeSpan.FromSeconds(3));
         }   
 
-        public void CloseOPR344Screen()
+        public void ClickOnBulkCheckBox()
+        {
+            Click(chkBoxBulk_Css);
+            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Bulk CheckBox");
+        }
+
+        public void ClickOnBreakDownButton()
+        {
+            Click(btnBreakDownImportManifest_Id);
+            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Breakdown Button");
+            WaitForElementToBeVisible(lblBreakdownDetails_Css, TimeSpan.FromSeconds(3));
+        }
+
+        public void EnterBreakdownDetails(string bdnLocation, string bdnRcvdPcs, string bdnRcvdWt)
+        {
+            EnterText(txtBdnLocation_Css, bdnLocation);
+            EnterKeys(txtBdnLocation_Css, Keys.Tab);
+            Hooks.Hooks.UpdateTest(Status.Info, "Entered Breakdown Location: " + bdnLocation);
+           
+            // if break down received pieces and weight is not none then enter the values
+            if (bdnRcvdPcs != "None" && bdnRcvdWt != "None")
+            {
+                Click(txtRcvdPcs_Css);
+                EnterText(txtRcvdPcs_Css, bdnRcvdPcs);
+                EnterKeys(txtRcvdPcs_Css, Keys.Tab);
+                Hooks.Hooks.UpdateTest(Status.Info, "Entered Received Pieces: " + bdnRcvdPcs);
+                EnterText(txtRcvdWgt_Css, bdnRcvdWt);
+                EnterKeys(txtRcvdWgt_Css, Keys.Tab);
+                Hooks.Hooks.UpdateTest(Status.Info, "Entered Received Weight: " + bdnRcvdWt);
+            }
+
+        }
+
+        // validate the expected message after saving the breakdown details
+        public void SaveBreakdownAndValidateMessage(string expectedMessage)
+        {
+            Click(btnSaveBreakDownDetails_Css);
+            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Save Button");
+            SwitchToDefaultContent();
+            WaitForElementToBeVisible(lblSaveSuccessfulMessage_Css, TimeSpan.FromSeconds(3));
+            string actualMessage = GetText(lblSaveSuccessfulMessage_Css);
+            if (expectedMessage.Contains(actualMessage))
+            {
+                Hooks.Hooks.UpdateTest(Status.Pass, "Validated the Message: " + actualMessage);
+                if (actualMessage.Contains("Do you want to list the saved details?"))
+                {
+                    Click(btnYesSaveSuccessfulMessage_Css);
+                }
+            }
+            else
+            {
+                Hooks.Hooks.UpdateTest(Status.Fail, "Expected Message: " + expectedMessage + " Actual Message: " + actualMessage);
+                Click(btnCloseDialog_Css);
+            }
+
+            SwitchToImportManifestFrame();
+        }
+
+       
+
+       
+      
+
+        public void CloseOPR367Screen()
         {            
             WaitForElementToBeVisible(btnCloseImportManifest_Id, TimeSpan.FromSeconds(5));            
             ClickOnElementIfEnabled(btnCloseImportManifest_Id);

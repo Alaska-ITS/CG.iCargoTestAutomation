@@ -38,8 +38,8 @@ Scenario Outline: Arrive cargo off an inbound flight
 	And User closes the PrintPDF window
 	And User validates the AWB is "Manifested" in the Export Manifest screen
 	Then User closes the Export Manifest screen
-	When User enters the screen name as 'FLT006'	
-	When User enters the flight details and movement details for 'departure' and clicks on save button	
+	When User enters the screen name as 'FLT006'
+	When User enters the flight details and movement details for 'departure' and clicks on save button
 	When User enters the screen name as 'OPR344'
 	Then User enters into the  iCargo 'Export Manifest' page successfully
 	When User enters the Booked FlightNumber with ""
@@ -48,14 +48,17 @@ Scenario Outline: Arrive cargo off an inbound flight
 	And User checks for the flight status to be finalized
 	Then User closes the Export Manifest screen
 	When User switches station if BaseStation other than "<Destination>"
-	When User enters the screen name as 'FLT006'	
+	When User enters the screen name as 'FLT006'
 	When User enters the flight details and movement details for 'arrival' and clicks on save button
 	When User enters the screen name as 'OPR367'
 	Then User enters into the  iCargo 'Import Manifest' page successfully
 	When User enters the Flight details to fetch the uld details
+	And User selects ULD and clicks on the breakdown button to breakdown
+	And User enters the breakdown details with BreakdownLocation "<Bdn_Locn>", receivedPieces "<Bdn_RcvdPieces>", receivedWeight "<Bdn_RcvdWeight>"
+	Then User Clicks on the save button and validates the popup message as 'Saved successfully. Do you want to list the saved details?'
 	
 
 Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | AWBSectionName  | cartType | Execute |
-	| 11377     | 11377       | 11377         | SFO    | LAX         | GOLDSTREAK  | None | NONSCR    | None                | None              | 2     | 59     | CC         | None          | PlannedShipment | CART     | Yes     |
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | AWBSectionName  | cartType | Bdn_Locn | Bdn_RcvdPieces | Bdn_RcvdWeight | Execute |
+	| 11377     | 11377       | 11377         | SFO    | LAX         | GOLDSTREAK  | None | NONSCR    | None                | None              | 2     | 59     | CC         | None          | PlannedShipment | CART     | IDEFLOC  | 2              | 59             | Yes     |
 

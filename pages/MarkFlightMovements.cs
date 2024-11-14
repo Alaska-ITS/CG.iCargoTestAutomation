@@ -80,9 +80,8 @@ namespace iCargoUIAutomation.pages
                 if (movementDirection.ToLower() == "departure")
                 {
                     EnterText(txtActualDepartureDate_Xpath, timeZone.Date);
-                    EnterKeys(txtActualDepartureDate_Xpath, Keys.Tab);
-                    // add three minutes to the CurrentTimePST and enter it as the actual departure time
-                    EnterText(txtActualDepartureTime_Xpath, DateTime.Parse(timeZone.Time).AddMinutes(3).ToString("HH:mm"));
+                    EnterKeys(txtActualDepartureDate_Xpath, Keys.Tab);                   
+                    EnterText(txtActualDepartureTime_Xpath, DateTime.Parse(timeZone.Time).AddMinutes(0).ToString("HH:mm"));                    
                     EnterKeys(txtActualDepartureTime_Xpath, Keys.Tab);
                 }
                 else
@@ -101,9 +100,9 @@ namespace iCargoUIAutomation.pages
                 {
                     // Use AKST time zone for all other origins
                     EnterText(txtActualDepartureDate_Xpath, CurrentDateAKST);
-                    EnterKeys(txtActualDepartureDate_Xpath, Keys.Tab);
-                    // add three minutes to the CurrentTimeAKST and enter it as the actual departure time
-                    EnterText(txtActualDepartureTime_Xpath, DateTime.Parse(CurrentTimeAKST).AddMinutes(3).ToString("HH:mm"));
+                    EnterKeys(txtActualDepartureDate_Xpath, Keys.Tab);                    
+                    EnterText(txtActualDepartureTime_Xpath, DateTime.Parse(CurrentTimeAKST).AddMinutes(0).ToString("HH:mm"));
+                    //EnterText(txtActualDepartureTime_Xpath, CurrentTimeAKST);
                     EnterKeys(txtActualDepartureTime_Xpath, Keys.Tab);
                 }
                 else
@@ -117,8 +116,7 @@ namespace iCargoUIAutomation.pages
 
             }
 
-        }  
-
+        } 
 
         public void ClickSaveButton()
         {

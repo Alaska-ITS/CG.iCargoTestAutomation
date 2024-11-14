@@ -156,6 +156,57 @@ namespace iCargoUIAutomation.StepDefinitions
             }
         }
 
+        [When(@"User selects ULD and clicks on the breakdown button to breakdown")]
+        public void WhenUserSelectsULDAndClicksOnTheBreakdownButtonToBreakdown()
+        {
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                imp.ClickOnBulkCheckBox();
+                imp.ClickOnBreakDownButton();
+
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+        }
+
+        [When(@"User enters the breakdown details with BreakdownLocation ""([^""]*)"", receivedPieces ""([^""]*)"", receivedWeight ""([^""]*)""")]
+        public void WhenUserEntersTheBreakdownDetailsWithBreakdownLocationReceivedPiecesReceivedWeight(string bdnLocation, string bdnRcvdPcs, string bdnRcvdWt)
+        {
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                imp.EnterBreakdownDetails(bdnLocation, bdnRcvdPcs,bdnRcvdWt);
+
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+        }
+
+
+        [Then(@"User Clicks on the save button and validates the popup message as '([^']*)'")]
+        public void ThenUserClicksOnTheSaveButtonAndValidatesThePopupMessageAs(string expectedMsg)
+        {
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                imp.SaveBreakdownAndValidateMessage(expectedMsg);
+
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+        }
+
+
+
+
+
 
 
 
