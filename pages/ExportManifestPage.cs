@@ -851,6 +851,38 @@ namespace iCargoUIAutomation.pages
             
         }
 
+
+        public void CheckFlightStatusForFinalized()
+        {
+            // Refresh until the flight status is finalized using while loop
+
+            WaitForElementToBeVisible(lblStatus_CSS, TimeSpan.FromSeconds(5));
+            string flightStatus = GetText(lblStatus_CSS);
+            while (true)
+            {                
+                if (flightStatus.Contains("Finalized"))
+                {
+                    Hooks.Hooks.UpdateTest(Status.Info, "Flight Status is Finalized");
+                    break;
+                }
+                else
+                {
+                    ClickOnElementIfEnabled(btnOrangePencilEditManifest_Css);                    
+                    WaitForElementToBeVisible(btnListManifest_Id, TimeSpan.FromSeconds(3));
+                    ClickOnElementIfEnabled(btnListManifest_Id);                   
+                    WaitForElementToBeVisible(btnOrangePencilEditManifest_Css, TimeSpan.FromSeconds(5));
+                    flightStatus = GetText(lblStatus_CSS);                    
+                }
+            }
+            
+
+
+        }
+
+
+
+
+
         public void CloseOPR344Screen()
         {
             

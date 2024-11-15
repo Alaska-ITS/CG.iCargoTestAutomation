@@ -14,6 +14,8 @@ public class PageObjectManager : BasePage
     private CaptureIrregularityPage cip;
     private FogsQAPage fogsQAPage;
     private ScreeningPage sp;
+    private MarkFlightMovements mfm;
+    private ImportManifestPage imp;
 
     // Add other page classes as needed
 
@@ -67,4 +69,14 @@ public class PageObjectManager : BasePage
         return sp ?? (sp = new ScreeningPage(driver));
     }
     // Add other getter methods for other page classes as needed
+
+    public MarkFlightMovements GetMarkFlightMovements()
+    {
+        return mfm ?? (mfm = new MarkFlightMovements(driver));
+    }
+
+    public ImportManifestPage GetImportManifestPage()
+    {
+        return imp ?? (imp = new ImportManifestPage(driver));
+    }
 }
