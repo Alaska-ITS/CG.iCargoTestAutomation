@@ -38,6 +38,7 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\OPR344_EXP_00002_Manifest an AWB from the lying list - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\OPR344_EXP_00003_Manifest an AWB onto its booked flight - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\OPR344_EXP_00018_Manifest an AWB for an unknown shipper from the lying list to a pax flight - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\OPR367_IMP_00001_Arrive cargo off an inbound flight - Copy.feature.cs" />
   </ItemGroup>
 
 	<ItemGroup>
@@ -123,6 +124,10 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Features\LTE001_ACC_00008_Reopen an AWB and change piece count and weight and reexecute.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\OPR367_IMP_00002_Arrive unmanifested cargo into a station.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

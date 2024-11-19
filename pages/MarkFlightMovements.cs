@@ -61,7 +61,7 @@ namespace iCargoUIAutomation.pages
             WaitForElementToBeVisible(txtActualDepartureDate_Xpath, TimeSpan.FromSeconds(3));
         }
 
-        public void EnterActualArrivalDepartureDetails(string movementDirection)
+        public void EnterActualArrivalDepartureDetails(string movementDirection, double adjustedTime=0)
         {
             // if the origin stations is SAN,SFO,LAX then use PST timezone, else use AKST timezone using dictionary
 
@@ -88,7 +88,7 @@ namespace iCargoUIAutomation.pages
                 {
                     EnterText(txtActualArrivalDate_Xpath, TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")).ToString("dd-MMM-yyyy"));
                     EnterKeys(txtActualArrivalDate_Xpath, Keys.Tab);
-                    EnterText(txtActualArrivalTime_Xpath, TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")).ToString("HH:mm"));
+                    EnterText(txtActualArrivalTime_Xpath, TimeZoneInfo.ConvertTime(DateTime.Now.AddMinutes(adjustedTime), TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")).ToString("HH:mm"));
                     EnterKeys(txtActualArrivalTime_Xpath, Keys.Tab);
                 }
                 
@@ -109,7 +109,7 @@ namespace iCargoUIAutomation.pages
                 {
                     EnterText(txtActualArrivalDate_Xpath, TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Alaskan Standard Time")).ToString("dd-MMM-yyyy"));
                     EnterKeys(txtActualArrivalDate_Xpath, Keys.Tab);
-                    EnterText(txtActualArrivalTime_Xpath, TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Alaskan Standard Time")).ToString("HH:mm"));
+                    EnterText(txtActualArrivalTime_Xpath, TimeZoneInfo.ConvertTime(DateTime.Now.AddMinutes(adjustedTime), TimeZoneInfo.FindSystemTimeZoneById("Alaskan Standard Time")).ToString("HH:mm"));
                     EnterKeys(txtActualArrivalTime_Xpath, Keys.Tab);
                 }
                     
@@ -127,6 +127,7 @@ namespace iCargoUIAutomation.pages
         {
             Click(btnClose_Id);
             WaitForElementToBeInvisible(btnClose_Id, TimeSpan.FromSeconds(3));
+            SwitchToDefaultContent();
         }
 
     }

@@ -38,7 +38,7 @@ namespace iCargoUIAutomation.pages
         public static string origin = "";
         public static string destination = "";
         //public static string shippingDate = DateTime.Now.ToString("dd-MMM-yyyy");
-        public static string shippingDatePST=TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")).ToString("dd-MMM-yyyy");
+        public static string shippingDatePST = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")).ToString("dd-MMM-yyyy");
         public static string shippingDatePSTDDMMM = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")).ToString("dd-MMM");
         string scc = "";
         string serviceCargoClass = "";
@@ -68,7 +68,7 @@ namespace iCargoUIAutomation.pages
             this.dgp = pageObjectManager.GetDangerousGoodsPage();
             this.cip = pageObjectManager.GetCaptureIrregularityPage();
             this.emp = pageObjectManager.GetExportManifestPage();
-            this.fogsQAPage = pageObjectManager.GetFogsQAPage();            
+            this.fogsQAPage = pageObjectManager.GetFogsQAPage();
 
         }
 
@@ -860,60 +860,56 @@ namespace iCargoUIAutomation.pages
 
         }
 
-
         public string BookWithSpecificFlightType(string typeOfFlight)
         {
-            try
+
+            int noOfFlights = GetElementCount(listAllFlights_Xpath);
+            bool isFlightExists = false;
+            if (noOfFlights > 0)
             {
-                int noOfFlights = GetElementCount(listAllFlights_Xpath);
-                if (noOfFlights > 0)
+                for (int i = 1; i <= noOfFlights; i++)
                 {
-                    for (int i = 1; i <= noOfFlights; i++)
+                    if (!GetAttributeValue(By.XPath("//*[@id='flight_details']//tbody//tr[" + (i + 1) + "]"), "class").Contains("row-border-merge"))
                     {
-                        if (!GetAttributeValue(By.XPath("//*[@id='flight_details']//tbody//tr[" + (i + 1) + "]"), "class").Contains("row-border-merge"))
+                        if (!GetCAPAvailabilityStatus(i).Contains("error") && !GetEMBAvailabilityStatus(i).Contains("error") && !GetLOADAvailabilityStatus(i).Contains("error") && !GetRESAvailabilityStatus(i).Contains("error") && GetFlightType(i).Contains(typeOfFlight) && GetFlightDate(i).Contains(shippingDatePSTDDMMM))
                         {
-                            if (!GetCAPAvailabilityStatus(i).Contains("error") && !GetEMBAvailabilityStatus(i).Contains("error") && !GetLOADAvailabilityStatus(i).Contains("error") && !GetRESAvailabilityStatus(i).Contains("error") && GetFlightType(i).Contains(typeOfFlight) && GetFlightDate(i).Contains(shippingDatePSTDDMMM))
+                            isFlightExists = true;
+                            flightNum = GetText(By.XPath("//*[@id='flight_details']//tbody//tr[" + i + "]//td[1]")).Trim().Split("AS")[1].Trim();
+
+                            btnBookFlight = btnBookFlight.Replace("1", i.ToString());
+                            if (IsElementPresent(By.XPath(btnBookFlight)))
                             {
-                                flightNum = GetText(By.XPath("//*[@id='flight_details']//tbody//tr[" + i + "]//td[1]")).Trim().Split("AS")[1].Trim();
-
-                                btnBookFlight = btnBookFlight.Replace("1", i.ToString());
-                                if (IsElementPresent(By.XPath(btnBookFlight)))
-                                {
-                                    ScrollDown();
-                                    EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
-                                }
-                                else
-                                {                                    
-                                    btnBookFlight = btnBookFlight.Replace(i.ToString(),(i-1).ToString());
-                                    ScrollDown();
-                                    EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
-                                }
-
-                                
-                                Hooks.Hooks.UpdateTest(Status.Pass, typeOfFlight + " Flight: " + flightNum + " is booked successfully");
-                                Log.Info(typeOfFlight + " Flight: " + flightNum + " is booked successfully");
-                                shippingDatePST = GetAttributeValue(txtFlightDate_Name, "value");
-                                break;
+                                ScrollDown();
+                                EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
                             }
-
+                            else
+                            {
+                                btnBookFlight = btnBookFlight.Replace(i.ToString(), (i - 1).ToString());
+                                ScrollDown();
+                                EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
+                            }
+                            
+                            shippingDatePST = GetAttributeValue(txtFlightDate_Name, "value");
+                            break;
                         }
 
                     }
 
-                }
-                else
-                {
-                    Hooks.Hooks.UpdateTest(Status.Fail, "No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
-                    Log.Info("No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
-                }           
-
+                }// End of for loop
 
             }
-            catch (Exception e)
+
+            if (isFlightExists == false)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in booking flight: " + e.ToString());
-                Log.Error("Error in booking flight: " + e.ToString());
+                Hooks.Hooks.UpdateTest(Status.Fail, "No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
+                Log.Info("No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
             }
+            else
+            {
+                Hooks.Hooks.UpdateTest(Status.Pass, typeOfFlight + " Flight: " + flightNum + " is booked successfully");
+                Log.Info(typeOfFlight + " Flight: " + flightNum + " is booked successfully");
+
+            }          
 
             return flightNum;
 
