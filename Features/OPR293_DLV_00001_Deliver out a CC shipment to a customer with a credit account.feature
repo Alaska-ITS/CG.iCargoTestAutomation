@@ -57,7 +57,7 @@ Scenario Outline: Deliver out a CC shipment to a customer with a credit account
 	When User enters the screen name as 'OPR293'
 	Then User enters into the  iCargo 'Delivery Documentation : OPR293' page successfully
 	When User lists the AWB details for delivery
-	And process the DN details
+	And process the Delivery Note details
 	And User saves the payment details for "<ChargeType>"
 	And User clicks on Accept Payment button
 	And User Captures the delivery details

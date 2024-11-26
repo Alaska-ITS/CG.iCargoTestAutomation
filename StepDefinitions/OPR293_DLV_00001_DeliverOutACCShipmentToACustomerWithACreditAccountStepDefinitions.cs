@@ -28,12 +28,12 @@ namespace iCargoUIAutomation.StepDefinitions
             dp.EnterAWBNumberOPR293();
         }
 
-        [When(@"process the DN details")]
+        [When(@"process the Delivery Note details")]
         public void WhenProcessTheDNDetails()
         {
             dp.SelectAWBForDelivery();
-            dp.ClickGenerateDNButton();
-            csp.ClickingYesOnPopupWarnings("");
+            dp.ClickGenerateDeliveryNoteButton();
+            dp.ClickingYesOnPopupWarnings("");
             dp.GetPaymentAmountValue();
         }
 
@@ -54,7 +54,7 @@ namespace iCargoUIAutomation.StepDefinitions
         public void WhenUserCapturesTheDeliveryDetails()
         {
             dp.CaptureDeliveryDetails(); 
-            csp.ClickingYesOnPopupWarnings("");
+            dp.ClickingYesOnPopupWarnings("");
             dp.DeliveryReceiptWindow();
         }
 

@@ -1,4 +1,5 @@
 ﻿using AventStack.ExtentReports;
+using iCargoUIAutomation.Features;
 using log4net;
 using OpenQA.Selenium;
 using System;
@@ -14,8 +15,10 @@ namespace iCargoUIAutomation.pages
         private PageObjectManager pageObjectManager;
         private PaymentPortalPage ppp;
         private CreateShipmentPage csp;
+        private CaptureIrregularityPage cip;
         private string totalPaybleAmount = "";
         private string accountInfoCIDNum = "";
+
         string chargeType = "";
         ILog Log = LogManager.GetLogger(typeof(CreateShipmentPage));
 
@@ -24,6 +27,7 @@ namespace iCargoUIAutomation.pages
             this.pageObjectManager = new PageObjectManager(driver);
             this.ppp = pageObjectManager.GetPaymentPortalPage();
             this.csp = pageObjectManager.GetCreateShipmentPage();
+            this.cip = pageObjectManager.GetCaptureIrregularityPage();
         }
 
         //OPR293 Delivery Screen header
@@ -33,25 +37,32 @@ namespace iCargoUIAutomation.pages
 
         //Delivery Details and Payment
         private By chkboxDeliveryAwb_Xpath = By.XPath("//input[@name='subRowId']");
-        private By btnGenerateDN_CssSelector = By.CssSelector("#CMP_GENERATECOLLECTIONLIST_GENERATEGROUPID_BUTTON");
+        private By btnGenerateDeliveryNote_CssSelector = By.CssSelector("#CMP_GENERATECOLLECTIONLIST_GENERATEGROUPID_BUTTON");
         private By txtboxDeliveryPaymentCollectCash_CssSelector = By.CssSelector("#CSH_Cashiering_Defaults_ChargeCollect_PaymentAmount");
         private By btnAuthCode_Xpath = By.XPath("//button[@name='btAddGateway']");
         private By lblEmbargoDetails_Xpath = By.XPath("//*[text()='Embargo Details']");
         private By btnContinueEmbargo_Xpath = By.XPath("//*[text()='Embargo Details']//following::button[@id='okBtn']");        
 
         //Delivery Confirmation
-        private By txtDNDetailsColor_Xpath = By.XPath("//a[@name='DNDetails_lnk']/div[contains(@style,'color:green')]");
+        private By txtDeliveryNoteDetailsColor_Xpath = By.XPath("//a[@name='DNDetails_lnk']/div[contains(@style,'color:green')]");
         private By btnAcceptPayment_Xpath = By.XPath("//button[@name='btnAcceptPayment']");
         private By txtPaymentConfirmation_Xpath = By.XPath("//a[@name='DNDetails_lnk']/div[contains(text(),'Paid')]");
         private By btnCapturDelivery_Xpath = By.XPath("//button[@name='btnCaptureDelivery']");
         private By txtBoxDeiveryTo_Xpath = By.XPath("//input[@name='deliveredTo']");
         private By btnSaveDeliveryDetails_Xpath = By.XPath("//button[@name='btnSave']"); 
+        private By btnCloseDeliveryScreen_Xpath = By.XPath("//button[@name='btnClose']");
 
         //Payment Details
         private By txtPleaseCloseTabRetry_Xpath = By.XPath("//*[text()='Please close the tab and retry.']");
         private By lblAccountInfo_Xpath = By.XPath("//*[text()='Account information']");
         private By lblTotalAmount_Xpath = By.XPath("(//*[@class='aiBoxTwo'])[2]//label[13]");
         private By btnDone_Xpath = By.XPath("//*[text()='Done']");
+
+        //Popup Warnings
+        private By btnYesActiveCashDraw_Xpath = By.XPath("//*[@class='ui-dialog-buttonset']/button[text()=' Yes ']");
+        private By popupAlertMessage_Xpath = By.XPath("//*[@class='alert-messages-list']//span");
+        private By popupWarning_Css = By.CssSelector(".alert-messages-ui");
+        private By lblCaptureIrregularity_Xpath = By.XPath("//span[text()='Capture Irregularity']");
 
         public void SwitchToOPR293Frame()
         {
@@ -100,18 +111,18 @@ namespace iCargoUIAutomation.pages
             }
         }
 
-        public void ClickGenerateDNButton()
+        public void ClickGenerateDeliveryNoteButton()
         {
             try
             {
-                Click(btnGenerateDN_CssSelector);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Generate DN Button");
-                Log.Info("Clicked on Generate DN Button");
+                Click(btnGenerateDeliveryNote_CssSelector);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Generate Delivery Note Button");
+                Log.Info("Clicked on Generate Delivery Note Button");
             }
             catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in ClickGenerateDNButton: " + e.Message);
-                Log.Error("Error in ClickGenerateDNButton: " + e.Message);
+                Hooks.Hooks.UpdateTest(Status.Fail, "Error in ClickGenerateDeliveryNoteButton: " + e.Message);
+                Log.Error("Error in ClickGenerateDeliveryNoteButton: " + e.Message);
             }
         }   
         
@@ -216,17 +227,17 @@ namespace iCargoUIAutomation.pages
             {
                 SwitchToPopupWindow();
                 SwitchToOPR293Frame();
-                string paymentConfirmationColor = GetAttributeValue(txtDNDetailsColor_Xpath, "style");
+                string paymentConfirmationColor = GetAttributeValue(txtDeliveryNoteDetailsColor_Xpath, "style");
                 string paymentConfirmation = GetText(txtPaymentConfirmation_Xpath);
                 if (paymentConfirmationColor.ToLower().Contains("green") && paymentConfirmation.ToLower().Contains("paid"))
                 {
-                    Hooks.Hooks.UpdateTest(Status.Pass, "DN Details are displayed in Green Color and Paid");
-                    Log.Info("DN Details are displayed in Green Color and Paid");
+                    Hooks.Hooks.UpdateTest(Status.Pass, "Delivery Note Details are displayed in Green Color and Paid");
+                    Log.Info("Delivery Note Details are displayed in Green Color and Paid");
                 }
                 else
                 {
-                    Hooks.Hooks.UpdateTest(Status.Fail, "DN Details are not displayed in Green Color and Paid");
-                    Log.Error("DN Details are not displayed in Green Color and not Paid");
+                    Hooks.Hooks.UpdateTest(Status.Fail, "Delivery Note Details are not displayed in Green Color and Paid");
+                    Log.Error("Delivery Note Details are not displayed in Green Color and not Paid");
                 }
             }
             catch (Exception e)
@@ -254,6 +265,8 @@ namespace iCargoUIAutomation.pages
                 Log.Error("Error in Capture Delivery Details: " + e.Message);
             }
         }
+
+
 
         public void DeliveryReceiptWindow()
         {
@@ -286,6 +299,11 @@ namespace iCargoUIAutomation.pages
 
                 // Close the current window
                 CloseCurrentWindow();
+
+                SwitchToLastWindow();
+                SwitchToOPR293Frame();
+                Click(btnCloseDeliveryScreen_Xpath);
+
             }
             catch (Exception ex)
             {
@@ -295,6 +313,49 @@ namespace iCargoUIAutomation.pages
             }
         }
 
+        public string ClickingYesOnPopupWarnings(string errortype = null)
+        {
+            string errorText = "";
+
+            if (errortype.Equals("Embargo"))
+            {
+                if (IsElementDisplayed(lblEmbargoDetails_Xpath, 1))
+                {
+                    Click(btnContinueEmbargo_Xpath);
+                    Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
+                }
+            }
+            else if (errortype.Equals("Capture Irregularity"))
+            {
+                if (IsElementDisplayed(lblCaptureIrregularity_Xpath, 1))
+                {                   
+                    cip.captureIrregularity(CreateShipmentPage.pieces, CreateShipmentPage.weight);                   
+                }
+            }
+
+            else
+            {
+                SwitchToDefaultContent();
+                if (IsElementDisplayed(popupWarning_Css, 1))
+                {
+                    errorText = GetText(popupAlertMessage_Xpath);
+                    if (errorText.Contains("Active Cash Draw"))
+                    {
+                        Click(btnYesActiveCashDraw_Xpath);
+                        Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Yes for Active Cash Draw");
+                        WaitForElementToBeInvisible(btnYesActiveCashDraw_Xpath, TimeSpan.FromMilliseconds(500));
+                    }
+
+                    else
+                    {
+                        Click(btnYesActiveCashDraw_Xpath);
+                        Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Yes for " + errorText);
+                        WaitForTextToBeInvisible(errorText, TimeSpan.FromMilliseconds(500));
+                    }
+                }               
+            }
+            return errorText;
+        }
 
     }
 }
