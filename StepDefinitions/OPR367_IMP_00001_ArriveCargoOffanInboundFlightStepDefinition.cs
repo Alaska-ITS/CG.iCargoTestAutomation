@@ -103,6 +103,29 @@ namespace iCargoUIAutomation.StepDefinitions
             }
         }
 
+        [When(@"User enters the flight details and movement details for '([^']*)' and '([^']*)' and clicks on save button")]
+        public void WhenUserEntersTheFlightDetailsAndMovementDetailsForAndAndClicksOnSaveButton(string departure, string arrival)
+        {
+            {
+                if (ScenarioContext.Current["Execute"] == "true")
+                {
+                    Hooks.Hooks.createNode();
+                    mfm.SwitchToFLT006Frame();
+                    mfm.EnterFlightDetails();
+                    mfm.ClickListButton();
+                    mfm.EnterActualArrivalDepartureDetails(departure);
+                    mfm.EnterActualArrivalDepartureDetails(arrival,2);
+                    mfm.ClickSaveButton();
+                    mfm.ClickCloseButton();
+                }
+                else
+                {
+                    ScenarioContext.Current.Pending();
+                }
+            }
+        }
+
+
 
 
         [Then(@"User closes the Mark flight movement screen")]

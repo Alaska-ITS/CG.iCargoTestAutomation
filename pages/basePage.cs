@@ -356,6 +356,7 @@ namespace iCargoUIAutomation.pages
         {
             WebDriverWait wait = new WebDriverWait(driver, time);
             wait.Until(ExpectedConditions.InvisibilityOfElementLocated(byLocator));
+            log.Info("The element " + byLocator + " is invisible");
         }
 
         // wait for the element to be clickable
@@ -438,8 +439,6 @@ namespace iCargoUIAutomation.pages
         }
 
 
-
-
         public void WaitForNewWindowToOpen(TimeSpan time, int windowCount)
         {
             WebDriverWait wait = new WebDriverWait(driver, time);
@@ -459,6 +458,22 @@ namespace iCargoUIAutomation.pages
                 }
             }
         }
+
+        // wait until the attribute value is not equal to text
+        public void WaitUntilAttributeValueIsNotEqualTo(By byLocator, string attribute, string text)
+        {
+            
+            string attribute_val = GetAttributeValue(byLocator, attribute);            
+            while (true)
+            {
+                if (attribute_val.Trim() == text)
+                {
+                    break;
+                }
+            }
+        }
+
+
 
         // check if the textbox is not empty
         public bool checkTextboxIsNotEmpty(By byLocator)
