@@ -16,6 +16,7 @@ public class PageObjectManager : BasePage
     private ScreeningPage sp;
     private MarkFlightMovements mfm;
     private ImportManifestPage imp;
+    private DeliveryPage dp;
 
     // Add other page classes as needed
 
@@ -78,5 +79,10 @@ public class PageObjectManager : BasePage
     public ImportManifestPage GetImportManifestPage()
     {
         return imp ?? (imp = new ImportManifestPage(driver));
+    }
+
+    public DeliveryPage GetDeliveryPage()
+    {
+        return dp ?? (dp = new DeliveryPage(driver));
     }
 }
