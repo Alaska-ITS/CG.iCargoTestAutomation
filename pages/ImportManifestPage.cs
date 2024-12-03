@@ -70,6 +70,9 @@ namespace iCargoUIAutomation.pages
         // Breakdown details in OPR004 Breakdown Screen
         private By lblBreakdownDetails_Css = By.CssSelector(".paddR5 h4");
         private By btnAddBreakDownDetail_id = By.Id("btnCreate");
+        private By btnDeleteBreakDownDetails_id = By.Id("btnDelete");
+        private By chkBoxAWBSelectAll_Css = By.CssSelector("input[name='chkAll']");
+        private By tblBreakDownMain_ID = By.Id("breakDownMaintable");
         private By txtBdnLocation_Css = By.CssSelector("input[name='loccode']");
         private By txtRcvdPcs_Css = By.CssSelector("input[name='rcvdPcs']");
         private By txtRcvdWgt_Css = By.CssSelector("input[name='rcvdWgt']");
@@ -77,6 +80,7 @@ namespace iCargoUIAutomation.pages
         private By lblSaveSuccessfulMessage_Css = By.CssSelector(".alert-messages-detail span"); //Saved successfully. Do you want to list the saved details?    
         private By btnYesSaveSuccessfulMessage_Css = By.XPath("//div[@class='ui-dialog-buttonset']/button[normalize-space(text())='Yes']");
         private By btnCloseDialog_Css = By.CssSelector(".dialog-close");
+        private By lblBreakDownWarningMessage_Css = By.CssSelector("#error-body span");
 
         // Add/ Update Breakdown Details window
         private By txtAWBNumShipmentPrefix_Xpath = By.XPath("//input[@id='awb_p']");
@@ -107,7 +111,7 @@ namespace iCargoUIAutomation.pages
         }
 
         public void EnterFlightNumber()
-        {            
+        {           
             EnterText(txtFlightNoImpManifest_Name, CreateShipmentPage.flightNum);
             Hooks.Hooks.UpdateTest(Status.Info, "Entered Flight Number: " + CreateShipmentPage.flightNum);
         }
@@ -220,6 +224,14 @@ namespace iCargoUIAutomation.pages
         }
 
 
+        // Delete the breakdown details
+        public void DeleteBreakdownDetails()
+        {
+            Click(chkBoxAWBSelectAll_Css);            
+            Click(btnDeleteBreakDownDetails_id);
+            WaitForElementToBeVisible(tblBreakDownMain_ID, TimeSpan.FromSeconds(5));           
+            Click(chkBoxAWBSelectAll_Css);
+        }
 
         public void EnterBreakdownDetails(string bdnLocation, string bdnRcvdPcs, string bdnRcvdWt)
         {
@@ -245,10 +257,10 @@ namespace iCargoUIAutomation.pages
         // validate the expected message after saving the breakdown details
         public void SaveBreakdownAndValidateMessage(string expectedMessage)
         {
-            Click(btnSaveBreakDownDetails_Css);
+            ClickOnElementIfPresent(btnSaveBreakDownDetails_Css);
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Save Button");
             SwitchToDefaultContent();
-            WaitForElementToBeVisible(lblSaveSuccessfulMessage_Css, TimeSpan.FromSeconds(3));
+            WaitForElementToBeVisible(lblSaveSuccessfulMessage_Css, TimeSpan.FromSeconds(10));
             string actualMessage = GetText(lblSaveSuccessfulMessage_Css);
             if (expectedMessage.Contains(actualMessage))
             {
@@ -256,6 +268,7 @@ namespace iCargoUIAutomation.pages
                 if (actualMessage.Contains("Do you want to list the saved details?"))
                 {
                     Click(btnYesSaveSuccessfulMessage_Css);
+                    WaitForElementToBeInvisible(btnYesSaveSuccessfulMessage_Css, TimeSpan.FromSeconds(3));
                 }
             }
             else
@@ -265,6 +278,25 @@ namespace iCargoUIAutomation.pages
             }
 
             SwitchToImportManifestFrame();
+        }
+
+        public void SaveBreakdownAndValidateErrorMessage(string expectedWarningMessage)
+        {
+            ClickOnElementIfPresent(btnSaveBreakDownDetails_Css);
+            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Save Button");
+            WaitForElementToBeVisible(lblBreakDownWarningMessage_Css, TimeSpan.FromSeconds(10));
+            string actualWarningMessage = GetText(lblBreakDownWarningMessage_Css);
+            if (!actualWarningMessage.Contains(expectedWarningMessage))
+            {
+                Hooks.Hooks.UpdateTest(Status.Fail, "Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+                Log.Error("Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+
+            }
+            else
+            {
+                Hooks.Hooks.UpdateTest(Status.Pass, "Warning message is as expected: " + actualWarningMessage);
+                Log.Info("Warning message is as expected: " + actualWarningMessage);
+            }
         }
 
         // adds an ULD through Add ULD button
@@ -282,7 +314,6 @@ namespace iCargoUIAutomation.pages
             WaitForElementToBeInvisible(popupAddULD_Xpath, TimeSpan.FromSeconds(3));
         }
 
-
         public void CloseOPR367Screen()
         {
             WaitForElementToBeVisible(btnCloseImportManifest_Id, TimeSpan.FromSeconds(5));
@@ -292,7 +323,6 @@ namespace iCargoUIAutomation.pages
             SwitchToDefaultContent();
 
         }
-
 
     }
 }

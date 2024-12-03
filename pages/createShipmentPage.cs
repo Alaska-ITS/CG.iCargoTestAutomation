@@ -61,7 +61,6 @@ namespace iCargoUIAutomation.pages
 
         public CreateShipmentPage(IWebDriver driver) : base(driver)
         {
-
             this.driver = driver;
             this.pageObjectManager = new PageObjectManager(driver);
             this.ppp = pageObjectManager.GetPaymentPortalPage();
@@ -69,7 +68,6 @@ namespace iCargoUIAutomation.pages
             this.cip = pageObjectManager.GetCaptureIrregularityPage();
             this.emp = pageObjectManager.GetExportManifestPage();
             this.fogsQAPage = pageObjectManager.GetFogsQAPage();
-
         }
 
         // LTE001 Header Section   //
@@ -463,7 +461,6 @@ namespace iCargoUIAutomation.pages
             }
 
         }
-
 
 
         public void ClickOnContinueParticipantButton()
@@ -1224,7 +1221,7 @@ namespace iCargoUIAutomation.pages
                 if (IsElementDisplayed(popupWarning_Css, 1))
                 {
                     errorText = GetText(popupAlertMessage_Xpath);
-                    if (errorText.Contains("Active Cash Draw"))
+                    if (errorText.ToLower().Contains("cash draw"))
                     {
                         Click(btnYesActiveCashDraw_Xpath);
                         Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Yes for Active Cash Draw");
@@ -1776,7 +1773,6 @@ namespace iCargoUIAutomation.pages
 
         }
 
-
         public string SaveShipmentCaptureAWB(string expectedWarningMessage)
         {
             Click(btnSaveShipment_Name);
@@ -1812,8 +1808,6 @@ namespace iCargoUIAutomation.pages
             SwitchToDefaultContent();
             return awb_num;
         }
-
-
 
         public (string, string) SaveWithDGAndCheckSheet(string chargetype, string unid, string propershipmntname, string pi, string noofpkg, string netqtyperpkg, string reportable)
         {
@@ -1884,7 +1878,6 @@ namespace iCargoUIAutomation.pages
             return (awb_num, totalPaybleAmount);
 
         }
-
 
         public string captureAWBNumber()
         {
@@ -2135,7 +2128,6 @@ namespace iCargoUIAutomation.pages
             WaitForElementToBeInvisible(lblShipmentDetails_Css, TimeSpan.FromSeconds(10));
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Clear button to refesh the AWB details");
         }
-
 
         public void ValidateEmbargoPopupErrorMessage(string expectedErrorMessage)
         {

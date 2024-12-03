@@ -227,6 +227,22 @@ namespace iCargoUIAutomation.StepDefinitions
         }
 
 
+        [Then(@"User validates the popup warning message as '([^']*)'")]
+        public void ThenUserValidatesThePopupWarningMessageAs(string expectedMsg)
+        {
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                imp.SaveBreakdownAndValidateErrorMessage(expectedMsg);
+
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+        }
+
+
 
 
 
