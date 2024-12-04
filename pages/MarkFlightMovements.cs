@@ -31,14 +31,16 @@ namespace iCargoUIAutomation.pages
         private By btnlist_ID = By.Id("CMP_FLIGHT_OPERATION_MARKFLIGHTMOVEMENTS_DISPLAY_BUTTON");
 
         //Flight Movement Details
+        private By txtATDs_Xpath = By.XPath("//table[@id='listMovementTable']//input[contains(@id,'actualDateDeparture')]");
+        private By txtATAs_Xpath = By.XPath("//table[@id='listMovementTable']//input[contains(@id,'actualDateArrival')]");
         private By txtActualDepartureDate_Xpath = By.XPath("//table[@id='listMovementTable']//input[@id='actualDateDeparture0']");
-        private By txtActualDepartureTime_Xpath = By.XPath("//table[@id='listMovementTable']//input[@id='actualTimeDeparture0']"); 
-        private By txtActualArrivalDate_Xpath = By.XPath("//table[@id='listMovementTable']//input[@id='actualDateArrival1']"); 
-        private By txtActualArrivalTime_Xpath = By.XPath("//table[@id='listMovementTable']//input[@id='actualTimeArrival1']"); 
+        private By txtActualDepartureTime_Xpath = By.XPath("//table[@id='listMovementTable']//input[@id='actualTimeDeparture0']");
+        private By txtActualArrivalDate_Xpath = By.XPath("//table[@id='listMovementTable']//input[@id='actualDateArrival1']");
+        private By txtActualArrivalTime_Xpath = By.XPath("//table[@id='listMovementTable']//input[@id='actualTimeArrival1']");
 
         //FLT006 footer buttons
         private By btnSave_ID = By.Id("CMP_FLIGHT_OPERATION_MARKFLIGHTMOVEMENTS_SAVE_BUTTON");
-        private By btnClose_Id = By.Id("CMP_FLIGHT_OPERATION_MARKFLIGHTMOVEMENTS_CLOSE_BUTTON");    
+        private By btnClose_Id = By.Id("CMP_FLIGHT_OPERATION_MARKFLIGHTMOVEMENTS_CLOSE_BUTTON");
 
         public void SwitchToFLT006Frame()
         {
@@ -49,7 +51,7 @@ namespace iCargoUIAutomation.pages
         public void EnterFlightDetails()
         {
             Click(txtflightNumber_id);
-            EnterText(txtflightNumber_id, CreateShipmentPage.flightNum);           
+            EnterText(txtflightNumber_id, CreateShipmentPage.flightNum);
             EnterKeys(txtflightNumber_id, Keys.Tab);
             EnterText(txtflightDate_id, CreateShipmentPage.shippingDatePST);
             EnterKeys(txtflightDate_id, Keys.Tab);
@@ -61,7 +63,7 @@ namespace iCargoUIAutomation.pages
             WaitForElementToBeVisible(txtActualDepartureDate_Xpath, TimeSpan.FromSeconds(3));
         }
 
-        public void EnterActualArrivalDepartureDetails(string movementDirection, double adjustedTime=0)
+        public void EnterActualArrivalDepartureDetails(string movementDirection, double adjustedTime = 0)
         {
             // if the origin stations is SAN,SFO,LAX then use PST timezone, else use AKST timezone using dictionary
 
@@ -72,51 +74,91 @@ namespace iCargoUIAutomation.pages
                    { "LAX", (CurrentDatePST, CurrentTimePST) }
                };
 
+            int noOfATDs = GetElementCount(txtATDs_Xpath);
 
-            if (timeZoneMap.ContainsKey(CreateShipmentPage.origin))           
+            if (noOfATDs == 1)
             {
-                var timeZone = timeZoneMap[CreateShipmentPage.origin];                
-
-                if (movementDirection.ToLower() == "departure")
+                if (timeZoneMap.ContainsKey(CreateShipmentPage.origin))
                 {
-                    EnterText(txtActualDepartureDate_Xpath, timeZone.Date);
-                    EnterKeys(txtActualDepartureDate_Xpath, Keys.Tab);                   
-                    EnterText(txtActualDepartureTime_Xpath, DateTime.Parse(timeZone.Time).AddMinutes(0).ToString("HH:mm"));                    
-                    EnterKeys(txtActualDepartureTime_Xpath, Keys.Tab);
+                    var timeZone = timeZoneMap[CreateShipmentPage.origin];
+
+                    if (movementDirection.ToLower() == "departure")
+                    {
+                        EnterText(txtActualDepartureDate_Xpath, timeZone.Date);
+                        EnterKeys(txtActualDepartureDate_Xpath, Keys.Tab);
+                        EnterText(txtActualDepartureTime_Xpath, DateTime.Parse(timeZone.Time).AddMinutes(0).ToString("HH:mm"));
+                        EnterKeys(txtActualDepartureTime_Xpath, Keys.Tab);
+                    }
+                    else
+                    {
+                        EnterText(txtActualArrivalDate_Xpath, TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")).ToString("dd-MMM-yyyy"));
+                        EnterKeys(txtActualArrivalDate_Xpath, Keys.Tab);
+                        EnterText(txtActualArrivalTime_Xpath, TimeZoneInfo.ConvertTime(DateTime.Now.AddMinutes(adjustedTime), TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")).ToString("HH:mm"));
+                        EnterKeys(txtActualArrivalTime_Xpath, Keys.Tab);
+                    }
+
+
                 }
                 else
                 {
-                    EnterText(txtActualArrivalDate_Xpath, TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")).ToString("dd-MMM-yyyy"));
-                    EnterKeys(txtActualArrivalDate_Xpath, Keys.Tab);
-                    EnterText(txtActualArrivalTime_Xpath, TimeZoneInfo.ConvertTime(DateTime.Now.AddMinutes(adjustedTime), TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")).ToString("HH:mm"));
-                    EnterKeys(txtActualArrivalTime_Xpath, Keys.Tab);
+                    if (movementDirection.ToLower() == "departure")
+                    {
+                        // Use AKST time zone for all other origins
+                        EnterText(txtActualDepartureDate_Xpath, CurrentDateAKST);
+                        EnterKeys(txtActualDepartureDate_Xpath, Keys.Tab);
+                        EnterText(txtActualDepartureTime_Xpath, DateTime.Parse(CurrentTimeAKST).AddMinutes(0).ToString("HH:mm"));
+                        //EnterText(txtActualDepartureTime_Xpath, CurrentTimeAKST);
+                        EnterKeys(txtActualDepartureTime_Xpath, Keys.Tab);
+                    }
+                    else
+                    {
+                        EnterText(txtActualArrivalDate_Xpath, TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Alaskan Standard Time")).ToString("dd-MMM-yyyy"));
+                        EnterKeys(txtActualArrivalDate_Xpath, Keys.Tab);
+                        EnterText(txtActualArrivalTime_Xpath, TimeZoneInfo.ConvertTime(DateTime.Now.AddMinutes(adjustedTime), TimeZoneInfo.FindSystemTimeZoneById("Alaskan Standard Time")).ToString("HH:mm"));
+                        EnterKeys(txtActualArrivalTime_Xpath, Keys.Tab);
+                    }
+
+
                 }
-                
 
             }
             else
             {
-                if (movementDirection.ToLower() == "departure")
+                for (int i = 0; i < noOfATDs; i++)
                 {
-                    // Use AKST time zone for all other origins
-                    EnterText(txtActualDepartureDate_Xpath, CurrentDateAKST);
-                    EnterKeys(txtActualDepartureDate_Xpath, Keys.Tab);                    
-                    EnterText(txtActualDepartureTime_Xpath, DateTime.Parse(CurrentTimeAKST).AddMinutes(0).ToString("HH:mm"));
-                    //EnterText(txtActualDepartureTime_Xpath, CurrentTimeAKST);
-                    EnterKeys(txtActualDepartureTime_Xpath, Keys.Tab);
-                }
-                else
-                {
-                    EnterText(txtActualArrivalDate_Xpath, TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Alaskan Standard Time")).ToString("dd-MMM-yyyy"));
-                    EnterKeys(txtActualArrivalDate_Xpath, Keys.Tab);
-                    EnterText(txtActualArrivalTime_Xpath, TimeZoneInfo.ConvertTime(DateTime.Now.AddMinutes(adjustedTime), TimeZoneInfo.FindSystemTimeZoneById("Alaskan Standard Time")).ToString("HH:mm"));
-                    EnterKeys(txtActualArrivalTime_Xpath, Keys.Tab);
-                }
-                    
+                    if (timeZoneMap.ContainsKey(CreateShipmentPage.origin))
+                    {
+                        var timeZone = timeZoneMap[CreateShipmentPage.origin];
 
+
+                        EnterText(By.XPath($"//table[@id='listMovementTable']//input[@id='actualDateDeparture{i}']"), timeZone.Date);
+                        EnterKeys(By.XPath($"//table[@id='listMovementTable']//input[@id='actualDateDeparture{i}']"), Keys.Tab);
+                        EnterText(By.XPath($"//table[@id='listMovementTable']//input[@id='actualTimeDeparture{i}']"), DateTime.Parse(timeZone.Time).AddMinutes(0 + i + i).ToString("HH:mm"));
+                        EnterKeys(By.XPath($"//table[@id='listMovementTable']//input[@id='actualTimeDeparture{i}']"), Keys.Tab);
+                        EnterText(By.XPath($"//table[@id='listMovementTable']//input[@id='actualDateArrival{i + 1}']"), TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")).ToString("dd-MMM-yyyy"));
+                        EnterKeys(By.XPath($"//table[@id='listMovementTable']//input[@id='actualDateArrival{i + 1}']"), Keys.Tab);
+                        EnterText(By.XPath($"//table[@id='listMovementTable']//input[@id='actualTimeArrival{i + 1}']"), TimeZoneInfo.ConvertTime(DateTime.Now.AddMinutes(1 + i + i), TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")).ToString("HH:mm"));
+                        EnterKeys(By.XPath($"//table[@id='listMovementTable']//input[@id='actualTimeArrival{i + 1}']"), Keys.Tab);
+                    }
+                    else
+                    {
+                        // Use AKST time zone for all other origins
+
+                        EnterText(By.XPath($"//table[@id='listMovementTable']//input[@id='actualDateDeparture{i}']"), CurrentDateAKST);
+                        EnterKeys(By.XPath($"//table[@id='listMovementTable']//input[@id='actualDateDeparture{i}']"), Keys.Tab);
+                        EnterText(By.XPath($"//table[@id='listMovementTable']//input[@id='actualTimeDeparture{i}']"), DateTime.Parse(CurrentTimeAKST).AddMinutes(0 + i + i).ToString("HH:mm"));
+                        EnterKeys(By.XPath($"//table[@id='listMovementTable']//input[@id='actualTimeDeparture{i}']"), Keys.Tab);
+                        EnterText(By.XPath($"//table[@id='listMovementTable']//input[@id='actualDateArrival{i + 1}']"), TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Alaskan Standard Time")).ToString("dd-MMM-yyyy"));
+                        EnterKeys(By.XPath($"//table[@id='listMovementTable']//input[@id='actualDateArrival{i + 1}']"), Keys.Tab);
+                        EnterText(By.XPath($"//table[@id='listMovementTable']//input[@id='actualTimeArrival{i + 1}']"), TimeZoneInfo.ConvertTime(DateTime.Now.AddMinutes(1 + i + i), TimeZoneInfo.FindSystemTimeZoneById("Alaskan Standard Time")).ToString("HH:mm"));
+                        EnterKeys(By.XPath($"//table[@id='listMovementTable']//input[@id='actualTimeArrival{i + 1}']"), Keys.Tab);
+
+                    }
+                }
             }
 
-        } 
+
+        }
 
         public void ClickSaveButton()
         {
