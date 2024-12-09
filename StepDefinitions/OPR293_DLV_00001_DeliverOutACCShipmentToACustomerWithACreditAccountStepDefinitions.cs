@@ -24,38 +24,79 @@ namespace iCargoUIAutomation.StepDefinitions
         [When(@"User lists the AWB details for delivery")]
         public void WhenUserListsTheAWBDetailsForDelivery()
         {
-            dp.SwitchToOPR293Frame();
-            dp.EnterAWBNumberOPR293();
+            if (ScenarioContext.Current["Execute"]=="true")
+            {
+                Hooks.Hooks.createNode();
+                dp.SwitchToOPR293Frame();
+                dp.EnterAWBNumberOPR293();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }            
         }
 
         [When(@"process the Delivery Note details")]
         public void WhenProcessTheDNDetails()
         {
-            dp.SelectAWBForDelivery();
-            dp.ClickGenerateDeliveryNoteButton();
-            dp.ClickingYesOnPopupWarnings("");
-            dp.GetPaymentAmountValue();
+            if (ScenarioContext.Current["Execute"]=="true")
+            {
+                Hooks.Hooks.createNode();
+                dp.SelectAWBForDelivery();
+                dp.ClickGenerateDeliveryNoteButton();
+                dp.ClickingYesOnPopupWarnings("");
+                dp.GetPaymentAmountValue();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
+            
         }
 
         [When(@"User saves the payment details for ""([^""]*)""")]
         public void WhenUserSavesThePaymentDetailsFor(string chargeType)
         {
-            totalPaybleAmount = dp.ClickOnAddButtonHandlePaymentPortal(chargeType);
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                totalPaybleAmount = dp.ClickOnAddButtonHandlePaymentPortal(chargeType);
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }
         }
 
         [When(@"User clicks on Accept Payment button")]
         public void WhenUserClicksOnAcceptPaymentButton()
         {
-            dp.ClickAcceptPaymentButton();
-            dp.DeliveryConfirmationDetails();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                dp.ClickAcceptPaymentButton();
+                dp.DeliveryConfirmationDetails();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }            
         }
 
         [When(@"User Captures the delivery details")]
         public void WhenUserCapturesTheDeliveryDetails()
         {
-            dp.CaptureDeliveryDetails(); 
-            dp.ClickingYesOnPopupWarnings("");
-            dp.DeliveryReceiptWindow();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                dp.CaptureDeliveryDetails();
+                dp.ClickingYesOnPopupWarnings("");
+                dp.DeliveryReceiptWindow();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }            
         }
 
 

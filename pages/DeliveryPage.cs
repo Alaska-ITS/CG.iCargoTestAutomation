@@ -64,6 +64,9 @@ namespace iCargoUIAutomation.pages
         private By popupWarning_Css = By.CssSelector(".alert-messages-ui");
         private By lblCaptureIrregularity_Xpath = By.XPath("//span[text()='Capture Irregularity']");
 
+        //Customer Details
+        private By txtCustomerCode_Xpath = By.XPath("//input[@name='customerCode']");
+
         public void SwitchToOPR293Frame()
         {
             try
@@ -355,6 +358,23 @@ namespace iCargoUIAutomation.pages
                 }               
             }
             return errorText;
+        }
+
+        public void EnterCustomerCodeForUnknownConsignee(string customerCode)
+        {
+            try
+            {
+                Click(txtCustomerCode_Xpath);
+                EnterText(txtCustomerCode_Xpath, customerCode);
+                EnterKeys(txtCustomerCode_Xpath, Keys.Enter);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Customer Code: " + customerCode);
+                Log.Info("Entered Customer Code: " + customerCode);
+            }
+            catch (Exception e)
+            {
+                Hooks.Hooks.UpdateTest(Status.Fail, "Error in EnterCustomerCodeForUnknownConsignee: " + e.Message);
+                Log.Error("Error in EnterCustomerCodeForUnknownConsignee: " + e.Message);
+            }
         }
 
     }

@@ -109,7 +109,15 @@ namespace iCargoUIAutomation.pages
         private By txtConsigneeName_Id = By.Id("CMP_Operations_Shipment_Lite_CreateShipment_ConsigneeName");
         private By txtConsigneeContact_Id = By.Id("CMP_Operations_Shipment_Lite_CreateShipment_ConsigneeContactNumber");
         private By btnConsigneeMore_Id = By.Id("CMP_Operations_Shipment_Lite_CreateShipment_btnConsigneeMore");
+        private By txtConsigneeAddress_Name = By.Name("consigneeAddress");
+        private By txtConsigneeCity_Name = By.Name("consigneeCity");
+        private By txtConsigneeState_Name = By.Name("consigneeState");
+        private By txtConsigneeZip_Name = By.Name("consigneeZipCode");
+        private By txtConsigneeCountry_Name = By.Name("consigneeCountry");
+        private By txtConsigneeEmail_Name = By.Name("consigneeEmail");
+        private By btnConsigneeOk_Name = By.Name("btnConsigneeOK");
         private By btnContinueParticipants_Id = By.Id("CMP_Operations_Shipment_Lite_CreateShipment_btnParticpantContinue");
+
         private By btnContinueCommodity_Name = By.Name("btnCommodityCont");
 
         //   Certificates   //
@@ -392,6 +400,76 @@ namespace iCargoUIAutomation.pages
 
         }
 
+        public void EnterParticipantDetailsWithUnknownConsignee(string agent, string shipper, string consignee)
+        {
+            agentCode = agent;
+            shipperCode = shipper;
+            consigneeCode = consignee;
+            try
+            {
+                if (!IsElementDisplayed(txtAgentCode_Name))
+                {
+                    Click(lblParticipantDetails_Id);
+                }
+                Click(txtAgentCode_Name);
+                EnterTextWithCheck(txtAgentCode_Name, agentCode);
+                if (!checkTextboxIsNotEmpty(txtAgentName_Name))
+                {
+                    EnterTextWithCheck(txtAgentCode_Name, agentCode);
+                    Hooks.Hooks.UpdateTest(Status.Pass, "Entered Agent Code: " + agentCode);
+                    Log.Info("Entered Agent Code: " + agentCode);
+                }
+                Click(txtAgentName_Name);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Agent Code: " + agentCode);
+
+                Click(txtShipperCode_Name);
+                EnterTextWithCheck(txtShipperCode_Name, shipperCode);
+                if (!checkTextboxIsNotEmpty(txtShipperName_Name))
+                {
+                    EnterTextWithCheck(txtShipperCode_Name, shipperCode);
+                    Hooks.Hooks.UpdateTest(Status.Pass, "Entered Shipper Code: " + shipperCode);
+                    Log.Info("Entered Shipper Code: " + shipperCode);
+                }
+                Click(txtShipperName_Name);
+                Click(txtShipperContact_Name);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Shipper Code: " + shipperCode);
+
+                Click(txtConsigneeCode_Name);
+                EnterTextWithCheck(txtConsigneeCode_Name, consigneeCode);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Code: " + consigneeCode);
+                Log.Info("Entered Consignee Code: " + consigneeCode);
+                EnterTextWithCheck(txtConsigneeName_Id, "Test Unknown Consignee");
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Name: Test Unknown Consignee");
+                EnterTextWithCheck(txtConsigneeContact_Id, "1234567890");
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Contact: 1234567890");
+                Click(btnConsigneeMore_Id);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on More Consignee button");
+                WaitForElementToBeVisible(txtConsigneeAddress_Name, TimeSpan.FromSeconds(5));
+                EnterTextWithCheck(txtConsigneeAddress_Name, "Test Address");
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Address: Test Address");
+                EnterTextWithCheck(txtConsigneeCity_Name, "ANCHORAGE");
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee City: ANCHORAGE");
+                EnterTextWithCheck(txtConsigneeState_Name, "Alaska");
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee State: Alaska");
+                EnterTextWithCheck(txtConsigneeCountry_Name, "US");
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Country: US");
+                EnterTextWithCheck(txtConsigneeZip_Name, "99505");
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Zip: 99505");
+                EnterTextWithCheck(txtConsigneeEmail_Name, "TEST@GMAIL.COM.INVALID");
+                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Consignee Email:");
+                Click(btnConsigneeOk_Name);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Consignee OK button");
+                WaitForElementToBeInvisible(btnConsigneeOk_Name, TimeSpan.FromSeconds(5));
+
+            }
+            catch (Exception e)
+            {
+                Hooks.Hooks.UpdateTest(Status.Fail, "Error in entering participant details: " + e.ToString());
+                Log.Error("Error in entering participant details: " + e.ToString());
+            }
+
+        }
+
         public void EnterParticipantDetailsWithUnknownShipper(string agent, string shipper, string consignee)
         {
             agentCode = agent;
@@ -443,6 +521,7 @@ namespace iCargoUIAutomation.pages
 
 
         }
+
 
         public void reOpenAWB()
         {
