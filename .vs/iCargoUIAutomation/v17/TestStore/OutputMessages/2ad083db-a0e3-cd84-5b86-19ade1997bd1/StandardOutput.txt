@@ -1,0 +1,72 @@
+Given User wants to execute the example "Yes"
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+-> done: CAP018_BKG_00001_Create_a_booking_StepDefinitions.GivenUserWantsToExecuteTheExample("Yes") (0.0s)
+When User switches station if BaseStation other than "SEA"
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+-> done: LoginSteps.SwitchStationForDifferentBase("SEA") (0.1s)
+And User enters the screen name as 'LTE001'
+-> done: LoginSteps.EnteriCargoScreenName("LTE001") (0.4s)
+Then User enters into the  iCargo 'Create Shipment' page successfully
+-> done: LoginSteps.ThenUserEntersIntoTheICargoSuccessfully("Create Shipment") (0.0s)
+When user clicks on the List button
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+-> done: LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition.UserClickOnListButton() (2.3s)
+And User enters the Participant details with AgentCode "ASQXGUEST",Unknown ShipperCode "C1001", ConsigneeCode "10763"
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+Log file path: C:\Users\v-sdutta2\Downloads\testnew\test\iCargoUIAutomation\Resource\Logs\logfile.log
+-> done: LTE001_ACC_00002_CreateAWBLTE001unknownshipperonrestrictedpaxflight.WhenUserEntersTheParticipantDetailsWithAgentCodeUnknownShipperCodeConsigneeCode("ASQXGUEST", "C1001", "10763") (6.9s)
+And User clicks on the ContinueParticipant button
+-> done: LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition.UserClicksOnContinueParticipantButton() (0.8s)
+And User enters the Certificate details
+-> done: LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition.UserEntersTheCertificateDetails() (0.9s)
+And User clicks on the ContinueCertificate button
+-> done: LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition.UserClicksOnContinueCertificateButton() (0.5s)
+And User enters the Shipment details with Origin "SEA", Destination "JFK", ProductCode "GENERAL", SCCCode "None", Commodity "NONSCR", ShipmentDescription"None", ServiceCargoClass "None", Piece "13", Weight "775"
+-> done: LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition.UserEnterShipmentDetails("SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775") (2.2s)
+And User clicks on the ContinueShipment button
+-> done: LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition.UserClicksOnContinueShipmentButton() (0.9s)
+And User clicks on the Select Flight Button
+-> done: LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition.WhenUserClicksOnTheSelectFlightButton() (6.7s)
+And User selects an "Combination" flight
+-> done: LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition.WhenUserSelectsAnFlight("Combination") (0.8s)
+And User clicks on the ContinueFlightDetails button
+-> done: LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition.UserClicksOnContinueFlightDetailsButton() (0.7s)
+And User enters the Charge details with ChargeType "CC" and ModeOfPayment "None"
+-> done: LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition.UserEntersChargeDetails("CC", "None") (0.4s)
+And User clicks on the CalculateCharges button
+-> done: LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition.WhenUserClicksOnCalculateChargesButton() (22.4s)
+And User clicks on the ContinueChargeDetails button
+-> done: LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition.WhenUserClicksOnContinueChargeDetailsButton() (0.7s)
+And User enters the Acceptance details
+-> done: LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition.WhenUserEntersTheAcceptanceDetails() (0.3s)
+And User clicks on the ContinueAcceptanceDetails button
+-> done: LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition.UserClicksOnContinueAcceptanceDetailsButton() (1.0s)
+And User clicks on the ContinueScreeningDetails button
+-> done: LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition.UserClicksOnContinueScreeningDetailsButton() (0.8s)
+And User checks the AWB_Verified checkbox
+-> done: LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition.UserChecksAWB_VerifiedCheckbox() (0.3s)
+And User saves the shipment details validate error message as "The Shipper does not have a Valid Certificate Type" and capture AWB number
+-> done: LTE001_ACC_00002_CreateAWBLTE001unknownshipperonrestrictedpaxflight.WhenUserSavesTheShipmentDetailsValidateErrorMessageAsAndCaptureAWBNumber("The Shipper does ...") (32.3s)
+Attempting to download blob: AWBDetails.csv
+Download successful. File saved to: C:\Users\v-sdutta2\AppData\Local\Temp\AWBDetails.csv
