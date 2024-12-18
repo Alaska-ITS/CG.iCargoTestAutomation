@@ -302,7 +302,6 @@ namespace iCargoUIAutomation.pages
             wait.IgnoreExceptionTypes(typeof(ElementNotVisibleException), typeof(NoSuchElementException), typeof(TimeoutException), typeof(StaleElementReferenceException));
             wait.Until(driver => driver.FindElement(byLocator).Displayed);
             log.Info("The element " + byLocator + " is visible");
-
         }
 
         public void WaitForElementToBeInvisible(By byLocator, TimeSpan time)
