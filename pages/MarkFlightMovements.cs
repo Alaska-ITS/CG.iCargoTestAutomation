@@ -130,7 +130,6 @@ namespace iCargoUIAutomation.pages
                     {
                         var timeZone = timeZoneMap[CreateShipmentPage.origin];
 
-
                         EnterText(By.XPath($"//table[@id='listMovementTable']//input[@id='actualDateDeparture{i}']"), timeZone.Date);
                         EnterKeys(By.XPath($"//table[@id='listMovementTable']//input[@id='actualDateDeparture{i}']"), Keys.Tab);
                         EnterText(By.XPath($"//table[@id='listMovementTable']//input[@id='actualTimeDeparture{i}']"), DateTime.Parse(timeZone.Time).AddMinutes(0 + i + i).ToString("HH:mm"));

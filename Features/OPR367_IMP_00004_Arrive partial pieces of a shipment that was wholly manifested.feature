@@ -1,8 +1,9 @@
-﻿Feature: OPR344_EXP_00015_Bump a cart to another flight
-Manifest a Shipment as a CGO or CGODG user
+﻿Feature: OPR367_IMP_00004_Arrive partial pieces of a shipment that was wholly manifested
 
-@OPR344 @OPR344_EXP_00015
-Scenario Outline: Bump a cart to another flight
+Import a Shipment as a CGO or CGODG user
+
+@OPR367 @OPR367_IMP_00004
+Scenario Outline: Arrive partial pieces of a shipment that was wholly manifested
 	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
@@ -35,20 +36,29 @@ Scenario Outline: Bump a cart to another flight
 	And User filterouts the Booked AWB from '<AWBSectionName>' and Created ULD_Cart
 	And User clicks on the Manifest button
 	And User closes the PrintPDF window
-	And User cliks on the offload ULD button to open the offload popup
-	And User enters the details to move to another NewFlightNumber "<NewFlightNumber>" and POU "<Destination>" in the 'ULD' offload popup
-	And User validates the warning message "The shipment is not booked to the flight"
-	And User validates the AWB is "Offloaded" in the Export Manifest screen
-	And User clicks on the orange pencil to edit the manifest
-	When User enters the new flight number "<NewFlightNumber>" to move the offloaded shipment
+	And User validates the AWB is "Manifested" in the Export Manifest screen
+	Then User closes the Export Manifest screen
+	When User enters the screen name as 'FLT006'
+	When User enters the flight details and movement details for 'departure' and clicks on save button
+	When User enters the screen name as 'OPR344'
+	Then User enters into the  iCargo 'Export Manifest' page successfully
+	When User enters the Booked FlightNumber with ""
 	And User enters Booked ShipmentDate
 	And User clicks on the List button to fetch the Booked Shipment
-	And User clicks on the Manifest button
-	And User closes the PrintPDF window
+	And User checks for the flight status to be finalized
 	Then User closes the Export Manifest screen
+	When User switches station if BaseStation other than "<Destination>"
+	When User enters the screen name as 'FLT006'
+	When User enters the flight details and movement details for 'arrival' and clicks on save button
+	When User enters the screen name as 'OPR367'
+	Then User enters into the  iCargo 'Import Manifest' page successfully
+	When User enters the Flight details to fetch the uld details
+	And User selects ULD and clicks on the breakdown button to breakdown
+	And User enters the breakdown details with BreakdownLocation "<Bdn_Locn>", receivedPieces "<Bdn_RcvdPieces>", receivedWeight "<Bdn_RcvdWeight>"
+	Then User Clicks on the save button and validates the popup message as 'Saved successfully. Do you want to list the saved details?'
+	
 
 Examples:
-	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | AWBSectionName  | NewFlightNumber | cartType | Execute |
-	| 11377     | 11377       | 11377         | SEA    | JFK         | GENERAL     | None | 0316      | None                | None              | 2     | 59     | CC         | None          | PlannedShipment | 26              | CART     | Yes     |
-
+	| AgentCode | ShipperCode | ConsigneeCode | Origin | Destination | ProductCode | SCC  | Commodity | ShipmentDescription | ServiceCargoClass | Piece | Weight | ChargeType | ModeOfPayment | AWBSectionName  | cartType | Bdn_Locn | Bdn_RcvdPieces | Bdn_RcvdWeight | Execute |
+	| 11377     | 11377       | 11377         | SFO    | LAX         | GOLDSTREAK  | None | NONSCR    | None                | None              | 35    | 234    | CC         | None          | PlannedShipment | CART     | IDEFLOC  | 15             | 112            | Yes     |
 

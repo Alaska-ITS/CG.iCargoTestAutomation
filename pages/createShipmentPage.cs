@@ -220,7 +220,7 @@ namespace iCargoUIAutomation.pages
         private By btnYesAlertMessage_Xpath = By.XPath("//*[@class='ui-dialog-buttonpane ui-widget-content ui-helper-clearfix']//*[text()=' Yes ']");
         private By lblWarningMessage_Css = By.CssSelector("#error-body span");
         private By lblEmbargoDetails_Xpath = By.XPath("//*[text()='Embargo Details']");
-        private By btnContinueEmbargo_Xpath = By.XPath("//*[text()='Embargo Details']//following::button[@id='okBtn']");
+        private By btnContinueEmbargo_Xpath = By.XPath("//*[text()='Embargo Details']//following::button[@id='cancalBtn']");
         private By btnCloseEmbargo_Xpath = By.XPath("//*[text()='Embargo Details']//following::button[@id='cancalBtn']");
         private By lblEmbargoErrorDescription_Xpath = By.XPath("//*[text()='Embargo Details']//following::div[@class='dataTables_scrollBody']/table/tbody//td[3]");
         private By lblCaptureIrregularity_Xpath = By.XPath("//span[text()='Capture Irregularity']");
@@ -1269,8 +1269,6 @@ namespace iCargoUIAutomation.pages
                 Log.Error("Error in clicking on Calculate Charge button: " + e.ToString());
             }
 
-
-
         }
 
         public string ClickingYesOnPopupWarnings(string errortype = null)
@@ -1551,6 +1549,11 @@ namespace iCargoUIAutomation.pages
         {
             noOfWindowBefore = GetNumberOfWindowsOpened();
             Click(btnSaveShipment_Name);
+            if (IsElementDisplayed(lblEmbargoDetails_Xpath, 1))
+            {
+                Click(btnContinueEmbargo_Xpath);
+                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
+            }
             Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Save button");
         }
         public void ClosePaymentPortalWindow()
@@ -1721,12 +1724,7 @@ namespace iCargoUIAutomation.pages
         {
             log.Info("ClickOnSaveButtonHandlePaymentPortal function");
             int noOfWindowsBefore = GetNumberOfWindowsOpened();
-            Click(btnSaveShipment_Name);
-            if (IsElementDisplayed(lblEmbargoDetails_Xpath, 1))
-            {
-                Click(btnContinueEmbargo_Xpath);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
-            }
+            ClickSave();
             WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore + 1);
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
@@ -1750,14 +1748,7 @@ namespace iCargoUIAutomation.pages
             {
 
                 int noOfWindowsBefore = GetNumberOfWindowsOpened();
-                Click(btnSaveShipment_Name);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Save button");
-                if (IsElementDisplayed(lblEmbargoDetails_Xpath, 1))
-                {
-                    Click(btnContinueEmbargo_Xpath);
-                    WaitForElementToBeInvisible(btnContinueEmbargo_Xpath, TimeSpan.FromSeconds(10));
-                    Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
-                }
+                ClickSave();
                 WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore + 1);
                 int noOfWindowsAfter = GetNumberOfWindowsOpened();
                 if (noOfWindowsAfter > noOfWindowsBefore)
@@ -1791,13 +1782,7 @@ namespace iCargoUIAutomation.pages
 
             this.chargeType = chargeType;
             int noOfWindowsBefore = GetNumberOfWindowsOpened();
-            Click(btnSaveShipment_Name);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Save button");
-            if (IsElementDisplayed(lblEmbargoDetails_Xpath, 1))
-            {
-                Click(btnContinueEmbargo_Xpath);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
-            }
+            ClickSave();
             WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore + 1);
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
@@ -1854,22 +1839,13 @@ namespace iCargoUIAutomation.pages
 
         public string SaveShipmentCaptureAWB(string expectedWarningMessage)
         {
-            Click(btnSaveShipment_Name);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Save button");
-            if (IsElementDisplayed(lblEmbargoDetails_Xpath, 1))
-            {
-                Click(btnContinueEmbargo_Xpath);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
-            }
-
+            ClickSave();
             WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(10));
             string actualWarningMessage = GetText(lblWarningMessage_Css);
             if (!actualWarningMessage.Contains(expectedWarningMessage))
             {
                 Hooks.Hooks.UpdateTest(Status.Fail, "Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
                 Log.Error("Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
-
-
             }
             else
             {
