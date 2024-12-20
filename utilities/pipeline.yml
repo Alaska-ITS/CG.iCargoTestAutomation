@@ -5,7 +5,7 @@ resources:
   repositories:
   - repository: self
     type: git
-    ref: refs/heads/Test_Execution
+    ref: refs/heads/iCargoUIExternalExcel_16Dec
 jobs:
 - job: Job_1
   displayName: Build and Copy Artifacts
