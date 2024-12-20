@@ -27,7 +27,8 @@ jobs:
   - task: VSBuild@1
     displayName: Build solution
     inputs:
-      platform: $(BuildPlatform)
+      solution: '**\*.sln'
+      platform: 'Any CPU'
       configuration: $(BuildConfiguration)
       clean: true
   - task: CopyFiles@2
