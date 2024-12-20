@@ -131,8 +131,8 @@ namespace iCargoUIAutomation.pages
                 WaitForElementToBeVisible(userName_Id, TimeSpan.FromSeconds(10));
 
 
-               // role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);  
-                role ="CGODG"; //Hardcoded for testing purpose, will be removed later
+               role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);  
+                //role ="CGODG"; //Hardcoded for testing purpose, will be removed later
 
                
                 if (role.ToUpper() == "CCC")
