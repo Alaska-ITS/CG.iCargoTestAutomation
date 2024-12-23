@@ -83,6 +83,13 @@ namespace iCargoUIAutomation.pages
         private By btnSplitAssign_Xpath = By.XPath("//*[contains(@class,'planned-shipment')]//button[text()=' Split & Assign']");
         private By btnCaptureIrregularity_Xpath = By.XPath("//*[contains(@class,'planned-shipment')]//button[text()=' Capture Irregularity']");
         private By listPlannedShipmentAWBs_Xpath = By.XPath("//*[contains(@class,'planned-shipment')]//a[@class='awb-number awb-number-link']");
+
+        //Lying List        
+        private By btnLyingListSplitAssign_Xpath = By.XPath("//*[contains(@class,'lying-list')]//button[text()=' Split & Assign']");
+        private By drpdwnMenuSplitAssignLyingList_Xpath = By.XPath("//*[contains(@class,'lying-list')]//div[@role='rowgroup']//div[@role='menu']");
+        private By txtLyingListShipmentFilter_Xpath = By.XPath("//*[contains(@class,'lying-list')]//*[@class='table-header__search']/input");
+        private By listLyingListShipmentAWBs_Xpath = By.XPath("//*[contains(@class,'lying-list')]//a[@class='awb-number awb-number-link']");
+
         //Split and Assign Modal
         private By modalSplitShipment_Css = By.CssSelector(".modal-content");
         private By txtSplitAssignPieces_Css = By.CssSelector(".modal-content input[name='pieces']");
@@ -483,12 +490,46 @@ namespace iCargoUIAutomation.pages
                 ClickOnCheckBoxLyingListAWB();
                 PlaceShipmentOnCartToManifest();
                 HandleWarningMessage();
-            }         
-           
-           
-            
+            }                                          
         }
-       
+
+        public void FilterOutLyingListAWBSplitAndAssign(string splitPieces, string readyForCarriageOption = "Yes")
+        {
+            ClickOnLyingList();
+            ClickOnLyingListFilter();
+            SelectReadyForCarriage(readyForCarriageOption);
+            ClickOnApplyFilter();
+            WaitForElementToBeVisible(txtLyingListShipmentFilter_Xpath, TimeSpan.FromSeconds(10));
+            string awbNum = CreateShipmentPage.awb_num.Split('-')[1];
+            EnterText(txtLyingListShipmentFilter_Xpath, awbNum);
+            Hooks.Hooks.UpdateTest(Status.Info, "Entered AWB Number: " + awbNum);
+            Click(txtLyingListShipmentFilter_Xpath);
+            EnterKeys(txtLyingListShipmentFilter_Xpath, Keys.Tab);
+            WaitForElementToBeVisible(By.XPath("//*[text()='" + awbNum + "']"), TimeSpan.FromSeconds(5));
+            SplitAndAssignAWBLyingList(splitPieces);
+            ClickOnCheckBoxLyingListAWB();
+            PlaceShipmentOnCartToManifest();
+        }
+
+
+
+        public void SplitAndAssignAWBLyingList(string splitPiece)
+        {
+            Click(btnSplitAssignLyingListThreeDots_Xpath);
+            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Three Dots for Split & Assign");
+            WaitForElementToBeVisible(drpdwnMenuSplitAssignLyingList_Xpath, TimeSpan.FromSeconds(2));
+            Click(btnLyingListSplitAssign_Xpath);
+            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Split & Assign");
+            WaitForElementToBeVisible(modalSplitShipment_Css, TimeSpan.FromSeconds(2));
+            Click(txtSplitAssignPieces_Css);
+            EnterText(txtSplitAssignPieces_Css, splitPiece);
+            Hooks.Hooks.UpdateTest(Status.Info, "Entered Split Pieces: " + splitPiece);
+            EnterKeys(txtSplitAssignPieces_Css, Keys.Tab);
+            Click(btnOkSplitAssign_Xpath);
+            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on OK Button");
+            WaitForElementToBeInvisible(modalSplitShipment_Css, TimeSpan.FromSeconds(2));
+        }
+
 
         public void ClickOnLyingList()
         {
