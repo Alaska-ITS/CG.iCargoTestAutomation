@@ -60,6 +60,8 @@ jobs:
     inputs:
       targetType: inline
       script: >2
+        echo "Starting Role Group Connection Script"
+        echo "Role Group: $env:ROLE_GROUP"
 
         echo "Connecting to IGQW10ICGQE01"
 
