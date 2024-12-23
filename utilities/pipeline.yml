@@ -3,7 +3,7 @@
 name: $(date:yyyyMMdd)$(rev:.r)
 variables:
   BROWSER: ${{ variables.BROWSER }}
-  env:ROLE_GROUP: ${{ variables.ROLE_GROUP }}
+  ROLEGROUP: ${{variables.ROLE_GROUP}}
 resources:
   repositories:
   - repository: self
@@ -55,6 +55,8 @@ jobs:
     fetchTags: false
   - task: PowerShell@2
     displayName: PowerShell Script
+    env:
+      ROLE_GROUP : ${ROLEGROUP}
     inputs:
       targetType: inline
       script: >2
