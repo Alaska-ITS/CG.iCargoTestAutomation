@@ -130,12 +130,12 @@ namespace iCargoUIAutomation.pages
                 var secrets = keyVault.GetSecrets();                                
                 WaitForElementToBeVisible(userName_Id, TimeSpan.FromSeconds(10));
 
-
+                Console.WriteLine("Previous Role: " + role);
                role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process)
                      ?? Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Machine)
                      ?? Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.User);
 
-               
+               Console.WriteLine("Current Role: " + role);
                 if (role.ToUpper() == "CCC")
                 {
                     EnterText(userName_Id, secrets["CCC_Username"]);
