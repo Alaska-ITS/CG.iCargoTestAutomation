@@ -2,8 +2,7 @@
 # Variable 'ROLE_GROUP' was defined in the Variables tab
 name: $(date:yyyyMMdd)$(rev:.r)
 variables:
-  BROWSER: ${{ variables.BROWSER }}
-  ROLEGROUP: ${{variables.ROLE_GROUP}}
+  BROWSER: ${{ variables.BROWSER }}  
 resources:
   repositories:
   - repository: self
