@@ -55,7 +55,7 @@ jobs:
   - task: PowerShell@2
     displayName: PowerShell Script
     env:
-      ROLE_GROUP : ${env:ROLEGROUP}
+      ROLE_GROUP : $(ROLEGROUP)
     inputs:
       targetType: inline
       script: >2
