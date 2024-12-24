@@ -1,14 +1,13 @@
+# Variable 'BROWSER' was defined in the Variables tab
+# Variable 'ROLE_GROUP' was defined in the Variables tab
 name: $(date:yyyyMMdd)$(rev:.r)
 variables:
-  BROWSER: ${{ variables.BROWSER }}
-  ROLE_GROUP: ${env:ROLE_GROUP}
-
+  BROWSER: ${{ variables.BROWSER }}  
 resources:
   repositories:
   - repository: self
     type: git
     ref: refs/heads/iCargoUIExternalExcel_16Dec
-
 jobs:
 - job: Job_1
   displayName: Build and Copy Artifacts
@@ -30,6 +29,7 @@ jobs:
   - task: VSBuild@1
     displayName: Build solution
     inputs:
+      solution: '**\*.sln'
       platform: 'Any CPU'
       configuration: 'Release'
       clean: true
@@ -42,7 +42,6 @@ jobs:
     displayName: 'Publish Artifact: iCargoUIAutomation'
     inputs:
       ArtifactName: iCargoUIAutomation
-
 - job: Job_2
   displayName: Execution job
   timeoutInMinutes: 240
@@ -55,21 +54,77 @@ jobs:
     fetchTags: false
   - task: PowerShell@2
     displayName: PowerShell Script
+    env:
+      ROLE_GROUP : ${env:ROLEGROUP}
     inputs:
       targetType: inline
-      script: |
+      script: >2
         echo "Starting Role Group Connection Script"
-        echo "Role Group: $(ROLE_GROUP)"
-
-        $ServerList = @("IGQW10ICGQE01", "IGQW10ICGQE02", "IGQW10ICGQE03", "IGQW10ICGQE04", "IGQW10ICGQE05")
-        $User = "Airgroup\iusr_qasvc"
-        $Password = "Q@svcUS3R!"
-
-        foreach ($Server in $ServerList) {
-          echo "Connecting to $Server"
-          cmdkey /generic:TERMSRV/$Server /user:$User /pass:$Password
-          mstsc /v:$Server
-        }
+        echo "Role Group: $env:ROLE_GROUP"
+ 
+        echo "Connecting to IGQW10ICGQE01"
+ 
+        $Server="IGQW10ICGQE01"
+ 
+        $User="Airgroup\iusr_qasvc"
+ 
+        $Password="Q@svcUS3R!"
+ 
+        cmdkey /generic:TERMSRV/$Server /user:$User /pass:$Password
+ 
+        mstsc /v:$Server
+ 
+ 
+        echo "Connecting to IGQW10ICGQE02"
+ 
+        $Server="IGQW10ICGQE02"
+ 
+        $User="Airgroup\iusr_qasvc"
+ 
+        $Password="Q@svcUS3R!"
+ 
+        cmdkey /generic:TERMSRV/$Server /user:$User /pass:$Password
+ 
+        mstsc /v:$Server
+ 
+ 
+        echo "Connecting to IGQW10ICGQE03"
+ 
+        $Server="IGQW10ICGQE03"
+ 
+        $User="Airgroup\iusr_qasvc"
+ 
+        $Password="Q@svcUS3R!"
+ 
+        cmdkey /generic:TERMSRV/$Server /user:$User /pass:$Password
+ 
+        mstsc /v:$Server
+ 
+ 
+        echo "Connecting to IGQW10ICGQE04"
+ 
+        $Server="IGQW10ICGQE04"
+ 
+        $User="Airgroup\iusr_qasvc"
+ 
+        $Password="Q@svcUS3R!"
+ 
+        cmdkey /generic:TERMSRV/$Server /user:$User /pass:$Password
+ 
+        mstsc /v:$Server
+ 
+ 
+        echo "Connecting to IGQW10ICGQE05"
+ 
+        $Server="IGQW10ICGQE05"
+ 
+        $User="Airgroup\iusr_qasvc"
+ 
+        $Password="Q@svcUS3R!"
+ 
+        cmdkey /generic:TERMSRV/$Server /user:$User /pass:$Password
+ 
+        mstsc /v:$Server
   - task: DownloadBuildArtifacts@1
     displayName: Download Build Artifacts
     inputs:
@@ -78,11 +133,13 @@ jobs:
   - task: VSTest@3
     displayName: VsTest - testAssemblies
     inputs:
-      testAssemblyVer2: |
+      testAssemblyVer2: >-
         **\iCargoUIAutomation.dll
-        **\$(buildConfiguration)\*[Tt]est.dll
+         **\$(buildConfiguration)\*[Tt]est.dll
         **\$(buildConfiguration)\*test*.dll
+ 
         !**\*Microsoft.VisualStudio.TestPlatform*
+ 
         !**\obj\**
       searchFolder: $(System.ArtifactsDirectory)
       testFiltercriteria: TestCategory=CAP018_BKG_00001
