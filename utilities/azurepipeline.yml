@@ -1,5 +1,4 @@
-name: $(Build.DefinitionName)_$(Date:yyyyMMdd)$(Rev:.r)
-
+name: $(date:yyyyMMdd)$(rev:.r)
 variables:
   BROWSER: ${{ variables.BROWSER }}
   ROLE_GROUP: ${{ variables.ROLE_GROUP }}
@@ -13,38 +12,39 @@ resources:
 jobs:
 - job: Job_1
   displayName: Build and Copy Artifacts
+  cancelTimeoutInMinutes: 1
   pool:
     name: QE-Win10-iCargo
   steps:
   - checkout: self
     clean: true
+    fetchTags: false
   - task: NuGetToolInstaller@0
-    displayName: Install NuGet 6.0
+    displayName: Use NuGet 6.0
     inputs:
       versionSpec: 6.0
   - task: NuGetCommand@2
-    displayName: Restore NuGet Packages
+    displayName: NuGet restore
     inputs:
-      restoreSolution: '**/*.sln'
+      solution: '**\*.sln'
   - task: VSBuild@1
-    displayName: Build Solution
+    displayName: Build solution
     inputs:
-      solution: '**/*.sln'
       platform: 'Any CPU'
       configuration: 'Release'
       clean: true
   - task: CopyFiles@2
-    displayName: Copy Files to Staging Directory
+    displayName: 'Copy Files to: Staging Directory'
     inputs:
       SourceFolder: $(Build.SourcesDirectory)
-      TargetFolder: $(Build.ArtifactStagingDirectory)
+      TargetFolder: ' $(Build.ArtifactStagingDirectory)'
   - task: PublishBuildArtifacts@1
-    displayName: Publish Build Artifacts
+    displayName: 'Publish Artifact: iCargoUIAutomation'
     inputs:
       ArtifactName: iCargoUIAutomation
 
 - job: Job_2
-  displayName: Test Execution
+  displayName: Execution job
   timeoutInMinutes: 240
   dependsOn: Job_1
   pool:
@@ -52,35 +52,36 @@ jobs:
   steps:
   - checkout: self
     clean: true
+    fetchTags: false
   - task: PowerShell@2
-    displayName: Execute PowerShell Script for Role Connections
-    env:
-      ROLE_GROUP: ${{ variables.ROLE_GROUP }}
+    displayName: PowerShell Script
     inputs:
       targetType: inline
       script: |
         echo "Starting Role Group Connection Script"
-        echo "Role Group: $env:ROLE_GROUP"
+        echo "Role Group: $(ROLE_GROUP)"
 
-        $servers = @("IGQW10ICGQE01", "IGQW10ICGQE02", "IGQW10ICGQE03", "IGQW10ICGQE04", "IGQW10ICGQE05")
-        foreach ($server in $servers) {
-          echo "Connecting to $server"
-          cmdkey /generic:TERMSRV/$server /user:$(UserName) /pass:$(Password)
-          mstsc /v:$server
+        $ServerList = @("IGQW10ICGQE01", "IGQW10ICGQE02", "IGQW10ICGQE03", "IGQW10ICGQE04", "IGQW10ICGQE05")
+        $User = "Airgroup\iusr_qasvc"
+        $Password = "Q@svcUS3R!"
+
+        foreach ($Server in $ServerList) {
+          echo "Connecting to $Server"
+          cmdkey /generic:TERMSRV/$Server /user:$User /pass:$Password
+          mstsc /v:$Server
         }
   - task: DownloadBuildArtifacts@1
     displayName: Download Build Artifacts
     inputs:
       artifactName: iCargoUIAutomation
-      downloadPath: $(System.ArtifactsDirectory)
-  - task: VSTest@2
-    displayName: Execute Tests
+      extractTars: false
+  - task: VSTest@3
+    displayName: VsTest - testAssemblies
     inputs:
-      testSelector: 'testAssemblies'
       testAssemblyVer2: |
         **\iCargoUIAutomation.dll
-        **\$(BuildConfiguration)\*[Tt]est.dll
-        **\$(BuildConfiguration)\*test*.dll
+        **\$(buildConfiguration)\*[Tt]est.dll
+        **\$(buildConfiguration)\*test*.dll
         !**\*Microsoft.VisualStudio.TestPlatform*
         !**\obj\**
       searchFolder: $(System.ArtifactsDirectory)
