@@ -28,8 +28,7 @@ jobs:
       solution: '**\*.sln'
   - task: VSBuild@1
     displayName: Build solution
-    inputs:
-      solution: '**\*.sln'
+    inputs:      
       platform: 'Any CPU'
       configuration: 'Release'
       clean: true
