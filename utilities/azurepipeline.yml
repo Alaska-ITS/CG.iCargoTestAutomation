@@ -1,7 +1,7 @@
 name: $(date:yyyyMMdd)$(rev:.r)
 variables:
   BROWSER: ${{ variables.BROWSER }}
-  ROLE_GROUP: ${{ variables.ROLE_GROUP }}
+  ROLE_GROUP: ${env:ROLE_GROUP}
 
 resources:
   repositories:
