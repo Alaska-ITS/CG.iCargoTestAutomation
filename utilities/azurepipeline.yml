@@ -1,0 +1,90 @@
+name: $(Build.DefinitionName)_$(Date:yyyyMMdd)$(Rev:.r)
+
+variables:
+  BROWSER: ${{ variables.BROWSER }}
+  ROLE_GROUP: ${{ variables.ROLE_GROUP }}
+
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: refs/heads/iCargoUIExternalExcel_16Dec
+
+jobs:
+- job: Job_1
+  displayName: Build and Copy Artifacts
+  pool:
+    name: QE-Win10-iCargo
+  steps:
+  - checkout: self
+    clean: true
+  - task: NuGetToolInstaller@0
+    displayName: Install NuGet 6.0
+    inputs:
+      versionSpec: 6.0
+  - task: NuGetCommand@2
+    displayName: Restore NuGet Packages
+    inputs:
+      restoreSolution: '**/*.sln'
+  - task: VSBuild@1
+    displayName: Build Solution
+    inputs:
+      solution: '**/*.sln'
+      platform: 'Any CPU'
+      configuration: 'Release'
+      clean: true
+  - task: CopyFiles@2
+    displayName: Copy Files to Staging Directory
+    inputs:
+      SourceFolder: $(Build.SourcesDirectory)
+      TargetFolder: $(Build.ArtifactStagingDirectory)
+  - task: PublishBuildArtifacts@1
+    displayName: Publish Build Artifacts
+    inputs:
+      ArtifactName: iCargoUIAutomation
+
+- job: Job_2
+  displayName: Test Execution
+  timeoutInMinutes: 240
+  dependsOn: Job_1
+  pool:
+    name: QE-Win10-iCargo
+  steps:
+  - checkout: self
+    clean: true
+  - task: PowerShell@2
+    displayName: Execute PowerShell Script for Role Connections
+    env:
+      ROLE_GROUP: ${{ variables.ROLE_GROUP }}
+    inputs:
+      targetType: inline
+      script: |
+        echo "Starting Role Group Connection Script"
+        echo "Role Group: $env:ROLE_GROUP"
+
+        $servers = @("IGQW10ICGQE01", "IGQW10ICGQE02", "IGQW10ICGQE03", "IGQW10ICGQE04", "IGQW10ICGQE05")
+        foreach ($server in $servers) {
+          echo "Connecting to $server"
+          cmdkey /generic:TERMSRV/$server /user:$(UserName) /pass:$(Password)
+          mstsc /v:$server
+        }
+  - task: DownloadBuildArtifacts@1
+    displayName: Download Build Artifacts
+    inputs:
+      artifactName: iCargoUIAutomation
+      downloadPath: $(System.ArtifactsDirectory)
+  - task: VSTest@2
+    displayName: Execute Tests
+    inputs:
+      testSelector: 'testAssemblies'
+      testAssemblyVer2: |
+        **\iCargoUIAutomation.dll
+        **\$(BuildConfiguration)\*[Tt]est.dll
+        **\$(BuildConfiguration)\*test*.dll
+        !**\*Microsoft.VisualStudio.TestPlatform*
+        !**\obj\**
+      searchFolder: $(System.ArtifactsDirectory)
+      testFiltercriteria: TestCategory=CAP018_BKG_00001
+      testRunTitle: iCargo.QA_$(Date:yyyyMMdd)
+      rerunFailedTests: true
+      rerunFailedThreshold: 91
