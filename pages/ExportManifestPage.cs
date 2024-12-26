@@ -511,6 +511,24 @@ namespace iCargoUIAutomation.pages
             PlaceShipmentOnCartToManifest();
         }
 
+        public void FilterOutLyingListAWBSplitAndAssignKnownShipper(string splitPieces)
+        {
+            ClickOnLyingList();
+            string awbNum = CreateShipmentPage.awb_num.Split('-')[1];
+            ClickOnLyingListFilter();
+            EnterText(txtLyingListFilterAWB_Name, awbNum);
+            ClickOnApplyFilter();
+            WaitForElementToBeVisible(txtLyingListShipmentFilter_Xpath, TimeSpan.FromSeconds(10));           
+            EnterText(txtLyingListShipmentFilter_Xpath, awbNum);
+            Hooks.Hooks.UpdateTest(Status.Info, "Entered AWB Number: " + awbNum);
+            Click(txtLyingListShipmentFilter_Xpath);
+            EnterKeys(txtLyingListShipmentFilter_Xpath, Keys.Tab);
+            WaitForElementToBeVisible(By.XPath("//*[text()='" + awbNum + "']"), TimeSpan.FromSeconds(5));
+            SplitAndAssignAWBLyingList(splitPieces);
+            ClickOnCheckBoxLyingListAWB();
+            PlaceShipmentOnCartToManifest();
+        }
+
 
 
         public void SplitAndAssignAWBLyingList(string splitPiece)
