@@ -59,6 +59,8 @@ namespace iCargoUIAutomation.pages
             Hooks.Hooks.UpdateTest(Status.Pass, "Entered No of Packages: " + noofpkg);
             EnterText(txtNetQtyPerPkg_Name, netqtyperpkg);
             Hooks.Hooks.UpdateTest(Status.Pass, "Entered Net Quantity Per Package: " + netqtyperpkg);
+            SelectDropdownByVisibleText(drpdwn_NetQtyPerPkgUnit_Name, "KG");
+            Hooks.Hooks.UpdateTest(Status.Pass, "Selected Net Quantity Per Package Unit: KG");
             SelectDropdownByVisibleText(drpdwnReportableQnty_Name, reportable);
             Hooks.Hooks.UpdateTest(Status.Pass, "Selected Reportable Quantity: " + reportable);
             SelectDropdownByVisibleText(drpdwnProperShippingName_Xpath, propershipmntname);

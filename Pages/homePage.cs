@@ -131,9 +131,9 @@ namespace iCargoUIAutomation.pages
                 WaitForElementToBeVisible(userName_Id, TimeSpan.FromSeconds(10));
 
                 Console.WriteLine("Previous Role: " + role);
-               role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process)
-                     ?? Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Machine)
-                     ?? Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.User);
+                //role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);
+                role="CGODG"; //Comment this line if you want to run the test with the role passed in the environment variable "ROLE_GROUP
+                     
 
                Console.WriteLine("Current Role: " + role);
                 if (role.ToUpper() == "CCC")

@@ -2,7 +2,7 @@
 
 @CAP018 @CAP018_BKG_00001 @DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx @DataSet:CAP018_BKG_00001
 Scenario Outline: CAP018_BKG_00001_iCargo Login and Create New Shipment
-	Given User wants to execute the example "<Execute>"
+	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
 	When User switches station if BaseStation other than "<Origin>"
 	When User enters screen name as 'CAP018'
 	Then User enters into the  iCargo 'Maintain Booking' page successfully
@@ -26,15 +26,15 @@ Scenario Outline: CAP018_BKG_00001_iCargo Login and Create New Shipment
 #	And User captures the irregularity details
 #	Then User logs out from the application
 
-	@CAP018 @CAP018_BKG_00003 @DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx @DataSet:CAP018_BKG_00003
+	@CAP018 @CAP018_BKG_00003 @DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx @DataSet:CAP018_BKG_00001
 Scenario Outline: CAP018_BKG_00003_Create a booking for an unknown shipper on a pax flight
-	Given User wants to execute the example "<Execute>"
+	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
 	When User switches station if BaseStation other than "<Origin>"
 	When User enters screen name as 'CAP018'
 	Then User enters into the  iCargo 'Maintain Booking' page successfully
 	And User clicks on New/List button
 	And User enters shipment details with Origin "<Origin>", Destination "<Destination>",Agent Code "<AgentCode>", Product Code "<ProductCode>"
-	And User enters Unknown Shipper "<Shipper>" and Consignee "<Consignee>" with all details
+	And User enters Unknown Shipper "<ShipperCode>" and Consignee "<ConsigneeCode>" with all details
 	And User enters commodity details with Commodity "<Commodity>", Pieces "<Piece>", Weight "<Weight>"
 	And User selects flight for "<ProductCode>"
 	And User clicks on Save button
@@ -48,8 +48,8 @@ Scenario Outline: CAP018_BKG_00003_Create a booking for an unknown shipper on a 
 #	And User enters the AWB number as "<AWB>"
 #	And User clicks on New/List button
 #	And a banner appears for the awb does not exist
-#	And User enters shipment details with Origin "<Origin>", Destination "<Destination>", Product Code "<ProductCode>" and Agent code "<Agent Code>"
-#	And User enters Unknown Shipper "<Shipper>" and Consignee "<Consignee>" details
+#	And User enters shipment details with Origin "<Origin>", Destination "<Destination>", Product Code "<ProductCode>" and Agent code "<AgentCode>"
+#	And User enters Unknown Shipper "<ShipperCode>" and Consignee "<ConsigneeCode>" details
 #	And User enters commodity details with Commodity "<Commodity>", Pieces "<Piece>", Weight "<Weight>"
 #	And User selects flight for "<ProductCode>"
 #	And User clicks on Save button
@@ -61,8 +61,8 @@ Scenario Outline: CAP018_BKG_00003_Create a booking for an unknown shipper on a 
 #	When User enters screen name as 'CAP018'
 #	Then User enters into the  iCargo 'Maintain Booking' page successfully
 #	And User clicks on New/List button
-#	And User enters shipment details with Origin "<Origin>", Destination "<Destination>", Product Code "<ProductCode>" and Agent code "<Agent Code>"
-#	And User enters Shipper "<Shipper Code>" and Consignee "<Consignee Code>" details
+#	And User enters shipment details with Origin "<Origin>", Destination "<Destination>", Product Code "<ProductCode>" and Agent code "<AgentCode>"
+#	And User enters Shipper "<ShipperCode>" and Consignee "<ConsigneeCode>" details
 #	And User enters commodity details with Commodity "<Commodity>", Pieces "<Piece>", Weight "<Weight>"
 #	And User searches for the multileg flight to verify RES bubble 'red' a warning message as 'Minimum Handling / Connection Time Fails' and product code as "<ProductCode>"
 
@@ -76,23 +76,23 @@ Scenario Outline: CAP018_BKG_00003_Create a booking for an unknown shipper on a 
 #	When User enters screen name as 'CAP018'
 #	Then User enters into the  iCargo 'Maintain Booking' page successfully
 #	And User clicks on New/List button
-#	And User enters shipment details with Origin "<Origin>", Destination "<Destination>", Product Code "<ProductCode>" and Agent code "<Agent Code>"
-#	And User enters Shipper "<Shipper Code>" and Consignee "<Consignee Code>" details
+#	And User enters shipment details with Origin "<Origin>", Destination "<Destination>", Product Code "<ProductCode>" and Agent code "<AgentCode>"
+#	And User enters Shipper "<ShipperCode>" and Consignee "<ConsigneeCode>" details
 #	And User enters commodity details with Commodity "<Commodity>", Pieces "<Piece>", Weight "<Weight>"
 #	And User selects flight for "<ProductCode>"
 #	And User clicks on Save button
 #	And An an Embargo pops up with a warning message to generate new AWB
 #	Then User logs out from the application
 #
-	@CAP018 @CAP018_BKG_00007 @DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx @DataSet:CAP018_BKG_00007
+	@CAP018 @CAP018_BKG_00007 @DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx @DataSet:CAP018_BKG_00001
 Scenario Outline: CAP018_BKG_00007_iCargo Login and Create New AVI Shipment
-	Given User wants to execute the example "<Execute>"
+	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
 	When User switches station if BaseStation other than "<Origin>"
 	When User enters screen name as 'CAP018'
 	Then User enters into the  iCargo 'Maintain Booking' page successfully
 	And User clicks on New/List button
-	And User enters shipment details with Origin "<Origin>", Destination "<Destination>", Product Code "<ProductCode>" and Agent code "<Agent Code>"
-	And User enters Shipper "<Shipper Code>" and Consignee "<Consignee Code>" details
+	And User enters shipment details with Origin "<Origin>", Destination "<Destination>", Product Code "<ProductCode>" and Agent code "<AgentCode>"
+	And User enters Shipper "<ShipperCode>" and Consignee "<ConsigneeCode>" details
 	And User enters commodity details with Commodity "<Commodity>", Pieces "<Piece>", Weight "<Weight>"
 	And User selects flight for "<ProductCode>"
 	And User clicks on Save button and fills the checksheet details to generate awb
@@ -104,8 +104,8 @@ Scenario Outline: CAP018_BKG_00007_iCargo Login and Create New AVI Shipment
 #	When User enters screen name as 'CAP018'
 #	Then User enters into the  iCargo 'Maintain Booking' page successfully
 #	And User clicks on New/List button
-#	And User enters shipment details with Origin "<Origin>", Destination "<Destination>", Product Code "<ProductCode>" and Agent code "<Agent Code>"
-#	And User enters Shipper "<Shipper Code>" and Consignee "<Consignee Code>" details
+#	And User enters shipment details with Origin "<Origin>", Destination "<Destination>", Product Code "<ProductCode>" and Agent code "<AgentCode>"
+#	And User enters Shipper "<ShipperCode>" and Consignee "<ConsigneeCode>" details
 #	And User enters commodity details with Commodity "<Commodity>", Pieces "<Piece>", Weight "<Weight>"
 #	And User selects flight for "<ProductCode>"
 #	And User clicks on Save button
@@ -115,9 +115,9 @@ Scenario Outline: CAP018_BKG_00007_iCargo Login and Create New AVI Shipment
 #	And User enters new Agent Code 
 #	And User clicks on Save button
 #
-	@CAP018 @CAP018_BKG_00009 @DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx @DataSet:CAP018_BKG_00009
+	@CAP018 @CAP018_BKG_00009 @DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx @DataSet:CAP018_BKG_00001
 Scenario Outline: CAP018_BKG_00009_Save a template from a booking
-	Given User wants to execute the example "<Execute>"
+	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
 	When User switches station if BaseStation other than "<Origin>"
 	When User enters screen name as 'CAP018'
 	Then User enters into the  iCargo 'Maintain Booking' page successfully

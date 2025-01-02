@@ -79,9 +79,26 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.CategoryAttribute("CAP018_BKG_00001")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:CAP018_BKG_00001")]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", null)]
-        public void CAP018_BKG_00001_ICargoLoginAndCreateNewShipment(string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipperCode, string consigneeCode, string execute, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("", "", "", "", "", "", "", "", "", "", "33504984", "", "CAP018_BKG_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA ", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "GENERAL", "0316", "2", "20", "10763", "82165", "82165", "Yes", "74428760", "", "CAP018_BKG_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA ", "JNU", "PRIORITY", "2199", "4", "120", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("PDX", "BWI", "PRIORITY", "0300", "10", "950", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA ", "ANC", "GENERAL", "0316", "2", "310", "10763", "10763", "10763", "", "", "", "CAP018_BKG_00006", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "0316", "2", "20", "10763", "10763", "10763", "Yes", "", "ASQXGUEST", "CAP018_BKG_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "HNL", "PRIORITY", "2199", "10", "360", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "BOI", "GENERAL", "NONSCR", "13", "775", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "56", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "MCO", "PRIORITY", "NONSCR", "4", "180", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "DFW", "GENERAL", "NONSCR", "31", "4340", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        public void CAP018_BKG_00001_ICargoLoginAndCreateNewShipment(string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipperCode, string consigneeCode, string execute, string aWB, string newAgentCode, string tags, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "CAP018",
@@ -104,6 +121,9 @@ namespace iCargoUIAutomation.Features
             argumentsOfScenario.Add("ShipperCode", shipperCode);
             argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
             argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("AWB", aWB);
+            argumentsOfScenario.Add("New Agent Code", newAgentCode);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("CAP018_BKG_00001_iCargo Login and Create New Shipment", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
@@ -116,7 +136,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 5
- testRunner.Given(string.Format("User wants to execute the example \"{0}\"", execute), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
  testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -155,18 +175,33 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("CAP018")]
         [NUnit.Framework.CategoryAttribute("CAP018_BKG_00003")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx")]
-        [NUnit.Framework.CategoryAttribute("DataSet:CAP018_BKG_00003")]
-        [NUnit.Framework.TestCaseAttribute("SEA ", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "No", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "No", null)]
-        public void CAP018_BKG_00003_CreateABookingForAnUnknownShipperOnAPaxFlight(string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipper, string consignee, string execute, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("DataSet:CAP018_BKG_00001")]
+        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("", "", "", "", "", "", "", "", "", "", "33504984", "", "CAP018_BKG_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA ", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "GENERAL", "0316", "2", "20", "10763", "82165", "82165", "Yes", "74428760", "", "CAP018_BKG_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA ", "JNU", "PRIORITY", "2199", "4", "120", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("PDX", "BWI", "PRIORITY", "0300", "10", "950", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA ", "ANC", "GENERAL", "0316", "2", "310", "10763", "10763", "10763", "", "", "", "CAP018_BKG_00006", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "0316", "2", "20", "10763", "10763", "10763", "Yes", "", "ASQXGUEST", "CAP018_BKG_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "HNL", "PRIORITY", "2199", "10", "360", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "BOI", "GENERAL", "NONSCR", "13", "775", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "56", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "MCO", "PRIORITY", "NONSCR", "4", "180", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "DFW", "GENERAL", "NONSCR", "31", "4340", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        public void CAP018_BKG_00003_CreateABookingForAnUnknownShipperOnAPaxFlight(string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipperCode, string consigneeCode, string execute, string aWB, string newAgentCode, string tags, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "CAP018",
                     "CAP018_BKG_00003",
                     "DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx",
-                    "DataSet:CAP018_BKG_00003"};
+                    "DataSet:CAP018_BKG_00001"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -180,9 +215,12 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Piece", piece);
             argumentsOfScenario.Add("Weight", weight);
             argumentsOfScenario.Add("AgentCode", agentCode);
-            argumentsOfScenario.Add("Shipper", shipper);
-            argumentsOfScenario.Add("Consignee", consignee);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
             argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("AWB", aWB);
+            argumentsOfScenario.Add("New Agent Code", newAgentCode);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("CAP018_BKG_00003_Create a booking for an unknown shipper on a pax flight", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 30
 this.ScenarioInitialize(scenarioInfo);
@@ -195,7 +233,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 31
- testRunner.Given(string.Format("User wants to execute the example \"{0}\"", execute), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 32
  testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -214,7 +252,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "\", Product Code \"{3}\"", origin, destination, agentCode, productCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 37
- testRunner.And(string.Format("User enters Unknown Shipper \"{0}\" and Consignee \"{1}\" with all details", shipper, consignee), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters Unknown Shipper \"{0}\" and Consignee \"{1}\" with all details", shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 38
  testRunner.And(string.Format("User enters commodity details with Commodity \"{0}\", Pieces \"{1}\", Weight \"{2}\"", commodity, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -234,17 +272,33 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("CAP018")]
         [NUnit.Framework.CategoryAttribute("CAP018_BKG_00007")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx")]
-        [NUnit.Framework.CategoryAttribute("DataSet:CAP018_BKG_00007")]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "No", null)]
-        public void CAP018_BKG_00007_ICargoLoginAndCreateNewAVIShipment(string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipperCode, string consigneeCode, string execute, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("DataSet:CAP018_BKG_00001")]
+        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("", "", "", "", "", "", "", "", "", "", "33504984", "", "CAP018_BKG_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA ", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "GENERAL", "0316", "2", "20", "10763", "82165", "82165", "Yes", "74428760", "", "CAP018_BKG_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA ", "JNU", "PRIORITY", "2199", "4", "120", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("PDX", "BWI", "PRIORITY", "0300", "10", "950", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA ", "ANC", "GENERAL", "0316", "2", "310", "10763", "10763", "10763", "", "", "", "CAP018_BKG_00006", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "0316", "2", "20", "10763", "10763", "10763", "Yes", "", "ASQXGUEST", "CAP018_BKG_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "HNL", "PRIORITY", "2199", "10", "360", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "BOI", "GENERAL", "NONSCR", "13", "775", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "56", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "MCO", "PRIORITY", "NONSCR", "4", "180", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "DFW", "GENERAL", "NONSCR", "31", "4340", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        public void CAP018_BKG_00007_ICargoLoginAndCreateNewAVIShipment(string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipperCode, string consigneeCode, string execute, string aWB, string newAgentCode, string tags, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "CAP018",
                     "CAP018_BKG_00007",
                     "DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx",
-                    "DataSet:CAP018_BKG_00007"};
+                    "DataSet:CAP018_BKG_00001"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -257,10 +311,13 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Commodity", commodity);
             argumentsOfScenario.Add("Piece", piece);
             argumentsOfScenario.Add("Weight", weight);
-            argumentsOfScenario.Add("Agent Code", agentCode);
-            argumentsOfScenario.Add("Shipper Code", shipperCode);
-            argumentsOfScenario.Add("Consignee Code", consigneeCode);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
             argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("AWB", aWB);
+            argumentsOfScenario.Add("New Agent Code", newAgentCode);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("CAP018_BKG_00007_iCargo Login and Create New AVI Shipment", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 88
 this.ScenarioInitialize(scenarioInfo);
@@ -273,7 +330,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 89
- testRunner.Given(string.Format("User wants to execute the example \"{0}\"", execute), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 90
  testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -312,19 +369,33 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("CAP018")]
         [NUnit.Framework.CategoryAttribute("CAP018_BKG_00009")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx")]
-        [NUnit.Framework.CategoryAttribute("DataSet:CAP018_BKG_00009")]
-        [NUnit.Framework.TestCaseAttribute("ANC", "HNL", "PRIORITY", "2199", "10", "360", "10763", "10763", "10763", "No", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "BOI", "GENERAL", "NONSCR", "13", "775", "10763", "10763", "10763", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "56", "10763", "10763", "10763", "No", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "MCO", "PRIORITY", "NONSCR", "4", "180", "10763", "10763", "10763", "No", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "DFW", "GENERAL", "NONSCR", "31", "4340", "10763", "10763", "10763", "No", null)]
-        public void CAP018_BKG_00009_SaveATemplateFromABooking(string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipperCode, string consigneeCode, string execute, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("DataSet:CAP018_BKG_00001")]
+        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("", "", "", "", "", "", "", "", "", "", "33504984", "", "CAP018_BKG_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA ", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "GENERAL", "0316", "2", "20", "10763", "82165", "82165", "Yes", "74428760", "", "CAP018_BKG_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA ", "JNU", "PRIORITY", "2199", "4", "120", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("PDX", "BWI", "PRIORITY", "0300", "10", "950", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA ", "ANC", "GENERAL", "0316", "2", "310", "10763", "10763", "10763", "", "", "", "CAP018_BKG_00006", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "0316", "2", "20", "10763", "10763", "10763", "Yes", "", "ASQXGUEST", "CAP018_BKG_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("ANC", "HNL", "PRIORITY", "2199", "10", "360", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "BOI", "GENERAL", "NONSCR", "13", "775", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "56", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "MCO", "PRIORITY", "NONSCR", "4", "180", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("SEA", "DFW", "GENERAL", "NONSCR", "31", "4340", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
+        public void CAP018_BKG_00009_SaveATemplateFromABooking(string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipperCode, string consigneeCode, string execute, string aWB, string newAgentCode, string tags, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "CAP018",
                     "CAP018_BKG_00009",
                     "DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx",
-                    "DataSet:CAP018_BKG_00009"};
+                    "DataSet:CAP018_BKG_00001"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -337,10 +408,13 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Commodity", commodity);
             argumentsOfScenario.Add("Piece", piece);
             argumentsOfScenario.Add("Weight", weight);
-            argumentsOfScenario.Add("Agent Code", agentCode);
-            argumentsOfScenario.Add("Shipper Code", shipperCode);
-            argumentsOfScenario.Add("Consignee Code", consigneeCode);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
             argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("AWB", aWB);
+            argumentsOfScenario.Add("New Agent Code", newAgentCode);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("CAP018_BKG_00009_Save a template from a booking", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 119
 this.ScenarioInitialize(scenarioInfo);
@@ -353,7 +427,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 120
- testRunner.Given(string.Format("User wants to execute the example \"{0}\"", execute), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 121
  testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -369,10 +443,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 125
  testRunner.And(string.Format("User enters shipment details with Origin \"{0}\", Destination \"{1}\", Product Code \"" +
-                            "{2}\" and Agent code \"{3}\"", origin, destination, productCode, agentCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                            "{2}\" and Agent code \"<Agent Code>\"", origin, destination, productCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 126
- testRunner.And(string.Format("User enters Shipper \"{0}\" and Consignee \"{1}\" details", shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters Shipper \"<Shipper Code>\" and Consignee \"<Consignee Code>\" details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 127
  testRunner.And(string.Format("User enters commodity details with Commodity \"{0}\", Pieces \"{1}\", Weight \"{2}\"", commodity, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

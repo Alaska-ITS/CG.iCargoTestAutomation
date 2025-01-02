@@ -257,7 +257,7 @@ namespace iCargoUIAutomation.StepDefinitions
                 Hooks.Hooks.createNode();
                 Log.Info("Step: Clicking on the CalculateCharges button");
                 csp.ClickOnCalculateChargeButton();
-                csp.ClickingYesOnPopupWarnings("");
+                //csp.ClickingYesOnPopupWarnings("");
             }
             else
             {

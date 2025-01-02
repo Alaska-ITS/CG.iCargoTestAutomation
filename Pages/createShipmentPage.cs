@@ -181,7 +181,7 @@ namespace iCargoUIAutomation.pages
         private By txtPaymentRemarks_Css = By.CssSelector("#remarks");
         private By btnContinueChargeDetails_Name = By.Name("btnChargeDtlsCont");
         private By popupActiveCashDraw_Xpath = By.XPath("//*[text()='No Active Cash draw exists, Do you want to open a new Cash draw?']");
-        private By btnYesActiveCashDraw_Xpath = By.XPath("//*[@class='ui-dialog-buttonset']/button[text()=' Yes ']");
+        private By btnYesActiveCashDraw_Xpath = By.XPath("//*[@class='ui-dialog-buttonset']/button[normalize-space(text())='Yes']");
         private By btnNoActiveCashDraw_Xpath = By.XPath("//*[@class='ui-dialog-buttonset']/button[text()='No']");
 
         //   Acceptance Details    //
@@ -670,9 +670,11 @@ namespace iCargoUIAutomation.pages
                     Hooks.Hooks.UpdateTest(Status.Pass, "Entered SCC Code: " + scc);
                 }
                 EnterText(txtCommodityCode_Name, commodity);
+                EnterKeys(txtCommodityCode_Name, Keys.Tab);
                 if (shipmentdesc != "None")
                 {
                     EnterText(txtShipmentDescription_Name, shipmentdesc);
+                    EnterKeys(txtShipmentDescription_Name, Keys.Tab);
                     Hooks.Hooks.UpdateTest(Status.Pass, "Entered Shipment Description: " + shipmentdesc);
                 }
                 SelectDropdownByVisibleText(drpdwnServiceCargoClass_Name, serviceCargoClass);
@@ -937,56 +939,65 @@ namespace iCargoUIAutomation.pages
 
         public string BookWithSpecificFlightType(string typeOfFlight)
         {
-
-            int noOfFlights = GetElementCount(listAllFlights_Xpath);
-            bool isFlightExists = false;
-            if (noOfFlights > 0)
+            try
             {
-                for (int i = 1; i <= noOfFlights; i++)
-                {
-                    if (!GetAttributeValue(By.XPath("//*[@id='flight_details']//tbody//tr[" + (i + 1) + "]"), "class").Contains("row-border-merge"))
-                    {
-                        if (!GetCAPAvailabilityStatus(i).Contains("error") && !GetEMBAvailabilityStatus(i).Contains("error") && !GetLOADAvailabilityStatus(i).Contains("error") && !GetRESAvailabilityStatus(i).Contains("error") && GetFlightType(i).Contains(typeOfFlight) && GetFlightDate(i).Contains(shippingDatePSTDDMMM))
-                        {
-                            isFlightExists = true;
-                            flightNum = GetText(By.XPath("//*[@id='flight_details']//tbody//tr[" + i + "]//td[1]")).Trim().Split("AS")[1].Trim();
 
-                            btnBookFlight = btnBookFlight.Replace("1", i.ToString());
-                            if (IsElementPresent(By.XPath(btnBookFlight)))
+                int noOfFlights = GetElementCount(listAllFlights_Xpath);
+                bool isFlightExists = false;
+                if (noOfFlights > 0)
+                {
+                    for (int i = 1; i <= noOfFlights; i++)
+                    {
+                        if (!GetAttributeValue(By.XPath("//*[@id='flight_details']//tbody//tr[" + (i + 1) + "]"), "class").Contains("row-border-merge"))
+                        {
+                            if (!GetCAPAvailabilityStatus(i).Contains("error") && !GetEMBAvailabilityStatus(i).Contains("error") && !GetLOADAvailabilityStatus(i).Contains("error") && !GetRESAvailabilityStatus(i).Contains("error") && GetFlightType(i).Contains(typeOfFlight) && GetFlightDate(i).Contains(shippingDatePSTDDMMM))
                             {
-                                ScrollDown();
-                                EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
+                                isFlightExists = true;
+                                flightNum = GetText(By.XPath("//*[@id='flight_details']//tbody//tr[" + i + "]//td[1]")).Trim().Split("AS")[1].Trim();
+
+                                btnBookFlight = btnBookFlight.Replace("1", i.ToString());
+                                if (IsElementPresent(By.XPath(btnBookFlight)))
+                                {
+                                    ScrollDown();
+                                    EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
+                                }
+                                else
+                                {
+                                    btnBookFlight = btnBookFlight.Replace(i.ToString(), (i - 1).ToString());
+                                    ScrollDown();
+                                    EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
+                                }
+
+                                shippingDatePST = GetAttributeValue(txtFlightDate_Name, "value");
+                                break;
                             }
-                            else
-                            {
-                                btnBookFlight = btnBookFlight.Replace(i.ToString(), (i - 1).ToString());
-                                ScrollDown();
-                                EnterKeys(By.XPath(btnBookFlight), Keys.Enter);
-                            }
-                            
-                            shippingDatePST = GetAttributeValue(txtFlightDate_Name, "value");
-                            break;
+
                         }
 
-                    }
+                    }// End of for loop
 
-                }// End of for loop
+                }
 
+                if (isFlightExists == false)
+                {
+                    Hooks.Hooks.UpdateTest(Status.Fail, "No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
+                    Log.Info("No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
+                }
+                else
+                {
+                    Hooks.Hooks.UpdateTest(Status.Pass, typeOfFlight + " Flight: " + flightNum + " is booked successfully");
+                    Log.Info(typeOfFlight + " Flight: " + flightNum + " is booked successfully");
+
+                }
+
+                return flightNum;
             }
-
-            if (isFlightExists == false)
+            catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
-                Log.Info("No flight is available for booking from " + origin + " to " + destination + " on " + shippingDatePST);
+                Hooks.Hooks.UpdateTest(Status.Fail, "Error in booking flight:No flights available for yor selected criteria! " + e.ToString());
+                Log.Error("Error in booking flight: " + e.ToString());
+                return null;
             }
-            else
-            {
-                Hooks.Hooks.UpdateTest(Status.Pass, typeOfFlight + " Flight: " + flightNum + " is booked successfully");
-                Log.Info(typeOfFlight + " Flight: " + flightNum + " is booked successfully");
-
-            }          
-
-            return flightNum;
 
         }
 
@@ -1248,26 +1259,40 @@ namespace iCargoUIAutomation.pages
         }
 
 
+        //public void ClickOnCalculateChargeButton()
+        //{
+
+        //    while (!checkTextboxIsNotEmpty(txtIATACharge_Xpath))
+        //    {
+        //        try
+        //        {
+        //            ClickElementUsingJavaScript(btnCalculateCharges_Name);
+        //            Thread.Sleep(1000);
+        //            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Calculate Charge button");
+        //        }
+
+        //        catch (Exception e)
+        //        {
+        //            Hooks.Hooks.UpdateTest(Status.Info, "Error in clicking on Calculate Charge button: " + e.ToString());
+        //            Log.Error("Error in clicking on Calculate Charge button: " + e.ToString());
+        //        }
+
+        //    }
+
+        //}
+
         public void ClickOnCalculateChargeButton()
         {
-            try
+            ClickOnElementIfPresent(btnCalculateCharges_Name);
+            SwitchToDefaultContent();
+            if (IsElementDisplayed(popupWarning_Css, 3))
             {
-
-                while (!checkTextboxIsNotEmpty(txtIATACharge_Xpath))
-                {
-                    ClickElementUsingJavaScript(btnCalculateCharges_Name);
-                    Thread.Sleep(1000);
-                    Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Calculate Charge button");
-
-                }
-
+                Click(btnYesActiveCashDraw_Xpath);                
+                WaitForElementToBeInvisible(btnYesActiveCashDraw_Xpath, TimeSpan.FromMilliseconds(3000));
+                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Yes for Active Cash Draw");
             }
-            catch (Exception e)
-            {
-                Hooks.Hooks.UpdateTest(Status.Info, "Error in clicking on Calculate Charge button: " + e.ToString());
-                Log.Error("Error in clicking on Calculate Charge button: " + e.ToString());
-            }
-
+            SwitchToLTEContentFrame();            
+            
         }
 
         public string ClickingYesOnPopupWarnings(string errortype = null)
@@ -1551,6 +1576,7 @@ namespace iCargoUIAutomation.pages
             if (IsElementDisplayed(lblEmbargoDetails_Xpath, 1))
             {
                 Click(btnContinueEmbargo_Xpath);
+                WaitForElementToBeInvisible(btnContinueEmbargo_Xpath, TimeSpan.FromSeconds(5));
                 Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
             }
             Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Save button");
@@ -1579,9 +1605,11 @@ namespace iCargoUIAutomation.pages
             log.Info("Saving Shipment Details and handling all popup function");
             int retryCount = 0;
             const int maxRetries = 3; // Maximum number of retries
+            //int chkBookingStatusCnt = 0;
 
             while (true)
             {
+                //chkBookingStatusCnt+=1;
                 try
                 {
                     if ((CaptureBookingStatus() == "Confirmed") && (CaptureDataCaptureStatus() == "EXECUTED") && (CaptureAcceptanceStatus() == "Finalised") && (CaptureColorReadyForCarriageStatus().Contains("green")) && (CaptureColorCaptureCheckSheetStatus().Contains("green")) && (CaptureColorBlockStatus().Contains("green")))
@@ -1644,9 +1672,10 @@ namespace iCargoUIAutomation.pages
             log.Info("Saving shipment and validate the popped up messages for a Confirmed AWB function");
             int retryCount = 0;
             const int maxRetries = 3; // Maximum number of retries
-
+           
             while (true)
             {
+               
                 try
                 {
                     if (CaptureBookingStatus() == "Confirmed")
@@ -1868,8 +1897,8 @@ namespace iCargoUIAutomation.pages
             int retryCount = 0;
             const int maxRetries = 3; // Maximum number of retries
             this.chargeType = chargetype;
-            Click(btnSaveShipment_Name);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Save button");
+            Click(btnSaveShipment_Name);            
+            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Save button");            
             ClickingYesOnPopupWarnings("");
             dgp.HandleDGShipment(unid, propershipmntname, pi, noofpkg, netqtyperpkg, reportable);
             SwitchToLTEContentFrame();
@@ -2001,7 +2030,6 @@ namespace iCargoUIAutomation.pages
                 else if (section.Text == "DGR HANDLING INFORMATION")
                 {
                     string drpDwnQn = "//*[@id='tabs-1']//div[@id='configId']/h2[text()='dgSectionName']/parent::div/following-sibling::div//select";
-
                     drpDwnQn = drpDwnQn.Replace("dgSectionName", "DGR HANDLING INFORMATION");
                     totalQuestions = GetElementCount(By.XPath(drpDwnQn));
                     drpDwnQn = drpDwnQn + "[@name= 'questionwithAnswer[0].templateAnswer']";
@@ -2012,6 +2040,25 @@ namespace iCargoUIAutomation.pages
                             SelectDropdownByVisibleText(By.XPath(drpDwnQn.Replace("0", j.ToString())), "Yes");
                             EnterKeys(By.XPath(drpDwnQn), Keys.Tab);
                             Hooks.Hooks.UpdateTest(Status.Pass, "Selected Yes for DGR HANDLING INFORMATION");
+                        }
+
+                    }
+
+                }
+
+                else if (section.Text == "RDS HANDLING INFORMATION")
+                {
+                    string drpDwnQn = "//*[@id='tabs-1']//div[@id='configId']/h2[text()='dgSectionName']/parent::div/following-sibling::div//select";
+                    drpDwnQn = drpDwnQn.Replace("dgSectionName", "RDS HANDLING INFORMATION");
+                    totalQuestions = GetElementCount(By.XPath(drpDwnQn));
+                    drpDwnQn = drpDwnQn + "[@name= 'questionwithAnswer[0].templateAnswer']";
+                    if (!IsDropdownSelectedByVisibleText((By.XPath(drpDwnQn)), "Yes"))
+                    {
+                        for (int j = 0; j < totalQuestions; j++)
+                        {
+                            SelectDropdownByVisibleText(By.XPath(drpDwnQn.Replace("0", j.ToString())), "Yes");
+                            EnterKeys(By.XPath(drpDwnQn), Keys.Tab);
+                            Hooks.Hooks.UpdateTest(Status.Pass, "Selected Yes for RDS HANDLING INFORMATION");
                         }
 
                     }

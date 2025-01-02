@@ -2,7 +2,7 @@
 
 @OPR339_SCRN_00002 @OPR339 @DataSource:../TestData/OPR339_SecurityScreening_TestData.xlsx @DataSet:OPR339_SCRN_00002
 Scenario Outline: Create a PP AWB in LTE001 for a known shipper and screen the full slated pieces using OPR339 screen
-	Given User wants to execute the example "<Execute>"
+	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully
@@ -34,9 +34,9 @@ Scenario Outline: Create a PP AWB in LTE001 for a known shipper and screen the f
 	And User clicks on the ContinueScreeningDetails button
 	And User saves all the details & handles all the popups	
 
-	@OPR339_SCRN_00003 @OPR339 @DataSource:../TestData/OPR339_SecurityScreening_TestData.xlsx @DataSet:OPR339_SCRN_00003
+	@OPR339_SCRN_00003 @OPR339 @DataSource:../TestData/OPR339_SecurityScreening_TestData.xlsx @DataSet:OPR339_SCRN_00002
 Scenario Outline: Create a PP AWB in LTE001 for a known shipper and screen the half slated pieces using OPR339 screen
-	Given User wants to execute the example "<Execute>"
+	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
 	When User switches station if BaseStation other than "<Origin>"
 	And User enters the screen name as 'LTE001'
 	Then User enters into the  iCargo 'Create Shipment' page successfully

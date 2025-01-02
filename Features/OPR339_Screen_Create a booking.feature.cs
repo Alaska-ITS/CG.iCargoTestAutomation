@@ -80,10 +80,14 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.CategoryAttribute("OPR339")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/OPR339_SecurityScreening_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:OPR339_SCRN_00002")]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR ", "None", "None", "10", "775", "PP", "CREDIT", "CART", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "ANC", "HNL", "PRIORITY ", "None", "2199", "None", "None", "8", "360", "PP", "CREDIT", "CART", "No", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SAN", "JFK", "GOLDSTREAK", "None", "NONSCR ", "None", "None", "2", "55", "PP", "CREDIT", "CART", "No", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "YVR", "SEA", "PRIORITY ", "None", "NONSCR ", "None", "None", "5", "225", "PP", "CREDIT", "CART", "No", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR ", "None", "None", "10", "775", "PP", "CREDIT", "CART", "Yes", "", "OPR339_SCRN_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "ANC", "HNL", "PRIORITY ", "None", "2199", "None", "None", "8", "360", "PP", "CREDIT", "CART", "Yes", "", "OPR339_SCRN_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SAN", "JFK", "GOLDSTREAK", "None", "NONSCR ", "None", "None", "2", "55", "PP", "CREDIT", "CART", "Yes", "", "OPR339_SCRN_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "YVR", "SEA", "PRIORITY ", "None", "NONSCR ", "None", "None", "5", "225", "PP", "CREDIT", "CART", "Yes", "", "OPR339_SCRN_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR ", "None", "None", "10", "775", "PP", "CREDIT", "CART", "Yes", "4", "OPR339_SCRN_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "ANC", "HNL", "PRIORITY ", "None", "2199", "None", "None", "8", "360", "PP", "CREDIT", "CART", "Yes", "2", "OPR339_SCRN_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SAN", "JFK", "GOLDSTREAK", "None", "NONSCR ", "None", "None", "2", "55", "PP", "CREDIT", "CART", "Yes", "3", "OPR339_SCRN_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "YVR", "SEA", "PRIORITY ", "None", "NONSCR ", "None", "None", "5", "225", "PP", "CREDIT", "CART", "Yes", "4", "OPR339_SCRN_00003", null)]
         public void CreateAPPAWBInLTE001ForAKnownShipperAndScreenTheFullSlatedPiecesUsingOPR339Screen(
                     string agentCode, 
                     string shipperCode, 
@@ -101,6 +105,8 @@ namespace iCargoUIAutomation.Features
                     string modeOfPayment, 
                     string cartType, 
                     string execute, 
+                    string slatedPieces, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -130,6 +136,8 @@ namespace iCargoUIAutomation.Features
             argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
             argumentsOfScenario.Add("cartType", cartType);
             argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("SlatedPieces", slatedPieces);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a PP AWB in LTE001 for a known shipper and screen the full slated pieces u" +
                     "sing OPR339 screen", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
@@ -143,7 +151,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 5
- testRunner.Given(string.Format("User wants to execute the example \"{0}\"", execute), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
  testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -250,11 +258,15 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("OPR339_SCRN_00003")]
         [NUnit.Framework.CategoryAttribute("OPR339")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/OPR339_SecurityScreening_TestData.xlsx")]
-        [NUnit.Framework.CategoryAttribute("DataSet:OPR339_SCRN_00003")]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR ", "None", "None", "10", "775", "PP", "CREDIT", "CART", "Yes", "4", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "ANC", "HNL", "PRIORITY ", "None", "2199", "None", "None", "8", "360", "PP", "CREDIT", "CART", "No", "2", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SAN", "JFK", "GOLDSTREAK", "None", "NONSCR ", "None", "None", "2", "55", "PP", "CREDIT", "CART", "No", "3", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "YVR", "SEA", "PRIORITY ", "None", "NONSCR ", "None", "None", "5", "225", "PP", "CREDIT", "CART", "No", "4", null)]
+        [NUnit.Framework.CategoryAttribute("DataSet:OPR339_SCRN_00002")]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR ", "None", "None", "10", "775", "PP", "CREDIT", "CART", "Yes", "", "OPR339_SCRN_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "ANC", "HNL", "PRIORITY ", "None", "2199", "None", "None", "8", "360", "PP", "CREDIT", "CART", "Yes", "", "OPR339_SCRN_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SAN", "JFK", "GOLDSTREAK", "None", "NONSCR ", "None", "None", "2", "55", "PP", "CREDIT", "CART", "Yes", "", "OPR339_SCRN_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "YVR", "SEA", "PRIORITY ", "None", "NONSCR ", "None", "None", "5", "225", "PP", "CREDIT", "CART", "Yes", "", "OPR339_SCRN_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR ", "None", "None", "10", "775", "PP", "CREDIT", "CART", "Yes", "4", "OPR339_SCRN_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "ANC", "HNL", "PRIORITY ", "None", "2199", "None", "None", "8", "360", "PP", "CREDIT", "CART", "Yes", "2", "OPR339_SCRN_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SAN", "JFK", "GOLDSTREAK", "None", "NONSCR ", "None", "None", "2", "55", "PP", "CREDIT", "CART", "Yes", "3", "OPR339_SCRN_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "YVR", "SEA", "PRIORITY ", "None", "NONSCR ", "None", "None", "5", "225", "PP", "CREDIT", "CART", "Yes", "4", "OPR339_SCRN_00003", null)]
         public void CreateAPPAWBInLTE001ForAKnownShipperAndScreenTheHalfSlatedPiecesUsingOPR339Screen(
                     string agentCode, 
                     string shipperCode, 
@@ -273,13 +285,14 @@ this.ScenarioInitialize(scenarioInfo);
                     string cartType, 
                     string execute, 
                     string slatedPieces, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "OPR339_SCRN_00003",
                     "OPR339",
                     "DataSource:../TestData/OPR339_SecurityScreening_TestData.xlsx",
-                    "DataSet:OPR339_SCRN_00003"};
+                    "DataSet:OPR339_SCRN_00002"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -303,6 +316,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("cartType", cartType);
             argumentsOfScenario.Add("Execute", execute);
             argumentsOfScenario.Add("SlatedPieces", slatedPieces);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a PP AWB in LTE001 for a known shipper and screen the half slated pieces u" +
                     "sing OPR339 screen", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 38
@@ -316,7 +330,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 39
- testRunner.Given(string.Format("User wants to execute the example \"{0}\"", execute), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 40
  testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

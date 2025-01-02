@@ -140,5 +140,24 @@ namespace iCargoUIAutomation.StepDefinitions
                 ScenarioContext.Current["Execute"] = "true";
             }
         }
+
+        [Given(@"User wants to execute the example ""([^""]*)"" for the scenario ""([^""]*)""")]
+        public void GivenUserWantsToExecuteTheExampleForTheScenario(string execute, string tags)
+        {
+            var tag = ScenarioContext.Current.ScenarioInfo.Tags;
+            foreach (var t in tag)
+            {
+                if (t != tags)
+                {                   
+                        ScenarioContext.Current["Execute"] = "false";
+                }
+                    else
+                    {
+                        ScenarioContext.Current["Execute"] = "true";
+                    break;
+                    }
+                }
+            }            
+        }
+
     }
-}
