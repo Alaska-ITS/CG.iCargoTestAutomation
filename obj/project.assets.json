@@ -12270,26 +12270,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\v-sdutta2\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\v-asaha\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\v-sdutta2\\Downloads\\testnew\\test\\iCargoUIAutomation\\iCargoUIAutomation.csproj",
+      "projectUniqueName": "C:\\Users\\v-asaha\\Automation 2024\\Excel_2ndJan\\iCargoUIAutomation.csproj",
       "projectName": "iCargoUIAutomation",
-      "projectPath": "C:\\Users\\v-sdutta2\\Downloads\\testnew\\test\\iCargoUIAutomation\\iCargoUIAutomation.csproj",
-      "packagesPath": "C:\\Users\\v-sdutta2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\v-sdutta2\\Downloads\\testnew\\test\\iCargoUIAutomation\\obj\\",
+      "projectPath": "C:\\Users\\v-asaha\\Automation 2024\\Excel_2ndJan\\iCargoUIAutomation.csproj",
+      "packagesPath": "C:\\Users\\v-asaha\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\v-asaha\\Automation 2024\\Excel_2ndJan\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\v-sdutta2\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\v-asaha\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12297,8 +12290,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://gallery.uipath.com/api/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
