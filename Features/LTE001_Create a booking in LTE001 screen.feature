@@ -1,6 +1,6 @@
 ﻿Feature: LTE001 Test Cases
 
-@LTE001 @LTE001_ACC_00001 @DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx @DataSet:LTE001_ACC_00001
+@LTE001 @LTE001_ACC_00001 @smoke @DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx @DataSet:LTE001_ACC_00001
 Scenario Outline: LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper
 	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
 	When User switches station if BaseStation other than "<Origin>"
@@ -26,7 +26,7 @@ Scenario Outline: LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper
 	And User checks the AWB_Verified checkbox
 	And User saves all the details & handles all the popups
 
-@LTE001 @LTE001_ACC_00002 @DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx @DataSet:LTE001_ACC_00001
+@LTE001 @LTE001_ACC_00002 @smoke @DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx @DataSet:LTE001_ACC_00001
 Scenario Outline: LTE001_ACC_00002_Create an AWB in LTE001 for an unknown shipper on a restricted pax flight
 	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
 	When User switches station if BaseStation other than "<Origin>"
@@ -51,7 +51,7 @@ Scenario Outline: LTE001_ACC_00002_Create an AWB in LTE001 for an unknown shippe
 	And User checks the AWB_Verified checkbox
 	And User saves the shipment details validate error message as "The Shipper does not have a Valid Certificate Type" and capture AWB number
 
-@LTE001 @LTE001_ACC_00003 @DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx @DataSet:LTE001_ACC_00001
+@LTE001 @LTE001_ACC_00003 @smoke @DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx @DataSet:LTE001_ACC_00001
 Scenario Outline: LTE001_ACC_00003_Create a DG AWB in LTE001
 	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
 	When User switches station if BaseStation other than "<Origin>"
@@ -76,7 +76,7 @@ Scenario Outline: LTE001_ACC_00003_Create a DG AWB in LTE001
 	And User clicks on the ContinueScreeningDetails button
 	And User Save Shipment with DG Details & Capture Checksheet with ChargeType "<ChargeType>",UNID "<UNID>", ProperShipmentName "<ProperShipmentName>", PackingInstruction "<PackingInstruction>",NoOfPkg "<Piece>", NetQtyPerPkg "<NetQtyPerPkg>", ReportableQnty "<ReportableQnty>"
 	
-@LTE001 @LTE001_ACC_00004 @DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx @DataSet:LTE001_ACC_00001
+@LTE001 @LTE001_ACC_00004 @smoke @DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx @DataSet:LTE001_ACC_00001
 Scenario Outline: LTE001_ACC_00004_Create an AWB in LTE001 using a specific commodity code
 	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
 	When User switches station if BaseStation other than "<Origin>"
@@ -103,7 +103,7 @@ Scenario Outline: LTE001_ACC_00004_Create an AWB in LTE001 using a specific comm
 	And User saves all the details & handles all the popups
 	And User validates the commodity charge amount
 	
-@LTE001 @LTE001_ACC_00005 @DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx @DataSet:LTE001_ACC_00001
+@LTE001 @LTE001_ACC_00005 @smoke @DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx @DataSet:LTE001_ACC_00001
 Scenario Outline: LTE001_ACC_00005_Create a CC AWB in LTE001 for a known shipper
 	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
 	When User switches station if BaseStation other than "<Origin>"

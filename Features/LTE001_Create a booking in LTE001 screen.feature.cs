@@ -77,6 +77,7 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00001")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "GEG", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
@@ -158,6 +159,7 @@ namespace iCargoUIAutomation.Features
             string[] @__tags = new string[] {
                     "LTE001",
                     "LTE001_ACC_00001",
+                    "smoke",
                     "DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx",
                     "DataSet:LTE001_ACC_00001"};
             if ((exampleTags != null))
@@ -284,6 +286,7 @@ this.ScenarioInitialize(scenarioInfo);
             "ax flight")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00002")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "GEG", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
@@ -365,6 +368,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] @__tags = new string[] {
                     "LTE001",
                     "LTE001_ACC_00002",
+                    "smoke",
                     "DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx",
                     "DataSet:LTE001_ACC_00001"};
             if ((exampleTags != null))
@@ -488,6 +492,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.DescriptionAttribute("LTE001_ACC_00003_Create a DG AWB in LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00003")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "GEG", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
@@ -569,6 +574,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] @__tags = new string[] {
                     "LTE001",
                     "LTE001_ACC_00003",
+                    "smoke",
                     "DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx",
                     "DataSet:LTE001_ACC_00001"};
             if ((exampleTags != null))
@@ -693,6 +699,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.DescriptionAttribute("LTE001_ACC_00004_Create an AWB in LTE001 using a specific commodity code")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00004")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "GEG", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
@@ -774,6 +781,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] @__tags = new string[] {
                     "LTE001",
                     "LTE001_ACC_00004",
+                    "smoke",
                     "DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx",
                     "DataSet:LTE001_ACC_00001"};
             if ((exampleTags != null))
@@ -902,6 +910,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.DescriptionAttribute("LTE001_ACC_00005_Create a CC AWB in LTE001 for a known shipper")]
         [NUnit.Framework.CategoryAttribute("LTE001")]
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00005")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "GEG", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
@@ -983,6 +992,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] @__tags = new string[] {
                     "LTE001",
                     "LTE001_ACC_00005",
+                    "smoke",
                     "DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx",
                     "DataSet:LTE001_ACC_00001"};
             if ((exampleTags != null))
