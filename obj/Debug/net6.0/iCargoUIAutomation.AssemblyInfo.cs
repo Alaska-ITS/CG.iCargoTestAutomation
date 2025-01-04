@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("iCargoUIAutomation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fad2e0832c7dc2eae5764af83ab6b2b266d64dfe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+692cb6187deb9dfa7152286ae9bbd3c551b4fdf4")]
 [assembly: System.Reflection.AssemblyProductAttribute("iCargoUIAutomation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("iCargoUIAutomation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
