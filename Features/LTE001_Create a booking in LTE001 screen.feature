@@ -1,6 +1,6 @@
 ﻿Feature: LTE001 Test Cases
 
-@LTE001 @LTE001_ACC_00001 @smoke @DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx @DataSet:LTE001_ACC_00001
+@LTE001 @LTE001_ACC_00001  @DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx @DataSet:LTE001_ACC_00001
 Scenario Outline: LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper
 	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
 	When User switches station if BaseStation other than "<Origin>"
@@ -26,7 +26,7 @@ Scenario Outline: LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper
 	And User checks the AWB_Verified checkbox
 	And User saves all the details & handles all the popups
 
-@LTE001 @LTE001_ACC_00002 @smoke @DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx @DataSet:LTE001_ACC_00001
+@LTE001 @LTE001_ACC_00002  @DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx @DataSet:LTE001_ACC_00001
 Scenario Outline: LTE001_ACC_00002_Create an AWB in LTE001 for an unknown shipper on a restricted pax flight
 	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
 	When User switches station if BaseStation other than "<Origin>"
