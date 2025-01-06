@@ -132,7 +132,7 @@ namespace iCargoUIAutomation.pages
 
                 Console.WriteLine("Previous Role: " + role);
                 //role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);
-                role="CGODG"; //Comment this line if you want to run the test with the role passed in the environment variable "ROLE_GROUP
+                role="CCC"; //Comment this line if you want to run the test with the role passed in the environment variable "ROLE_GROUP
                      
 
                Console.WriteLine("Current Role: " + role);
