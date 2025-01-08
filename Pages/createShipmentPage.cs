@@ -2232,6 +2232,7 @@ namespace iCargoUIAutomation.pages
 
         public void ValidateEmbargoPopupErrorMessage(string expectedErrorMessage)
         {
+            Click(btnSaveShipment_Name);
             WaitForElementToBeVisible(lblEmbargoDetails_Xpath, TimeSpan.FromSeconds(5));
             string actualErrorMessage = GetText(lblEmbargoErrorDescription_Xpath);
             if (!actualErrorMessage.Contains(expectedErrorMessage))
