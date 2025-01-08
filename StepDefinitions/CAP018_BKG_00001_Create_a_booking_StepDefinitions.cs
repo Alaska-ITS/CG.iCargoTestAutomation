@@ -1,4 +1,5 @@
 using iCargoUIAutomation.pages;
+using iCargoUIAutomation.utilities;
 using OpenQA.Selenium;
 using System;
 using TechTalk.SpecFlow;
@@ -13,7 +14,7 @@ namespace iCargoUIAutomation.StepDefinitions
         private homePage hp;
         private MaintainBookingPage mbp;
         string origin = "";
-        string destination = "";        
+        string destination = "";
         string productCode = "";
         string commodity = "";
         string piece = "";
@@ -40,7 +41,7 @@ namespace iCargoUIAutomation.StepDefinitions
                 hp.enterScreenName(screenName);
                 mbp.SwitchToCAP018Frame();
             }
-            
+
             else
             {
                 ScenarioContext.Current.Pending();
@@ -49,7 +50,7 @@ namespace iCargoUIAutomation.StepDefinitions
 
         [Then(@"User clicks on New/List button")]
         public void ThenUserClicksOnNewListButton()
-        { 
+        {
             if (ScenarioContext.Current["Execute"] == "true")
             {
                 mbp.ClickNewListButton();
@@ -57,11 +58,11 @@ namespace iCargoUIAutomation.StepDefinitions
             else
             {
                 ScenarioContext.Current.Pending();
-            }           
-        }        
+            }
+        }
 
         [Then(@"User enters shipment details with Origin ""([^""]*)"", Destination ""([^""]*)"", Product Code ""([^""]*)"" and Agent code ""([^""]*)""")]
-        public void ThenUserEntersShipmentDetailsWithOriginDestinationProductCodeAndAgentCode(string origin, string destination, string productCode,string agentCode)
+        public void ThenUserEntersShipmentDetailsWithOriginDestinationProductCodeAndAgentCode(string origin, string destination, string productCode, string agentCode)
         {
             this.origin = origin;
             this.destination = destination;
@@ -81,12 +82,12 @@ namespace iCargoUIAutomation.StepDefinitions
             this.shipperCode = shipperCode;
             this.consigneeCode = consigneeCode;
             if (ScenarioContext.Current["Execute"] == "true")
-                mbp.EnterShipperConsigneeDetails(shipperCode,consigneeCode);
+                mbp.EnterShipperConsigneeDetails(shipperCode, consigneeCode);
             else
             {
                 ScenarioContext.Current.Pending();
             }
-        }        
+        }
 
         [Then(@"User enters commodity details with Commodity ""([^""]*)"", Pieces ""([^""]*)"", Weight ""([^""]*)""")]
         public void ThenUserEntersCommodityDetailsWithCommodityPiecesWeight(string commodity, string piece, string weight)
@@ -95,12 +96,12 @@ namespace iCargoUIAutomation.StepDefinitions
             this.piece = piece;
             this.weight = weight;
             if (ScenarioContext.Current["Execute"] == "true")
-            mbp.EnterCommodityDetails(commodity, piece, weight);
+                mbp.EnterCommodityDetails(commodity, piece, weight);
             else
             {
                 ScenarioContext.Current.Pending();
             }
-        }        
+        }
 
         [Then(@"User clicks on Save button")]
         public void ThenUserClicksOnSaveButton()
@@ -115,12 +116,12 @@ namespace iCargoUIAutomation.StepDefinitions
                 ScenarioContext.Current.Pending();
             }
         }
-        
+
         [Then(@"User selects flight for ""([^""]*)""")]
         public void ThenUserSelectsFlightFor(string productCode)
         {
             if (ScenarioContext.Current["Execute"] == "true")
-            mbp.SelectFlight(productCode);
+                mbp.SelectFlight(productCode);
             else
             {
                 ScenarioContext.Current.Pending();
@@ -128,7 +129,7 @@ namespace iCargoUIAutomation.StepDefinitions
         }
 
         [Given(@"User wants to execute the example ""([^""]*)""")]
-        
+
         public void GivenUserWantsToExecuteTheExample(string execute)
         {
             if (execute.ToLower() == "no")
@@ -148,16 +149,15 @@ namespace iCargoUIAutomation.StepDefinitions
             foreach (var t in tag)
             {
                 if (t != tags)
-                {                   
-                        ScenarioContext.Current["Execute"] = "false";
+                {
+                    ScenarioContext.Current["Execute"] = "false";
                 }
-                    else
-                    {
-                        ScenarioContext.Current["Execute"] = "true";
+                else
+                {
+                    ScenarioContext.Current["Execute"] = "true";
                     break;
-                    }
                 }
-            }            
+            }
         }
-
     }
+}

@@ -30,6 +30,7 @@ namespace iCargoUIAutomation.Hooks
         public static string? reportPath;
         private static IWebDriver? driver;
         public static string? featureName;
+        public static string? scenarioName;
         public static string? browser;
         public static string? appUrl = "https://asstg-icargo.ibsplc.aero/icargo/login.do";
         private const string containerName = "resources";
@@ -71,9 +72,6 @@ namespace iCargoUIAutomation.Hooks
         [BeforeFeature]
         public static void BeforeFeature(FeatureContext featureContext)
         {
-            feature = extent.CreateTest(featureContext.FeatureInfo.Title);
-            feature.Log(Status.Info, featureContext.FeatureInfo.Description);
-
             //browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
             browser = "chrome";
           
@@ -128,8 +126,7 @@ namespace iCargoUIAutomation.Hooks
         public static void AfterFeature()
         {
             homePage hp = new homePage(driver);
-            hp.logoutiCargo();
-            extent.Flush();
+            hp.logoutiCargo();            
             azureStorage = new AzureStorage(reportContainerName);
             azureStorage.UploadFolderToAzure(reportPath);
             foreach (string blobPath in uploadedBlobPaths)
@@ -146,9 +143,10 @@ namespace iCargoUIAutomation.Hooks
         [BeforeScenario(Order = 1)]
         public void FirstBeforeScenario(ScenarioContext scenarioContext)
         {
-            _container.RegisterInstanceAs<IWebDriver>(driver);
-            scenario = feature.CreateNode(scenarioContext.ScenarioInfo.Title);
+            _container.RegisterInstanceAs<IWebDriver>(driver);            
+            scenario = extent.CreateTest(scenarioContext.ScenarioInfo.Title);
         }
+
 
         public static void createNode()
         {
@@ -175,6 +173,7 @@ namespace iCargoUIAutomation.Hooks
             var stackTrace = TestContext.CurrentContext.Result.StackTrace;
             DateTime time = DateTime.Now;
             featureName = featureContext.FeatureInfo.Title;
+            scenarioName = ScenarioContext.Current.ScenarioInfo.Title;
             string fileName = "Screenshot_" + time.ToString("h_mm_ss") + ".png";
             if (status == TestStatus.Failed)
             {
@@ -221,6 +220,7 @@ namespace iCargoUIAutomation.Hooks
                azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
 
                 File.Delete(tempLocalPath);
+                extent.Flush();
             }
 
         }

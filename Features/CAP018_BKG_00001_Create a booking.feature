@@ -122,8 +122,8 @@ Scenario Outline: CAP018_BKG_00009_Save a template from a booking
 	When User enters screen name as 'CAP018'
 	Then User enters into the  iCargo 'Maintain Booking' page successfully
 	And User clicks on New/List button
-	And User enters shipment details with Origin "<Origin>", Destination "<Destination>", Product Code "<ProductCode>" and Agent code "<Agent Code>"
-	And User enters Shipper "<Shipper Code>" and Consignee "<Consignee Code>" details
+	And User enters shipment details with Origin "<Origin>", Destination "<Destination>", Product Code "<ProductCode>" and Agent code "<AgentCode>"
+	And User enters Shipper "<ShipperCode>" and Consignee "<ConsigneeCode>" details
 	And User enters commodity details with Commodity "<Commodity>", Pieces "<Piece>", Weight "<Weight>"
 	And User selects flight for "<ProductCode>"
 	And User clicks on Save button
