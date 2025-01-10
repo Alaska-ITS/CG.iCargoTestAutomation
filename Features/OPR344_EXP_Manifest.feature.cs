@@ -77,11 +77,12 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("OPR344_EXP_00001_Manifest an AWB for an Unknown Shipper on a pax flight")]
         [NUnit.Framework.CategoryAttribute("OPR344")]
         [NUnit.Framework.CategoryAttribute("OPR344_EXP_00001")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/OPR344_ExportManifest_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:OPR344_EXP_00001")]
-        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "10763", "SEA", "JFK", "GENERAL ", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "PlannedShipment", "", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "10763", "SEA", "JFK", "PRIORITY ", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "PlannedShipment", "", "Yes", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "JFK", "PRIORITY ", "None", "2199", "None", "None", "26", "123", "CC", "None", "CART ", "LyingList", "16", "Yes", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "10763", "SEA", "JFK", "GENERAL ", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "PlannedShipment", "", "Yes", "", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "10763", "SEA", "JFK", "PRIORITY ", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "PlannedShipment", "", "Yes", "", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "JFK", "PRIORITY ", "None", "2199", "None", "None", "26", "123", "CC", "None", "CART ", "LyingList", "16", "Yes", "", null)]
         public void OPR344_EXP_00001_ManifestAnAWBForAnUnknownShipperOnAPaxFlight(
                     string agentCode, 
                     string unknownShipperCode, 
@@ -101,11 +102,13 @@ namespace iCargoUIAutomation.Features
                     string aWBSectionName, 
                     string flightNumber, 
                     string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "OPR344",
                     "OPR344_EXP_00001",
+                    "smoke",
                     "DataSource:../TestData/OPR344_ExportManifest_TestData.xlsx",
                     "DataSet:OPR344_EXP_00001"};
             if ((exampleTags != null))
@@ -132,6 +135,7 @@ namespace iCargoUIAutomation.Features
             argumentsOfScenario.Add("AWBSectionName", aWBSectionName);
             argumentsOfScenario.Add("FlightNumber", flightNumber);
             argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("OPR344_EXP_00001_Manifest an AWB for an Unknown Shipper on a pax flight", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
