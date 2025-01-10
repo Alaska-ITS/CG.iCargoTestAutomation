@@ -1,401 +1,154 @@
-2025-01-07 14:12:42,961 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - All cookies are deleted
-2025-01-07 14:12:43,685 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Opened the url: https://asstg-icargo.ibsplc.aero/icargo/login.do
-2025-01-07 14:12:44,507 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Refreshed the page
-2025-01-07 14:12:44,591 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //body[@class='login'] is visible
-2025-01-07 14:12:45,678 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: username is visible
-2025-01-07 14:12:45,829 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text iCargoTest2@aagqa.net in the element By.Id: username
-2025-01-07 14:12:45,948 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text @45Qhnfx6P1A$L# in the element By.Id: password
-2025-01-07 14:12:47,103 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //input[@title='Sign In']
-2025-01-07 14:13:07,164 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: username is invisible
-2025-01-07 14:13:07,176 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Switched to the new window
-2025-01-07 14:13:08,338 [NonParallelWorker] INFO  iCargoUIAutomation.Features.ICargoLoginFeature - Step: Switching station if BaseStation other than Origin 
-2025-01-07 14:13:08,708 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text SEA
-2025-01-07 14:13:08,988 [NonParallelWorker] INFO  iCargoUIAutomation.Features.ICargoLoginFeature - Step: Entering the screen name
-2025-01-07 14:13:09,213 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Switched to default content
-2025-01-07 14:13:09,568 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text LTE001 in the element By.CssSelector: .ic-screen-search
-2025-01-07 14:13:09,858 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: .ic-screen-search is clickable
-2025-01-07 14:13:10,124 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.CssSelector: .ic-screen-search
-2025-01-07 14:13:10,485 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: li[tabindex='0'] is visible
-2025-01-07 14:13:10,763 [NonParallelWorker] INFO  iCargoUIAutomation.pages.homePage - Entered Screen Name: LTE001
-2025-01-07 14:13:11,101 [NonParallelWorker] INFO  iCargoUIAutomation.Features.ICargoLoginFeature - Step: Verifying the page title
-2025-01-07 14:13:11,344 [NonParallelWorker] INFO  iCargoUIAutomation.Features.ICargoLoginFeature - Actual Page Title: Create Shipment
-2025-01-07 14:13:11,625 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the List button
-2025-01-07 14:13:11,909 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Switched to frame
-2025-01-07 14:13:12,273 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Id: awb_b
-2025-01-07 14:13:12,540 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Clicked on AWB text box
-2025-01-07 14:13:12,985 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: button_list
-2025-01-07 14:13:13,555 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: button_list is invisible
-2025-01-07 14:13:13,790 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Clicked on List button
-2025-01-07 14:13:14,156 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Participant details
-2025-01-07 14:13:14,482 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: agentCode is visible
-2025-01-07 14:13:14,943 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: agentCode
-2025-01-07 14:13:15,522 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: agentCode
-2025-01-07 14:13:15,794 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 11377 in the element By.Name: agentCode
-2025-01-07 14:13:16,274 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: agentName
-2025-01-07 14:13:16,778 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: shipperCode
-2025-01-07 14:13:17,377 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: shipperCode
-2025-01-07 14:13:17,877 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: shipperCode
-2025-01-07 14:13:18,166 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 11377 in the element By.Name: shipperCode
-2025-01-07 14:13:18,623 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: shipperName
-2025-01-07 14:13:19,117 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: shipperCntctNumber
-2025-01-07 14:13:19,601 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: consigneeCode
-2025-01-07 14:13:20,260 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: consigneeCode
-2025-01-07 14:13:20,533 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 11377 in the element By.Name: consigneeCode
-2025-01-07 14:13:21,002 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: CMP_Operations_Shipment_Lite_CreateShipment_ConsigneeName
-2025-01-07 14:13:21,482 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: CMP_Operations_Shipment_Lite_CreateShipment_ConsigneeContactNumber
-2025-01-07 14:13:21,731 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueParticipant button
-2025-01-07 14:13:22,056 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Id: CMP_Operations_Shipment_Lite_CreateShipment_btnParticpantContinue
-2025-01-07 14:13:22,387 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: CMP_Operations_Shipment_Lite_CreateShipment_btnParticpantContinue is invisible
-2025-01-07 14:13:22,653 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Clicked on Continue button for participants
-2025-01-07 14:13:22,893 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Certificate details
-2025-01-07 14:13:23,315 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text Test in the element By.Name: driverName
-2025-01-07 14:13:23,726 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Selected the dropdown by visible text Driving License in the element By.Name: driverIDType
-2025-01-07 14:13:24,145 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text WA in the element By.Name: stateOrCountryIssuingID
-2025-01-07 14:13:24,513 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Selected the dropdown by visible text Yes in the element By.Name: photoIDVerified
-2025-01-07 14:13:24,748 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueCertificate button
-2025-01-07 14:13:24,991 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:13:25,455 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnCertificateDetailsCont
-2025-01-07 14:13:25,921 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnCertificateDetailsCont is invisible
-2025-01-07 14:13:26,155 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Clicked on Continue button for certificates
-2025-01-07 14:13:26,388 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Shipment details
-2025-01-07 14:13:26,801 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text SEA in the element By.Name: origin
-2025-01-07 14:13:27,216 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text ANC in the element By.Name: destination
-2025-01-07 14:13:27,715 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 07-Jan-2025 in the element By.Name: shippingDate
-2025-01-07 14:13:28,144 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text PRIORITY in the element By.Name: productCode
-2025-01-07 14:13:28,570 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text DGR,CAO in the element By.Name: scc
-2025-01-07 14:13:28,988 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text NONSCR in the element By.Name: commodityCode
-2025-01-07 14:13:29,309 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: commodityCode
-2025-01-07 14:13:29,736 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text UN1170 in the element By.Name: shipmentDesc
-2025-01-07 14:13:30,034 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: shipmentDesc
-2025-01-07 14:13:30,343 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Selected the dropdown by visible text None in the element By.Name: serviceCargoClass
-2025-01-07 14:13:30,728 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 1 in the element By.Name: shpPcs
-2025-01-07 14:13:31,202 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 35 in the element By.Name: shpWgt
-2025-01-07 14:13:31,463 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueShipment button
-2025-01-07 14:13:31,700 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:13:32,177 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnShipmentCont
-2025-01-07 14:13:32,615 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnShipmentCont is invisible
-2025-01-07 14:13:32,947 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnSearchFlight is visible
-2025-01-07 14:13:33,402 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnSearchFlight
-2025-01-07 14:13:44,600 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[@id='flight_details']//thead//th[text()='Flight List'] is visible
-2025-01-07 14:13:44,855 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[@id='flight_details']//thead//th[text()='Flight List'] is visible
-2025-01-07 14:13:45,324 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnSearchFlight
-2025-01-07 14:13:45,578 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The number of elements found are: 25
-2025-01-07 14:13:45,833 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value 
-2025-01-07 14:13:46,085 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value badge badge-pill light badge-inactive pointer
-2025-01-07 14:13:46,337 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value badge badge-pill light badge-inactive pointer
-2025-01-07 14:13:46,590 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value badge badge-pill light badge-inactive pointer
-2025-01-07 14:13:46,868 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text Combination
-2025-01-07 14:13:47,121 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text AS  0061
-2025-01-07 14:13:47,363 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:13:47,708 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.XPath: //*[@id='flight_details']//tbody//tr[1]//input[@type='button']
-2025-01-07 14:13:47,952 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Combination Flight: 0061 is booked successfully
-2025-01-07 14:13:48,204 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value 07-Jan-2025
-2025-01-07 14:13:48,434 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueFlightDetails button
-2025-01-07 14:13:48,671 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:13:49,001 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: btnFlightDtlsCont
-2025-01-07 14:13:49,426 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnFlightDtlsCont is invisible
-2025-01-07 14:13:49,693 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Charge details
-2025-01-07 14:13:49,951 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //div[@id='pptype'] is visible
-2025-01-07 14:13:50,214 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text PP
-2025-01-07 14:13:50,678 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //div[@id='pptype']
-2025-01-07 14:13:50,921 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the CalculateCharges button
-2025-01-07 14:13:51,178 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnCalculateCharges is visible
-2025-01-07 14:13:51,645 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnCalculateCharges
-2025-01-07 14:13:51,893 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Switched to default content
-2025-01-07 14:13:53,543 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: .alert-messages-ui is visible
-2025-01-07 14:13:53,920 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //*[@class='ui-dialog-buttonset']/button[normalize-space(text())='Yes']
-2025-01-07 14:14:14,201 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[@class='ui-dialog-buttonset']/button[normalize-space(text())='Yes'] is invisible
-2025-01-07 14:14:14,489 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Switched to frame
-2025-01-07 14:14:14,713 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueChargeDetails button
-2025-01-07 14:14:14,975 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text Total Charge(Inc. Tax): 0.00USD
-2025-01-07 14:14:15,773 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnChargeDtlsCont is invisible
-2025-01-07 14:14:16,010 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Acceptance details
-2025-01-07 14:14:16,428 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 1 in the element By.Name: acceptedPieces
-2025-01-07 14:14:16,656 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueAcceptanceDetails button
-2025-01-07 14:14:16,893 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:14:17,382 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnAcceptanceDtlsCont
-2025-01-07 14:14:17,758 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnAcceptanceDtlsCont is invisible
-2025-01-07 14:14:18,051 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Screening details
-2025-01-07 14:14:18,472 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text SEA in the element By.XPath: (//*[@class='row templateParentScreening'])[1]//input[@name='screeningAirport']
-2025-01-07 14:14:18,906 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Selected the dropdown by visible text ALT Dangerous Goods in the element By.XPath: (//*[@class='row templateParentScreening'])[1]//select[@name='screeningMethod']
-2025-01-07 14:14:19,335 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 1 in the element By.XPath: (//*[@class='row templateParentScreening'])[1]//input[@name='screeningPieces']
-2025-01-07 14:14:19,730 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Selected the dropdown by visible text Pass in the element By.XPath: (//*[@class='row templateParentScreening'])[1]//select[@name='screeningResult']
-2025-01-07 14:14:19,971 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueScreeningDetails button
-2025-01-07 14:14:20,209 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:14:20,530 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: btnScreeningDtlsCont
-2025-01-07 14:14:20,887 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnScreeningDtlsCont is invisible
-2025-01-07 14:14:21,159 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The number of windows opened are: 2
-2025-01-07 14:14:24,855 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnSave
-2025-01-07 14:14:25,590 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[text()='Embargo Details'] is visible
-2025-01-07 14:14:26,052 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //*[text()='Embargo Details']//following::button[@id='cancalBtn']
-2025-01-07 14:14:26,314 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[text()='Embargo Details']//following::button[@id='cancalBtn'] is invisible
-2025-01-07 14:14:29,587 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnSave
-2025-01-07 14:14:30,236 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[text()='Embargo Details'] is visible
-2025-01-07 14:14:30,546 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text SPECIFIED SHIPMENT TYPE NOT SUITED FOR SELECTED AIRCRAFT TYPE
-2025-01-07 14:14:30,780 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Embargo Popup Error message is as expected: SPECIFIED SHIPMENT TYPE NOT SUITED FOR SELECTED AIRCRAFT TYPE
-2025-01-07 14:14:31,221 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //*[text()='Embargo Details']//following::button[@id='cancalBtn']
-2025-01-07 14:14:31,484 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: header i.ico-pencil-rounded-orange is visible
-2025-01-07 14:14:31,963 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.CssSelector: header i.ico-pencil-rounded-orange
-2025-01-07 14:14:32,269 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: button_clear is visible
-2025-01-07 14:14:33,593 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: .card-header h4 is invisible
-2025-01-07 14:14:33,845 [NonParallelWorker] INFO  iCargoUIAutomation.Features.ICargoLoginFeature - Step: Switching station if BaseStation other than Origin 
-2025-01-07 14:14:54,271 [NonParallelWorker] ERROR iCargoUIAutomation.pages.homePage - Error in SwitchStation method: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='header_panel']//*[@id='ic-user-stationcode']"}
-  (Session info: chrome=131.0.6778.205); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-2025-01-07 14:14:54,514 [NonParallelWorker] INFO  iCargoUIAutomation.Features.ICargoLoginFeature - Step: Entering the screen name
-2025-01-07 14:14:54,747 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Switched to default content
-2025-01-07 14:14:55,140 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text LTE001 in the element By.CssSelector: .ic-screen-search
-2025-01-07 14:14:55,413 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: .ic-screen-search is clickable
-2025-01-07 14:14:55,690 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.CssSelector: .ic-screen-search
-2025-01-07 14:14:55,980 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: li[tabindex='0'] is visible
-2025-01-07 14:14:56,213 [NonParallelWorker] INFO  iCargoUIAutomation.pages.homePage - Entered Screen Name: LTE001
-2025-01-07 14:14:56,462 [NonParallelWorker] INFO  iCargoUIAutomation.Features.ICargoLoginFeature - Step: Verifying the page title
-2025-01-07 14:14:56,730 [NonParallelWorker] INFO  iCargoUIAutomation.Features.ICargoLoginFeature - Actual Page Title: Create Shipment
-2025-01-07 14:14:56,985 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the List button
-2025-01-07 14:14:57,265 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Switched to frame
-2025-01-07 14:14:57,595 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Id: awb_b
-2025-01-07 14:14:57,849 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Clicked on AWB text box
-2025-01-07 14:14:58,297 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: button_list
-2025-01-07 14:14:58,914 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: button_list is invisible
-2025-01-07 14:14:59,175 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Clicked on List button
-2025-01-07 14:14:59,448 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Participant details
-2025-01-07 14:15:05,145 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: participant
-2025-01-07 14:15:05,744 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: agentCode
-2025-01-07 14:15:06,355 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: agentCode
-2025-01-07 14:15:06,621 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 11377 in the element By.Name: agentCode
-2025-01-07 14:15:07,103 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: agentName
-2025-01-07 14:15:07,589 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: shipperCode
-2025-01-07 14:15:08,170 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: shipperCode
-2025-01-07 14:15:08,712 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: shipperCode
-2025-01-07 14:15:09,005 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 11377 in the element By.Name: shipperCode
-2025-01-07 14:15:09,493 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: shipperName
-2025-01-07 14:15:09,973 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: shipperCntctNumber
-2025-01-07 14:15:10,459 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: consigneeCode
-2025-01-07 14:15:11,090 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: consigneeCode
-2025-01-07 14:15:11,393 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 11377 in the element By.Name: consigneeCode
-2025-01-07 14:15:11,862 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: CMP_Operations_Shipment_Lite_CreateShipment_ConsigneeName
-2025-01-07 14:15:12,334 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: CMP_Operations_Shipment_Lite_CreateShipment_ConsigneeContactNumber
-2025-01-07 14:15:12,589 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueParticipant button
-2025-01-07 14:15:12,925 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Id: CMP_Operations_Shipment_Lite_CreateShipment_btnParticpantContinue
-2025-01-07 14:15:13,321 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: CMP_Operations_Shipment_Lite_CreateShipment_btnParticpantContinue is invisible
-2025-01-07 14:15:13,591 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Clicked on Continue button for participants
-2025-01-07 14:15:13,844 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Certificate details
-2025-01-07 14:15:14,239 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text Test in the element By.Name: driverName
-2025-01-07 14:15:14,657 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Selected the dropdown by visible text Driving License in the element By.Name: driverIDType
-2025-01-07 14:15:15,059 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text WA in the element By.Name: stateOrCountryIssuingID
-2025-01-07 14:15:15,470 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Selected the dropdown by visible text Yes in the element By.Name: photoIDVerified
-2025-01-07 14:15:15,737 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueCertificate button
-2025-01-07 14:15:16,002 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:15:16,474 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnCertificateDetailsCont
-2025-01-07 14:15:16,914 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnCertificateDetailsCont is invisible
-2025-01-07 14:15:17,171 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Clicked on Continue button for certificates
-2025-01-07 14:15:17,418 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Shipment details
-2025-01-07 14:15:17,895 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text SEA in the element By.Name: origin
-2025-01-07 14:15:18,352 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text ANC in the element By.Name: destination
-2025-01-07 14:15:18,864 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 07-Jan-2025 in the element By.Name: shippingDate
-2025-01-07 14:15:19,301 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text PRIORITY in the element By.Name: productCode
-2025-01-07 14:15:19,732 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text DGR,CAO in the element By.Name: scc
-2025-01-07 14:15:20,200 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text NONSCR in the element By.Name: commodityCode
-2025-01-07 14:15:20,535 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: commodityCode
-2025-01-07 14:15:20,967 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text UN3480 in the element By.Name: shipmentDesc
-2025-01-07 14:15:21,267 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: shipmentDesc
-2025-01-07 14:15:21,590 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Selected the dropdown by visible text None in the element By.Name: serviceCargoClass
-2025-01-07 14:15:21,989 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 76 in the element By.Name: shpPcs
-2025-01-07 14:15:22,466 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 456 in the element By.Name: shpWgt
-2025-01-07 14:15:22,732 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueShipment button
-2025-01-07 14:15:22,994 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:15:23,519 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnShipmentCont
-2025-01-07 14:15:23,959 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnShipmentCont is invisible
-2025-01-07 14:15:24,312 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnSearchFlight is visible
-2025-01-07 14:15:24,851 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnSearchFlight
-2025-01-07 14:15:36,459 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[@id='flight_details']//thead//th[text()='Flight List'] is visible
-2025-01-07 14:15:36,748 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[@id='flight_details']//thead//th[text()='Flight List'] is visible
-2025-01-07 14:15:37,230 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnSearchFlight
-2025-01-07 14:15:37,497 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The number of elements found are: 25
-2025-01-07 14:15:37,777 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value 
-2025-01-07 14:15:38,048 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value badge badge-pill light badge-inactive pointer
-2025-01-07 14:15:38,316 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value badge badge-pill light badge-inactive pointer
-2025-01-07 14:15:38,593 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value badge badge-pill light badge-inactive pointer
-2025-01-07 14:15:38,885 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text Combination
-2025-01-07 14:15:39,161 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text AS  0061
-2025-01-07 14:15:39,419 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:15:39,772 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.XPath: //*[@id='flight_details']//tbody//tr[1]//input[@type='button']
-2025-01-07 14:15:40,023 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Combination Flight: 0061 is booked successfully
-2025-01-07 14:15:40,293 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value 07-Jan-2025
-2025-01-07 14:15:40,542 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueFlightDetails button
-2025-01-07 14:15:40,787 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:15:41,152 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: btnFlightDtlsCont
-2025-01-07 14:15:41,572 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnFlightDtlsCont is invisible
-2025-01-07 14:15:41,847 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Charge details
-2025-01-07 14:15:42,111 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //div[@id='pptype'] is visible
-2025-01-07 14:15:42,394 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text PP
-2025-01-07 14:15:42,893 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //div[@id='pptype']
-2025-01-07 14:15:43,181 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the CalculateCharges button
-2025-01-07 14:15:43,451 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnCalculateCharges is visible
-2025-01-07 14:15:43,952 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnCalculateCharges
-2025-01-07 14:15:44,200 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Switched to default content
-2025-01-07 14:16:04,514 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Switched to frame
-2025-01-07 14:16:04,765 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueChargeDetails button
-2025-01-07 14:16:05,088 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text Total Charge(Inc. Tax): 0.00USD
-2025-01-07 14:16:05,913 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnChargeDtlsCont is invisible
-2025-01-07 14:16:06,159 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Acceptance details
-2025-01-07 14:16:06,603 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 76 in the element By.Name: acceptedPieces
-2025-01-07 14:16:06,860 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueAcceptanceDetails button
-2025-01-07 14:16:07,125 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:16:07,610 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnAcceptanceDtlsCont
-2025-01-07 14:16:08,083 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnAcceptanceDtlsCont is invisible
-2025-01-07 14:16:08,336 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Screening details
-2025-01-07 14:16:08,797 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text SEA in the element By.XPath: (//*[@class='row templateParentScreening'])[1]//input[@name='screeningAirport']
-2025-01-07 14:16:09,273 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Selected the dropdown by visible text ALT Dangerous Goods in the element By.XPath: (//*[@class='row templateParentScreening'])[1]//select[@name='screeningMethod']
-2025-01-07 14:16:09,684 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 76 in the element By.XPath: (//*[@class='row templateParentScreening'])[1]//input[@name='screeningPieces']
-2025-01-07 14:16:10,121 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Selected the dropdown by visible text Pass in the element By.XPath: (//*[@class='row templateParentScreening'])[1]//select[@name='screeningResult']
-2025-01-07 14:16:10,368 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueScreeningDetails button
-2025-01-07 14:16:10,621 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:16:10,940 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: btnScreeningDtlsCont
-2025-01-07 14:16:11,313 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnScreeningDtlsCont is invisible
-2025-01-07 14:16:11,594 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The number of windows opened are: 2
-2025-01-07 14:16:15,177 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnSave
-2025-01-07 14:16:15,907 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[text()='Embargo Details'] is visible
-2025-01-07 14:16:16,384 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //*[text()='Embargo Details']//following::button[@id='cancalBtn']
-2025-01-07 14:16:16,656 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[text()='Embargo Details']//following::button[@id='cancalBtn'] is invisible
-2025-01-07 14:16:20,052 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnSave
-2025-01-07 14:16:20,708 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[text()='Embargo Details'] is visible
-2025-01-07 14:16:21,025 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text SPECIFIED SHIPMENT TYPE NOT SUITED FOR SELECTED AIRCRAFT TYPE
-2025-01-07 14:16:21,288 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Embargo Popup Error message is as expected: SPECIFIED SHIPMENT TYPE NOT SUITED FOR SELECTED AIRCRAFT TYPE
-2025-01-07 14:16:21,756 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //*[text()='Embargo Details']//following::button[@id='cancalBtn']
-2025-01-07 14:16:22,046 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: header i.ico-pencil-rounded-orange is visible
-2025-01-07 14:16:22,517 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.CssSelector: header i.ico-pencil-rounded-orange
-2025-01-07 14:16:22,829 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: button_clear is visible
-2025-01-07 14:16:24,145 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: .card-header h4 is invisible
-2025-01-07 14:16:24,413 [NonParallelWorker] INFO  iCargoUIAutomation.Features.ICargoLoginFeature - Step: Switching station if BaseStation other than Origin 
-2025-01-07 14:16:44,820 [NonParallelWorker] ERROR iCargoUIAutomation.pages.homePage - Error in SwitchStation method: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='header_panel']//*[@id='ic-user-stationcode']"}
-  (Session info: chrome=131.0.6778.205); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-2025-01-07 14:16:45,069 [NonParallelWorker] INFO  iCargoUIAutomation.Features.ICargoLoginFeature - Step: Entering the screen name
-2025-01-07 14:16:45,334 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Switched to default content
-2025-01-07 14:16:45,749 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text LTE001 in the element By.CssSelector: .ic-screen-search
-2025-01-07 14:16:46,048 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: .ic-screen-search is clickable
-2025-01-07 14:16:46,346 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.CssSelector: .ic-screen-search
-2025-01-07 14:16:46,632 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: li[tabindex='0'] is visible
-2025-01-07 14:16:46,895 [NonParallelWorker] INFO  iCargoUIAutomation.pages.homePage - Entered Screen Name: LTE001
-2025-01-07 14:16:47,148 [NonParallelWorker] INFO  iCargoUIAutomation.Features.ICargoLoginFeature - Step: Verifying the page title
-2025-01-07 14:16:47,403 [NonParallelWorker] INFO  iCargoUIAutomation.Features.ICargoLoginFeature - Actual Page Title: Create Shipment
-2025-01-07 14:16:47,668 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the List button
-2025-01-07 14:16:47,963 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Switched to frame
-2025-01-07 14:16:48,310 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Id: awb_b
-2025-01-07 14:16:48,576 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Clicked on AWB text box
-2025-01-07 14:16:49,043 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: button_list
-2025-01-07 14:16:49,653 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: button_list is invisible
-2025-01-07 14:16:49,928 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Clicked on List button
-2025-01-07 14:16:50,255 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Participant details
-2025-01-07 14:16:55,898 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: participant
-2025-01-07 14:16:56,565 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: agentCode
-2025-01-07 14:16:57,196 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: agentCode
-2025-01-07 14:16:57,498 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 11377 in the element By.Name: agentCode
-2025-01-07 14:16:58,003 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: agentName
-2025-01-07 14:16:58,550 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: shipperCode
-2025-01-07 14:16:59,143 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: shipperCode
-2025-01-07 14:16:59,648 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: shipperCode
-2025-01-07 14:16:59,977 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 11377 in the element By.Name: shipperCode
-2025-01-07 14:17:00,484 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: shipperName
-2025-01-07 14:17:00,994 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: shipperCntctNumber
-2025-01-07 14:17:01,488 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: consigneeCode
-2025-01-07 14:17:02,175 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: consigneeCode
-2025-01-07 14:17:02,517 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 11377 in the element By.Name: consigneeCode
-2025-01-07 14:17:03,065 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: CMP_Operations_Shipment_Lite_CreateShipment_ConsigneeName
-2025-01-07 14:17:03,595 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: CMP_Operations_Shipment_Lite_CreateShipment_ConsigneeContactNumber
-2025-01-07 14:17:03,885 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueParticipant button
-2025-01-07 14:17:04,238 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Id: CMP_Operations_Shipment_Lite_CreateShipment_btnParticpantContinue
-2025-01-07 14:17:04,660 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: CMP_Operations_Shipment_Lite_CreateShipment_btnParticpantContinue is invisible
-2025-01-07 14:17:04,958 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Clicked on Continue button for participants
-2025-01-07 14:17:05,222 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Certificate details
-2025-01-07 14:17:05,655 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text Test in the element By.Name: driverName
-2025-01-07 14:17:06,135 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Selected the dropdown by visible text Driving License in the element By.Name: driverIDType
-2025-01-07 14:17:06,554 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text WA in the element By.Name: stateOrCountryIssuingID
-2025-01-07 14:17:06,997 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Selected the dropdown by visible text Yes in the element By.Name: photoIDVerified
-2025-01-07 14:17:07,267 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueCertificate button
-2025-01-07 14:17:07,527 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:17:08,003 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnCertificateDetailsCont
-2025-01-07 14:17:08,486 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnCertificateDetailsCont is invisible
-2025-01-07 14:17:08,745 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Clicked on Continue button for certificates
-2025-01-07 14:17:09,000 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Shipment details
-2025-01-07 14:17:09,487 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text SEA in the element By.Name: origin
-2025-01-07 14:17:09,969 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text ANC in the element By.Name: destination
-2025-01-07 14:17:10,496 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 07-Jan-2025 in the element By.Name: shippingDate
-2025-01-07 14:17:10,946 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text PRIORITY in the element By.Name: productCode
-2025-01-07 14:17:11,384 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text DGR,CAO in the element By.Name: scc
-2025-01-07 14:17:11,859 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text NONSCR in the element By.Name: commodityCode
-2025-01-07 14:17:12,204 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: commodityCode
-2025-01-07 14:17:12,675 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text  UN3480 in the element By.Name: shipmentDesc
-2025-01-07 14:17:12,986 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: shipmentDesc
-2025-01-07 14:17:13,314 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Selected the dropdown by visible text None in the element By.Name: serviceCargoClass
-2025-01-07 14:17:13,724 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 56 in the element By.Name: shpPcs
-2025-01-07 14:17:14,154 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 230 in the element By.Name: shpWgt
-2025-01-07 14:17:14,428 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueShipment button
-2025-01-07 14:17:14,689 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:17:15,209 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnShipmentCont
-2025-01-07 14:17:15,627 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnShipmentCont is invisible
-2025-01-07 14:17:15,947 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnSearchFlight is visible
-2025-01-07 14:17:16,438 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnSearchFlight
-2025-01-07 14:17:27,581 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[@id='flight_details']//thead//th[text()='Flight List'] is visible
-2025-01-07 14:17:27,890 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[@id='flight_details']//thead//th[text()='Flight List'] is visible
-2025-01-07 14:17:28,382 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnSearchFlight
-2025-01-07 14:17:28,664 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The number of elements found are: 25
-2025-01-07 14:17:28,954 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value 
-2025-01-07 14:17:29,236 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value badge badge-pill light badge-inactive pointer
-2025-01-07 14:17:29,515 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value badge badge-pill light badge-inactive pointer
-2025-01-07 14:17:29,809 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value badge badge-pill light badge-inactive pointer
-2025-01-07 14:17:30,109 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text Combination
-2025-01-07 14:17:30,399 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text AS  0061
-2025-01-07 14:17:30,660 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:17:31,033 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.XPath: //*[@id='flight_details']//tbody//tr[1]//input[@type='button']
-2025-01-07 14:17:31,319 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Combination Flight: 0061 is booked successfully
-2025-01-07 14:17:31,617 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value 07-Jan-2025
-2025-01-07 14:17:31,878 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueFlightDetails button
-2025-01-07 14:17:32,169 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:17:32,552 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: btnFlightDtlsCont
-2025-01-07 14:17:33,015 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnFlightDtlsCont is invisible
-2025-01-07 14:17:33,290 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Charge details
-2025-01-07 14:17:33,573 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //div[@id='pptype'] is visible
-2025-01-07 14:17:33,861 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text PP
-2025-01-07 14:17:34,368 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //div[@id='pptype']
-2025-01-07 14:17:34,670 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the CalculateCharges button
-2025-01-07 14:17:34,965 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnCalculateCharges is visible
-2025-01-07 14:17:35,442 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnCalculateCharges
-2025-01-07 14:17:35,713 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Switched to default content
-2025-01-07 14:17:56,059 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Switched to frame
-2025-01-07 14:17:56,318 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueChargeDetails button
-2025-01-07 14:17:56,613 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text Total Charge(Inc. Tax): 0.00USD
-2025-01-07 14:17:57,457 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnChargeDtlsCont is invisible
-2025-01-07 14:17:57,710 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Acceptance details
-2025-01-07 14:17:58,148 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 56 in the element By.Name: acceptedPieces
-2025-01-07 14:17:58,430 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueAcceptanceDetails button
-2025-01-07 14:17:58,699 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:17:59,213 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnAcceptanceDtlsCont
-2025-01-07 14:17:59,658 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnAcceptanceDtlsCont is invisible
-2025-01-07 14:17:59,936 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Entering the Screening details
-2025-01-07 14:18:00,379 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text SEA in the element By.XPath: (//*[@class='row templateParentScreening'])[1]//input[@name='screeningAirport']
-2025-01-07 14:18:00,847 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Selected the dropdown by visible text ALT Dangerous Goods in the element By.XPath: (//*[@class='row templateParentScreening'])[1]//select[@name='screeningMethod']
-2025-01-07 14:18:01,301 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 56 in the element By.XPath: (//*[@class='row templateParentScreening'])[1]//input[@name='screeningPieces']
-2025-01-07 14:18:01,725 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Selected the dropdown by visible text Pass in the element By.XPath: (//*[@class='row templateParentScreening'])[1]//select[@name='screeningResult']
-2025-01-07 14:18:01,997 [NonParallelWorker] INFO  iCargoUIAutomation.StepDefinitions.LTE001_ACC_00001_00005_CreateNewShipmentPPCCStepDefinition - Step: Clicking on the ContinueScreeningDetails button
-2025-01-07 14:18:02,273 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Scrolled down
-2025-01-07 14:18:02,641 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Name: btnScreeningDtlsCont
-2025-01-07 14:18:03,038 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Name: btnScreeningDtlsCont is invisible
-2025-01-07 14:18:03,336 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The number of windows opened are: 2
-2025-01-07 14:18:07,018 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnSave
-2025-01-07 14:18:07,786 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[text()='Embargo Details'] is visible
-2025-01-07 14:18:08,294 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //*[text()='Embargo Details']//following::button[@id='cancalBtn']
-2025-01-07 14:18:08,577 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[text()='Embargo Details']//following::button[@id='cancalBtn'] is invisible
-2025-01-07 14:18:12,062 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Name: btnSave
-2025-01-07 14:18:12,736 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[text()='Embargo Details'] is visible
-2025-01-07 14:18:13,067 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text SPECIFIED SHIPMENT TYPE NOT SUITED FOR SELECTED AIRCRAFT TYPE
-2025-01-07 14:18:13,335 [NonParallelWorker] INFO  iCargoUIAutomation.pages.CreateShipmentPage - Embargo Popup Error message is as expected: SPECIFIED SHIPMENT TYPE NOT SUITED FOR SELECTED AIRCRAFT TYPE
-2025-01-07 14:18:13,803 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //*[text()='Embargo Details']//following::button[@id='cancalBtn']
-2025-01-07 14:18:14,108 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: header i.ico-pencil-rounded-orange is visible
-2025-01-07 14:18:14,593 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.CssSelector: header i.ico-pencil-rounded-orange
-2025-01-07 14:18:14,920 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: button_clear is visible
-2025-01-07 14:18:16,224 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: .card-header h4 is invisible
-2025-01-07 14:18:16,694 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Switched to default content
-2025-01-07 14:18:17,262 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //*[@id='header_panel']//*[@class='ic-header-menu-icon' and @title='Click Here']
-2025-01-07 14:18:17,809 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //*[@class='ic-header-items-sub-menu']//*[@class='ic-log-off']/a
-2025-01-07 14:18:18,226 [NonParallelWorker] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //button[text()=' Yes ']
-2025-01-07 14:18:18,574 [NonParallelWorker] INFO  iCargoUIAutomation.pages.homePage - Logged out of iCargo
+2025-01-10 15:59:28,234 [16] INFO  iCargoUIAutomation.pages.BasePage - All cookies are deleted
+2025-01-10 15:59:29,268 [16] INFO  iCargoUIAutomation.pages.BasePage - Opened the url: https://asstg-icargo.ibsplc.aero/icargo/login.do
+2025-01-10 15:59:34,624 [16] INFO  iCargoUIAutomation.pages.BasePage - Refreshed the page
+2025-01-10 15:59:34,763 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //body[@class='login'] is visible
+2025-01-10 15:59:36,728 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: username is visible
+2025-01-10 15:59:37,253 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the text iCargoTest3@aagqa.net in the element By.Id: username
+2025-01-10 15:59:37,645 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the text *TV%My14ytgT96$ in the element By.Id: password
+2025-01-10 15:59:38,031 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the text *TV%My14ytgT96$ in the element By.Id: password
+2025-01-10 15:59:40,133 [16] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //input[@title='Sign In']
+2025-01-10 16:00:00,627 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: username is invisible
+2025-01-10 16:00:00,891 [16] INFO  iCargoUIAutomation.pages.BasePage - Switched to the new window
+2025-01-10 16:00:00,994 [16] INFO  iCargoUIAutomation.Features.ICargoLoginFeature - Step: Switching station if BaseStation other than Origin 
+2025-01-10 16:00:01,174 [16] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text SEA
+2025-01-10 16:00:01,240 [16] INFO  iCargoUIAutomation.pages.BasePage - Switched to default content
+2025-01-10 16:00:01,665 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the text CAP018 in the element By.CssSelector: .ic-screen-search
+2025-01-10 16:00:01,895 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: .ic-screen-search is clickable
+2025-01-10 16:00:02,139 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.CssSelector: .ic-screen-search
+2025-01-10 16:00:02,396 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: li[tabindex='0'] is visible
+2025-01-10 16:00:02,517 [16] INFO  iCargoUIAutomation.pages.homePage - Entered Screen Name: CAP018
+2025-01-10 16:00:03,665 [16] INFO  iCargoUIAutomation.pages.BasePage - Switched to frame
+2025-01-10 16:00:03,671 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Switched to CAP018 Frame
+2025-01-10 16:00:03,681 [16] INFO  iCargoUIAutomation.Features.ICargoLoginFeature - Step: Verifying the page title
+2025-01-10 16:00:03,738 [16] INFO  iCargoUIAutomation.Features.ICargoLoginFeature - Actual Page Title: Maintain Booking
+2025-01-10 16:00:23,836 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: .ic-home-tab is invisible
+2025-01-10 16:00:24,474 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //button[@id='btDisplay'] is visible
+2025-01-10 16:00:24,838 [16] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //button[@id='btDisplay']
+2025-01-10 16:00:24,872 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Clicked New List Button
+2025-01-10 16:00:46,106 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.CssSelector: .ic-home-tab is invisible
+2025-01-10 16:00:46,932 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Id: origin
+2025-01-10 16:00:46,999 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the text SEA in the element By.Id: origin
+2025-01-10 16:00:47,008 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Entered Origin: SEA
+2025-01-10 16:00:47,469 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the text LAX in the element By.XPath: //input[@name='destination']
+2025-01-10 16:00:47,486 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Entered Destination: LAX
+2025-01-10 16:00:47,628 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: agentCode is visible
+2025-01-10 16:00:48,024 [16] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: agentCode
+2025-01-10 16:00:49,172 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Id: agentCode
+2025-01-10 16:00:49,465 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 11377 in the element By.Id: agentCode
+2025-01-10 16:00:49,534 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Entered Agent Code: 11377
+2025-01-10 16:00:50,023 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 10-Jan-2025 in the element By.Id: shippingDate
+2025-01-10 16:00:50,034 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Entered Shipping Date: 10-Jan-2025
+2025-01-10 16:00:50,538 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the text GENERAL in the element By.XPath: //input[@name='productName']
+2025-01-10 16:00:50,548 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Entered Product Code: GENERAL
+2025-01-10 16:00:50,734 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: CMP_Capacity_Booking_MaintainReservation_ShipperDetails_Button is clickable
+2025-01-10 16:00:51,767 [16] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: CMP_Capacity_Booking_MaintainReservation_ShipperDetails_Button
+2025-01-10 16:00:51,782 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Clicked on Shipper Consignee Button
+2025-01-10 16:00:51,848 [16] INFO  iCargoUIAutomation.pages.BasePage - The number of windows opened are: 3
+2025-01-10 16:01:12,136 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //iframe[@name='iCargoContentFrameCAP018'] is invisible
+2025-01-10 16:01:12,479 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 11377 in the element By.XPath: //input[@name='shipperCode']
+2025-01-10 16:01:12,486 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Entered Shipper Code: 11377
+2025-01-10 16:01:12,758 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: CMP_Capacity_Booking_MaintainReservation_ShipperConsignee_ShipperName_NEW is visible
+2025-01-10 16:01:12,993 [16] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: CMP_Capacity_Booking_MaintainReservation_ShipperConsignee_ShipperName_NEW
+2025-01-10 16:01:13,314 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Id: CMP_Capacity_Booking_MaintainReservation_ShipperConsignee_ShipperName_NEW
+2025-01-10 16:01:13,425 [16] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value NC MACHINERY
+2025-01-10 16:01:13,725 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 11377 in the element By.XPath: //input[@name='consigneeCode']
+2025-01-10 16:01:13,731 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Entered Consignee Code: 11377
+2025-01-10 16:01:14,032 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the key in the element By.Id: CMP_Capacity_Booking_MaintainReservation_ShipperConsignee_ConsigneeName_NEW
+2025-01-10 16:01:14,219 [16] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value NC MACHINERY
+2025-01-10 16:01:34,352 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //iframe[@name='iCargoContentFrameCAP018'] is invisible
+2025-01-10 16:01:34,500 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: CMP_Capacity_Booking_MaintainReservation_ShipperConsignee_OK is visible
+2025-01-10 16:01:35,793 [16] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: CMP_Capacity_Booking_MaintainReservation_ShipperConsignee_OK
+2025-01-10 16:01:35,804 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Clicked on Shipper Consignee OK Button
+2025-01-10 16:01:36,458 [16] INFO  iCargoUIAutomation.pages.BasePage - Switched to frame
+2025-01-10 16:01:36,493 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Switched to CAP018 Frame
+2025-01-10 16:01:36,773 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //input[@name='commodityCode'] is visible
+2025-01-10 16:01:36,889 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //input[@name='commodityCode'] is visible
+2025-01-10 16:01:37,435 [16] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //input[@name='commodityCode']
+2025-01-10 16:01:37,890 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the text NONSCR in the element By.XPath: //input[@name='commodityCode']
+2025-01-10 16:01:37,897 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Entered Commodity Code: NONSCR
+2025-01-10 16:01:38,297 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 13 in the element By.XPath: //input[@name='pieces']
+2025-01-10 16:01:38,311 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Entered Pieces: 13
+2025-01-10 16:01:39,094 [16] INFO  iCargoUIAutomation.pages.BasePage - Entered the text 775 in the element By.XPath: //input[@name='weight']
+2025-01-10 16:01:39,100 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Entered Weight: 775
+2025-01-10 16:01:39,618 [16] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: btSelectFlight
+2025-01-10 16:01:39,624 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Clicked Select Flight Button
+2025-01-10 16:01:59,718 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //iframe[@name='iCargoContentFrameCAP018'] is invisible
+2025-01-10 16:01:59,908 [16] INFO  iCargoUIAutomation.pages.BasePage - Switched to frame
+2025-01-10 16:01:59,914 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Switched to Booking Irregularity Frame
+2025-01-10 16:01:59,987 [16] INFO  iCargoUIAutomation.pages.BasePage - The elements found are: System.Collections.Generic.List`1[OpenQA.Selenium.IWebElement]
+2025-01-10 16:01:59,994 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - No of Flights: 45
+2025-01-10 16:02:00,095 [16] INFO  iCargoUIAutomation.pages.BasePage - The elements found are: System.Collections.Generic.List`1[OpenQA.Selenium.IWebElement]
+2025-01-10 16:02:00,102 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Rate Status Button Count: 60
+2025-01-10 16:02:00,180 [16] INFO  iCargoUIAutomation.pages.BasePage - The elements found are: System.Collections.Generic.List`1[OpenQA.Selenium.IWebElement]
+2025-01-10 16:02:00,186 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - CAP Status Button Count: 60
+2025-01-10 16:02:00,312 [16] INFO  iCargoUIAutomation.pages.BasePage - The elements found are: System.Collections.Generic.List`1[OpenQA.Selenium.IWebElement]
+2025-01-10 16:02:00,325 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - REST Status Button Count: 60
+2025-01-10 16:02:00,416 [16] INFO  iCargoUIAutomation.pages.BasePage - The elements found are: System.Collections.Generic.List`1[OpenQA.Selenium.IWebElement]
+2025-01-10 16:02:00,423 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - EMB Status Button Count: 60
+2025-01-10 16:02:00,496 [16] INFO  iCargoUIAutomation.pages.BasePage - The elements found are: System.Collections.Generic.List`1[OpenQA.Selenium.IWebElement]
+2025-01-10 16:02:00,506 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Product Codes Count: 60
+2025-01-10 16:02:00,578 [16] INFO  iCargoUIAutomation.pages.BasePage - The elements found are: System.Collections.Generic.List`1[OpenQA.Selenium.IWebElement]
+2025-01-10 16:02:00,585 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Flight Dates Count: 15
+2025-01-10 16:02:00,651 [16] INFO  iCargoUIAutomation.pages.BasePage - The elements found are: System.Collections.Generic.List`1[OpenQA.Selenium.IWebElement]
+2025-01-10 16:02:00,657 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - General Product Button Count: 15
+2025-01-10 16:02:00,731 [16] INFO  iCargoUIAutomation.pages.BasePage - The elements found are: System.Collections.Generic.List`1[OpenQA.Selenium.IWebElement]
+2025-01-10 16:02:00,739 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Priority Product Button Count: 15
+2025-01-10 16:02:00,806 [16] INFO  iCargoUIAutomation.pages.BasePage - The elements found are: System.Collections.Generic.List`1[OpenQA.Selenium.IWebElement]
+2025-01-10 16:02:00,813 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Employee Shipment Product Button Count: 15
+2025-01-10 16:02:00,886 [16] INFO  iCargoUIAutomation.pages.BasePage - The elements found are: System.Collections.Generic.List`1[OpenQA.Selenium.IWebElement]
+2025-01-10 16:02:00,903 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Goldstreak Product Button Count: 15
+2025-01-10 16:02:21,099 [16] INFO  iCargoUIAutomation.pages.BasePage - The elements found are: System.Collections.Generic.List`1[OpenQA.Selenium.IWebElement]
+2025-01-10 16:02:21,107 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Pet Connect Product Button Count: 0
+2025-01-10 16:02:21,180 [16] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text GENERAL
+2025-01-10 16:02:21,262 [16] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value badge-orange
+2025-01-10 16:02:21,333 [16] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value badge-default
+2025-01-10 16:02:21,397 [16] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value badge-default
+2025-01-10 16:02:21,468 [16] INFO  iCargoUIAutomation.pages.BasePage - Extracted the attribute value 
+2025-01-10 16:02:21,535 [16] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text 10-Jan
+2025-01-10 16:02:21,676 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //strong[text()='GENERAL']/parent::div/parent::div/parent::div is visible
+2025-01-10 16:02:22,742 [16] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element Element (id = f.BB2C21A50CF76112D92403A0AC4653C6.d.0E0DB0426EFA4D30D5112228D60428DE.e.1812)
+2025-01-10 16:02:22,750 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Selected General Product
+2025-01-10 16:02:22,953 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //button[@accesskey='K'] is visible
+2025-01-10 16:02:23,107 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Clicked Flight Details OK Button
+2025-01-10 16:02:24,802 [16] INFO  iCargoUIAutomation.pages.BasePage - Switched to frame
+2025-01-10 16:02:24,808 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Switched to CAP018 Frame
+2025-01-10 16:02:24,932 [16] INFO  iCargoUIAutomation.pages.BasePage - The number of windows opened are: 2
+2025-01-10 16:02:45,066 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[@class='ui-dialog-buttonpane ui-widget-content ui-helper-clearfix']//*[text()=' Yes '] is invisible
+2025-01-10 16:02:45,243 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //button[@id='btSave'] is visible
+2025-01-10 16:02:53,158 [16] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //button[@id='btSave']
+2025-01-10 16:02:53,165 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Clicked Save Button
+2025-01-10 16:03:13,270 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[@class='ui-dialog-buttonpane ui-widget-content ui-helper-clearfix']//*[text()=' Yes '] is invisible
+2025-01-10 16:04:04,927 [16] INFO  iCargoUIAutomation.pages.BasePage - Switched to the last window
+2025-01-10 16:04:04,982 [16] INFO  iCargoUIAutomation.pages.BasePage - Switched to default content
+2025-01-10 16:04:28,589 [16] INFO  iCargoUIAutomation.pages.BasePage - Switched to default content
+2025-01-10 16:04:54,978 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Clicked Yes on Popup Warnings
+2025-01-10 16:04:55,322 [16] INFO  iCargoUIAutomation.pages.BasePage - The number of windows opened are: 3
+2025-01-10 16:04:55,560 [16] INFO  iCargoUIAutomation.pages.BasePage - Switched to the last window
+2025-01-10 16:05:15,688 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //*[@class='ui-dialog-buttonpane ui-widget-content ui-helper-clearfix']//*[text()=' Yes '] is invisible
+2025-01-10 16:05:15,887 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //label[contains(text(), 'AWB : ')]/b is visible
+2025-01-10 16:05:16,021 [16] INFO  iCargoUIAutomation.pages.BasePage - Extracted the text 027-33529204
+2025-01-10 16:05:16,029 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - AWB Number: 027-33529204
+2025-01-10 16:05:16,347 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //button[@id='CMP_Capacity_Booking_BookingSummary_Ok_Button'] is clickable
+2025-01-10 16:05:16,900 [16] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //button[@id='CMP_Capacity_Booking_BookingSummary_Ok_Button']
+2025-01-10 16:05:17,009 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Clicked OK Button on Booking Summary Popup
+2025-01-10 16:05:17,481 [16] INFO  iCargoUIAutomation.pages.BasePage - Switched to the last window
+2025-01-10 16:05:17,523 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Switched to Last Window
+2025-01-10 16:05:19,264 [16] INFO  iCargoUIAutomation.pages.BasePage - Switched to frame
+2025-01-10 16:05:19,270 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Switched to CAP018 Frame
+2025-01-10 16:05:19,278 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Switched to CAP018 Frame
+2025-01-10 16:05:39,365 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.XPath: //button[@id='CMP_Capacity_Booking_BookingSummary_Ok_Button'] is invisible
+2025-01-10 16:05:39,948 [16] INFO  iCargoUIAutomation.pages.BasePage - The element By.Id: btClear is visible
+2025-01-10 16:05:41,400 [16] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.Id: btClear
+2025-01-10 16:05:41,406 [16] INFO  iCargoUIAutomation.pages.MaintainBookingPage - Clicked Clear Maintain Booking Button
+2025-01-10 16:05:56,774 [16] INFO  iCargoUIAutomation.pages.BasePage - Switched to default content
+2025-01-10 16:05:57,074 [16] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //*[@id='header_panel']//*[@class='ic-header-menu-icon' and @title='Click Here']
+2025-01-10 16:05:57,596 [16] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //*[@class='ic-header-items-sub-menu']//*[@class='ic-log-off']/a
+2025-01-10 16:05:58,011 [16] INFO  iCargoUIAutomation.pages.BasePage - Clicked on the element By.XPath: //button[text()=' Yes ']
+2025-01-10 16:05:58,018 [16] INFO  iCargoUIAutomation.pages.homePage - Logged out of iCargo
+2025-01-10 16:11:21,421 [16] INFO  iCargoUIAutomation.utilities.SystemResourceInfo - Available Memory (MB): 745
+2025-01-10 16:11:21,457 [16] INFO  iCargoUIAutomation.utilities.SystemResourceInfo - Drive C:\
+2025-01-10 16:11:21,471 [16] INFO  iCargoUIAutomation.utilities.SystemResourceInfo -   Total Size: 148 GB
+2025-01-10 16:11:21,481 [16] INFO  iCargoUIAutomation.utilities.SystemResourceInfo -   Available Space: 2 GB
+2025-01-10 16:11:21,515 [16] INFO  iCargoUIAutomation.utilities.SystemResourceInfo - Drive H:\
+2025-01-10 16:11:21,565 [16] INFO  iCargoUIAutomation.utilities.SystemResourceInfo -   Total Size: 14420 GB
+2025-01-10 16:11:21,621 [16] INFO  iCargoUIAutomation.utilities.SystemResourceInfo -   Available Space: 3186 GB

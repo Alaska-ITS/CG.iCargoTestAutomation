@@ -125,5 +125,19 @@ namespace iCargoUIAutomation.utilities
             }
         }
 
+        public List<string> GetBlobFileNames()
+        {
+            var blobClient = new BlobServiceClient(_connectionString);
+            var containerClient = blobClient.GetBlobContainerClient(_containerName);
+
+            var fileNames = new List<string>();
+            foreach (var blobItem in containerClient.GetBlobs())
+            {
+                fileNames.Add(blobItem.Name);
+            }
+            return fileNames;
+        }
+
+
     }
 }

@@ -12,6 +12,7 @@ namespace iCargoUIAutomation.utilities
 {
     public class LogFileConfiguration
     {
+        private static AzureStorage azureStorage = new AzureStorage("logs");
         public void ConfigureLog4Net()
         {
             Hierarchy hierarchy = (Hierarchy)LogManager.GetRepository();
@@ -21,8 +22,11 @@ namespace iCargoUIAutomation.utilities
             patternLayout.ActivateOptions();
 
             string projectDirectory = System.IO.Path.GetFullPath(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "..\\..\\..\\"));
-            string logFilePath = System.IO.Path.Combine(projectDirectory,"Resource", "Logs", "logfile.log");
-            Console.WriteLine("Log file path: " + logFilePath);
+            string logFilePath = System.IO.Path.Combine(projectDirectory, "Resource", "Logs", "logfile.log");
+            //string logFileName = "logfile.log";
+            //string tempPath = Path.Combine(Path.GetTempPath(), "logfile.log");
+            //tempPath = azureStorage.DownloadFileFromBlob(logFileName, tempPath);            
+            Console.WriteLine("Log file path: " + logFilePath);            
             FileAppender appender = new FileAppender();
             appender.AppendToFile = false;
             appender.File = logFilePath;

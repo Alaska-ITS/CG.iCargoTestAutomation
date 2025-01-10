@@ -35,9 +35,10 @@ namespace iCargoUIAutomation.Hooks
         public static string? appUrl = "https://asstg-icargo.ibsplc.aero/icargo/login.do";
         private const string containerName = "resources";
         private const string reportContainerName = "reports";
+        private const string logContainerName = "logs";
+        private const string testDataContainername = "testdata";
         private static AzureStorage? azureStorage;
-        public static List<string> uploadedBlobPaths = new List<string>();
-
+        public static List<string> uploadedBlobPaths = new List<string>();        
 
         public Hooks(IObjectContainer container)
         {
@@ -61,17 +62,44 @@ namespace iCargoUIAutomation.Hooks
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Standard;
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
+            azureStorage = new AzureStorage(testDataContainername);
+            var excelFiles = azureStorage.GetBlobFileNames()
+                          .Where(fileName => fileName.EndsWith(".xlsx", StringComparison.OrdinalIgnoreCase))
+                          .ToList();
+
+            // Ensure TestData folder exists in the solution directory
+            string solutionDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string testDataFolderPath = Path.Combine(solutionDirectory, "TestData");
+            //Directory.CreateDirectory(testDataFolderPath);
+
+            foreach (var fileName in excelFiles)
+            {
+                try
+                {
+                    // Build local file path for downloading
+                    string localFilePath = Path.Combine(testDataFolderPath, fileName);
+                    var downloadedFilePath = azureStorage.DownloadFileFromBlob(fileName, localFilePath);
+                    Console.WriteLine($"Downloaded test data file: {fileName} to {downloadedFilePath}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Failed to download file {fileName}. Error: {ex.Message}");
+                }
+            }
         }
 
         [AfterTestRun]
         public static void AfterTestRun()
         {
             Console.WriteLine("Running after test run...");
+           SystemResourceInfo systemResourceInfo = new SystemResourceInfo();
+            systemResourceInfo.GetSystemResourceUsage();
         }
 
         [BeforeFeature]
         public static void BeforeFeature(FeatureContext featureContext)
         {
+            
             //browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
             browser = "chrome";
           
@@ -137,8 +165,13 @@ namespace iCargoUIAutomation.Hooks
             {
                 File.Delete(reportPath);
             }
+            //string logFileName = "logfile.log";
+            ////string projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            //string tempLocalPath = Path.Combine(Path.GetTempPath(), logFileName);           
+            //azureStorage = new AzureStorage(logContainerName);
+            //azureStorage.UploadFileToBlob(tempLocalPath, "logfile.log");
             driver.Quit();
-        }        
+        }                  
 
         [BeforeScenario(Order = 1)]
         public void FirstBeforeScenario(ScenarioContext scenarioContext)
@@ -211,13 +244,12 @@ namespace iCargoUIAutomation.Hooks
                 {
                     
                     // Append data to the downloaded or newly created Excel file
-
                     excelFileConfig.AppendDataToExcel(tempLocalPath, DateTime.Now.ToString("dd-MM-yyyy"), DateTime.Now.ToString("HH:mm:ss"), "LTE001", featureName, CreateShipmentPage.awb_num, CreateShipmentPage.origin, CreateShipmentPage.destination, CreateShipmentPage.productCode, CreateShipmentPage.agentCode, CreateShipmentPage.shipperCode, CreateShipmentPage.consigneeCode, CreateShipmentPage.commodityCode, CreateShipmentPage.pieces, CreateShipmentPage.weight);
 
                 }                
 
                 // Upload the updated file back to Azure Blob Storage
-               azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
+               //azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
 
                 File.Delete(tempLocalPath);
                 extent.Flush();
