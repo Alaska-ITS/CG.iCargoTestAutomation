@@ -1612,7 +1612,7 @@ namespace iCargoUIAutomation.pages
                 //chkBookingStatusCnt+=1;
                 try
                 {
-                    if ((CaptureBookingStatus() == "Confirmed") && (CaptureDataCaptureStatus() == "EXECUTED") && (CaptureAcceptanceStatus() == "Finalised") && (CaptureColorReadyForCarriageStatus().Contains("green")) && (CaptureColorCaptureCheckSheetStatus().Contains("green")) && (CaptureColorBlockStatus().Contains("green")))
+                    if ((CaptureBookingStatus() is "Confirmed" or "Queued") && (CaptureDataCaptureStatus() == "EXECUTED") && (CaptureAcceptanceStatus() == "Finalised") && (CaptureColorReadyForCarriageStatus().Contains("green")) && (CaptureColorCaptureCheckSheetStatus().Contains("green")) && (CaptureColorBlockStatus().Contains("green")))
                     {
                         awb_num = captureAWBNumber();
                         Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
@@ -1678,7 +1678,7 @@ namespace iCargoUIAutomation.pages
                
                 try
                 {
-                    if (CaptureBookingStatus() == "Confirmed")
+                    if (CaptureBookingStatus() is "Confirmed" or "Queued")
                     {
 
                         WaitForElementToBeVisible(lblWarningMessage_Css, TimeSpan.FromSeconds(10));
@@ -1912,7 +1912,7 @@ namespace iCargoUIAutomation.pages
             {
                 try
                 {
-                    if ((CaptureBookingStatus() == "Confirmed") && (CaptureDataCaptureStatus() == "EXECUTED") && (CaptureAcceptanceStatus() == "Finalised") && (CaptureColorReadyForCarriageStatus().Contains("green")) && (CaptureColorCaptureCheckSheetStatus().Contains("green")) && (CaptureColorBlockStatus().Contains("green")))
+                    if ((CaptureBookingStatus() is "Confirmed" or "Queued") && (CaptureDataCaptureStatus() == "EXECUTED") && (CaptureAcceptanceStatus() == "Finalised") && (CaptureColorReadyForCarriageStatus().Contains("green")) && (CaptureColorCaptureCheckSheetStatus().Contains("green")) && (CaptureColorBlockStatus().Contains("green")))
                     {
                         awb_num = captureAWBNumber();
                         Hooks.Hooks.UpdateTest(Status.Info, "AWB Number: " + awb_num);
