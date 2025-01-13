@@ -113,8 +113,7 @@ namespace iCargoUIAutomation.pages
                 Click(btnClickHere_Xpath);
                 Click(lnkLogOut_Xpath);
                 Click(btnYesLogoutConfirmation_Xpath);                
-                Log.Info("Logged out of iCargo");
-                CloseLog();
+                Log.Info("Logged out of iCargo");              
             }
             catch (Exception e)
             {
