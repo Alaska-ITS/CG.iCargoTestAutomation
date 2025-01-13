@@ -25,8 +25,8 @@ namespace iCargoUIAutomation.utilities
             string logFilePath = System.IO.Path.Combine(projectDirectory, "Resource", "Logs", "logfile.log");
             //string logFileName = "logfile.log";
             //string tempPath = Path.Combine(Path.GetTempPath(), "logfile.log");
-            //tempPath = azureStorage.DownloadFileFromBlob(logFileName, tempPath);            
-            Console.WriteLine("Log file path: " + logFilePath);            
+            //tempPath = azureStorage.DownloadFileFromBlob(logFileName, tempPath);
+            Console.WriteLine("Log file path: " + logFilePath);
             FileAppender appender = new FileAppender();
             appender.AppendToFile = false;
             appender.File = logFilePath;

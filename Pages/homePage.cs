@@ -114,6 +114,7 @@ namespace iCargoUIAutomation.pages
                 Click(lnkLogOut_Xpath);
                 Click(btnYesLogoutConfirmation_Xpath);                
                 Log.Info("Logged out of iCargo");
+                CloseLog();
             }
             catch (Exception e)
             {
@@ -132,15 +133,13 @@ namespace iCargoUIAutomation.pages
 
                 Console.WriteLine("Previous Role: " + role);
                 role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);                                
-                //role = "CCC";
-                     
+                //role = "CCC";                     
 
                Console.WriteLine("Current Role: " + role);
                 if (role.ToUpper() == "CCC")
                 {
                     EnterText(userName_Id, secrets["CCC_Username"]);
-                    EnterText(password_Id, secrets["CCC_Password"]);                     
-                    EnterText(password_Id, secrets["CCC_Password"]);                     
+                    EnterText(password_Id, secrets["CCC_Password"]);                                                              
                 }
                 else if (role.ToUpper() == "CGODG")
                 {
@@ -159,7 +158,7 @@ namespace iCargoUIAutomation.pages
                 Log.Error("Error in loginiCargo method: " + e.Message);                
             }
 
-        }
+        }        
 
     }
 }

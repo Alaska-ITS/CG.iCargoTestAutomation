@@ -395,8 +395,13 @@ namespace iCargoUIAutomation.pages
         {
             WebDriverWait wait = new WebDriverWait(driver, time);
             wait.Until(driver => driver.WindowHandles.Count == windowCount);
-        }       
+        }
 
+        //Close the log thread
+        public void CloseLog()
+        {            
+            LogManager.Shutdown();
+        }
 
 
         // check if the textbox is not empty
