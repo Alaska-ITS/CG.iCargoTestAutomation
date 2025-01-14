@@ -177,7 +177,6 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("CAP018_BKG_00003_Create a booking for an unknown shipper on a pax flight")]
         [NUnit.Framework.CategoryAttribute("CAP018")]
-        [NUnit.Framework.CategoryAttribute("CAP")]
         [NUnit.Framework.CategoryAttribute("CAP018_BKG_00003")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:CAP018_BKG_00001")]
@@ -206,7 +205,6 @@ this.ScenarioInitialize(scenarioInfo);
         {
             string[] @__tags = new string[] {
                     "CAP018",
-                    "CAP",
                     "CAP018_BKG_00003",
                     "DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx",
                     "DataSet:CAP018_BKG_00001"};
@@ -278,7 +276,6 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("CAP018_BKG_00007_iCargo Login and Create New AVI Shipment")]
         [NUnit.Framework.CategoryAttribute("CAP018")]
-        [NUnit.Framework.CategoryAttribute("CAP")]
         [NUnit.Framework.CategoryAttribute("CAP018_BKG_00007")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:CAP018_BKG_00001")]
@@ -307,7 +304,6 @@ this.ScenarioInitialize(scenarioInfo);
         {
             string[] @__tags = new string[] {
                     "CAP018",
-                    "CAP",
                     "CAP018_BKG_00007",
                     "DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx",
                     "DataSet:CAP018_BKG_00001"};

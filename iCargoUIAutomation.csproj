@@ -44,4 +44,22 @@
     <Folder Include="TestData\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="TestData\CAP018_MaintainBooking_TestData.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\LTE001_CreateShipment_TestData.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\OPR339_SecurityScreening_TestData.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\OPR344_ExportManifest_TestData.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\OPR367_ImportManifest_TestData.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
