@@ -164,12 +164,7 @@ namespace iCargoUIAutomation.Hooks
             if (File.Exists(reportPath))
             {
                 File.Delete(reportPath);
-            }
-            string logFileName = "logfile.log";
-            //string projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-            string tempLocalPath = Path.Combine(Path.GetTempPath(), logFileName);
-            azureStorage = new AzureStorage(logContainerName);
-            azureStorage.UploadFileToBlob(tempLocalPath, "logfile.log");
+            }                     
             driver.Quit();
         }                  
 
