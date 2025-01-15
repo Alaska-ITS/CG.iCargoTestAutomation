@@ -34,7 +34,7 @@ Scenario Outline: OPR344_EXP_00001_Manifest an AWB for an Unknown Shipper on a p
 	And User validates the error popover message as "AWB is not accepted"
 	Then User closes the Export Manifest screen
 
-@OPR344 @OPR344_EXP_00002 @DataSource:../TestData/OPR344_ExportManifest_TestData.xlsx @DataSet:OPR344_EXP_00002
+@OPR344 @OPR344_EXP_00002 @DataSource:../TestData/OPR344_ExportManifest_TestData.xlsx @DataSet:OPR344_EXP_00001
 Scenario Outline: OPR344_EXP_00002_Manifest an AWB from the lying list
 	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
@@ -73,7 +73,7 @@ Scenario Outline: OPR344_EXP_00002_Manifest an AWB from the lying list
 	And User validates the AWB is "Manifested" in the Export Manifest screen
 	Then User closes the Export Manifest screen
 
-@OPR344 @OPR344_EXP_00003 @DataSource:../TestData/OPR344_ExportManifest_TestData.xlsx @DataSet:OPR344_EXP_00003
+@OPR344 @OPR344_EXP_00003 @DataSource:../TestData/OPR344_ExportManifest_TestData.xlsx @DataSet:OPR344_EXP_00001
 Scenario Outline: OPR344_EXP_00003_Manifest an AWB onto its booked flight
 	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"

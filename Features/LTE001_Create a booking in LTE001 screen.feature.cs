@@ -80,11 +80,14 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -325,11 +328,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -567,11 +573,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -810,11 +819,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -1057,11 +1069,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -1300,11 +1315,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00007")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -1550,11 +1568,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00008")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -1854,11 +1875,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00009")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -2094,11 +2118,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00010")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -2393,11 +2420,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00011")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -2634,11 +2664,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00012")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -2874,11 +2907,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00015")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -3101,9 +3137,6 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueScreeningDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 348
- testRunner.And("User clicks on the save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 349
  testRunner.And("User validates the error message \"SPECIFIED SHIPMENT TYPE NOT SUITED FOR SELECTED" +
                         " AIRCRAFT TYPE\" in the Embargo Details popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -3117,11 +3150,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00016")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -3266,7 +3302,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Execute", execute);
             argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000016_Create an AWB for an Employee Shipment", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 352
+#line 351
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -3276,89 +3312,89 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 353
+#line 352
  testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 354
+#line 353
  testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 355
+#line 354
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 356
+#line 355
  testRunner.Then("User enters into the  iCargo \'Create Shipment\' page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 357
+#line 356
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 358
+#line 357
  testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
                             "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 359
+#line 358
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 360
+#line 359
  testRunner.And("User enters the Certificate details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 361
+#line 360
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 362
+#line 361
  testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
                             "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
                             "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 363
+#line 362
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 364
+#line 363
  testRunner.And("User clicks on the Select Flight Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 365
+#line 364
  testRunner.And("User selects an \"Combination\" flight", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 366
+#line 365
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 367
+#line 366
  testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 368
+#line 367
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 369
+#line 368
  testRunner.And("User clicks on the ContinueChargeDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 370
+#line 369
  testRunner.And("User enters the Acceptance details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 371
+#line 370
  testRunner.And("User clicks on the ContinueAcceptanceDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 372
+#line 371
  testRunner.And("User enters the Screening details for row 1 with screeingMethod as \'Transfer Mani" +
                         "fest Verified\' and ScreeningResult as \'Pass\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 373
+#line 372
  testRunner.And("User clicks on the ContinueScreeningDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 374
+#line 373
  testRunner.And("User clicks on the save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 375
+#line 374
  testRunner.And("User captures the checksheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 376
+#line 375
  testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 377
+#line 376
  testRunner.And("User clicks on the save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 378
+#line 377
  testRunner.And("User handles the error popups with errorType as \'\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 379
+#line 378
  testRunner.And("User saves all the details & handles all the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -3371,11 +3407,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00017")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -3520,7 +3559,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Execute", execute);
             argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000017_Create a COMAT AWB", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 382
+#line 381
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -3530,83 +3569,83 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 383
+#line 382
  testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 384
+#line 383
  testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 385
+#line 384
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 386
+#line 385
  testRunner.Then("User enters into the  iCargo \'Create Shipment\' page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 387
+#line 386
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 388
+#line 387
  testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
                             "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 389
+#line 388
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 390
+#line 389
  testRunner.And("User enters the Certificate details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 391
+#line 390
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 392
+#line 391
  testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
                             "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
                             "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 393
+#line 392
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 394
+#line 393
  testRunner.And("User clicks on the Select Flight Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 395
+#line 394
  testRunner.And("User selects an available flight", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 396
+#line 395
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 397
+#line 396
  testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 398
+#line 397
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 399
+#line 398
  testRunner.And("User clicks on the ContinueChargeDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 400
+#line 399
  testRunner.And("User enters the Acceptance details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 401
+#line 400
  testRunner.And("User clicks on the ContinueAcceptanceDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 402
+#line 401
  testRunner.And("User enters the Screening details for row 1 with screeingMethod as \'Transfer Mani" +
                         "fest Verified\' and ScreeningResult as \'Pass\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 403
+#line 402
  testRunner.And("User clicks on the ContinueScreeningDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 404
+#line 403
  testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 405
+#line 404
  testRunner.And("User clicks on the save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 406
+#line 405
  testRunner.And("User handles the error popups with errorType as \'\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 407
+#line 406
  testRunner.And("User validates the AWB is \"EXECUTED\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -3620,11 +3659,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00019")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -3770,7 +3812,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000019_Create an AWB for an Employee who is an unknown shipper for a p" +
                     "roduct other than Employee Shipment", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 410
+#line 409
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -3780,77 +3822,77 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 411
+#line 410
  testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 412
+#line 411
  testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 413
+#line 412
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 414
+#line 413
  testRunner.Then("User enters into the  iCargo \'Create Shipment\' page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 415
+#line 414
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 416
+#line 415
  testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\",Unknown ShipperCode \"{1}" +
                             "\", ConsigneeCode \"{2}\"", agentCode, unknownShipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 417
+#line 416
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 418
+#line 417
  testRunner.And("User enters the Certificate details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 419
+#line 418
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 420
+#line 419
  testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
                             "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
                             "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 421
+#line 420
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 422
+#line 421
  testRunner.And("User clicks on the Select Flight Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 423
+#line 422
  testRunner.And("User selects an \"Combination\" flight", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 424
+#line 423
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 425
+#line 424
  testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 426
+#line 425
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 427
+#line 426
  testRunner.And("User clicks on the ContinueChargeDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 428
+#line 427
  testRunner.And("User enters the Acceptance details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 429
+#line 428
  testRunner.And("User clicks on the ContinueAcceptanceDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 430
+#line 429
  testRunner.And("User enters the Screening details for row 1 with screeingMethod as \'Transfer Mani" +
                         "fest Verified\' and ScreeningResult as \'Pass\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 431
+#line 430
  testRunner.And("User clicks on the ContinueScreeningDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 432
+#line 431
  testRunner.And("User clicks on the save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 433
+#line 432
  testRunner.And("User saves the shipment details validate error message as \"No credit account exis" +
                         "ts.\" and capture AWB number", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -3864,11 +3906,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00021")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -4013,7 +4058,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Execute", execute);
             argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000021_Rebook an AWB in LTE001", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 441
+#line 440
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -4023,112 +4068,112 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 442
+#line 441
  testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 443
+#line 442
  testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 444
+#line 443
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 445
+#line 444
  testRunner.Then("User enters into the  iCargo \'Create Shipment\' page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 446
+#line 445
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 447
+#line 446
  testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
                             "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 448
+#line 447
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 449
+#line 448
  testRunner.And("User enters the Certificate details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 450
+#line 449
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 451
+#line 450
  testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
                             "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
                             "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 452
+#line 451
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 453
+#line 452
  testRunner.And("User clicks on the Select Flight Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 454
+#line 453
  testRunner.And("User selects an available flight", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 455
+#line 454
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 456
+#line 455
  testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 457
+#line 456
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 458
+#line 457
  testRunner.And("User clicks on the ContinueChargeDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 459
+#line 458
  testRunner.And("User enters the Acceptance details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 460
+#line 459
  testRunner.And("User clicks on the ContinueAcceptanceDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 461
+#line 460
  testRunner.And("User enters the Screening details for row 1 with screeingMethod as \'Transfer Mani" +
                         "fest Verified\' and ScreeningResult as \'Pass\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 462
+#line 461
  testRunner.And("User clicks on the ContinueScreeningDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 463
+#line 462
  testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 464
+#line 463
  testRunner.And("User saves all the details & handles all the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 465
+#line 464
  testRunner.When("User enters the Executed AWB number", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 466
+#line 465
  testRunner.And("User Reopens the AWB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 467
+#line 466
  testRunner.And(string.Format("User verifies and Update the field \'destination\' with updated value as \"{0}\" in t" +
                             "he Shipment Details", updatedValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 468
+#line 467
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 469
+#line 468
  testRunner.And("User verifies and Update the Flight Details with \'destination\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 470
+#line 469
  testRunner.And("User clicks on the Select Flight Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 471
+#line 470
  testRunner.And("User selects an available flight", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 472
+#line 471
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 480
+#line 479
  testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 481
+#line 480
  testRunner.And(string.Format("User saves the details with capturing irregularity for flight destination change " +
                             "with ChargeType \"{0}\"", chargeType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 482
+#line 481
  testRunner.And("User validates the AWB is \"EXECUTED\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -4141,11 +4186,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00023")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -4290,7 +4338,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Execute", execute);
             argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000023_Create an AWB for an unknown shipper on a freighter", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 485
+#line 484
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -4300,79 +4348,79 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 486
+#line 485
  testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 487
+#line 486
  testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 488
+#line 487
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 489
+#line 488
  testRunner.Then("User enters into the  iCargo \'Create Shipment\' page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 490
+#line 489
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 491
+#line 490
  testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\",Unknown ShipperCode \"{1}" +
                             "\", ConsigneeCode \"{2}\"", agentCode, unknownShipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 492
+#line 491
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 493
+#line 492
  testRunner.And("User enters the Certificate details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 494
+#line 493
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 495
+#line 494
  testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
                             "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
                             "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 496
+#line 495
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 497
+#line 496
  testRunner.And("User clicks on the Select Flight Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 498
+#line 497
  testRunner.And("User selects an \"Cargo-Only\" flight", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 499
+#line 498
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 500
+#line 499
  testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 501
+#line 500
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 502
+#line 501
  testRunner.And("User clicks on the ContinueChargeDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 503
+#line 502
  testRunner.And("User enters the Acceptance details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 504
+#line 503
  testRunner.And("User clicks on the ContinueAcceptanceDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 505
+#line 504
  testRunner.And("User clicks on the save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 506
+#line 505
  testRunner.And("User captures the checksheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 509
+#line 508
  testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 510
+#line 509
  testRunner.And("User clicks on the save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 511
+#line 510
  testRunner.And("User saves all the details & handles all the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -4386,11 +4434,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00024")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -4536,7 +4587,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000024_Create an AWB for an unknown shipper with routing wholly within" +
                     " SOA", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 514
+#line 513
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -4546,86 +4597,86 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 515
+#line 514
  testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 516
+#line 515
  testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 517
+#line 516
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 518
+#line 517
  testRunner.Then("User enters into the  iCargo \'Create Shipment\' page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 519
+#line 518
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 520
+#line 519
  testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\",Unknown ShipperCode \"{1}" +
                             "\", ConsigneeCode \"{2}\"", agentCode, unknownShipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 521
+#line 520
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 522
+#line 521
  testRunner.And("User enters the Certificate details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 523
+#line 522
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 524
+#line 523
  testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
                             "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
                             "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 525
+#line 524
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 526
+#line 525
  testRunner.And("User clicks on the Select Flight Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 527
+#line 526
  testRunner.And("User selects an \"Combination\" flight", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 528
+#line 527
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 529
+#line 528
  testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 530
+#line 529
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 531
+#line 530
  testRunner.And("User clicks on the ContinueChargeDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 532
+#line 531
  testRunner.And("User enters the Acceptance details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 533
+#line 532
  testRunner.And("User clicks on the ContinueAcceptanceDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 534
+#line 533
  testRunner.And("User enters the Screening details for row 1 with screeingMethod as \'Transfer Mani" +
                         "fest Verified\' and ScreeningResult as \'Pass\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 535
+#line 534
  testRunner.And("User clicks on the ContinueScreeningDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 536
+#line 535
  testRunner.And("User clicks on the save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 537
+#line 536
  testRunner.And("User captures the checksheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 538
+#line 537
  testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 539
+#line 538
  testRunner.And("User clicks on the save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 540
+#line 539
  testRunner.And("User saves all the details & handles all the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -4638,11 +4689,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00028")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "100", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "600", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "750", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
@@ -4787,7 +4841,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Execute", execute);
             argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000028_Change the rated customer field when accepting an AWB", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 543
+#line 542
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -4797,83 +4851,83 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 544
+#line 543
  testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 545
+#line 544
  testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 546
+#line 545
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 547
+#line 546
  testRunner.Then("User enters into the  iCargo \'Create Shipment\' page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 548
+#line 547
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 549
+#line 548
  testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
                             "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 550
+#line 549
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 551
+#line 550
  testRunner.And("User enters the Certificate details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 552
+#line 551
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 553
+#line 552
  testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
                             "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
                             "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 554
+#line 553
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 555
+#line 554
  testRunner.And("User clicks on the Select Flight Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 556
+#line 555
  testRunner.And("User selects an \"Combination\" flight", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 557
+#line 556
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 558
+#line 557
  testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 559
+#line 558
  testRunner.And(string.Format("User checks the ThirdParty checkbox and enters the RatedCustomer \"{0}\"", ratedCustomer), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 560
+#line 559
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 561
+#line 560
  testRunner.And("User clicks on the ContinueChargeDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 562
+#line 561
  testRunner.And("User enters the Acceptance details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 563
+#line 562
  testRunner.And("User clicks on the ContinueAcceptanceDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 564
+#line 563
  testRunner.And("User enters the Screening details for row 1 with screeingMethod as \'Transfer Mani" +
                         "fest Verified\' and ScreeningResult as \'Pass\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 565
+#line 564
  testRunner.And("User clicks on the ContinueScreeningDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 566
+#line 565
  testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 567
+#line 566
  testRunner.And("User saves all the details & handles all the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 568
+#line 567
  testRunner.And(string.Format("User validates the CID under Account Info in paymentportal with the RatedCustomer" +
                             " \"{0}\"", ratedCustomer), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

@@ -85,6 +85,9 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "26", "123", "CC", "None", "CART", "LyingList", "16", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00002", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "HNL", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "HNL", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SAN", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SAN", "JFK", "GENERAL", "None", "0316", "None", "None", "2", "234", "CC", "None", "CART", "PlannedShipment", "", "", "1", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00004", null)]
         [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "HNL", "PRIORITY", "None", "2199", "None", "None", "10", "189", "CC", "None", "CART", "PlannedShipment", "", "", "1", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00004", null)]
@@ -286,6 +289,470 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User validates the error popover message as \"AWB is not accepted\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 35
+ testRunner.Then("User closes the Export Manifest screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("OPR344_EXP_00002_Manifest an AWB from the lying list")]
+        [NUnit.Framework.CategoryAttribute("OPR344")]
+        [NUnit.Framework.CategoryAttribute("OPR344_EXP_00002")]
+        [NUnit.Framework.CategoryAttribute("DataSource:../TestData/OPR344_ExportManifest_TestData.xlsx")]
+        [NUnit.Framework.CategoryAttribute("DataSet:OPR344_EXP_00001")]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "C1001", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "C1001", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "26", "123", "CC", "None", "CART", "LyingList", "16", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "HNL", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "HNL", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SAN", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SAN", "JFK", "GENERAL", "None", "0316", "None", "None", "2", "234", "CC", "None", "CART", "PlannedShipment", "", "", "1", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "HNL", "PRIORITY", "None", "2199", "None", "None", "10", "189", "CC", "None", "CART", "PlannedShipment", "", "", "1", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "JFK", "GENERAL", "None", "0316", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "26", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "BOS", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "30", "PP", "CREDIT", "CART", "PlannedShipment", "", "", "", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "OPR344_EXP_00006", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "BOS", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "65", "PP", "CREDIT", "CART", "PlannedShipment", "", "", "", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "OPR344_EXP_00006", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "BOS", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "99", "PP", "CREDIT", "CART", "PlannedShipment", "", "", "", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "OPR344_EXP_00006", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "OME", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "OME", "PRIORITY", "None", "2199", "None", "None", "10", "287", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "OME", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "LyingList", "155", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "14", "198", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00013", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00014", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "JFK", "GENERAL", "None", "0316", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "26", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "OME", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "1", "30", "CC", "None", "CART", "LyingList", "155", "", "", "3480", "Lithium ion batteries", "965", "0.5", "No", "", "", "Yes", "OPR344_EXP_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "C1001", "11377", "ANC", "OME", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "LyingList", "155", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00018", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "OME", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "1", "30", "CC", "None", "CART", "PlannedShipment", "", "", "", "3480", "Lithium ion batteries", "965", "0.5", "No", "ANC", "CAO", "Yes", "OPR344_EXP_00020", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00022", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "C1001", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "2", "60", "CC", "None", "CART", "LyingList", "173", "", "1", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00025", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "2", "60", "CC", "None", "CART", "LyingList", "173", "", "1", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00026", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "2", "60", "CC", "None", "CART", "LyingList", "173", "", "1", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00027", null)]
+        public void OPR344_EXP_00002_ManifestAnAWBFromTheLyingList(
+                    string agentCode, 
+                    string shipperCode, 
+                    string unknownShipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string aWBSectionName, 
+                    string flightNumber, 
+                    string newFlightNumber, 
+                    string splitPieces, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string station, 
+                    string handlingCode, 
+                    string execute, 
+                    string tags, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "OPR344",
+                    "OPR344_EXP_00002",
+                    "DataSource:../TestData/OPR344_ExportManifest_TestData.xlsx",
+                    "DataSet:OPR344_EXP_00001"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("AWBSectionName", aWBSectionName);
+            argumentsOfScenario.Add("FlightNumber", flightNumber);
+            argumentsOfScenario.Add("NewFlightNumber", newFlightNumber);
+            argumentsOfScenario.Add("SplitPieces", splitPieces);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("Station", station);
+            argumentsOfScenario.Add("HandlingCode", handlingCode);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("OPR344_EXP_00002_Manifest an AWB from the lying list", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 38
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 39
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\"", execute), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 40
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 41
+ testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 42
+ testRunner.Then("User enters into the  iCargo \'Create Shipment\' page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 43
+ testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 44
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 45
+ testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 46
+ testRunner.And("User enters the Certificate details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 47
+ testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 48
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 49
+ testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 50
+ testRunner.And("User clicks on the Select Flight Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 51
+ testRunner.And("User selects an \"Combination\" flight", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 52
+ testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 53
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 54
+ testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 55
+ testRunner.And("User clicks on the ContinueChargeDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 56
+ testRunner.And("User enters the Acceptance details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 57
+ testRunner.And("User clicks on the ContinueAcceptanceDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 58
+ testRunner.And("User enters the Screening details for row 1 with screeingMethod as \'Transfer Mani" +
+                        "fest Verified\' and ScreeningResult as \'Pass\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 59
+ testRunner.And("User clicks on the ContinueScreeningDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 60
+ testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 61
+ testRunner.And("User saves all the details & handles all the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 62
+ testRunner.When("User enters the screen name as \'OPR344\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 63
+ testRunner.Then("User enters into the  iCargo \'Export Manifest\' page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 64
+ testRunner.When(string.Format("User enters the Booked FlightNumber with \"{0}\"", flightNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 65
+ testRunner.And("User enters Booked ShipmentDate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 66
+ testRunner.And("User clicks on the List button to fetch the Booked Shipment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 67
+ testRunner.And(string.Format("User creates new ULD/Cart in Assigned Shipment with cartType \"{0}\" and pou \"{1}\"", cartType, destination), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 68
+ testRunner.And(string.Format("User filterouts the Booked AWB from \'{0}\' and Created ULD_Cart", aWBSectionName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 69
+ testRunner.And("User handles any pop up error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 70
+ testRunner.And("User validates the warning message \"The shipment is not booked to the flight\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 71
+ testRunner.And("User clicks on the Manifest button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 72
+ testRunner.And("User closes the PrintPDF window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 73
+ testRunner.And("User validates the AWB is \"Manifested\" in the Export Manifest screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 74
+ testRunner.Then("User closes the Export Manifest screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("OPR344_EXP_00003_Manifest an AWB onto its booked flight")]
+        [NUnit.Framework.CategoryAttribute("OPR344")]
+        [NUnit.Framework.CategoryAttribute("OPR344_EXP_00003")]
+        [NUnit.Framework.CategoryAttribute("DataSource:../TestData/OPR344_ExportManifest_TestData.xlsx")]
+        [NUnit.Framework.CategoryAttribute("DataSet:OPR344_EXP_00001")]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "C1001", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "C1001", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "26", "123", "CC", "None", "CART", "LyingList", "16", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "HNL", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "HNL", "PRIORITY", "None", "2199", "None", "None", "8", "360", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SAN", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SAN", "JFK", "GENERAL", "None", "0316", "None", "None", "2", "234", "CC", "None", "CART", "PlannedShipment", "", "", "1", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "HNL", "PRIORITY", "None", "2199", "None", "None", "10", "189", "CC", "None", "CART", "PlannedShipment", "", "", "1", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "JFK", "GENERAL", "None", "0316", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "26", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "BOS", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "30", "PP", "CREDIT", "CART", "PlannedShipment", "", "", "", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "OPR344_EXP_00006", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "BOS", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "65", "PP", "CREDIT", "CART", "PlannedShipment", "", "", "", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "OPR344_EXP_00006", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "BOS", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "99", "PP", "CREDIT", "CART", "PlannedShipment", "", "", "", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "OPR344_EXP_00006", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "OME", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "OME", "PRIORITY", "None", "2199", "None", "None", "10", "287", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "OME", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "LyingList", "155", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "14", "198", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00013", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00014", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "JFK", "GENERAL", "None", "0316", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "26", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "OME", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "1", "30", "CC", "None", "CART", "LyingList", "155", "", "", "3480", "Lithium ion batteries", "965", "0.5", "No", "", "", "Yes", "OPR344_EXP_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "C1001", "11377", "ANC", "OME", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "LyingList", "155", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00018", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "ANC", "OME", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "1", "30", "CC", "None", "CART", "PlannedShipment", "", "", "", "3480", "Lithium ion batteries", "965", "0.5", "No", "ANC", "CAO", "Yes", "OPR344_EXP_00020", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "2", "59", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00022", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "C1001", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "2", "60", "CC", "None", "CART", "LyingList", "173", "", "1", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00025", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "2", "60", "CC", "None", "CART", "LyingList", "173", "", "1", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00026", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "2", "60", "CC", "None", "CART", "LyingList", "173", "", "1", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00027", null)]
+        public void OPR344_EXP_00003_ManifestAnAWBOntoItsBookedFlight(
+                    string agentCode, 
+                    string shipperCode, 
+                    string unknownShipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string aWBSectionName, 
+                    string flightNumber, 
+                    string newFlightNumber, 
+                    string splitPieces, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string station, 
+                    string handlingCode, 
+                    string execute, 
+                    string tags, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "OPR344",
+                    "OPR344_EXP_00003",
+                    "DataSource:../TestData/OPR344_ExportManifest_TestData.xlsx",
+                    "DataSet:OPR344_EXP_00001"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("AWBSectionName", aWBSectionName);
+            argumentsOfScenario.Add("FlightNumber", flightNumber);
+            argumentsOfScenario.Add("NewFlightNumber", newFlightNumber);
+            argumentsOfScenario.Add("SplitPieces", splitPieces);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("Station", station);
+            argumentsOfScenario.Add("HandlingCode", handlingCode);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("OPR344_EXP_00003_Manifest an AWB onto its booked flight", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 77
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 78
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\"", execute), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 79
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 80
+ testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 81
+ testRunner.Then("User enters into the  iCargo \'Create Shipment\' page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 82
+ testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 83
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 84
+ testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 85
+ testRunner.And("User enters the Certificate details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 86
+ testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 87
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 88
+ testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 89
+ testRunner.And("User clicks on the Select Flight Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 90
+ testRunner.And("User selects an \"Combination\" flight", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 91
+ testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 92
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 93
+ testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 94
+ testRunner.And("User clicks on the ContinueChargeDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 95
+ testRunner.And("User enters the Acceptance details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 96
+ testRunner.And("User clicks on the ContinueAcceptanceDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 97
+ testRunner.And("User enters the Screening details for row 1 with screeingMethod as \'Transfer Mani" +
+                        "fest Verified\' and ScreeningResult as \'Pass\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 98
+ testRunner.And("User clicks on the ContinueScreeningDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 99
+ testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 100
+ testRunner.And("User saves all the details & handles all the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 101
+ testRunner.When("User enters the screen name as \'OPR344\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 102
+ testRunner.Then("User enters into the  iCargo \'Export Manifest\' page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 103
+ testRunner.When("User enters the Booked FlightNumber with \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 104
+ testRunner.And("User enters Booked ShipmentDate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 105
+ testRunner.And("User clicks on the List button to fetch the Booked Shipment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 106
+ testRunner.And(string.Format("User creates new ULD/Cart in Assigned Shipment with cartType \"{0}\" and pou \"{1}\"", cartType, destination), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 107
+ testRunner.And(string.Format("User filterouts the Booked AWB from \'{0}\' and Created ULD_Cart", aWBSectionName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 108
+ testRunner.And("User clicks on the Manifest button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 109
+ testRunner.And("User closes the PrintPDF window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 110
+ testRunner.And("User validates the AWB is \"Manifested\" in the Export Manifest screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 111
  testRunner.Then("User closes the Export Manifest screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
