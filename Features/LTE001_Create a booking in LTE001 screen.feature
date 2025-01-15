@@ -344,8 +344,7 @@ Scenario Outline: LTE001_ACC_000015_Create an AWB for a CAO DG shipment and book
 	And User enters the Acceptance details
 	And User clicks on the ContinueAcceptanceDetails button
 	And User enters the Screening details for row 1 with screeingMethod as 'ALT Dangerous Goods' and ScreeningResult as 'Pass'
-	And User clicks on the ContinueScreeningDetails button
-	And User clicks on the save button
+	And User clicks on the ContinueScreeningDetails button	
 	And User validates the error message "SPECIFIED SHIPMENT TYPE NOT SUITED FOR SELECTED AIRCRAFT TYPE" in the Embargo Details popup
 
 @LTE001 @LTE001_ACC_00016 @DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx @DataSet:LTE001_ACC_00001
