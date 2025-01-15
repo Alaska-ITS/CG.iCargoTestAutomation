@@ -64,20 +64,25 @@ namespace iCargoUIAutomation.Hooks
             extent.AttachReporter(htmlReporter);
             azureStorage = new AzureStorage(testDataContainername);
             var excelFiles = azureStorage.GetBlobFileNames()
-                          .Where(fileName => fileName.EndsWith(".xlsx", StringComparison.OrdinalIgnoreCase))
-                          .ToList();
+                           .Where(fileName => fileName.EndsWith(".xlsx", StringComparison.OrdinalIgnoreCase))
+                           .ToList();
 
-            // Ensure TestData folder exists in the solution directory
+            // Use pipeline or fallback directory for saving files
             string solutionDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-            string testDataFolderPath = Path.Combine(solutionDirectory, "TestData");
-            //Directory.CreateDirectory(testDataFolderPath);
+            string testDataFolderPath = Path.Combine(solutionDirectory, "TestData");            
+            Directory.CreateDirectory(testDataFolderPath);
 
             foreach (var fileName in excelFiles)
             {
                 try
                 {
-                    // Build local file path for downloading
                     string localFilePath = Path.Combine(testDataFolderPath, fileName);
+
+                    if (File.Exists(localFilePath))
+                    {
+                        Console.WriteLine($"Deleting existing file: {localFilePath}");
+                        File.Delete(localFilePath);
+                    }
                     var downloadedFilePath = azureStorage.DownloadFileFromBlob(fileName, localFilePath);
                     Console.WriteLine($"Downloaded test data file: {fileName} to {downloadedFilePath}");
                 }
@@ -86,6 +91,8 @@ namespace iCargoUIAutomation.Hooks
                     Console.WriteLine($"Failed to download file {fileName}. Error: {ex.Message}");
                 }
             }
+
+            Console.WriteLine("File download completed.");
         }
 
         [AfterTestRun]

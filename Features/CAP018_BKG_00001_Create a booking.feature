@@ -1,6 +1,6 @@
 ﻿Feature: CAP018 Test Cases
 
-@CAP018 @CAP018_BKG_00001 @CAP @DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx @DataSet:CAP018_BKG_00001
+@CAP018 @CAP018_BKG_00001 @MAD @DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx @DataSet:CAP018_BKG_00001
 Scenario Outline: CAP018_BKG_00001_iCargo Login and Create New Shipment
 	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
 	When User switches station if BaseStation other than "<Origin>"
@@ -26,7 +26,7 @@ Scenario Outline: CAP018_BKG_00001_iCargo Login and Create New Shipment
 #	And User captures the irregularity details
 #	Then User logs out from the application
 
-	@CAP018 @CAP018_BKG_00003 @DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx @DataSet:CAP018_BKG_00001
+	@CAP018 @CAP018_BKG_00003 @MAD @DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx @DataSet:CAP018_BKG_00001
 Scenario Outline: CAP018_BKG_00003_Create a booking for an unknown shipper on a pax flight
 	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
 	When User switches station if BaseStation other than "<Origin>"
@@ -84,7 +84,7 @@ Scenario Outline: CAP018_BKG_00003_Create a booking for an unknown shipper on a 
 #	And An an Embargo pops up with a warning message to generate new AWB
 #	Then User logs out from the application
 #
-	@CAP018 @CAP018_BKG_00007 @DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx @DataSet:CAP018_BKG_00001
+	@CAP018 @CAP018_BKG_00007 @MAD @DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx @DataSet:CAP018_BKG_00001
 Scenario Outline: CAP018_BKG_00007_iCargo Login and Create New AVI Shipment
 	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
 	When User switches station if BaseStation other than "<Origin>"
