@@ -251,7 +251,7 @@ namespace iCargoUIAutomation.Hooks
                 }                
 
                 // Upload the updated file back to Azure Blob Storage
-               //azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
+               azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
 
                 File.Delete(tempLocalPath);
                 extent.Flush();
