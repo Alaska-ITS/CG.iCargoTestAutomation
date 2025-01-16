@@ -8,11 +8,31 @@
 
   <ItemGroup>
     <None Remove="appsettings.json" />
+    <None Remove="TestData\CAP018_MaintainBooking_TestData.xlsx" />
+    <None Remove="TestData\LTE001_CreateShipment_TestData.xlsx" />
+    <None Remove="TestData\OPR339_SecurityScreening_TestData.xlsx" />
+    <None Remove="TestData\OPR344_ExportManifest_TestData.xlsx" />
+    <None Remove="TestData\OPR367_ImportManifest_TestData.xlsx" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\CAP018_MaintainBooking_TestData.xlsx">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\LTE001_CreateShipment_TestData.xlsx">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\OPR339_SecurityScreening_TestData.xlsx">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\OPR344_ExportManifest_TestData.xlsx">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\OPR367_ImportManifest_TestData.xlsx">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
@@ -41,25 +61,6 @@
 
   <ItemGroup>
     <Folder Include="TestResults\" />
-    <Folder Include="TestData\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="TestData\CAP018_MaintainBooking_TestData.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="TestData\LTE001_CreateShipment_TestData.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="TestData\OPR339_SecurityScreening_TestData.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="TestData\OPR344_ExportManifest_TestData.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="TestData\OPR367_ImportManifest_TestData.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>
