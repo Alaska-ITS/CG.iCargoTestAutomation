@@ -80,26 +80,116 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_00001_CreateAPPAWBInLTE001ForAKnownShipper(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -114,25 +204,31 @@ namespace iCargoUIAutomation.Features
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_00001_Create a PP AWB in LTE001 for a known shipper", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
@@ -145,10 +241,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 5
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -160,8 +256,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\", ShipperCode \"<S" +
-                        "hipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -173,7 +269,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -188,8 +286,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 19
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 20
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -228,26 +325,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_00002_CreateAnAWBInLTE001ForAnUnknownShipperOnARestrictedPaxFlight(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -262,25 +449,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_00002_Create an AWB in LTE001 for an unknown shipper on a restricted p" +
                     "ax flight", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 30
@@ -294,10 +487,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 31
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 32
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 33
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -309,8 +502,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 36
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\",Unknown ShipperC" +
-                        "ode \"<UnknownShipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\",Unknown ShipperCode \"{1}" +
+                            "\", ConsigneeCode \"{2}\"", agentCode, unknownShipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 37
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -322,7 +515,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 40
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 41
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -337,8 +532,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 45
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 46
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -373,26 +567,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_00003_CreateADGAWBInLTE001(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -407,25 +691,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_00003_Create a DG AWB in LTE001", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 55
 this.ScenarioInitialize(scenarioInfo);
@@ -438,10 +728,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 56
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 57
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 58
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -453,8 +743,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 61
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\", ShipperCode \"<S" +
-                        "hipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 62
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -466,7 +756,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 65
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 66
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -481,8 +773,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 70
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 71
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -504,7 +795,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueScreeningDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 77
- testRunner.And(@"User Save Shipment with DG Details & Capture Checksheet with ChargeType ""<ChargeType>"",UNID ""<UNID>"", ProperShipmentName ""<ProperShipmentName>"", PackingInstruction ""<PackingInstruction>"",NoOfPkg ""<Piece>"", NetQtyPerPkg ""<NetQtyPerPkg>"", ReportableQnty ""<ReportableQnty>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User Save Shipment with DG Details & Capture Checksheet with ChargeType \"{0}\",UNI" +
+                            "D \"{1}\", ProperShipmentName \"{2}\", PackingInstruction \"{3}\",NoOfPkg \"{4}\", NetQt" +
+                            "yPerPkg \"{5}\", ReportableQnty \"{6}\"", chargeType, uNID, properShipmentName, packingInstruction, piece, netQtyPerPkg, reportableQnty), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -517,26 +810,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_00004_CreateAnAWBInLTE001UsingASpecificCommodityCode(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -551,25 +934,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_00004_Create an AWB in LTE001 using a specific commodity code", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 80
 this.ScenarioInitialize(scenarioInfo);
@@ -582,10 +971,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 81
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 82
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 83
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -597,8 +986,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 86
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\", ShipperCode \"<S" +
-                        "hipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 87
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -610,7 +999,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 90
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 91
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -625,8 +1016,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 95
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 96
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -667,26 +1057,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_00005_CreateACCAWBInLTE001ForAKnownShipper(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -701,25 +1181,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_00005_Create a CC AWB in LTE001 for a known shipper", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 107
 this.ScenarioInitialize(scenarioInfo);
@@ -732,10 +1218,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 108
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 109
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 110
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -747,8 +1233,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 113
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\", ShipperCode \"<S" +
-                        "hipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 114
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -760,7 +1246,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 117
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 118
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -775,8 +1263,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 122
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 123
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -813,26 +1300,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00007")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_00007_CreateAnAWBInLTE001ThatHasPiecesThatFailScreening(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -846,25 +1423,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_00007_Create an AWB in LTE001 that has pieces that fail screening", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 133
 this.ScenarioInitialize(scenarioInfo);
@@ -877,10 +1460,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 134
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 135
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 136
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -892,8 +1475,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 139
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\", ShipperCode \"<S" +
-                        "hipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 140
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -905,7 +1488,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 143
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 144
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -920,8 +1505,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 148
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 149
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -966,26 +1550,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00008")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_00008_ReopenAnAWBAndChangePieceCountAndWeightAndReexecute(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -999,25 +1673,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_00008_Reopen an AWB and change piece count and weight and reexecute", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 161
 this.ScenarioInitialize(scenarioInfo);
@@ -1030,10 +1710,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 162
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 163
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 164
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1045,8 +1725,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 167
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\", ShipperCode \"<S" +
-                        "hipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 168
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1058,7 +1738,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 171
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 172
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1073,8 +1755,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 176
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 177
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1108,8 +1789,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User Reopens the AWB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 187
- testRunner.And("User verifies and Update the field \'piece&weight\' with updated value as \"<Updated" +
-                        "Value>\" in the Shipment Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User verifies and Update the field \'piece&weight\' with updated value as \"{0}\" in " +
+                            "the Shipment Details", updatedValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 188
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1173,26 +1854,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00009")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_00009_CreateAndAcceptAnAWBForAKnownShipperBookedOnPaxFlightsWithoutScreeningDetails(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1206,25 +1977,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_00009_Create and accept an AWB for a known shipper booked on pax fligh" +
                     "ts without screening details", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 207
@@ -1238,10 +2015,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 208
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 209
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 210
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1253,8 +2030,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 213
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\", ShipperCode \"<S" +
-                        "hipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 214
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1266,7 +2043,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 217
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 218
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1281,8 +2060,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 222
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 223
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1316,26 +2094,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00010")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_00010_ReopenAnAWBAndChangeTheFinalDestinationAndReexecute(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1349,25 +2217,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_00010_Reopen an AWB and change the final destination and reexecute", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 232
 this.ScenarioInitialize(scenarioInfo);
@@ -1380,10 +2254,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 233
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 234
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 235
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1395,8 +2269,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 238
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\", ShipperCode \"<S" +
-                        "hipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 239
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1408,7 +2282,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 242
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 243
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1423,8 +2299,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 247
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 248
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1458,8 +2333,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User Reopens the AWB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 258
- testRunner.And("User verifies and Update the field \'destination\' with updated value as \"<UpdatedV" +
-                        "alue>\" in the Shipment Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User verifies and Update the field \'destination\' with updated value as \"{0}\" in t" +
+                            "he Shipment Details", updatedValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 259
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1501,8 +2376,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 272
- testRunner.And("User saves the details with capturing irregularity for flight destination change " +
-                        "with ChargeType \"<ChargeType>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User saves the details with capturing irregularity for flight destination change " +
+                            "with ChargeType \"{0}\"", chargeType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 273
  testRunner.And("User validates the AWB is \"EXECUTED\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1518,26 +2393,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00011")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_000011_CreateAnAWBForAKnownShipperThatHasFirstFlightOnFreighterAndNextFlightOnPax(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1551,25 +2516,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000011_Create an AWB for a known shipper that has first flight on frei" +
                     "ghter and next flight on pax", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 276
@@ -1583,10 +2554,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 277
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 278
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 279
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1598,8 +2569,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 282
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\", ShipperCode \"<S" +
-                        "hipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 283
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1611,7 +2582,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 286
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 287
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1627,8 +2600,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 291
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 292
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1662,26 +2634,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00012")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_000012_CreateAnAWBForAnUnknownShipperGoingFromFreighterToPax(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1695,25 +2757,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000012_Create an AWB for an unknown shipper going from freighter to pa" +
                     "x", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 301
@@ -1727,10 +2795,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 302
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 303
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 304
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1742,8 +2810,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 307
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\",Unknown ShipperC" +
-                        "ode \"<UnknownShipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\",Unknown ShipperCode \"{1}" +
+                            "\", ConsigneeCode \"{2}\"", agentCode, unknownShipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 308
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1755,7 +2823,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 311
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 312
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1770,8 +2840,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 316
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 317
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1805,26 +2874,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00015")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_000015_CreateAnAWBForACAODGShipmentAndBookOnAPaxFlight(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1838,25 +2997,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000015_Create an AWB for a CAO DG shipment and book on a pax flight", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 326
 this.ScenarioInitialize(scenarioInfo);
@@ -1869,10 +3034,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 327
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 328
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 329
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1884,8 +3049,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 332
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\", ShipperCode \"<S" +
-                        "hipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 333
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1897,7 +3062,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 336
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 337
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1912,8 +3079,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 341
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 342
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1948,26 +3114,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00016")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_000016_CreateAnAWBForAnEmployeeShipment(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1981,25 +3237,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000016_Create an AWB for an Employee Shipment", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 351
 this.ScenarioInitialize(scenarioInfo);
@@ -2012,10 +3274,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 352
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 353
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 354
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2027,8 +3289,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 357
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\", ShipperCode \"<S" +
-                        "hipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 358
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2040,7 +3302,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 361
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 362
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2055,8 +3319,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 366
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 367
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2105,26 +3368,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00017")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_000017_CreateACOMATAWB(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -2138,25 +3491,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000017_Create a COMAT AWB", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 381
 this.ScenarioInitialize(scenarioInfo);
@@ -2169,10 +3528,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 382
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 383
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 384
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2184,8 +3543,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 387
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\", ShipperCode \"<S" +
-                        "hipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 388
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2197,7 +3556,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 391
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 392
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2212,8 +3573,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 396
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 397
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2257,26 +3617,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00019")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_000019_CreateAnAWBForAnEmployeeWhoIsAnUnknownShipperForAProductOtherThanEmployeeShipment(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -2290,25 +3740,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000019_Create an AWB for an Employee who is an unknown shipper for a p" +
                     "roduct other than Employee Shipment", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 409
@@ -2322,10 +3778,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 410
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 411
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 412
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2337,8 +3793,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 415
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\",Unknown ShipperC" +
-                        "ode \"<UnknownShipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\",Unknown ShipperCode \"{1}" +
+                            "\", ConsigneeCode \"{2}\"", agentCode, unknownShipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 416
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2350,7 +3806,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 419
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 420
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2365,8 +3823,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 424
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 425
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2404,26 +3861,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00021")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_000021_RebookAnAWBInLTE001(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -2437,25 +3984,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000021_Rebook an AWB in LTE001", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 440
 this.ScenarioInitialize(scenarioInfo);
@@ -2468,10 +4021,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 441
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 442
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 443
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2483,8 +4036,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 446
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\", ShipperCode \"<S" +
-                        "hipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 447
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2496,7 +4049,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 450
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 451
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2511,8 +4066,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 455
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 456
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2546,8 +4100,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User Reopens the AWB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 466
- testRunner.And("User verifies and Update the field \'destination\' with updated value as \"<UpdatedV" +
-                        "alue>\" in the Shipment Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User verifies and Update the field \'destination\' with updated value as \"{0}\" in t" +
+                            "he Shipment Details", updatedValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 467
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2568,8 +4122,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 480
- testRunner.And("User saves the details with capturing irregularity for flight destination change " +
-                        "with ChargeType \"<ChargeType>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User saves the details with capturing irregularity for flight destination change " +
+                            "with ChargeType \"{0}\"", chargeType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 481
  testRunner.And("User validates the AWB is \"EXECUTED\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2584,26 +4138,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00023")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_000023_CreateAnAWBForAnUnknownShipperOnAFreighter(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -2617,25 +4261,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000023_Create an AWB for an unknown shipper on a freighter", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 484
 this.ScenarioInitialize(scenarioInfo);
@@ -2648,10 +4298,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 485
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 486
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 487
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2663,8 +4313,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 490
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\",Unknown ShipperC" +
-                        "ode \"<UnknownShipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\",Unknown ShipperCode \"{1}" +
+                            "\", ConsigneeCode \"{2}\"", agentCode, unknownShipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 491
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2676,7 +4326,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 494
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 495
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2691,8 +4343,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 499
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 500
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2732,26 +4383,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00024")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_000024_CreateAnAWBForAnUnknownShipperWithRoutingWhollyWithinSOA(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -2765,25 +4506,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000024_Create an AWB for an unknown shipper with routing wholly within" +
                     " SOA", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 513
@@ -2797,10 +4544,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 514
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 515
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 516
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2812,8 +4559,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 519
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\",Unknown ShipperC" +
-                        "ode \"<UnknownShipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\",Unknown ShipperCode \"{1}" +
+                            "\", ConsigneeCode \"{2}\"", agentCode, unknownShipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 520
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2825,7 +4572,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 523
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 524
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2840,8 +4589,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 528
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 529
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2887,26 +4635,116 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("LTE001_ACC_00028")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/LTE001_CreateShipment_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:LTE001_ACC_00001")]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "10", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "NONSCR", "None", "None", "8", "20", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "35", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00001", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "8", "11", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "GEG", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "7", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DEN", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "2", "3", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00002", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "7", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "8", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "9", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "10", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "11", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "12", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "3", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "ANC", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "7", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "8", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "3", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "2", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "HNL", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "3", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN8000", "None", "1", "3", "PP", "CREDIT", "CART", "8000", "Consumer commodity", "Y963", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1845", "None", "2", "5", "PP", "CREDIT", "CART", "1845", "Dry ice", "954", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3110", "None", "3", "7", "PP", "CREDIT", "CART", "3110", "Organic peroxide type F, solid *", "570", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN2807", "None", "1", "1", "CC", "None", "CART", "2807", "Magnetized material", "953", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1977", "None", "2", "3", "CC", "None", "CART", "1977", "Nitrogen, refrigerated liquid", "202", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1760", "None", "3", "2", "CC", "None", "CART", "1760", "Corrosive liquid n.o.s. *", "850", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3373", "None", "1", "4", "CC", "None", "CART", "3373", "Biological substance, Category B", "650", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1993", "None", "2", "6", "CC", "None", "CART", "1993", "Flammable liquid n.o.s. *", "351", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1324", "None", "3", "7", "CC", "None", "CART", "1324", "Films, nitrocellulose base", "Y454", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3481", "None", "1", "12", "CC", "None", "CART", "3481", "Lithium ion batteries contained in equipment", "967", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN3287", "None", "2", "3", "CC", "None", "CART", "3287", "Toxic liquid, inorganic n.o.s. *", "652", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "DGR", "NONSCR", "UN1369", "None", "3", "5", "CC", "None", "CART", "1369", "p-Nitrosodimethylaniline", "467", "0.5", "No", "", "", "Yes", "LTE001_ACC_00003", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "6", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "3", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "ANC", "SEA", "PRIORITY", "None", "0300", "None", "None", "7", "34", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "8", "11", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SAN", "JFK", "PRIORITY", "None", "0666", "None", "None", "2", "9", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00004", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "6", "32", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "1", "1", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "8", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00005", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "20", "6", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "18", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "GENERAL", "None", "NONSCR", "None", "None", "20", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DFW", "SEA", "PRIORITY", "None", "NONSCR", "None", "None", "18", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "DEN", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "7", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00007", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "2", "1", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "PRIORITY", "None", "2199", "None", "None", "12", "23", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "22", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PET CONNECT", "None", "NONSCR", "None", "None", "2", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "1", "", "Yes", "LTE001_ACC_00008", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "GENERAL", "None", "NONSCR", "None", "None", "13", "8", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "NONSCR", "None", "None", "6", "9", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "None", "NONSCR", "None", "None", "8", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00009", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "6", "PP", "CREDIT", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "66", "PP", "CREDIT", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00010", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GENERAL", "None", "0316", "None", "None", "13", "5", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "PRIORITY", "None", "2199", "None", "None", "8", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "OTZ", "SEA", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "59", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00011", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "4", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "JFK", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00012", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN1170", "None", "1", "6", "CC", "None", "CART", "1170", "Ethanol", "364", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", "UN3480", "None", "76", "5", "CC", "None", "CART", "3090", "Lithium metal batteries", "968", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "ANC", "PRIORITY", "DGR,CAO", "NONSCR", " UN3480", "None", "56", "7", "CC", "None", "CART", "1075", "Petroleum gases, liquefied", "200", "0.5", "No", "", "", "Yes", "LTE001_ACC_00015", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "11377", "10763", "SEA", "ANC", "Employee Shipment", "SAL", "NONSCR", "None", "None", "3", "6", "CC", "PP", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00016", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SEA", "LAX", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "8", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "COMATJJ", "COMATFF", "SAN", "JFK", "COMAT", "COM", "NONSCR", "None", "COMAT", "2", "9", "PP", "NONE", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00017", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GOLDSTREAK", "SAL", "NONSCR", "None", "None", "3", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00019", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "2", "5", "CC", "None", "CART", "", "", "", "", "", "PDX", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "LAX", "PRIORITY", "None", "2199", "None", "None", "36", "6", "CC", "None", "CART", "", "", "", "", "", "JFK", "", "Yes", "LTE001_ACC_00021", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00023", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "13", "14", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "PRIORITY", "None", "2199", "None", "None", "8", "23", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "", "10763", "KTN", "ANC", "GOLDSTREAK", "None", "NONSCR", "None", "None", "2", "2", "CC", "None", "CART", "", "", "", "", "", "", "", "Yes", "LTE001_ACC_00024", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11377", "11377", "SEA", "DEN", "GENERAL", "None", "NONSCR", "None", "None", "13", "12", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
+        [NUnit.Framework.TestCaseAttribute("11377", "", "11029", "10757", "SEA", "ANC", "PRIORITY", "None", "2300", "None", "None", "5", "7", "PP", "CREDIT", "CART", "", "", "", "", "", "", "10763", "Yes", "LTE001_ACC_00028", null)]
         public void LTE001_ACC_000028_ChangeTheRatedCustomerFieldWhenAcceptingAnAWB(
-                    string column0, 
-                    string column1, 
-                    string column2, 
-                    string column3, 
-                    string column4, 
-                    string column5, 
-                    string column6, 
-                    string column7, 
-                    string column8, 
-                    string column9, 
-                    string column10, 
-                    string column11, 
-                    string column12, 
-                    string column13, 
-                    string column14, 
-                    string column15, 
-                    string column16, 
-                    string column17, 
-                    string column18, 
+                    string agentCode, 
+                    string unknownShipperCode, 
+                    string shipperCode, 
+                    string consigneeCode, 
+                    string origin, 
+                    string destination, 
+                    string productCode, 
+                    string sCC, 
+                    string commodity, 
+                    string shipmentDescription, 
+                    string serviceCargoClass, 
+                    string piece, 
+                    string weight, 
+                    string chargeType, 
+                    string modeOfPayment, 
+                    string cartType, 
+                    string uNID, 
+                    string properShipmentName, 
+                    string packingInstruction, 
+                    string netQtyPerPkg, 
+                    string reportableQnty, 
+                    string updatedValue, 
+                    string ratedCustomer, 
+                    string execute, 
+                    string tags, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -2920,25 +4758,31 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Column0", column0);
-            argumentsOfScenario.Add("Column1", column1);
-            argumentsOfScenario.Add("Column2", column2);
-            argumentsOfScenario.Add("Column3", column3);
-            argumentsOfScenario.Add("Column4", column4);
-            argumentsOfScenario.Add("Column5", column5);
-            argumentsOfScenario.Add("Column6", column6);
-            argumentsOfScenario.Add("Column7", column7);
-            argumentsOfScenario.Add("Column8", column8);
-            argumentsOfScenario.Add("Column9", column9);
-            argumentsOfScenario.Add("Column10", column10);
-            argumentsOfScenario.Add("Column11", column11);
-            argumentsOfScenario.Add("Column12", column12);
-            argumentsOfScenario.Add("Column13", column13);
-            argumentsOfScenario.Add("Column14", column14);
-            argumentsOfScenario.Add("Column15", column15);
-            argumentsOfScenario.Add("Column16", column16);
-            argumentsOfScenario.Add("Column17", column17);
-            argumentsOfScenario.Add("Column18", column18);
+            argumentsOfScenario.Add("AgentCode", agentCode);
+            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
+            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
+            argumentsOfScenario.Add("Origin", origin);
+            argumentsOfScenario.Add("Destination", destination);
+            argumentsOfScenario.Add("ProductCode", productCode);
+            argumentsOfScenario.Add("SCC", sCC);
+            argumentsOfScenario.Add("Commodity", commodity);
+            argumentsOfScenario.Add("ShipmentDescription", shipmentDescription);
+            argumentsOfScenario.Add("ServiceCargoClass", serviceCargoClass);
+            argumentsOfScenario.Add("Piece", piece);
+            argumentsOfScenario.Add("Weight", weight);
+            argumentsOfScenario.Add("ChargeType", chargeType);
+            argumentsOfScenario.Add("ModeOfPayment", modeOfPayment);
+            argumentsOfScenario.Add("cartType", cartType);
+            argumentsOfScenario.Add("UNID", uNID);
+            argumentsOfScenario.Add("ProperShipmentName", properShipmentName);
+            argumentsOfScenario.Add("PackingInstruction", packingInstruction);
+            argumentsOfScenario.Add("NetQtyPerPkg", netQtyPerPkg);
+            argumentsOfScenario.Add("ReportableQnty", reportableQnty);
+            argumentsOfScenario.Add("UpdatedValue", updatedValue);
+            argumentsOfScenario.Add("RatedCustomer", ratedCustomer);
+            argumentsOfScenario.Add("Execute", execute);
+            argumentsOfScenario.Add("Tags", tags);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LTE001_ACC_000028_Change the rated customer field when accepting an AWB", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 542
 this.ScenarioInitialize(scenarioInfo);
@@ -2951,10 +4795,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 543
- testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 544
- testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 545
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2966,8 +4810,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 548
- testRunner.And("User enters the Participant details with AgentCode \"<AgentCode>\", ShipperCode \"<S" +
-                        "hipperCode>\", ConsigneeCode \"<ConsigneeCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 549
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2979,7 +4823,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 552
- testRunner.And(@"User enters the Shipment details with Origin ""<Origin>"", Destination ""<Destination>"", ProductCode ""<ProductCode>"", SCCCode ""<SCC>"", Commodity ""<Commodity>"", ShipmentDescription""<ShipmentDescription>"", ServiceCargoClass ""<ServiceCargoClass>"", Piece ""<Piece>"", Weight ""<Weight>""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
+                            "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
+                            "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 553
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2994,12 +4840,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 557
- testRunner.And("User enters the Charge details with ChargeType \"<ChargeType>\" and ModeOfPayment \"" +
-                        "<ModeOfPayment>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 558
- testRunner.And("User checks the ThirdParty checkbox and enters the RatedCustomer \"<RatedCustomer>" +
-                        "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User checks the ThirdParty checkbox and enters the RatedCustomer \"{0}\"", ratedCustomer), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 559
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -3027,8 +4871,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User saves all the details & handles all the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 567
- testRunner.And("User validates the CID under Account Info in paymentportal with the RatedCustomer" +
-                        " \"<RatedCustomer>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User validates the CID under Account Info in paymentportal with the RatedCustomer" +
+                            " \"{0}\"", ratedCustomer), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
