@@ -80,118 +80,7 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.CategoryAttribute("MAD")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:CAP018_BKG_00001")]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("", "", "", "", "", "", "", "", "", "", "33504984", "", "CAP018_BKG_00002", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "GENERAL", "0316", "2", "20", "10763", "82165", "82165", "Yes", "74428760", "", "CAP018_BKG_00004", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "JNU", "PRIORITY", "2199", "4", "120", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00005", null)]
-        [NUnit.Framework.TestCaseAttribute("PDX", "BWI", "PRIORITY", "0300", "10", "950", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00005", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "0316", "2", "310", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00006", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "0316", "2", "20", "10763", "10763", "10763", "Yes", "", "ASQXGUEST", "CAP018_BKG_00008", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "HNL", "PRIORITY", "2199", "10", "360", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "BOI", "GENERAL", "NONSCR", "13", "775", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "56", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "MCO", "PRIORITY", "NONSCR", "4", "180", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "DFW", "GENERAL", "NONSCR", "31", "4340", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        public void CAP018_BKG_00001_ICargoLoginAndCreateNewShipment(string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipperCode, string consigneeCode, string execute, string aWB, string newAgentCode, string tags, string[] exampleTags)
+        public void CAP018_BKG_00001_ICargoLoginAndCreateNewShipment(string column0, string column1, string column2, string column3, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "CAP018",
@@ -205,19 +94,10 @@ namespace iCargoUIAutomation.Features
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Origin", origin);
-            argumentsOfScenario.Add("Destination", destination);
-            argumentsOfScenario.Add("ProductCode", productCode);
-            argumentsOfScenario.Add("Commodity", commodity);
-            argumentsOfScenario.Add("Piece", piece);
-            argumentsOfScenario.Add("Weight", weight);
-            argumentsOfScenario.Add("AgentCode", agentCode);
-            argumentsOfScenario.Add("ShipperCode", shipperCode);
-            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
-            argumentsOfScenario.Add("Execute", execute);
-            argumentsOfScenario.Add("AWB", aWB);
-            argumentsOfScenario.Add("New Agent Code", newAgentCode);
-            argumentsOfScenario.Add("Tags", tags);
+            argumentsOfScenario.Add("Column0", column0);
+            argumentsOfScenario.Add("Column1", column1);
+            argumentsOfScenario.Add("Column2", column2);
+            argumentsOfScenario.Add("Column3", column3);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("CAP018_BKG_00001_iCargo Login and Create New Shipment", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
@@ -230,10 +110,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 5
- testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
- testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
  testRunner.When("User enters screen name as \'CAP018\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -245,17 +125,18 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on New/List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
- testRunner.And(string.Format("User enters shipment details with Origin \"{0}\", Destination \"{1}\", Product Code \"" +
-                            "{2}\" and Agent code \"{3}\"", origin, destination, productCode, agentCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters shipment details with Origin \"<Origin>\", Destination \"<Destination>\"," +
+                        " Product Code \"<ProductCode>\" and Agent code \"<AgentCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
- testRunner.And(string.Format("User enters Shipper \"{0}\" and Consignee \"{1}\" details", shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters Shipper \"<ShipperCode>\" and Consignee \"<ConsigneeCode>\" details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 12
- testRunner.And(string.Format("User enters commodity details with Commodity \"{0}\", Pieces \"{1}\", Weight \"{2}\"", commodity, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters commodity details with Commodity \"<Commodity>\", Pieces \"<Piece>\", Wei" +
+                        "ght \"<Weight>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
- testRunner.And(string.Format("User selects flight for \"{0}\"", productCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects flight for \"<ProductCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
  testRunner.And("User clicks on Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -271,118 +152,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("MAD")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:CAP018_BKG_00001")]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("", "", "", "", "", "", "", "", "", "", "33504984", "", "CAP018_BKG_00002", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "GENERAL", "0316", "2", "20", "10763", "82165", "82165", "Yes", "74428760", "", "CAP018_BKG_00004", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "JNU", "PRIORITY", "2199", "4", "120", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00005", null)]
-        [NUnit.Framework.TestCaseAttribute("PDX", "BWI", "PRIORITY", "0300", "10", "950", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00005", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "0316", "2", "310", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00006", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "0316", "2", "20", "10763", "10763", "10763", "Yes", "", "ASQXGUEST", "CAP018_BKG_00008", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "HNL", "PRIORITY", "2199", "10", "360", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "BOI", "GENERAL", "NONSCR", "13", "775", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "56", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "MCO", "PRIORITY", "NONSCR", "4", "180", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "DFW", "GENERAL", "NONSCR", "31", "4340", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        public void CAP018_BKG_00003_CreateABookingForAnUnknownShipperOnAPaxFlight(string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipperCode, string consigneeCode, string execute, string aWB, string newAgentCode, string tags, string[] exampleTags)
+        public void CAP018_BKG_00003_CreateABookingForAnUnknownShipperOnAPaxFlight(string column0, string column1, string column2, string column3, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "CAP018",
@@ -396,19 +166,10 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Origin", origin);
-            argumentsOfScenario.Add("Destination", destination);
-            argumentsOfScenario.Add("ProductCode", productCode);
-            argumentsOfScenario.Add("Commodity", commodity);
-            argumentsOfScenario.Add("Piece", piece);
-            argumentsOfScenario.Add("Weight", weight);
-            argumentsOfScenario.Add("AgentCode", agentCode);
-            argumentsOfScenario.Add("ShipperCode", shipperCode);
-            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
-            argumentsOfScenario.Add("Execute", execute);
-            argumentsOfScenario.Add("AWB", aWB);
-            argumentsOfScenario.Add("New Agent Code", newAgentCode);
-            argumentsOfScenario.Add("Tags", tags);
+            argumentsOfScenario.Add("Column0", column0);
+            argumentsOfScenario.Add("Column1", column1);
+            argumentsOfScenario.Add("Column2", column2);
+            argumentsOfScenario.Add("Column3", column3);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("CAP018_BKG_00003_Create a booking for an unknown shipper on a pax flight", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 30
 this.ScenarioInitialize(scenarioInfo);
@@ -421,10 +182,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 31
- testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 32
- testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 33
  testRunner.When("User enters screen name as \'CAP018\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -436,17 +197,19 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on New/List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 36
- testRunner.And(string.Format("User enters shipment details with Origin \"{0}\", Destination \"{1}\",Agent Code \"{2}" +
-                            "\", Product Code \"{3}\"", origin, destination, agentCode, productCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters shipment details with Origin \"<Origin>\", Destination \"<Destination>\"," +
+                        "Agent Code \"<AgentCode>\", Product Code \"<ProductCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 37
- testRunner.And(string.Format("User enters Unknown Shipper \"{0}\" and Consignee \"{1}\" with all details", shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters Unknown Shipper \"<ShipperCode>\" and Consignee \"<ConsigneeCode>\" with " +
+                        "all details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 38
- testRunner.And(string.Format("User enters commodity details with Commodity \"{0}\", Pieces \"{1}\", Weight \"{2}\"", commodity, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters commodity details with Commodity \"<Commodity>\", Pieces \"<Piece>\", Wei" +
+                        "ght \"<Weight>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 39
- testRunner.And(string.Format("User selects flight for \"{0}\"", productCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects flight for \"<ProductCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 40
  testRunner.And("User clicks on Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -462,118 +225,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("MAD")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:CAP018_BKG_00001")]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("", "", "", "", "", "", "", "", "", "", "33504984", "", "CAP018_BKG_00002", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "GENERAL", "0316", "2", "20", "10763", "82165", "82165", "Yes", "74428760", "", "CAP018_BKG_00004", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "JNU", "PRIORITY", "2199", "4", "120", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00005", null)]
-        [NUnit.Framework.TestCaseAttribute("PDX", "BWI", "PRIORITY", "0300", "10", "950", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00005", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "0316", "2", "310", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00006", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "0316", "2", "20", "10763", "10763", "10763", "Yes", "", "ASQXGUEST", "CAP018_BKG_00008", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "HNL", "PRIORITY", "2199", "10", "360", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "BOI", "GENERAL", "NONSCR", "13", "775", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "56", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "MCO", "PRIORITY", "NONSCR", "4", "180", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "DFW", "GENERAL", "NONSCR", "31", "4340", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        public void CAP018_BKG_00007_ICargoLoginAndCreateNewAVIShipment(string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipperCode, string consigneeCode, string execute, string aWB, string newAgentCode, string tags, string[] exampleTags)
+        public void CAP018_BKG_00007_ICargoLoginAndCreateNewAVIShipment(string column0, string column1, string column2, string column3, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "CAP018",
@@ -587,19 +239,10 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Origin", origin);
-            argumentsOfScenario.Add("Destination", destination);
-            argumentsOfScenario.Add("ProductCode", productCode);
-            argumentsOfScenario.Add("Commodity", commodity);
-            argumentsOfScenario.Add("Piece", piece);
-            argumentsOfScenario.Add("Weight", weight);
-            argumentsOfScenario.Add("AgentCode", agentCode);
-            argumentsOfScenario.Add("ShipperCode", shipperCode);
-            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
-            argumentsOfScenario.Add("Execute", execute);
-            argumentsOfScenario.Add("AWB", aWB);
-            argumentsOfScenario.Add("New Agent Code", newAgentCode);
-            argumentsOfScenario.Add("Tags", tags);
+            argumentsOfScenario.Add("Column0", column0);
+            argumentsOfScenario.Add("Column1", column1);
+            argumentsOfScenario.Add("Column2", column2);
+            argumentsOfScenario.Add("Column3", column3);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("CAP018_BKG_00007_iCargo Login and Create New AVI Shipment", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 88
 this.ScenarioInitialize(scenarioInfo);
@@ -612,10 +255,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 89
- testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 90
- testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 91
  testRunner.When("User enters screen name as \'CAP018\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -627,17 +270,18 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on New/List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 94
- testRunner.And(string.Format("User enters shipment details with Origin \"{0}\", Destination \"{1}\", Product Code \"" +
-                            "{2}\" and Agent code \"{3}\"", origin, destination, productCode, agentCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters shipment details with Origin \"<Origin>\", Destination \"<Destination>\"," +
+                        " Product Code \"<ProductCode>\" and Agent code \"<AgentCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 95
- testRunner.And(string.Format("User enters Shipper \"{0}\" and Consignee \"{1}\" details", shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters Shipper \"<ShipperCode>\" and Consignee \"<ConsigneeCode>\" details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 96
- testRunner.And(string.Format("User enters commodity details with Commodity \"{0}\", Pieces \"{1}\", Weight \"{2}\"", commodity, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters commodity details with Commodity \"<Commodity>\", Pieces \"<Piece>\", Wei" +
+                        "ght \"<Weight>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 97
- testRunner.And(string.Format("User selects flight for \"{0}\"", productCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects flight for \"<ProductCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 98
  testRunner.And("User clicks on Save button and fills the checksheet details to generate awb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -652,118 +296,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("CAP018_BKG_00009")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:CAP018_BKG_00001")]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GOLDSTREAK", "NONSCR", "13", "100", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "PRIORITY", "2199", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "PRIORITY", "NONSCR", "13", "10", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "NONSCR", "13", "12", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GOLDSTREAK", "NONSCR", "10", "360", "11377", "11377", "11377", "Yes", "", "", "CAP018_BKG_00001", null)]
-        [NUnit.Framework.TestCaseAttribute("", "", "", "", "", "", "", "", "", "", "33504984", "", "CAP018_BKG_00002", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "LAX", "GENERAL", "NONSCR", "13", "775", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "2199", "8", "360", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "55", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("FAI", "ANC", "PRIORITY", "NONSCR", "3", "90", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00003", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "GENERAL", "0316", "2", "20", "10763", "82165", "82165", "Yes", "74428760", "", "CAP018_BKG_00004", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "JNU", "PRIORITY", "2199", "4", "120", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00005", null)]
-        [NUnit.Framework.TestCaseAttribute("PDX", "BWI", "PRIORITY", "0300", "10", "950", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00005", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "ANC", "GENERAL", "0316", "2", "310", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00006", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "FAI", "PET CONNECT", "9730", "2", "50", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "HNL", "PET CONNECT", "9730", "1", "100", "ASQXGUEST", "C1001", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("BOI", "LAX", "PET CONNECT", "9730", "1", "35", "49990", "49990", "C1001", "Yes", "", "", "CAP018_BKG_00007", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "SEA", "PRIORITY", "0316", "2", "20", "10763", "10763", "10763", "Yes", "", "ASQXGUEST", "CAP018_BKG_00008", null)]
-        [NUnit.Framework.TestCaseAttribute("ANC", "HNL", "PRIORITY", "2199", "10", "360", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "BOI", "GENERAL", "NONSCR", "13", "775", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        [NUnit.Framework.TestCaseAttribute("SAN", "JFK", "GOLDSTREAK", "NONSCR", "2", "56", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "MCO", "PRIORITY", "NONSCR", "4", "180", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        [NUnit.Framework.TestCaseAttribute("SEA", "DFW", "GENERAL", "NONSCR", "31", "4340", "10763", "10763", "10763", "Yes", "", "", "CAP018_BKG_00009", null)]
-        public void CAP018_BKG_00009_SaveATemplateFromABooking(string origin, string destination, string productCode, string commodity, string piece, string weight, string agentCode, string shipperCode, string consigneeCode, string execute, string aWB, string newAgentCode, string tags, string[] exampleTags)
+        public void CAP018_BKG_00009_SaveATemplateFromABooking(string column0, string column1, string column2, string column3, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "CAP018",
@@ -776,19 +309,10 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Origin", origin);
-            argumentsOfScenario.Add("Destination", destination);
-            argumentsOfScenario.Add("ProductCode", productCode);
-            argumentsOfScenario.Add("Commodity", commodity);
-            argumentsOfScenario.Add("Piece", piece);
-            argumentsOfScenario.Add("Weight", weight);
-            argumentsOfScenario.Add("AgentCode", agentCode);
-            argumentsOfScenario.Add("ShipperCode", shipperCode);
-            argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
-            argumentsOfScenario.Add("Execute", execute);
-            argumentsOfScenario.Add("AWB", aWB);
-            argumentsOfScenario.Add("New Agent Code", newAgentCode);
-            argumentsOfScenario.Add("Tags", tags);
+            argumentsOfScenario.Add("Column0", column0);
+            argumentsOfScenario.Add("Column1", column1);
+            argumentsOfScenario.Add("Column2", column2);
+            argumentsOfScenario.Add("Column3", column3);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("CAP018_BKG_00009_Save a template from a booking", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 119
 this.ScenarioInitialize(scenarioInfo);
@@ -801,10 +325,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 120
- testRunner.Given(string.Format("User wants to execute the example \"{0}\" for the scenario \"{1}\"", execute, tags), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("User wants to execute the example \"<Execute>\" for the scenario \"<Tags>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 121
- testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User switches station if BaseStation other than \"<Origin>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 122
  testRunner.When("User enters screen name as \'CAP018\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -816,17 +340,18 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User clicks on New/List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 125
- testRunner.And(string.Format("User enters shipment details with Origin \"{0}\", Destination \"{1}\", Product Code \"" +
-                            "{2}\" and Agent code \"{3}\"", origin, destination, productCode, agentCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters shipment details with Origin \"<Origin>\", Destination \"<Destination>\"," +
+                        " Product Code \"<ProductCode>\" and Agent code \"<AgentCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 126
- testRunner.And(string.Format("User enters Shipper \"{0}\" and Consignee \"{1}\" details", shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters Shipper \"<ShipperCode>\" and Consignee \"<ConsigneeCode>\" details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 127
- testRunner.And(string.Format("User enters commodity details with Commodity \"{0}\", Pieces \"{1}\", Weight \"{2}\"", commodity, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters commodity details with Commodity \"<Commodity>\", Pieces \"<Piece>\", Wei" +
+                        "ght \"<Weight>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 128
- testRunner.And(string.Format("User selects flight for \"{0}\"", productCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects flight for \"<ProductCode>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 129
  testRunner.And("User clicks on Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
