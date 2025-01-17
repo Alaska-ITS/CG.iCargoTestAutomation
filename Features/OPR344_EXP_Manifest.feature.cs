@@ -77,7 +77,6 @@ namespace iCargoUIAutomation.Features
         [NUnit.Framework.DescriptionAttribute("OPR344_EXP_00001_Manifest an AWB for an Unknown Shipper on a pax flight")]
         [NUnit.Framework.CategoryAttribute("OPR344")]
         [NUnit.Framework.CategoryAttribute("OPR344_EXP_00001")]
-        [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("DataSource:../TestData/OPR344_ExportManifest_TestData.xlsx")]
         [NUnit.Framework.CategoryAttribute("DataSet:OPR344_EXP_00001")]
         [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "", "C1001", "10763", "SEA", "JFK", "GENERAL", "None", "NONSCR", "None", "None", "13", "775", "CC", "None", "CART", "PlannedShipment", "", "", "", "", "", "", "", "", "", "", "Yes", "OPR344_EXP_00001", null)]
@@ -142,7 +141,6 @@ namespace iCargoUIAutomation.Features
             string[] @__tags = new string[] {
                     "OPR344",
                     "OPR344_EXP_00001",
-                    "smoke",
                     "DataSource:../TestData/OPR344_ExportManifest_TestData.xlsx",
                     "DataSet:OPR344_EXP_00001"};
             if ((exampleTags != null))

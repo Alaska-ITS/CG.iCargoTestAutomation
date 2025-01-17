@@ -1,6 +1,6 @@
 ﻿Feature: OPR344_EXP_Manifest
 
-@OPR344 @OPR344_EXP_00001 @smoke @DataSource:../TestData/OPR344_ExportManifest_TestData.xlsx @DataSet:OPR344_EXP_00001
+@OPR344 @OPR344_EXP_00001 @DataSource:../TestData/OPR344_ExportManifest_TestData.xlsx @DataSet:OPR344_EXP_00001
 Scenario Outline: OPR344_EXP_00001_Manifest an AWB for an Unknown Shipper on a pax flight
 	Given User wants to execute the example "<Execute>"
 	When User switches station if BaseStation other than "<Origin>"
