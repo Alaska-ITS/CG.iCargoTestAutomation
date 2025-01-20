@@ -35,6 +35,7 @@ namespace iCargoUIAutomation.StepDefinitions
         {
             if (ScenarioContext.Current["Execute"] == "true")
             {
+                Hooks.Hooks.createNode();
                 mbp.DeleteAddFlights();
             }
             else
@@ -49,6 +50,7 @@ namespace iCargoUIAutomation.StepDefinitions
         {
             if (ScenarioContext.Current["Execute"] == "true")
             {
+                Hooks.Hooks.createNode();
                 mbp.AddNewFlightDetails();
             }
             else
@@ -64,6 +66,7 @@ namespace iCargoUIAutomation.StepDefinitions
         {
             if (ScenarioContext.Current["Execute"] == "true")
             {
+                Hooks.Hooks.createNode();
                 mbp.clickOnSaveButtonToSaveNewFlightDetails();
             }
             else
@@ -79,6 +82,7 @@ namespace iCargoUIAutomation.StepDefinitions
         {
             if (ScenarioContext.Current["Execute"] == "true")
             {
+                Hooks.Hooks.createNode();
                 mbp.CaptureIrregularity();
             }
             else

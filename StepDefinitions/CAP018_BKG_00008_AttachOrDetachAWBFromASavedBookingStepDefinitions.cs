@@ -28,6 +28,7 @@ namespace iCargoUIAutomation.StepDefinitions
         {
             if (ScenarioContext.Current["Execute"] == "true")
             {
+                Hooks.Hooks.createNode();
                 mbp.AttachOrDetachAWB();
             }
             else
@@ -41,7 +42,10 @@ namespace iCargoUIAutomation.StepDefinitions
         {
             this.agentcode = agentcode;
             if (ScenarioContext.Current["Execute"] == "true")
-            mbp.EnterNewAgentCode(agentcode);
+            {
+                Hooks.Hooks.createNode();
+                mbp.EnterNewAgentCode(agentcode);
+            }
             else
             {
                 ScenarioContext.Current.Pending();
@@ -52,7 +56,10 @@ namespace iCargoUIAutomation.StepDefinitions
         public void ThenUserEntersTheAWBNumberAs()
         {
             if (ScenarioContext.Current["Execute"] == "true")
-            mbp.EnterAWBNumber();
+            {
+                Hooks.Hooks.createNode();
+                mbp.EnterAWBNumber();
+            }
             else
             {
                 ScenarioContext.Current.Pending();

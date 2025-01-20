@@ -38,6 +38,7 @@ namespace iCargoUIAutomation.StepDefinitions
         {
             if (ScenarioContext.Current["Execute"] == "true")
             {
+                Hooks.Hooks.createNode();
                 hp.enterScreenName(screenName);
                 mbp.SwitchToCAP018Frame();
             }
@@ -53,6 +54,7 @@ namespace iCargoUIAutomation.StepDefinitions
         {
             if (ScenarioContext.Current["Execute"] == "true")
             {
+                Hooks.Hooks.createNode();
                 mbp.ClickNewListButton();
             }
             else
@@ -69,7 +71,10 @@ namespace iCargoUIAutomation.StepDefinitions
             this.productCode = productCode;
             this.agentCode = agentCode;
             if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
                 mbp.EnterShipmentDetails(origin, destination, productCode, agentCode);
+            }
             else
             {
                 ScenarioContext.Current.Pending();
@@ -82,7 +87,10 @@ namespace iCargoUIAutomation.StepDefinitions
             this.shipperCode = shipperCode;
             this.consigneeCode = consigneeCode;
             if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
                 mbp.EnterShipperConsigneeDetails(shipperCode, consigneeCode);
+            }
             else
             {
                 ScenarioContext.Current.Pending();
@@ -96,7 +104,10 @@ namespace iCargoUIAutomation.StepDefinitions
             this.piece = piece;
             this.weight = weight;
             if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
                 mbp.EnterCommodityDetails(commodity, piece, weight);
+            }
             else
             {
                 ScenarioContext.Current.Pending();
@@ -108,6 +119,7 @@ namespace iCargoUIAutomation.StepDefinitions
         {
             if (ScenarioContext.Current["Execute"] == "true")
             {
+                Hooks.Hooks.createNode();
                 mbp.ClickSaveButton();
                 mbp.CaptureAwbNumber();
             }
@@ -121,7 +133,10 @@ namespace iCargoUIAutomation.StepDefinitions
         public void ThenUserSelectsFlightFor(string productCode)
         {
             if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
                 mbp.SelectFlight(productCode);
+            }
             else
             {
                 ScenarioContext.Current.Pending();

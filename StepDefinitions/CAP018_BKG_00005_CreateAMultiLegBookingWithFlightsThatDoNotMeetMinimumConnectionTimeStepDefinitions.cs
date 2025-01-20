@@ -29,6 +29,7 @@ namespace iCargoUIAutomation.StepDefinitions
             this.productcode = productcode;
             if (ScenarioContext.Current["Execute"] == "true")
             {
+                Hooks.Hooks.createNode();
                 mbp.SelectMultilegflight(rescolr, reswarning, productcode);
             }
             else

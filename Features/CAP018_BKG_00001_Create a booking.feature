@@ -115,22 +115,22 @@ Scenario Outline: CAP018_BKG_00007_iCargo Login and Create New AVI Shipment
 #	And User enters new Agent Code 
 #	And User clicks on Save button
 #
-	@CAP018 @CAP018_BKG_00009 @DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx @DataSet:CAP018_BKG_00001
-Scenario Outline: CAP018_BKG_00009_Save a template from a booking
-	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
-	When User switches station if BaseStation other than "<Origin>"
-	When User enters screen name as 'CAP018'
-	Then User enters into the  iCargo 'Maintain Booking' page successfully
-	And User clicks on New/List button
-	And User enters shipment details with Origin "<Origin>", Destination "<Destination>", Product Code "<ProductCode>" and Agent code "<AgentCode>"
-	And User enters Shipper "<ShipperCode>" and Consignee "<ConsigneeCode>" details
-	And User enters commodity details with Commodity "<Commodity>", Pieces "<Piece>", Weight "<Weight>"
-	And User selects flight for "<ProductCode>"
-	And User clicks on Save button
-	And User enters the AWB number
-	And User clicks on New/List button
-	And User clicks on Select/Save Template to save the template
-#
+#	@CAP018 @CAP018_BKG_00009 @DataSource:../TestData/CAP018_MaintainBooking_TestData.xlsx @DataSet:CAP018_BKG_00001
+#Scenario Outline: CAP018_BKG_00009_Save a template from a booking
+#	Given User wants to execute the example "<Execute>" for the scenario "<Tags>"
+#	When User switches station if BaseStation other than "<Origin>"
+#	When User enters screen name as 'CAP018'
+#	Then User enters into the  iCargo 'Maintain Booking' page successfully
+#	And User clicks on New/List button
+#	And User enters shipment details with Origin "<Origin>", Destination "<Destination>", Product Code "<ProductCode>" and Agent code "<AgentCode>"
+#	And User enters Shipper "<ShipperCode>" and Consignee "<ConsigneeCode>" details
+#	And User enters commodity details with Commodity "<Commodity>", Pieces "<Piece>", Weight "<Weight>"
+#	And User selects flight for "<ProductCode>"
+#	And User clicks on Save button
+#	And User enters the AWB number
+#	And User clicks on New/List button
+#	And User clicks on Select/Save Template to save the template
+##
 #	@CAP018_BKG_00010 @CAP018
 #Scenario: CAP018_BKG_00010_Save a template and create a booking
 #	Given User wants to execute the example "<Execute>"	

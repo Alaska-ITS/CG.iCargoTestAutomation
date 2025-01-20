@@ -25,6 +25,7 @@ namespace iCargoUIAutomation.StepDefinitions
         {
             if (ScenarioContext.Current["Execute"] == "true")
             {
+                Hooks.Hooks.createNode();
                 mbp.AVIBookingChecksheetDetails();
             }
             else

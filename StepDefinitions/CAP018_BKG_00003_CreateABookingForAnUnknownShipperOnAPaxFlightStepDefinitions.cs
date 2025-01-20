@@ -36,6 +36,7 @@ namespace iCargoUIAutomation.StepDefinitions
             this.unkConsignee = unkConsignee;
             if (ScenarioContext.Current["Execute"] == "true")
             {
+                Hooks.Hooks.createNode();
                 mbp.UnknownShipperConsigneeALLDetails(unkShipper, unkConsignee);
             }
             else
@@ -53,6 +54,7 @@ namespace iCargoUIAutomation.StepDefinitions
             this.productCode = productCode;
             if (ScenarioContext.Current["Execute"] == "true")
             {
+                Hooks.Hooks.createNode();
                 mbp.NewUnknownAgentShipmentDetails(origin, destination, agentcode, productCode);
             }
             else

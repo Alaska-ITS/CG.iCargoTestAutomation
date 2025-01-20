@@ -33,6 +33,7 @@ namespace iCargoUIAutomation.StepDefinitions
         {
             if (ScenarioContext.Current["Execute"] == "true")
             {
+                Hooks.Hooks.createNode();
                 mbp.AWBBookingfromStock();
             }
             else
@@ -49,7 +50,10 @@ namespace iCargoUIAutomation.StepDefinitions
             this.destination = destination;                       
             this.productCode = productCode;
             if (ScenarioContext.Current["Execute"] == "true")
-            mbp.UnknownAgentShipmentDetails(origin, destination,productCode);
+            {
+                Hooks.Hooks.createNode();
+                mbp.UnknownAgentShipmentDetails(origin, destination, productCode);
+            }
             else
             {
                 ScenarioContext.Current.Pending();
@@ -61,7 +65,10 @@ namespace iCargoUIAutomation.StepDefinitions
         {
             this.awb = awb;
             if (ScenarioContext.Current["Execute"] == "true")
-            mbp.EnterAWBNumberFromStock(awb);
+            {
+                Hooks.Hooks.createNode();
+                mbp.EnterAWBNumberFromStock(awb);
+            }
             else
             {
                 ScenarioContext.Current.Pending();
@@ -75,7 +82,10 @@ namespace iCargoUIAutomation.StepDefinitions
            this.unknownShipper = shipper;
             this.consignee = consignee;
             if (ScenarioContext.Current["Execute"] == "true")
-            mbp.UnknownShipperConsigneeDetails(shipper, consignee);
+            {
+                Hooks.Hooks.createNode();
+                mbp.UnknownShipperConsigneeDetails(shipper, consignee);
+            }
             else
             {
                 ScenarioContext.Current.Pending();

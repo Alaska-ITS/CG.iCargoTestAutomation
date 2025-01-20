@@ -125,8 +125,8 @@ namespace iCargoUIAutomation.Hooks
         public static void BeforeFeature(FeatureContext featureContext)
         {
             
-            //browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
-            browser = "chrome";
+            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
+            //browser = "chrome";
           
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--incognito");

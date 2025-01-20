@@ -204,7 +204,7 @@ namespace iCargoUIAutomation.pages
 
         public void ClickNewListButton()
         {
-            Hooks.Hooks.createNode();
+             
             try
             {
                 WaitForElementToBeInvisible(homePage_CSS, TimeSpan.FromSeconds(5));
@@ -224,8 +224,7 @@ namespace iCargoUIAutomation.pages
             globalOrigin = origin;
             globalDestination = destination;
             globalProductCode = productCode;
-            globalAgentCode = agentCode;
-            Hooks.Hooks.createNode();
+            globalAgentCode = agentCode;            
             WaitForElementToBeInvisible(homePage_CSS, TimeSpan.FromSeconds(10));
             try
             {
@@ -301,8 +300,7 @@ namespace iCargoUIAutomation.pages
         public void EnterShipperConsigneeDetails(string shipperCode, string consigneeCode)
         {
             globalShipperCode = shipperCode;
-            globalConsigneeCode = consigneeCode;
-            Hooks.Hooks.createNode();
+            globalConsigneeCode = consigneeCode;            
             try
             {
                 GetNumberOfWindowsOpened();
@@ -343,8 +341,7 @@ namespace iCargoUIAutomation.pages
         {
             globalCommodityCode = commodityCode;
             globalPieces = pieces;
-            globalWeight = weight;
-            Hooks.Hooks.createNode();
+            globalWeight = weight;           
             try
             {
                 SwitchToCAP018Frame();
@@ -434,8 +431,7 @@ namespace iCargoUIAutomation.pages
 
 
         public void ClickSaveButton()
-        {
-            Hooks.Hooks.createNode();
+        {            
             try
             {
                 int noOfWindowsBefore = GetNumberOfWindowsOpened();
@@ -483,7 +479,7 @@ namespace iCargoUIAutomation.pages
 
         public void AWBBookingfromStock()
         {
-            Hooks.Hooks.createNode();
+             
             try
             {
                 SwitchToPopupWindow();
@@ -505,7 +501,7 @@ namespace iCargoUIAutomation.pages
             globalOrigin = org;
             globalDestination = dest;
             globalProductCode = prodCode;
-            Hooks.Hooks.createNode();
+             
             try
             {
                 EnterText(origin_ID, org);
@@ -534,7 +530,7 @@ namespace iCargoUIAutomation.pages
         {
             globalShipperCode = shipper;
             globalConsigneeCode = consg;
-            Hooks.Hooks.createNode();
+             
             try
             {
                 SwitchToSecondPopupWindow();
@@ -582,7 +578,7 @@ namespace iCargoUIAutomation.pages
 
         public void SelectFlight(string givenProductCode)
         {
-            Hooks.Hooks.createNode();
+             
             try
             {
                 Click(selectFlightBtn_ID);
@@ -734,7 +730,7 @@ namespace iCargoUIAutomation.pages
             globalDestination = dest;
             globalAgentCode = agtcode;
             globalProductCode = prodcode;
-            Hooks.Hooks.createNode();
+             
             try
             {
                 WaitForElementToBeInvisible(homePage_CSS, TimeSpan.FromSeconds(10));
@@ -775,7 +771,7 @@ namespace iCargoUIAutomation.pages
         {
             globalShipperCode = unkshppr;
             globalConsigneeCode = unkconsgn;
-            Hooks.Hooks.createNode();
+             
             try
             {
                 SwitchToSecondPopupWindow();
@@ -885,7 +881,7 @@ namespace iCargoUIAutomation.pages
 
         public void SelectMultilegflight(string rescolor, string mincontimewarning, string givenprodcode)
         {
-            Hooks.Hooks.createNode();
+             
             try
             {
                 Click(selectFlightBtn_ID);
@@ -1051,7 +1047,7 @@ namespace iCargoUIAutomation.pages
 
         public void AVIBookingChecksheetDetails()
         {
-            Hooks.Hooks.createNode();
+             
             try
             {
                 int noOfWindowsBefore = GetNumberOfWindowsOpened();
@@ -1141,7 +1137,7 @@ namespace iCargoUIAutomation.pages
 
         public void DeleteAddFlights()
         {
-            Hooks.Hooks.createNode();
+             
             try
             {
                 SwitchToPopupWindow();
@@ -1171,7 +1167,7 @@ namespace iCargoUIAutomation.pages
         }
         public void AddNewFlightDetails()
         {
-            Hooks.Hooks.createNode();
+             
             try
             {
                 Click(selectFlightBtn_ID);
@@ -1230,7 +1226,7 @@ namespace iCargoUIAutomation.pages
 
         public void CaptureIrregularity()
         {
-            Hooks.Hooks.createNode();
+             
             try
             {
                 SwitchToCAP018Frame();
@@ -1336,7 +1332,7 @@ namespace iCargoUIAutomation.pages
 
         public void EnterAWBNumber()
         {
-            Hooks.Hooks.createNode();
+             
             try
             {
                 Click(clearAWBBtn_ID);
@@ -1356,7 +1352,7 @@ namespace iCargoUIAutomation.pages
 
         public void EnterAWBNumberFromStock(string awb)
         {
-            Hooks.Hooks.createNode();
+             
             try
             {
                 EnterText(awbTextbox_ID, awb);

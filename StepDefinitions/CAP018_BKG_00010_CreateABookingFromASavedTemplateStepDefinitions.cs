@@ -20,7 +20,15 @@ namespace iCargoUIAutomation.StepDefinitions
         [Then(@"User clicks on Select/Save Template")]
         public void ThenUserClicksOnSelectSaveTemplate()
         {
-            mbp.SelectTemplate();
+            if (ScenarioContext.Current["Execute"] == "true")
+            {
+                Hooks.Hooks.createNode();
+                mbp.SelectTemplate();
+            }
+            else
+            {
+                ScenarioContext.Current.Pending();
+            }           
         }
         
     }
