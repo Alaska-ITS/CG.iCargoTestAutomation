@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\CAP018_BKG_00001_Create a booking.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\CAP018_BKG_00003_Create a booking for an unknown shipper on a pax flight.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\CAP018_BKG_00005_Create a multi leg booking with flights that do not meet minimum connection time.feature.cs" />
@@ -39,6 +43,12 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\OPR344_EXP_00003_Manifest an AWB onto its booked flight - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\OPR344_EXP_00018_Manifest an AWB for an unknown shipper from the lying list to a pax flight - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\OPR367_IMP_00001_Arrive cargo off an inbound flight - Copy.feature.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 	<ItemGroup>
@@ -179,12 +189,6 @@
     <Compile Update="Features\OPR344_EXP_00004_Split an AWB in OPR344 and manifest split pieces to a flight.feature.cs">
       <DependentUpon>OPR344_EXP_00004_Split an AWB in OPR344 and manifest split pieces to a flight.feature</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="appsettings.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>
