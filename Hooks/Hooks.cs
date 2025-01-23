@@ -125,8 +125,7 @@ namespace iCargoUIAutomation.Hooks
         public static void BeforeFeature(FeatureContext featureContext)
         {
             
-            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
-            //browser = "chrome";
+            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);                     
           
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--incognito");
@@ -179,7 +178,7 @@ namespace iCargoUIAutomation.Hooks
         public static void AfterFeature()
         {
             homePage hp = new homePage(driver);
-            hp.logoutiCargo();            
+            hp.logoutiCargo();          
             azureStorage = new AzureStorage(reportContainerName);
             azureStorage.UploadFolderToAzure(reportPath);
             foreach (string blobPath in uploadedBlobPaths)
@@ -245,7 +244,7 @@ namespace iCargoUIAutomation.Hooks
                 tempLocalPath = azureStorage.DownloadFileFromBlob(excelFileName, tempLocalPath);
                 ExcelFileConfig excelFileConfig = new ExcelFileConfig();
 
-                if (excelFileConfig.IsSheetFilled(tempLocalPath, 1000)) // Set your desired max rows per sheet
+                if (excelFileConfig.IsSheetFilled(tempLocalPath, 50000)) // Set your desired max rows per sheet
                 {
                     // If filled, generate a new unique file name
                     string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
@@ -272,7 +271,7 @@ namespace iCargoUIAutomation.Hooks
                azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
 
                 File.Delete(tempLocalPath);
-                extent.Flush();
+                extent.Flush();                
             }
 
         }
