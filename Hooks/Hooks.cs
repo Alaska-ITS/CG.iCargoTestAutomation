@@ -61,8 +61,7 @@ namespace iCargoUIAutomation.Hooks
             htmlReporter.Config.ReportName = "Automation Status Report";
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Standard;
             extent = new ExtentReports();
-            extent.AttachReporter(htmlReporter);
-            // Define the path to the TestData folder
+            extent.AttachReporter(htmlReporter);            
             string solutionDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
             string testDataFolderPath = Path.Combine(solutionDirectory, "TestData");
 
@@ -88,19 +87,22 @@ namespace iCargoUIAutomation.Hooks
                 }
             }
 
+            // Get the system's temp folder
+            string tempFolderPath = Path.GetTempPath();
+
             // Fetch the list of Excel files from the blob
-            azureStorage = new AzureStorage(testDataContainername);
+            var azureStorage = new AzureStorage(testDataContainername);
             var excelFiles = azureStorage.GetBlobFileNames()
                             .Where(fileName => fileName.EndsWith(".xlsx", StringComparison.OrdinalIgnoreCase))
                             .ToList();
 
-            // Download new files from the blob
+            // Download new files to the temp folder
             foreach (var fileName in excelFiles)
             {
                 try
                 {
-                    string localFilePath = Path.Combine(testDataFolderPath, fileName);
-                    var downloadedFilePath = azureStorage.DownloadFileFromBlob(fileName, localFilePath);
+                    string tempFilePath = Path.Combine(tempFolderPath, fileName);
+                    var downloadedFilePath = azureStorage.DownloadFileFromBlob(fileName, tempFilePath);
                     Console.WriteLine($"Downloaded test data file: {fileName} to {downloadedFilePath}");
                 }
                 catch (Exception ex)
@@ -109,7 +111,46 @@ namespace iCargoUIAutomation.Hooks
                 }
             }
 
-            Console.WriteLine("File download completed.");
+            // Move files from the temp folder to the TestData folder
+            foreach (var fileName in excelFiles)
+            {
+                try
+                {
+                    string tempFilePath = Path.Combine(tempFolderPath, fileName);
+                    string destinationFilePath = Path.Combine(testDataFolderPath, fileName);
+
+                    if (File.Exists(tempFilePath))
+                    {
+                        File.Move(tempFilePath, destinationFilePath);
+                        Console.WriteLine($"Moved file: {fileName} to {destinationFilePath}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Failed to move file {fileName}. Error: {ex.Message}");
+                }
+            }
+
+            // Clean up the temp folder by deleting the files
+            foreach (var fileName in excelFiles)
+            {
+                try
+                {
+                    string tempFilePath = Path.Combine(tempFolderPath, fileName);
+                    if (File.Exists(tempFilePath))
+                    {
+                        File.Delete(tempFilePath);
+                        Console.WriteLine($"Deleted temp file: {tempFilePath}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Failed to delete temp file {fileName}. Error: {ex.Message}");
+                }
+            }
+
+            Console.WriteLine("File processing completed.");
+
 
         }
 
@@ -125,8 +166,8 @@ namespace iCargoUIAutomation.Hooks
         public static void BeforeFeature(FeatureContext featureContext)
         {
             
-            browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
-            //browser = "chrome";
+            //browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
+            browser = "chrome";
           
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--incognito");

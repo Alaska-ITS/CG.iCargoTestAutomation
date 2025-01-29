@@ -132,6 +132,7 @@ namespace iCargoUIAutomation.pages
 
                 Console.WriteLine("Previous Role: " + role);
                 role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);                                                                    
+                //role = "CCC";
 
                Console.WriteLine("Current Role: " + role);
                 if (role.ToUpper() == "CCC")
