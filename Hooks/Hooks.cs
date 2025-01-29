@@ -220,7 +220,8 @@ namespace iCargoUIAutomation.Hooks
         public static void AfterFeature()
         {
             homePage hp = new homePage(driver);
-            hp.logoutiCargo();            
+            hp.logoutiCargo(); 
+            extent.Flush();
             azureStorage = new AzureStorage(reportContainerName);
             azureStorage.UploadFolderToAzure(reportPath);
             foreach (string blobPath in uploadedBlobPaths)
@@ -313,7 +314,7 @@ namespace iCargoUIAutomation.Hooks
                azureStorage.UploadFileToBlob(tempLocalPath, excelFileName);
 
                 File.Delete(tempLocalPath);
-                extent.Flush();
+                //extent.Flush();
             }
 
         }
