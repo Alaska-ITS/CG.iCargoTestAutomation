@@ -1058,6 +1058,7 @@ namespace iCargoUIAutomation.pages
                 ClickingYesOnPopupWarnings();
                 WaitForElementToBeInvisible(btnYesAlertMessageBooking_XPATH, TimeSpan.FromSeconds(10));
                 SwitchToCAP018Frame();
+                //time gap
                 SwitchToFrame(aviChecksheetFrame_XPath);
                 Log.Info("Switched to AVI Checksheet Frame");
                 List<IWebElement> AviChecksheetSections = GetElements(aviTotalChkSheetSections_Xpath);
