@@ -62,10 +62,10 @@ namespace iCargoUIAutomation.Hooks
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Standard;
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);            
-            //string solutionDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-            //string testDataFolderPath = Path.Combine(solutionDirectory, "TestData");
+            string solutionDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string testDataFolderPath = Path.Combine(solutionDirectory, "TestData");
 
-            //// Ensure the TestData folder exists, or create it
+            // Ensure the TestData folder exists, or create it
             //if (!Directory.Exists(testDataFolderPath))
             //{
             //    Directory.CreateDirectory(testDataFolderPath);
@@ -165,94 +165,7 @@ namespace iCargoUIAutomation.Hooks
         [BeforeFeature]
         public static void BeforeFeature(FeatureContext featureContext)
         {
-            string solutionDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-            string testDataFolderPath = Path.Combine(solutionDirectory, "TestData");
-
-            // Ensure the TestData folder exists, or create it
-            if (!Directory.Exists(testDataFolderPath))
-            {
-                Directory.CreateDirectory(testDataFolderPath);
-            }
-
-            // Delete all files in the TestData folder
-            Console.WriteLine($"Clearing existing files in folder: {testDataFolderPath}");
-            var existingFiles = Directory.GetFiles(testDataFolderPath);
-            foreach (var file in existingFiles)
-            {
-                try
-                {
-                    File.Delete(file);
-                    Console.WriteLine($"Deleted file: {file}");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Failed to delete file {file}. Error: {ex.Message}");
-                }
-            }
-
-            // Get the system's temp folder
-            string tempFolderPath = Path.GetTempPath();
-
-            // Fetch the list of Excel files from the blob
-            var azureStorage = new AzureStorage(testDataContainername);
-            var excelFiles = azureStorage.GetBlobFileNames()
-                            .Where(fileName => fileName.EndsWith(".xlsx", StringComparison.OrdinalIgnoreCase))
-                            .ToList();
-
-            // Download new files to the temp folder
-            foreach (var fileName in excelFiles)
-            {
-                try
-                {
-                    string tempFilePath = Path.Combine(tempFolderPath, fileName);
-                    var downloadedFilePath = azureStorage.DownloadFileFromBlob(fileName, tempFilePath);
-                    Console.WriteLine($"Downloaded test data file: {fileName} to {downloadedFilePath}");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Failed to download file {fileName}. Error: {ex.Message}");
-                }
-            }
-
-            // Move files from the temp folder to the TestData folder
-            foreach (var fileName in excelFiles)
-            {
-                try
-                {
-                    string tempFilePath = Path.Combine(tempFolderPath, fileName);
-                    string destinationFilePath = Path.Combine(testDataFolderPath, fileName);
-
-                    if (File.Exists(tempFilePath))
-                    {
-                        File.Move(tempFilePath, destinationFilePath);
-                        Console.WriteLine($"Moved file: {fileName} to {destinationFilePath}");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Failed to move file {fileName}. Error: {ex.Message}");
-                }
-            }
-
-            // Clean up the temp folder by deleting the files
-            foreach (var fileName in excelFiles)
-            {
-                try
-                {
-                    string tempFilePath = Path.Combine(tempFolderPath, fileName);
-                    if (File.Exists(tempFilePath))
-                    {
-                        File.Delete(tempFilePath);
-                        Console.WriteLine($"Deleted temp file: {tempFilePath}");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Failed to delete temp file {fileName}. Error: {ex.Message}");
-                }
-            }
-
-            Console.WriteLine("File processing completed.");
+            
             //browser = Environment.GetEnvironmentVariable("Browser", EnvironmentVariableTarget.Process);            
             browser = "chrome";
           
