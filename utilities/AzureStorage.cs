@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace iCargoUIAutomation.utilities
+namespace iCargoXunit.utilities
 {
     public class AzureStorage
     {
@@ -115,7 +115,7 @@ namespace iCargoUIAutomation.utilities
                     blobClient.Upload(file, overwrite: true);
                     Console.WriteLine("File upload successful.");
 
-                    Hooks.Hooks.uploadedBlobPaths.Add(blobClient.Uri.ToString());
+                    //Hooks.Hooks.uploadedBlobPaths.Add(blobClient.Uri.ToString());
                 }
             }
             catch (Exception ex)

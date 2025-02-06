@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 
-namespace iCargoUIAutomation
+namespace iCargoXunit
 {
     public class KeyVault
     {

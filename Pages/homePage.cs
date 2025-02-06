@@ -1,8 +1,4 @@
-﻿using iCargoUIAutomation.Features;
-using iCargoUIAutomation.utilities;
-using log4net;
-using Microsoft.Extensions.Configuration;
-using MongoDB.Libmongocrypt;
+﻿using log4net;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -12,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AventStack.ExtentReports;
 
-namespace iCargoUIAutomation.pages
+namespace iCargoXunit.pages
 {
     public class homePage : BasePage
     {
@@ -131,7 +127,8 @@ namespace iCargoUIAutomation.pages
                 WaitForElementToBeVisible(userName_Id, TimeSpan.FromSeconds(10));
 
                 Console.WriteLine("Previous Role: " + role);
-                role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);                                                                                   
+                //role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);                                                                    
+                role = "CCC";
 
                Console.WriteLine("Current Role: " + role);
                 if (role.ToUpper() == "CCC")
