@@ -1,4 +1,4 @@
-using iCargoUIAutomation.pages;
+using iCargoXunit.pages;
 using OpenQA.Selenium;
 
 public class PageObjectManager : BasePage
@@ -12,7 +12,7 @@ public class PageObjectManager : BasePage
     private PaymentPortalPage ppp;
     private DangerousGoodsPage dgp;
     private CaptureIrregularityPage cip;
-    private FogsQAPage fogsQAPage;
+    private FogsQAPage fogsqapage;
     private ScreeningPage sp;
     private MarkFlightMovements mfm;
     private ImportManifestPage imp;
@@ -62,7 +62,7 @@ public class PageObjectManager : BasePage
 
     public FogsQAPage GetFogsQAPage()
     {
-        return fogsQAPage ?? (fogsQAPage = new FogsQAPage(driver));
+        return fogsqapage ?? (fogsqapage = new FogsQAPage(driver));
     }
 
     public ScreeningPage GetScreeningPage()

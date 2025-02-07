@@ -1,5 +1,5 @@
 ﻿using AventStack.ExtentReports;
-using iCargoUIAutomation.utilities;
+using iCargoXunit.pages;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iCargoUIAutomation.pages
+namespace iCargoXunit.pages
 {
     public class DangerousGoodsPage : BasePage
     {
@@ -40,83 +40,83 @@ namespace iCargoUIAutomation.pages
         public void HandleDGShipment(string unid, string propershipmntname, string pi, string noofpkg, string netqtyperpkg, string reportable)
         {
             Click(lnkDangerousGoods_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Dangerous Goods Link");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Dangerous Goods Link");
             SwitchToFrame(popupContainerFrame_Xpath);
             Click(btnDGPencil_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Pencil Icon");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Pencil Icon");
             EnterText(txtEmergencyContactName_Name, "Chem Trec");
-            Hooks.Hooks.UpdateTest(Status.Pass, "Entered Emergency Contact Name: Chem Trec");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Entered Emergency Contact Name: Chem Trec");
             EnterText(txtEmergencyContactNumber_Name, "8008008000");
-            Hooks.Hooks.UpdateTest(Status.Pass, "Entered Emergency Contact Number: 8008008000");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Entered Emergency Contact Number: 8008008000");
             Click(btnOKsaveContact_Name);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on OK Button");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on OK Button");
             WaitForElementToBeVisible(txtUNID_Xpath, TimeSpan.FromSeconds(5));
             ScrollDown();
             EnterText(txtUNID_Xpath, unid);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Entered UNID: " + unid);
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Entered UNID: " + unid);
             EnterKeys(txtUNID_Xpath, Keys.Tab);
             EnterText(txtNoOfPkgs_Name, noofpkg);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Entered No of Packages: " + noofpkg);
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Entered No of Packages: " + noofpkg);
             EnterText(txtNetQtyPerPkg_Name, netqtyperpkg);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Entered Net Quantity Per Package: " + netqtyperpkg);
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Entered Net Quantity Per Package: " + netqtyperpkg);
             SelectDropdownByVisibleText(drpdwn_NetQtyPerPkgUnit_Name, "KG");
-            Hooks.Hooks.UpdateTest(Status.Pass, "Selected Net Quantity Per Package Unit: KG");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Selected Net Quantity Per Package Unit: KG");
             SelectDropdownByVisibleText(drpdwnReportableQnty_Name, reportable);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Selected Reportable Quantity: " + reportable);
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Selected Reportable Quantity: " + reportable);
             SelectDropdownByVisibleText(drpdwnProperShippingName_Xpath, propershipmntname);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Selected Proper Shipping Name: " + propershipmntname);
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Selected Proper Shipping Name: " + propershipmntname);
             EnterTextWithCheck(txtPI_Name, pi);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Entered Packing Instruction: " + pi);
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Entered Packing Instruction: " + pi);
             Click(btnAddDgDetails_Xpath);
             WaitForElementToBeVisible(chkboxDGVerified_Xpath, TimeSpan.FromSeconds(5));
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Add DG Details Button");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Add DG Details Button");
             Click(chkboxDGVerified_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on DG Verified Checkbox");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on DG Verified Checkbox");
             Click(btnOKDGVerified_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on OK Button");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on OK Button");
             SwitchToDefaultContent();
         }
 
         public void EnterDetailsForCAODGShipment(string unid, string propershipmntname, string pi, string noofpkg, string netqtyperpkg, string reportable)
         {
             Click(lnkDangerousGoods_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Dangerous Goods Link");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Dangerous Goods Link");
             SwitchToFrame(popupContainerFrame_Xpath);
             Click(btnDGPencil_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Pencil Icon");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Pencil Icon");
             EnterText(txtEmergencyContactName_Name, "Chem Trec");
-            Hooks.Hooks.UpdateTest(Status.Pass, "Entered Emergency Contact Name: Chem Trec");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Entered Emergency Contact Name: Chem Trec");
             EnterText(txtEmergencyContactNumber_Name, "8008008000");
-            Hooks.Hooks.UpdateTest(Status.Pass, "Entered Emergency Contact Number: 8008008000");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Entered Emergency Contact Number: 8008008000");
             Click(btnOKsaveContact_Name);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on OK Button");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on OK Button");
             WaitForElementToBeVisible(txtUNID_Xpath, TimeSpan.FromSeconds(5));
             ScrollDown();
             EnterText(txtUNID_Xpath, unid);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Entered UNID: " + unid);
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Entered UNID: " + unid);
             EnterKeys(txtUNID_Xpath, Keys.Tab);
             Click(chkbxCAO_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on CAO Checkbox");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on CAO Checkbox");
             EnterText(txtNoOfPkgs_Name, noofpkg);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Entered No of Packages: " + noofpkg);
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Entered No of Packages: " + noofpkg);
             EnterText(txtNetQtyPerPkg_Name, netqtyperpkg);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Entered Net Quantity Per Package: " + netqtyperpkg);
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Entered Net Quantity Per Package: " + netqtyperpkg);
             SelectDropdownByVisibleText(drpdwn_NetQtyPerPkgUnit_Name, "KG");
-            Hooks.Hooks.UpdateTest(Status.Pass, "Selected Net Quantity Per Package Unit: KG");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Selected Net Quantity Per Package Unit: KG");
             SelectDropdownByVisibleText(drpdwnReportableQnty_Name, reportable);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Selected Reportable Quantity: " + reportable);
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Selected Reportable Quantity: " + reportable);
             SelectDropdownByVisibleText(drpdwnProperShippingName_Xpath, propershipmntname);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Selected Proper Shipping Name: " + propershipmntname);
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Selected Proper Shipping Name: " + propershipmntname);
             EnterTextWithCheck(txtPI_Name, pi);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Entered Packing Instruction: " + pi);
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Entered Packing Instruction: " + pi);
             Click(btnAddDgDetails_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Add DG Details Button");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Add DG Details Button");
             WaitForElementToBeVisible(chkboxDGVerified_Xpath, TimeSpan.FromSeconds(5));
             ScrollDown();
             Click(chkboxDGVerified_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on DG Verified Checkbox");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on DG Verified Checkbox");
             Click(btnOKDGVerified_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on OK Button");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on OK Button");
             SwitchToDefaultContent();
 
         }

@@ -1,6 +1,5 @@
-﻿using iCargoUIAutomation.utilities;
+﻿using iCargoXunit.pages;
 using log4net;
-using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -9,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iCargoUIAutomation.pages
+namespace iCargoXunit.pages
 {
     public class FogsQAPage : BasePage
     {

@@ -1,11 +1,7 @@
 ﻿using AventStack.ExtentReports;
-using iCargoUIAutomation.Features;
-using iCargoUIAutomation.utilities;
 using log4net;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel;
-using NUnit.Framework;
 using OpenQA.Selenium;
-using SharpCompress.Compressors.Xz;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +12,7 @@ using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iCargoUIAutomation.pages
+namespace iCargoXunit.pages
 {
     public class ImportManifestPage : BasePage
     {
@@ -100,51 +96,51 @@ namespace iCargoUIAutomation.pages
         public void SwitchToImportManifestFrame()
         {
             SwitchToFrame(contentFrameImportManifest_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Info, "Switched to Import Manifest Frame");
+            //Hooks.Hooks.UpdateTest(Status.Info, "Switched to Import Manifest Frame");
         }
 
         public void ClickOnFlightTextBox()
         {
             Click(txtFlightNoImpManifest_Name);
-            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Flight Number Text Box");
+            //Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Flight Number Text Box");
         }
 
         public void EnterFlightNumber()
         {           
             EnterText(txtFlightNoImpManifest_Name, CreateShipmentPage.flightNum);
-            Hooks.Hooks.UpdateTest(Status.Info, "Entered Flight Number: " + CreateShipmentPage.flightNum);
+            //Hooks.Hooks.UpdateTest(Status.Info, "Entered Flight Number: " + CreateShipmentPage.flightNum);
         }
 
         public void EnterFlightDate()
         {            
             EnterText(txtFlightDateImpManifest_Name, CreateShipmentPage.shippingDatePST);
-            Hooks.Hooks.UpdateTest(Status.Info, "Entered Flight Date: " + CreateShipmentPage.shippingDatePST);
+            //Hooks.Hooks.UpdateTest(Status.Info, "Entered Flight Date: " + CreateShipmentPage.shippingDatePST);
         }
 
         public void ClickOnListButton()
         {
             Click(btnListImpManifest_Id);
             WaitForElementToBeVisible(lblULDdetails_Css, TimeSpan.FromSeconds(3));
-            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on List Button");
+            //Hooks.Hooks.UpdateTest(Status.Info, "Clicked on List Button");
         }
 
         public void ClickOrangePencilToEditManifest()
         {
             Click(btnOrangePencilEditImportManifest_Css);
-            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Orange Pencil to Edit Manifest");
+            //Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Orange Pencil to Edit Manifest");
             WaitForElementToBeVisible(btnListImpManifest_Id, TimeSpan.FromSeconds(3));
         }
 
         public void ClickOnBulkCheckBox()
         {
             Click(chkBoxBulk_Css);
-            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Bulk CheckBox");
+            //Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Bulk CheckBox");
         }
 
         public void ClickOnBreakDownButton()
         {
             Click(btnBreakDownImportManifest_Id);
-            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Breakdown Button");
+            //Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Breakdown Button");
         }
 
         public void HandleWarningsDuringBreakdown()
@@ -155,7 +151,7 @@ namespace iCargoUIAutomation.pages
             {
                 Click(btnOkBreakdownWarningMessageUnsavedData_Xpath);
                 WaitForElementToBeInvisible(lblBreakdownWarningMessageUnsavedData_Css, TimeSpan.FromSeconds(3));
-                Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Ok Button for Unsaved Data Warning Message");
+                //Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Ok Button for Unsaved Data Warning Message");
             }
             SwitchToDefaultContent();
             WaitForElementToBeVisible(lblUldBulkNotManifestedWarningMessage_Xpath, TimeSpan.FromSeconds(3));
@@ -164,7 +160,7 @@ namespace iCargoUIAutomation.pages
             {
                 Click(btnYesUldBulkNotManifestedWarningMessage_Xpath);
                 WaitForElementToBeInvisible(lblUldBulkNotManifestedWarningMessage_Xpath, TimeSpan.FromSeconds(3));
-                Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Yes Button for ULD/BULK not manifested Warning Message");
+                //Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Yes Button for ULD/BULK not manifested Warning Message");
             }
             SwitchToImportManifestFrame();
         }
@@ -181,7 +177,7 @@ namespace iCargoUIAutomation.pages
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
                 SwitchToLastWindow();
-                Hooks.Hooks.UpdateTest(Status.Info, "Switched to Add/Update Breakdown Details Window");
+                //Hooks.Hooks.UpdateTest(Status.Info, "Switched to Add/Update Breakdown Details Window");
                 WaitForElementToBeVisible(txtAWBNumShipmentPrefix_Xpath, TimeSpan.FromSeconds(3));
                 EnterText(txtAWBNumShipmentPrefix_Xpath, awbNum.Split('-')[0]);
                 EnterText(txtAWBNumDocumentNum_Xpath, awbNum.Split('-')[1]);
@@ -211,7 +207,7 @@ namespace iCargoUIAutomation.pages
                 if (warningMessage.Contains("Received Pcs/Weight greater than Manifested Pcs/Weight.Do you want to continue?"))
                 {
                     Click(btnYesWarningRcvdPCWgtGreaterThanManifestedPCWgt_Xpath);                   
-                    Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Yes Button for Warning Message");
+                    //Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Yes Button for Warning Message");
                     log.Info("Clicked on Yes Button for Warning Message");
                 }
                 WaitForNewWindowToOpen(TimeSpan.FromSeconds(3), noOfWindowsBefore);
@@ -237,7 +233,7 @@ namespace iCargoUIAutomation.pages
             WaitForElementToBeVisible(lblBreakdownDetails_Css, TimeSpan.FromSeconds(3));
             EnterText(txtBdnLocation_Css, bdnLocation);
             EnterKeys(txtBdnLocation_Css, Keys.Tab);
-            Hooks.Hooks.UpdateTest(Status.Info, "Entered Breakdown Location: " + bdnLocation);
+            //Hooks.Hooks.UpdateTest(Status.Info, "Entered Breakdown Location: " + bdnLocation);
 
             // if break down received pieces and weight is not none then enter the values
             if (bdnRcvdPcs != "None" && bdnRcvdWt != "None")
@@ -245,10 +241,10 @@ namespace iCargoUIAutomation.pages
                 Click(txtRcvdPcs_Css);
                 EnterText(txtRcvdPcs_Css, bdnRcvdPcs);
                 EnterKeys(txtRcvdPcs_Css, Keys.Tab);
-                Hooks.Hooks.UpdateTest(Status.Info, "Entered Received Pieces: " + bdnRcvdPcs);
+                //Hooks.Hooks.UpdateTest(Status.Info, "Entered Received Pieces: " + bdnRcvdPcs);
                 EnterText(txtRcvdWgt_Css, bdnRcvdWt);
                 EnterKeys(txtRcvdWgt_Css, Keys.Tab);
-                Hooks.Hooks.UpdateTest(Status.Info, "Entered Received Weight: " + bdnRcvdWt);
+                //Hooks.Hooks.UpdateTest(Status.Info, "Entered Received Weight: " + bdnRcvdWt);
             }
 
         }
@@ -257,13 +253,13 @@ namespace iCargoUIAutomation.pages
         public void SaveBreakdownAndValidateMessage(string expectedMessage)
         {
             ClickOnElementIfPresent(btnSaveBreakDownDetails_Css);
-            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Save Button");
+            //Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Save Button");
             SwitchToDefaultContent();
             WaitForElementToBeVisible(lblSaveSuccessfulMessage_Css, TimeSpan.FromSeconds(10));
             string actualMessage = GetText(lblSaveSuccessfulMessage_Css);
             if (expectedMessage.Contains(actualMessage))
             {
-                Hooks.Hooks.UpdateTest(Status.Pass, "Validated the Message: " + actualMessage);
+                //Hooks.Hooks.UpdateTest(Status.Pass, "Validated the Message: " + actualMessage);
                 if (actualMessage.Contains("Do you want to list the saved details?"))
                 {
                     Click(btnYesSaveSuccessfulMessage_Css);
@@ -272,7 +268,7 @@ namespace iCargoUIAutomation.pages
             }
             else
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Expected Message: " + expectedMessage + " Actual Message: " + actualMessage);
+                //Hooks.Hooks.UpdateTest(Status.Fail, "Expected Message: " + expectedMessage + " Actual Message: " + actualMessage);
                 Click(btnCloseDialog_Css);
             }
 
@@ -282,18 +278,18 @@ namespace iCargoUIAutomation.pages
         public void SaveBreakdownAndValidateErrorMessage(string expectedWarningMessage)
         {
             ClickOnElementIfPresent(btnSaveBreakDownDetails_Css);
-            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Save Button");
+            //Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Save Button");
             WaitForElementToBeVisible(lblBreakDownWarningMessage_Css, TimeSpan.FromSeconds(10));
             string actualWarningMessage = GetText(lblBreakDownWarningMessage_Css);
             if (!actualWarningMessage.Contains(expectedWarningMessage))
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+                //Hooks.Hooks.UpdateTest(Status.Fail, "Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
                 Log.Error("Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
 
             }
             else
             {
-                Hooks.Hooks.UpdateTest(Status.Pass, "Warning message is as expected: " + actualWarningMessage);
+                //Hooks.Hooks.UpdateTest(Status.Pass, "Warning message is as expected: " + actualWarningMessage);
                 Log.Info("Warning message is as expected: " + actualWarningMessage);
             }
         }
@@ -303,12 +299,12 @@ namespace iCargoUIAutomation.pages
         {
             Click(btnAddUld_Css);
             WaitForElementToBeVisible(popupAddULD_Xpath, TimeSpan.FromSeconds(3));
-            Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Add ULD Button");
+            //Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Add ULD Button");
             EnterText(txtUldNum_Xpath, "BULK");
-            Hooks.Hooks.UpdateTest(Status.Info, "Entered ULD Number: BULK");
+            //Hooks.Hooks.UpdateTest(Status.Info, "Entered ULD Number: BULK");
             Click(btnAdd_Id);
             WaitForElementToBeVisible(lblBulk_Id, TimeSpan.FromSeconds(3));
-            Hooks.Hooks.UpdateTest(Status.Info, "Added ULD: BULK");
+            //Hooks.Hooks.UpdateTest(Status.Info, "Added ULD: BULK");
             Click(btnOk_Id);
             WaitForElementToBeInvisible(popupAddULD_Xpath, TimeSpan.FromSeconds(3));
         }
@@ -318,7 +314,7 @@ namespace iCargoUIAutomation.pages
             WaitForElementToBeVisible(btnCloseImportManifest_Id, TimeSpan.FromSeconds(5));
             ClickOnElementIfEnabled(btnCloseImportManifest_Id);
             WaitForElementToBeInvisible(btnCloseImportManifest_Id, TimeSpan.FromSeconds(5));
-            Hooks.Hooks.UpdateTest(Status.Info, "Close OPR367 Screen");
+            //Hooks.Hooks.UpdateTest(Status.Info, "Close OPR367 Screen");
             SwitchToDefaultContent();
 
         }

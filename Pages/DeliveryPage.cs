@@ -1,5 +1,4 @@
 ﻿using AventStack.ExtentReports;
-using iCargoUIAutomation.Features;
 using log4net;
 using OpenQA.Selenium;
 using System;
@@ -8,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iCargoUIAutomation.pages
+namespace iCargoXunit.pages
 {
     public class DeliveryPage:BasePage
     {
@@ -72,12 +71,12 @@ namespace iCargoUIAutomation.pages
             try
             {
                 SwitchToFrame(deliveryScreenOPR293Frame_Xpath);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Switched to OPR293 Frame");
+                //Hooks.Hooks.UpdateTest(Status.Pass, "Switched to OPR293 Frame");
                 Log.Info("Switched to OPR293 Frame");
             }
             catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in SwitchToOPR293Frame: " + e.Message);
+                //Hooks.Hooks.UpdateTest(Status.Fail, "Error in SwitchToOPR293Frame: " + e.Message);
                 Log.Error("Error in SwitchToOPR293Frame: " + e.Message);
             }
         }
@@ -87,14 +86,14 @@ namespace iCargoUIAutomation.pages
             try
             {
                 EnterText(txtAWBNumber_CssSelector, CreateShipmentPage.awb_num);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Entered AWB Number: " + CreateShipmentPage.awb_num);
+                //Hooks.Hooks.UpdateTest(Status.Pass, "Entered AWB Number: " + CreateShipmentPage.awb_num);
                 Log.Info("Entered AWB Number: " + CreateShipmentPage.awb_num);
                 Click(btnList_CssSelector);
                 Log.Info("Clicked on List Button");
             }
             catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in EnterAWBNumberOPR293: " + e.Message);
+                //Hooks.Hooks.UpdateTest(Status.Fail, "Error in EnterAWBNumberOPR293: " + e.Message);
                 Log.Error("Error in EnterAWBNumberOPR293: " + e.Message);
             }
         }
@@ -104,12 +103,12 @@ namespace iCargoUIAutomation.pages
             try
             {
                 Click(chkboxDeliveryAwb_Xpath);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Selected AWB for Delivery");
+                //Hooks.Hooks.UpdateTest(Status.Pass, "Selected AWB for Delivery");
                 Log.Info("Selected AWB for Delivery");
             }
             catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in SelectAWBForDelivery: " + e.Message);
+                //Hooks.Hooks.UpdateTest(Status.Fail, "Error in SelectAWBForDelivery: " + e.Message);
                 Log.Error("Error in SelectAWBForDelivery: " + e.Message);
             }
         }
@@ -119,12 +118,12 @@ namespace iCargoUIAutomation.pages
             try
             {
                 Click(btnGenerateDeliveryNote_CssSelector);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Generate Delivery Note Button");
+                //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Generate Delivery Note Button");
                 Log.Info("Clicked on Generate Delivery Note Button");
             }
             catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in ClickGenerateDeliveryNoteButton: " + e.Message);
+                //Hooks.Hooks.UpdateTest(Status.Fail, "Error in ClickGenerateDeliveryNoteButton: " + e.Message);
                 Log.Error("Error in ClickGenerateDeliveryNoteButton: " + e.Message);
             }
         }   
@@ -139,13 +138,13 @@ namespace iCargoUIAutomation.pages
                 //convert the string to double
                 double paymentAmountDouble = Convert.ToDouble(paymentAmount);
                 Console.WriteLine("Payment Amount: " + paymentAmountDouble);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Payment Amount: " + paymentAmountDouble);
+                //Hooks.Hooks.UpdateTest(Status.Pass, "Payment Amount: " + paymentAmountDouble);
                 Log.Info("Payment Amount: " + paymentAmountDouble);
                 ScrollDown();
             }
             catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in GetPaymentAmountValue: " + e.Message);
+                //Hooks.Hooks.UpdateTest(Status.Fail, "Error in GetPaymentAmountValue: " + e.Message);
                 Log.Error("Error in GetPaymentAmountValue: " + e.Message);
             }
 
@@ -158,12 +157,12 @@ namespace iCargoUIAutomation.pages
             log.Info("ClickOnSaveButtonHandlePaymentPortal function");
             int noOfWindowsBefore = GetNumberOfWindowsOpened();
             Click(btnAuthCode_Xpath);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Auth Code Button");
+                //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Auth Code Button");
                 Log.Info("Clicked on Auth Code Button");
             if (IsElementDisplayed(lblEmbargoDetails_Xpath, 1))
             {
                 Click(btnContinueEmbargo_Xpath);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
+                //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
             }
             WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore + 1);
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
@@ -173,13 +172,13 @@ namespace iCargoUIAutomation.pages
                 if (!IsElementDisplayed(txtPleaseCloseTabRetry_Xpath, 5) || !IsElementDisplayed(lblAccountInfo_Xpath, 5))
                 {
                     RefreshPage();
-                    Hooks.Hooks.UpdateTest(Status.Pass, "Refreshed Payment Portal");
+                    //Hooks.Hooks.UpdateTest(Status.Pass, "Refreshed Payment Portal");
                 }
 
                 if (IsElementDisplayed(txtPleaseCloseTabRetry_Xpath, 5))
                 {
                     CloseCurrentWindow();
-                    Hooks.Hooks.UpdateTest(Status.Pass, "Closed Payment Portal Tab & Retrying");
+                    //Hooks.Hooks.UpdateTest(Status.Pass, "Closed Payment Portal Tab & Retrying");
                 }
                 if (chargeType.Equals("CC"))
                 {
@@ -187,23 +186,23 @@ namespace iCargoUIAutomation.pages
                     ScrollDown();
                     WaitForElementToBeVisible(lblTotalAmount_Xpath, TimeSpan.FromSeconds(5));
                     totalPaybleAmount = GetText(lblTotalAmount_Xpath).Split("$")[1];
-                    Hooks.Hooks.UpdateTest(Status.Pass, "Total Payable Amount is: " + totalPaybleAmount);
+                    //Hooks.Hooks.UpdateTest(Status.Pass, "Total Payable Amount is: " + totalPaybleAmount);
                     ClickOnElementIfEnabled(btnDone_Xpath);
-                    Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Done Button");
+                    //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Done Button");
                     WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore);                    
                 }                
                 else
                 {
-                    Hooks.Hooks.UpdateTest(Status.Fail, "Invalid Charge Type");
+                    //Hooks.Hooks.UpdateTest(Status.Fail, "Invalid Charge Type");
                 }
-                Hooks.Hooks.UpdateTest(Status.Pass, "Back from Payment Portal");
+                //Hooks.Hooks.UpdateTest(Status.Pass, "Back from Payment Portal");
                 SwitchToLastWindow();                
             }
             return totalPaybleAmount;
         }
          catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in ClickOnSaveButtonHandlePaymentPortal: " + e.Message);
+                //Hooks.Hooks.UpdateTest(Status.Fail, "Error in ClickOnSaveButtonHandlePaymentPortal: " + e.Message);
                 Log.Error("Error in ClickOnSaveButtonHandlePaymentPortal: " + e.Message);
                 return totalPaybleAmount;
             }
@@ -214,12 +213,12 @@ namespace iCargoUIAutomation.pages
             try
             {
                 ClickOnElementIfPresent(btnAcceptPayment_Xpath);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Accept Payment Button");
+                //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Accept Payment Button");
                 Log.Info("Clicked on Accept Payment Button");
             }
             catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in ClickAcceptPaymentButton: " + e.Message);
+                //Hooks.Hooks.UpdateTest(Status.Fail, "Error in ClickAcceptPaymentButton: " + e.Message);
                 Log.Error("Error in ClickAcceptPaymentButton: " + e.Message);
             }
         }
@@ -234,18 +233,18 @@ namespace iCargoUIAutomation.pages
                 string paymentConfirmation = GetText(txtPaymentConfirmation_Xpath);
                 if (paymentConfirmationColor.ToLower().Contains("green") && paymentConfirmation.ToLower().Contains("paid"))
                 {
-                    Hooks.Hooks.UpdateTest(Status.Pass, "Delivery Note Details are displayed in Green Color and Paid");
+                    //Hooks.Hooks.UpdateTest(Status.Pass, "Delivery Note Details are displayed in Green Color and Paid");
                     Log.Info("Delivery Note Details are displayed in Green Color and Paid");
                 }
                 else
                 {
-                    Hooks.Hooks.UpdateTest(Status.Fail, "Delivery Note Details are not displayed in Green Color and Paid");
+                    //Hooks.Hooks.UpdateTest(Status.Fail, "Delivery Note Details are not displayed in Green Color and Paid");
                     Log.Error("Delivery Note Details are not displayed in Green Color and not Paid");
                 }
             }
             catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in Delivery Confirmation Details: " + e.Message);
+                //Hooks.Hooks.UpdateTest(Status.Fail, "Error in Delivery Confirmation Details: " + e.Message);
                 Log.Error("Error in Delivery Confirmation Details: " + e.Message);
             }
         }
@@ -260,11 +259,11 @@ namespace iCargoUIAutomation.pages
                 Log.Info("Entered Delivery To Details");
                 ClickOnElementIfPresent(btnSaveDeliveryDetails_Xpath);   
                 Log.Info("Clicked on Save Delivery Details Button");
-                Hooks.Hooks.UpdateTest(Status.Pass,"Delivery Details Captured Successfully");
+                //Hooks.Hooks.UpdateTest(Status.Pass,"Delivery Details Captured Successfully");
             }
             catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in Capture Delivery Details: " + e.Message);
+                //Hooks.Hooks.UpdateTest(Status.Fail, "Error in Capture Delivery Details: " + e.Message);
                 Log.Error("Error in Capture Delivery Details: " + e.Message);
             }
         }
@@ -283,22 +282,22 @@ namespace iCargoUIAutomation.pages
 
                 // Define the screenshot file name and directory
                 string screenshotFileName = "DeliveryReceipt.png";
-                string screenshotDirectory = Path.Combine(Hooks.Hooks.reportPath, "Screenshots");
+                //string screenshotDirectory = Path.Combine(//Hooks.Hooks.reportPath, "Screenshots");
 
                 // Ensure the directory exists before saving the screenshot
-                if (!Directory.Exists(screenshotDirectory))
-                {
-                    Directory.CreateDirectory(screenshotDirectory);
-                }
+                //if (!Directory.Exists(screenshotDirectory))
+                //{
+                //    Directory.CreateDirectory(screenshotDirectory);
+                //}
 
-                // Construct the full path for the screenshot
-                string screenshotPath = Path.Combine(screenshotDirectory, screenshotFileName);
+                //// Construct the full path for the screenshot
+                //string screenshotPath = Path.Combine(screenshotDirectory, screenshotFileName);
 
                 // Take a screenshot and save it to the specified path
-                Hooks.Hooks.captureScreenshot(screenshotPath);
+                //Hooks.Hooks.captureScreenshot(screenshotPath);
 
                 // Log the screenshot path in the report
-                Hooks.Hooks.UpdateTest(Status.Info, "Delivery Receipt Window Screenshot: " + screenshotPath);
+                //Hooks.Hooks.UpdateTest(Status.Info, "Delivery Receipt Window Screenshot: " + screenshotPath);
 
                 // Close the current window
                 CloseCurrentWindow();
@@ -311,7 +310,7 @@ namespace iCargoUIAutomation.pages
             catch (Exception ex)
             {
                 // Handle any exceptions (e.g., window switch failure, screenshot failure)
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in Delivery Receipt Window: " + ex.Message);
+                //Hooks.Hooks.UpdateTest(Status.Fail, "Error in Delivery Receipt Window: " + ex.Message);
                 throw; // Rethrow the exception if necessary, or log as needed
             }
         }
@@ -325,7 +324,7 @@ namespace iCargoUIAutomation.pages
                 if (IsElementDisplayed(lblEmbargoDetails_Xpath, 1))
                 {
                     Click(btnContinueEmbargo_Xpath);
-                    Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
+                    //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Continue button for Embargo");
                 }
             }
             else if (errortype.Equals("Capture Irregularity"))
@@ -345,14 +344,14 @@ namespace iCargoUIAutomation.pages
                     if (errorText.Contains("Active Cash Draw"))
                     {
                         Click(btnYesActiveCashDraw_Xpath);
-                        Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Yes for Active Cash Draw");
+                        //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Yes for Active Cash Draw");
                         WaitForElementToBeInvisible(btnYesActiveCashDraw_Xpath, TimeSpan.FromMilliseconds(500));
                     }
 
                     else
                     {
                         Click(btnYesActiveCashDraw_Xpath);
-                        Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Yes for " + errorText);
+                        //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Yes for " + errorText);
                         WaitForTextToBeInvisible(errorText, TimeSpan.FromMilliseconds(500));
                     }
                 }               
@@ -367,12 +366,12 @@ namespace iCargoUIAutomation.pages
                 Click(txtCustomerCode_Xpath);
                 EnterText(txtCustomerCode_Xpath, customerCode);
                 EnterKeys(txtCustomerCode_Xpath, Keys.Enter);
-                Hooks.Hooks.UpdateTest(Status.Pass, "Entered Customer Code: " + customerCode);
+                //Hooks.Hooks.UpdateTest(Status.Pass, "Entered Customer Code: " + customerCode);
                 Log.Info("Entered Customer Code: " + customerCode);
             }
             catch (Exception e)
             {
-                Hooks.Hooks.UpdateTest(Status.Fail, "Error in EnterCustomerCodeForUnknownConsignee: " + e.Message);
+                //Hooks.Hooks.UpdateTest(Status.Fail, "Error in EnterCustomerCodeForUnknownConsignee: " + e.Message);
                 Log.Error("Error in EnterCustomerCodeForUnknownConsignee: " + e.Message);
             }
         }

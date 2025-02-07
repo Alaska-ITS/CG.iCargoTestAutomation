@@ -1,5 +1,4 @@
-﻿using iCargoUIAutomation.utilities;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -10,8 +9,9 @@ using System.Threading.Tasks;
 using SeleniumExtras.WaitHelpers;
 using log4net;
 using AventStack.ExtentReports;
+using iCargoXunit.utilities;
 
-namespace iCargoUIAutomation.pages
+namespace iCargoXunit.pages
 {
     public class BasePage
     {

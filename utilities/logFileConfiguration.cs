@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iCargoUIAutomation.utilities
+namespace iCargoXunit.utilities
 {
     public class LogFileConfiguration
     {

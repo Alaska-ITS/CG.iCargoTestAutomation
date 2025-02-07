@@ -1,5 +1,4 @@
 ﻿using AventStack.ExtentReports;
-using iCargoUIAutomation.utilities;
 using log4net;
 using OpenQA.Selenium;
 using System;
@@ -9,7 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iCargoUIAutomation.pages
+namespace iCargoXunit.pages
 {
     public class CaptureIrregularityPage : BasePage
     {
@@ -35,19 +34,19 @@ namespace iCargoUIAutomation.pages
        public void captureIrregularity(string pieces, string weight)
         {
             SwitchToFrame(iframeCaptureIrregularity_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Switched to Capture Irregularity Frame");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Switched to Capture Irregularity Frame");
             Click(txtIrregularityCode_Xpath);            
             EnterText(txtIrregularityCode_Xpath, "Customer - Information Change");
-            Hooks.Hooks.UpdateTest(Status.Pass, "Entered irregularity code as: Customer - Information Change");           
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Entered irregularity code as: Customer - Information Change");           
             EnterText(txtIrregularityPieces_Xpath, pieces);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Entered irregularity pieces as: " + pieces);
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Entered irregularity pieces as: " + pieces);
             EnterText(txtIrregularityWeight_Xpath, weight);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Entered irregularity weight as: " + weight);
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Entered irregularity weight as: " + weight);
             DoubleClick(irregularityscrollhori_XPATH);
             EnterText(txtIrregularityRemarks_Xpath, "Flight Changed : Irregularity Captured");
-            Hooks.Hooks.UpdateTest(Status.Pass, "Entered irregularity remarks as: Flight Changed : Irregularity Captured");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Entered irregularity remarks as: Flight Changed : Irregularity Captured");
             Click(btnOKIrregularity_Xpath);
-            Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on OK button to capture irregularity");
+            //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on OK button to capture irregularity");
             SwitchToDefaultContent();
         }
 
