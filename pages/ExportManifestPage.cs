@@ -511,17 +511,35 @@ namespace iCargoUIAutomation.pages
             PlaceShipmentOnCartToManifest();
         }
 
+        public void FilterOutLyingListAWBSplitAndAssignKnownShipper(string splitPieces)
+        {
+            ClickOnLyingList();
+            string awbNum = CreateShipmentPage.awb_num.Split('-')[1];
+            ClickOnLyingListFilter();
+            EnterText(txtLyingListFilterAWB_Name, awbNum);
+            ClickOnApplyFilter();
+            WaitForElementToBeVisible(txtLyingListShipmentFilter_Xpath, TimeSpan.FromSeconds(10));           
+            EnterText(txtLyingListShipmentFilter_Xpath, awbNum);
+            Hooks.Hooks.UpdateTest(Status.Info, "Entered AWB Number: " + awbNum);
+            Click(txtLyingListShipmentFilter_Xpath);
+            EnterKeys(txtLyingListShipmentFilter_Xpath, Keys.Tab);
+            WaitForElementToBeVisible(By.XPath("//*[text()='" + awbNum + "']"), TimeSpan.FromSeconds(5));
+            SplitAndAssignAWBLyingList(splitPieces);
+            ClickOnCheckBoxLyingListAWB();
+            PlaceShipmentOnCartToManifest();
+        }
+
 
 
         public void SplitAndAssignAWBLyingList(string splitPiece)
         {
-            Click(btnSplitAssignLyingListThreeDots_Xpath);
+            ClickElementUsingActions(btnSplitAssignLyingListThreeDots_Xpath);
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Three Dots for Split & Assign");
             WaitForElementToBeVisible(drpdwnMenuSplitAssignLyingList_Xpath, TimeSpan.FromSeconds(2));
-            Click(btnLyingListSplitAssign_Xpath);
+            ClickElementUsingActions(btnLyingListSplitAssign_Xpath);
             Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Split & Assign");
             WaitForElementToBeVisible(modalSplitShipment_Css, TimeSpan.FromSeconds(2));
-            Click(txtSplitAssignPieces_Css);
+            ClickElementUsingActions(txtSplitAssignPieces_Css);
             EnterText(txtSplitAssignPieces_Css, splitPiece);
             Hooks.Hooks.UpdateTest(Status.Info, "Entered Split Pieces: " + splitPiece);
             EnterKeys(txtSplitAssignPieces_Css, Keys.Tab);
@@ -587,11 +605,11 @@ namespace iCargoUIAutomation.pages
         {
             EnterText(txtAssignShipmentFilter_Xpath, cartUldNum);
             Hooks.Hooks.UpdateTest(Status.Info, "Entered ULD/Cart Number: " + cartUldNum);
-            Click(txtAssignShipmentFilter_Xpath);
+            ClickElementUsingActions(txtAssignShipmentFilter_Xpath);
             EnterKeys(txtAssignShipmentFilter_Xpath, Keys.Tab);
             WaitForElementToBeVisible(By.XPath("//*[text()='" + cartUldNum + "']"), TimeSpan.FromSeconds(5));
-            Click(By.XPath("//input[@name='uldManifestTable-select' and contains(@rowkey,'" + cartUldNum + "')]"));           
-            Click(By.XPath("//*[@aria-describedby='uldNumber']/*[@data-uldnumber='" + cartUldNum + "']"));  
+            ClickElementUsingActions(By.XPath("//input[@name='uldManifestTable-select' and contains(@rowkey,'" + cartUldNum + "')]"));
+            ClickElementUsingActions(By.XPath("//*[@aria-describedby='uldNumber']/*[@data-uldnumber='" + cartUldNum + "']"));  
             Hooks.Hooks.UpdateTest(Status.Info, "Selected ULD/Cart Number: " + cartUldNum);
         }
 

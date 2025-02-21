@@ -20,24 +20,22 @@ namespace iCargoUIAutomation.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("OPR344_EXP_00025_Manifest a split of an AWB for an unknown shipper to a pax fligh" +
-        "t via the lying list")]
-    public partial class OPR344_EXP_00025_ManifestASplitOfAnAWBForAnUnknownShipperToAPaxFlightViaTheLyingListFeature
+    [NUnit.Framework.DescriptionAttribute("OPR344_EXP_00027_Manifest the screened pieces of a partially screened Awb")]
+    public partial class OPR344_EXP_00027_ManifestTheScreenedPiecesOfAPartiallyScreenedAwbFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "OPR344_EXP_00025_Manifest a split of an AWB for an unknown shipper to a pax flight via the lying list.feature"
+#line 1 "OPR344_EXP_00027_Manifest the screened pieces of a partially screened Awb.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "OPR344_EXP_00025_Manifest a split of an AWB for an unknown shipper to a pax fligh" +
-                    "t via the lying list", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "OPR344_EXP_00027_Manifest the screened pieces of a partially screened Awb", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,14 +74,13 @@ namespace iCargoUIAutomation.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Manifest a split of an AWB for an unknown shipper to a pax flight via the lying l" +
-            "ist")]
-        [NUnit.Framework.CategoryAttribute("OPR344_EXP_00025")]
+        [NUnit.Framework.DescriptionAttribute("Manifest the screened pieces of a partially screened Awb")]
+        [NUnit.Framework.CategoryAttribute("OPR344_EXP_00026")]
         [NUnit.Framework.CategoryAttribute("OPR344")]
-        [NUnit.Framework.TestCaseAttribute("ASQXGUEST", "C1001", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "2", "60", "CC", "None", "173", "LyingList", "CART", "Yes", "1", null)]
-        public virtual void ManifestASplitOfAnAWBForAnUnknownShipperToAPaxFlightViaTheLyingList(
+        [NUnit.Framework.TestCaseAttribute("11377", "11377", "11377", "SEA", "ANC", "GENERAL", "None", "NONSCR", "None", "None", "2", "60", "CC", "None", "173", "LyingList", "CART", "Yes", "1", null)]
+        public virtual void ManifestTheScreenedPiecesOfAPartiallyScreenedAwb(
                     string agentCode, 
-                    string unknownShipperCode, 
+                    string shipperCode, 
                     string consigneeCode, 
                     string origin, 
                     string destination, 
@@ -104,7 +101,7 @@ namespace iCargoUIAutomation.Features
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "OPR344_EXP_00025",
+                    "OPR344_EXP_00026",
                     "OPR344"};
             if ((exampleTags != null))
             {
@@ -113,7 +110,7 @@ namespace iCargoUIAutomation.Features
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("AgentCode", agentCode);
-            argumentsOfScenario.Add("UnknownShipperCode", unknownShipperCode);
+            argumentsOfScenario.Add("ShipperCode", shipperCode);
             argumentsOfScenario.Add("ConsigneeCode", consigneeCode);
             argumentsOfScenario.Add("Origin", origin);
             argumentsOfScenario.Add("Destination", destination);
@@ -131,9 +128,8 @@ namespace iCargoUIAutomation.Features
             argumentsOfScenario.Add("cartType", cartType);
             argumentsOfScenario.Add("Execute", execute);
             argumentsOfScenario.Add("SplitPieces", splitPieces);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Manifest a split of an AWB for an unknown shipper to a pax flight via the lying l" +
-                    "ist", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 5
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Manifest the screened pieces of a partially screened Awb", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -153,121 +149,111 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 5
  testRunner.Given(string.Format("User wants to execute the example \"{0}\"", execute), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 7
+#line 6
  testRunner.When(string.Format("User switches station if BaseStation other than \"{0}\"", origin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 8
+#line 7
  testRunner.And("User enters the screen name as \'LTE001\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 9
+#line 8
  testRunner.Then("User enters into the  iCargo \'Create Shipment\' page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 10
+#line 9
  testRunner.When("user clicks on the List button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 11
- testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\",Unknown ShipperCode \"{1}" +
-                            "\", ConsigneeCode \"{2}\"", agentCode, unknownShipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+ testRunner.And(string.Format("User enters the Participant details with AgentCode \"{0}\", ShipperCode \"{1}\", Cons" +
+                            "igneeCode \"{2}\"", agentCode, shipperCode, consigneeCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 12
+#line 11
  testRunner.And("User clicks on the ContinueParticipant button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 13
+#line 12
  testRunner.And("User enters the Certificate details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 13
  testRunner.And("User clicks on the ContinueCertificate button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 15
+#line 14
  testRunner.And(string.Format("User enters the Shipment details with Origin \"{0}\", Destination \"{1}\", ProductCod" +
                             "e \"{2}\", SCCCode \"{3}\", Commodity \"{4}\", ShipmentDescription\"{5}\", ServiceCargoC" +
                             "lass \"{6}\", Piece \"{7}\", Weight \"{8}\"", origin, destination, productCode, sCC, commodity, shipmentDescription, serviceCargoClass, piece, weight), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 16
+#line 15
  testRunner.And("User clicks on the ContinueShipment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 17
+#line 16
  testRunner.And("User clicks on the Select Flight Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 18
+#line 17
  testRunner.And("User selects an \"Cargo-Only\" flight", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 19
+#line 18
  testRunner.And("User clicks on the ContinueFlightDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 20
+#line 19
  testRunner.And(string.Format("User enters the Charge details with ChargeType \"{0}\" and ModeOfPayment \"{1}\"", chargeType, modeOfPayment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 21
+#line 20
  testRunner.And("User clicks on the CalculateCharges button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 22
+#line 21
  testRunner.And("User clicks on the ContinueChargeDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 23
+#line 22
  testRunner.And("User enters the Acceptance details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 24
+#line 23
  testRunner.And("User clicks on the ContinueAcceptanceDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
- testRunner.And("User enters the Screening details for row 1 with screeingMethod as \'Transfer Mani" +
-                        "fest Verified\' and ScreeningResult as \'Pass\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 26
+#line 24
  testRunner.And("User clicks on the ContinueScreeningDetails button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 27
- testRunner.And("User clicks on the save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 28
- testRunner.And("User captures the checksheet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 29
+#line 25
  testRunner.And("User checks the AWB_Verified checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 30
+#line 26
  testRunner.And("User saves all the details & handles all the popups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 31
+#line 27
  testRunner.When("User enters the screen name as \'OPR344\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 32
+#line 28
  testRunner.Then("User enters into the  iCargo \'Export Manifest\' page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 33
+#line 29
  testRunner.When(string.Format("User enters the Booked FlightNumber with \"{0}\"", flightNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 34
+#line 30
  testRunner.And("User enters Booked ShipmentDate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 35
+#line 31
  testRunner.And("User clicks on the List button to fetch the Booked Shipment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 36
+#line 32
  testRunner.And(string.Format("User creates new ULD/Cart in Assigned Shipment with cartType \"{0}\" and pou \"{1}\"", cartType, destination), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 37
- testRunner.And(string.Format("User filterouts the Booked AWB from the Lying List, Split And assign with Pieces " +
-                            "\"{0}\"", splitPieces), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+ testRunner.And(string.Format("User selects the Booked AWB from the Lying List, Split And assign with Pieces \"{0" +
+                            "}\"", splitPieces), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 38
- testRunner.And("User validates the error message in Check Embargo as \"UNKNOWN SHIPPERS RESTRICTED" +
-                        " ON PAX FLIGHTS\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+ testRunner.And("User validates the error message in Check Embargo as \"SCREENING MUST BE COMPLETED" +
+                        " FOR MOVEMENT ON PAX AIRCRAFT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 39
+#line 35
  testRunner.And("User clicks on the Manifest button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 40
+#line 36
  testRunner.And("User closes the PrintPDF window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 41
+#line 37
  testRunner.And("User validates the AWB is \"Manifested\" in the Export Manifest screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 42
+#line 38
  testRunner.Then("User closes the Export Manifest screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
