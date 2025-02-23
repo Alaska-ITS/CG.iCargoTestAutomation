@@ -19,6 +19,8 @@
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
     <PackageReference Include="EPPlus" Version="7.5.3" />
+    <PackageReference Include="ExcelDataReader" Version="3.7.0" />
+    <PackageReference Include="ExcelDataReader.DataSet" Version="3.7.0" />
     <PackageReference Include="extent" Version="0.0.3" />
     <PackageReference Include="ExtentReports" Version="5.0.4" />
     <PackageReference Include="FluentAssertions" Version="8.0.1" />
@@ -51,4 +53,10 @@
     </None>
   </ItemGroup>
 
+	<ItemGroup>
+		<None Update="TestData\**\*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	
 </Project>
