@@ -3,6 +3,7 @@ using iCargoXunit.pages;
 using OpenQA.Selenium;
 using Xunit;
 using System;
+using iCargoXunit.utilities;
 
 namespace iCargoXunit.Tests.UI
 {
@@ -12,7 +13,9 @@ namespace iCargoXunit.Tests.UI
         private readonly PageObjectManager pageObjectManager;
         private readonly homePage hp;
         private readonly MaintainBookingPage mbp;
+        
 
+        public static IEnumerable<object[]> TestData_0001 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00001");
         public CAP018_BKG_00001_CreateBookingTests(TestFixture fixture)
         {
             driver = fixture.Driver; 
@@ -22,10 +25,10 @@ namespace iCargoXunit.Tests.UI
         }
 
         [Theory]
-        [InlineData("SEA", "ANC", "GENERAL", "11377", "11377", "11377", "NONSCR", "10", "200")]
+        [MemberData(nameof(TestData_0001))]
         public void CAP018_BKG_00001_LoginAndCreateShipment(
-            string origin, string destination, string productCode, string agentCode,
-            string shipperCode, string consigneeCode, string commodity, string piece, string weight)
+            string origin, string destination, string productCode, string commodity, string piece,
+           string weight, string agentCode, string shipperCode, string consigneeCode)
         {
             try
             {
@@ -33,8 +36,7 @@ namespace iCargoXunit.Tests.UI
 
                 // 1️⃣ Navigate to CAP018 Maintain Booking Page
                 hp.enterScreenName("CAP018");
-                mbp.SwitchToCAP018Frame();
-                //Assert.True(mbp.IsOnMaintainBookingPage(), "Failed to reach Maintain Booking page.");
+                mbp.SwitchToCAP018Frame();                
 
                 // 2️⃣ Create New Booking
                 mbp.ClickNewListButton();
