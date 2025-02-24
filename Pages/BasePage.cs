@@ -541,5 +541,9 @@ namespace iCargoXunit.pages
             driver.Quit();
         }
 
+        //File Reader Path
+        public static string GetTestDataPath(string fileName) =>
+            Path.Combine(Directory.GetCurrentDirectory(), "TestData", fileName);
+
     }
 }

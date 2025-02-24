@@ -1,42 +1,50 @@
 ﻿using iCargoXunit.Fixtures;
 using iCargoXunit.pages;
 using OpenQA.Selenium;
-using Xunit;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using iCargoXunit.utilities;
+using System.Reflection;
+using Xunit.Abstractions;
+
 
 namespace iCargoXunit.Tests.UI
 {
-    public class CAP018_BKG_00001_CreateBookingTests : IClassFixture<TestFixture>
+    public class  CAP018_BKG_00003_Create_a_booking_for_an_unknown_shipper_on_a_pax_flight : IClassFixture<TestFixture>
     {
         private readonly IWebDriver driver;
         private readonly PageObjectManager pageObjectManager;
         private readonly homePage hp;
-        private readonly MaintainBookingPage mbp;
-        
+        private readonly MaintainBookingPage mbp;       
 
-        public static IEnumerable<object[]> TestData_0001 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00001");
-        public CAP018_BKG_00001_CreateBookingTests(TestFixture fixture)
+        public static IEnumerable<object[]> TestData_0003 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00003");
+      
+        public CAP018_BKG_00003_Create_a_booking_for_an_unknown_shipper_on_a_pax_flight(TestFixture fixture)
         {
-            driver = fixture.Driver; 
+            driver = fixture.Driver;
             pageObjectManager = new PageObjectManager(driver);
             hp = pageObjectManager.GetHomePage();
             mbp = pageObjectManager.GetMaintainBookingPage();
         }
-
         [Theory]
-        [MemberData(nameof(TestData_0001))]
-        public void CAP018_BKG_00001_LoginAndCreateShipment(
-            string origin, string destination, string productCode, string commodity, string piece,
+        [MemberData(nameof(TestData_0003))]
+        
+        public void CAP018_BKG_00003_Create_a_booking_for_an_unknown_shipper_pax_general_flight(
+           string origin, string destination, string productCode, string commodity, string piece,
            string weight, string agentCode, string shipperCode, string consigneeCode)
         {
             try
             {
-                Console.WriteLine("🔹 Starting test: CAP018_BKG_00001_LoginAndCreateShipment");
+
+                Console.WriteLine($"🔹Starting test: {MethodBase.GetCurrentMethod().Name}");
 
                 // 1️⃣ Navigate to CAP018 Maintain Booking Page
                 hp.enterScreenName("CAP018");
-                mbp.SwitchToCAP018Frame();                
+                mbp.SwitchToCAP018Frame();
+                //Assert.True(mbp.IsOnMaintainBookingPage(), "Failed to reach Maintain Booking page.");
 
                 // 2️⃣ Create New Booking
                 mbp.ClickNewListButton();
@@ -56,9 +64,10 @@ namespace iCargoXunit.Tests.UI
             }
             catch (Exception ex)
             {
-                Console.WriteLine($" Test Failed: {ex.Message}");
-                Assert.False(true, $"Test failed due to exception: {ex.Message}");
+                Console.WriteLine($"Test Failed: {ex.Message}");
+                Assert.Fail($"Test failed due to exception: {ex.Message}");
             }
         }
+
     }
 }
