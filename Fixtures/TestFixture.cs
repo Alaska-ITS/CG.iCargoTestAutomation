@@ -25,11 +25,63 @@ namespace iCargoXunit.Fixtures
         public TestFixture()
         {
             //SetupReport();
-           // DownloadTestDataFromAzure().Wait();
+            azureStorage = new AzureStorage(testDataContainerName);
+            DownloadTestDataFromAzure().Wait();            
             InitializeWebDriver();
             SetupICargo();  
         }
 
+        private async Task DownloadTestDataFromAzure()
+        {
+            string solutionDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string testDataFolderPath = Path.Combine(solutionDirectory, "TestData");
+
+            // Ensure the TestData folder exists, or create it
+            if (!Directory.Exists(testDataFolderPath))
+            {
+                Directory.CreateDirectory(testDataFolderPath);
+            }
+
+            // Delete all files in the TestData folder
+            Console.WriteLine($"Clearing existing files in folder: {testDataFolderPath}");
+            var existingFiles = Directory.GetFiles(testDataFolderPath);
+            foreach (var file in existingFiles)
+            {
+                try
+                {
+                    File.Delete(file);
+                    Console.WriteLine($"Deleted file: {file}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Failed to delete file {file}. Error: {ex.Message}");
+                }
+            }
+
+            // Fetch the list of Excel files from the blob
+            azureStorage = new AzureStorage(testDataContainerName);
+            var excelFiles = azureStorage.GetBlobFileNames()
+                            .Where(fileName => fileName.EndsWith(".xlsx", StringComparison.OrdinalIgnoreCase))
+                            .ToList();
+
+            // Download new files from the blob
+            foreach (var fileName in excelFiles)
+            {
+                try
+                {
+                    string localFilePath = Path.Combine(testDataFolderPath, fileName);
+                    var downloadedFilePath = azureStorage.DownloadFileFromBlob(fileName, localFilePath);
+                    Console.WriteLine($"Downloaded test data file: {fileName} to {downloadedFilePath}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Failed to download file {fileName}. Error: {ex.Message}");
+                }
+            }
+
+            Console.WriteLine("File download completed.");
+
+        }
         private void InitializeWebDriver()
         {
             ChromeOptions options = new ChromeOptions();
