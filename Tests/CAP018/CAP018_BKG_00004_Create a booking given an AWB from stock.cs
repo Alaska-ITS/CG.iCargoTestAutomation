@@ -4,47 +4,50 @@ using OpenQA.Selenium;
 using Xunit;
 using System;
 using iCargoXunit.utilities;
+using AventStack.ExtentReports.Gherkin.Model;
 
-namespace iCargoXunit.Tests.UI
+namespace iCargoXunit.Tests.CAP018
 {
-    public class CAP018_BKG_00001_CreateBookingTests : IClassFixture<TestFixture>
+    public class CAP018_BKG_00004_CreateABookingGivenAnAWBFromStock : IClassFixture<TestFixture>
     {
         private readonly IWebDriver driver;
         private readonly PageObjectManager pageObjectManager;
         private readonly homePage hp;
         private readonly MaintainBookingPage mbp;
-        
 
-        public static IEnumerable<object[]> TestData_0001 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00001");
-        public CAP018_BKG_00001_CreateBookingTests(TestFixture fixture)
+
+        public static IEnumerable<object[]> TestData_0004 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00004");
+        public CAP018_BKG_00004_CreateABookingGivenAnAWBFromStock(TestFixture fixture)
         {
-            driver = fixture.Driver; 
+            driver = fixture.Driver;
             pageObjectManager = new PageObjectManager(driver);
             hp = pageObjectManager.GetHomePage();
             mbp = pageObjectManager.GetMaintainBookingPage();
         }
 
         [Theory]
-        [MemberData(nameof(TestData_0001))]
+        [MemberData(nameof(TestData_0004))]
         public void CAP018_BKG_00001_LoginAndCreateShipment(
-            string origin, string destination, string productCode, string commodity, string piece,
+            string awb, string origin, string destination, string productCode, string commodity, string piece,
            string weight, string agentCode, string shipperCode, string consigneeCode)
         {
             try
             {
-                Console.WriteLine("🔹 Starting test: CAP018_BKG_00001_LoginAndCreateShipment");
+                Console.WriteLine("🔹 Starting test: CAP018_BKG_00004_CreateABookingGivenAnAWBFromStock");
 
                 // 1️⃣ Navigate to CAP018 Maintain Booking Page
                 hp.enterScreenName("CAP018");
-                mbp.SwitchToCAP018Frame();                
+                mbp.SwitchToCAP018Frame();
 
-                // 2️⃣ Create New Booking
+                // 2️⃣ Rebook the already executed AWB
+                mbp.EnterAWBNumberFromStock(awb);
                 mbp.ClickNewListButton();
+                mbp.AWBBookingfromStock();
                 mbp.EnterShipmentDetails(origin, destination, productCode, agentCode);
-                mbp.EnterShipperConsigneeDetails(shipperCode, consigneeCode);
-                mbp.EnterCommodityDetails(commodity, piece, weight);
+                mbp.UnknownShipperConsigneeDetails(shipperCode, consigneeCode);
 
-                // 3️⃣ Select Flight & Save Booking
+                // 3️⃣ Delete Flight & Save New Flight
+                mbp.EnterCommodityDetails(commodity, piece, weight);
                 mbp.SelectFlight(productCode);
                 mbp.ClickSaveButton();
 
