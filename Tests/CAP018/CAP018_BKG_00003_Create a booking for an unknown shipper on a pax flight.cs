@@ -11,7 +11,7 @@ using System.Reflection;
 using Xunit.Abstractions;
 
 
-namespace iCargoXunit.Tests.UI
+namespace iCargoXunit.Tests.CAP018
 {
     public class  CAP018_BKG_00003_Create_a_booking_for_an_unknown_shipper_on_a_pax_flight : IClassFixture<TestFixture>
     {
