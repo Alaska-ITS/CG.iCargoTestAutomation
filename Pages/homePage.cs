@@ -32,8 +32,9 @@ namespace iCargoXunit.pages
         private By txt_ScreenName_Css = By.CssSelector(".ic-screen-search");
 
         //Login Page Details
-        private By userName_Id = By.Id("username");
+        private By userName_Id = By.Id("identifierInput");
         private By password_Id = By.Id("password");
+        private By next_Id = By.XPath("//input[@title='Next']");
         private By loginButton_Id = By.XPath("//input[@title='Sign In']");
 
         ILog Log = LogManager.GetLogger(typeof(homePage));
@@ -128,17 +129,19 @@ namespace iCargoXunit.pages
 
                 Console.WriteLine("Previous Role: " + role);
                 //role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);                                                                    
-                role = "CCC";
+                role = "CGODG";
 
                Console.WriteLine("Current Role: " + role);
                 if (role.ToUpper() == "CCC")
                 {
                     EnterText(userName_Id, secrets["CCC_Username"]);
+                    Click(next_Id);
                     EnterText(password_Id, secrets["CCC_Password"]);                                                              
                 }
                 else if (role.ToUpper() == "CGODG")
                 {
                     EnterText(userName_Id, secrets["CGODG_Username"]);
+                    Click(next_Id);
                     EnterText(password_Id, secrets["CGODG_Password"]);                   
                 }
                 else

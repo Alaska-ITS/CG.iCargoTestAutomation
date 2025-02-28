@@ -1286,8 +1286,8 @@ namespace iCargoXunit.pages
             SwitchToDefaultContent();
             if (IsElementDisplayed(popupWarning_Css, 3))
             {
-                Click(btnYesActiveCashDraw_Xpath);                
-                WaitForElementToBeInvisible(btnYesActiveCashDraw_Xpath, TimeSpan.FromMilliseconds(3000));
+               Click(btnYesActiveCashDraw_Xpath);                
+               WaitForElementToBeInvisible(btnYesActiveCashDraw_Xpath, TimeSpan.FromMilliseconds(3000));
                 //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Yes for Active Cash Draw");
             }
             SwitchToLTEContentFrame();            
