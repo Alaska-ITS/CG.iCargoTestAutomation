@@ -50,7 +50,7 @@ namespace iCargoXunit.pages
             //Hooks.Hooks.UpdateTest(Status.Pass, "Entered Emergency Contact Number: 8008008000");
             Click(btnOKsaveContact_Name);
             //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on OK Button");
-            WaitForElementToBeVisible(txtUNID_Xpath, TimeSpan.FromSeconds(5));
+            WaitForElementToBeVisible(txtUNID_Xpath, TimeSpan.FromSeconds(10));
             ScrollDown();
             EnterText(txtUNID_Xpath, unid);
             //Hooks.Hooks.UpdateTest(Status.Pass, "Entered UNID: " + unid);
