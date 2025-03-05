@@ -1,41 +1,37 @@
 ﻿using iCargoXunit.Fixtures;
 using iCargoXunit.pages;
 using OpenQA.Selenium;
-using Xunit;
-using System;
 using iCargoXunit.utilities;
-using System.Reactive;
-using static OpenQA.Selenium.BiDi.Modules.Session.ProxyConfiguration;
 
 namespace iCargoXunit.Tests.LTE001
 {
 
-    public class LTE001_ACC_00001_Create_a_PP_AWB_in_LTE001_for_a_known_shipper : IClassFixture<TestFixture>
+    public class LTE001_ACC_00004_Create_an_AWB_in_LTE001_using_a_specific_commodity_code : IClassFixture<TestFixture>
     {
         private readonly IWebDriver driver;
         private readonly PageObjectManager pageObjectManager;
         private readonly homePage hp;
         private readonly CreateShipmentPage csp;
         private static string totalPaybleAmount;
-        public static IEnumerable<object[]> TestData_LTE_0001 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("LTE001_CreateShipment_TestData.xlsx"), "LTE001_ACC_00001");
+        public static IEnumerable<object[]> TestData_LTE_0004 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("LTE001_CreateShipment_TestData.xlsx"), "LTE001_ACC_00004");
 
 
-        public LTE001_ACC_00001_Create_a_PP_AWB_in_LTE001_for_a_known_shipper(TestFixture fixture)
+        public LTE001_ACC_00004_Create_an_AWB_in_LTE001_using_a_specific_commodity_code(TestFixture fixture)
         {
             driver = fixture.Driver;
             pageObjectManager = new PageObjectManager(driver);
             hp = pageObjectManager.GetHomePage();
             csp = pageObjectManager.GetCreateShipmentPage();
         }
-        
+
 
         [Theory]
-        [MemberData(nameof(TestData_LTE_0001))]
-        public void Create_an_AWB_in_LTE001_for_an_unknown_shipper_on_a_restricted_pax_flight(string agentCode, 
+        [MemberData(nameof(TestData_LTE_0004))]
+        public void Create_a_New_Shipment_Acceptance_of_that_new_shipment_screening_as_CGO_or_CGODG_user(string agentCode,
         string shipperCode, string consigneeCode, string origin,
         string destination, string productCode, string scc, string commodity,
         string shipmentdesc, string serviceCargoClass, string piece,
-        string weight, string chargeType, string modeOfPayment, string cartType )
+        string weight, string chargeType, string modeOfPayment, string cartType)
         {
             try
             {
@@ -69,7 +65,7 @@ namespace iCargoXunit.Tests.LTE001
 
                 csp.ClickOnSelectFlightButton();
 
-                csp.BookWithSpecificFlightType("Combination");
+                csp.BookFlightWithAllAvailability();
 
                 //Clicking on the ContinueFlightDetails button
                 csp.ClickOnContinueFlightDetailsButton();
@@ -97,10 +93,12 @@ namespace iCargoXunit.Tests.LTE001
 
                 //Checking the AWB_Verified checkbox
                 csp.ClickOnAWBVerifiedCheckbox();
-                
+
                 //Saving all the details & handling all the popups
                 (string awb, totalPaybleAmount) = csp.SaveShipmentDetailsAndHandlePopups();
 
+                //Validating the commodity charge amount");
+                csp.ValidateCommodityChargeAmount(totalPaybleAmount);
 
 
             }
