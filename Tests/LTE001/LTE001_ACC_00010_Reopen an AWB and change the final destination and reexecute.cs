@@ -1,28 +1,24 @@
-﻿ 
-
-using iCargoXunit.Fixtures;
+﻿using iCargoXunit.Fixtures;
 using iCargoXunit.pages;
 using OpenQA.Selenium;
 using Xunit;
 using System;
 using iCargoXunit.utilities;
-using System.Reactive;
-using static OpenQA.Selenium.BiDi.Modules.Session.ProxyConfiguration;
-
+using AventStack.ExtentReports.Gherkin.Model;
+using System.Runtime.InteropServices;
 namespace iCargoXunit.Tests.LTE001
 {
 
-    public class LTE001_ACC_00007_Create_an_AWB_in_LTE001_that_has_pieces_that_fail_screening : IClassFixture<TestFixture>
+    public class LTE001_ACC_00010_Reopen_an_AWB_and_change_the_final_destination_and_reexecute : IClassFixture<TestFixture>
     {
         private readonly IWebDriver driver;
         private readonly PageObjectManager pageObjectManager;
         private readonly homePage hp;
         private readonly CreateShipmentPage csp;
         private static string totalPaybleAmount;
-        public static IEnumerable<object[]> TestData_LTE_0007 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("LTE001_CreateShipment_TestData.xlsx"), "LTE001_ACC_00007");
+        public static IEnumerable<object[]> TestData_LTE_00010 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("LTE001_CreateShipment_TestData.xlsx"), "LTE001_ACC_00010");
 
-
-        public LTE001_ACC_00007_Create_an_AWB_in_LTE001_that_has_pieces_that_fail_screening(TestFixture fixture)
+        public LTE001_ACC_00010_Reopen_an_AWB_and_change_the_final_destination_and_reexecute(TestFixture fixture)
         {
             driver = fixture.Driver;
             pageObjectManager = new PageObjectManager(driver);
@@ -31,15 +27,18 @@ namespace iCargoXunit.Tests.LTE001
         }
 
 
+
         [Theory]
         [Trait("Category", "LTE001")]
-        [Trait("Category", "LTE001_ACC_00007")]
-        [MemberData(nameof(TestData_LTE_0007))]
+        [Trait("Category", "LTE001_ACC_00010")]
+        [MemberData(nameof(TestData_LTE_00010))]
+
         public void Create_a_New_Shipment_Acceptance_of_that_new_shipment_screening_as_a_CGO_or_CGODG_user(string agentCode,
         string shipperCode, string consigneeCode, string origin,
         string destination, string productCode, string scc, string commodity,
         string shipmentdesc, string serviceCargoClass, string piece,
-        string weight, string chargeType, string modeOfPayment, string cartType)
+        string weight, string chargeType, string modeOfPayment, string UpdatedValue
+)
         {
             try
             {
@@ -96,11 +95,51 @@ namespace iCargoXunit.Tests.LTE001
                 //Entering the Screening details"
                 csp.EnterScreeningDetails(1, "Transfer Manifest Verified", "Pass");
 
-                //Adding another screening line");
-                csp.AddAnotherScreeningLine();
+                //Clicking on the ContinueScreeningDetails button
+                csp.ClickOnContinueScreeningButton();
 
-                //Entering the Screening details");
-                csp.EnterScreeningDetails(2, "Transfer Manifest Verified", "Fail");
+                //Checking the AWB_Verified checkbox
+                csp.ClickOnAWBVerifiedCheckbox();
+
+                //Saving all the details & handling all the popups");
+                (string awb, totalPaybleAmount) = csp.SaveShipmentDetailsAndHandlePopups();
+
+                //Entering the Executed AWB number");
+                csp.alreadyExecutedAWB();
+
+                //Reopening the AWB");
+                csp.reOpenAWB();
+
+                //Verifying and Updating the Shipment Details for " + fieldToBeUpdated + " with value " + value);
+                csp.VerifyAndUpdateShipmentDetails("destination", UpdatedValue);
+
+                //clickimg on user select flight button
+                csp.ClickOnSelectFlightButton();
+
+                //User selects an available flight
+                csp.BookFlightWithAllAvailability();
+
+                //Clicking on the ContinueFlightDetails button");
+                csp.ClickOnContinueFlightDetailsButton();
+
+                //Opening the Charge Details");
+                csp.OpenAndVerifyChargeDetails();
+
+                //Clicking on the CalculateCharges button");
+                csp.ClickOnCalculateChargeButton();
+                csp.ClickingYesOnPopupWarnings("");
+
+                //Clicking on the ContinueChargeDetails button");
+                csp.ClickOnContinueChargeButton();
+
+                //Verifying and Updating the Acceptance Details");
+                csp.VerifyAndUpdateAcceptanceDetails();
+
+                //Clicking on the ContinueAcceptanceDetails button");
+                csp.ClickOnContinueAcceptanceButton();
+
+                //Verifying and Updating the Screening Details");
+                csp.VerifyAndUpdateScreeningDetails();
 
                 //Clicking on the ContinueScreeningDetails button");
                 csp.ClickOnContinueScreeningButton();
@@ -108,8 +147,9 @@ namespace iCargoXunit.Tests.LTE001
                 //Checking the AWB_Verified checkbox");
                 csp.ClickOnAWBVerifiedCheckbox();
 
-                //Saving shipment and validate the popped up messages for a Confirmed AWB");
-                string awb = csp.SaveShipmentValidateWarningConfirmedAWB("Blocked for screening");
+                csp.SaveDetailsWithCapturingIrregularity(chargeType);
+
+                csp.ValidateAWBStatus("EXECUTED");
 
 
             }
@@ -123,4 +163,7 @@ namespace iCargoXunit.Tests.LTE001
         }
     }
 }
+
+
+
 

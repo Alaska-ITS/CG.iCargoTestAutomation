@@ -30,7 +30,11 @@ namespace iCargoXunit.Tests.LTE001
         
 
         [Theory]
+        [Trait("Category", "LTE001")]
+        [Trait("Category", "LTE001_ACC_00001")]
         [MemberData(nameof(TestData_LTE_0001))]
+        
+
         public void Create_an_AWB_in_LTE001_for_an_unknown_shipper_on_a_restricted_pax_flight(string agentCode, 
         string shipperCode, string consigneeCode, string origin,
         string destination, string productCode, string scc, string commodity,

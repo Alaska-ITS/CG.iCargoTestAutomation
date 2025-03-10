@@ -5,9 +5,6 @@ using OpenQA.Selenium;
 using Xunit;
 using System;
 using iCargoXunit.utilities;
-using System.Reactive;
-using static OpenQA.Selenium.BiDi.Modules.Session.ProxyConfiguration;
-using AventStack.ExtentReports.Gherkin.Model;
 
 namespace iCargoXunit.Tests.LTE001
 {
@@ -33,6 +30,8 @@ namespace iCargoXunit.Tests.LTE001
         
 
         [Theory]
+        [Trait("Category", "LTE001")]
+        [Trait("Category", "LTE001_ACC_00008")]
         [MemberData(nameof(TestData_LTE_0008))]
         public void Create_a_New_Shipment_Acceptance_of_that_new_shipment_screening_as_a_CGO_or_CGODG_user(string agentCode,
         string shipperCode, string consigneeCode, string origin,

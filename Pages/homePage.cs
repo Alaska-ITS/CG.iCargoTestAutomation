@@ -128,8 +128,8 @@ namespace iCargoXunit.pages
                 WaitForElementToBeVisible(userName_Id, TimeSpan.FromSeconds(10));
 
                 Console.WriteLine("Previous Role: " + role);
-                role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);                                                                    
-               // role = "CGODG";
+               // role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);                                                                    
+               role = "CGODG";
 
                Console.WriteLine("Current Role: " + role);
                 if (role.ToUpper() == "CCC")

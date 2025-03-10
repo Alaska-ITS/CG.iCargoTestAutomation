@@ -1,46 +1,45 @@
 ﻿
-     
-    
-
 using iCargoXunit.Fixtures;
 using iCargoXunit.pages;
 using OpenQA.Selenium;
 using Xunit;
 using System;
 using iCargoXunit.utilities;
-using System.Reactive;
-using static OpenQA.Selenium.BiDi.Modules.Session.ProxyConfiguration;
-
+using AventStack.ExtentReports.Gherkin.Model;
+using System.Runtime.InteropServices;
 namespace iCargoXunit.Tests.LTE001
 {
 
-    public class LTE001_ACC_00003_Create_a_DG_AWB_in_LTE001 : IClassFixture<TestFixture>
+    public class LTE001_ACC_00012_Create_an_AWB_for_an_unknown_shipper_going_from_freighter_to_pax : IClassFixture<TestFixture>
     {
         private readonly IWebDriver driver;
         private readonly PageObjectManager pageObjectManager;
         private readonly homePage hp;
         private readonly CreateShipmentPage csp;
-        public static IEnumerable<object[]> TestData_LTE_0003 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("LTE001_CreateShipment_TestData.xlsx"), "LTE001_ACC_00003");
+        private static string totalPaybleAmount;
+        public static IEnumerable<object[]> TestData_LTE_00012 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("LTE001_CreateShipment_TestData.xlsx"), "LTE001_ACC_00012");
 
-
-        public LTE001_ACC_00003_Create_a_DG_AWB_in_LTE001(TestFixture fixture)
+        public LTE001_ACC_00012_Create_an_AWB_for_an_unknown_shipper_going_from_freighter_to_pax(TestFixture fixture)
         {
             driver = fixture.Driver;
             pageObjectManager = new PageObjectManager(driver);
             hp = pageObjectManager.GetHomePage();
             csp = pageObjectManager.GetCreateShipmentPage();
         }
-        
+
+
 
         [Theory]
         [Trait("Category", "LTE001")]
-        [Trait("Category", "LTE001_ACC_00003")]
-        [MemberData(nameof(TestData_LTE_0003))]
-        public void Create_a_New_DG_Shipment_Acceptance_screening_of_that_as_a_CGODG_user(string agentCode,
-        string shipperCode, string consigneeCode, string origin,string destination, string productCode, string scc, 
-        string commodity,string shipmentdesc, string serviceCargoClass, string piece,
-        string weight, string chargeType, string modeOfPayment, string cartType, string unid,
-        string propershipmntname, string pi, string netqtyperpkg, string reportable)
+        [Trait("Category", "LTE001_ACC_00012")]
+        [MemberData(nameof(TestData_LTE_00012))]
+
+        public void Create_a_New_Shipment_Acceptance_of_that_new_shipment_screening_as_a_CGO_or_CGODG_user(string agentCode,
+        string unknownshipperCode, string consigneeCode, string origin,
+        string destination, string productCode, string scc, string commodity,
+        string shipmentdesc, string serviceCargoClass, string piece,
+        string weight, string chargeType, string modeOfPayment
+)
         {
             try
             {
@@ -55,7 +54,7 @@ namespace iCargoXunit.Tests.LTE001
                 csp.ClickOnListButton();
 
                 //Entering the Participant details
-                csp.EnterParticipantDetailsAsync(agentCode, shipperCode, consigneeCode);
+                csp.EnterParticipantDetailsAsync(agentCode, unknownshipperCode, consigneeCode);
 
                 //Clicking on the ContinueParticipant button
                 csp.ClickOnContinueParticipantButton();
@@ -73,8 +72,7 @@ namespace iCargoXunit.Tests.LTE001
                 csp.ClickOnContinueShipmentButton();
 
                 csp.ClickOnSelectFlightButton();
-
-                csp.BookFlightWithAllAvailability();
+                csp.BookWithSpecificFlightType("Combination");
 
                 //Clicking on the ContinueFlightDetails button
                 csp.ClickOnContinueFlightDetailsButton();
@@ -94,15 +92,14 @@ namespace iCargoXunit.Tests.LTE001
                 //Clicking on the ContinueAcceptanceDetails butto
                 csp.ClickOnContinueAcceptanceButton();
 
-                //Entering the Screening details"
-                csp.EnterScreeningDetails(1, "ALT Dangerous Goods", "Pass");
 
                 //Clicking on the ContinueScreeningDetails button
                 csp.ClickOnContinueScreeningButton();
 
-                //Save Shipment Capture Checksheet & DG Details");
-                (string capturedAWB, string totalpayment) = csp.SaveWithDGAndCheckSheet(chargeType, unid, propershipmntname, pi, piece, netqtyperpkg, reportable);
+                //Checking the AWB_Verified checkbox
+                csp.ClickOnAWBVerifiedCheckbox();
 
+                csp.SaveShipmentCaptureAWB("The Shipper does not have a Valid Certificate Type");
 
 
 
@@ -117,4 +114,10 @@ namespace iCargoXunit.Tests.LTE001
         }
     }
 }
+
+
+
+
+
+
 

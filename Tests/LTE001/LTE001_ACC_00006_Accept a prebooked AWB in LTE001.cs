@@ -32,6 +32,8 @@ namespace iCargoXunit.Tests.LTE001
         //NOTE:- We need to integrate CCC and CGODG in one scenario
 
         [Theory]
+        [Trait("Category", "LTE001")]
+        [Trait("Category", "LTE001_ACC_00006")]
         [MemberData(nameof(TestData_LTE_0006))]
         public void Create_a_New_Shipment_Acceptance_of_that_new_shipment_screening_as_a_CGO_or_CGODG_user(string preBookedAWB,string origin,string chargeType, string modeOfPayment,string cartType)
         {

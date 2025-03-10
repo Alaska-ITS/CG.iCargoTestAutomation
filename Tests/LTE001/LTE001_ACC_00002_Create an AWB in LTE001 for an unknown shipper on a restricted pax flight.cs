@@ -28,12 +28,14 @@ namespace iCargoXunit.Tests.LTE001
         }
 
         [Theory]
+        [Trait("Category", "LTE001")]
+        [Trait("Category", "LTE001_ACC_00002")]
         [MemberData(nameof(TestData_LTE_0002))]
         public void LTE001_ACC_00002_LoginAndCreateShipment(string agentCode,
-       string unknownshipper, string consigneeCode, string origin,
-       string destination, string productCode, string scc, string commodity,
-       string shipmentdesc, string serviceCargoClass, string piece,
-       string weight, string chargeType, string modeOfPayment, string cartType)
+           string unknownshipper, string consigneeCode, string origin,
+           string destination, string productCode, string scc, string commodity,
+           string shipmentdesc, string serviceCargoClass, string piece,
+           string weight, string chargeType, string modeOfPayment, string cartType)
         {
             try
             {

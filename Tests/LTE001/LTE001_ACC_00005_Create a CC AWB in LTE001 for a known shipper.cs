@@ -30,6 +30,8 @@ namespace iCargoXunit.Tests.LTE001
 
 
         [Theory]
+        [Trait("Category", "LTE001")]
+        [Trait("Category", "LTE001_ACC_00005")]
         [MemberData(nameof(TestData_LTE_0005))]
         public void Create_a_New_Shipment_Acceptance_of_that_new_shipment_screening_as_a_CGO_or_CGODG_user(string agentCode,
         string shipperCode, string consigneeCode, string origin,
