@@ -7,6 +7,7 @@ using System;
 using iCargoXunit.utilities;
 using AventStack.ExtentReports.Gherkin.Model;
 using System.Runtime.InteropServices;
+using AngleSharp.Dom.Events;
 namespace iCargoXunit.Tests.LTE001
 {
 
@@ -54,7 +55,7 @@ namespace iCargoXunit.Tests.LTE001
                 csp.ClickOnListButton();
 
                 //Entering the Participant details
-                csp.EnterParticipantDetailsAsync(agentCode, unknownshipperCode, consigneeCode);
+                csp.EnterParticipantDetailsWithUnknownShipper(agentCode, unknownshipperCode, consigneeCode);
 
                 //Clicking on the ContinueParticipant button
                 csp.ClickOnContinueParticipantButton();

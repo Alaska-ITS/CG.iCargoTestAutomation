@@ -44,6 +44,7 @@ namespace iCargoXunit.Tests.LTE001
                 Console.WriteLine("🔹 Starting test: LTE001_ACC_00001_LoginAndCreateShipment");
                 // 1️⃣ Navigate to LTE001 create shipment Page
                 hp.SwitchStation(origin);
+
                 hp.enterScreenName("LTE001");
 
                 //Clicking on the List button
@@ -149,8 +150,6 @@ namespace iCargoXunit.Tests.LTE001
                 csp.ClickingYesOnPopupWarnings("");
                 csp.ClickingYesOnPopupWarnings("");
                 csp.ValidateAWBStatus("EXECUTED");
-
-
 
 
             }

@@ -37,7 +37,7 @@ namespace iCargoXunit.Tests.LTE001
         string shipperCode, string consigneeCode, string origin,
         string destination, string productCode, string scc, string commodity,
         string shipmentdesc, string serviceCargoClass, string piece,
-        string weight, string chargeType, string modeOfPayment, string UpdatedValue
+        string weight, string chargeType, string modeOfPayment, string UpdatedValue, string execute
 )
         {
             try
@@ -113,13 +113,17 @@ namespace iCargoXunit.Tests.LTE001
                 //Verifying and Updating the Shipment Details for " + fieldToBeUpdated + " with value " + value);
                 csp.VerifyAndUpdateShipmentDetails("destination", UpdatedValue);
 
-                //clickimg on user select flight button
+                //Clicking on the ContinueShipment button");
+                csp.ClickOnContinueShipmentButton();
+
+                //Verifying and Updating the Flight Details");
+                csp.VerifyAndUpdateFlightDetails("destination");
+
                 csp.ClickOnSelectFlightButton();
 
-                //User selects an available flight
                 csp.BookFlightWithAllAvailability();
 
-                //Clicking on the ContinueFlightDetails button");
+                // Clicking on the ContinueFlightDetails button");
                 csp.ClickOnContinueFlightDetailsButton();
 
                 //Opening the Charge Details");
@@ -138,7 +142,7 @@ namespace iCargoXunit.Tests.LTE001
                 //Clicking on the ContinueAcceptanceDetails button");
                 csp.ClickOnContinueAcceptanceButton();
 
-                //Verifying and Updating the Screening Details");
+                // Verifying and Updating the Screening Details");
                 csp.VerifyAndUpdateScreeningDetails();
 
                 //Clicking on the ContinueScreeningDetails button");
@@ -150,6 +154,7 @@ namespace iCargoXunit.Tests.LTE001
                 csp.SaveDetailsWithCapturingIrregularity(chargeType);
 
                 csp.ValidateAWBStatus("EXECUTED");
+
 
 
             }
