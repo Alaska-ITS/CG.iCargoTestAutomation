@@ -16,7 +16,7 @@ namespace iCargoXunit.Tests.CAP018
         private readonly MaintainBookingPage mbp;
 
 
-        public static IEnumerable<object[]> TestData_0004 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00004");
+        public static IEnumerable<object[]> TestData_CAP018_0004 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00004");
         public CAP018_BKG_00004_CreateABookingGivenAnAWBFromStock(TestFixture fixture)
         {
             driver = fixture.Driver;
@@ -26,7 +26,9 @@ namespace iCargoXunit.Tests.CAP018
         }
 
         [Theory]
-        [MemberData(nameof(TestData_0004))]
+        [MemberData(nameof(TestData_CAP018_0004))]
+        [Trait("Category", "CAP018")]
+        [Trait("Category", "CAP018_BKG_00004")]
         public void CAP018_BKG_00001_LoginAndCreateShipment(
             string awb, string origin, string destination, string productCode, string commodity, string piece,
            string weight, string agentCode, string shipperCode, string consigneeCode)

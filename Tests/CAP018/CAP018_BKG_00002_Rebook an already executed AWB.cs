@@ -15,7 +15,7 @@ namespace iCargoXunit.Tests.CAP018
         private readonly MaintainBookingPage mbp;
 
 
-        public static IEnumerable<object[]> TestData_0002 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00002");
+        public static IEnumerable<object[]> TestData_CAP018_0002 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00002");
         public CAP018_BKG_00002_RebookAnAlreadyExecutedAWB(TestFixture fixture)
         {
             driver = fixture.Driver;
@@ -25,7 +25,9 @@ namespace iCargoXunit.Tests.CAP018
         }
 
         [Theory]
-        [MemberData(nameof(TestData_0002))]
+        [MemberData(nameof(TestData_CAP018_0002))]
+        [Trait("Category", "CAP018")]
+        [Trait("Category", "CAP018_BKG_00002")]
         public void CAP018_BKG_00001_LoginAndCreateShipment(
             string awb)
         {

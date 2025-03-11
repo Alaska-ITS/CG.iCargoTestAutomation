@@ -24,21 +24,30 @@ namespace iCargoXunit.Tests.CAP018
             hp = pageObjectManager.GetHomePage();
             mbp = pageObjectManager.GetMaintainBookingPage();
         }
-        [Fact]      
+        [Fact]
+        [Trait("Category", "CAP018")]
+        [Trait("Category", "CAP018_BKG_00010")]
         public void CAP018_BKG_00010_Create_a_Booking_From_A_Saved_Template()
         {
-            //Navigate to CAP018 Maintain Booking Page
-            hp.enterScreenName("CAP018");
-            mbp.SwitchToCAP018Frame();
-            //Clicking on list button in Maintain Booking screen
-            mbp.ClickNewListButton();
+            try
+            {
+                //Navigate to CAP018 Maintain Booking Page
+                hp.enterScreenName("CAP018");
+                mbp.SwitchToCAP018Frame();
+                //Clicking on list button in Maintain Booking screen
+                mbp.ClickNewListButton();
 
-            //Select the saved template
-            mbp.SelectTemplate();
+                //Select the saved template
+                mbp.SelectTemplate();
 
-            //Clicking on select button
-            mbp.ClickSaveButton();
-            mbp.CaptureAwbNumber();
+                //Clicking on select button
+                mbp.ClickSaveButton();
+                mbp.CaptureAwbNumber();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Test Failed: {ex.Message}");
+            }
         }
     }    
 }

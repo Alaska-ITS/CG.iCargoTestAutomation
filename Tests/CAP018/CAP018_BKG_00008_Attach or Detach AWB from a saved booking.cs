@@ -16,7 +16,7 @@ namespace iCargoXunit.Tests.CAP018
         private readonly PageObjectManager pageObjectManager;
         private readonly homePage hp;
         private readonly MaintainBookingPage mbp;
-        public static IEnumerable<object[]> TestData_0008 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00008");
+        public static IEnumerable<object[]> TestData_CAP018_0008 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00008");
         public CAP018_BKG_00008_Attach_or_Detach_AWB_from_a_saved_booking(TestFixture fixture)
         {
             driver = fixture.Driver;
@@ -25,7 +25,9 @@ namespace iCargoXunit.Tests.CAP018
             mbp = pageObjectManager.GetMaintainBookingPage();
         }
         [Theory]
-        [MemberData(nameof(TestData_0008))]
+        [MemberData(nameof(TestData_CAP018_0008))]
+        [Trait("Category", "CAP018")]
+        [Trait("Category", "CAP018_BKG_00008")]
         public void CAP018_BKG_00008_Attach_or_Detach_AWB_From_A_Saved_Booking(
                               string origin, string destination, string productCode, string commodity, string piece,
                                                       string weight, string agentCode, string shipperCode, string consigneeCode, string newAgentCode)

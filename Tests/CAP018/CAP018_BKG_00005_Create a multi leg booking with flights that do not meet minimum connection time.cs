@@ -18,7 +18,7 @@ namespace iCargoXunit.Tests.CAP018
         private readonly MaintainBookingPage mbp;
 
 
-        public static IEnumerable<object[]> TestData_0005 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00005");
+        public static IEnumerable<object[]> TestData_CAP018_0005 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00005");
         public CAP018_BKG_00005_Create_MultiLeg_Booking_With_Flights_That_Do_Not_Meet_Minimum_Connection_Time(TestFixture fixture)
         {
             driver = fixture.Driver;
@@ -28,7 +28,9 @@ namespace iCargoXunit.Tests.CAP018
         }
 
         [Theory]
-        [MemberData(nameof(TestData_0005))]
+        [MemberData(nameof(TestData_CAP018_0005))]
+        [Trait("Category", "CAP018")]
+        [Trait("Category", "CAP018_BKG_00005")]
         public void CAP018_BKG_00005_Create_a_multi_leg_booking_with_flights_that_do_not_meet_minimum_connection_time(
             string origin, string destination, string productCode, string commodity, string piece,
            string weight, string agentCode, string shipperCode, string consigneeCode)

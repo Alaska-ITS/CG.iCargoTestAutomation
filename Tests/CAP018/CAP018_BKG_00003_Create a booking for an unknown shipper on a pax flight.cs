@@ -20,7 +20,7 @@ namespace iCargoXunit.Tests.CAP018
         private readonly homePage hp;
         private readonly MaintainBookingPage mbp;       
 
-        public static IEnumerable<object[]> TestData_0003 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00003");
+        public static IEnumerable<object[]> TestData_CAP018_0003 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00003");
       
         public CAP018_BKG_00003_Create_a_booking_for_an_unknown_shipper_on_a_pax_flight(TestFixture fixture)
         {
@@ -30,8 +30,9 @@ namespace iCargoXunit.Tests.CAP018
             mbp = pageObjectManager.GetMaintainBookingPage();
         }
         [Theory]
-        [MemberData(nameof(TestData_0003))]
-        
+        [MemberData(nameof(TestData_CAP018_0003))]
+        [Trait("Category", "CAP018")]
+        [Trait("Category", "CAP018_BKG_00003")]
         public void CAP018_BKG_00003_Create_a_booking_for_an_unknown_shipper_pax_general_flight(
            string origin, string destination, string productCode, string commodity, string piece,
            string weight, string agentCode, string shipperCode, string consigneeCode)

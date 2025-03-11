@@ -16,7 +16,7 @@ namespace iCargoXunit.Tests.CAP018
         private readonly PageObjectManager pageObjectManager;
         private readonly homePage hp;
         private readonly MaintainBookingPage mbp;
-        public static IEnumerable<object[]> TestData_0009 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00009");
+        public static IEnumerable<object[]> TestData_CAP018_0009 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00009");
         public CAP018_BKG_00009_Save_a_template_from_a_booking(TestFixture fixture)
         {
             driver = fixture.Driver;
@@ -25,8 +25,10 @@ namespace iCargoXunit.Tests.CAP018
             mbp = pageObjectManager.GetMaintainBookingPage();
         }
         [Theory]
-        [MemberData(nameof(TestData_0009))]
-        public void CAP018_BKG_00009_Save_a_Template_From_Booking(
+        [MemberData(nameof(TestData_CAP018_0009))]
+        [Trait("Category", "CAP018")]
+        [Trait("Category", "CAP018_BKG_00009")]
+        public void CAP018_BKG_00009_Save_aTemplate_From_Booking(
                                string origin, string destination, string productCode, string commodity, string piece,
                                                         string weight, string agentCode, string shipperCode, string consigneeCode)
         {
