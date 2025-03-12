@@ -19,10 +19,35 @@ namespace iCargoXunit.utilities
 
             try
             {
+                if (!File.Exists(filePath))
+                {
+                    Console.WriteLine($"Error: File not found at {filePath}");
+                    yield break;
+                }
+
                 using var stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
                 using var reader = ExcelReaderFactory.CreateReader(stream);
                 var result = reader.AsDataSet();
+
+                if (result == null || result.Tables.Count == 0)
+                {
+                    Console.WriteLine("Error: No data found in Excel file.");
+                    yield break;
+                }
+
+                if (!result.Tables.Contains(sheetName))
+                {
+                    Console.WriteLine($"Error: Sheet '{sheetName}' not found in the Excel file.");
+                    yield break;
+                }
+
                 var dataTable = result.Tables[sheetName];
+
+                if (dataTable.Rows.Count == 0)
+                {
+                    Console.WriteLine($"Error: Sheet '{sheetName}' is empty.");
+                    yield break;
+                }
 
                 // Skip the header row
                 bool isHeader = true;
@@ -51,5 +76,3 @@ namespace iCargoXunit.utilities
         }
     }
 }
-
-
