@@ -34,7 +34,7 @@ namespace iCargoXunit.Tests.OPR344
         [MemberData(nameof(TestData_OPR344_0006))]
         public void OPR344_EXP_00006_Manifest_DG_On_A_Thru_Flight(
                                              string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,
-                                                                string weight, string chargeType, string modeOfPayment, string chargetype, string unid, string propershipmntname, string pi, string noOFPkg, string netqtyperpkg, string reportable, string cartType, string awbSectionName, string splitPieces)
+                                                                string weight, string chargeType, string modeOfPayment, string cartType, string unid, string propershipmntname, string pi, string noOFPkg, string netqtyperpkg, string reportable, string awbSectionName)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace iCargoXunit.Tests.OPR344
                 csp.ClickOnContinueScreeningButton();
                 csp.ClickOnAWBVerifiedCheckbox();
 
-                (string capturedAWB, string totalpayment) = csp.SaveWithDGAndCheckSheet(chargetype, unid, propershipmntname, pi, noOFPkg, netqtyperpkg, reportable);
+                (string capturedAWB, string totalpayment) = csp.SaveWithDGAndCheckSheet(chargeType, unid, propershipmntname, pi, noOFPkg, netqtyperpkg, reportable);
 
 
                 hp.enterScreenName("OPR344");
@@ -84,7 +84,7 @@ namespace iCargoXunit.Tests.OPR344
                 csp.EnterFlightDateExportManifest();
                 emp.ClickOnListButton();
                 csp.CreateNewULDCartExportManifest(cartType, destination);
-                csp.FilterSplitAndAssignAWBToULDExportManifest(awbSectionName, splitPieces);
+                csp.FilterOutAWBULDInExportManifest(awbSectionName);
 
                 emp.clickOnManifestButton();
                 emp.ClosePrintPDFWindow();

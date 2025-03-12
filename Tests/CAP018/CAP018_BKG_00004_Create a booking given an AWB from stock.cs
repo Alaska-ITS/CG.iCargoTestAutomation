@@ -29,9 +29,9 @@ namespace iCargoXunit.Tests.CAP018
         [MemberData(nameof(TestData_CAP018_0004))]
         [Trait("Category", "CAP018")]
         [Trait("Category", "CAP018_BKG_00004")]
-        public void CAP018_BKG_00001_LoginAndCreateShipment(
-            string awb, string origin, string destination, string productCode, string commodity, string piece,
-           string weight, string agentCode, string shipperCode, string consigneeCode)
+        public void CAP018_BKG_00004_Create_A_Booking_Given_An_AWB_From_Stock(
+            string origin, string destination, string productCode, string commodity, string piece,
+           string weight, string agentCode, string shipperCode, string consigneeCode, string awb)
         {
             try
             {
