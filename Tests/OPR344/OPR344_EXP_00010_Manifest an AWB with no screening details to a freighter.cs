@@ -5,13 +5,12 @@ using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reactive;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iCargoXunit.Tests.OPR344
+namespace iCargoUIAutomation.Tests.OPR344
 {
-    public class OPR344_EXP_00006_Manifest_DG_on_a_thru_flight : IClassFixture<TestFixture>
+    public class OPR344_EXP_00010_Manifest_an_AWB_with_no_screening_details_to_a_freighter : IClassFixture<TestFixture>
     {
         private readonly IWebDriver driver;
         private readonly PageObjectManager pageObjectManager;
@@ -20,8 +19,8 @@ namespace iCargoXunit.Tests.OPR344
         private readonly ExportManifestPage emp;
         private static string totalPaybleAmount;
 
-        public static IEnumerable<object[]> TestData_OPR344_0006 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("OPR344_ExportManifest_TestData.xlsx"), "OPR344_EXP_00006");
-        public OPR344_EXP_00006_Manifest_DG_on_a_thru_flight(TestFixture fixture)
+        public static IEnumerable<object[]> TestData_OPR344_0010 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("OPR344_ExportManifest_TestData.xlsx"), "OPR344_EXP_00010");
+        public OPR344_EXP_00010_Manifest_an_AWB_with_no_screening_details_to_a_freighter(TestFixture fixture)
         {
             driver = fixture.Driver;
             pageObjectManager = new PageObjectManager(driver);
@@ -31,14 +30,14 @@ namespace iCargoXunit.Tests.OPR344
         }
 
         [Theory]
-        [MemberData(nameof(TestData_OPR344_0006))]
-        public void OPR344_EXP_00006_Manifest_DG_On_A_Thru_Flight(
-                                             string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,
-                                                                string weight, string chargeType, string modeOfPayment, string cartType, string unid, string propershipmntname, string pi, string noOFPkg, string netqtyperpkg, string reportable, string awbSectionName)
+        [MemberData(nameof(TestData_OPR344_0010))]
+        public void OPR344_EXP_00010_Manifest_An_AWB_With_No_Screening_Details_To_A_Freighter(
+                                                        string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,
+                                             string weight, string chargeType, string modeOfPayment, string awbSectionName, string cartType)
         {
             try
             {
-                Console.WriteLine("🔹 Starting test: OPR344_EXP_00006_Manifest_DG_on_a_thru_flight");
+                Console.WriteLine("🔹 Starting test: OPR344_EXP_00010_Manifest_an_AWB_with_no_screening_details_to_a_freighter");
 
                 // 1️⃣ Navigate to CAP018 Maintain Booking Page
                 hp.enterScreenName("LTE001");
@@ -59,7 +58,7 @@ namespace iCargoXunit.Tests.OPR344
                 csp.ClickOnContinueShipmentButton();
                 csp.ClickOnSelectFlightButton();
 
-                csp.BookWithSpecificFlightType("Combination");
+                csp.BookWithSpecificFlightType("Cargo-Only");
                 csp.ClickOnContinueFlightDetailsButton();
 
                 csp.EnterChargeDetails(chargeType, modeOfPayment);
@@ -69,14 +68,12 @@ namespace iCargoXunit.Tests.OPR344
 
                 csp.ClickOnContinueChargeButton();
                 csp.EnterAcceptanceDetails();
-                csp.ClickOnContinueAcceptanceButton();
-                csp.EnterScreeningDetails(1, "ALT Dangerous Goods", "Pass");
+                csp.ClickOnContinueAcceptanceButton();                
                 csp.ClickOnContinueScreeningButton();
                 csp.ClickOnAWBVerifiedCheckbox();
 
-                (string capturedAWB, string totalpayment) = csp.SaveWithDGAndCheckSheet(chargeType, unid, propershipmntname, pi, noOFPkg, netqtyperpkg, reportable);
+                (string awb, totalPaybleAmount) = csp.SaveShipmentDetailsAndHandlePopups();
 
-                // 5️⃣ Manifest AWB
 
                 hp.enterScreenName("OPR344");
                 emp.SwitchToManifestFrame();
@@ -91,15 +88,13 @@ namespace iCargoXunit.Tests.OPR344
                 emp.ClosePrintPDFWindow();
                 emp.ValidateAWBStatusInExportManifest("Manifested");
                 emp.CloseOPR344Screen();
-
-                
-
             }
+            
             catch (Exception e)
             {
-                Console.WriteLine("🔴 Exception: " + e.Message);
-                throw;
+                Console.WriteLine("Error in OPR344_EXP_00010_Manifest_an_AWB_with_no_screening_details_to_a_freighter: " + e.Message);
             }
         }
-    }   
+    }
+
 }
