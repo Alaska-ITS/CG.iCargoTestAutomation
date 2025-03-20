@@ -5,7 +5,7 @@ using iCargoXunit.utilities;
 
 namespace iCargoXunit.Tests.LTE001
 {
-    public class LTE001_ACC_00016_Create_AWB_Employee_Shipment : IClassFixture<TestFixture>
+    public class LTE001_ACC_00017_Create_a_COMAT_AWB : IClassFixture<TestFixture>
     {
         private readonly IWebDriver driver;
         private readonly PageObjectManager pageObjectManager;
@@ -13,9 +13,9 @@ namespace iCargoXunit.Tests.LTE001
         private readonly CreateShipmentPage csp;
         private static string totalPaybleAmount;
 
-        public static IEnumerable<object[]> TestData_LTE_00016 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("LTE001_CreateShipment_TestData.xlsx"), "LTE001_ACC_00016");
+        public static IEnumerable<object[]> TestData_LTE_00017 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("LTE001_CreateShipment_TestData.xlsx"), "LTE001_ACC_00017");
 
-        public LTE001_ACC_00016_Create_AWB_Employee_Shipment(TestFixture fixture)
+        public LTE001_ACC_00017_Create_a_COMAT_AWB(TestFixture fixture)
         {
             driver = fixture.Driver;
             pageObjectManager = new PageObjectManager(driver);
@@ -25,8 +25,8 @@ namespace iCargoXunit.Tests.LTE001
 
         [Theory]
         [Trait("Category", "LTE001")]
-        [Trait("Category", "LTE001_ACC_00016")]
-        [MemberData(nameof(TestData_LTE_00016))]
+        [Trait("Category", "LTE001_ACC_00017")]
+        [MemberData(nameof(TestData_LTE_00017))]
 
         public void Create_AWB_Employee_Shipment(string agentCode, string shipperCode, string consigneeCode, string origin,
         string destination, string productCode, string scc, string commodity,
@@ -77,27 +77,22 @@ namespace iCargoXunit.Tests.LTE001
                 csp.EnterScreeningDetails(1, "Transfer Manifest Verified", "Pass");
                 csp.ClickOnContinueScreeningButton();
 
-                //Click on save  button
-                csp.ClickSave();
-                // capture the check sheet for DG
-                csp.CaptureCheckSheetForDG();
-
-               // Checking the AWB_Verified checkbox");
+                //Checking the AWB_Verified checkbox");
                 csp.ClickOnAWBVerifiedCheckbox();
                 //click on save button
                 csp.ClickSave();
-                // ✅ Handling error popups and finalizing
                 csp.ClickingYesOnPopupWarnings("");
-                //  Saving all the details &handling all the popups");
-                (string awb, totalPaybleAmount) = csp.SaveShipmentDetailsAndHandlePopups();
 
+                csp.ValidateAWBStatus("EXECUTED");
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"❌ Test Failed: {ex.Message}");
+                Console.WriteLine($" Test Failed: {ex.Message}");
                 Assert.False(true, $"Test failed due to exception: {ex.Message}");
             }
         }
     }
 }
+
+
