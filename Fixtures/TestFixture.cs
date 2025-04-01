@@ -99,7 +99,7 @@ namespace iCargoXunit.Fixtures
         private void SetupICargo()
         {
            homePage hp = new homePage(Driver);
-          BasePage  bp = new BasePage(Driver);
+           BasePage  bp = new BasePage(Driver);
 
             bp.DeleteAllCookies();
             bp.Open("https://asstg-icargo.ibsplc.aero/icargo/login.do");
