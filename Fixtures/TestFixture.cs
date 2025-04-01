@@ -85,13 +85,13 @@ namespace iCargoXunit.Fixtures
         }
         private void InitializeWebDriver()
         {
-            ChromeOptions options = new ChromeOptions();
-            options.AddArgument("--incognito");
+            //ChromeOptions options = new ChromeOptions();
+            //options.AddArgument("--incognito");
 
-            Driver = new ChromeDriver(options);
-            //EdgeOptions options = new EdgeOptions();
-            //options.AddArgument("InPrivate");
-            //Driver = new EdgeDriver(options);
+            //Driver = new ChromeDriver(options);
+            EdgeOptions options = new EdgeOptions();
+            options.AddArgument("InPrivate");
+            Driver = new EdgeDriver(options);
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
             Driver.Manage().Window.Maximize();
         }
