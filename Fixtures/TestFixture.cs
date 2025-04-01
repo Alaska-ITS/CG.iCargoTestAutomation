@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using iCargoXunit.pages;
 using AventStack.ExtentReports;
 using iCargoXunit.utilities;
+using OpenQA.Selenium.Edge;
 
 namespace iCargoXunit.Fixtures
 {
@@ -88,6 +89,9 @@ namespace iCargoXunit.Fixtures
             options.AddArgument("--incognito");
 
             Driver = new ChromeDriver(options);
+            //EdgeOptions options = new EdgeOptions();
+            //options.AddArgument("InPrivate");
+            //Driver = new EdgeDriver(options);
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
             Driver.Manage().Window.Maximize();
         }
