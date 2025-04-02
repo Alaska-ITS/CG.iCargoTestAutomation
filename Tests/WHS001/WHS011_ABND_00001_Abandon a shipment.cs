@@ -1,0 +1,99 @@
+﻿using iCargoUIAutomation.pages;
+using iCargoXunit.Fixtures;
+using iCargoXunit.pages;
+using iCargoXunit.utilities;
+using OpenQA.Selenium;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static OpenQA.Selenium.BiDi.Modules.BrowsingContext.Locator;
+namespace iCargoUIAutomation.Tests.WHS001
+{
+    public class WHS011_ABND_00001_Abandon_a_shipment : IClassFixture<TestFixture>
+    {
+        private IWebDriver driver;
+        private PageObjectManager pageObjectManager;
+        private CreateShipmentPage csp;
+        private readonly homePage hp;
+        private WarehouseShipmentEnquiry wse;
+        
+        private static string totalPaybleAmount;
+
+        public static IEnumerable<object[]> TestData_WHS011_0001 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("WHS011_WarehouseShipmentEnquiry_TestData.xlsx"), "WHS011_WSE_00001");
+
+        public WHS011_ABND_00001_Abandon_a_shipment(TestFixture fixture)
+        {
+            driver = fixture.Driver;
+            pageObjectManager = new PageObjectManager(driver);
+            hp = pageObjectManager.GetHomePage();
+            csp = pageObjectManager.GetCreateShipmentPage();
+            wse = pageObjectManager.GetWarehouseShipmentEnquiry();
+
+        }
+
+
+        [Theory]
+        [MemberData(nameof(TestData_WHS011_0001))]
+
+        public void Abandonashipment(
+            string agentCode, string shipperCode, string consigneeCode, string origin,
+            string destination, string productCode, string scc, string commodity,
+            string shipmentdesc, string serviceCargoClass, string piece,
+            string weight, string chargeType, string modeOfPayment)
+        {
+            try
+            {
+                Console.WriteLine("🔹 Starting test:WHS011_ABND_00001_Abandon_a_shipment");
+
+                hp.SwitchStation(origin);
+                hp.enterScreenName("LTE001");
+
+                csp.SwitchToLTEContentFrame();
+                csp.ClickOnAwbTextBox();
+                csp.ClickOnListButton();
+                csp.EnterParticipantDetailsAsync(agentCode, shipperCode, consigneeCode);
+                csp.ClickOnContinueParticipantButton();
+                csp.EnterCertificateDetails();
+                csp.ClickOnContinueCertificateButton();
+                csp.EnterShipmentDetails(origin, destination, productCode, scc, commodity, shipmentdesc, serviceCargoClass, piece, weight);
+                csp.ClickOnContinueShipmentButton();
+                csp.ClickOnSelectFlightButton();
+                csp.BookWithSpecificFlightType("Combination");
+                csp.ClickOnContinueFlightDetailsButton();
+                csp.EnterChargeDetails(chargeType, modeOfPayment);
+                csp.ClickOnCalculateChargeButton();
+                csp.ClickingYesOnPopupWarnings("");
+                csp.ClickOnContinueChargeButton();
+                csp.EnterAcceptanceDetails();
+                csp.ClickOnContinueAcceptanceButton();
+                csp.EnterScreeningDetails(1, "Transfer Manifest Verified", "Pass");
+                csp.ClickOnContinueScreeningButton();
+                csp.ClickOnAWBVerifiedCheckbox();
+
+                (string awb, totalPaybleAmount) = csp.SaveShipmentDetailsAndHandlePopups();
+
+                hp.enterScreenName("WHS011");
+
+                wse.SwitchToWarehouseFrame();
+                wse.EnterDestination();
+                wse.ClickListButton();
+                wse.ClickOnCheckbox();
+                wse.ClickAbandonShipmentButton();
+                wse.ClickOnAbandonCheckBox();
+                wse.SelectfromDropdown();
+                wse.EnterPieceAndWeight();
+                wse.SelectfromDrpdwnReasonCode();
+                wse.EnterRemarks("PCS NOT FND ON FLOOR");
+                wse.ClickonAbndnSavebttn();
+                wse.ValidatePopupAbndnScren("The Selected Shipment has been abandoned");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Test Failed! Error: {ex.Message}");
+                throw;
+            }
+        }
+    }
+}
