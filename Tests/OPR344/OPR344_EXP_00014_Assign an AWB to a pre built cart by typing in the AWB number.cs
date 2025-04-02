@@ -32,13 +32,14 @@ namespace iCargoXunit.Tests.OPR344
         [MemberData(nameof(TestData_OPR344_00014))]
         public void OPR344_EXP_00014_Assign_AWB_to_a_pre_built_cart_by_typing_in_the_AWB_number(
             string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,
-            string weight, string chargeType, string modeOfPayment, string cartType, string awbNumber, string flightNumber)
+            string weight, string chargeType, string modeOfPayment, string awbNumber, string cartType)
         {
             try
             {
                 Console.WriteLine("🔹 Starting test: OPR344_EXP_00014_Assign_an_AWB_to_a_pre_built_cart_by_typing_in_the_AWB_number");
 
                 // Step 1: Navigate to Create Shipment page
+                hp.SwitchStation(origin);
                 hp.enterScreenName("LTE001");
 
                 // Step 2: Create New Booking
@@ -76,7 +77,7 @@ namespace iCargoXunit.Tests.OPR344
                 hp.enterScreenName("OPR344");
                 emp.SwitchToManifestFrame();
                 emp.ClickOnFlightTextBox();
-                csp.EnterFlightinExportManifest(flightNumber);
+                csp.EnterFlightinExportManifest("");
                 csp.EnterFlightDateExportManifest();
                 emp.ClickOnListButton();
 

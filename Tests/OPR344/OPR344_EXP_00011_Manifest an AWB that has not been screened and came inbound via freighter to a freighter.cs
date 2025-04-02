@@ -14,7 +14,7 @@ namespace iCargoXunit.Tests.OPR344
         private readonly ExportManifestPage emp;
         private static string totalPaybleAmount;
 
-        public static IEnumerable<object[]> TestData_OPR344_00011 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("OPR344_ExportManifest_TestData.xlsx"), "OPR344_EXP_000011");
+        public static IEnumerable<object[]> TestData_OPR344_00011 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("OPR344_ExportManifest_TestData.xlsx"), "OPR344_EXP_00011");
         public OPR344_EXP_00011_Manifest_an_AWB_that_has_not_been_screened_and_came_inbound_via_freighter_to_a_freighter(TestFixture fixture)
         {
             driver = fixture.Driver;
@@ -26,14 +26,17 @@ namespace iCargoXunit.Tests.OPR344
 
         [Theory]
         [MemberData(nameof(TestData_OPR344_00011))]
-        public void OPR344_EXP_00011_Manifest_AWB_that_has_not_been_screened_and_came_inbound_via_freighter_to_a_freighter(string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,
-          string weight, string chargeType, string modeOfPayment, string chargetype, string unid, string propershipmntname, string pi, string noOFPkg, string netqtyperpkg, string reportable, string cartType, string awbSectionName, string splitPieces)
+        public void OPR344_EXP_00011_Manifest_AWB_that_has_not_been_screened_and_came_inbound_via_freighter_to_a_freighter(string agent, string shipper, 
+        string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc,
+        string serviceCargoClass, string piece, string weight, string chargeType, string modeOfPayment, 
+        string awbSectionName, string cartType)
         {
             try
             {
                 Console.WriteLine("🔹 Starting test: OPR344_EXP_00006_Manifest_DG_on_a_thru_flight");
 
                 // 1️⃣ Navigate to CAP018 Maintain Booking Page
+                hp.SwitchStation(origin);
                 hp.enterScreenName("LTE001");
 
                 // 2️⃣ Create New Booking
@@ -66,24 +69,19 @@ namespace iCargoXunit.Tests.OPR344
                 csp.ClickOnContinueScreeningButton();
                 csp.ClickOnAWBVerifiedCheckbox();
 
-                (string capturedAWB, string totalpayment) = csp.SaveWithDGAndCheckSheet(chargetype, unid, propershipmntname, pi, noOFPkg, netqtyperpkg, reportable);
-
-
+                (string awb, totalPaybleAmount) = csp.SaveShipmentDetailsAndHandlePopups();
+                //Entering the screen name");
                 hp.enterScreenName("OPR344");
+
                 emp.SwitchToManifestFrame();
                 emp.ClickOnFlightTextBox();
                 csp.EnterFlightinExportManifest("");
                 csp.EnterFlightDateExportManifest();
                 emp.ClickOnListButton();
                 csp.CreateNewULDCartExportManifest(cartType, destination);
-                csp.FilterSplitAndAssignAWBToULDExportManifest(awbSectionName, splitPieces);
-
-                emp.clickOnManifestButton();
-                emp.ClosePrintPDFWindow();
-                emp.ValidateAWBStatusInExportManifest("Manifested");
+                csp.FilterOutAWBULDInExportManifest(awbSectionName);
+                emp.ValidateErrorMessageOnPopup("SCREENING MUST BE COMPLETED FOR MOVEMENT ON PAX AIRCRAFT");
                 emp.CloseOPR344Screen();
-
-                // 5️⃣ Manifest AWB
 
             }
             catch (Exception e)

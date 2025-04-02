@@ -31,14 +31,16 @@ namespace iCargoXunit.Tests.OPR344
         [Theory]
         [MemberData(nameof(TestData_OPR344_00015))]
         public void OPR344_EXP_00015_Bump_cart_to_another_flight(
-            string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,
-            string weight, string chargeType, string modeOfPayment, string cartType, string awbNumber, string flightNumber, string newFlightNumber, string awbSectionName)
+            string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, 
+            string commodity, string shipmentdesc, string serviceCargoClass, string piece,
+            string weight, string chargeType, string modeOfPayment, string awbSectionName, string newFlightNumber,string cartType)
         {
             try
             {
                 Console.WriteLine("🔹 Starting test: OPR344_EXP_00015_Bump_a_cart_to_another_flight");
 
                 // Step 1: Navigate to Create Shipment page
+                hp.SwitchStation(origin);
                 hp.enterScreenName("LTE001");
 
                 // Step 2: Create New Booking
@@ -76,7 +78,7 @@ namespace iCargoXunit.Tests.OPR344
                 hp.enterScreenName("OPR344");
                 emp.SwitchToManifestFrame();
                 emp.ClickOnFlightTextBox();
-                csp.EnterFlightinExportManifest(flightNumber);
+                csp.EnterFlightinExportManifest("");
                 csp.EnterFlightDateExportManifest();
                 emp.ClickOnListButton();
 

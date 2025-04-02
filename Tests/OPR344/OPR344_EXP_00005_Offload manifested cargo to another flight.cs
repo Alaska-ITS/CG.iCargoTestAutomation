@@ -41,6 +41,7 @@ namespace iCargoXunit.Tests.OPR344
                 Console.WriteLine("🔹 Starting test: OPR344_EXP_00003_Manifest_an_AWB_onto_its_booked_flight");
 
                 // 1️⃣ Navigate to CAP018 Maintain Booking Page
+                hp.SwitchStation(origin);
                 hp.enterScreenName("LTE001");
 
                 // 2️⃣ Create New Booking

@@ -32,13 +32,14 @@ namespace iCargoXunit.Tests.OPR344
         [MemberData(nameof(TestData_OPR344_00012))]
         public void OPR344_EXP_00012_Manifest_AWB_that_has_not_been_screened_and_came_inbound_via_freighter_to_a_PAX_flight(
             string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,
-            string weight, string chargeType, string modeOfPayment, string cartType, string awbSectionName, string flightNumber)
+            string weight, string chargeType, string modeOfPayment, string flightNumber, string awbSectionName, string cartType)
         {
             try
             {
                 Console.WriteLine("🔹 Starting test: OPR344_EXP_00012_Manifest_an_AWB_that_has_not_been_screened_and_came_inbound_via_freighter_to_a_PAX_flight");
 
                 // Step 1: Navigate to Create Shipment page
+                hp.SwitchStation(origin);
                 hp.enterScreenName("LTE001");
 
                 // Step 2: Create New Booking
