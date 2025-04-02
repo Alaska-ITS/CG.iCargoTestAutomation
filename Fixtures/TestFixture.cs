@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
 using Xunit;
 using System;
 using System.IO;
@@ -84,10 +85,17 @@ namespace iCargoXunit.Fixtures
         }
         private void InitializeWebDriver()
         {
+            //edge
+            //EdgeOptions options = new EdgeOptions();
+            //options.AddArgument("--inprivate");
+            //Driver = new EdgeDriver(options);
+
+            //chrome
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--incognito");
-
             Driver = new ChromeDriver(options);
+
+
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
             Driver.Manage().Window.Maximize();
         }

@@ -4,13 +4,11 @@ using iCargoXunit.utilities;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Xunit;
 
 namespace iCargoXunit.Tests.OPR344
 {
-    public class OPR344_EXP_00005_Offload_manifested_cargo_to_another_flight : IClassFixture<TestFixture>
+    public class OPR344_EXP_00012_Manifest_an_AWB_that_has_not_been_screened_and_came_inbound_via_freighter_to_a_PAX_flight : IClassFixture<TestFixture>
     {
         private readonly IWebDriver driver;
         private readonly PageObjectManager pageObjectManager;
@@ -19,8 +17,9 @@ namespace iCargoXunit.Tests.OPR344
         private readonly ExportManifestPage emp;
         private static string totalPaybleAmount;
 
-        public static IEnumerable<object[]> TestData_OPR344_0005 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("OPR344_ExportManifest_TestData.xlsx"), "OPR344_EXP_00005");
-        public OPR344_EXP_00005_Offload_manifested_cargo_to_another_flight(TestFixture fixture)
+        public static IEnumerable<object[]> TestData_OPR344_00012 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("OPR344_ExportManifest_TestData.xlsx"), "OPR344_EXP_00012");
+
+        public OPR344_EXP_00012_Manifest_an_AWB_that_has_not_been_screened_and_came_inbound_via_freighter_to_a_PAX_flight(TestFixture fixture)
         {
             driver = fixture.Driver;
             pageObjectManager = new PageObjectManager(driver);
@@ -30,66 +29,65 @@ namespace iCargoXunit.Tests.OPR344
         }
 
         [Theory]
-        [MemberData(nameof(TestData_OPR344_0005))]
-        public void OPR344_EXP_00005_Offload_Manifested_cargo_to_another_flight(
-                                  string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,
-                                                          string weight, string chargeType, string modeOfPayment, string cartType, string splitPieces,
-                                                                                  string awbSectionName)
+        [MemberData(nameof(TestData_OPR344_00012))]
+        public void OPR344_EXP_00012_Manifest_AWB_that_has_not_been_screened_and_came_inbound_via_freighter_to_a_PAX_flight(
+            string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,
+            string weight, string chargeType, string modeOfPayment, string flightNumber, string awbSectionName, string cartType)
         {
             try
             {
-                Console.WriteLine("🔹 Starting test: OPR344_EXP_00003_Manifest_an_AWB_onto_its_booked_flight");
+                Console.WriteLine("🔹 Starting test: OPR344_EXP_00012_Manifest_an_AWB_that_has_not_been_screened_and_came_inbound_via_freighter_to_a_PAX_flight");
 
-                // 1️⃣ Navigate to CAP018 Maintain Booking Page
+                // Step 1: Navigate to Create Shipment page
                 hp.SwitchStation(origin);
                 hp.enterScreenName("LTE001");
 
-                // 2️⃣ Create New Booking
+                // Step 2: Create New Booking
                 csp.SwitchToLTEContentFrame();
                 csp.ClickOnAwbTextBox();
                 csp.ClickOnListButton();
 
-                // 3️⃣ Select Flight & Save Booking
+                // Step 3: Enter participant, certificate, and shipment details
                 csp.EnterParticipantDetailsAsync(agent, shipper, consignee);
                 csp.ClickOnContinueParticipantButton();
                 csp.EnterCertificateDetails();
                 csp.ClickOnContinueCertificateButton();
                 csp.EnterShipmentDetails(origin, destination, productCode, scc, commodity, shipmentdesc, serviceCargoClass, piece, weight);
 
-                // 4️⃣ Verify AWB is Generated
+                // Step 4: Flight selection and charge details
                 csp.ClickOnContinueShipmentButton();
                 csp.ClickOnSelectFlightButton();
-
-                csp.BookWithSpecificFlightType("Combination");
+                csp.BookWithSpecificFlightType("Cargo-Only");
                 csp.ClickOnContinueFlightDetailsButton();
-
                 csp.EnterChargeDetails(chargeType, modeOfPayment);
 
+                // Step 5: Charge calculation and acceptance details
                 csp.ClickOnCalculateChargeButton();
                 csp.ClickingYesOnPopupWarnings("");
-
                 csp.ClickOnContinueChargeButton();
                 csp.EnterAcceptanceDetails();
                 csp.ClickOnContinueAcceptanceButton();
-                csp.EnterScreeningDetails(1, "Transfer Manifest Verified", "Pass");
                 csp.ClickOnContinueScreeningButton();
                 csp.ClickOnAWBVerifiedCheckbox();
 
                 (string awb, totalPaybleAmount) = csp.SaveShipmentDetailsAndHandlePopups();
 
-
+                // Step 6: Navigate to Export Manifest page and enter flight details
                 hp.enterScreenName("OPR344");
                 emp.SwitchToManifestFrame();
                 emp.ClickOnFlightTextBox();
-                csp.EnterFlightinExportManifest("");
+                csp.EnterFlightinExportManifest(flightNumber);
                 csp.EnterFlightDateExportManifest();
                 emp.ClickOnListButton();
-                csp.CreateNewULDCartExportManifest(cartType, destination);
-                csp.FilterSplitAndAssignAWBToULDExportManifest(awbSectionName, splitPieces);
 
-                emp.clickOnManifestButton();
-                emp.ClosePrintPDFWindow();
-                emp.ValidateAWBStatusInExportManifest("Manifested");
+                // Step 7: Create ULD and filter AWB
+                csp.CreateNewULDCartExportManifest(cartType, destination);
+                csp.FilterSplitAndAssignAWBToULDExportManifest(awbSectionName, "");
+
+                // Step 8: Validate error message for PAX flight
+                emp.ValidateErrorMessageOnPopup("SCREENING MUST BE COMPLETED FOR MOVEMENT ON PAX AIRCRAFT");
+
+                // Step 9: Close Export Manifest screen
                 emp.CloseOPR344Screen();
             }
             catch (Exception ex)
@@ -98,6 +96,5 @@ namespace iCargoXunit.Tests.OPR344
                 throw;
             }
         }
-        
-    }   
+    }
 }
