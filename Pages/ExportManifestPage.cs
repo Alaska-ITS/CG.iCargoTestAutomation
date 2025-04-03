@@ -84,9 +84,12 @@ namespace iCargoXunit.pages
         private By txtSplitAssignWeight_Css = By.CssSelector(".modal-content input[name='weight.roundedDisplayValue']");
         private By btnOkSplitAssign_Xpath = By.XPath("//*[@class='modal-footer']//button[text()='Ok']");
         private By btnClearSplitAssign_Xpath = By.XPath("//*[@class='modal-footer']//button[text()='Clear']");
-        
+
 
         //Lying List
+        private By btnLyingListSplitAssign_Xpath = By.XPath("//*[contains(@class,'lying-list')]//button[text()=' Split & Assign']");
+        private By drpdwnMenuSplitAssignLyingList_Xpath = By.XPath("//*[contains(@class,'lying-list')]//div[@role='rowgroup']//div[@role='menu']");
+        private By txtLyingListShipmentFilter_Xpath = By.XPath("//*[contains(@class,'lying-list')]//*[@class='table-header__search']/input");
         private By btnLyingList_Xpath = By.XPath("//*[text()='Lying List']");
         private By btnLyingListAWB_Xpath = By.XPath("//button[text()='AWB(s)']");
         private By btnLyingListFilter_Id = By.Id("lyingListTable-datafilter");
@@ -876,9 +879,58 @@ namespace iCargoXunit.pages
         }
 
 
+        public void FilterOutLyingListAWBSplitAndAssign(string splitPieces, string readyForCarriageOption = "Yes")
+        {
+            ClickOnLyingList();
+            ClickOnLyingListFilter();
+            SelectReadyForCarriage(readyForCarriageOption);
+            ClickOnApplyFilter();
+            WaitForElementToBeVisible(txtLyingListShipmentFilter_Xpath, TimeSpan.FromSeconds(10));
+            string awbNum = CreateShipmentPage.awb_num.Split('-')[1];
+            EnterText(txtLyingListShipmentFilter_Xpath, awbNum);
+            //Hooks.Hooks.UpdateTest(Status.Info, "Entered AWB Number: " + awbNum);
+            Click(txtLyingListShipmentFilter_Xpath);
+            EnterKeys(txtLyingListShipmentFilter_Xpath, Keys.Tab);
+            WaitForElementToBeVisible(By.XPath("//*[text()='" + awbNum + "']"), TimeSpan.FromSeconds(5));
+            SplitAndAssignAWBLyingList(splitPieces);
+            ClickOnCheckBoxLyingListAWB();
+            PlaceShipmentOnCartToManifest();
+        }
 
+        public void SplitAndAssignAWBLyingList(string splitPiece)
+        {
+            ClickElementUsingActions(btnSplitAssignLyingListThreeDots_Xpath);
+            //Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Three Dots for Split & Assign");
+            WaitForElementToBeVisible(drpdwnMenuSplitAssignLyingList_Xpath, TimeSpan.FromSeconds(2));
+            ClickElementUsingActions(btnLyingListSplitAssign_Xpath);
+            //Hooks.Hooks.UpdateTest(Status.Info, "Clicked on Split & Assign");
+            WaitForElementToBeVisible(modalSplitShipment_Css, TimeSpan.FromSeconds(2));
+            ClickElementUsingActions(txtSplitAssignPieces_Css);
+            EnterText(txtSplitAssignPieces_Css, splitPiece);
+            //Hooks.Hooks.UpdateTest(Status.Info, "Entered Split Pieces: " + splitPiece);
+            EnterKeys(txtSplitAssignPieces_Css, Keys.Tab);
+            Click(btnOkSplitAssign_Xpath);
+            //Hooks.Hooks.UpdateTest(Status.Info, "Clicked on OK Button");
+            WaitForElementToBeInvisible(modalSplitShipment_Css, TimeSpan.FromSeconds(2));
+        }
 
-
+        public void FilterOutLyingListAWBSplitAndAssignKnownShipper(string splitPieces)
+        {
+            ClickOnLyingList();
+            string awbNum = CreateShipmentPage.awb_num.Split('-')[1];
+            ClickOnLyingListFilter();
+            EnterText(txtLyingListFilterAWB_Name, awbNum);
+            ClickOnApplyFilter();
+            WaitForElementToBeVisible(txtLyingListShipmentFilter_Xpath, TimeSpan.FromSeconds(10));
+            EnterText(txtLyingListShipmentFilter_Xpath, awbNum);
+            //Hooks.Hooks.UpdateTest(Status.Info, "Entered AWB Number: " + awbNum);
+            Click(txtLyingListShipmentFilter_Xpath);
+            EnterKeys(txtLyingListShipmentFilter_Xpath, Keys.Tab);
+            WaitForElementToBeVisible(By.XPath("//*[text()='" + awbNum + "']"), TimeSpan.FromSeconds(5));
+            SplitAndAssignAWBLyingList(splitPieces);
+            ClickOnCheckBoxLyingListAWB();
+            PlaceShipmentOnCartToManifest();
+        }
         public void CloseOPR344Screen()
         {
             

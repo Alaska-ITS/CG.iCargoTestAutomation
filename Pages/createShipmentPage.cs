@@ -1776,7 +1776,7 @@ namespace iCargoXunit.pages
 
                 int noOfWindowsBefore = GetNumberOfWindowsOpened();
                 ClickSave();
-                WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore + 1);
+                WaitForNewWindowToOpen(TimeSpan.FromSeconds(30), noOfWindowsBefore + 1);
                 int noOfWindowsAfter = GetNumberOfWindowsOpened();
                 if (noOfWindowsAfter > noOfWindowsBefore)
                 {
@@ -2440,6 +2440,30 @@ namespace iCargoXunit.pages
                 Log.Error("Error in entering flight details in export manifest: " + e.ToString());
             }
 
+        }
+
+        public void WhenUserEntersTheScreeningDetailsForJustSinglePieceAsWithScreeingMethodAsAndScreeningResultAs(string piece, string method, string result)
+        {
+            try
+            {
+                EnterText(txtScreeningAirport1_Xpath, origin);
+                //Hooks.Hooks.UpdateTest(Status.Pass, "Entered Screening Airport: " + origin);
+                SelectDropdownByVisibleText(drpdwnScreeningMethod1_Xpath, method);
+                //Hooks.Hooks.UpdateTest(Status.Pass, "Selected Screening Method: " + method);
+                EnterText(txtScreeningPieces1_Xpath, piece);
+                //Hooks.Hooks.UpdateTest(Status.Pass, "Entered Pieces: " + piece);
+                SelectDropdownByVisibleText(drpdwnScreeningResult1_Xpath, result);
+                //Hooks.Hooks.UpdateTest(Status.Pass, "Selected Screening Result: " + result);
+
+                Console.WriteLine("Successfully entered screening details.");
+            }
+            catch (Exception ex)
+            {
+
+               // Hooks.Hooks.UpdateTest(Status.Fail, "Failed to enter screening details: " + ex.Message);
+                Console.WriteLine("Error while entering screening details: " + ex.Message);
+                throw;
+            }
         }
 
         public void ValidateHandlingCodeinFogsQA(string handlingCode)
