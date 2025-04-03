@@ -2,6 +2,7 @@
 using iCargoXunit.pages;
 using log4net;
 using OpenQA.Selenium;
+using OpenQA.Selenium.DevTools;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
@@ -22,6 +23,7 @@ namespace iCargoUIAutomation.pages
         private IWebDriver driver;
         private PageObjectManager pageObjectManager;
         //private CreateShipmentPage csp;
+        ILog Log = LogManager.GetLogger(typeof(WarehouseShipmentEnquiry));
 
         public WarehouseShipmentEnquiry(IWebDriver driver) : base(driver)
         {
@@ -42,8 +44,9 @@ namespace iCargoUIAutomation.pages
         private By ReasonCodeDrpdown = By.Name("reasonCode");
         private By Remarks = By.Name("remarks");
         private By AbndnSave = By.Id("CMP_WAREHOUSE_DEFAULTS_ABANDONSHIPMENT_SAVE_BTN");
-        //private By Validatemessage = By.XPath("//span[contains(text(),'The Selected Shipment has been abandoned')]");
+        //private By Validatemessaged = By.XPath("//span[contains(text(),'The Selected Shipment has been abandoned')]");
         private By Validatemessage = By.CssSelector(".ui-dialog .alert-messages-detail span");
+        private object e;
 
         public void SwitchToWarehouseFrame()
         {
@@ -67,12 +70,14 @@ namespace iCargoUIAutomation.pages
                 else
                 {
                     //Hooks.Hooks.UpdateTest(Status.Fail, "Failed to fetch destination from CreateShipmentPage");
+                    Log.Error("Destination cannot be entered from CreatShipmentpage");
 
                 }
             }
             catch (NoSuchElementException)
             {
                 //Hooks.Hooks.UpdateTest(Status.Fail, "Destination input field not found.");
+                Log.Error("Error in entering: " + e.ToString());
             }
         }
 
@@ -95,6 +100,7 @@ namespace iCargoUIAutomation.pages
             catch (Exception e)
             {
                 //Hooks.Hooks.UpdateTest(Status.Fail, "Error in clicking on AWB details checkbox: " + e.ToString());
+                Log.Error("Error in clicking on check box: " + e.ToString());
             }
         }
 
@@ -117,6 +123,7 @@ namespace iCargoUIAutomation.pages
             catch (Exception e)
             {
                 //Hooks.Hooks.UpdateTest(Status.Fail, "Error in clicking on Check box after clicking on Abandon Shipment button: " + e.ToString());
+                Log.Error("Error in clicking on abandon check box: " + e.ToString());
             }
         }
 
@@ -130,6 +137,7 @@ namespace iCargoUIAutomation.pages
             catch (Exception e)
             {
                 //Hooks.Hooks.UpdateTest(Status.Fail, "Error in selecting Abandon Type details: " + e.ToString());
+                Log.Error("Error in selecting from dropdown: " + e.ToString());
             }
         }
 
@@ -157,12 +165,14 @@ namespace iCargoUIAutomation.pages
                 else
                 {
                     //Hooks.Hooks.UpdateTest(Status.Fail, "Failed to fetch pieces and weight from Abandon Shipment Screen");
+                    Log.Error("Pieces and Weight cannot be entered");
 
                 }
             }
             catch (NoSuchElementException)
             {
                 //Hooks.Hooks.UpdateTest(Status.Fail, "Pieces and Weight input field not found.");
+                Log.Error("Error in entering piece and weight: " + e.ToString());
             }
         }
 
@@ -176,6 +186,7 @@ namespace iCargoUIAutomation.pages
             catch (Exception e)
             {
                 //Hooks.Hooks.UpdateTest(Status.Fail, "Error in selecting Reason Code details: " + e.ToString());
+                Log.Error("Error in selecting from dropdown reason code: " + e.ToString());
             }
         }
 
@@ -191,6 +202,7 @@ namespace iCargoUIAutomation.pages
             catch (NoSuchElementException)
             {
                 //Hooks.Hooks.UpdateTest(Status.Fail, "Remarks input field not found.");
+                Log.Error("Error in entering remarks: " + e.ToString());
             }
         }
 
@@ -218,6 +230,7 @@ namespace iCargoUIAutomation.pages
             {
                 //Hooks.Hooks.UpdateTest(Status.Info, "Warning message is as expected: " + actualWarningMessage);
                 //Log.Info("Warning message is as expected: " + actualWarningMessage);
+                Log.Error("PopUp cannot be validated");
             }
 
         }
