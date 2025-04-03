@@ -92,7 +92,8 @@ namespace iCargoXunit.pages
         private By btnYesWarningRcvdPCWgtGreaterThanManifestedPCWgt_Xpath = By.XPath("//*[@class='ui-dialog-buttonset']/button[text()=' Yes ']");
 
 
-
+        private By btnCloseBreakdown_Xpath = By.XPath("//button[@id='Close_button']");
+        private By btnCloseImpManifest_Xpath = By.XPath("//button[@id='CMP_OPERATIONS_FLTHANDLING_IMPORTMANIFEST_CLOSE']");
         public void SwitchToImportManifestFrame()
         {
             SwitchToFrame(contentFrameImportManifest_Xpath);
@@ -315,6 +316,16 @@ namespace iCargoXunit.pages
             ClickOnElementIfEnabled(btnCloseImportManifest_Id);
             WaitForElementToBeInvisible(btnCloseImportManifest_Id, TimeSpan.FromSeconds(5));
             //Hooks.Hooks.UpdateTest(Status.Info, "Close OPR367 Screen");
+            SwitchToDefaultContent();
+
+        }
+        public void CloseBreakdownScreen()
+        {
+
+            WaitForElementToBeVisible(btnCloseBreakdown_Xpath, TimeSpan.FromSeconds(5));
+            ClickOnElementIfEnabled(btnCloseBreakdown_Xpath);
+            WaitForElementToBeInvisible(btnCloseBreakdown_Xpath, TimeSpan.FromSeconds(5));
+            //Hooks.Hooks.UpdateTest(Status.Info, "Close Breakdown Screen");
             SwitchToDefaultContent();
 
         }
