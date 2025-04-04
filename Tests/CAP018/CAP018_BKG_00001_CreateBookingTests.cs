@@ -1,11 +1,11 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
 using Xunit;
 using System;
-using iCargoXunit.utilities;
+using iCargoUIAutomation.utilities;
 
-namespace iCargoXunit.Tests.CAP018
+namespace iCargoUIAutomation.Tests.CAP018
 {
     public class CAP018_BKG_00001_CreateBookingTests : IClassFixture<TestFixture>
     {

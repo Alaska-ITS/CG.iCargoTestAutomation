@@ -1,9 +1,9 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
-using iCargoXunit.utilities;
+using iCargoUIAutomation.utilities;
 using AngleSharp.Dom.Events;
-namespace iCargoXunit.Tests.LTE001
+namespace iCargoUIAutomation.Tests.LTE001
 {
 
     public class LTE001_ACC_00028_Change_the_rated_customer_field_when_accepting_an_AWB : IClassFixture<TestFixture>

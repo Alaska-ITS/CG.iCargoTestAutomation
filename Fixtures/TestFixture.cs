@@ -5,11 +5,11 @@ using Xunit;
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using iCargoXunit.pages;
+using iCargoUIAutomation.pages;
 using AventStack.ExtentReports;
-using iCargoXunit.utilities;
+using iCargoUIAutomation.utilities;
 
-namespace iCargoXunit.Fixtures
+namespace iCargoUIAutomation.Fixtures
 {
     public class TestFixture : IAsyncLifetime
     {
@@ -86,14 +86,14 @@ namespace iCargoXunit.Fixtures
         private void InitializeWebDriver()
         {
             //edge
-            //EdgeOptions options = new EdgeOptions();
-            //options.AddArgument("--inprivate");
-            //Driver = new EdgeDriver(options);
+            EdgeOptions options = new EdgeOptions();
+            options.AddArgument("--inprivate");
+            Driver = new EdgeDriver(options);
 
             //chrome
-            ChromeOptions options = new ChromeOptions();
-            options.AddArgument("--incognito");
-            Driver = new ChromeDriver(options);
+            //ChromeOptions options = new ChromeOptions();
+            //options.AddArgument("--incognito");
+            //Driver = new ChromeDriver(options);
 
 
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);

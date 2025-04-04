@@ -1,10 +1,10 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
-using iCargoXunit.utilities;
+using iCargoUIAutomation.utilities;
 using AngleSharp.Dom.Events;
 
-namespace iCargoXunit.Tests.LTE001
+namespace iCargoUIAutomation.Tests.LTE001
 {
     public class LTE001_ACC_00019_Create_an_AWB_for_an_Employee_who_is_an_unknown_shipper_for_a_product_other_than_Employee_Shipment : IClassFixture<TestFixture>
     {

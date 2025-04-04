@@ -1,6 +1,6 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
-using iCargoXunit.utilities;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
+using iCargoUIAutomation.utilities;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iCargoXunit.Tests.CAP018
+namespace iCargoUIAutomation.Tests.CAP018
 {
     public class CAP018_BKG_00009_Save_a_template_from_a_booking : IClassFixture<TestFixture>
     {

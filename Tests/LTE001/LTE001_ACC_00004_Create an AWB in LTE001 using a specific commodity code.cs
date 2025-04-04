@@ -1,9 +1,9 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
-using iCargoXunit.utilities;
+using iCargoUIAutomation.utilities;
 
-namespace iCargoXunit.Tests.LTE001
+namespace iCargoUIAutomation.Tests.LTE001
 {
 
     public class LTE001_ACC_00004_Create_an_AWB_in_LTE001_using_a_specific_commodity_code : IClassFixture<TestFixture>

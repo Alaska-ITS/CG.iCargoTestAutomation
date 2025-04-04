@@ -1,10 +1,10 @@
 ﻿
- using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
-using iCargoXunit.utilities;
+ using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
+using iCargoUIAutomation.utilities;
 using OpenQA.Selenium;
 
-namespace iCargoXunit.Tests.OPR344
+namespace iCargoUIAutomation.Tests.OPR344
 {
     public class OPR344_EXP_00010_Manifest_an_AWB_with_no_screening_details_to_a_freighter : IClassFixture<TestFixture>
     {

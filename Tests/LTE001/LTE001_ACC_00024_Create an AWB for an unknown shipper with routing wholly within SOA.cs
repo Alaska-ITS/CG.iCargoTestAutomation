@@ -1,8 +1,8 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
-using iCargoXunit.utilities;
-namespace iCargoXunit.Tests.LTE001
+using iCargoUIAutomation.utilities;
+namespace iCargoUIAutomation.Tests.LTE001
 {
 
     public class LTE001_ACC_00024_Create_an_AWB_for_an_unknown_shipper_with_routing_wholly_within_SOA : IClassFixture<TestFixture>

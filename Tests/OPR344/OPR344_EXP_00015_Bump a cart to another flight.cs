@@ -1,12 +1,12 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
-using iCargoXunit.utilities;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
+using iCargoUIAutomation.utilities;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace iCargoXunit.Tests.OPR344
+namespace iCargoUIAutomation.Tests.OPR344
 {
     public class OPR344_EXP_00015_Bump_a_cart_to_another_flight : IClassFixture<TestFixture>
     {

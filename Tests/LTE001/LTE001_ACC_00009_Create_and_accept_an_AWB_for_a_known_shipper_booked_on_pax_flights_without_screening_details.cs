@@ -1,13 +1,13 @@
 ﻿
 
-using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
+using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
 using Xunit;
 using System;
-using iCargoXunit.utilities;
+using iCargoUIAutomation.utilities;
 
-namespace iCargoXunit.Tests.LTE001
+namespace iCargoUIAutomation.Tests.LTE001
 {
 
     public class LTE001_ACC_00009_Create_and_accept_an_AWB_for_a_known_shipper_booked_on_pax_flights_without_screening_details : IClassFixture<TestFixture>

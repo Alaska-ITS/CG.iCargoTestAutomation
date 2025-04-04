@@ -1,12 +1,12 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
 using Xunit;
 using System;
-using iCargoXunit.utilities;
+using iCargoUIAutomation.utilities;
 using AventStack.ExtentReports.Gherkin.Model;
 
-namespace iCargoXunit.Tests.CAP018
+namespace iCargoUIAutomation.Tests.CAP018
 {
     public class CAP018_BKG_00004_CreateABookingGivenAnAWBFromStock : IClassFixture<TestFixture>
     {

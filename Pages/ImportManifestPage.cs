@@ -12,7 +12,7 @@ using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iCargoXunit.pages
+namespace iCargoUIAutomation.pages
 {
     public class ImportManifestPage : BasePage
     {

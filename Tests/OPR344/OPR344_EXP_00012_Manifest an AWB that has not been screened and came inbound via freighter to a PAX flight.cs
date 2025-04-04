@@ -1,12 +1,12 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
-using iCargoXunit.utilities;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
+using iCargoUIAutomation.utilities;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace iCargoXunit.Tests.OPR344
+namespace iCargoUIAutomation.Tests.OPR344
 {
     public class OPR344_EXP_00012_Manifest_an_AWB_that_has_not_been_screened_and_came_inbound_via_freighter_to_a_PAX_flight : IClassFixture<TestFixture>
     {

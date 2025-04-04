@@ -1,12 +1,12 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
-using iCargoXunit.utilities;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
+using iCargoUIAutomation.utilities;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace iCargoXunit.Tests.OPR344
+namespace iCargoUIAutomation.Tests.OPR344
 {
     public class OPR344_EXP_00014_Assign_an_AWB_to_a_pre_built_cart_by_typing_in_the_AWB_number : IClassFixture<TestFixture>
     {

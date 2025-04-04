@@ -6,7 +6,7 @@
 //using System.Text;
 //using System.Threading.Tasks;
 
-//namespace iCargoXunit.utilities
+//namespace iCargoUIAutomation.utilities
 //{
 //    public class SystemResourceInfo 
 //    {

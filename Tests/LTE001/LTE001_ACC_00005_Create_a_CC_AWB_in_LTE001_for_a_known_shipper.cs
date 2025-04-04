@@ -1,13 +1,13 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
 using Xunit;
 using System;
-using iCargoXunit.utilities;
+using iCargoUIAutomation.utilities;
 using System.Reactive;
 using static OpenQA.Selenium.BiDi.Modules.Session.ProxyConfiguration;
 
-namespace iCargoXunit.Tests.LTE001
+namespace iCargoUIAutomation.Tests.LTE001
 {
 
     public class LTE001_ACC_00005_Create_a_CC_AWB_in_LTE001_for_a_known_shipper : IClassFixture<TestFixture>

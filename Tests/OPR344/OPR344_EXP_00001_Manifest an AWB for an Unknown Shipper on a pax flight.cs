@@ -1,6 +1,6 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
-using iCargoXunit.utilities;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
+using iCargoUIAutomation.utilities;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static OpenQA.Selenium.BiDi.Modules.BrowsingContext.Locator;
 
-namespace iCargoXunit.Tests.OPR344
+namespace iCargoUIAutomation.Tests.OPR344
 {
     public class OPR344_EXP_00001_Manifest_an_AWB_for_an_Unknown_Shipper_on_a_pax_flight : IClassFixture<TestFixture>
     {

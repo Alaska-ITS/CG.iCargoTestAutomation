@@ -1,5 +1,5 @@
 using iCargoUIAutomation.pages;
-using iCargoXunit.pages;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
 using System.Runtime.Intrinsics.X86;
 

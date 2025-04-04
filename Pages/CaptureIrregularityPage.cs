@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iCargoXunit.pages
+namespace iCargoUIAutomation.pages
 {
     public class CaptureIrregularityPage : BasePage
     {

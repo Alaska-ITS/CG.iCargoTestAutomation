@@ -1,14 +1,14 @@
 ﻿
-using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
+using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
 using Xunit;
 using System;
-using iCargoXunit.utilities;
+using iCargoUIAutomation.utilities;
 using AventStack.ExtentReports.Gherkin.Model;
 using System.Runtime.InteropServices;
 using AngleSharp.Dom.Events;
-namespace iCargoXunit.Tests.LTE001
+namespace iCargoUIAutomation.Tests.LTE001
 {
 
     public class LTE001_ACC_00012_Create_an_AWB_for_an_unknown_shipper_going_from_freighter_to_pax : IClassFixture<TestFixture>

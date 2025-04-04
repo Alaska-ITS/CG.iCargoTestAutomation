@@ -11,7 +11,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iCargoXunit.pages
+namespace iCargoUIAutomation.pages
 {
 
     public class MaintainBookingPage : BasePage

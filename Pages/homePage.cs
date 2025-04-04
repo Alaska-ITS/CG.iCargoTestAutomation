@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AventStack.ExtentReports;
 
-namespace iCargoXunit.pages
+namespace iCargoUIAutomation.pages
 {
     public class homePage : BasePage
     {
@@ -128,8 +128,8 @@ namespace iCargoXunit.pages
                 WaitForElementToBeVisible(userName_Id, TimeSpan.FromSeconds(10));
 
                 Console.WriteLine("Previous Role: " + role);
-                //role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);                                                                    
-                role = "CGODG";
+                role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);                                                                    
+                //role = "CCC";
 
 
                Console.WriteLine("Current Role: " + role);

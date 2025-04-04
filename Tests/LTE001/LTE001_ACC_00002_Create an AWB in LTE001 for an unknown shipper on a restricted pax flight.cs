@@ -1,13 +1,13 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
 using Xunit;
 using System;
-using iCargoXunit.utilities;
+using iCargoUIAutomation.utilities;
 using System.Reactive;
 using AngleSharp.Dom.Events;
 
-namespace iCargoXunit.Tests.LTE001
+namespace iCargoUIAutomation.Tests.LTE001
 {
 
     public class LTE001_ACC_00002_Create_an_AWB_in_LTE001_for_an_unknown_shipper_on_a_restricted_pax_flight : IClassFixture<TestFixture>

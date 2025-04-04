@@ -1,17 +1,17 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using iCargoXunit.utilities;
+using iCargoUIAutomation.utilities;
 using System.Reflection;
 using Xunit.Abstractions;
 
 
-namespace iCargoXunit.Tests.CAP018
+namespace iCargoUIAutomation.Tests.CAP018
 {
     public class  CAP018_BKG_00003_Create_a_booking_for_an_unknown_shipper_on_a_pax_flight : IClassFixture<TestFixture>
     {

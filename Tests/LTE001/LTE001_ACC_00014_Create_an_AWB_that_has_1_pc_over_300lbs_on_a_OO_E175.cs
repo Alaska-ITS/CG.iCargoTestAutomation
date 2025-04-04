@@ -1,8 +1,8 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
-using iCargoXunit.utilities;
-namespace iCargoXunit.Tests.LTE001
+using iCargoUIAutomation.utilities;
+namespace iCargoUIAutomation.Tests.LTE001
 {
 
     public class LTE001_ACC_00014_Create_an_AWB_that_has_1_pc_over_300lbs_on_a_OO_E175 : IClassFixture<TestFixture>

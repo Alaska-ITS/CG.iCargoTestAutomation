@@ -1,15 +1,15 @@
 ﻿
 
-using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
+using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
 using Xunit;
 using System;
-using iCargoXunit.utilities;
+using iCargoUIAutomation.utilities;
 using System.Reactive;
 using static OpenQA.Selenium.BiDi.Modules.Session.ProxyConfiguration;
 
-namespace iCargoXunit.Tests.LTE001
+namespace iCargoUIAutomation.Tests.LTE001
 {
 
     public class LTE001_ACC_00007_Create_an_AWB_in_LTE001_that_has_pieces_that_fail_screening : IClassFixture<TestFixture>
