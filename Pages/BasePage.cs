@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using SeleniumExtras.WaitHelpers;
 using log4net;
 using AventStack.ExtentReports;
-using iCargoXunit.utilities;
+using iCargoUIAutomation.utilities;
 
-namespace iCargoXunit.pages
+namespace iCargoUIAutomation.pages
 {
     public class BasePage
     {

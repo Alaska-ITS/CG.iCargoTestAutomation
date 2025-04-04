@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using AventStack.ExtentReports;
 
-namespace iCargoXunit.pages
+namespace iCargoUIAutomation.pages
 {
-    public class homePage : BasePage
+    public class HomePage : BasePage
     {
         public static string? role;
         private readonly KeyVault keyVault;        
-        public homePage(IWebDriver driver) : base(driver)
+        public HomePage(IWebDriver driver) : base(driver)
         {
             keyVault = new KeyVault();            
         }
@@ -37,7 +37,7 @@ namespace iCargoXunit.pages
         private By next_Id = By.XPath("//input[@title='Next']");
         private By loginButton_Id = By.XPath("//input[@title='Sign In']");
 
-        ILog Log = LogManager.GetLogger(typeof(homePage));
+        ILog Log = LogManager.GetLogger(typeof(HomePage));
 
         
         public void ClickHomeIcon()
@@ -128,8 +128,8 @@ namespace iCargoXunit.pages
                 WaitForElementToBeVisible(userName_Id, TimeSpan.FromSeconds(10));
 
                 Console.WriteLine("Previous Role: " + role);
-                //role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);                                                                    
-                role = "CGODG";
+                role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);                                                                    
+                //role = "CCC";
 
 
                Console.WriteLine("Current Role: " + role);

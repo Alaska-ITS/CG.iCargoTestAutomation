@@ -1,15 +1,15 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
-using iCargoXunit.utilities;
-namespace iCargoXunit.Tests.LTE001
+using iCargoUIAutomation.utilities;
+namespace iCargoUIAutomation.Tests.LTE001
 {
 
     public class LTE001_ACC_00013_Create_an_AWB_with_less_than_a_2_hr_connection_time_between_flights : IClassFixture<TestFixture>
     {
         private readonly IWebDriver driver;
         private readonly PageObjectManager pageObjectManager;
-        private readonly homePage hp;
+        private readonly HomePage hp;
         private readonly CreateShipmentPage csp;
         private static string totalPaybleAmount;
         public static IEnumerable<object[]> TestData_LTE_00013 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("LTE001_CreateShipment_TestData.xlsx"), "LTE001_ACC_00013");

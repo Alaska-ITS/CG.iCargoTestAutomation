@@ -1,5 +1,5 @@
 ﻿using AventStack.ExtentReports;
-using iCargoXunit.pages;
+using iCargoUIAutomation.pages;
 using log4net;
 using OpenQA.Selenium;
 using OpenQA.Selenium.DevTools;

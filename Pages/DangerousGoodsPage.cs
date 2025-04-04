@@ -1,5 +1,5 @@
 ﻿using AventStack.ExtentReports;
-using iCargoXunit.pages;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iCargoXunit.pages
+namespace iCargoUIAutomation.pages
 {
     public class DangerousGoodsPage : BasePage
     {

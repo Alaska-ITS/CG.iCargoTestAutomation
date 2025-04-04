@@ -1,6 +1,6 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
-using iCargoXunit.utilities;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
+using iCargoUIAutomation.utilities;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace iCargoUIAutomation.Tests.OPR367
         private IWebDriver driver;
         private PageObjectManager pageObjectManager;
         private CreateShipmentPage csp;
-        private readonly homePage hp;
+        private readonly HomePage hp;
         private ExportManifestPage emp;
         private MarkFlightMovements mfm;
         private ImportManifestPage imp;

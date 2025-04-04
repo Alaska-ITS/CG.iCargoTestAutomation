@@ -1,15 +1,15 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
-using iCargoXunit.utilities;
-namespace iCargoXunit.Tests.LTE001
+using iCargoUIAutomation.utilities;
+namespace iCargoUIAutomation.Tests.LTE001
 {
 
     public class LTE001_ACC_00024_Create_an_AWB_for_an_unknown_shipper_with_routing_wholly_within_SOA : IClassFixture<TestFixture>
     {
         private readonly IWebDriver driver;
         private readonly PageObjectManager pageObjectManager;
-        private readonly homePage hp;
+        private readonly HomePage hp;
         private readonly CreateShipmentPage csp;
         private static string totalPaybleAmount;
         public static IEnumerable<object[]> TestData_LTE_00024 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("LTE001_CreateShipment_TestData.xlsx"), "LTE001_ACC_00024");

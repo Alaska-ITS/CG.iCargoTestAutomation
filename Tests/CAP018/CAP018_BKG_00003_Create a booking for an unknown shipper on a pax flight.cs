@@ -1,23 +1,23 @@
-﻿using iCargoXunit.Fixtures;
-using iCargoXunit.pages;
+﻿using iCargoUIAutomation.Fixtures;
+using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using iCargoXunit.utilities;
+using iCargoUIAutomation.utilities;
 using System.Reflection;
 using Xunit.Abstractions;
 
 
-namespace iCargoXunit.Tests.CAP018
+namespace iCargoUIAutomation.Tests.CAP018
 {
     public class  CAP018_BKG_00003_Create_a_booking_for_an_unknown_shipper_on_a_pax_flight : IClassFixture<TestFixture>
     {
         private readonly IWebDriver driver;
         private readonly PageObjectManager pageObjectManager;
-        private readonly homePage hp;
+        private readonly HomePage hp;
         private readonly MaintainBookingPage mbp;       
 
         public static IEnumerable<object[]> TestData_CAP018_0003 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00003");

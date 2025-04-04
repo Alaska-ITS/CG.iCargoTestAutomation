@@ -11,7 +11,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iCargoXunit.pages
+namespace iCargoUIAutomation.pages
 {
 
     public class MaintainBookingPage : BasePage
@@ -37,7 +37,7 @@ namespace iCargoXunit.pages
 
         private By CAP018Frame_XPATH = By.XPath("//iframe[@name='iCargoContentFrameCAP018']");
         private By newList_XPATH = By.XPath("//button[@id='btDisplay']");
-        private By homePage_CSS = By.CssSelector(".ic-home-tab");
+        private By HomePage_CSS = By.CssSelector(".ic-home-tab");
         // Shipment Details
         private By origin_ID = By.Id("origin");
         private By destination_XPATH = By.XPath("//input[@name='destination']");
@@ -203,7 +203,7 @@ namespace iCargoXunit.pages
              
             try
             {
-                WaitForElementToBeInvisible(homePage_CSS, TimeSpan.FromSeconds(5));
+                WaitForElementToBeInvisible(HomePage_CSS, TimeSpan.FromSeconds(5));
                 ClickOnElementIfPresent(newList_XPATH);
                 //Hooks.//Hooks.UpdateTest(Status.Pass, "Clicked New List Button");
                 Log.Info("Clicked New List Button");
@@ -221,7 +221,7 @@ namespace iCargoXunit.pages
             globalDestination = destination;
             globalProductCode = productCode;
             globalAgentCode = agentCode;            
-            WaitForElementToBeInvisible(homePage_CSS, TimeSpan.FromSeconds(10));
+            WaitForElementToBeInvisible(HomePage_CSS, TimeSpan.FromSeconds(10));
             try
             {
                 if (IsElementEnabled(origin_ID))
@@ -729,7 +729,7 @@ namespace iCargoXunit.pages
              
             try
             {
-                WaitForElementToBeInvisible(homePage_CSS, TimeSpan.FromSeconds(10));
+                WaitForElementToBeInvisible(HomePage_CSS, TimeSpan.FromSeconds(10));
                 if (IsElementEnabled(origin_ID))
                 {
                     EnterTextWithCheck(origin_ID, org);
@@ -1276,7 +1276,7 @@ namespace iCargoXunit.pages
             try
             {
                 int noOfWindowsBefore = GetNumberOfWindowsOpened();
-                WaitForElementToBeInvisible(homePage_CSS, TimeSpan.FromSeconds(5));
+                WaitForElementToBeInvisible(HomePage_CSS, TimeSpan.FromSeconds(5));
                 ClickOnElementIfPresent(attachDetachBtn_ID);
                 //Hooks.//Hooks.UpdateTest(Status.Pass, "Clicked Attach/Detach Button");
                 Log.Info("Clicked Attach/Detach Button");
@@ -1371,7 +1371,7 @@ namespace iCargoXunit.pages
 
         public void ClickSelectSaveTemplate()
         {
-            WaitForElementToBeInvisible(homePage_CSS, TimeSpan.FromSeconds(5));
+            WaitForElementToBeInvisible(HomePage_CSS, TimeSpan.FromSeconds(5));
             ClickOnElementIfPresent(saveTemplateBtn_XPATH);
             //Hooks.//Hooks.UpdateTest(Status.Pass, "Clicked Select/Save Template Button");            
             Log.Info("Clicked Select/Save Template Button");
@@ -1390,7 +1390,7 @@ namespace iCargoXunit.pages
 
         public void ClickSelectTemplate()
         {
-            WaitForElementToBeInvisible(homePage_CSS, TimeSpan.FromSeconds(5));
+            WaitForElementToBeInvisible(HomePage_CSS, TimeSpan.FromSeconds(5));
             ClickOnElementIfPresent(saveTemplateBtn_XPATH);
             //Hooks.//Hooks.UpdateTest(Status.Pass, "Clicked Select/Save Template Button");
             Log.Info("Clicked Select/Save Template Button");

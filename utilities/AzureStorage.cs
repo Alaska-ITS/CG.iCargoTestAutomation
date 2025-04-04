@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace iCargoXunit.utilities
+namespace iCargoUIAutomation.utilities
 {
     public class AzureStorage
     {

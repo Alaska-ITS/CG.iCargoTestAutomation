@@ -1,10 +1,10 @@
-﻿using iCargoXunit.pages;
+﻿using iCargoUIAutomation.pages;
 using OfficeOpenXml;
 using System;
 using System.IO;
 using System.Linq;
 
-namespace iCargoXunit.utilities
+namespace iCargoUIAutomation.utilities
 {
     public class ExcelFileConfig
     {
