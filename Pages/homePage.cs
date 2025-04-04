@@ -10,11 +10,11 @@ using AventStack.ExtentReports;
 
 namespace iCargoUIAutomation.pages
 {
-    public class homePage : BasePage
+    public class HomePage : BasePage
     {
         public static string? role;
         private readonly KeyVault keyVault;        
-        public homePage(IWebDriver driver) : base(driver)
+        public HomePage(IWebDriver driver) : base(driver)
         {
             keyVault = new KeyVault();            
         }
@@ -37,7 +37,7 @@ namespace iCargoUIAutomation.pages
         private By next_Id = By.XPath("//input[@title='Next']");
         private By loginButton_Id = By.XPath("//input[@title='Sign In']");
 
-        ILog Log = LogManager.GetLogger(typeof(homePage));
+        ILog Log = LogManager.GetLogger(typeof(HomePage));
 
         
         public void ClickHomeIcon()

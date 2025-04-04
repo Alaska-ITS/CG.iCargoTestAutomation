@@ -14,7 +14,7 @@ namespace iCargoUIAutomation.Tests.CAP018
     {
         private readonly IWebDriver driver;
         private readonly PageObjectManager pageObjectManager;
-        private readonly homePage hp;
+        private readonly HomePage hp;
         private readonly MaintainBookingPage mbp;
         public static IEnumerable<object[]> TestData_CAP018_0007 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00007");
         public CAP018_BKG_00007_Create_a_booking_for_an_AVI(TestFixture fixture)

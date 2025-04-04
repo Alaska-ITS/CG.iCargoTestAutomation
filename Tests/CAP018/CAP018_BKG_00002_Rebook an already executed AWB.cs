@@ -11,7 +11,7 @@ namespace iCargoUIAutomation.Tests.CAP018
     {
         private readonly IWebDriver driver;
         private readonly PageObjectManager pageObjectManager;
-        private readonly homePage hp;
+        private readonly HomePage hp;
         private readonly MaintainBookingPage mbp;
 
 

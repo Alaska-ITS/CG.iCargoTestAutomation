@@ -16,7 +16,7 @@ namespace iCargoUIAutomation.Tests.WHS001
         private IWebDriver driver;
         private PageObjectManager pageObjectManager;
         private CreateShipmentPage csp;
-        private readonly homePage hp;
+        private readonly HomePage hp;
         private WarehouseShipmentEnquiry wse;
         
         private static string totalPaybleAmount;

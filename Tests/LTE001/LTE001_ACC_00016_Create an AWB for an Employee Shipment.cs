@@ -9,7 +9,7 @@ namespace iCargoUIAutomation.Tests.LTE001
     {
         private readonly IWebDriver driver;
         private readonly PageObjectManager pageObjectManager;
-        private readonly homePage hp;
+        private readonly HomePage hp;
         private readonly CreateShipmentPage csp;
         private static string totalPaybleAmount;
 

@@ -18,7 +18,7 @@ namespace iCargoUIAutomation.Tests.OPR367
         private IWebDriver driver;
         private PageObjectManager pageObjectManager;
         private CreateShipmentPage csp;
-        private readonly homePage hp;
+        private readonly HomePage hp;
         private ExportManifestPage emp;
         private MarkFlightMovements mfm;
         private ImportManifestPage imp;

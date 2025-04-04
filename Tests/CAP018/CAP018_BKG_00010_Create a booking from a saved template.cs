@@ -14,7 +14,7 @@ namespace iCargoUIAutomation.Tests.CAP018
     {
         private readonly IWebDriver driver;
         private readonly PageObjectManager pageObjectManager;
-        private readonly homePage hp;
+        private readonly HomePage hp;
         private readonly MaintainBookingPage mbp;
         
         public CAP018_BKG_00010_Create_a_booking_from_a_saved_template(TestFixture fixture)

@@ -17,7 +17,7 @@ namespace iCargoUIAutomation.Tests.OPR339
         private IWebDriver driver;
         private PageObjectManager pageObjectManager;
         private CreateShipmentPage csp;
-        private readonly homePage hp;
+        private readonly HomePage hp;
         private ScreeningPage sp;
 
         private static string totalPaybleAmount;

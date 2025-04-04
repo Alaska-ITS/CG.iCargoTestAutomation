@@ -20,7 +20,7 @@ namespace iCargoUIAutomation.Fixtures
         private static AzureStorage? azureStorage;
 
         public IWebDriver Driver { get; private set; }
-        private readonly homePage hp;
+        private readonly HomePage hp;
         private readonly BasePage bp;
 
         public TestFixture()
@@ -102,7 +102,7 @@ namespace iCargoUIAutomation.Fixtures
 
         private void SetupICargo()
         {
-           homePage hp = new homePage(Driver);
+           HomePage hp = new HomePage(Driver);
           BasePage  bp = new BasePage(Driver);
 
             bp.DeleteAllCookies();

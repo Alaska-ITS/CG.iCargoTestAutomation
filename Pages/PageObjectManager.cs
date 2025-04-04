@@ -7,7 +7,7 @@ public class PageObjectManager : BasePage
 {
 
     private IWebDriver driver;
-    private homePage hp;
+    private HomePage hp;
     private CreateShipmentPage csp;
     private MaintainBookingPage mbp;
     private ExportManifestPage emp;
@@ -28,9 +28,9 @@ public class PageObjectManager : BasePage
         this.driver = driver;
     }
 
-    public homePage GetHomePage()
+    public HomePage GetHomePage()
     {
-        return hp ?? (hp = new homePage(driver));
+        return hp ?? (hp = new HomePage(driver));
     }
 
     public CreateShipmentPage GetCreateShipmentPage()
