@@ -582,7 +582,6 @@ namespace iCargoUIAutomation.pages
                 Log.Info("Clicked Select Flight Button");
                 WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(20));
                 SwitchToFrame(bookingIrregularityFrame_ID);
-                ZoomOut();
                 Log.Info("Switched to Booking Irregularity Frame");
                 List<IWebElement> noOfFlights = GetElements(flightDetailsSection_XPATH);
                 Log.Info("No of Flights: " + noOfFlights.Count);
