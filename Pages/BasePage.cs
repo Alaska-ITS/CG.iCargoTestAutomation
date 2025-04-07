@@ -545,5 +545,20 @@ namespace iCargoUIAutomation.pages
         public static string GetTestDataPath(string fileName) =>
             Path.Combine(Directory.GetCurrentDirectory(), "TestData", fileName);
 
+        //Zoom in and out
+        public void ZoomIn()
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("document.body.style.zoom='150%'");
+            log.Info("Zoomed in");
+        }
+
+        public void ZoomOut()
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("document.body.style.zoom='50%'");
+            log.Info("Zoomed out");
+        }
+
     }
 }
