@@ -31,7 +31,9 @@ namespace iCargoUIAutomation.Tests.OPR344
         }
 
         [Theory]
-        [MemberData(nameof(TestData_OPR344_0001))]        
+        [MemberData(nameof(TestData_OPR344_0001))]
+        [Trait("Category", "OPR344_EXP_00001")]
+        [Trait("Category", "OPR344")]
         public void OPR344_EXP_00001_Manifest_An_AWB_For_An_Unknown_Shipper_on_Pax_Flight(
                        string agent, string unknownShipper, string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,
                          string weight,  string chargeType, string modeOfPayment, string cartType,
