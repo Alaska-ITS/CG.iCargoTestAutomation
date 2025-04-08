@@ -34,6 +34,8 @@ namespace iCargoUIAutomation.Tests.LTE001
 
         [Theory]
         [MemberData(nameof(TestData_LTE_0003))]
+        [Trait("Category", "LTE001")]
+        [Trait("Category", "LTE001_ACC_00003")]
         public void Create_a_New_DG_Shipment_Acceptance_screening_of_that_as_a_CGODG_user(string agentCode,
         string shipperCode, string consigneeCode, string origin,string destination, string productCode, string scc, 
         string commodity,string shipmentdesc, string serviceCargoClass, string piece,
