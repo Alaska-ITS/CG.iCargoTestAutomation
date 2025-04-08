@@ -86,14 +86,14 @@ namespace iCargoUIAutomation.Fixtures
         private void InitializeWebDriver()
         {
             //edge
-            EdgeOptions options = new EdgeOptions();
-            options.AddArgument("--inprivate");
-            Driver = new EdgeDriver(options);
+            //EdgeOptions options = new EdgeOptions();
+            //options.AddArgument("--inprivate");
+            //Driver = new EdgeDriver(options);
 
             //chrome
-            //ChromeOptions options = new ChromeOptions();
-            //options.AddArgument("--incognito");
-            //Driver = new ChromeDriver(options);
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("--incognito");
+            Driver = new ChromeDriver(options);
 
 
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
