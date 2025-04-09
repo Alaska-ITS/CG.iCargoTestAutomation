@@ -66,6 +66,8 @@ namespace iCargoUIAutomation.pages
         //Customer Details
         private By txtCustomerCode_Xpath = By.XPath("//input[@name='customerCode']");
 
+        private By ErrorPopOver_CSS = By.CssSelector("div#error-body div.screen-error-item span");
+
         public void SwitchToOPR293Frame()
         {
             try
@@ -374,6 +376,26 @@ namespace iCargoUIAutomation.pages
                 //Hooks.Hooks.UpdateTest(Status.Fail, "Error in EnterCustomerCodeForUnknownConsignee: " + e.Message);
                 Log.Error("Error in EnterCustomerCodeForUnknownConsignee: " + e.Message);
             }
+        }
+
+        public void ValidateOPR393WarningMessage(string expectedWarningMessage)
+        {
+
+            WaitForElementToBeVisible(ErrorPopOver_CSS, TimeSpan.FromSeconds(5));
+            string actualWarningMessage = GetText(ErrorPopOver_CSS);
+            if (!actualWarningMessage.Contains(expectedWarningMessage))
+            {
+                //Hooks.Hooks.UpdateTest(Status.Fail, "Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+                Log.Error("Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+                Assert.Fail("Warning message is not as expected. Expected: " + expectedWarningMessage + " Actual: " + actualWarningMessage);
+
+            }
+            else
+            {
+                //Hooks.Hooks.UpdateTest(Status.Info, "Warning message is as expected: " + actualWarningMessage);
+                Log.Info("Warning message is as expected: " + actualWarningMessage);
+            }
+
         }
 
     }
