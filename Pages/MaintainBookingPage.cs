@@ -580,7 +580,7 @@ namespace iCargoUIAutomation.pages
                 Click(selectFlightBtn_ID);
                 //Hooks.//Hooks.UpdateTest(Status.Pass, "Clicked Select Flight Button");
                 Log.Info("Clicked Select Flight Button");
-                WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(20));
+                WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(30));
                 SwitchToFrame(bookingIrregularityFrame_ID);
                 ZoomOut();
                 Log.Info("Switched to Booking Irregularity Frame");
