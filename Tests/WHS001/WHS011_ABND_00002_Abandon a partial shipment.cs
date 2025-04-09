@@ -37,6 +37,8 @@ namespace iCargoUIAutomation.Tests.WHS001
 
         [Theory]
         [MemberData(nameof(TestData_WHS011_0002))]
+        [Trait("Category", "WSH002")]
+        [Trait("Category", "WHS011_WSE_00002")]
 
         public void Abandonapartial_shipment(
             string agentCode, string shipperCode, string consigneeCode, string origin,
