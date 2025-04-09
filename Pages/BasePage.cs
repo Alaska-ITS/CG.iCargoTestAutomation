@@ -559,6 +559,5 @@ namespace iCargoUIAutomation.pages
             js.ExecuteScript("document.body.style.zoom='50%'");
             log.Info("Zoomed out");
         }
-
     }
 }
