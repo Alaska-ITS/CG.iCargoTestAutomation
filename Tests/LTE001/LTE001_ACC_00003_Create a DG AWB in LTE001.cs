@@ -100,6 +100,8 @@ namespace iCargoUIAutomation.Tests.LTE001
                 //Clicking on the ContinueScreeningDetails button
                 csp.ClickOnContinueScreeningButton();
 
+                
+
                 //Save Shipment Capture Checksheet & DG Details");
                 (string capturedAWB, string totalpayment) = csp.SaveWithDGAndCheckSheet(chargeType, unid, propershipmntname, pi, piece, netqtyperpkg, reportable);
 

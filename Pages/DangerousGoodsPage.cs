@@ -39,7 +39,9 @@ namespace iCargoUIAutomation.pages
 
         public void HandleDGShipment(string unid, string propershipmntname, string pi, string noofpkg, string netqtyperpkg, string reportable)
         {
+
             Click(lnkDangerousGoods_Xpath);
+            ZoomOut();
             //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Dangerous Goods Link");
             SwitchToFrame(popupContainerFrame_Xpath);
             Click(btnDGPencil_Xpath);

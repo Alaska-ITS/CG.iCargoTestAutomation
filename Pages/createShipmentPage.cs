@@ -1899,6 +1899,7 @@ namespace iCargoUIAutomation.pages
             Click(btnSaveShipment_Name);            
             //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Save button");            
             ClickingYesOnPopupWarnings("");
+            ZoomOut();
             dgp.HandleDGShipment(unid, propershipmntname, pi, noofpkg, netqtyperpkg, reportable);
             SwitchToLTEContentFrame();
             Click(btnSaveShipment_Name);
