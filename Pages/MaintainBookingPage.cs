@@ -583,6 +583,7 @@ namespace iCargoUIAutomation.pages
                 WaitForElementToBeInvisible(CAP018Frame_XPATH, TimeSpan.FromSeconds(30));
                 SwitchToFrame(bookingIrregularityFrame_ID);
                 ZoomOut();
+                WaitForElementToBeVisible(flightDetailsSection_XPATH, TimeSpan.FromSeconds(25));
                 Log.Info("Switched to Booking Irregularity Frame");
                 List<IWebElement> noOfFlights = GetElements(flightDetailsSection_XPATH);
                 Log.Info("No of Flights: " + noOfFlights.Count);
