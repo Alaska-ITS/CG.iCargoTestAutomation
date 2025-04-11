@@ -1205,7 +1205,8 @@ namespace iCargoUIAutomation.pages
         {
             try
             {
-                WaitForElementToBeClickable(btnOrangePencilCharge_Css, TimeSpan.FromSeconds(10));
+                //ClickOnContinueFlightDetailsButton();
+                WaitForElementToBeClickable(btnOrangePencilCharge_Css, TimeSpan.FromSeconds(20));
                 Click(btnOrangePencilCharge_Css);
                 //Hooks.Hooks.UpdateTest(Status.Pass, "Clicked on Orange Pencil for Charge Details");
                 WaitForElementToBeInvisible(btnOrangePencilCharge_Css, TimeSpan.FromSeconds(5));
