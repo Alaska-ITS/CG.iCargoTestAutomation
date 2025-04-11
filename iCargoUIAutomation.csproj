@@ -10,16 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="TestData\CAP018_MaintainBooking_TestData.xlsx" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="TestData\CAP018_MaintainBooking_TestData.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Allure.Xunit" Version="2.12.1" />
     <PackageReference Include="Azure.Core" Version="1.44.1" />
     <PackageReference Include="Azure.Identity" Version="1.13.2" />
@@ -68,6 +58,12 @@
 		<None Update="TestData\**\*">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="TestData\CAP018_MaintainBooking_TestData.xlsx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 	
 </Project>

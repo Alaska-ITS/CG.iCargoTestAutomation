@@ -129,7 +129,7 @@ namespace iCargoUIAutomation.pages
 
                 Console.WriteLine("Previous Role: " + role);
                 role = Environment.GetEnvironmentVariable("ROLE_GROUP", EnvironmentVariableTarget.Process);                                                                    
-                //role = "CGODG";
+                //role = "CCC";
 
 
                Console.WriteLine("Current Role: " + role);
