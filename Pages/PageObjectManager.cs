@@ -1,5 +1,4 @@
 using iCargoUIAutomation.pages;
-using iCargoUIAutomation.pages;
 using OpenQA.Selenium;
 using System.Runtime.Intrinsics.X86;
 
@@ -20,6 +19,7 @@ public class PageObjectManager : BasePage
     private ImportManifestPage imp;
     private DeliveryPage dp;
     private WarehouseShipmentEnquiry wse;
+    private BasePage bp;
 
     // Add other page classes as needed
 
@@ -92,5 +92,10 @@ public class PageObjectManager : BasePage
     public WarehouseShipmentEnquiry GetWarehouseShipmentEnquiry()
     {
         return wse ?? (wse = new WarehouseShipmentEnquiry(driver));
+    }
+
+    public BasePage GetBasePage()
+    {
+        return bp ?? (bp = new BasePage(driver));
     }
 }

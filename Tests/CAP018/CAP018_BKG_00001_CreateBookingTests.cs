@@ -39,7 +39,7 @@ namespace iCargoUIAutomation.Tests.CAP018
                 Console.WriteLine("🔹 Starting test: CAP018_BKG_00001_LoginAndCreateShipment");
 
                 // 1️⃣ Navigate to CAP018 Maintain Booking Page
-                ZoomOut();
+                bp.ZoomOut();
                 hp.enterScreenName("CAP018");
                 mbp.SwitchToCAP018Frame();                
 
