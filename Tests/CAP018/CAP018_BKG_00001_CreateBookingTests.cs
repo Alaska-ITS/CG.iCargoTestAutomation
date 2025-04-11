@@ -13,6 +13,7 @@ namespace iCargoUIAutomation.Tests.CAP018
         private readonly PageObjectManager pageObjectManager;
         private readonly HomePage hp;
         private readonly MaintainBookingPage mbp;
+        private readonly BasePage bp;
         
 
         public static IEnumerable<object[]> TestData_CAP018_0001 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00001");
@@ -22,6 +23,7 @@ namespace iCargoUIAutomation.Tests.CAP018
             pageObjectManager = new PageObjectManager(driver);
             hp = pageObjectManager.GetHomePage();
             mbp = pageObjectManager.GetMaintainBookingPage();
+            bp = pageObjectManager.GetBasePage();
         }
 
         [Theory]
@@ -37,6 +39,7 @@ namespace iCargoUIAutomation.Tests.CAP018
                 Console.WriteLine("🔹 Starting test: CAP018_BKG_00001_LoginAndCreateShipment");
 
                 // 1️⃣ Navigate to CAP018 Maintain Booking Page
+                ZoomOut();
                 hp.enterScreenName("CAP018");
                 mbp.SwitchToCAP018Frame();                
 
