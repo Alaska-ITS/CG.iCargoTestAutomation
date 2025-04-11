@@ -556,7 +556,7 @@ namespace iCargoUIAutomation.pages
         public void ZoomOut()
         {
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-            js.ExecuteScript("document.body.style.zoom='50%'");
+            js.ExecuteScript("document.body.style.zoom='70%'");
             log.Info("Zoomed out");
         }
 
