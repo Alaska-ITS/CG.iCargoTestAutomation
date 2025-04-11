@@ -14,7 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="TestData\CAP018_MaintainBooking_TestData.xlsx" />
+    <Content Include="TestData\CAP018_MaintainBooking_TestData.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
