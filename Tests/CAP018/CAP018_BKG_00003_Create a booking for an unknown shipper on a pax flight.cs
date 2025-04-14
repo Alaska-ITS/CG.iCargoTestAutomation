@@ -20,7 +20,7 @@ namespace iCargoUIAutomation.Tests.CAP018
         private readonly HomePage hp;
         private readonly MaintainBookingPage mbp;       
 
-        public static IEnumerable<object[]> TestData_CAP018_0003 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00003");
+        public static IEnumerable<object[]> TestData_CAP018_0003 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData_14thApr.xlsx"), "CAP018_BKG_00003");
       
         public CAP018_BKG_00003_Create_a_booking_for_an_unknown_shipper_on_a_pax_flight(TestFixture fixture)
         {

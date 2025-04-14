@@ -18,7 +18,7 @@ namespace iCargoUIAutomation.Tests.CAP018
         private readonly MaintainBookingPage mbp;
 
 
-        public static IEnumerable<object[]> TestData_CAP018_0005 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData.xlsx"), "CAP018_BKG_00005");
+        public static IEnumerable<object[]> TestData_CAP018_0005 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("CAP018_MaintainBooking_TestData_14thApr.xlsx"), "CAP018_BKG_00005");
         public CAP018_BKG_00005_Create_MultiLeg_Booking_With_Flights_That_Do_Not_Meet_Minimum_Connection_Time(TestFixture fixture)
         {
             driver = fixture.Driver;
