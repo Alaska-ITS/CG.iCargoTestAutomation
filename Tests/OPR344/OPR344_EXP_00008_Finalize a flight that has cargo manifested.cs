@@ -22,7 +22,7 @@ namespace iCargoUIAutomation.Tests.OPR344
         private readonly MarkFlightMovements mfm;
         private static string totalPaybleAmount;
 
-        public static IEnumerable<object[]> TestData_OPR344_0008 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("OPR344_ExportManifest_TestData (1).xlsx"), "OPR344_EXP_00004");
+        public static IEnumerable<object[]> TestData_OPR344_0008 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("OPR344_ExportManifest_TestData.xlsx"), "OPR344_EXP_00008");
         public OPR344_EXP_00008_Finalize_a_flight_that_has_cargo_manifested(TestFixture fixture)
         {
             driver = fixture.Driver;
