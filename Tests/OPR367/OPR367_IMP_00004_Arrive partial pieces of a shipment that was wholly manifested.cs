@@ -37,6 +37,8 @@ namespace iCargoUIAutomation.Tests.OPR367
         }
 
         [Theory]
+        [Trait("Category", "OPR367")]
+        [Trait("Category", "OPR367_IMP_00004")]
         [MemberData(nameof(TestData_OPR367_0004))]
 
         public void Arrivepartialpiecesofashipmentthatwaswhollymanifested(
