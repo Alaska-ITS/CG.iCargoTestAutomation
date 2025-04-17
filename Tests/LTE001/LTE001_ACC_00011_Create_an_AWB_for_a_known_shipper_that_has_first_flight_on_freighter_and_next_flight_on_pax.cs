@@ -17,7 +17,7 @@ namespace iCargoUIAutomation.Tests.LTE001
         private readonly HomePage hp;
         private readonly CreateShipmentPage csp;
         private static string totalPaybleAmount;
-        public static IEnumerable<object[]> TestData_LTE_00011 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("LTE001_CreateShipment_TestData.xlsx"), "LTE001_ACC_00011");
+        public static IEnumerable<object[]> TestData_LTE_00011 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("LTE001_CreateShipment_TestData_17Apr.xlsx"), "LTE001_ACC_00011");
 
         public LTE001_ACC_00011_Create_an_AWB_for_a_known_shipper_that_has_first_flight_on_freighter_and_next_flight_on_pax(TestFixture fixture)
         {
