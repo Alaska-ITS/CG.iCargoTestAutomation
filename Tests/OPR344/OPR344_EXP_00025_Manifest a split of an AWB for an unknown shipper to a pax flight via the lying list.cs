@@ -32,6 +32,8 @@ namespace iCargoUIAutomation.Tests.OPR344
         }
 
         [Theory]
+        [Trait("Category", "OPR344")]
+        [Trait("Category", "OPR344_EXP_00025")]
         [MemberData(nameof(TestData_OPR344_00025))]
 
         public void ManifestasplitofanAWBforanunknownshippertoapaxflightviathelyinglist(

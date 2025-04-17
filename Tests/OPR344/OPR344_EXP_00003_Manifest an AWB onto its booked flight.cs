@@ -31,6 +31,8 @@ namespace iCargoUIAutomation.Tests.OPR344
         }
 
         [Theory]
+        [Trait("Category", "OPR344")]
+        [Trait("Category", "OPR344_EXP_00003")]
         [MemberData(nameof(TestData_OPR344_0003))]
         public void OPR344_EXP_00003_Manifest_AWB_Onto_Its_Booked_Flight(
                                   string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,

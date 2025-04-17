@@ -29,6 +29,8 @@ namespace iCargoUIAutomation.Tests.OPR344
         }
 
         [Theory]
+        [Trait("Category", "OPR344")]
+        [Trait("Category", "OPR344_EXP_00013")]
         [MemberData(nameof(TestData_OPR344_00013))]
         public void OPR344_EXP_00013_Assign_AWB_to_a_cart_by_typing_in_the_AWB_number_when_building_the_cart(
             string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,

@@ -35,7 +35,7 @@ namespace iCargoUIAutomation.Tests.OPR344
 
         [Theory]
         [Trait("Category", "OPR344")]
-        [Trait("Category", "OPR344_DLV_00008")]
+        [Trait("Category", "OPR344_EXP_00008")]
         [MemberData(nameof(TestData_OPR344_0008))]
 
         public void Add_charge_codes_to_be_charged_at_delivery(

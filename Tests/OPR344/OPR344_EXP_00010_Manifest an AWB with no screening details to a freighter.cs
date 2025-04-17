@@ -26,6 +26,8 @@ namespace iCargoUIAutomation.Tests.OPR344
         }
 
         [Theory]
+        [Trait("Category", "OPR344")]
+        [Trait("Category", "OPR344_EXP_00010")]
         [MemberData(nameof(TestData_OPR344_00010))]
         public void OPR344_EXP_00010_Manifest_AWB_with_no_screening_details_to_a_freighter( string agent, string shipper, string consignee, 
           string origin,string destination,string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,

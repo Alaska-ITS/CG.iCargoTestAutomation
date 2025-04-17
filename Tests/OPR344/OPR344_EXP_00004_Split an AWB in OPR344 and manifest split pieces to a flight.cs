@@ -31,6 +31,8 @@ namespace iCargoUIAutomation.Tests.OPR344
         }
 
         [Theory]
+        [Trait("Category", "OPR344")]
+        [Trait("Category", "OPR344_EXP_00004")]
         [MemberData(nameof(TestData_OPR344_0004))]
         public void OPR344_EXP_00004_Split_An_AWB_In_OPR344_And_Manifest_Split_Pieces_To_Flight(
                                   string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,
