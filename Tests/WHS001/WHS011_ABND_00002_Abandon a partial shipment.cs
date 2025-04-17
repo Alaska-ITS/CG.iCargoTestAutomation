@@ -36,6 +36,8 @@ namespace iCargoUIAutomation.Tests.WHS001
         }
 
         [Theory]
+        [Trait("Category", "WHS011")]
+        [Trait("Category", "WHS011_ABND_00002")]
         [MemberData(nameof(TestData_WHS011_0002))]
 
         public void Abandonapartial_shipment(
