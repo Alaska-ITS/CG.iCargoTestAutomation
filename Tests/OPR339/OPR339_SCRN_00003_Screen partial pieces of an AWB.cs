@@ -34,6 +34,8 @@ namespace iCargoUIAutomation.Tests.OPR339
         }
 
         [Theory]
+        [Trait("Category", "OPR339")]
+        [Trait("Category", "OPR339_SCRN_00003")]
         [MemberData(nameof(TestData_OPR339_0003))]
 
         public void ScreenpartialpiecesofanAWB(
