@@ -1852,7 +1852,7 @@ namespace iCargoUIAutomation.pages
             ClickingYesOnPopupWarnings("");
             ClickingYesOnPopupWarnings("Embargo");
             ClickingYesOnPopupWarnings("Capture Irregularity");
-            WaitForNewWindowToOpen(TimeSpan.FromSeconds(10), noOfWindowsBefore + 1);
+            WaitForNewWindowToOpen(TimeSpan.FromSeconds(60), noOfWindowsBefore + 1);
             int noOfWindowsAfter = GetNumberOfWindowsOpened();
             if (noOfWindowsAfter > noOfWindowsBefore)
             {
