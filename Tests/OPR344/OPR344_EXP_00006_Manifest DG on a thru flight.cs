@@ -31,6 +31,8 @@ namespace iCargoUIAutomation.Tests.OPR344
         }
 
         [Theory]
+        [Trait("Category", "OPR344")]
+        [Trait("Category", "OPR344_EXP_00006")]
         [MemberData(nameof(TestData_OPR344_0006))]
         public void OPR344_EXP_00006_Manifest_DG_On_A_Thru_Flight(
                                              string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,

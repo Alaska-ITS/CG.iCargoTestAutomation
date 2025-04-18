@@ -119,6 +119,10 @@ namespace iCargoUIAutomation.Tests.LTE001
                 //Verifying and Updating the Flight Details");
                 csp.VerifyAndUpdateFlightDetails("piece&weight");
 
+                //Clicking on the ContinueFlightDetails button
+                csp.ClickOnContinueFlightDetailsButton();
+
+
                 //Opening the Charge Details");
                 csp.OpenAndVerifyChargeDetails();
 

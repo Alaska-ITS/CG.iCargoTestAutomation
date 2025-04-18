@@ -38,6 +38,8 @@ namespace iCargoUIAutomation.Tests.OPR367
         }
 
         [Theory]
+        [Trait("Category", "OPR367")]
+        [Trait("Category", "OPR367_IMP_00007")]
         [MemberData(nameof(TestData_OPR367_0007))]
 
         public void Arrivemorepiecesofashipmentthanwhatwasmanifested(

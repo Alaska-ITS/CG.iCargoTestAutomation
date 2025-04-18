@@ -1,69 +1,70 @@
-﻿using iCargoUIAutomation.Fixtures;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using iCargoUIAutomation.Fixtures;
 using iCargoUIAutomation.pages;
 using iCargoUIAutomation.utilities;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using Xunit;
+
+
 
 namespace iCargoUIAutomation.Tests.OPR344
 {
-    public class OPR344_EXP_00013_Assign_an_AWB_to_a_cart_by_typing_in_the_AWB_number_when_building_the_cart : IClassFixture<TestFixture>
+    public class OPR344_EXP_00008_Finalize_a_flight_that_has_cargo_manifested : IClassFixture<TestFixture>
     {
         private readonly IWebDriver driver;
         private readonly PageObjectManager pageObjectManager;
         private readonly HomePage hp;
         private readonly CreateShipmentPage csp;
         private readonly ExportManifestPage emp;
+        private readonly MarkFlightMovements mfm;
         private static string totalPaybleAmount;
 
-        public static IEnumerable<object[]> TestData_OPR344_00013 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("OPR344_ExportManifest_TestData.xlsx"), "OPR344_EXP_00013");
-
-        public OPR344_EXP_00013_Assign_an_AWB_to_a_cart_by_typing_in_the_AWB_number_when_building_the_cart(TestFixture fixture)
+        public static IEnumerable<object[]> TestData_OPR344_0008 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("OPR344_ExportManifest_TestData.xlsx"), "OPR344_EXP_00008");
+        public OPR344_EXP_00008_Finalize_a_flight_that_has_cargo_manifested(TestFixture fixture)
         {
             driver = fixture.Driver;
             pageObjectManager = new PageObjectManager(driver);
             hp = pageObjectManager.GetHomePage();
             csp = pageObjectManager.GetCreateShipmentPage();
             emp = pageObjectManager.GetExportManifestPage();
+            mfm = pageObjectManager.GetMarkFlightMovements();
         }
 
         [Theory]
         [Trait("Category", "OPR344")]
-        [Trait("Category", "OPR344_EXP_00013")]
-        [MemberData(nameof(TestData_OPR344_00013))]
-        public void OPR344_EXP_00013_Assign_AWB_to_a_cart_by_typing_in_the_AWB_number_when_building_the_cart(
-            string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,
-            string weight, string chargeType, string modeOfPayment, string awbNumber, string cartType)
+        [Trait("Category", "OPR344_EXP_00008")]
+        [MemberData(nameof(TestData_OPR344_0008))]
+
+        public void Add_charge_codes_to_be_charged_at_delivery(
+           string agentCode, string shipperCode, string consigneeCode, string origin,
+            string destination, string productCode, string scc, string commodity,
+            string shipmentdesc, string serviceCargoClass, string piece,
+            string weight, string chargeType, string modeOfPayment, string awbSectionName,
+            string cartType)
         {
             try
             {
-                Console.WriteLine("🔹 Starting test: OPR344_EXP_00013_Assign_an_AWB_to_a_cart_by_typing_in_the_AWB_number_when_building_the_cart");
 
-                // Step 1: Navigate to Create Shipment page
+                Console.WriteLine("🔹 Starting test: OPR293_DLV_00006_Add_charge_codes_to_be_charged_at_delivery");
                 hp.SwitchStation(origin);
                 hp.enterScreenName("LTE001");
 
-                // Step 2: Create New Booking
                 csp.SwitchToLTEContentFrame();
                 csp.ClickOnAwbTextBox();
                 csp.ClickOnListButton();
-
-                // Step 3: Enter participant, certificate, and shipment details
-                csp.EnterParticipantDetailsAsync(agent, shipper, consignee);
+                csp.EnterParticipantDetailsAsync(agentCode, shipperCode, consigneeCode);
                 csp.ClickOnContinueParticipantButton();
                 csp.EnterCertificateDetails();
                 csp.ClickOnContinueCertificateButton();
                 csp.EnterShipmentDetails(origin, destination, productCode, scc, commodity, shipmentdesc, serviceCargoClass, piece, weight);
-
-                // Step 4: Flight selection and charge details
                 csp.ClickOnContinueShipmentButton();
                 csp.ClickOnSelectFlightButton();
                 csp.BookWithSpecificFlightType("Combination");
                 csp.ClickOnContinueFlightDetailsButton();
                 csp.EnterChargeDetails(chargeType, modeOfPayment);
-
-                // Step 5: Charge calculation and acceptance details
                 csp.ClickOnCalculateChargeButton();
                 csp.ClickingYesOnPopupWarnings("");
                 csp.ClickOnContinueChargeButton();
@@ -72,36 +73,47 @@ namespace iCargoUIAutomation.Tests.OPR344
                 csp.EnterScreeningDetails(1, "Transfer Manifest Verified", "Pass");
                 csp.ClickOnContinueScreeningButton();
                 csp.ClickOnAWBVerifiedCheckbox();
-
                 (string awb, totalPaybleAmount) = csp.SaveShipmentDetailsAndHandlePopups();
 
-                // Step 6: Navigate to Export Manifest page and enter flight details
+
                 hp.enterScreenName("OPR344");
+
                 emp.SwitchToManifestFrame();
                 emp.ClickOnFlightTextBox();
                 csp.EnterFlightinExportManifest("");
                 csp.EnterFlightDateExportManifest();
                 emp.ClickOnListButton();
-
-                // Step 7: Create ULD and assign AWB by typing in the AWB number
-                csp.CreateNewULDCartTypingAWBExportManifest(cartType, destination, piece);
-
-
-                // Step 8: Manifest the AWB
+                csp.CreateNewULDCartExportManifest(cartType, destination);
+                csp.FilterOutAWBULDInExportManifest(awbSectionName);
                 emp.clickOnManifestButton();
-
-                // Step 9: Close the Print PDF window and validate the AWB status
                 emp.ClosePrintPDFWindow();
                 emp.ValidateAWBStatusInExportManifest("Manifested");
+                emp.CloseOPR344Screen();
 
-                // Step 10: Close Export Manifest screen
+                hp.enterScreenName("FLT006");
+
+                mfm.SwitchToFLT006Frame();
+                mfm.EnterFlightDetails();
+                mfm.ClickListButton();
+                mfm.EnterActualArrivalDepartureDetails("Departure");
+                mfm.ClickSaveButton();
+                mfm.ClickCloseButton();
+
+                hp.enterScreenName("OPR344");
+
+                emp.SwitchToManifestFrame();
+                emp.ClickOnFlightTextBox();
+                csp.EnterFlightinExportManifest("");
+                csp.EnterFlightDateExportManifest();
+                emp.ClickOnListButton();
+                emp.CheckFlightStatusForFinalized();
                 emp.CloseOPR344Screen();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine($"Test Failed! Error: {ex.Message}");
+                Console.WriteLine("🔴 Exception: " + e.Message);
                 throw;
             }
         }
-    }
+    } 
 }

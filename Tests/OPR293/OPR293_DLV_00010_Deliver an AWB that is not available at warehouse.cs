@@ -39,6 +39,8 @@ namespace iCargoUIAutomation.Tests.OPR293
         }
 
         [Theory]
+        [Trait("Category", "OPR293")]
+        [Trait("Category", "OPR293_DLV_00010")]
         [MemberData(nameof(TestData_OPR293_0010))]
 
         public void DeliveranAWBthatisnotavailableatwarehouse(

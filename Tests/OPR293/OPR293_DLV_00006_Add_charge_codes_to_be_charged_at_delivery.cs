@@ -1,17 +1,12 @@
-﻿using iCargoUIAutomation.Fixtures;
+﻿
+using iCargoUIAutomation.Fixtures;
 using iCargoUIAutomation.pages;
 using iCargoUIAutomation.utilities;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static OpenQA.Selenium.BiDi.Modules.BrowsingContext.Locator;
 
-namespace iCargoUIAutomation.Tests.OPR367
+namespace iCargoUIAutomation.Tests.OPR293
 {
-    public class OPR367_IMP_00004_Arrive_partial_pieces_of_a_shipment_that_was_wholly_manifested : IClassFixture<TestFixture>
+    public class OPR293_DLV_00006_Add_charge_codes_to_be_charged_at_delivery : IClassFixture<TestFixture>
     {
         private IWebDriver driver;
         private PageObjectManager pageObjectManager;
@@ -20,11 +15,12 @@ namespace iCargoUIAutomation.Tests.OPR367
         private ExportManifestPage emp;
         private MarkFlightMovements mfm;
         private ImportManifestPage imp;
+        private DeliveryPage dp;
         private static string totalPaybleAmount;
 
-        public static IEnumerable<object[]> TestData_OPR367_0004 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("OPR367_ImportManifest_TestData.xlsx"), "OPR367_IMP_00004");
+        public static IEnumerable<object[]> TestData_OPR293_0006 => ExcelFileDataReader.GetData(BasePage.GetTestDataPath("OPR293_DeliveryDocumentation_TestData.xlsx"), "OPR293_DLV_00006");
 
-        public OPR367_IMP_00004_Arrive_partial_pieces_of_a_shipment_that_was_wholly_manifested(TestFixture fixture)
+        public OPR293_DLV_00006_Add_charge_codes_to_be_charged_at_delivery(TestFixture fixture)
         {
             driver = fixture.Driver;
             pageObjectManager = new PageObjectManager(driver);
@@ -33,15 +29,15 @@ namespace iCargoUIAutomation.Tests.OPR367
             emp = pageObjectManager.GetExportManifestPage();
             mfm = pageObjectManager.GetMarkFlightMovements();
             imp = pageObjectManager.GetImportManifestPage();
-
+            dp = pageObjectManager.GetDeliveryPage();
         }
 
         [Theory]
-        [Trait("Category", "OPR367")]
-        [Trait("Category", "OPR367_IMP_00004")]
-        [MemberData(nameof(TestData_OPR367_0004))]
+        [Trait("Category", "OPR293")]
+        [Trait("Category", "OPR293_DLV_00006")]
+        [MemberData(nameof(TestData_OPR293_0006))]
 
-        public void Arrivepartialpiecesofashipmentthatwaswhollymanifested(
+        public void Add_charge_codes_to_be_charged_at_delivery(
            string agentCode, string shipperCode, string consigneeCode, string origin,
             string destination, string productCode, string scc, string commodity,
             string shipmentdesc, string serviceCargoClass, string piece,
@@ -50,8 +46,8 @@ namespace iCargoUIAutomation.Tests.OPR367
         {
             try
             {
-                Console.WriteLine("🔹 Starting test:OPR367_IMP_00004_Arrive_partial_pieces_of_a_shipment_that_was_wholly_manifested");
 
+                Console.WriteLine("🔹 Starting test: OPR293_DLV_00006_Add_charge_codes_to_be_charged_at_delivery");
                 hp.SwitchStation(origin);
                 hp.enterScreenName("LTE001");
 
@@ -77,6 +73,7 @@ namespace iCargoUIAutomation.Tests.OPR367
                 csp.ClickOnContinueScreeningButton();
                 csp.ClickOnAWBVerifiedCheckbox();
                 (string awb, totalPaybleAmount) = csp.SaveShipmentDetailsAndHandlePopups();
+
 
                 hp.enterScreenName("OPR344");
 
@@ -133,13 +130,36 @@ namespace iCargoUIAutomation.Tests.OPR367
                 imp.ClickOnBreakDownButton();
                 imp.EnterBreakdownDetails(bdnLocation, bdnRcvdPcs, bdnRcvdWt);
                 imp.SaveBreakdownAndValidateMessage("Saved successfully. Do you want to list the saved details?");
+
+                hp.enterScreenName("OPR293");
+
+                dp.SwitchToOPR293Frame();
+                dp.EnterAWBNumberOPR293();
+                dp.SelectAWBForDelivery();
+                dp.ClickGenerateDeliveryNoteButton();
+                dp.ClickingYesOnPopupWarnings("");
+                dp.SelectChargeDetailsCheckbox();
+                dp.ClickAddChargeCodeButton();
+                dp.AddChargeFunction("TEST", "200");
+                dp.ClickingYesOnPopupWarnings("");
+                dp.SelectChargeDetailsCheckbox();
+                //dp.ClickOnAddAcceptPaymentButton();
+
+
+                dp.GetPaymentAmountValue();
+                totalPaybleAmount = dp.ClickOnAddButtonHandlePaymentPortal(chargeType);
+                dp.ClickAcceptPaymentButton();
+                dp.DeliveryConfirmationDetails();
+                dp.CaptureDeliveryDetails();
+                dp.ClickingYesOnPopupWarnings("");
+                dp.DeliveryReceiptWindow();
+
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Test Failed! Error: {ex.Message}");
-                throw;
+                Console.WriteLine($"Test failed with exception: {ex.Message}");
             }
-
         }
     }
 }

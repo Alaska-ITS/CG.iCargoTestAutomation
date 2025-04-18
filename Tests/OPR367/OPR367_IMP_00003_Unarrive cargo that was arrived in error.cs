@@ -38,6 +38,8 @@ namespace iCargoUIAutomation.Tests.OPR367
         }
 
         [Theory]
+        [Trait("Category", "OPR367")]
+        [Trait("Category", "OPR367_IMP_00003")]
         [MemberData(nameof(TestData_OPR367_0003))]
 
         public void Unarrivecargothatwasarrivedinerror(

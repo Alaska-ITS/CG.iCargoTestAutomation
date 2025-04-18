@@ -31,6 +31,8 @@ namespace iCargoUIAutomation.Tests.OPR344
         }
 
         [Theory]
+        [Trait("Category", "OPR344")]
+        [Trait("Category", "OPR344_EXP_00002")]
         [MemberData(nameof(TestData_OPR344_0002))]        
         public void OPR344_EXP_00002_Manifest_an_AWB_From_The_Lying_List(
                                   string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, string commodity, string shipmentdesc, string serviceCargoClass, string piece,

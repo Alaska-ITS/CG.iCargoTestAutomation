@@ -34,6 +34,8 @@ namespace iCargoUIAutomation.Tests.OPR344
         }
 
         [Theory]
+        [Trait("Category", "OPR344")]
+        [Trait("Category", "OPR344_EXP_00017")]
         [MemberData(nameof(TestData_OPR344_00017))]
 
         public void ManifestaCAODGfromlyinglisttoapaxflight(

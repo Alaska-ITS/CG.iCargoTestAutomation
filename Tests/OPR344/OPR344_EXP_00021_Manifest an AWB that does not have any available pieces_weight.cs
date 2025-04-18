@@ -32,6 +32,8 @@ namespace iCargoUIAutomation.Tests.OPR344
         }
 
         [Theory]
+        [Trait("Category", "OPR344")]
+        [Trait("Category", "OPR344_EXP_00021")]
         [MemberData(nameof(TestData_OPR344_00021))]
 
         public void ManifestanAWBthatdoesnothaveanyavailablepiecesweight(

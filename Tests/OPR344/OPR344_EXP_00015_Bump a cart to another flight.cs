@@ -29,6 +29,8 @@ namespace iCargoUIAutomation.Tests.OPR344
         }
 
         [Theory]
+        [Trait("Category", "OPR344")]
+        [Trait("Category", "OPR344_EXP_00015")]
         [MemberData(nameof(TestData_OPR344_00015))]
         public void OPR344_EXP_00015_Bump_cart_to_another_flight(
             string agent, string shipper, string consignee, string origin, string destination, string productCode, string scc, 

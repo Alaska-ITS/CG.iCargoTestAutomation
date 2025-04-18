@@ -40,7 +40,16 @@ namespace iCargoUIAutomation.pages
         private By txtboxDeliveryPaymentCollectCash_CssSelector = By.CssSelector("#CSH_Cashiering_Defaults_ChargeCollect_PaymentAmount");
         private By btnAuthCode_Xpath = By.XPath("//button[@name='btAddGateway']");
         private By lblEmbargoDetails_Xpath = By.XPath("//*[text()='Embargo Details']");
-        private By btnContinueEmbargo_Xpath = By.XPath("//*[text()='Embargo Details']//following::button[@id='okBtn']");        
+        private By btnContinueEmbargo_Xpath = By.XPath("//*[text()='Embargo Details']//following::button[@id='okBtn']");
+        private By chargeDetailsCheckbox_Xpath = By.XPath("//input[@name='rowId']");
+        private By chargeCodeInput_Xpath = By.XPath("//input[@name='chargeCode']");
+        private By btnList_Xpath = By.XPath("//*[text()='List']");
+        private By actualCharge_Xpath = By.XPath("//input[@name='actualCharge']");
+        private By actualAmountInput_Xpath = By.XPath("//input[@name='actualAmount']");
+        private By calculateCharge_Xpath = By.XPath("//button[@title='Calculate Charges']");
+        private By okbutton_Xpath = By.XPath("//button[@name='btOk']");
+        private By includeCreditCheckbox_Xpath = By.XPath("//td[img[contains(@src,'manualflag.png')]]//input[@type='checkbox']");
+        private By addbtn_Xpath = By.XPath("//button[@title='Add']");
 
         //Delivery Confirmation
         private By txtDeliveryNoteDetailsColor_Xpath = By.XPath("//a[@name='DNDetails_lnk']/div[contains(@style,'color:green')]");
@@ -56,6 +65,7 @@ namespace iCargoUIAutomation.pages
         private By lblAccountInfo_Xpath = By.XPath("//*[text()='Account information']");
         private By lblTotalAmount_Xpath = By.XPath("(//*[@class='aiBoxTwo'])[2]//label[13]");
         private By btnDone_Xpath = By.XPath("//*[text()='Done']");
+        private By btnAddChargeCode_Xpath = By.Name("btnAddCharge");
 
         //Popup Warnings
         private By btnYesActiveCashDraw_Xpath = By.XPath("//*[@class='ui-dialog-buttonset']/button[text()=' Yes ']");
@@ -398,5 +408,78 @@ namespace iCargoUIAutomation.pages
 
         }
 
+       
+
+        public void SelectChargeDetailsCheckbox()
+        {
+            try
+            {
+                SwitchToSecondPopupWindow();
+                Click(chargeDetailsCheckbox_Xpath);
+
+                Log.Info("Selected Charge Details Checkbox ");
+                if (IsElementDisplayed(includeCreditCheckbox_Xpath, 5))
+                {
+                    Click(includeCreditCheckbox_Xpath);
+
+                }
+            }
+            catch (Exception e)
+            {
+
+                Log.Error("Error in SelectChargeDetailsCheckbox: " + e.Message);
+            }
+
+
+        }
+
+        public void ClickAddChargeCodeButton()
+        {
+            try
+            {
+                Click(btnAddChargeCode_Xpath);
+                Log.Info("Clicked on Add Charge Code Button");
+            }
+            catch (Exception e)
+            {
+                Log.Error("Error in ClickAddChargeCodeButton: " + e.Message);
+            }
+
+        }
+
+        public void AddChargeFunction(string chargeCode, string amount)
+        {
+            try
+            {
+
+                SwitchToLastWindow();
+                EnterText(chargeCodeInput_Xpath, chargeCode);
+                Log.Info("Selected Charge Details Checkbox ");
+                Click(btnList_Xpath);
+                Click(actualCharge_Xpath);
+                EnterText(actualAmountInput_Xpath, amount);
+                Log.Info("Entered amount charged");
+                Click(calculateCharge_Xpath);
+                Click(okbutton_Xpath);
+                Log.Info("The charged amount is calculated");
+            }
+            catch (Exception e)
+            {
+                Log.Error("Error in AddChargeDetailsCheckbox: " + e.Message);
+            }
+        }
+        public void ClickOnAddAcceptPaymentButton()
+        {
+            try
+            {
+                Click(addbtn_Xpath);
+                Click(btnAcceptPayment_Xpath);
+                Log.Info("The Add and Accept payment button is selected");
+            }
+            catch (Exception e)
+            {
+                Log.Error("Error in Select Add and Accept button : " + e.Message);
+            }
+        }
     }
 }
